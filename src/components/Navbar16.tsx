@@ -6,10 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { useState } from "react";
 import {
-  BiLogoFacebookCircle,
   BiLogoInstagram,
   BiLogoLinkedinSquare,
-  BiLogoYoutube,
 } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 

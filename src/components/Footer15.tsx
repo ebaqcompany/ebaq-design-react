@@ -1,9 +1,7 @@
 import { FaXTwitter } from "react-icons/fa6";
 import {
-  BiLogoFacebookCircle,
   BiLogoInstagram,
   BiLogoLinkedinSquare,
-  BiLogoYoutube,
 } from "react-icons/bi";
 
 type ImageProps = {
@@ -55,7 +53,6 @@ export const Footer15 = (props: Footer15Props) => {
     logo,
     address,
     contact,
-    companyImage,
     columnLinks,
     socialMediaLinks,
     footerText,
