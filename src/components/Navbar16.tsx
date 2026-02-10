@@ -16,6 +16,13 @@ type Props = {
 
 export type Navbar16Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
+const scrollToBook = () => {
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: "smooth",
+  });
+};
+
 export const Navbar16 = (props: Navbar16Props) => {
   const { logo, button } = {
     ...Navbar16Defaults,
@@ -31,8 +38,8 @@ export const Navbar16 = (props: Navbar16Props) => {
         <a href={logo.url}>
           <img src={logo.src} alt={logo.alt} className="h-10 w-auto" />
         </a>
-        <Button {...button}>
-          <a href="#book">{button.title}</a>
+        <Button {...button} variant="secondary" onClick={scrollToBook}>
+          {button.title}
         </Button>
       </div>
     </section>
@@ -47,6 +54,5 @@ export const Navbar16Defaults: Props = {
   },
   button: {
     title: "Book a Call",
-    asChild: true,
   },
 };

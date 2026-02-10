@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { BiCheck } from "react-icons/bi";
@@ -20,6 +22,13 @@ type Props = {
 };
 
 export type Pricing8Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+
+const scrollToBook = () => {
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: "smooth",
+  });
+};
 
 export const Pricing8 = (props: Pricing8Props) => {
   const { tagline, heading, description, planName, planDescription, price, period, features, button } = {
@@ -46,8 +55,8 @@ export const Pricing8 = (props: Pricing8Props) => {
               <span className="text-2xl md:text-3xl lg:text-4xl">{period}</span>
             </div>
             <div className="mt-6 md:mt-8">
-              <Button {...button} className="w-full" asChild>
-                <a href="#book">{button.title}</a>
+              <Button {...button} className="w-full" onClick={scrollToBook}>
+                {button.title}
               </Button>
             </div>
             <div className="my-8 h-px w-full bg-white/20" />

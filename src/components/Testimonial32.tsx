@@ -1,6 +1,8 @@
-import React from "react";
-import { Button } from "@relume_io/relume-ui";
-import type { ButtonProps } from "@relume_io/relume-ui";
+"use client";
+
+import { useRef } from "react";
+import type { MotionStyle, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { BiSolidStar } from "react-icons/bi";
 
 type ImageProps = {
@@ -19,65 +21,106 @@ type Testimonial = {
 
 type Props = {
   heading: string;
-  description: string;
-  buttons: ButtonProps[];
   testimonials: Testimonial[];
 };
 
 export type Testimonial32Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Testimonial32 = (props: Testimonial32Props) => {
-  const { heading, description, buttons, testimonials } = {
+  const { heading, testimonials } = {
     ...Testimonial32Defaults,
     ...props,
   };
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+  });
+
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: '#cceffc' }}>
+    <section id="relume" ref={containerRef} className="bg-[#f5f5f5]">
       <div className="container">
-        <div className="grid grid-cols-1 items-start gap-y-12 md:grid-flow-row md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
-          <div className="static md:sticky md:top-[30%]">
-            <h2 className="mb-5 md:mb-6">
-              {heading}
-            </h2>
-            <p className="md:text-md">{description}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              <Button {...buttons[0]} asChild>
-                <a href="#book">{buttons[0].title}</a>
-              </Button>
+        <div className="relative h-[300svh] lg:h-[300vh]">
+          <div className="sticky top-0 grid h-svh grid-cols-1 content-center items-center justify-center px-[5%] md:flex md:content-normal md:px-0 lg:h-screen">
+            <div className="absolute bottom-auto left-0 right-0 top-0 flex w-full justify-center pt-20 md:inset-auto md:pt-0">
+              <h1 className="whitespace-nowrap text-[5rem] font-normal md:text-[10rem] lg:text-[12rem] text-black tracking-[-0.06em]" style={{ fontFamily: "'Roboto Flex', sans-serif", lineHeight: 1 }}>
+                {heading}
+              </h1>
             </div>
-          </div>
-          <div>
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="sticky mb-8 bg-background-primary p-8 rounded-2xl"
-                style={{ border: '1px solid #00afec', top: `${30 + index * 2}%` }}
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </div>
-            ))}
+            <div className="sticky top-0 mx-auto mt-12 flex min-h-[24.5rem] w-full max-w-md flex-col items-center justify-center sm:mt-24 md:relative lg:mt-0">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard
+                  key={index}
+                  testimonial={testimonial}
+                  index={index}
+                  totalTestimonials={testimonials.length}
+                  scrollYProgress={scrollYProgress}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
+      <div className="absolute inset-0 -z-10 mt-[100vh]" />
     </section>
   );
 };
 
-const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
+const TestimonialCard = ({
+  testimonial,
+  index,
+  totalTestimonials,
+  scrollYProgress,
+}: {
+  testimonial: Testimonial;
+  index: number;
+  totalTestimonials: number;
+  scrollYProgress: MotionValue<number>;
+}) => {
+  const sectionScrollStart = index / totalTestimonials;
+  const sectionScrollEnd = (index + 1) / totalTestimonials;
+
+  const rotate = useTransform(
+    scrollYProgress,
+    [sectionScrollStart, sectionScrollEnd],
+    [0 + index * 3, -30],
+  );
+
+  const translateY = useTransform(
+    scrollYProgress,
+    [sectionScrollStart, sectionScrollEnd],
+    ["0vh", "-120vh"],
+  );
+
+  const translateX = useTransform(
+    scrollYProgress,
+    [sectionScrollStart, sectionScrollEnd],
+    ["0vw", "-10vw"],
+  );
+
   return (
-    <React.Fragment>
-      <div className="rb-5 mb-5 md:mb-6">
-        <div className="rb-6 mb-6 flex items-center">
+    <motion.div
+      className="absolute mx-6 flex flex-col justify-between bg-white p-8 rounded-2xl shadow-md md:mx-0"
+      style={
+        {
+          rotate,
+          translateY,
+          translateX,
+          zIndex: totalTestimonials - index,
+        } as MotionStyle
+      }
+    >
+      <div className="mb-5 md:mb-6">
+        <div className="mb-4 flex items-center">
           {Array(testimonial.numberOfStars)
             .fill(null)
             .map((_, starIndex) => (
-              <BiSolidStar key={starIndex} className="mr-1 size-6" style={{ color: '#e9b44a' }} />
+              <BiSolidStar key={starIndex} className="mr-1 size-5" style={{ color: '#e9b44a' }} />
             ))}
         </div>
-        <blockquote className="md:text-md">{testimonial.quote}</blockquote>
+        <blockquote className="text-base md:text-lg">{testimonial.quote}</blockquote>
       </div>
-      <div className="flex flex-col items-start gap-4 md:flex-row md:items-center">
+      <div className="flex items-center gap-4">
         <img
           src={testimonial.avatar.src}
           alt={testimonial.avatar.alt}
@@ -85,25 +128,17 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         />
         <div>
           <p className="font-semibold">{testimonial.name}</p>
-          <p>
-            <span>{testimonial.position}</span>, <span>{testimonial.companyName}</span>
+          <p className="text-sm text-black/60">
+            {testimonial.position}, {testimonial.companyName}
           </p>
         </div>
       </div>
-    </React.Fragment>
+    </motion.div>
   );
 };
 
 export const Testimonial32Defaults: Props = {
   heading: "What clients say",
-  description:
-    "Founders and teams trust Ebaq Design to deliver branding that attracts clients and investors.",
-  buttons: [
-    { title: "Book a Call", variant: "secondary", className: "bg-transparent border-black" },
-    {
-      title: "View Case Studies",
-    },
-  ],
   testimonials: [
     {
       numberOfStars: 5,

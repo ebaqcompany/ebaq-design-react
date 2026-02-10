@@ -28,15 +28,15 @@ html, body {
   background-color: #000;
 }
 
-/* Global button styles - only buttons with padding (not text links) */
-button[class*="px-"],
-button[class*="py-"] {
+/* Global button styles */
+button,
+a[class*="bg-"] {
   border-radius: 99px !important;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-button[class*="px-"]:hover,
-button[class*="py-"]:hover {
+button:hover,
+a[class*="bg-"]:hover {
   background-color: #00afec !important;
   border-color: #00afec !important;
   color: white !important;

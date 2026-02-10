@@ -1,6 +1,8 @@
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
+const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
 export const BookerSection = () => {
   useEffect(() => {
     (async function () {
@@ -11,7 +13,7 @@ export const BookerSection = () => {
           dark: { "cal-brand": "#00afed" },
         },
         hideEventTypeDetails: false,
-        layout: "month_view",
+        layout: isMobile ? "week_view" : "month_view",
         styles: {
           branding: { brandColor: "transparent" },
         },
@@ -62,19 +64,19 @@ export const BookerSection = () => {
         <img
           src="/ebaqdesign-logo-big.svg"
           alt=""
-          className="w-full max-w-6xl opacity-20"
+          className="w-full max-w-6xl"
         />
       </div>
 
       {/* Cal.com form - overlays the logo */}
       <div className="container relative z-10">
-        <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mb-8 md:mb-12 text-center">Book a free intro call</h2>
+        <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mb-8 md:mb-12 text-center tracking-[-0.03em]">Book a free intro call</h2>
         <div className="relative">
           <Cal
             namespace="15min"
             calLink="ebaqdesign/15min"
             style={{ width: "100%", height: "100%", overflow: "scroll" }}
-            config={{ layout: "month_view" }}
+            config={{ layout: isMobile ? "week_view" : "month_view" }}
           />
         </div>
       </div>

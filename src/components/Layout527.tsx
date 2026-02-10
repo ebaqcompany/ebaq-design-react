@@ -61,7 +61,7 @@ export const Layout527 = (props: Layout527Props) => {
                 >
                   <h3
                     className={clsx(
-                      "text-lg transition-colors duration-300 md:text-xl md:leading-[1.3] lg:text-2xl",
+                      "text-lg transition-colors duration-300 md:text-xl md:leading-[1.3] lg:text-2xl tracking-[0.01em]",
                       {
                         "lg:text-black/20": hoveredIndex !== index && hoveredIndex !== null,
                         "lg:text-black": hoveredIndex === index || hoveredIndex === null,
