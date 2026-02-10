@@ -49,7 +49,7 @@ export const Navbar16 = (props: Navbar16Props) => {
 export const Navbar16Defaults: Props = {
   logo: {
     url: "#",
-    src: "/ebaqdesign-logo-bold.svg",
+    src: "/ebaqdesign-logo-thinner.svg",
     alt: "Ebaq Design",
   },
   button: {

@@ -56,7 +56,10 @@ export const Layout527 = (props: Layout527Props) => {
               <div key={index}>
                 <a
                   href={link.url}
-                  className="relative z-10 flex flex-col flex-wrap items-start justify-start gap-4 border-b border-black/20 py-[17px] no-underline transition-all duration-300 sm:flex-row sm:items-center md:gap-8 md:py-[21px]"
+                  className={clsx(
+                    "relative z-10 flex flex-col flex-wrap items-start justify-start gap-4 border-b border-black/20 py-[11px] no-underline transition-all duration-300 sm:flex-row sm:items-center md:gap-8 md:py-[13px]",
+                    index === hoverLinks.length - 1 && "border-b-0"
+                  )}
                   onMouseEnter={() => setHoveredIndex(index)}
                 >
                   <h3

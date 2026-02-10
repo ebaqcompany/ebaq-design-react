@@ -43,7 +43,7 @@ export const Testimonial32 = (props: Testimonial32Props) => {
         <div className="relative h-[300svh] lg:h-[300vh]">
           <div className="sticky top-0 grid h-svh grid-cols-1 content-center items-center justify-center px-[5%] md:flex md:content-normal md:px-0 lg:h-screen">
             <div className="absolute bottom-auto left-0 right-0 top-0 flex w-full justify-center pt-20 md:inset-auto md:pt-0">
-              <h1 className="whitespace-nowrap text-[5rem] font-normal md:text-[10rem] lg:text-[12rem] text-black tracking-[-0.06em]" style={{ fontFamily: "'Roboto Flex', sans-serif", lineHeight: 1 }}>
+              <h1 className="whitespace-nowrap text-[5rem] md:text-[10rem] lg:text-[12rem] text-black tracking-[-0.06em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 200", lineHeight: 1 }}>
                 {heading}
               </h1>
             </div>
@@ -100,7 +100,7 @@ const TestimonialCard = ({
 
   return (
     <motion.div
-      className="absolute mx-6 flex flex-col justify-between bg-white p-8 rounded-2xl shadow-md md:mx-0"
+      className="absolute mx-6 flex flex-col justify-between bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.05)] md:mx-0"
       style={
         {
           rotate,
