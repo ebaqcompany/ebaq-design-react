@@ -17,7 +17,7 @@ export const BookerSection = () => {
   }, []);
 
   return (
-    <section id="book" className="relative px-[5%] pt-24 md:pt-32 lg:pt-40 pb-16 bg-black sticky bottom-0 z-0 overflow-hidden">
+    <section id="book" className="relative px-[5%] pt-24 md:pt-32 lg:pt-40 pb-16 bg-black sticky bottom-0 z-0 overflow-hidden min-h-svh md:min-h-0">
       {/* Big Logo in Background - stuck to bottom */}
       <div className="absolute bottom-0 left-0 right-0 flex justify-center pointer-events-none">
         <img

@@ -26,7 +26,10 @@ html, body {
   min-width: 320px;
   font-family: 'Open Sans', sans-serif;
   background-color: #000;
-  overflow-x: hidden;
+}
+
+#root {
+  overflow-x: clip;
 }
 
 /* Global button styles */
