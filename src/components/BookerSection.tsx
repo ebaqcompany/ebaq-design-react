@@ -1,8 +1,6 @@
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
-const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-
 export const BookerSection = () => {
   useEffect(() => {
     (async function () {
@@ -12,49 +10,10 @@ export const BookerSection = () => {
           light: { "cal-brand": "#00afec" },
           dark: { "cal-brand": "#00afed" },
         },
-        hideEventTypeDetails: false,
-        layout: isMobile ? "week_view" : "month_view",
-        styles: {
-          branding: { brandColor: "transparent" },
-        },
+        hideEventTypeDetails: true,
+        layout: "month_view",
       });
-
-      // Aggressively hide Cal.com branding with MutationObserver
-      const observer = new MutationObserver(() => {
-        const badges = document.querySelectorAll('[data-cal-namespace="15min"] a[href*="cal.com"], [data-cal-namespace="15min"] [class*="powered"], [data-cal-namespace="15min"] [class*="Powered"]');
-        badges.forEach(el => {
-          (el as HTMLElement).style.display = 'none';
-        });
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
     })();
-
-    // Hide Cal.com branding
-    const style = document.createElement('style');
-    style.textContent = `
-      [data-cal-namespace="15min"] a[href*="cal.com"],
-      [data-cal-namespace="15min"] [class*="powered"],
-      [data-cal-namespace="15min"] [class*="Powered"],
-      [data-cal-namespace="15min"] img[alt*="Cal"],
-      [data-cal-namespace="15min"] svg[class*="logo"],
-      [data-cal-namespace="15min"] [class*="branding"],
-      [data-cal-namespace="15min"] [class*="Branding"],
-      [data-cal-namespace="15min"] [data-testid*="powered"],
-      [data-cal-namespace="15min"] footer,
-      [data-cal-namespace="15min"] [class*="footer"],
-      a[href*="cal.com/powered"],
-      a[href*="go.cal.com"],
-      .cal-powered-by,
-      [class*="poweredBy"],
-      [class*="PoweredBy"] {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
-      }
-    `;
-    document.head.appendChild(style);
   }, []);
 
   return (
@@ -71,13 +30,25 @@ export const BookerSection = () => {
       {/* Cal.com form - overlays the logo */}
       <div className="container relative z-10">
         <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mb-8 md:mb-12 text-center tracking-[-0.03em]">Book a free intro call</h2>
-        <div className="relative">
+        {/* Desktop - inline embed */}
+        <div className="hidden md:block relative">
           <Cal
             namespace="15min"
             calLink="ebaqdesign/15min"
             style={{ width: "100%", height: "100%", overflow: "scroll" }}
-            config={{ layout: isMobile ? "week_view" : "month_view" }}
+            config={{ layout: "month_view" }}
           />
+        </div>
+        {/* Mobile - button that opens Cal.com */}
+        <div className="block md:hidden relative text-center">
+          <a
+            href="https://cal.com/ebaqdesign/15min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 text-lg font-medium text-black bg-white rounded-[99px] hover:bg-[#00afec] hover:text-white transition-colors"
+          >
+            Schedule a Time
+          </a>
         </div>
       </div>
     </section>
