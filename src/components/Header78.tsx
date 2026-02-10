@@ -264,7 +264,7 @@ export const Header78 = (props: Header78Props) => {
   return (
     <section id="relume" className="py-16 md:py-24 lg:py-28 bg-white">
       <div className="px-[5%] mb-12 md:mb-18 lg:mb-20">
-        <h1 className="text-[2.5rem] font-normal md:text-[5rem] lg:text-[6rem] whitespace-pre-line tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", lineHeight: 1 }}>{heading}</h1>
+        <h1 className="text-[2.5rem] md:text-[5rem] lg:text-[6rem] whitespace-pre-line tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300", lineHeight: 1 }}>{heading}</h1>
       </div>
 
       <div className="flex flex-col gap-4">

@@ -70,6 +70,7 @@ export const Layout527 = (props: Layout527Props) => {
                         "lg:text-black": hoveredIndex === index || hoveredIndex === null,
                       },
                     )}
+                    style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}
                   >
                     {link.heading}
                   </h3>

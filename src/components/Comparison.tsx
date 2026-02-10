@@ -25,7 +25,7 @@ export const Comparison = (props: ComparisonProps) => {
     <section id="comparison" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
       <div className="container">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
-          <h2 className="mb-5 md:mb-6 whitespace-pre-line">{heading}</h2>
+          <h2 className="mb-5 md:mb-6 whitespace-pre-line" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>{heading}</h2>
         </div>
 
         <div className="mx-auto max-w-xl">
