@@ -1,43 +1,43 @@
 import {
-  Loader3,
   Navbar16,
   Header78,
-  Layout348,
+  Layout484,
+  Comparison,
+  Layout527,
   Testimonial32,
-  Pricing8,
-  Layout488,
-  Footer15,
+  AboutSection,
+  BookerSection,
 } from "./components";
 
 function App() {
   return (
     <div className="relative">
-      {/* Loader */}
-      <Loader3 />
+        {/* Main content - scrolls over footer */}
+        <div className="relative z-10 bg-white">
+          {/* Navbar */}
+          <Navbar16 />
 
-      {/* Main Content */}
-      <div className="relative">
-        {/* Navbar */}
-        <Navbar16 />
+          {/* Hero Section */}
+          <Header78 />
 
-        {/* Hero Section */}
-        <Header78 />
+          {/* Layout484 Section */}
+          <Layout484 />
 
-        {/* Features Section */}
-        <Layout348 />
+          {/* Comparison Section */}
+          <Comparison />
 
-        {/* Testimonials Section */}
-        <Testimonial32 />
+          {/* Layout527 Section */}
+          <Layout527 />
 
-        {/* Pricing Section */}
-        <Pricing8 />
+          {/* Testimonials Section */}
+          <Testimonial32 />
 
-        {/* CTA Section */}
-        <Layout488 />
+          {/* About Section */}
+          <AboutSection />
+        </div>
 
-        {/* Footer */}
-        <Footer15 />
-      </div>
+        {/* Booker Section - reveals from behind */}
+        <BookerSection />
     </div>
   );
 }

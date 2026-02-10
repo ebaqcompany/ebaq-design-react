@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { useRef, useEffect, useCallback, useState } from "react";
 import Lottie from "lottie-react";
@@ -257,38 +256,28 @@ const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset 
 };
 
 export const Header78 = (props: Header78Props) => {
-  const { heading, description, buttons, row1, row2, row3 } = {
+  const { heading, description: _description, buttons: _buttons, row1, row2, row3 } = {
     ...Header78Defaults,
     ...props,
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container flex flex-col items-center">
-        <div className="rb-12 mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
-          <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl whitespace-pre-line">{heading}</h1>
-          <p className="md:text-md">{description}</p>
-          <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
-            {buttons.map((button, index) => (
-              <Button key={index} {...button}>
-                {button.title}
-              </Button>
-            ))}
-          </div>
-        </div>
+    <section id="relume" className="py-16 md:py-24 lg:py-28 bg-white">
+      <div className="px-[5%] mb-12 md:mb-18 lg:mb-20">
+        <h1 className="text-[2.5rem] font-normal md:text-[5rem] lg:text-[6rem] whitespace-pre-line tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", lineHeight: 1 }}>{heading}</h1>
+      </div>
 
-        <div className="flex flex-col w-screen gap-4">
-          <DraggableRow items={row1} baseSpeed={1} direction="left" />
-          <DraggableRow items={row2} baseSpeed={1} direction="right" showBorder />
-          <DraggableRow items={row3} baseSpeed={1.5} direction="left" initialOffset={208} />
-        </div>
+      <div className="flex flex-col gap-4">
+        <DraggableRow items={row1} baseSpeed={1} direction="left" />
+        <DraggableRow items={row2} baseSpeed={1} direction="right" showBorder />
+        <DraggableRow items={row3} baseSpeed={1.5} direction="left" initialOffset={208} />
       </div>
     </section>
   );
 };
 
 export const Header78Defaults: Props = {
-  heading: "Branding & websites.\nClear, fast, built to last.",
+  heading: "World-class branding\nfor one clear price.",
   description:
     "Work directly with a senior designer to launch your complete brand identity in just one week. Nearly 20 years of experience. No junior handoffs.",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],

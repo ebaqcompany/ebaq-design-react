@@ -3,8 +3,8 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { useEffect, useState, useRef } from "react";
-import { RxChevronRight } from "react-icons/rx";
 import clsx from "clsx";
+import { TextLink } from "./TextLink";
 
 type ImageProps = {
   src: string;
@@ -95,11 +95,10 @@ export const Layout348 = (props: Layout348Props) => {
                   </h2>
                   <p className="md:text-md">{content.description}</p>
                   <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-                    {content.buttons.map((button, index) => (
-                      <Button key={index} {...button}>
-                        {button.title}
-                      </Button>
-                    ))}
+                    <Button {...content.buttons[0]}>
+                      {content.buttons[0].title}
+                    </Button>
+                    <TextLink href="#">{content.buttons[1].title}</TextLink>
                   </div>
                   <div className="mt-10 block w-full md:hidden">
                     <img src={content.image.src} className="w-full" alt={content.image.alt} />
@@ -143,7 +142,7 @@ export const Layout348Defaults: Props = {
         "Your logo is the face of your brand. Get a custom, versatile logo that works across all platforms—from business cards to billboards. Includes full logo system with variations and usage guidelines.",
       buttons: [
         { title: "See Logos", variant: "secondary" },
-        { title: "Learn More", variant: "link", size: "link", iconRight: <RxChevronRight /> },
+        { title: "Learn More" },
       ],
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-1.svg",
@@ -157,7 +156,7 @@ export const Layout348Defaults: Props = {
         "More than just a logo—get a cohesive visual system. Colors, typography, imagery style, and brand guidelines that ensure consistency across every touchpoint. Built to scale with your business.",
       buttons: [
         { title: "View Identities", variant: "secondary" },
-        { title: "Learn More", variant: "link", size: "link", iconRight: <RxChevronRight /> },
+        { title: "Learn More" },
       ],
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-2.svg",
@@ -171,7 +170,7 @@ export const Layout348Defaults: Props = {
         "A stunning website that converts visitors into customers. Designed in Figma, built in Webflow—responsive, fast, and SEO-ready. Includes copywriting and launch support.",
       buttons: [
         { title: "See Websites", variant: "secondary" },
-        { title: "Learn More", variant: "link", size: "link", iconRight: <RxChevronRight /> },
+        { title: "Learn More" },
       ],
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-3.svg",

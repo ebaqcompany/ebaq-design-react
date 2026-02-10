@@ -4,8 +4,14 @@
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
   }
 }
 
@@ -15,8 +21,66 @@ html {
 }
 
 /* Reset body styles for Relume components */
-body {
+html, body {
   margin: 0;
   min-width: 320px;
   font-family: 'Open Sans', sans-serif;
+  background-color: #000;
+}
+
+/* Global button styles - only buttons with padding (not text links) */
+button[class*="px-"],
+button[class*="py-"] {
+  border-radius: 99px !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button[class*="px-"]:hover,
+button[class*="py-"]:hover {
+  background-color: #00afec !important;
+  border-color: #00afec !important;
+  color: white !important;
+}
+
+/* Footer link with animated underline */
+.footer-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: translateX(-101%);
+  transition: transform 0.3s ease;
+}
+
+.footer-link:hover::after {
+  transform: translateX(0);
+}
+
+/* Footer marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.footer-marquee:hover {
+  animation-play-state: paused;
 }

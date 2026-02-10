@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { BiSolidStar } from "react-icons/bi";
-import { RxChevronRight } from "react-icons/rx";
 
 type ImageProps = {
   src: string;
@@ -34,28 +33,26 @@ export const Testimonial32 = (props: Testimonial32Props) => {
   };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: '#cceffc' }}>
       <div className="container">
         <div className="grid grid-cols-1 items-start gap-y-12 md:grid-flow-row md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
           <div className="static md:sticky md:top-[30%]">
-            <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
+            <h2 className="mb-5 md:mb-6">
               {heading}
             </h2>
             <p className="md:text-md">{description}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
+              <Button {...buttons[0]} asChild>
+                <a href="#book">{buttons[0].title}</a>
+              </Button>
             </div>
           </div>
           <div>
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="sticky mb-8 border border-border-primary bg-background-primary p-8"
-                style={{ top: `${30 + index * 2}%` }}
+                className="sticky mb-8 bg-background-primary p-8 rounded-2xl"
+                style={{ border: '1px solid #00afec', top: `${30 + index * 2}%` }}
               >
                 <TestimonialCard testimonial={testimonial} />
               </div>
@@ -75,7 +72,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           {Array(testimonial.numberOfStars)
             .fill(null)
             .map((_, starIndex) => (
-              <BiSolidStar key={starIndex} className="mr-1 size-6" />
+              <BiSolidStar key={starIndex} className="mr-1 size-6" style={{ color: '#e9b44a' }} />
             ))}
         </div>
         <blockquote className="md:text-md">{testimonial.quote}</blockquote>
@@ -100,64 +97,61 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
 export const Testimonial32Defaults: Props = {
   heading: "What clients say",
   description:
-    "Founders and teams trust Ebaq Design to deliver branding that attracts clients and investors. Here's what they have to say.",
+    "Founders and teams trust Ebaq Design to deliver branding that attracts clients and investors.",
   buttons: [
-    { title: "Start Your Project", variant: "secondary" },
+    { title: "Book a Call", variant: "secondary", className: "bg-transparent border-black" },
     {
       title: "View Case Studies",
-      variant: "link",
-      size: "link",
-      iconRight: <RxChevronRight />,
     },
   ],
   testimonials: [
     {
       numberOfStars: 5,
       quote:
-        '"Arek\'s methodology was incredibly organized. He brought clarity to our vision and delivered beyond what we expected after disappointing experiences elsewhere."',
+        '"After several failures using Fiverr and 99designs, we finally found Arek who nailed it at first."',
       avatar: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Client avatar",
+        src: "https://cdn.prod.website-files.com/5de2db6d3719a1a1cee44545/6838e470f5929b126ab6b077_1707340907658.jpeg",
+        alt: "Pavel Bulkiewicz",
       },
-      name: "Sarah Chen",
+      name: "Pavel Bulkiewicz",
       position: "Founder",
-      companyName: "Brevidee",
+      companyName: "Medihuanna",
     },
     {
       numberOfStars: 5,
       quote:
-        '"The attention to detail was remarkable. Every element of our brand identity felt intentional and cohesive. The one-week turnaround was a game-changer for our launch."',
+        '"We had a terrific experience working with Arek on our logos and pitch deck. Highly recommended!"',
       avatar: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Client avatar",
+        src: "https://cdn.prod.website-files.com/5de2db6d3719a1a1cee44545/687535f6cdf82283c57d1a3a_Darla-Powell.jpg",
+        alt: "Darla Powell",
       },
-      name: "Michael Torres",
-      position: "CEO",
-      companyName: "Ventur",
-    },
-    {
-      numberOfStars: 5,
-      quote:
-        '"Working directly with a senior designer made all the difference. No junior handoffs, no miscommunication—just exceptional work delivered fast."',
-      avatar: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Client avatar",
-      },
-      name: "Emily Park",
-      position: "Co-founder",
-      companyName: "Sweetgrass",
-    },
-    {
-      numberOfStars: 5,
-      quote:
-        '"Fixed pricing with no surprises was exactly what we needed as a startup. The brand identity helped us secure our seed round—investors loved it."',
-      avatar: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Client avatar",
-      },
-      name: "David Kim",
+      name: "Darla Powell",
       position: "Founder",
-      companyName: "Focal",
+      companyName: "Wingnut Social",
+    },
+    {
+      numberOfStars: 5,
+      quote:
+        '"Arek brings a focused, to-the-point approach with detailed workshops and exceptional clarity."',
+      avatar: {
+        src: "https://cdn.prod.website-files.com/5de2db6d3719a1a1cee44545/6838ed3044a4195fadd32a62_unnamed%20(1).png",
+        alt: "Dhruv Patel",
+      },
+      name: "Dhruv Patel",
+      position: "Founder",
+      companyName: "AMI",
+    },
+    {
+      numberOfStars: 5,
+      quote:
+        '"Arek is a branding expert with extensive experience. I highly recommend him for rebranding projects."',
+      avatar: {
+        src: "https://cdn.prod.website-files.com/5de2db6d3719a1a1cee44545/6838eccac498d440d00a5fd6_1732141495505.jpeg",
+        alt: "Chris Nixon",
+      },
+      name: "Chris Nixon",
+      position: "Founder",
+      companyName: "Airport Executive",
     },
   ],
 };

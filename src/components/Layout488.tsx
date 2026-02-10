@@ -55,7 +55,7 @@ export const Layout488 = (props: Layout488Props) => {
     <section id="relume" className="relative h-[200vh]" ref={sectionRef}>
       <div className="sticky top-0 grid h-svh grid-cols-[60%] content-center items-center justify-center justify-items-center gap-4 overflow-hidden px-[5%] md:grid-cols-[40%_max-content_40%] md:gap-8 lg:h-screen">
         <motion.h2
-          className="relative z-10 hidden justify-self-end whitespace-nowrap text-[4rem] font-bold md:flex lg:text-[6rem]"
+          className="relative z-10 hidden justify-self-end whitespace-nowrap text-[4rem] md:flex lg:text-[6rem]"
           style={{ x: leftHeadingX }}
         >
           {leftHeading}
@@ -70,17 +70,17 @@ export const Layout488 = (props: Layout488Props) => {
             className="aspect-square size-full rounded-full object-cover"
           />
           <motion.div
-            className="absolute -z-10 rounded-full bg-neutral-lightest"
-            style={{ width: overlaySize, height: overlaySize }}
+            className="absolute -z-10 rounded-full"
+            style={{ backgroundColor: '#cceffc', width: overlaySize, height: overlaySize }}
           />
         </motion.div>
         <motion.h2
-          className="relative z-10 hidden justify-self-start whitespace-nowrap text-[4rem] font-bold md:flex lg:text-[6rem]"
+          className="relative z-10 hidden justify-self-start whitespace-nowrap text-[4rem] md:flex lg:text-[6rem]"
           style={{ x: rightHeadingX }}
         >
           {rightHeading}
         </motion.h2>
-        <motion.h2 className="relative z-10 mt-10 flex justify-self-center whitespace-nowrap text-3xl font-bold leading-[1.2] sm:text-8xl md:hidden">
+        <motion.h2 className="relative z-10 mt-10 flex justify-self-center whitespace-nowrap text-3xl leading-[1.2] sm:text-8xl md:hidden">
           {mobileHeading}
         </motion.h2>
       </div>
@@ -90,11 +90,11 @@ export const Layout488 = (props: Layout488Props) => {
 };
 
 export const Layout488Defaults: Props = {
-  leftHeading: "Hire a",
+  leftHeading: "Start your",
   image: {
     src: "/arek-pic.jpg",
     alt: "Arek",
   },
-  rightHeading: "real expert.",
-  mobileHeading: "Hire a real expert.",
+  rightHeading: "project now",
+  mobileHeading: "Start your project now",
 };
