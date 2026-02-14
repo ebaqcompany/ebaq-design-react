@@ -188,5 +188,17 @@ export const Testimonial32Defaults: Props = {
       position: "Founder",
       companyName: "Airport Executive",
     },
+    {
+      numberOfStars: 5,
+      quote:
+        '"Excellent work! Fast, reliable and look and feel matched beyond our expectations."',
+      avatar: {
+        src: "/testimonials/lucas.jpeg",
+        alt: "L. Berman",
+      },
+      name: "L. Berman (LL.M)",
+      position: "Partner",
+      companyName: "FOXBERMAN",
+    },
   ],
 };
