@@ -88,7 +88,7 @@ const PricingSection = () => (
 
 /* ---- Approach section (reuses Comparison visual style) ---- */
 const ApproachSection = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+  <section className="px-[5%] py-16 md:py-24 lg:py-28">
     <div className="container">
       <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Process</p>
@@ -168,8 +168,12 @@ export const SenseHawkProposal = () => {
           </div>
         </section>
 
-        {/* Comparison — Ebaq vs Other Designers */}
+        {/* Approach — phases */}
         <div className="[&>section]:bg-white">
+        <ApproachSection />
+        </div>
+
+        {/* Comparison — Ebaq vs Other Designers */}
         <Comparison
           heading={"Why Ebaq."}
           leftTitle="Ebaq Design"
@@ -182,10 +186,6 @@ export const SenseHawkProposal = () => {
             { left: "$3k/week, clear phases & timeline", right: "Vague scope, hidden costs" },
           ]}
         />
-        </div>
-
-        {/* Approach — phases */}
-        <ApproachSection />
 
         {/* Pricing */}
         <PricingSection />
