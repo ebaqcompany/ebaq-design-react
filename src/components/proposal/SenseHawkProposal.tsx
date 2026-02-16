@@ -21,7 +21,7 @@ const PricingSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
         {/* Option A — light card */}
         <div className="bg-[#f5f5f5] rounded-3xl px-6 py-8 md:p-8">
-          <h3 className="mb-1 text-md leading-[1.4] md:text-xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
+          <h3 className="mb-1 text-xl leading-[1.3] md:text-2xl lg:text-3xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
             Option A: Landing Page + Component System
           </h3>
           <p className="text-black/50">Homepage design + a complete design system your Framer dev can scale independently.</p>
@@ -53,7 +53,7 @@ const PricingSection = () => (
 
         {/* Option B — black card */}
         <div className="bg-black text-white rounded-3xl px-6 py-8 md:p-8">
-          <h3 className="mb-1 text-md leading-[1.4] md:text-xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
+          <h3 className="mb-1 text-xl leading-[1.3] md:text-2xl lg:text-3xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
             Option B: Full Website Redesign
           </h3>
           <p className="text-white/50">End-to-end design for every page. A complete blueprint your dev builds from.</p>
