@@ -173,7 +173,7 @@ export const SenseHawkProposal = () => {
             <div className="mx-auto mb-8 text-center md:mb-10 lg:mb-12">
               <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>What we understand</p>
               <h2 className="mb-5 md:mb-6" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>
-                SenseHawk at a glance.
+                SenseHawk<br />at a glance.
               </h2>
             </div>
             <div className="mx-auto max-w-md space-y-4">
