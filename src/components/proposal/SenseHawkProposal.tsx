@@ -169,6 +169,7 @@ export const SenseHawkProposal = () => {
         </section>
 
         {/* Comparison — Ebaq vs Other Designers */}
+        <div className="[&>section]:bg-white">
         <Comparison
           heading={"Why Ebaq."}
           leftTitle="Ebaq Design"
@@ -181,6 +182,7 @@ export const SenseHawkProposal = () => {
             { left: "$3k/week, clear phases & timeline", right: "Vague scope, hidden costs" },
           ]}
         />
+        </div>
 
         {/* Approach — phases */}
         <ApproachSection />
@@ -213,10 +215,14 @@ export const SenseHawkProposal = () => {
         </section>
 
         {/* Testimonials — exact same component */}
+        <div className="[&>section]:bg-white">
         <Testimonial32 />
+        </div>
 
         {/* About — exact same component */}
+        <div className="[&>section]:bg-[#f5f5f5]">
         <AboutSection />
+        </div>
       </div>
 
       {/* Booker Section — exact same, reveals from behind */}
