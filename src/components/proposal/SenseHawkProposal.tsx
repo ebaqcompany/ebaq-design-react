@@ -169,25 +169,25 @@ export const SenseHawkProposal = () => {
 
         {/* About SenseHawk */}
         <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
-          <div className="container max-w-lg">
-            <div className="mx-auto mb-8 text-center md:mb-10 lg:mb-12">
+          <div className="container">
+            <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
               <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>What we understand</p>
               <h2 className="mb-5 md:mb-6" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>
                 SenseHawk<br />at a glance.
               </h2>
             </div>
-            <div className="mx-auto max-w-md space-y-4">
+            <div className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
               {[
-                { label: "The company", value: "Leader in solar lifecycle management — cloud and mobile-first OS for the entire solar value chain." },
-                { label: "The products", value: "Taskmapper (construction & project management) and Therm (aerial thermography & asset inspection)." },
-                { label: "The backing", value: "$7.1M Series A from Elevation Capital and Alpha Wave Global (ADQ)." },
-                { label: "The goal", value: "A world-class, Apple-standard digital presence that makes complex data products look intuitive and premium." },
-                { label: "The setup", value: "Internal Framer developer handles implementation — you need design, visual direction, and production-ready assets." },
-                { label: "Motion & interaction", value: "Scroll transforms, parallax, smooth transitions — leveraging Framer's full animation capabilities." },
-              ].map((item, i) => (
-                <div key={i} className="border-b border-black/10 pb-4">
-                  <p className="font-semibold mb-1" style={{ fontFamily: "'Open Sans', sans-serif" }}>{item.label}</p>
-                  <p className="text-black/50">{item.value}</p>
+                { heading: "The company", description: "Leader in solar lifecycle management — cloud and mobile-first OS for the entire solar value chain." },
+                { heading: "The products", description: "Taskmapper (construction & project management) and Therm (aerial thermography & asset inspection)." },
+                { heading: "The backing", description: "$7.1M Series A from Elevation Capital and Alpha Wave Global (ADQ)." },
+                { heading: "The goal", description: "A world-class, Apple-standard digital presence that makes complex data products look intuitive and premium." },
+                { heading: "The setup", description: "Internal Framer developer handles implementation — you need design, visual direction, and production-ready assets." },
+                { heading: "Motion & interaction", description: "Scroll transforms, parallax, smooth transitions — leveraging Framer's full animation capabilities." },
+              ].map((section, i) => (
+                <div key={i}>
+                  <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>{section.heading}</h3>
+                  <p className="text-black/50">{section.description}</p>
                 </div>
               ))}
             </div>
