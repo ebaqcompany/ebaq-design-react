@@ -9,7 +9,7 @@ import { BookerSection } from "../BookerSection";
 
 /* ---- Pricing section (reuses Pricing8 visual pattern) ---- */
 const PricingSection = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+  <section id="pricing" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
     <div className="container max-w-xl">
       <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Investment</p>
@@ -87,7 +87,7 @@ const PricingSection = () => (
 
 /* ---- Approach section (reuses Comparison visual style) ---- */
 const ApproachSection = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28">
+  <section id="process" className="px-[5%] py-16 md:py-24 lg:py-28">
     <div className="container">
       <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Process</p>
@@ -132,7 +132,13 @@ export const SenseHawkProposal = () => {
       {/* Main content - scrolls over footer */}
       <div className="relative z-10 bg-white">
         {/* Navbar — exact same component */}
-        <Navbar16 />
+        <Navbar16 navLinks={[
+          { label: "Opportunity", href: "#opportunity" },
+          { label: "Process", href: "#process" },
+          { label: "Why Ebaq", href: "#why-ebaq" },
+          { label: "Pricing", href: "#pricing" },
+          { label: "Book a Call", href: "#book" },
+        ]} />
 
         {/* Hero — same Header78, different heading + same portfolio ticker */}
         <Header78
@@ -144,7 +150,7 @@ export const SenseHawkProposal = () => {
         />
 
         {/* Opportunity — image left, text right */}
-        <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+        <section id="opportunity" className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
           <div className="container">
             <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
               <div className="overflow-hidden rounded-2xl border border-black/10">
@@ -200,7 +206,7 @@ export const SenseHawkProposal = () => {
         </div>
 
         {/* Comparison — Ebaq vs Other Designers */}
-        <div className="[&>section]:bg-white">
+        <div id="why-ebaq" className="[&>section]:bg-white">
         <Comparison
           heading={"Why Ebaq."}
           leftTitle="Ebaq Design"
@@ -251,7 +257,9 @@ export const SenseHawkProposal = () => {
       </div>
 
       {/* Booker Section — exact same, reveals from behind */}
+      <div id="book">
       <BookerSection />
+      </div>
     </div>
   );
 };

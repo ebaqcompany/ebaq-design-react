@@ -9,9 +9,15 @@ type ImageProps = {
   alt?: string;
 };
 
+type NavLink = {
+  label: string;
+  href: string;
+};
+
 type Props = {
   logo: ImageProps;
   button: ButtonProps;
+  navLinks?: NavLink[];
 };
 
 export type Navbar16Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
@@ -24,7 +30,7 @@ const scrollToBook = () => {
 };
 
 export const Navbar16 = (props: Navbar16Props) => {
-  const { logo, button } = {
+  const { logo, button, navLinks } = {
     ...Navbar16Defaults,
     ...props,
   };
@@ -38,9 +44,19 @@ export const Navbar16 = (props: Navbar16Props) => {
         <a href={logo.url}>
           <img src={logo.src} alt={logo.alt} className="h-10 w-auto" />
         </a>
-        <Button {...button} variant="secondary" onClick={scrollToBook}>
-          {button.title}
-        </Button>
+        {navLinks ? (
+          <nav className="flex items-center gap-6">
+            {navLinks.map((link, i) => (
+              <a key={i} href={link.href} className="text-sm font-medium text-black/50 hover:text-black transition-colors" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        ) : (
+          <Button {...button} variant="secondary" onClick={scrollToBook}>
+            {button.title}
+          </Button>
+        )}
       </div>
     </section>
   );
