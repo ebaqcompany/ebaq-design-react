@@ -19,7 +19,7 @@ const PricingSection = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto">
         {/* Option A — light card */}
-        <div className="bg-[#f5f5f5] rounded-3xl px-6 py-8 md:p-8">
+        <div className="bg-white rounded-3xl px-6 py-8 md:p-8">
           <h3 className="mb-1 text-xl leading-[1.3] md:text-2xl lg:text-3xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
             Option A: Landing Page
           </h3>
