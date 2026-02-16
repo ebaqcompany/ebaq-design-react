@@ -15,7 +15,7 @@ const PricingSection = () => (
       <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Investment</p>
         <h2 className="mb-5 md:mb-6">Two options.</h2>
-        <p className="md:text-md text-black/50">Both include Framer-ready deliverables with Auto-Layout, component logic, and optimized assets.</p>
+        <p className="md:text-md text-black/50">Both include a Figma file with Auto-Layout, component logic, and optimized assets — ready for your Framer dev to build.</p>
       </div>
 
       <div className="space-y-6 max-w-md mx-auto">
@@ -24,7 +24,7 @@ const PricingSection = () => (
           <h3 className="mb-1 text-md leading-[1.4] md:text-xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
             Option A: Landing Page + Component System
           </h3>
-          <p className="text-black/50">Homepage redesign with a complete design system your dev can scale.</p>
+          <p className="text-black/50">Homepage design + a complete design system your Framer dev can scale independently.</p>
           <div className="my-8 h-px w-full bg-black/10" />
           <div className="my-2 text-6xl md:text-9xl lg:text-10xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
             $9,000
@@ -33,14 +33,14 @@ const PricingSection = () => (
           <div className="my-8 h-px w-full bg-black/10" />
           <div className="grid grid-cols-1 gap-y-4 py-2">
             {[
-              "Homepage redesign — Desktop, Tablet, Mobile",
-              "2–3 visual direction concepts",
-              "Framer UI Kit with reusable components",
+              "Homepage design — Desktop, Tablet, Mobile",
+              "2–3 visual direction concepts (style tiles)",
+              "Reusable component library (Nav, Footer, Buttons, Cards)",
               "5–7 content section templates",
-              "AI-generated hero visuals & product snippets",
+              "AI-generated hero visuals & product UI snippets",
               "Typography, color & component style guide",
               "CMS card + detail page template",
-              "Figma file with Auto-Layout (Framer-ready)",
+              "Figma file with Auto-Layout — handoff-ready",
             ].map((f, i) => (
               <div key={i} className="flex self-start">
                 <div className="mr-4 flex-none self-start"><BiCheck className="size-6" /></div>
@@ -55,7 +55,7 @@ const PricingSection = () => (
           <h3 className="mb-1 text-md leading-[1.4] md:text-xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
             Option B: Full Website Redesign
           </h3>
-          <p className="text-white/50">End-to-end design for every page. Complete blueprint for the entire site.</p>
+          <p className="text-white/50">End-to-end design for every page. A complete blueprint your dev builds from.</p>
           <div className="my-8 h-px w-full bg-white/20" />
           <div className="my-2 text-6xl md:text-9xl lg:text-10xl">
             $21,000
@@ -69,8 +69,8 @@ const PricingSection = () => (
               "7 CMS master templates (Blog, Events, Jobs…)",
               "Full UX flow & navigation strategy",
               "Dedicated Taskmapper & Therm pages",
-              "Advanced motion & interaction specs",
-              "Content migration field mapping",
+              "Motion & interaction specs for your dev",
+              "CMS field mapping & content migration logic",
               "30-day post-handoff design support",
             ].map((f, i) => (
               <div key={i} className="flex self-start">
@@ -100,8 +100,8 @@ const ApproachSection = () => (
         {[
           { num: "01", title: "Moodboard & Concept", duration: "3–4 days", items: "2–3 visual directions · Hero section concepts · Competitive analysis · AI-generated visuals" },
           { num: "02", title: "Full Homepage Design", duration: "5–7 days", items: "Desktop wireframe & high-fidelity design · Taskmapper & Therm storytelling · Motion specs · Product UI snippets" },
-          { num: "03", title: "The Toolkit & Responsive", duration: "5–7 days", items: "Mobile + tablet responsive · Framer UI Kit · 5–7 content sections · Typography & color library · CMS templates" },
-          { num: "04", title: "Handover & Assets", duration: "2–3 days", items: "Figma file with Auto-Layout · Optimized assets (H.264/WebP/SVG) · Style guide · Developer documentation" },
+          { num: "03", title: "The Toolkit & Responsive", duration: "5–7 days", items: "Mobile + tablet responsive · Component library · 5–7 content sections · Typography & color library · CMS templates" },
+          { num: "04", title: "Handover & Assets", duration: "2–3 days", items: "Figma file with Auto-Layout · Optimized assets (H.264/WebP/SVG) · Style guide · Dev handoff documentation" },
         ].map((phase) => (
           <div key={phase.num} className="border-b border-black/20 py-5 md:py-6">
             <div className="flex items-baseline gap-6">
@@ -172,8 +172,8 @@ export const SenseHawkProposal = () => {
           leftTitle="Ebaq Design"
           rightTitle="Other Designers"
           rows={[
-            { left: "Framer-native deliverables", right: "Pretty mockups to rebuild" },
-            { left: "Auto-Layout & component logic", right: "Flat designs, no structure" },
+            { left: "Figma files your dev ships same-day", right: "Pretty mockups to rebuild" },
+            { left: "Auto-Layout & real component logic", right: "Flat designs, no structure" },
             { left: "AI-generated hero visuals", right: "Stock photos or placeholders" },
             { left: "Senior designer, 1:1", right: "Junior designer, 5 projects" },
             { left: "$3k/week, clear timeline", right: "Vague scope, hidden costs" },
