@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { BiCheck } from "react-icons/bi";
 import { Navbar16 } from "../Navbar16";
 import { Header78 } from "../Header78";
@@ -127,6 +128,12 @@ const ApproachSection = () => (
 
 /* ============ MAIN PROPOSAL — same structure as App.tsx ============ */
 export const SenseHawkProposal = () => {
+  useEffect(() => {
+    // Track proposal view
+    const img = new Image();
+    img.src = `/api/track?page=sensehawk&t=${Date.now()}`;
+  }, []);
+
   return (
     <div className="relative">
       {/* Main content - scrolls over footer */}
