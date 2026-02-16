@@ -15,7 +15,7 @@ const PricingSection = () => (
     <div className="container max-w-lg">
       <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Investment</p>
-        <h2 className="mb-5 md:mb-6">Two scopes. One rate: $3k/week.</h2>
+        <h2 className="mb-5 md:mb-6">Two options.</h2>
         <p className="md:text-md text-black/50">Both include Framer-ready deliverables with Auto-Layout, component logic, and optimized assets.</p>
       </div>
 
@@ -93,7 +93,7 @@ const ApproachSection = () => (
       <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Process</p>
         <h2 className="mb-5 md:mb-6 whitespace-pre-line" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>
-          Four phases. Clear deliverables.
+          How it works.
         </h2>
       </div>
 
@@ -145,13 +145,13 @@ export const SenseHawkProposal = () => {
         {/* Layout484 — scroll-reveal text, proposal version */}
         <Layout484
           tagline="The Opportunity"
-          heading="Your current site doesn't do justice to a platform backed by Elevation Capital and Alpha Wave Global. We'll make Taskmapper and Therm look intuitive, premium, and unforgettable."
+          heading="Your site doesn't match the product. We'll fix that."
           buttons={[{ title: "View Our Work", variant: "secondary" as const }]}
         />
 
         {/* Comparison — Ebaq vs Other Designers */}
         <Comparison
-          heading={"Why this is different\nfrom every other bid."}
+          heading={"Why Ebaq."}
           leftTitle="Ebaq Design"
           rightTitle="Other Designers"
           rows={[
