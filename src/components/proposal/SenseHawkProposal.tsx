@@ -15,7 +15,7 @@ const PricingSection = () => (
       <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Investment</p>
         <h2 className="mb-5 md:mb-6">Two options.</h2>
-        <p className="md:text-md text-black/50">Both include a Figma file with Auto-Layout, component logic, and optimized assets — ready for your Framer dev to build.</p>
+        <p className="md:text-md text-black/50">Both include a Figma file (or Framer Remix Link) with Auto-Layout, component logic, and optimized assets — ready for your dev to build.</p>
       </div>
 
       <div className="space-y-6 max-w-md mx-auto">
@@ -34,13 +34,14 @@ const PricingSection = () => (
           <div className="grid grid-cols-1 gap-y-4 py-2">
             {[
               "Homepage design — Desktop, Tablet, Mobile",
-              "2–3 visual direction concepts (style tiles)",
+              "2–3 visual directions (style tiles) with brand vibe",
               "Reusable component library (Nav, Footer, Buttons, Cards)",
               "5–7 content section templates",
-              "AI-generated hero visuals & product UI snippets",
-              "Typography, color & component style guide",
+              "AI-generated hero visuals, product snippets & motion assets",
+              "Typography, color palette & component style guide",
               "CMS card + detail page template",
-              "Figma file with Auto-Layout — handoff-ready",
+              "Figma file with Auto-Layout (or Framer Remix Link)",
+              "Raw asset folder (videos, icons, images, SVGs)",
             ].map((f, i) => (
               <div key={i} className="flex self-start">
                 <div className="mr-4 flex-none self-start"><BiCheck className="size-6" /></div>
@@ -65,11 +66,11 @@ const PricingSection = () => (
           <div className="grid grid-cols-1 gap-y-4 py-2">
             {[
               "Everything in Option A",
-              "15+ unique page designs",
-              "7 CMS master templates (Blog, Events, Jobs…)",
-              "Full UX flow & navigation strategy",
-              "Dedicated Taskmapper & Therm pages",
-              "Motion & interaction specs for your dev",
+              "15+ unique page designs (Products, Lifecycle, Careers, About…)",
+              "7 CMS master templates (Blog, Events, Jobs, News…)",
+              "Full UX flow & site-wide navigation strategy",
+              "Dedicated Taskmapper & Therm product pages",
+              "Scroll transforms, parallax & transition specs",
               "CMS field mapping & content migration logic",
               "30-day post-handoff design support",
             ].map((f, i) => (
@@ -98,10 +99,10 @@ const ApproachSection = () => (
 
       <div className="mx-auto max-w-xl">
         {[
-          { num: "01", title: "Moodboard & Concept", duration: "3–4 days", items: "2–3 visual directions · Hero section concepts · Competitive analysis · AI-generated visuals" },
-          { num: "02", title: "Full Homepage Design", duration: "5–7 days", items: "Desktop wireframe & high-fidelity design · Taskmapper & Therm storytelling · Motion specs · Product UI snippets" },
-          { num: "03", title: "The Toolkit & Responsive", duration: "5–7 days", items: "Mobile + tablet responsive · Component library · 5–7 content sections · Typography & color library · CMS templates" },
-          { num: "04", title: "Handover & Assets", duration: "2–3 days", items: "Figma file with Auto-Layout · Optimized assets (H.264/WebP/SVG) · Style guide · Dev handoff documentation" },
+          { num: "01", title: "Moodboard & Concept", duration: "3–4 days", items: "2–3 visual directions (style tiles) · Color, type & brand vibe · Hero section concepts · AI-generated visuals · Competitive analysis" },
+          { num: "02", title: "Full Homepage Design", duration: "5–7 days", items: "Desktop wireframe → high-fidelity design · Taskmapper & Therm visual storytelling · Scroll transforms & parallax specs · Stylized product UI snippets · Background video concepts" },
+          { num: "03", title: "The Toolkit & Responsive", duration: "5–7 days", items: "Tablet + mobile responsive · Component sticker sheet (Nav, Footer, Buttons, Cards) · 5–7 reusable content sections · Typography & color library · CMS card + detail templates" },
+          { num: "04", title: "Handover & Assets", duration: "2–3 days", items: "Figma file with Auto-Layout (or Framer Remix Link) · Raw asset folder (H.264/WebM video, WebP/SVG images) · Style guide with component states · Developer handoff docs" },
         ].map((phase) => (
           <div key={phase.num} className="border-b border-black/20 py-5 md:py-6">
             <div className="flex items-baseline gap-6">
@@ -159,7 +160,7 @@ export const SenseHawkProposal = () => {
                   Your current site doesn't do justice.
                 </h2>
                 <p className="text-md md:text-lg text-black/50">
-                  Backed by Elevation Capital and Alpha Wave Global, SenseHawk deserves a web presence that matches. We'll make Taskmapper and Therm look intuitive, premium, and unforgettable.
+                  Backed by Elevation Capital and Alpha Wave Global, SenseHawk deserves a world-class digital presence — clean, high-tech, Apple-standard design. We'll make Taskmapper and Therm look intuitive, premium, and unforgettable.
                 </p>
               </div>
             </div>
@@ -172,11 +173,11 @@ export const SenseHawkProposal = () => {
           leftTitle="Ebaq Design"
           rightTitle="Other Designers"
           rows={[
-            { left: "Figma files your dev ships same-day", right: "Pretty mockups to rebuild" },
-            { left: "Auto-Layout & real component logic", right: "Flat designs, no structure" },
-            { left: "AI-generated hero visuals", right: "Stock photos or placeholders" },
-            { left: "Senior designer, 1:1", right: "Junior designer, 5 projects" },
-            { left: "$3k/week, clear timeline", right: "Vague scope, hidden costs" },
+            { left: "Figma + Framer Remix — your dev ships same-day", right: "Pretty mockups to rebuild from scratch" },
+            { left: "Auto-Layout & true component logic", right: "Flat designs, no structure" },
+            { left: "AI-generated hero visuals & motion assets", right: "Stock photos or placeholders" },
+            { left: "Senior designer, 1:1, Apple-standard quality", right: "Junior designer juggling 5 projects" },
+            { left: "$3k/week, clear phases & timeline", right: "Vague scope, hidden costs" },
           ]}
         />
 
@@ -185,6 +186,30 @@ export const SenseHawkProposal = () => {
 
         {/* Pricing */}
         <PricingSection />
+
+        {/* Scope notes */}
+        <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+          <div className="container max-w-lg">
+            <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
+              <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Good to know</p>
+              <h2 className="mb-5 md:mb-6" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>What's included & what's not.</h2>
+            </div>
+            <div className="mx-auto max-w-md space-y-4">
+              {[
+                { label: "Delivery format", value: "Figma file with Auto-Layout or Framer Remix Link — your choice" },
+                { label: "Component logic", value: "Every element built as a true component — change a button color once, it updates site-wide" },
+                { label: "Asset optimization", value: "All videos H.264/WebM, all images WebP/SVG — web-ready out of the box" },
+                { label: "Motion specs", value: "Scroll transforms, parallax, smooth transitions — documented for your Framer dev" },
+                { label: "Copywriting", value: "Not included — all text provided by SenseHawk, as outlined in your brief" },
+              ].map((item, i) => (
+                <div key={i} className="border-b border-black/10 pb-4">
+                  <p className="font-semibold mb-1" style={{ fontFamily: "'Open Sans', sans-serif" }}>{item.label}</p>
+                  <p className="text-black/50">{item.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Testimonials — exact same component */}
         <Testimonial32 />
