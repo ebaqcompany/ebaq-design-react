@@ -192,7 +192,7 @@ export const SenseHawkProposal = () => {
                 { heading: "Motion & interaction", description: "Scroll transforms, parallax, smooth transitions — leveraging Framer's full animation capabilities." },
               ].map((section, i) => (
                 <div key={i}>
-                  <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>{section.heading}</h3>
+                  <h3 className="mb-3 text-xl md:mb-4 md:text-2xl" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>{section.heading}</h3>
                   <p className="text-black/50">{section.description}</p>
                 </div>
               ))}
