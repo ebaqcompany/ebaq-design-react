@@ -9,6 +9,7 @@ import type { MotionStyle } from "framer-motion";
 type Props = {
   tagline: string;
   heading: string;
+  description?: string;
   buttons: ButtonProps[];
 };
 
@@ -22,7 +23,7 @@ const scrollToBook = () => {
 };
 
 export const Layout484 = (props: Layout484Props) => {
-  const { tagline, heading, buttons } = {
+  const { tagline, heading, description, buttons } = {
     ...Layout484Defaults,
     ...props,
   };
@@ -55,6 +56,9 @@ export const Layout484 = (props: Layout484Props) => {
             );
           })}
         </h2>
+        {description && (
+          <p className="mt-5 text-md md:text-lg text-black/50 md:mt-6">{description}</p>
+        )}
         <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
           {buttons.map((button, index) => (
             <Button key={index} {...button} onClick={scrollToBook}>

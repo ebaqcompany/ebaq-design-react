@@ -146,7 +146,8 @@ export const SenseHawkProposal = () => {
         {/* Layout484 — scroll-reveal text, proposal version */}
         <Layout484
           tagline="The Opportunity"
-          heading="Your site doesn't match the product. We'll fix that."
+          heading="Your current site doesn't do justice."
+          description="Backed by Elevation Capital and Alpha Wave Global, SenseHawk deserves a web presence that matches. We'll make Taskmapper and Therm look intuitive, premium, and unforgettable."
           buttons={[{ title: "View Our Work", variant: "secondary" as const }]}
         />
 
