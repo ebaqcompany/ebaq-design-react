@@ -5,7 +5,6 @@ import { Navbar16 } from "../Navbar16";
 import { Header78 } from "../Header78";
 import { Comparison } from "../Comparison";
 import { Testimonial32 } from "../Testimonial32";
-import { AboutSection } from "../AboutSection";
 import { BookerSection } from "../BookerSection";
 
 /* ---- Pricing section (reuses Pricing8 visual pattern) ---- */
@@ -219,10 +218,7 @@ export const SenseHawkProposal = () => {
         <Testimonial32 />
         </div>
 
-        {/* About — exact same component */}
-        <div className="[&>section]:bg-[#f5f5f5]">
-        <AboutSection />
-        </div>
+        {/* About section removed */}
       </div>
 
       {/* Booker Section — exact same, reveals from behind */}
