@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { BiCheck } from "react-icons/bi";
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 
 /* ---- Animations ---- */
 const fadeUp: Variants = {
@@ -45,6 +45,91 @@ const RevealWord = ({ word, scrollYProgress, start, end }: { word: string; scrol
   const opacity = useTransform(scrollYProgress, [start, end], [0.15, 1]);
   return (
     <motion.span className="inline-block" style={{ opacity }}>{word}</motion.span>
+  );
+};
+
+/* ---- Draggable ticker row (copied from Header78) ---- */
+type TickerItem = { src: string; alt: string };
+
+const DraggableRow = ({ items, baseSpeed = 1, direction = "left" as "left" | "right", showBorder = false }: {
+  items: TickerItem[]; baseSpeed?: number; direction?: "left" | "right"; showBorder?: boolean;
+}) => {
+  const directionMultiplier = direction === "left" ? 1 : -1;
+  const rowRef = useRef<HTMLDivElement>(null);
+  const positionRef = useRef(0);
+  const velocityRef = useRef(baseSpeed);
+  const isDraggingRef = useRef(false);
+  const lastXRef = useRef(0);
+  const lastTimeRef = useRef(0);
+  const dragVelocityRef = useRef(0);
+  const animationRef = useRef<number | undefined>(undefined);
+
+  const duplicatedItems = [...items, ...items, ...items];
+
+  const animate = useCallback(() => {
+    const row = rowRef.current;
+    if (!row) return;
+    const totalWidth = row.scrollWidth / 3;
+
+    if (!isDraggingRef.current) {
+      positionRef.current -= velocityRef.current * directionMultiplier;
+      if (velocityRef.current > baseSpeed) {
+        velocityRef.current *= 0.98;
+        if (velocityRef.current < baseSpeed + 0.1) velocityRef.current = baseSpeed;
+      } else if (velocityRef.current < baseSpeed) {
+        velocityRef.current *= 0.98;
+        if (velocityRef.current > -baseSpeed - 0.1 && velocityRef.current < baseSpeed) velocityRef.current = baseSpeed;
+      }
+    }
+    if (positionRef.current <= -totalWidth) positionRef.current += totalWidth;
+    else if (positionRef.current > 0) positionRef.current -= totalWidth;
+    row.style.transform = `translateX(${positionRef.current}px)`;
+    animationRef.current = requestAnimationFrame(animate);
+  }, [baseSpeed, directionMultiplier]);
+
+  useEffect(() => {
+    animationRef.current = requestAnimationFrame(animate);
+    return () => { if (animationRef.current) cancelAnimationFrame(animationRef.current); };
+  }, [animate]);
+
+  const handleMouseDown = (e: React.MouseEvent) => { isDraggingRef.current = true; lastXRef.current = e.clientX; lastTimeRef.current = Date.now(); dragVelocityRef.current = 0; };
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDraggingRef.current) return; e.preventDefault();
+    const dx = e.clientX - lastXRef.current; const dt = Date.now() - lastTimeRef.current;
+    if (dt > 0) dragVelocityRef.current = dx / dt * 16;
+    positionRef.current += dx; lastXRef.current = e.clientX; lastTimeRef.current = Date.now();
+  };
+  const handleMouseUp = () => {
+    if (!isDraggingRef.current) return; isDraggingRef.current = false;
+    const m = Math.abs(dragVelocityRef.current);
+    if (m > 1) velocityRef.current = dragVelocityRef.current > 0 ? -m * 2 : m * 2;
+  };
+  const handleTouchStart = (e: React.TouchEvent) => { isDraggingRef.current = true; lastXRef.current = e.touches[0].clientX; lastTimeRef.current = Date.now(); };
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDraggingRef.current) return;
+    const dx = e.touches[0].clientX - lastXRef.current; const dt = Date.now() - lastTimeRef.current;
+    if (dt > 0) dragVelocityRef.current = dx / dt * 16;
+    positionRef.current += dx; lastXRef.current = e.touches[0].clientX; lastTimeRef.current = Date.now();
+  };
+  const handleTouchEnd = () => {
+    if (!isDraggingRef.current) return; isDraggingRef.current = false;
+    const m = Math.abs(dragVelocityRef.current);
+    if (m > 1) velocityRef.current = dragVelocityRef.current > 0 ? -m * 2 : m * 2;
+  };
+
+  return (
+    <div className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+      onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}
+      onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}
+    >
+      <div ref={rowRef} className="flex gap-4 will-change-transform" style={{ width: "fit-content" }}>
+        {duplicatedItems.map((item, index) => (
+          <div key={index} className={`relative flex-shrink-0 w-[60vw] sm:w-[18rem] md:w-[26rem] aspect-[4/3] rounded-lg overflow-hidden ${showBorder ? "border border-gray-200" : ""}`}>
+            <img src={item.src} alt={item.alt} className="absolute inset-0 size-full object-cover" draggable={false} />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
@@ -145,18 +230,9 @@ export const SenseHawkProposal = () => {
           </motion.h1>
         </div>
 
-        {/* Horizontally scrollable portfolio */}
-        <motion.div variants={fadeUp} className="flex gap-3 lg:gap-4 pl-[5%] lg:pl-20 overflow-x-auto pb-4 scrollbar-hide">
-          {websites.map((img, i) => (
-            <motion.div
-              key={i}
-              className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[360px] lg:w-[440px] aspect-[16/10] rounded-lg overflow-hidden border border-gray-200"
-              whileHover={{ scale: 1.03, y: -4 }}
-              transition={{ duration: 0.25 }}
-            >
-              <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
-            </motion.div>
-          ))}
+        {/* Moving ticker — same as homepage */}
+        <motion.div variants={fadeUp} className="flex flex-col gap-4">
+          <DraggableRow items={websites} baseSpeed={1} direction="left" showBorder />
         </motion.div>
       </motion.section>
 
