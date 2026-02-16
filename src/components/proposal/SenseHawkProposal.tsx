@@ -9,7 +9,7 @@ import { BookerSection } from "../BookerSection";
 
 /* ---- Pricing section (reuses Pricing8 visual pattern) ---- */
 const PricingSection = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
+  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
     <div className="container max-w-xl">
       <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Investment</p>
@@ -167,12 +167,40 @@ export const SenseHawkProposal = () => {
           </div>
         </section>
 
+        {/* About SenseHawk */}
+        <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
+          <div className="container max-w-lg">
+            <div className="mx-auto mb-8 text-center md:mb-10 lg:mb-12">
+              <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>What we understand</p>
+              <h2 className="mb-5 md:mb-6" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>
+                SenseHawk at a glance.
+              </h2>
+            </div>
+            <div className="mx-auto max-w-md space-y-4">
+              {[
+                { label: "The company", value: "Leader in solar lifecycle management — cloud and mobile-first OS for the entire solar value chain." },
+                { label: "The products", value: "Taskmapper (construction & project management) and Therm (aerial thermography & asset inspection)." },
+                { label: "The backing", value: "$7.1M Series A from Elevation Capital and Alpha Wave Global (ADQ)." },
+                { label: "The goal", value: "A world-class, Apple-standard digital presence that makes complex data products look intuitive and premium." },
+                { label: "The setup", value: "Internal Framer developer handles implementation — you need design, visual direction, and production-ready assets." },
+                { label: "Motion & interaction", value: "Scroll transforms, parallax, smooth transitions — leveraging Framer's full animation capabilities." },
+              ].map((item, i) => (
+                <div key={i} className="border-b border-black/10 pb-4">
+                  <p className="font-semibold mb-1" style={{ fontFamily: "'Open Sans', sans-serif" }}>{item.label}</p>
+                  <p className="text-black/50">{item.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Approach — phases */}
-        <div className="[&>section]:bg-white">
+        <div className="[&>section]:bg-[#f5f5f5]">
         <ApproachSection />
         </div>
 
         {/* Comparison — Ebaq vs Other Designers */}
+        <div className="[&>section]:bg-white">
         <Comparison
           heading={"Why Ebaq."}
           leftTitle="Ebaq Design"
@@ -185,12 +213,13 @@ export const SenseHawkProposal = () => {
             { left: "$3k/week, clear phases & timeline", right: "Vague scope, hidden costs" },
           ]}
         />
+        </div>
 
         {/* Pricing */}
         <PricingSection />
 
         {/* Scope notes */}
-        <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+        <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
           <div className="container max-w-lg">
             <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
               <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Good to know</p>
@@ -214,7 +243,7 @@ export const SenseHawkProposal = () => {
         </section>
 
         {/* Testimonials — exact same component */}
-        <div className="[&>section]:bg-white">
+        <div className="[&>section]:bg-[#f5f5f5]">
         <Testimonial32 />
         </div>
 
