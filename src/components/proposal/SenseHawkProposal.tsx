@@ -105,8 +105,8 @@ const ApproachSection = () => (
           { num: "04", title: "Handover & Assets", duration: "2–3 days", items: "Figma file with Auto-Layout (or Framer Remix Link) · Raw asset folder (H.264/WebM video, WebP/SVG images) · Style guide with component states · Developer handoff docs" },
         ].map((phase) => (
           <div key={phase.num} className="border-b border-black/20 py-5 md:py-6">
-            <div className="flex items-baseline gap-6">
-              <span className="text-5xl md:text-6xl lg:text-7xl text-black/[0.08] leading-none" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 100 }}>
+            <div className="flex items-start gap-6">
+              <span className="text-5xl md:text-6xl lg:text-7xl text-black/[0.08] leading-[1]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 100, marginTop: '0.05em' }}>
                 {phase.num}
               </span>
               <div className="flex-1">
