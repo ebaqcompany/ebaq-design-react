@@ -12,12 +12,17 @@ const Slide = ({ children, bg = "bg-white", className = "" }: { children: React.
   </section>
 );
 
-/* ---- Portfolio: website shots only (static images for PDF) ---- */
+/* ---- Portfolio: ALL 9 website projects (videos → static thumbs for PDF) ---- */
 const websiteRow1 = [
   { src: "/portfolio/websites/aero-web.jpg", alt: "Aero" },
+  { src: "/portfolio/websites/airport-executive-web-thumb.jpg", alt: "Airport Executive" },
+  { src: "/portfolio/websites/brevidee-web-thumb.jpg", alt: "Brevidee" },
+  { src: "/portfolio/websites/fox-berman-web-thumb.jpg", alt: "FoxBerman" },
   { src: "/portfolio/websites/laura-ceara-web.jpg", alt: "Laura Ceara" },
+  { src: "/portfolio/websites/periti-web-thumb.jpg", alt: "Periti" },
   { src: "/portfolio/websites/sweetgras-web.jpg", alt: "Sweetgrass" },
   { src: "/portfolio/websites/ventur-web.jpg", alt: "Ventur" },
+  { src: "/portfolio/websites/wingnut-web-thumb.jpg", alt: "Wingnut" },
 ];
 
 const phases = [
