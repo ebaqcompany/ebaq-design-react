@@ -106,7 +106,7 @@ const ApproachSection = () => (
         ].map((phase) => (
           <div key={phase.num} className="border-b border-black/20 py-5 md:py-6">
             <div className="flex items-start gap-6">
-              <span className="text-5xl md:text-6xl lg:text-7xl text-black/[0.08] leading-[1]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 100, marginTop: '0.05em' }}>
+              <span className="text-7xl md:text-8xl lg:text-9xl text-black/[0.08] leading-[1]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 100, marginTop: '0.05em' }}>
                 {phase.num}
               </span>
               <div className="flex-1">
