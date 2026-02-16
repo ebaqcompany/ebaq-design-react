@@ -18,6 +18,7 @@ type Props = {
   row1: MediaProps[];
   row2: MediaProps[];
   row3: MediaProps[];
+  showRows?: (1 | 2 | 3)[];
 };
 
 export type Header78Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
@@ -256,10 +257,12 @@ const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset 
 };
 
 export const Header78 = (props: Header78Props) => {
-  const { heading, description: _description, buttons: _buttons, row1, row2, row3 } = {
+  const { heading, description: _description, buttons: _buttons, row1, row2, row3, showRows } = {
     ...Header78Defaults,
     ...props,
   };
+
+  const visibleRows = showRows || [1, 2, 3];
 
   return (
     <section id="relume" className="py-16 md:py-24 lg:py-28 bg-white">
@@ -268,9 +271,9 @@ export const Header78 = (props: Header78Props) => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <DraggableRow items={row1} baseSpeed={1} direction="left" />
-        <DraggableRow items={row2} baseSpeed={1} direction="right" showBorder />
-        <DraggableRow items={row3} baseSpeed={1.5} direction="left" initialOffset={208} />
+        {visibleRows.includes(1) && <DraggableRow items={row1} baseSpeed={1} direction="left" />}
+        {visibleRows.includes(2) && <DraggableRow items={row2} baseSpeed={1} direction="right" showBorder />}
+        {visibleRows.includes(3) && <DraggableRow items={row3} baseSpeed={1.5} direction="left" initialOffset={208} />}
       </div>
     </section>
   );

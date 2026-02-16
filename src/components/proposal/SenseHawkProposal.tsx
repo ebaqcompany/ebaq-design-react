@@ -140,6 +140,7 @@ export const SenseHawkProposal = () => {
           heading={"Website redesign\nfor SenseHawk."}
           description=""
           buttons={[]}
+          showRows={[3]}
         />
 
         {/* Layout484 — scroll-reveal text, proposal version */}
