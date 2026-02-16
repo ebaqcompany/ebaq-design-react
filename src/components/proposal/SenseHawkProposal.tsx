@@ -16,15 +16,15 @@ const stagger: Variants = {
 const portfolio = [
   {
     name: "Aero",
-    desc: "AI-powered drone logistics — brand identity & web design",
-    tags: ["SaaS", "Tech", "Identity"],
+    desc: "AI-powered drone logistics — brand identity, design system & web",
+    tags: ["SaaS", "Design System", "Framer"],
     image: "/case-study/aero-web.webp",
     url: "https://www.ebaq.design/work/aero",
   },
   {
     name: "FoxBerman",
-    desc: "Corporate consulting firm — complete rebrand",
-    tags: ["Enterprise", "Corporate", "Rebrand"],
+    desc: "Corporate consulting firm — full rebrand & component library",
+    tags: ["Enterprise", "Components", "Rebrand"],
     image: "/case-study/aero-stationery.webp",
     url: "https://www.ebaq.design/work/foxberman",
   },
@@ -33,79 +33,90 @@ const portfolio = [
 const phases = [
   {
     num: "01",
-    title: "Discovery & Site Audit",
-    duration: "3 days",
+    title: "Moodboard & Concept",
+    duration: "3–4 days",
     items: [
-      "Full audit of current sensehawk.com",
-      "Competitive analysis (Raptor Maps, Zeitview, Aurora Solar)",
-      "Stakeholder alignment call — goals, audience, messaging",
-      "Information architecture & sitemap proposal",
+      "2–3 visual directions (style tiles) — color, typography, brand vibe",
+      "One \"Hero\" section concept per direction",
+      "Competitive analysis: Raptor Maps, Zeitview, Aurora Solar",
+      "AI-generated hero visual concepts for SenseHawk",
+      "Stakeholder review & direction selection",
     ],
   },
   {
     num: "02",
-    title: "Design Direction",
-    duration: "5 days",
+    title: "Full Homepage Design",
+    duration: "5–7 days",
     items: [
-      "2–3 homepage concepts in Figma",
-      "Design system foundations — type, color, spacing, components",
-      "Mobile-first responsive approach",
-      "Interactive Figma prototype for stakeholder review",
+      "Complete desktop wireframe & high-fidelity homepage design",
+      "Visual storytelling for Taskmapper & Therm products",
+      "Scroll-triggered animations & motion design specs",
+      "Stylized product UI snippets — making your software look premium",
+      "Hero imagery: flagship AI-generated or 3D-rendered visual",
     ],
   },
   {
     num: "03",
-    title: "Full Page Design",
-    duration: "7 days",
+    title: "The Toolkit & Responsive",
+    duration: "5–7 days",
     items: [
-      "All pages designed — desktop + tablet + mobile",
-      "Component library for your internal Framer dev",
-      "Interaction & micro-animation specs",
-      "Asset library (icons, illustrations, imagery direction)",
+      "Mobile + tablet responsive homepage",
+      "Framer UI Kit: Nav, Footer, Buttons, Cards, Input fields, Tooltips",
+      "5–7 reusable content sections (feature grids, side-by-side blocks, solution cards)",
+      "Typography & color library (H1–H6, Body, Accents)",
+      "CMS card component + detail page layout (Blog/News/Events)",
     ],
   },
   {
     num: "04",
-    title: "Refinement & Handoff",
-    duration: "3 days",
+    title: "Handover & Assets",
+    duration: "2–3 days",
     items: [
-      "2 rounds of stakeholder feedback",
-      "Pixel-perfect polish across all breakpoints",
-      "Developer-ready Figma handoff with specs",
-      "Style guide documentation",
+      "Final Figma file with Auto-Layout & component logic",
+      "Raw asset folder: optimized videos (H.264/WebM), images (WebP/SVG)",
+      "Style guide: text styles, color variables, component states",
+      "Documentation for your Framer developer to build consistently",
     ],
   },
 ];
 
 const optionA = {
-  name: "Design Only",
+  name: "Option A",
+  subtitle: "Landing Page + Component System",
   price: "$8,000",
-  timeline: "3 weeks",
-  desc: "Complete website design with Figma handoff for your internal Framer developer.",
+  timeline: "2–3 weeks",
+  desc: "Flagship homepage redesign with a complete design system your Framer dev can scale across the entire site.",
   features: [
-    "Homepage + all key pages",
-    "Mobile-first responsive design",
-    "Design system & component library",
-    "Figma developer handoff",
+    "Homepage redesign — Desktop, Tablet, Mobile",
+    "2–3 visual direction concepts",
+    "Framer UI Kit with reusable components",
+    "5–7 content section templates",
+    "AI-generated hero visuals & product snippets",
+    "Typography, color & component style guide",
+    "CMS card + detail page template",
+    "Figma file with Auto-Layout (Framer-ready)",
+    "Raw asset folder (video, icons, images)",
     "2 rounds of revisions",
-    "Style guide documentation",
   ],
 };
 
 const optionB = {
-  name: "Design + Build",
+  name: "Option B",
+  subtitle: "Full Website Redesign",
   price: "$20,000",
-  timeline: "8 weeks",
-  desc: "End-to-end: brand refinement, website design, Framer build, launch video, and support.",
+  timeline: "6–8 weeks",
+  desc: "End-to-end design for every page. Your developer gets a complete, pixel-perfect blueprint for the entire site.",
   featured: true,
   features: [
-    "Everything in Design Only",
-    "Brand identity refinement",
-    "Framer development & deployment",
-    "2D/3D product launch video",
-    "CMS setup & content migration",
-    "SEO optimization & analytics",
-    "30-day post-launch support",
+    "Everything in Option A",
+    "15+ unique page designs (Products, Lifecycle, Careers, About…)",
+    "7 CMS master templates (Blog, Events, Jobs, News…)",
+    "Full UX flow & site-wide navigation strategy",
+    "Dedicated product pages for Taskmapper & Therm",
+    "Advanced motion & interaction design specs",
+    "Content migration field mapping",
+    "Extended revision rounds",
+    "30-day post-handoff design support",
   ],
 };
 
@@ -128,7 +139,7 @@ export const SenseHawkProposal = () => {
         variants={stagger}
       >
         <div className="container max-w-5xl">
-          <motion.p variants={fadeUp} className="text-sm tracking-[0.3em] uppercase text-black/30 mb-6" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+          <motion.p variants={fadeUp} className="text-sm tracking-[0.3em] uppercase text-black/30 mb-6">
             Prepared for SenseHawk · February 2026
           </motion.p>
           <motion.h1
@@ -146,24 +157,29 @@ export const SenseHawkProposal = () => {
         </div>
       </motion.section>
 
-      {/* THE OPPORTUNITY */}
-      <Section label="The Opportunity">
+      {/* UNDERSTANDING */}
+      <Section label="Understanding">
         <h2 className="text-3xl md:text-5xl leading-[1.15] tracking-[-0.04em] mb-8" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}>
-          Your current site doesn't do justice to a platform backed by Elevation Capital and Alpha Wave Global.
+          SenseHawk deserves a digital presence as sophisticated as its platform.
         </h2>
-        <p className="text-base md:text-lg text-black/50 leading-relaxed max-w-2xl" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-          SenseHawk is the operating system for solar — trusted by the world's largest energy companies. Your website should build instant credibility with enterprise buyers and reflect the sophistication your team has earned. We'll make that happen.
+        <p className="text-base md:text-lg text-black/50 leading-relaxed max-w-2xl">
+          You're the operating system for solar — trusted by the world's largest energy companies, backed by Elevation Capital and Alpha Wave Global. But your current site doesn't reflect that. We'll create a world-class design that makes complex products like Taskmapper and Therm look intuitive, premium, and unforgettable. Apple-standard aesthetics, Framer-native execution.
         </p>
       </Section>
 
-      {/* ABOUT */}
-      <Section label="About Ebaq">
+      {/* WHY EBAQ */}
+      <Section label="Why Ebaq">
         <h2 className="text-3xl md:text-5xl leading-[1.15] tracking-[-0.04em] mb-8" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}>
-          Branding agency based in New York City. Clean, strategic, built to scale.
+          We design systems that scale — not just pages that look good.
         </h2>
-        <p className="text-base md:text-lg text-black/50 leading-relaxed max-w-2xl" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-          Nearly 20 years across SaaS, tech, and enterprise clients. We don't just make things look good — we design systems that convert. From logo to launch video, every touchpoint tells the same story.
-        </p>
+        <div className="space-y-4 text-base md:text-lg text-black/50 leading-relaxed max-w-2xl">
+          <p>
+            NYC-based branding agency with nearly 20 years across SaaS, tech, and enterprise. We specialize in design systems and component libraries that let developers build fast without design debt.
+          </p>
+          <p>
+            We understand Framer. We build with Auto-Layout, Stacks, and component logic so your developer gets a file that translates 1:1 — not a pretty picture they have to reverse-engineer.
+          </p>
+        </div>
       </Section>
 
       {/* PORTFOLIO */}
@@ -204,8 +220,11 @@ export const SenseHawkProposal = () => {
         </a>
       </Section>
 
-      {/* APPROACH */}
+      {/* APPROACH — matches their 4 phases exactly */}
       <Section label="Approach">
+        <p className="text-base text-black/40 mb-8 max-w-2xl">
+          Our process maps directly to your RFP phases. Each milestone has clear deliverables — no ambiguity, no scope creep.
+        </p>
         <div className="space-y-0">
           {phases.map((p) => (
             <div key={p.num} className="py-8 border-b border-black/10 first:border-t first:border-black/10">
@@ -233,11 +252,35 @@ export const SenseHawkProposal = () => {
         </div>
       </Section>
 
-      {/* PRICING */}
+      {/* PRICING — matches their Option A / Option B exactly */}
       <Section label="Investment">
+        <p className="text-base text-black/40 mb-8 max-w-2xl">
+          Two scopes as requested. Both include Framer-ready deliverables with Auto-Layout, component logic, and optimized assets.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <PricingCard {...optionA} />
           <PricingCard {...optionB} />
+        </div>
+      </Section>
+
+      {/* HANDOFF */}
+      <Section label="Handoff Process">
+        <h2 className="text-3xl md:text-4xl leading-[1.15] tracking-[-0.04em] mb-8" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}>
+          Your developer gets production-ready files. Not mockups.
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <HandoffCard
+            title="Figma File"
+            desc="Auto-Layout, component variants, responsive breakpoints. Direct Framer import."
+          />
+          <HandoffCard
+            title="Asset Folder"
+            desc="Optimized videos (H.264/WebM), images (WebP/SVG), icons, and hero visuals."
+          />
+          <HandoffCard
+            title="Style Guide"
+            desc="Text styles, color variables, component states, spacing tokens. One source of truth."
+          />
         </div>
       </Section>
 
@@ -250,7 +293,7 @@ export const SenseHawkProposal = () => {
           Let's build something exceptional.
         </h2>
         <p className="text-black/40 mb-12 text-lg">
-          Reply to this email or book a 15-minute intro call.
+          Reply to this email or book a quick intro call to discuss next steps.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <a
@@ -302,13 +345,14 @@ function Section({ label, children }: { label: string; children: React.ReactNode
   );
 }
 
-function PricingCard({ name, price, timeline, desc, features, featured }: {
-  name: string; price: string; timeline: string; desc: string; features: string[]; featured?: boolean;
+function PricingCard({ name, subtitle, price, timeline, desc, features, featured }: {
+  name: string; subtitle: string; price: string; timeline: string; desc: string; features: string[]; featured?: boolean;
 }) {
   return (
     <div className={`rounded-2xl p-8 md:p-10 ${featured ? 'bg-black text-white' : 'border border-black/10 bg-[#f9f9f9]'}`}>
-      <span className={`text-[10px] tracking-[0.2em] uppercase font-semibold ${featured ? 'text-[#00afec]' : 'text-black/30'}`}>{name}</span>
-      <div className="mt-4 mb-1 text-5xl md:text-6xl tracking-[-0.04em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}>
+      <span className={`text-[10px] tracking-[0.2em] uppercase font-bold ${featured ? 'text-[#00afec]' : 'text-black/30'}`}>{name}</span>
+      <h3 className="text-lg mt-1 mb-4" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>{subtitle}</h3>
+      <div className="mb-1 text-5xl md:text-6xl tracking-[-0.04em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}>
         {price}
       </div>
       <span className={`text-sm ${featured ? 'text-white/40' : 'text-black/30'}`}>{timeline}</span>
@@ -321,6 +365,15 @@ function PricingCard({ name, price, timeline, desc, features, featured }: {
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+function HandoffCard({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="rounded-xl border border-black/10 p-6 bg-[#f9f9f9]">
+      <h4 className="text-base font-semibold mb-2" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>{title}</h4>
+      <p className="text-sm text-black/40 leading-relaxed">{desc}</p>
     </div>
   );
 }
