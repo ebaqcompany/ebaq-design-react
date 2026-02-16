@@ -11,14 +11,14 @@ import { BookerSection } from "../BookerSection";
 /* ---- Pricing section (reuses Pricing8 visual pattern) ---- */
 const PricingSection = () => (
   <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
-    <div className="container max-w-3xl">
+    <div className="container max-w-2xl">
       <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Investment</p>
         <h2 className="mb-5 md:mb-6">Two options.</h2>
         <p className="md:text-md text-black/50">Both include a Figma file (or Framer Remix Link) with Auto-Layout, component logic, and optimized assets — ready for your dev to build.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
         {/* Option A — light card */}
         <div className="bg-[#f5f5f5] rounded-3xl px-6 py-8 md:p-8">
           <h3 className="mb-1 text-md leading-[1.4] md:text-xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
