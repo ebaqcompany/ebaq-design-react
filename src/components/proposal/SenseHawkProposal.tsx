@@ -157,7 +157,7 @@ export const SenseHawkProposal = () => {
               <div>
                 <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>The Opportunity</p>
                 <h2 className="mb-5 text-5xl md:text-7xl lg:text-8xl md:mb-6" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>
-                  Your current site doesn't do justice.
+                  Your current site<br />doesn't do justice.
                 </h2>
                 <p className="text-md md:text-lg text-black/50">
                   Backed by Elevation Capital and Alpha Wave Global, SenseHawk deserves a world-class digital presence — clean, high-tech, Apple-standard design. We'll make Taskmapper and Therm look intuitive, premium, and unforgettable.
