@@ -12,18 +12,21 @@ const Slide = ({ children, bg = "bg-white", className = "" }: { children: React.
   </section>
 );
 
-/* ---- Portfolio images from your homepage ---- */
-const portfolioRow1 = [
+/* ---- Portfolio: ALL projects from website + identity folders ---- */
+const websiteRow = [
+  { src: "/portfolio/websites/aero-web.jpg", alt: "Aero Website" },
+  { src: "/portfolio/websites/laura-ceara-web.jpg", alt: "Laura Ceara Website" },
+  { src: "/portfolio/websites/sweetgras-web.jpg", alt: "Sweetgrass Website" },
+  { src: "/portfolio/websites/ventur-web.jpg", alt: "Ventur Website" },
+];
+
+const identityRow = [
   { src: "/portfolio/identities/aero-bento.webp", alt: "Aero" },
   { src: "/portfolio/identities/airport-executive-bento.jpg", alt: "Airport Executive" },
   { src: "/portfolio/identities/brevidee-bento.jpg", alt: "Brevidee" },
   { src: "/portfolio/identities/forberman-bento.jpg", alt: "Foxberman" },
   { src: "/portfolio/identities/laura-ceara-bento.jpg", alt: "Laura Ceara" },
   { src: "/portfolio/identities/lyntics-bento.jpg", alt: "Lyntics" },
-];
-
-const portfolioRow2 = [
-  { src: "/portfolio/websites/aero-web.jpg", alt: "Aero Website" },
   { src: "/portfolio/identities/medihuanna-bento.jpg", alt: "Medihuanna" },
   { src: "/portfolio/identities/periti-bento.jpg", alt: "Periti" },
   { src: "/portfolio/identities/sweetgrass-bento.jpg", alt: "Sweetgrass" },
@@ -102,18 +105,20 @@ export const SenseHawkProposal = () => {
           </h1>
         </div>
 
-        {/* Portfolio ticker — static for PDF, same layout as your homepage rows */}
+        {/* Portfolio ticker — static rows for PDF, all projects */}
         <div className="flex flex-col gap-4 overflow-hidden">
+          {/* Row 1: Website screenshots */}
           <div className="flex gap-4 pl-20">
-            {portfolioRow1.map((img, i) => (
+            {websiteRow.map((img, i) => (
               <div key={i} className="flex-shrink-0 w-[420px] aspect-[4/3] rounded-lg overflow-hidden border border-gray-200">
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
+          {/* Row 2: Identity/bento shots — all 11 projects */}
           <div className="flex gap-4 pl-8">
-            {portfolioRow2.map((img, i) => (
-              <div key={i} className="flex-shrink-0 w-[420px] aspect-[4/3] rounded-lg overflow-hidden border border-gray-200">
+            {identityRow.map((img, i) => (
+              <div key={i} className="flex-shrink-0 w-[320px] aspect-[4/3] rounded-lg overflow-hidden border border-gray-200">
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
               </div>
             ))}
