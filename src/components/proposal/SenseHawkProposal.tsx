@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BiCheck } from "react-icons/bi";
-
 import type { Variants } from "framer-motion";
+import { BiCheck } from "react-icons/bi";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -112,56 +111,57 @@ const optionB = {
 
 export const SenseHawkProposal = () => {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-white text-black min-h-screen" style={{ fontFamily: "'Open Sans', sans-serif" }}>
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-[5%] py-5 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
-        <a href="https://ebaq.design" className="text-sm tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors">
-          Ebaq
+      <nav className="fixed top-0 left-0 right-0 z-50 px-[5%] py-5 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-black/5">
+        <a href="https://ebaq.design" className="text-sm font-semibold tracking-wide" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>
+          ebaqdesign
         </a>
-        <span className="text-sm text-white/40">Proposal — SenseHawk</span>
+        <span className="text-sm text-black/40">Proposal — SenseHawk</span>
       </nav>
 
       {/* HERO */}
       <motion.section
-        className="min-h-screen flex flex-col justify-center px-[5%] pt-20"
+        className="min-h-screen flex flex-col justify-center px-[5%] pt-20 bg-white"
         initial="hidden"
         animate="visible"
         variants={stagger}
       >
         <div className="container max-w-5xl">
-          <motion.p variants={fadeUp} className="text-sm tracking-[0.3em] uppercase text-white/30 mb-6">
+          <motion.p variants={fadeUp} className="text-sm tracking-[0.3em] uppercase text-black/30 mb-6" style={{ fontFamily: "'Open Sans', sans-serif" }}>
             Prepared for SenseHawk · February 2026
           </motion.p>
           <motion.h1
             variants={fadeUp}
-            className="text-6xl md:text-8xl lg:text-[120px] leading-[0.95] tracking-[-0.04em] mb-12"
-            style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 200 }}
+            className="text-6xl md:text-8xl lg:text-[120px] leading-[0.95] tracking-[-0.05em] mb-12"
+            style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}
           >
             Website<br />Redesign
           </motion.h1>
-          <motion.div variants={fadeUp} className="flex items-center gap-4 text-white/40">
-            <img src="/ebaqdesign-logo-big.svg" alt="Ebaq" className="h-6 invert" />
-            <span className="text-sm">ebaq.design</span>
+          <motion.div variants={fadeUp} className="flex items-center gap-3 text-black/40">
+            <span className="text-sm font-semibold" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>ebaqdesign</span>
+            <span className="text-sm">·</span>
+            <span className="text-sm">New York City</span>
           </motion.div>
         </div>
       </motion.section>
 
       {/* THE OPPORTUNITY */}
       <Section label="The Opportunity">
-        <p className="text-2xl md:text-4xl leading-[1.3] tracking-[-0.02em] mb-8" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 300 }}>
+        <h2 className="text-3xl md:text-5xl leading-[1.15] tracking-[-0.04em] mb-8" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}>
           Your current site doesn't do justice to a platform backed by Elevation Capital and Alpha Wave Global.
-        </p>
-        <p className="text-base md:text-lg text-white/50 leading-relaxed max-w-2xl">
+        </h2>
+        <p className="text-base md:text-lg text-black/50 leading-relaxed max-w-2xl" style={{ fontFamily: "'Open Sans', sans-serif" }}>
           SenseHawk is the operating system for solar — trusted by the world's largest energy companies. Your website should build instant credibility with enterprise buyers and reflect the sophistication your team has earned. We'll make that happen.
         </p>
       </Section>
 
       {/* ABOUT */}
       <Section label="About Ebaq">
-        <p className="text-2xl md:text-4xl leading-[1.3] tracking-[-0.02em] mb-8" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 300 }}>
+        <h2 className="text-3xl md:text-5xl leading-[1.15] tracking-[-0.04em] mb-8" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}>
           Branding agency based in New York City. Clean, strategic, built to scale.
-        </p>
-        <p className="text-base md:text-lg text-white/50 leading-relaxed max-w-2xl">
+        </h2>
+        <p className="text-base md:text-lg text-black/50 leading-relaxed max-w-2xl" style={{ fontFamily: "'Open Sans', sans-serif" }}>
           Nearly 20 years across SaaS, tech, and enterprise clients. We don't just make things look good — we design systems that convert. From logo to launch video, every touchpoint tells the same story.
         </p>
       </Section>
@@ -175,19 +175,19 @@ export const SenseHawkProposal = () => {
               href={p.url}
               target="_blank"
               rel="noopener"
-              className="group block rounded-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-colors"
+              className="group block rounded-2xl border border-black/10 overflow-hidden hover:border-black/20 transition-colors bg-white"
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="aspect-[16/10] overflow-hidden">
+              <div className="aspect-[16/10] overflow-hidden bg-[#f5f5f5]">
                 <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl mb-2" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>{p.name}</h3>
-                <p className="text-sm text-white/40 mb-4">{p.desc}</p>
+                <p className="text-sm text-black/40 mb-4">{p.desc}</p>
                 <div className="flex gap-2 flex-wrap">
                   {p.tags.map((t) => (
-                    <span key={t} className="text-[10px] tracking-[0.1em] uppercase text-white/30 border border-white/10 rounded-full px-3 py-1">{t}</span>
+                    <span key={t} className="text-[10px] tracking-[0.1em] uppercase text-black/30 border border-black/10 rounded-full px-3 py-1">{t}</span>
                   ))}
                 </div>
               </div>
@@ -198,7 +198,7 @@ export const SenseHawkProposal = () => {
           href="https://www.ebaq.design"
           target="_blank"
           rel="noopener"
-          className="inline-block mt-8 text-sm text-[#00afec] hover:underline"
+          className="inline-block mt-8 text-sm text-[#00afec] hover:underline font-semibold"
         >
           View all work →
         </a>
@@ -208,22 +208,22 @@ export const SenseHawkProposal = () => {
       <Section label="Approach">
         <div className="space-y-0">
           {phases.map((p) => (
-            <div key={p.num} className="py-8 border-b border-white/10 first:border-t first:border-white/10">
+            <div key={p.num} className="py-8 border-b border-black/10 first:border-t first:border-black/10">
               <div className="flex items-baseline gap-6 mb-5">
                 <span
-                  className="text-5xl md:text-6xl text-white/10"
+                  className="text-5xl md:text-6xl text-black/10"
                   style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 100 }}
                 >
                   {p.num}
                 </span>
                 <div>
                   <h3 className="text-xl md:text-2xl" style={{ fontFamily: "'Roboto Flex', sans-serif" }}>{p.title}</h3>
-                  <span className="text-sm text-[#00afec]">{p.duration}</span>
+                  <span className="text-sm text-[#00afec] font-semibold">{p.duration}</span>
                 </div>
               </div>
               <ul className="pl-[72px] md:pl-[88px] space-y-2">
                 {p.items.map((item) => (
-                  <li key={item} className="text-sm text-white/40 pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-1 before:h-1 before:rounded-full before:bg-white/20">
+                  <li key={item} className="text-sm text-black/50 pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-1 before:h-1 before:rounded-full before:bg-black/20">
                     {item}
                   </li>
                 ))}
@@ -242,20 +242,20 @@ export const SenseHawkProposal = () => {
       </Section>
 
       {/* CTA */}
-      <section className="px-[5%] py-32 text-center border-t border-white/10">
+      <section className="px-[5%] py-32 text-center border-t border-black/10 bg-white">
         <h2
-          className="text-4xl md:text-6xl mb-6 tracking-[-0.03em]"
-          style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 300 }}
+          className="text-4xl md:text-6xl mb-6 tracking-[-0.04em]"
+          style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}
         >
           Let's build something exceptional.
         </h2>
-        <p className="text-white/40 mb-12 text-lg">
+        <p className="text-black/40 mb-12 text-lg">
           Reply to this email or book a 15-minute intro call.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <a
             href="mailto:ebaqcompany@gmail.com"
-            className="inline-block px-8 py-4 bg-white text-black rounded-[99px] text-sm font-semibold tracking-[0.05em] hover:bg-[#00afec] hover:text-white transition-colors"
+            className="inline-block px-8 py-4 bg-black text-white rounded-[99px] text-sm font-semibold tracking-[0.05em] hover:bg-[#00afec] transition-colors"
           >
             Get in Touch
           </a>
@@ -263,7 +263,7 @@ export const SenseHawkProposal = () => {
             href="https://cal.com/ebaqdesign/15min"
             target="_blank"
             rel="noopener"
-            className="inline-block px-8 py-4 border border-white/20 rounded-[99px] text-sm font-semibold tracking-[0.05em] hover:border-white/50 transition-colors"
+            className="inline-block px-8 py-4 border border-black/20 rounded-[99px] text-sm font-semibold tracking-[0.05em] hover:border-black/50 transition-colors"
           >
             Book a Call
           </a>
@@ -271,9 +271,9 @@ export const SenseHawkProposal = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="px-[5%] py-8 border-t border-white/5 flex justify-between text-xs text-white/20">
+      <footer className="px-[5%] py-8 border-t border-black/5 flex justify-between text-xs text-black/30 bg-white">
         <span>© 2026 Ebaq Design</span>
-        <a href="https://ebaq.design" className="hover:text-white/50 transition-colors">ebaq.design</a>
+        <a href="https://ebaq.design" className="hover:text-black/60 transition-colors">ebaq.design</a>
       </footer>
     </div>
   );
@@ -284,7 +284,7 @@ export const SenseHawkProposal = () => {
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <motion.section
-      className="px-[5%] py-20 md:py-28 border-t border-white/10"
+      className="px-[5%] py-20 md:py-28 border-t border-black/10 bg-white"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -293,7 +293,7 @@ function Section({ label, children }: { label: string; children: React.ReactNode
       <div className="container max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-12">
           <motion.div variants={fadeUp}>
-            <span className="text-[11px] tracking-[0.3em] uppercase text-white/30">{label}</span>
+            <span className="text-[11px] tracking-[0.3em] uppercase text-black/30 font-semibold">{label}</span>
           </motion.div>
           <motion.div variants={fadeUp}>{children}</motion.div>
         </div>
@@ -306,18 +306,18 @@ function PricingCard({ name, price, timeline, desc, features, featured }: {
   name: string; price: string; timeline: string; desc: string; features: string[]; featured?: boolean;
 }) {
   return (
-    <div className={`rounded-2xl p-8 md:p-10 ${featured ? 'border border-[#00afec]/30 bg-gradient-to-b from-[#00afec]/5 to-transparent' : 'border border-white/10 bg-white/[0.02]'}`}>
-      <span className={`text-[10px] tracking-[0.2em] uppercase ${featured ? 'text-[#00afec]' : 'text-white/30'}`}>{name}</span>
-      <div className="mt-4 mb-1 text-5xl md:text-6xl tracking-[-0.03em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 300 }}>
+    <div className={`rounded-2xl p-8 md:p-10 ${featured ? 'bg-black text-white' : 'border border-black/10 bg-[#f9f9f9]'}`}>
+      <span className={`text-[10px] tracking-[0.2em] uppercase font-semibold ${featured ? 'text-[#00afec]' : 'text-black/30'}`}>{name}</span>
+      <div className="mt-4 mb-1 text-5xl md:text-6xl tracking-[-0.04em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontWeight: 400 }}>
         {price}
       </div>
-      <span className="text-sm text-white/30">{timeline}</span>
-      <p className="mt-6 text-sm text-white/40 leading-relaxed">{desc}</p>
+      <span className={`text-sm ${featured ? 'text-white/40' : 'text-black/30'}`}>{timeline}</span>
+      <p className={`mt-6 text-sm leading-relaxed ${featured ? 'text-white/50' : 'text-black/40'}`}>{desc}</p>
       <div className="mt-8 space-y-3">
         {features.map((f) => (
           <div key={f} className="flex items-start gap-3">
-            <BiCheck className={`flex-shrink-0 mt-0.5 ${featured ? 'text-[#00afec]' : 'text-white/20'}`} />
-            <span className="text-sm text-white/50">{f}</span>
+            <BiCheck className={`flex-shrink-0 mt-0.5 ${featured ? 'text-[#00afec]' : 'text-black/20'}`} />
+            <span className={`text-sm ${featured ? 'text-white/60' : 'text-black/50'}`}>{f}</span>
           </div>
         ))}
       </div>
