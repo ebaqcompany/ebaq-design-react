@@ -3,7 +3,6 @@
 import { BiCheck } from "react-icons/bi";
 import { Navbar16 } from "../Navbar16";
 import { Header78 } from "../Header78";
-import { Layout484 } from "../Layout484";
 import { Comparison } from "../Comparison";
 import { Testimonial32 } from "../Testimonial32";
 import { AboutSection } from "../AboutSection";
@@ -143,13 +142,29 @@ export const SenseHawkProposal = () => {
           showRows={[3]}
         />
 
-        {/* Layout484 — scroll-reveal text, proposal version */}
-        <Layout484
-          tagline="The Opportunity"
-          heading="Your current site doesn't do justice."
-          description="Backed by Elevation Capital and Alpha Wave Global, SenseHawk deserves a web presence that matches. We'll make Taskmapper and Therm look intuitive, premium, and unforgettable."
-          buttons={[{ title: "View Our Work", variant: "secondary" as const }]}
-        />
+        {/* Opportunity — image left, text right */}
+        <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+          <div className="container">
+            <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
+              <div className="overflow-hidden rounded-2xl border border-black/10">
+                <img
+                  src="/portfolio/sensehawk-current.jpg"
+                  alt="SenseHawk current website"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div>
+                <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>The Opportunity</p>
+                <h2 className="mb-5 text-5xl md:text-7xl lg:text-8xl md:mb-6" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>
+                  Your current site doesn't do justice.
+                </h2>
+                <p className="text-md md:text-lg text-black/50">
+                  Backed by Elevation Capital and Alpha Wave Global, SenseHawk deserves a web presence that matches. We'll make Taskmapper and Therm look intuitive, premium, and unforgettable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Comparison — Ebaq vs Other Designers */}
         <Comparison
