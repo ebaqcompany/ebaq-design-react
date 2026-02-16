@@ -83,8 +83,8 @@ const phases = [
 const optionA = {
   name: "Option A",
   subtitle: "Landing Page + Component System",
-  price: "$8,000",
-  timeline: "2–3 weeks",
+  price: "$9,000",
+  timeline: "3 weeks",
   desc: "Flagship homepage redesign with a complete design system your Framer dev can scale across the entire site.",
   features: [
     "Homepage redesign — Desktop, Tablet, Mobile",
@@ -103,8 +103,8 @@ const optionA = {
 const optionB = {
   name: "Option B",
   subtitle: "Full Website Redesign",
-  price: "$20,000",
-  timeline: "6–8 weeks",
+  price: "$21,000",
+  timeline: "7 weeks",
   desc: "End-to-end design for every page. Your developer gets a complete, pixel-perfect blueprint for the entire site.",
   featured: true,
   features: [
