@@ -97,7 +97,7 @@ const ApproachSection = () => (
         </h2>
       </div>
 
-      <div className="mx-auto max-w-xl">
+      <div className="mx-auto max-w-lg">
         {[
           { num: "01", title: "Moodboard & Concept", duration: "3–4 days", items: "2–3 visual directions (style tiles) · Color, type & brand vibe · Hero section concepts · AI-generated visuals · Competitive analysis" },
           { num: "02", title: "Full Homepage Design", duration: "5–7 days", items: "Desktop wireframe → high-fidelity design · Taskmapper & Therm visual storytelling · Scroll transforms & parallax specs · Stylized product UI snippets · Background video concepts" },
