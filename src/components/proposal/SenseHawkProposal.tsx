@@ -137,6 +137,7 @@ export const SenseHawkProposal = () => {
 
         {/* Hero — same Header78, different heading + same portfolio ticker */}
         <Header78
+          tagline="February 17, 2026"
           heading={"Website redesign\nfor SenseHawk."}
           description=""
           buttons={[]}
