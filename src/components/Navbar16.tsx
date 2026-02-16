@@ -40,23 +40,22 @@ export const Navbar16 = (props: Navbar16Props) => {
       id="relume"
       className="relative z-[999] flex min-h-16 w-full items-center bg-background-primary px-[5%] md:min-h-18"
     >
-      <div className="mx-auto flex size-full items-center justify-between">
+      <div className="relative mx-auto flex size-full items-center justify-between">
         <a href={logo.url}>
           <img src={logo.src} alt={logo.alt} className="h-10 w-auto" />
         </a>
-        {navLinks ? (
-          <nav className="flex items-center gap-6">
+        {navLinks && (
+          <nav className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link, i) => (
               <a key={i} href={link.href} className="text-sm font-medium text-black/50 hover:text-black transition-colors" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 {link.label}
               </a>
             ))}
           </nav>
-        ) : (
-          <Button {...button} variant="secondary" onClick={scrollToBook}>
-            {button.title}
-          </Button>
         )}
+        <Button {...button} variant="secondary" onClick={scrollToBook}>
+          {button.title}
+        </Button>
       </div>
     </section>
   );
