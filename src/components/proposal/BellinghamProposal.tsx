@@ -14,7 +14,7 @@ const PricingSection = () => (
       <div className="mx-auto mb-8 max-w-lg text-center md:mb-10 lg:mb-12">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>Investment</p>
         <h2 className="mb-5 md:mb-6">Brand Refresh Package</h2>
-        <p className="md:text-md text-black/50">Everything outlined in your RFP — delivered in 8 weeks, within budget.</p>
+        <p className="md:text-md text-black/50">Everything outlined in your RFP — delivered in 5 weeks, within budget.</p>
       </div>
 
       <div className="grid grid-cols-1 gap-6 max-w-md mx-auto">
@@ -26,8 +26,8 @@ const PricingSection = () => (
           <p className="text-white/50">Logo refinement + design system + Canva templates your team can use.</p>
           <div className="my-8 h-px w-full bg-white/20" />
           <div className="my-2 text-6xl md:text-9xl lg:text-10xl">
-            $13,500
-            <span className="text-2xl md:text-3xl lg:text-4xl text-white/30"> /8 weeks</span>
+            $15,000
+            <span className="text-2xl md:text-3xl lg:text-4xl text-white/30"> /5 weeks</span>
           </div>
           <div className="my-8 h-px w-full bg-white/20" />
           <div className="grid grid-cols-1 gap-y-4 py-2">
@@ -70,25 +70,25 @@ const ApproachSection = () => (
           { 
             num: "01", 
             title: "Discovery & Audit", 
-            duration: "Week 1–2", 
+            duration: "Week 1", 
             items: "Current brand assets review · Stakeholder alignment call · Competitor & community landscape · Document strengths to preserve · Identify refinement opportunities" 
           },
           { 
             num: "02", 
             title: "Brand Refinement", 
-            duration: "Week 3–4", 
+            duration: "Week 2", 
             items: "Logo typography polish · Color saturation & vibrancy · 2–3 visual directions · Typography selections · Color palette finalization" 
           },
           { 
             num: "03", 
             title: "Design System", 
-            duration: "Week 5–6", 
+            duration: "Week 3–4", 
             items: "Program/event branding templates · Canva template creation · Poster, flyer & core brand templates · Admin package design · Brand guidelines document" 
           },
           { 
             num: "04", 
             title: "Delivery & Handoff", 
-            duration: "Week 7–8", 
+            duration: "Week 5", 
             items: "Canva Brand Kit setup · All vector files delivered · Guidelines walkthrough session · Team training on templates · 30-day support period begins" 
           },
         ].map((phase) => (
@@ -131,7 +131,7 @@ const WhyEbaqSection = () => (
           { heading: "Remote-friendly", description: "Based in NYC but work with clients nationwide. Video calls, async updates, and clear deliverables keep projects moving smoothly." },
           { heading: "Templates that work", description: "I design Canva kits that non-designers actually use — clear constraints, obvious layouts, brand-safe every time." },
           { heading: "Refinement, not reinvention", description: "I hear you: DBP doesn't need a new identity — it needs its current one elevated. Preserve what works, strengthen what doesn't." },
-          { heading: "On budget, on time", description: "This proposal comes in under your $15K max. Eight weeks start to finish. No scope creep, no surprises." },
+          { heading: "On budget, on time", description: "This proposal hits your $15K max exactly. Five weeks start to finish. No scope creep, no surprises." },
         ].map((section, i) => (
           <div key={i}>
             <h3 className="mb-3 text-xl md:mb-4 md:text-2xl" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>{section.heading}</h3>
@@ -291,7 +291,7 @@ export const BellinghamProposal = () => {
             <div className="mx-auto max-w-md space-y-4">
               {[
                 { label: "Start date", value: "Flexible — ready to begin as early as April 2026" },
-                { label: "Duration", value: "8 weeks from signed contract to final delivery" },
+                { label: "Duration", value: "5 weeks from signed contract to final delivery" },
                 { label: "Your 2027 launch", value: "Plenty of runway for your planned post-Greenways rebrand rollout" },
                 { label: "Communication", value: "Weekly check-ins via video + async updates in your preferred channel" },
               ].map((item, i) => (
