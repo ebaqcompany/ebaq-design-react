@@ -181,7 +181,7 @@ export const BellinghamProposal = () => {
           heading={"Brand Refresh Proposal\nDowntown Bellingham Partnership"}
           description="Prepared by Arek Dvornechuck — ebaq.design"
           buttons={[]}
-          showRows={[3]}
+          showRows={[1]}
         />
 
         {/* Understanding the Brief */}
@@ -210,13 +210,24 @@ export const BellinghamProposal = () => {
         {/* About Section */}
         <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
           <div className="container">
-            <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
-              <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>About</p>
-              <h2 className="mb-5 md:mb-6" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}>
-                Hi, I'm Arek.
-              </h2>
+            {/* Top row: heading left, photo right */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-16 md:mb-20 lg:mb-24">
+              <div className="lg:col-span-2">
+                <p className="mb-3 font-semibold" style={{ fontFamily: "'Open Sans', sans-serif" }}>About</p>
+                <h2 className="text-5xl md:text-7xl lg:text-8xl" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 250" }}>
+                  Hi, I'm Arek.
+                </h2>
+              </div>
+              <div className="flex items-start lg:justify-end">
+                <img
+                  src="/arek-pic.jpg"
+                  alt="Arek Dvornechuck — Senior Brand Designer"
+                  className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover"
+                />
+              </div>
             </div>
-            <div className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12 max-w-4xl mx-auto">
+            {/* Bottom row: 3 columns */}
+            <div className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
               {[
                 { heading: "The background", description: "20 years designing brand identities. Started in Poland, worked in Berlin, now based in New York City." },
                 { heading: "The approach", description: "I believe great branding is invisible scaffolding — it makes everything else look intentional and cohesive." },
