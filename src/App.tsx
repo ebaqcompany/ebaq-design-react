@@ -8,8 +8,10 @@ import {
   AboutSection,
   BookerSection,
 } from "./components";
+import { useTracking } from "./hooks/useTracking";
 
 function App() {
+  useTracking();
   return (
     <div className="relative">
         {/* Main content - scrolls over footer */}
