@@ -37,44 +37,58 @@ export const Layout527 = (props: Layout527Props) => {
           {/* Image container - shows on left side (3/4 width) */}
           <div className="hidden lg:block lg:col-span-3">
             <div className="sticky top-8 relative">
-              {hoverLinks.map((link, index) => (
-                <img
-                  key={index}
-                  className={clsx(
-                    "w-full h-auto transition-opacity duration-300",
-                    hoveredIndex === index ? "opacity-100 relative" : "opacity-0 absolute inset-0",
-                  )}
-                  src={link.image.src}
-                  alt={link.image.alt}
-                />
-              ))}
+              {hoverLinks.map((link, index) => {
+                const isVideo = link.image.src.endsWith(".mp4");
+                return isVideo ? (
+                  <video
+                    key={index}
+                    className={clsx(
+                      "w-full h-auto transition-opacity duration-300",
+                      hoveredIndex === index ? "opacity-100 relative" : "opacity-0 absolute inset-0",
+                    )}
+                    src={link.image.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    key={index}
+                    className={clsx(
+                      "w-full h-auto transition-opacity duration-300",
+                      hoveredIndex === index ? "opacity-100 relative" : "opacity-0 absolute inset-0",
+                    )}
+                    src={link.image.src}
+                    alt={link.image.alt}
+                  />
+                );
+              })}
             </div>
           </div>
           {/* Links container - shows on right side (1/4 width, starting at column 4) */}
           <div className="lg:col-start-4 lg:col-span-1">
             {hoverLinks.map((link, index) => (
-              <div key={index}>
-                <a
-                  href={link.url}
+              <div
+                key={index}
+                className={clsx(
+                  "relative z-10 flex flex-col flex-wrap items-start justify-start gap-4 border-b border-black/20 py-[11px] transition-all duration-300 sm:flex-row sm:items-center md:gap-8 md:py-[13px] cursor-default",
+                  index === hoverLinks.length - 1 && "border-b-0"
+                )}
+                onMouseEnter={() => setHoveredIndex(index)}
+              >
+                <h3
                   className={clsx(
-                    "relative z-10 flex flex-col flex-wrap items-start justify-start gap-4 border-b border-black/20 py-[11px] no-underline transition-all duration-300 sm:flex-row sm:items-center md:gap-8 md:py-[13px]",
-                    index === hoverLinks.length - 1 && "border-b-0"
+                    "text-lg transition-colors duration-300 md:text-xl md:leading-[1.3] lg:text-2xl tracking-[0.01em]",
+                    {
+                      "lg:text-black/20": hoveredIndex !== index && hoveredIndex !== null,
+                      "lg:text-black": hoveredIndex === index || hoveredIndex === null,
+                    },
                   )}
-                  onMouseEnter={() => setHoveredIndex(index)}
+                  style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}
                 >
-                  <h3
-                    className={clsx(
-                      "text-lg transition-colors duration-300 md:text-xl md:leading-[1.3] lg:text-2xl tracking-[0.01em]",
-                      {
-                        "lg:text-black/20": hoveredIndex !== index && hoveredIndex !== null,
-                        "lg:text-black": hoveredIndex === index || hoveredIndex === null,
-                      },
-                    )}
-                    style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}
-                  >
-                    {link.heading}
-                  </h3>
-                </a>
+                  {link.heading}
+                </h3>
               </div>
             ))}
           </div>
@@ -122,7 +136,7 @@ export const Layout527Defaults: Props = {
       url: "#",
       heading: "Social",
       image: {
-        src: "/case-study/aero-social.webp",
+        src: "/case-study/aero-social.mp4",
         alt: "Aero social",
       },
     },
