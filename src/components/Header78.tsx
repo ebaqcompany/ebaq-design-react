@@ -11,6 +11,11 @@ type MediaProps = {
   bgColor?: string;
 };
 
+type SubLinkProps = {
+  label: string;
+  url: string;
+};
+
 type Props = {
   heading: string;
   description: string;
@@ -20,6 +25,8 @@ type Props = {
   row3: MediaProps[];
   showRows?: (1 | 2 | 3)[];
   tagline?: string;
+  subLink?: SubLinkProps;
+  showScrollArrow?: boolean;
 };
 
 export type Header78Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
@@ -258,7 +265,7 @@ const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset 
 };
 
 export const Header78 = (props: Header78Props) => {
-  const { heading, description: _description, buttons: _buttons, row1, row2, row3, showRows, tagline } = {
+  const { heading, description, buttons: _buttons, row1, row2, row3, showRows, tagline, subLink, showScrollArrow } = {
     ...Header78Defaults,
     ...props,
   };
@@ -270,6 +277,17 @@ export const Header78 = (props: Header78Props) => {
       <div className="px-[5%] mb-12 md:mb-18 lg:mb-20">
         {tagline && <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>{tagline}</p>}
         <h1 className="text-[2.5rem] md:text-[5rem] lg:text-[6rem] whitespace-pre-line tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300", lineHeight: 1 }}>{heading}</h1>
+        {description && (
+          <p className="mt-5 md:mt-6 text-base md:text-lg whitespace-pre-line text-black/50 max-w-xl" style={{ fontFamily: "'Open Sans', sans-serif" }}>{description}</p>
+        )}
+        {subLink && (
+          <a href={subLink.url} className="inline-block mt-4 text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity" style={{ fontFamily: "'Open Sans', sans-serif" }}>{subLink.label} ↓</a>
+        )}
+        {showScrollArrow && (
+          <div className="mt-8 animate-bounce">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col gap-4">

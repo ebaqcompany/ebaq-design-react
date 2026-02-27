@@ -63,7 +63,7 @@ export const Navbar16 = (props: Navbar16Props) => {
 
 export const Navbar16Defaults: Props = {
   logo: {
-    url: "#",
+    url: "/",
     src: "/ebaqdesign-logo-thinner.svg",
     alt: "Ebaq Design",
   },
