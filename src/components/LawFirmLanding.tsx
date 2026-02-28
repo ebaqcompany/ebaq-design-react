@@ -56,7 +56,7 @@ const foxHoverLinks = [
   { url: "#", heading: "Type", image: { src: "/foxberman/foxberman-fonts.png", alt: "Fox Berman typography" } },
   { url: "#", heading: "Business Cards", image: { src: FB.cards, alt: "Fox Berman business cards" } },
   { url: "#", heading: "Collateral", image: { src: FB.folder, alt: "Fox Berman collateral" } },
-  { url: "#", heading: "Social", image: { src: FB.linkedin, alt: "Fox Berman social media" } },
+  { url: "#", heading: "Social", image: { src: "/foxberman/foxberman-social.mp4", alt: "Fox Berman social media" } },
   { url: "https://foxberman.com/", heading: "Web Design", image: { src: FB.web, alt: "Fox Berman website design" } },
   { url: "#", heading: "Signature", image: { src: "/foxberman/foxberman-signature.jpg", alt: "Fox Berman email signature" } },
   { url: "#", heading: "+ More", image: { src: FB.office, alt: "Fox Berman office signage" } },
