@@ -110,18 +110,10 @@ export const Layout527Defaults: Props = {
     },
     {
       url: "#",
-      heading: "Color",
+      heading: "Color and Type",
       image: {
-        src: "/case-study/aero-palette.webp",
-        alt: "Aero color palette",
-      },
-    },
-    {
-      url: "#",
-      heading: "Type",
-      image: {
-        src: "/case-study/aero-fonts.png",
-        alt: "Aero typography",
+        src: "/case-study/AeroFontsColors_4k.mp4",
+        alt: "Aero color and type",
       },
     },
     {
@@ -142,10 +134,34 @@ export const Layout527Defaults: Props = {
     },
     {
       url: "#",
+      heading: "UI Design",
+      image: {
+        src: "/case-study/aero-app.webp",
+        alt: "Aero UI design",
+      },
+    },
+    {
+      url: "#",
       heading: "Web Design",
       image: {
         src: "/case-study/aero-web.webp",
         alt: "Aero web design",
+      },
+    },
+    {
+      url: "#",
+      heading: "Billboards",
+      image: {
+        src: "/case-study/aero-billboards.webp",
+        alt: "Aero billboards",
+      },
+    },
+    {
+      url: "#",
+      heading: "Other",
+      image: {
+        src: "/case-study/aero-misc.webp",
+        alt: "Aero other",
       },
     },
     {
