@@ -152,7 +152,7 @@ export const Layout527Defaults: Props = {
       url: "#",
       heading: "Billboards",
       image: {
-        src: "/case-study/aero-billboards.webp",
+        src: "/case-study/AeroBillboards-4K.mp4",
         alt: "Aero billboards",
       },
     },
