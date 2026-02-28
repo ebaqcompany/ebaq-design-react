@@ -301,8 +301,7 @@ export const Header78 = (props: Header78Props) => {
 
 export const Header78Defaults: Props = {
   heading: "World-class branding\nfor one clear price.",
-  description:
-    "Work directly with a senior designer to launch your complete brand identity in just one week. Nearly 20 years of experience. No junior handoffs.",
+  description: "",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],
 
   // Row 1: Logo Animations
