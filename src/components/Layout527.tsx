@@ -128,7 +128,7 @@ export const Layout527Defaults: Props = {
       url: "#",
       heading: "Social",
       image: {
-        src: "/case-study/aero-social.mp4",
+        src: "/case-study/SocialClaude-4K-30fps.mp4",
         alt: "Aero social",
       },
     },
