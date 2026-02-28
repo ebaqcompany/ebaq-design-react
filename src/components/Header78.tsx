@@ -281,7 +281,7 @@ export const Header78 = (props: Header78Props) => {
           <p className="mt-5 md:mt-6 text-base md:text-lg whitespace-pre-line text-black/50 max-w-xl" style={{ fontFamily: "'Open Sans', sans-serif" }}>{description}</p>
         )}
         {subLink && (
-          <a href={subLink.url} className="inline-block mt-4 text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity" style={{ fontFamily: "'Open Sans', sans-serif" }}>{subLink.label} ↓</a>
+          <a href={subLink.url} className="inline-block mt-4 text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity" style={{ fontFamily: "'Open Sans', sans-serif" }}>{subLink.label}</a>
         )}
         {showScrollArrow && (
           <div className="mt-8 animate-bounce">

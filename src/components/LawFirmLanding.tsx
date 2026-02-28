@@ -52,13 +52,13 @@ const foxRow3 = [
 
 const foxHoverLinks = [
   { url: "#", heading: "Logo", image: { src: FB.logos, alt: "Fox Berman logo" } },
-  { url: "#", heading: "Colors", image: { src: "/portfolio/identities/foxberman-colors2.jpg", alt: "Fox Berman brand colors" } },
-  { url: "#", heading: "Type", image: { src: "/portfolio/identities/foxberman-fonts.png", alt: "Fox Berman typography" } },
+  { url: "#", heading: "Colors", image: { src: "/foxberman/foxberman-colors.png", alt: "Fox Berman brand colors" } },
+  { url: "#", heading: "Type", image: { src: "/foxberman/foxberman-fonts.png", alt: "Fox Berman typography" } },
   { url: "#", heading: "Business Cards", image: { src: FB.cards, alt: "Fox Berman business cards" } },
   { url: "#", heading: "Collateral", image: { src: FB.folder, alt: "Fox Berman collateral" } },
   { url: "#", heading: "Social", image: { src: FB.linkedin, alt: "Fox Berman social media" } },
   { url: "https://foxberman.com/", heading: "Web Design", image: { src: FB.web, alt: "Fox Berman website design" } },
-  { url: "#", heading: "Signature", image: { src: "/portfolio/identities/foxberman-signature.png", alt: "Fox Berman email signature" } },
+  { url: "#", heading: "Signature", image: { src: "/foxberman/foxberman-signature.jpg", alt: "Fox Berman email signature" } },
   { url: "#", heading: "+ More", image: { src: FB.office, alt: "Fox Berman office signage" } },
 ];
 
