@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import clsx from "clsx";
 
 type ImageProps = {
@@ -26,6 +26,15 @@ export const Layout527 = (props: Layout527Props) => {
     ...props,
   };
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    const video = videoRefs.current[hoveredIndex];
+    if (video) {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    }
+  }, [hoveredIndex]);
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
@@ -42,6 +51,7 @@ export const Layout527 = (props: Layout527Props) => {
                 return isVideo ? (
                   <video
                     key={index}
+                    ref={(el) => { videoRefs.current[index] = el; }}
                     className={clsx(
                       "w-full h-auto transition-opacity duration-300",
                       hoveredIndex === index ? "opacity-100 relative" : "opacity-0 absolute inset-0",
