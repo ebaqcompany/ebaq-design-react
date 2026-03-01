@@ -130,7 +130,7 @@ export const Layout527Defaults: Props = {
       url: "#",
       heading: "Colateral",
       image: {
-        src: "/case-study/aero-stationery.webp",
+        src: "/case-study/aero-stationery.png",
         alt: "Aero colateral",
       },
     },
