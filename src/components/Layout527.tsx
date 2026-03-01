@@ -120,7 +120,7 @@ export const Layout527Defaults: Props = {
     },
     {
       url: "#",
-      heading: "Logo & Fonts",
+      heading: "Colors & Fonts",
       image: {
         src: "/case-study/AeroFontsColors_4k.mp4",
         alt: "Aero color and type",
