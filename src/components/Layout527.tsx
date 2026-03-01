@@ -112,15 +112,15 @@ export const Layout527Defaults: Props = {
   hoverLinks: [
     {
       url: "#",
-      heading: "Logo",
+      heading: "Logo Design",
       image: {
-        src: "/case-study/aero-logo.png",
-        alt: "Aero logo",
+        src: "/case-study/AeroGridAll-4K-30fps.mp4",
+        alt: "Aero logo design",
       },
     },
     {
       url: "#",
-      heading: "Color and Type",
+      heading: "Logo & Fonts",
       image: {
         src: "/case-study/AeroFontsColors_4k.mp4",
         alt: "Aero color and type",
