@@ -154,7 +154,7 @@ export const Layout527Defaults: Props = {
       url: "#",
       heading: "Web Design",
       image: {
-        src: "/case-study/aero-web.webp",
+        src: "/case-study/aero-web-pro.webp",
         alt: "Aero web design",
       },
     },
