@@ -220,7 +220,7 @@ export const BellinghamProposal = () => {
               </div>
               <div className="flex items-start lg:justify-end">
                 <img
-                  src="/arek-pic.jpg"
+                  src="/arek-pic-pro.jpg"
                   alt="Arek Dvornechuck — Senior Brand Designer"
                   className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover"
                 />

@@ -92,7 +92,7 @@ export const Layout488 = (props: Layout488Props) => {
 export const Layout488Defaults: Props = {
   leftHeading: "Start your",
   image: {
-    src: "/arek-pic.jpg",
+    src: "/arek-pic-pro.jpg",
     alt: "Arek",
   },
   rightHeading: "project now",

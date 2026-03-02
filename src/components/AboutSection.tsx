@@ -82,7 +82,7 @@ export const AboutSectionDefaults: Props = {
     "Motion Graphics",
   ],
   image: {
-    src: "/arek-pic.jpg",
+    src: "/arek-pic-pro.jpg",
     alt: "Arek - Senior Designer",
   },
 };
