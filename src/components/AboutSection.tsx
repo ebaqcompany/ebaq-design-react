@@ -30,6 +30,21 @@ export const AboutSection = (props: AboutSectionProps) => {
             <h2 className="text-5xl md:text-7xl lg:text-8xl" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 250" }}>
               {heading}
             </h2>
+            <a
+              href="https://contra.com/ebaqdesign"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-6 md:mt-8 px-5 py-2.5 rounded-full border border-black/15 hover:border-black/40 transition-colors duration-200"
+              style={{ fontFamily: "'Open Sans', sans-serif" }}
+            >
+              <img
+                src="https://contra.com/static/assets/contra-logo-filled.svg"
+                alt="Contra"
+                className="w-5 h-5"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+              />
+              <span className="text-sm font-semibold tracking-wide">Hire me on Contra</span>
+            </a>
           </div>
           <div className="flex justify-start lg:justify-end">
             <img
