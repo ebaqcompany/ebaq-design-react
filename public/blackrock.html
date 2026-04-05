@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlackRock Neurotech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green: #C89A75;
+    --green-dim: #a67d5b;
+    --dark: #1a1a1a;
+    --gray-text: #333;
+    --white: #ffffff;
+    --bg: #f5f5f5;
+    --font-display: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --pad: clamp(20px, 3vw, 40px);
+  }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #f5f5f5; color: #1a1a1a; font-family: var(--font-body); }
+  .grid-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cline x1='60' y1='0' x2='60' y2='60' stroke='rgba(0,0,0,0.06)' stroke-width='0.5'/%3E%3Cline x1='0' y1='60' x2='60' y2='60' stroke='rgba(0,0,0,0.06)' stroke-width='0.5'/%3E%3Crect x='57' y='57' width='5' height='5' rx='0.5' transform='rotate(45 60 60)' fill='none' stroke='rgba(0,0,0,0.08)' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+  canvas { display: block; position: absolute; top: 0; left: 0; z-index: 0; }
+  .vignette {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(245,245,245,0) 0%, rgba(230,230,230,0.3) 100%);
+    pointer-events: none;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  .site-nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--pad);
+    pointer-events: none;
+  }
+  .site-nav > * { pointer-events: auto; }
+  .nav-menu-btn {
+    width: 36px; height: 36px;
+    background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-menu-btn svg { width: 28px; height: 28px; }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: #1a1a1a;
+  }
+  .nav-center {
+    display: flex; align-items: center; gap: 28px;
+    margin-left: auto;
+  }
+  .nav-center a {
+    color: rgba(0,0,0,0.6); text-decoration: none;
+    font-size: 14px; font-weight: 400;
+    white-space: nowrap; letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-center a:hover { color: #C89A75; }
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column; gap: 5px;
+    width: 36px; height: 36px;
+    background: none; border: none; cursor: pointer;
+    align-items: flex-end; justify-content: center;
+    padding: 6px;
+  }
+  .mobile-menu-btn span {
+    display: block; height: 2px; background: #1a1a1a; border-radius: 1px;
+  }
+  .mobile-menu-btn span:nth-child(1) { width: 24px; }
+  .mobile-menu-btn span:nth-child(2) { width: 24px; }
+  .mobile-menu-btn span:nth-child(3) { width: 16px; }
+
+  /* ── HERO CONTENT ────────────────────────────────── */
+  .hero-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1;
+    pointer-events: none;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 var(--pad) 60px;
+  }
+  .hero-headline {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: 78px;
+    line-height: 1.05;
+    max-width: 750px;
+    letter-spacing: -0.05em;
+    color: #1a1a1a;
+  }
+  .hero-info {
+    position: fixed;
+    top: 130px;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .hero-info .nav-menu-btn {
+    position: static;
+    margin-left: -30px;
+  }
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    max-width: 340px;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* ── SCROLL INDICATOR ────────────────────────────── */
+  .scroll-indicator {
+    position: fixed; bottom: var(--pad); left: 50%; transform: translateX(-50%);
+    z-index: 10; text-align: center; color: rgba(0,0,0,0.4);
+    font-size: 12px; letter-spacing: 0.12em; pointer-events: none;
+  }
+  .scroll-indicator span { display: block; margin-bottom: 6px; }
+  .scroll-indicator svg {
+    display: block; margin: 0 auto;
+    animation: scrollBounce 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes scrollBounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(5px); }
+  }
+
+  /* ── GREEN TOP BAR (like Synchron site) ────────── */
+  .top-bar {
+    position: fixed; top: 0; left: 0; width: 100%; height: 5px;
+    background: #C89A75; z-index: 20;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 1100px) {
+    .nav-center { display: none; }
+    .mobile-menu-btn { display: flex !important; }
+    .hero-info {
+      position: fixed !important;
+      top: 130px !important;
+      left: calc(var(--pad) + 130px) !important;
+    }
+    .hero-headline { font-size: 60px !important; }
+  }
+  @media (max-width: 768px) {
+    .hero-headline { font-size: 48px !important; }
+    .scroll-indicator { display: none; }
+    .nav-center { display: none; }
+    .mobile-menu-btn { display: flex !important; }
+    .hero-info {
+      position: fixed !important;
+      top: 130px !important;
+      left: calc(var(--pad) + 130px) !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero-headline { font-size: 40px !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+<div class="grid-bg"></div>
+<div class="vignette"></div>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="#" class="nav-logo">
+    <svg width="180" height="40" viewBox="0 0 242 54" fill="#1a1a1a"><path d="M79.2827 0.577393H88.0876C91.5865 0.577393 94.7778 1.81716 94.7778 5.73017C94.7778 7.9385 93.3167 9.95312 91.1636 10.418V10.4955C93.855 10.8442 95.5852 12.8588 95.5852 15.6096C95.5852 17.6242 94.8931 21.5759 88.1261 21.5759H79.3212V0.577393H79.2827ZM81.2436 9.79815H88.0876C91.2789 9.79815 92.7784 8.2097 92.7784 6.23383C92.7784 3.59932 91.1636 2.28207 88.0876 2.28207H81.2436V9.79815ZM81.2436 19.8713H88.0876C91.0482 19.91 93.5859 18.9027 93.5859 15.5321C93.5859 12.8588 91.5865 11.4641 88.0876 11.4641H81.2436V19.8713Z"/><path d="M96.9692 0.577393H98.8148V21.5759H96.9692V0.577393Z"/><path d="M100.699 11.0768C100.891 7.51243 103.352 6.00146 106.812 6.00146C109.465 6.00146 112.349 6.81506 112.349 10.883V18.9415C112.349 19.6389 112.695 20.0651 113.426 20.0651C113.618 20.0651 113.849 19.9876 114.003 19.9488V21.4985C113.58 21.576 113.31 21.6148 112.811 21.6148C110.927 21.6148 110.657 20.5687 110.657 18.9803H110.581C109.312 20.9561 107.966 22.0797 105.082 22.0797C102.314 22.0797 100.045 20.6849 100.045 17.6243C100.045 13.3626 104.159 13.2076 108.12 12.7427C109.619 12.549 110.465 12.3553 110.465 10.6893C110.465 8.17106 108.697 7.58991 106.543 7.58991C104.275 7.58991 102.583 8.63597 102.506 11.1155H100.699V11.0768ZM110.504 13.2851H110.427C110.196 13.7113 109.389 13.8662 108.889 13.9437C105.774 14.4861 101.891 14.4861 101.891 17.4306C101.891 19.2902 103.544 20.4137 105.236 20.4137C108.043 20.4137 110.504 18.6316 110.504 15.6484V13.2851Z"/><path d="M125.191 11.193C124.691 8.94591 123.307 7.55117 120.923 7.55117C117.386 7.55117 115.656 10.8056 115.656 14.0212C115.656 17.2368 117.424 20.4912 120.923 20.4912C123.192 20.4912 125.076 18.7091 125.306 16.152H127.152C126.652 19.7939 124.307 22.0409 120.923 22.0409C116.309 22.0409 113.81 18.3604 113.81 14.0212C113.81 9.68202 116.309 6.00146 120.923 6.00146C124.114 6.00146 126.614 7.74489 127.037 11.193H125.191Z"/><path d="M128.229 0.577393H130.074V13.7499L138.418 6.3888H140.878L134.457 12.0065L141.301 21.5759H138.994L133.035 13.3237L130.074 15.842V21.6147H128.229V0.577393Z"/><path d="M141.378 6.42758H143.07V9.9919H143.147C144.07 7.55111 146.108 6.11763 148.838 6.23386V8.09351C145.492 7.8998 143.224 10.3793 143.224 13.5175V21.6147H141.378V6.42758Z"/><path d="M162.064 13.9824C162.064 18.3216 159.565 22.0021 154.951 22.0021C150.337 22.0021 147.838 18.3216 147.838 13.9824C147.838 9.6432 150.337 5.96265 154.951 5.96265C159.565 5.96265 162.064 9.6432 162.064 13.9824ZM149.645 13.9824C149.645 17.198 151.414 20.4524 154.913 20.4524C158.411 20.4524 160.18 17.198 160.18 13.9824C160.18 10.728 158.411 7.51235 154.913 7.51235C151.414 7.51235 149.645 10.7667 149.645 13.9824Z"/><path d="M173.984 11.193C173.484 8.94591 172.1 7.55117 169.716 7.55117C166.178 7.55117 164.448 10.8056 164.448 14.0212C164.448 17.2368 166.217 20.4912 169.716 20.4912C171.984 20.4912 173.868 18.7091 174.099 16.152H175.944C175.445 19.7939 173.099 22.0409 169.716 22.0409C165.102 22.0409 162.603 18.3604 162.603 14.0212C162.603 9.68202 165.102 6.00146 169.716 6.00146C172.945 6.00146 175.406 7.74489 175.829 11.193H173.984Z"/><path d="M177.021 0.577393H178.867V13.7499L187.21 6.3888H189.671L183.25 12.0065L190.094 21.5759H187.787L181.866 13.3237L178.905 15.842V21.6147H177.059V0.577393H177.021Z"/><path d="M79.2827 26.7288H84.9732L95.8544 44.3179H95.9313V26.7288H101.276V52.9576H95.5468L84.7041 35.3684H84.6272V52.9576H79.2827V26.7288Z"/><path d="M108.235 44.744C108.389 48.0371 110.004 49.5481 112.849 49.5481C114.925 49.5481 116.617 48.2696 116.925 47.0686H121.5C120.039 51.5627 116.925 53.4611 112.657 53.4611C106.697 53.4611 103.044 49.3544 103.044 43.4655C103.044 37.7703 106.966 33.4312 112.657 33.4312C119.078 33.4312 122.192 38.8551 121.808 44.7053H108.235V44.744ZM116.655 41.4121C116.194 38.7776 115.041 37.3829 112.541 37.3829C109.273 37.3829 108.312 39.9399 108.235 41.4121H116.655Z"/><path d="M140.763 52.9575H135.842V50.323H135.726C134.419 52.4539 132.151 53.4999 129.959 53.4999C124.461 53.4999 123.077 50.3618 123.077 45.6739V33.9736H128.267V44.7054C128.267 47.8435 129.19 49.3545 131.574 49.3545C134.381 49.3545 135.573 47.766 135.573 43.9305V33.9736H140.763V52.9575Z"/><path d="M142.878 33.9736H147.799V37.4992H147.876C148.838 35.0972 151.375 33.47 153.913 33.47C154.259 33.47 154.72 33.5475 155.028 33.6637V38.4678C154.567 38.3516 153.798 38.2741 153.182 38.2741C149.376 38.2741 148.069 41.0248 148.069 44.3954V52.9575H142.878V33.9736Z"/><path d="M163.756 33.4312C169.716 33.4312 173.522 37.3829 173.522 43.4655C173.522 49.5094 169.677 53.4611 163.756 53.4611C157.835 53.4611 154.028 49.5094 154.028 43.4655C154.028 37.4216 157.835 33.4312 163.756 33.4312ZM163.756 49.5481C167.293 49.5481 168.37 46.4874 168.37 43.4655C168.37 40.4048 167.293 37.3442 163.756 37.3442C160.257 37.3442 159.181 40.4048 159.181 43.4655C159.181 46.4874 160.257 49.5481 163.756 49.5481Z"/><path d="M181.635 33.9737H185.441V37.4606H181.635V46.8751C181.635 48.6572 182.058 49.0834 183.827 49.0834C184.365 49.0834 184.903 49.0446 185.441 48.9284V52.9964C184.557 53.1514 183.442 53.1901 182.404 53.1901C179.213 53.1901 176.444 52.454 176.444 48.6572V37.4606H173.292V33.9737H176.444V28.2786H181.635V33.9737Z"/><path d="M190.363 44.744C190.517 48.0371 192.132 49.5481 194.977 49.5481C197.053 49.5481 198.745 48.2696 199.053 47.0686H203.628C202.167 51.5627 199.053 53.4611 194.785 53.4611C188.825 53.4611 185.172 49.3544 185.172 43.4655C185.172 37.7703 189.094 33.4312 194.785 33.4312C201.206 33.4312 204.32 38.8551 203.936 44.7053H190.363V44.744ZM198.783 41.4121C198.322 38.7776 197.169 37.3829 194.669 37.3829C191.401 37.3829 190.44 39.9399 190.363 41.4121H198.783Z"/><path d="M218.046 40.6373C217.7 38.5064 216.354 37.3829 214.201 37.3829C210.895 37.3829 209.78 40.7535 209.78 43.543C209.78 46.255 210.856 49.5481 214.086 49.5481C216.508 49.5481 217.892 47.9984 218.2 45.6738H223.198C222.545 50.7104 219.084 53.4611 214.124 53.4611C208.434 53.4611 204.589 49.4319 204.589 43.7367C204.589 37.8091 208.088 33.4312 214.201 33.4312C218.661 33.4312 222.737 35.7945 223.083 40.6373H218.046Z"/><path d="M224.313 26.7288H229.504V36.6081H229.619C230.927 34.4773 233.195 33.4312 235.118 33.4312C240.616 33.4312 242 36.5694 242 41.2573V52.9576H236.848V42.2258C236.848 39.0877 235.925 37.5767 233.541 37.5767C230.735 37.5767 229.543 39.1652 229.543 43.0007V52.9576H224.352V26.7288H224.313Z"/><path class="icon-path" fill="#1a1a1a" d="M57.6355 26.6901C57.6355 14.6411 47.9463 4.91667 36.027 4.91667H36.0655V0.5H0V52.9576H36.0655V48.4635H36.027C47.9463 48.4635 57.6355 38.7003 57.6355 26.6901ZM14.38 26.6901C14.38 14.6411 24.0693 4.91667 35.9886 4.91667V48.5022C24.0693 48.4635 14.38 38.7003 14.38 26.6901Z"/></svg>
+  </a>
+  <div class="nav-center">
+    <a href="#">Our Tech</a>
+    <a href="#">Our Vision</a>
+    <a href="#">For Patients</a>
+    <a href="#">For Researchers</a>
+  </div>
+  <button class="mobile-menu-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO HEADLINE -->
+<div class="hero-overlay">
+  <h1 class="hero-headline">Empowered by <span style="color:#C89A75">thought</span></h1>
+</div>
+
+<!-- Icon + paragraph container -->
+<div class="hero-info" id="heroInfo">
+  <p class="hero-sub">Innovative brain tech.<br>Powered by thought,<br>inspired by possibility.</p>
+</div>
+<script>
+  // On desktop: align container to first nav link; tablet/mobile: use CSS
+  function alignInfo() {
+    const firstLink = document.querySelector('.nav-center a');
+    const info = document.getElementById('heroInfo');
+    if (!info) return;
+    if (window.innerWidth > 1100 && firstLink) {
+      const rect = firstLink.getBoundingClientRect();
+      if (rect.width > 0) {
+        info.style.left = rect.left + 'px';
+        info.style.top = '130px';
+        return;
+      }
+    }
+    // Tablet/mobile: reset to CSS positioning
+    info.style.left = '';
+    info.style.top = '';
+  }
+  alignInfo();
+  window.addEventListener('resize', alignInfo);
+</script>
+
+<!-- SCROLL -->
+<div class="scroll-indicator">
+  <span>scroll</span>
+  <svg width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
+
+// ── RENDERER ────────────────────────────────────────────────────────
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0xf5f5f5);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xf5f5f5);
+
+const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 200);
+camera.position.set(0, 0.3, 3.5);
+camera.lookAt(0, 0.0, 0);
+
+// ── LIGHTING ────────────────────────────────────────────────────────
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+scene.add(ambientLight);
+
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.0);
+keyLight.position.set(3, 3, 4);
+scene.add(keyLight);
+
+const fillLight = new THREE.DirectionalLight(0x888888, 0.4);
+fillLight.position.set(-3, 1, 2);
+scene.add(fillLight);
+
+const rimLight = new THREE.DirectionalLight(0xaaaaaa, 0.5);
+rimLight.position.set(-1, 2, -3);
+scene.add(rimLight);
+
+// ── LOAD BRAIN MODEL ────────────────────────────────────────────────
+const loader = new OBJLoader();
+loader.load('brain.obj', (obj) => {
+  let mesh;
+  obj.traverse((child) => { if (child.isMesh) mesh = child; });
+  if (!mesh) return;
+
+  // Scale & center
+  mesh.geometry.computeBoundingBox();
+  const box = mesh.geometry.boundingBox;
+  const sz = new THREE.Vector3(); box.getSize(sz);
+  const scale = 1.6 / Math.max(sz.x, sz.y, sz.z);
+  mesh.geometry.scale(scale, scale, scale);
+  mesh.geometry.computeBoundingBox();
+  const ctr = new THREE.Vector3();
+  mesh.geometry.boundingBox.getCenter(ctr);
+  mesh.geometry.translate(-ctr.x, -ctr.y, -ctr.z);
+  mesh.geometry = mergeVertices(mesh.geometry);
+  mesh.geometry.computeVertexNormals();
+  mesh.geometry.computeBoundingBox();
+  const bb = mesh.geometry.boundingBox;
+  const bmid = new THREE.Vector3(); bb.getCenter(bmid);
+  const bsz = new THREE.Vector3(); bb.getSize(bsz);
+
+  // Group to hold brain + glow (so they rotate together)
+  const brainGroup = new THREE.Group();
+  scene.add(brainGroup);
+
+  // ── SOLID GRAY BRAIN with green glow area ─────────────────────────
+  const brainMat = new THREE.ShaderMaterial({
+    vertexShader: `
+      varying vec3 vNormal;
+      varying vec3 vViewPos;
+      varying vec3 vWorldPos;
+      void main() {
+        vNormal = normalize(normalMatrix * normal);
+        vec4 mvPos = modelViewMatrix * vec4(position, 1.0);
+        vViewPos = -mvPos.xyz;
+        vWorldPos = position;
+        gl_Position = projectionMatrix * mvPos;
+      }
+    `,
+    fragmentShader: `
+      varying vec3 vNormal;
+      varying vec3 vViewPos;
+      varying vec3 vWorldPos;
+      uniform float uTime;
+
+      // Multiple glow regions that animate
+      #define NUM_GLOWS 8
+      uniform vec3 uGlowCenters[NUM_GLOWS];
+      uniform float uGlowRadii[NUM_GLOWS];
+      uniform float uGlowPhases[NUM_GLOWS];
+
+      void main() {
+        vec3 n = normalize(vNormal);
+        vec3 v = normalize(vViewPos);
+
+        // Soft diffuse lighting only — matte, no specular
+        vec3 l1 = normalize(vec3(3.0, 3.0, 4.0));
+        vec3 l2 = normalize(vec3(-3.0, 1.0, 2.0));
+        vec3 l3 = normalize(vec3(-1.0, 2.0, -3.0));
+
+        // Wrap lighting for softer look (foam-like), brighter overall
+        float diff1 = (dot(n, l1) * 0.5 + 0.5) * 0.45;
+        float diff2 = (dot(n, l2) * 0.5 + 0.5) * 0.25;
+        float diff3 = (dot(n, l3) * 0.5 + 0.5) * 0.15;
+        float ambient = 0.4;
+        float lighting = ambient + diff1 + diff2 + diff3;
+
+        // No specular, no fresnel — pure matte
+        // Light gray foam-like brain
+        vec3 brainColor = vec3(0.85, 0.83, 0.82) * lighting;
+
+        // Multiple green glow regions that radiate outward over time
+        vec3 greenColor = vec3(0.784, 0.604, 0.459); // #C89A75
+        vec3 whiteGlow = vec3(1.0, 1.0, 0.95);
+        float totalGlow = 0.0;
+
+        for (int i = 0; i < NUM_GLOWS; i++) {
+          float dist = distance(vWorldPos, uGlowCenters[i]);
+          float baseRadius = uGlowRadii[i];
+          float phase = uGlowPhases[i];
+
+          // Cycle: starts small, radiates outward, then fades
+          float cycle = mod(uTime + phase, 12.0);
+          // Radius grows from 0 to full over 3s, holds 1.5s, then fades out
+          float radiusScale = smoothstep(0.0, 3.0, cycle) * (1.0 - smoothstep(5.0, 7.0, cycle));
+          float currentRadius = baseRadius * radiusScale;
+
+          // Intensity: fade in, hold, fade out — longer off period
+          float intensity = smoothstep(0.0, 2.0, cycle) * (1.0 - smoothstep(4.5, 7.0, cycle));
+
+          // Soft glow with wide spread
+          float glow = smoothstep(currentRadius, currentRadius * 0.1, dist);
+
+          // Brighter core, softer edges
+          float core = smoothstep(currentRadius * 0.6, 0.0, dist) * intensity;
+          float spread = glow * intensity;
+
+          totalGlow = max(totalGlow, spread);
+
+          brainColor = mix(brainColor, greenColor * 1.1, spread * 0.5);
+          brainColor += whiteGlow * core * core * 0.35;
+          brainColor += greenColor * spread * 0.2;
+        }
+
+        float alpha = 1.0;
+        gl_FragColor = vec4(brainColor, alpha);
+      }
+    `,
+    uniforms: {
+      uTime: { value: 0 },
+      uGlowCenters: { value: [
+        new THREE.Vector3(bmid.x, bmid.y + bsz.y * 0.4, bmid.z + bsz.z * 0.05),   // top crown / motor cortex
+        new THREE.Vector3(bmid.x - bsz.x * 0.35, bmid.y + bsz.y * 0.15, bmid.z + bsz.z * 0.25), // left frontal lobe
+        new THREE.Vector3(bmid.x + bsz.x * 0.35, bmid.y + bsz.y * 0.15, bmid.z + bsz.z * 0.25), // right frontal lobe
+        new THREE.Vector3(bmid.x - bsz.x * 0.35, bmid.y - bsz.y * 0.1, bmid.z - bsz.z * 0.15),  // left temporal
+        new THREE.Vector3(bmid.x + bsz.x * 0.35, bmid.y - bsz.y * 0.1, bmid.z - bsz.z * 0.15),  // right temporal
+        new THREE.Vector3(bmid.x, bmid.y + bsz.y * 0.15, bmid.z - bsz.z * 0.35),  // occipital
+        new THREE.Vector3(bmid.x - bsz.x * 0.2, bmid.y + bsz.y * 0.35, bmid.z - bsz.z * 0.1),   // left parietal
+        new THREE.Vector3(bmid.x + bsz.x * 0.2, bmid.y + bsz.y * 0.35, bmid.z - bsz.z * 0.1),   // right parietal
+      ]},
+      uGlowRadii: { value: [bsz.y*0.4, bsz.y*0.35, bsz.y*0.35, bsz.y*0.3, bsz.y*0.3, bsz.y*0.3, bsz.y*0.28, bsz.y*0.28] },
+      uGlowPhases: { value: [0.0, 4.0, 8.0, 2.0, 6.0, 3.5, 7.0, 1.0] },
+    },
+    side: THREE.FrontSide,
+  });
+
+  mesh.material = brainMat;
+  brainGroup.add(mesh);
+
+  // (glow handled entirely in shader — no extra spheres)
+
+  // ── MOUSE DRAG ROTATION ─────────────────────────────────────────────
+  let isDragging = false;
+  let prevMouseX = 0, prevMouseY = 0;
+  let dragRotY = 0, dragRotX = 0;
+  let autoRotOffset = 0; // accumulates auto-rotation
+
+  window.addEventListener('pointerdown', (e) => {
+    isDragging = true;
+    prevMouseX = e.clientX;
+    prevMouseY = e.clientY;
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - prevMouseX;
+    const dy = e.clientY - prevMouseY;
+    dragRotY += dx * 0.005;
+    dragRotX += dy * 0.003;
+    dragRotX = Math.max(-0.5, Math.min(0.5, dragRotX)); // clamp vertical
+    prevMouseX = e.clientX;
+    prevMouseY = e.clientY;
+  });
+  window.addEventListener('pointerup', () => { isDragging = false; });
+  window.addEventListener('pointerleave', () => { isDragging = false; });
+
+  // ── ANIMATION — continuous 360° with easing + drag ────────────────
+  const startTime = performance.now();
+  const ROTATION_PERIOD = 20;
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const elapsed = (performance.now() - startTime) * 0.001;
+    brainMat.uniforms.uTime.value = elapsed;
+
+    // Auto-rotation (pauses while dragging)
+    if (!isDragging) {
+      autoRotOffset += (1.0 / 60.0) / ROTATION_PERIOD * Math.PI * 2;
+    }
+    const easeWobble = Math.sin(elapsed * 0.3) * 0.05;
+    brainGroup.rotation.y = autoRotOffset + dragRotY + easeWobble;
+
+    // Vertical: auto tilt + drag
+    brainGroup.rotation.x = Math.sin(elapsed * 0.15) * 0.05 + dragRotX;
+
+    // Gentle float
+    brainGroup.position.y = Math.sin(elapsed * 0.5) * 0.02;
+
+
+    renderer.render(scene, camera);
+  }
+  animate();
+});
+
+// ── RESIZE ──────────────────────────────────────────────────────────
+window.addEventListener('resize', () => {
+  const w = window.innerWidth, h = window.innerHeight;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+</script>
+</body>
+</html>

@@ -6,6 +6,7 @@
     { "source": "/regenx", "destination": "/regenx.html" },
     { "source": "/arbor", "destination": "/arbor-biotech.html" },
     { "source": "/synchron", "destination": "/synchron.html" },
+    { "source": "/blackrock", "destination": "/blackrock.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
