@@ -10,11 +10,11 @@
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --navy: #0f2a3a;
-    --navy-deep: #091e2b;
-    --cyan: #5EAEC4;
-    --cyan-dim: #3d8fa8;
-    --orange: #E8913A;
+    --navy: #3B5464;
+    --navy-deep: #013546;
+    --cyan: #1C83AD;
+    --cyan-dim: #1C83AD;
+    --orange: #F0941B;
     --white: #ffffff;
     --white-soft: rgba(255,255,255,0.7);
     --font-display: 'Inter', sans-serif;
@@ -111,14 +111,14 @@
     line-height: 1.1;
     max-width: 520px;
     letter-spacing: 0.02em;
-    color: #0f2a3a;
+    color: #013546;
   }
-  .hero-headline .accent { color: #2A7F9E; }
+  .hero-headline .accent { color: #1C83AD; }
 
   /* ── SCROLL INDICATOR ────────────────────────────── */
   .scroll-indicator {
     position: fixed; bottom: var(--pad); left: 50%; transform: translateX(-50%);
-    z-index: 10; text-align: center; color: #2A7F9E;
+    z-index: 10; text-align: center; color: #1C83AD;
     font-size: 12px; letter-spacing: 0.12em; pointer-events: none;
   }
   .scroll-indicator span { display: block; margin-bottom: 6px; }
@@ -204,7 +204,7 @@
 
 <!-- HERO HEADLINE -->
 <div class="hero-overlay">
-  <h1 class="hero-headline">Novel <span class="accent">Gene Editing</span> Treatments</h1>
+  <h1 class="hero-headline">Novel <span style="color:#1C83AD">Gene</span> <span style="color:#F0941B">Editing</span> Treatments</h1>
 </div>
 
 <!-- SCROLL -->
@@ -17006,11 +17006,13 @@ function buildParticleSystem(basePositions, lightValues) {
     // Compute color for this line
     let r, g, b;
     if (isOrange) {
-      r = 0.91; g = 0.57; b = 0.23;
+      // #F0941B
+      r = 0.941; g = 0.580; b = 0.106;
     } else {
-      const shadowR = 0.06, shadowG = 0.20, shadowB = 0.38;
-      const midR = 0.17, midG = 0.50, midB = 0.62;
-      const hiR = 0.37, hiG = 0.68, hiB = 0.77;
+      // #013546 → #1C83AD → #ACDAFB
+      const shadowR = 0.004, shadowG = 0.208, shadowB = 0.275;
+      const midR = 0.110, midG = 0.514, midB = 0.678;
+      const hiR = 0.675, hiG = 0.855, hiB = 0.984;
       if (light < 0.5) {
         const t2 = light / 0.5;
         r = shadowR + (midR - shadowR) * t2;
