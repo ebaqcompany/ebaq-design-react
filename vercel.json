@@ -2,6 +2,7 @@
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/additiontx", "destination": "/additiontx.html" },
+    { "source": "/tunetx", "destination": "/tunetx.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
