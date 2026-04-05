@@ -291,7 +291,7 @@ loader.load('brain.obj', (obj) => {
   mesh.geometry.computeBoundingBox();
   const box = mesh.geometry.boundingBox;
   const sz = new THREE.Vector3(); box.getSize(sz);
-  const scale = 1.41 / Math.max(sz.x, sz.y, sz.z); // 80% of 1.76
+  const scale = 1.85 / Math.max(sz.x, sz.y, sz.z); // 105%
   mesh.geometry.scale(scale, scale, scale);
   mesh.geometry.computeBoundingBox();
   const ctr = new THREE.Vector3();
