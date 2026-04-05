@@ -17158,5 +17158,16 @@ window.addEventListener('resize', () => {
   renderer.setSize(w, h);
 });
 </script>
+<script>
+(function(){
+  var img = new Image();
+  img.src = '/api/track?t=pageview&p=' + encodeURIComponent('/tunetx') + '&_=' + Date.now();
+  var start = Date.now();
+  window.addEventListener('beforeunload', function(){
+    var s = Math.round((Date.now() - start) / 1000);
+    if (s > 3 && navigator.sendBeacon) navigator.sendBeacon('/api/track?t=pageview&p=' + encodeURIComponent('/tunetx (exit)') + '&dur=' + s);
+  });
+})();
+</script>
 </body>
 </html>
