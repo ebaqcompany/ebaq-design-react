@@ -16985,9 +16985,9 @@ function buildParticleSystem(basePositions, lightValues) {
     let isOrange = false;
     // Find the closest particle to each target point (first match wins)
     const targets = [
-      { x: 0.05, y: -0.1, z: 0.12 },  // guts center
-      { x: -0.08, y: -0.15, z: 0.1 },  // guts left
-      { x: 0.1, y: -0.05, z: 0.14 },   // guts right
+      { x: 0, y: 0.0, z: 0.15 },      // stomach center
+      { x: -0.06, y: -0.05, z: 0.13 }, // stomach left
+      { x: 0.06, y: 0.05, z: 0.14 },   // stomach right
     ];
     for (const t of targets) {
       const d = Math.sqrt((px-t.x)**2 + (py-t.y)**2 + (pz-t.z)**2);
