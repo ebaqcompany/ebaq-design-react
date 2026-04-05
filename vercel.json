@@ -7,6 +7,8 @@
     { "source": "/arbor", "destination": "/arbor-biotech.html" },
     { "source": "/synchron", "destination": "/synchron.html" },
     { "source": "/blackrock", "destination": "/blackrock.html" },
+    { "source": "/paradromics", "destination": "/paradromics.html" },
+    { "source": "/echo", "destination": "/echo.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paradromics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green: #A3133A;
+    --green-dim: #c43828;
+    --dark: #1a1a1a;
+    --gray-text: #333;
+    --white: #ffffff;
+    --bg: #f5f5f5;
+    --font-display: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --pad: clamp(20px, 3vw, 40px);
+  }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #0c0c0c; color: #f4eae8; font-family: var(--font-body); }
+  .grid-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cline x1='60' y1='0' x2='60' y2='60' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Cline x1='0' y1='60' x2='60' y2='60' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Crect x='57' y='57' width='5' height='5' rx='0.5' transform='rotate(45 60 60)' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+  canvas { display: block; position: absolute; top: 0; left: 0; z-index: 0; }
+  .vignette {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(12,12,12,0) 0%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  .site-nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--pad);
+    pointer-events: none;
+  }
+  .site-nav > * { pointer-events: auto; }
+  .nav-menu-btn {
+    width: 36px; height: 36px;
+    background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-menu-btn svg { width: 28px; height: 28px; }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: #f4eae8;
+  }
+  .nav-center {
+    display: flex; align-items: center; gap: 28px;
+    margin-left: auto;
+  }
+  .nav-center a {
+    color: rgba(244,234,232,0.7); text-decoration: none;
+    font-size: 14px; font-weight: 400;
+    white-space: nowrap; letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-center a:hover { color: #A3133A; }
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column; gap: 5px;
+    width: 36px; height: 36px;
+    background: none; border: none; cursor: pointer;
+    align-items: flex-end; justify-content: center;
+    padding: 6px;
+  }
+  .mobile-menu-btn span {
+    display: block; height: 2px; background: #f4eae8; border-radius: 1px;
+  }
+  .mobile-menu-btn span:nth-child(1) { width: 24px; }
+  .mobile-menu-btn span:nth-child(2) { width: 24px; }
+  .mobile-menu-btn span:nth-child(3) { width: 16px; }
+
+  /* ── HERO CONTENT ────────────────────────────────── */
+  .hero-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1;
+    pointer-events: none;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 var(--pad) 60px;
+  }
+  .hero-headline {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: 48px;
+    line-height: 1.05;
+    max-width: 750px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #f4eae8;
+  }
+  .hero-info {
+    position: fixed;
+    top: 130px;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .hero-info .nav-menu-btn {
+    position: static;
+    margin-left: -30px;
+  }
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f4eae8;
+    max-width: 340px;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* ── SCROLL INDICATOR ────────────────────────────── */
+  .scroll-indicator {
+    position: fixed; bottom: var(--pad); left: 50%; transform: translateX(-50%);
+    z-index: 10; text-align: center; color: rgba(244,234,232,0.3);
+    font-size: 12px; letter-spacing: 0.12em; pointer-events: none;
+  }
+  .scroll-indicator span { display: block; margin-bottom: 6px; }
+  .scroll-indicator svg {
+    display: block; margin: 0 auto;
+    animation: scrollBounce 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes scrollBounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(5px); }
+  }
+
+  /* ── GREEN TOP BAR (like Synchron site) ────────── */
+  .top-bar {
+    position: fixed; top: 0; left: 0; width: 100%; height: 5px;
+    background: #A3133A; z-index: 20;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 1100px) {
+    .nav-center { display: none; }
+    .mobile-menu-btn { display: flex !important; }
+    .hero-info {
+      position: fixed !important;
+      top: 130px !important;
+      left: calc(var(--pad) + 130px) !important;
+    }
+    .hero-headline { font-size: 60px !important; }
+  }
+  @media (max-width: 768px) {
+    .hero-headline { font-size: 48px !important; }
+    .scroll-indicator { display: none; }
+    .nav-center { display: none; }
+    .mobile-menu-btn { display: flex !important; }
+    .hero-info {
+      position: fixed !important;
+      top: 130px !important;
+      left: calc(var(--pad) + 130px) !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero-headline { font-size: 40px !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+<div class="grid-bg"></div>
+<div class="vignette"></div>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="#" class="nav-logo">
+    <img src="paradromics-logo.svg" alt="Paradromics" style="height: 32px;">
+  </a>
+  <div class="nav-center">
+    <a href="#">Products</a>
+    <a href="#">Company</a>
+    <a href="#">Careers</a>
+    <a href="#" style="border: 1px solid rgba(244,234,232,0.4); border-radius: 999px; padding: 6px 18px;">Clinical Trial</a>
+  </div>
+  <button class="mobile-menu-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO HEADLINE -->
+<div class="hero-overlay">
+  <h1 class="hero-headline">Enabling <span style="color:#A3133A">Neurotechnology</span></h1>
+</div>
+
+<!-- Icon + paragraph container -->
+<div class="hero-info" id="heroInfo">
+  <p class="hero-sub">Our BCI platform records individual neurons and uses AI to decode brain-data, translating thought into treatments.</p>
+</div>
+<script>
+  // On desktop: align container to first nav link; tablet/mobile: use CSS
+  function alignInfo() {
+    const firstLink = document.querySelector('.nav-center a');
+    const info = document.getElementById('heroInfo');
+    if (!info) return;
+    if (window.innerWidth > 1100 && firstLink) {
+      const rect = firstLink.getBoundingClientRect();
+      if (rect.width > 0) {
+        info.style.left = rect.left + 'px';
+        info.style.top = '130px';
+        return;
+      }
+    }
+    // Tablet/mobile: reset to CSS positioning
+    info.style.left = '';
+    info.style.top = '';
+  }
+  alignInfo();
+  window.addEventListener('resize', alignInfo);
+</script>
+
+<!-- SCROLL -->
+<div class="scroll-indicator">
+  <span>scroll</span>
+  <svg width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
+
+// ── RENDERER ────────────────────────────────────────────────────────
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x0c0c0c);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0c0c0c);
+
+const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 200);
+camera.position.set(0, 0.3, 3.5);
+camera.lookAt(0, 0.0, 0);
+
+// ── LIGHTING ────────────────────────────────────────────────────────
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+scene.add(ambientLight);
+
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.0);
+keyLight.position.set(3, 3, 4);
+scene.add(keyLight);
+
+const fillLight = new THREE.DirectionalLight(0x888888, 0.4);
+fillLight.position.set(-3, 1, 2);
+scene.add(fillLight);
+
+const rimLight = new THREE.DirectionalLight(0xaaaaaa, 0.5);
+rimLight.position.set(-1, 2, -3);
+scene.add(rimLight);
+
+// ── LOAD BRAIN MODEL ────────────────────────────────────────────────
+const loader = new OBJLoader();
+loader.load('brain.obj', (obj) => {
+  let mesh;
+  obj.traverse((child) => { if (child.isMesh) mesh = child; });
+  if (!mesh) return;
+
+  // Scale & center
+  mesh.geometry.computeBoundingBox();
+  const box = mesh.geometry.boundingBox;
+  const sz = new THREE.Vector3(); box.getSize(sz);
+  const scale = 1.6 / Math.max(sz.x, sz.y, sz.z);
+  mesh.geometry.scale(scale, scale, scale);
+  mesh.geometry.computeBoundingBox();
+  const ctr = new THREE.Vector3();
+  mesh.geometry.boundingBox.getCenter(ctr);
+  mesh.geometry.translate(-ctr.x, -ctr.y, -ctr.z);
+  mesh.geometry = mergeVertices(mesh.geometry);
+  mesh.geometry.computeVertexNormals();
+  mesh.geometry.computeBoundingBox();
+  const bb = mesh.geometry.boundingBox;
+  const bmid = new THREE.Vector3(); bb.getCenter(bmid);
+  const bsz = new THREE.Vector3(); bb.getSize(bsz);
+
+  // Group to hold brain + glow (so they rotate together)
+  const brainGroup = new THREE.Group();
+  scene.add(brainGroup);
+
+  // ── SOLID GRAY BRAIN with green glow area ─────────────────────────
+  const brainMat = new THREE.ShaderMaterial({
+    vertexShader: `
+      varying vec3 vNormal;
+      varying vec3 vViewPos;
+      varying vec3 vWorldPos;
+      void main() {
+        vNormal = normalize(normalMatrix * normal);
+        vec4 mvPos = modelViewMatrix * vec4(position, 1.0);
+        vViewPos = -mvPos.xyz;
+        vWorldPos = position;
+        gl_Position = projectionMatrix * mvPos;
+      }
+    `,
+    fragmentShader: `
+      varying vec3 vNormal;
+      varying vec3 vViewPos;
+      varying vec3 vWorldPos;
+      uniform float uTime;
+
+      // Multiple glow regions that animate
+      #define NUM_GLOWS 8
+      uniform vec3 uGlowCenters[NUM_GLOWS];
+      uniform float uGlowRadii[NUM_GLOWS];
+      uniform float uGlowPhases[NUM_GLOWS];
+
+      void main() {
+        vec3 n = normalize(vNormal);
+        vec3 v = normalize(vViewPos);
+
+        // Soft diffuse lighting only — matte, no specular
+        vec3 l1 = normalize(vec3(3.0, 3.0, 4.0));
+        vec3 l2 = normalize(vec3(-3.0, 1.0, 2.0));
+        vec3 l3 = normalize(vec3(-1.0, 2.0, -3.0));
+
+        // Wrap lighting for softer look (foam-like), brighter overall
+        float diff1 = (dot(n, l1) * 0.5 + 0.5) * 0.45;
+        float diff2 = (dot(n, l2) * 0.5 + 0.5) * 0.25;
+        float diff3 = (dot(n, l3) * 0.5 + 0.5) * 0.15;
+        float ambient = 0.4;
+        float lighting = ambient + diff1 + diff2 + diff3;
+
+        // No specular, no fresnel — pure matte
+        // Light gray foam-like brain
+        vec3 brainColor = vec3(0.18, 0.30, 0.50) * lighting;
+
+        // Multiple green glow regions that radiate outward over time
+        vec3 greenColor = vec3(0.64, 0.075, 0.227); // #A3133A
+        vec3 whiteGlow = vec3(1.0, 0.7, 0.75);
+        float totalGlow = 0.0;
+
+        for (int i = 0; i < NUM_GLOWS; i++) {
+          float dist = distance(vWorldPos, uGlowCenters[i]);
+          float baseRadius = uGlowRadii[i];
+          float phase = uGlowPhases[i];
+
+          // Cycle: starts small, radiates outward, then fades
+          float cycle = mod(uTime + phase, 12.0);
+          // Radius grows from 0 to full over 3s, holds 1.5s, then fades out
+          float radiusScale = smoothstep(0.0, 3.0, cycle) * (1.0 - smoothstep(5.0, 7.0, cycle));
+          float currentRadius = baseRadius * radiusScale;
+
+          // Intensity: fade in, hold, fade out — longer off period
+          float intensity = smoothstep(0.0, 2.0, cycle) * (1.0 - smoothstep(4.5, 7.0, cycle));
+
+          // Soft glow with wide spread
+          float glow = smoothstep(currentRadius, currentRadius * 0.1, dist);
+
+          // Brighter core, softer edges
+          float core = smoothstep(currentRadius * 0.6, 0.0, dist) * intensity;
+          float spread = glow * intensity;
+
+          totalGlow = max(totalGlow, spread);
+
+          brainColor = mix(brainColor, greenColor * 1.1, spread * 0.5);
+          brainColor += whiteGlow * core * core * 0.35;
+          brainColor += greenColor * spread * 0.2;
+        }
+
+        float alpha = 1.0;
+        gl_FragColor = vec4(brainColor, alpha);
+      }
+    `,
+    uniforms: {
+      uTime: { value: 0 },
+      uGlowCenters: { value: [
+        new THREE.Vector3(bmid.x, bmid.y + bsz.y * 0.4, bmid.z + bsz.z * 0.05),   // top crown / motor cortex
+        new THREE.Vector3(bmid.x - bsz.x * 0.35, bmid.y + bsz.y * 0.15, bmid.z + bsz.z * 0.25), // left frontal lobe
+        new THREE.Vector3(bmid.x + bsz.x * 0.35, bmid.y + bsz.y * 0.15, bmid.z + bsz.z * 0.25), // right frontal lobe
+        new THREE.Vector3(bmid.x - bsz.x * 0.35, bmid.y - bsz.y * 0.1, bmid.z - bsz.z * 0.15),  // left temporal
+        new THREE.Vector3(bmid.x + bsz.x * 0.35, bmid.y - bsz.y * 0.1, bmid.z - bsz.z * 0.15),  // right temporal
+        new THREE.Vector3(bmid.x, bmid.y + bsz.y * 0.15, bmid.z - bsz.z * 0.35),  // occipital
+        new THREE.Vector3(bmid.x - bsz.x * 0.2, bmid.y + bsz.y * 0.35, bmid.z - bsz.z * 0.1),   // left parietal
+        new THREE.Vector3(bmid.x + bsz.x * 0.2, bmid.y + bsz.y * 0.35, bmid.z - bsz.z * 0.1),   // right parietal
+      ]},
+      uGlowRadii: { value: [bsz.y*0.4, bsz.y*0.35, bsz.y*0.35, bsz.y*0.3, bsz.y*0.3, bsz.y*0.3, bsz.y*0.28, bsz.y*0.28] },
+      uGlowPhases: { value: [0.0, 4.0, 8.0, 2.0, 6.0, 3.5, 7.0, 1.0] },
+    },
+    side: THREE.FrontSide,
+  });
+
+  mesh.material = brainMat;
+  brainGroup.add(mesh);
+
+  // (glow handled entirely in shader — no extra spheres)
+
+  // ── MOUSE DRAG ROTATION ─────────────────────────────────────────────
+  let isDragging = false;
+  let prevMouseX = 0, prevMouseY = 0;
+  let dragRotY = 0, dragRotX = 0;
+  let autoRotOffset = 0; // accumulates auto-rotation
+
+  window.addEventListener('pointerdown', (e) => {
+    isDragging = true;
+    prevMouseX = e.clientX;
+    prevMouseY = e.clientY;
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - prevMouseX;
+    const dy = e.clientY - prevMouseY;
+    dragRotY += dx * 0.005;
+    dragRotX += dy * 0.003;
+    dragRotX = Math.max(-0.5, Math.min(0.5, dragRotX)); // clamp vertical
+    prevMouseX = e.clientX;
+    prevMouseY = e.clientY;
+  });
+  window.addEventListener('pointerup', () => { isDragging = false; });
+  window.addEventListener('pointerleave', () => { isDragging = false; });
+
+  // ── ANIMATION — continuous 360° with easing + drag ────────────────
+  const startTime = performance.now();
+  const ROTATION_PERIOD = 20;
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const elapsed = (performance.now() - startTime) * 0.001;
+    brainMat.uniforms.uTime.value = elapsed;
+
+    // Auto-rotation (pauses while dragging)
+    if (!isDragging) {
+      autoRotOffset += (1.0 / 60.0) / ROTATION_PERIOD * Math.PI * 2;
+    }
+    const easeWobble = Math.sin(elapsed * 0.3) * 0.05;
+    brainGroup.rotation.y = autoRotOffset + dragRotY + easeWobble;
+
+    // Vertical: auto tilt + drag
+    brainGroup.rotation.x = Math.sin(elapsed * 0.15) * 0.05 + dragRotX;
+
+    // Gentle float
+    brainGroup.position.y = Math.sin(elapsed * 0.5) * 0.02;
+
+
+    renderer.render(scene, camera);
+  }
+  animate();
+});
+
+// ── RESIZE ──────────────────────────────────────────────────────────
+window.addEventListener('resize', () => {
+  const w = window.innerWidth, h = window.innerHeight;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+</script>
+</body>
+</html>
