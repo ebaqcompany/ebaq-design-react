@@ -9,6 +9,7 @@
     { "source": "/blackrock", "destination": "/blackrock.html" },
     { "source": "/paradromics", "destination": "/paradromics.html" },
     { "source": "/echo", "destination": "/echo.html" },
+    { "source": "/motif", "destination": "/motif.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
