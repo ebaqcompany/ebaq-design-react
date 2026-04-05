@@ -111,7 +111,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         `🕐 ${event.timestamp.split('T')[1].split('.')[0]} UTC`
       );
     }
-    // Don't spam for unmatched visitors
+
+    // ---- HERO SECTION ALERTS ----
+    // Alert for ANY non-Brooklyn visitor on hero demo pages
+    const heroPages = ['/additiontx', '/tunetx'];
+    const isHeroPage = heroPages.some(p => page.startsWith(p));
+    const isSelf = city.toLowerCase().includes('brooklyn') || city.toLowerCase().includes('new york');
+    const isBot = ua.toLowerCase().includes('bot') || ua.toLowerCase().includes('crawler') || ua.toLowerCase().includes('spider');
+    const isExit = page.includes('(exit)');
+
+    if (isHeroPage && !isSelf && !isBot && !isExit) {
+      const pageName = page.includes('additiontx') ? 'Addition Therapeutics' : 'Tune Therapeutics';
+      const duration = req.query.dur ? ` (${req.query.dur}s on page)` : '';
+      sendTelegram(
+        `🎯 <b>Someone viewed your ${pageName} hero!</b>\n` +
+        `🌍 ${city}, ${country}\n` +
+        `📄 ${page}${duration}\n` +
+        `🖥 ${ua.substring(0, 80)}\n` +
+        `🕐 ${event.timestamp.split('T')[1].split('.')[0]} UTC`
+      );
+    }
   }
 
   // ---- PROPOSAL VIEW (legacy) ----
