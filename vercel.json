@@ -4,6 +4,7 @@
     { "source": "/additiontx", "destination": "/additiontx.html" },
     { "source": "/tunetx", "destination": "/tunetx.html" },
     { "source": "/regenx", "destination": "/regenx.html" },
+    { "source": "/arbor", "destination": "/arbor-biotech.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
