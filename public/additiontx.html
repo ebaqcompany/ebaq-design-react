@@ -49,6 +49,7 @@
 </head>
 <body>
 <div class="vignette-overlay"></div>
+<div class="top-fade"></div>
 <div class="bottom-fade"></div>
 <nav style="position:fixed;top:0;left:0;width:100%;z-index:10;display:flex;justify-content:center;pointer-events:none;">
 <div style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1440px;padding:24px 30px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#fff;">
@@ -143,6 +144,13 @@ window.addEventListener('resize', alignParagraph);
   .hero-description-desktop { display: none !important; }
   .hero-description-mobile { display: none !important; }
   .bottom-fade { display: block !important; }
+  .top-fade { display: block !important; }
+}
+.top-fade {
+  display: none;
+  position: fixed; top: 0; left: 0; width: 100%; height: 25vh;
+  background: linear-gradient(to bottom, rgba(30,58,85,0.6) 0%, transparent 100%);
+  z-index: 1; pointer-events: none;
 }
 .bottom-fade {
   display: none;
