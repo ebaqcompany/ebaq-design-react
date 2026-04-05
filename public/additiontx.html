@@ -49,6 +49,7 @@
 </head>
 <body>
 <div class="vignette-overlay"></div>
+<div class="bottom-fade"></div>
 <nav style="position:fixed;top:0;left:0;width:100%;z-index:10;display:flex;justify-content:center;pointer-events:none;">
 <div style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1440px;padding:24px 30px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#fff;">
 <div style="pointer-events:auto;color:#fff;">
@@ -136,7 +137,7 @@ window.addEventListener('resize', alignParagraph);
   }
   .scroll-arrow { display: none !important; }
   .hero-title {
-    font-size: 88px !important;
+    font-size: 56px !important;
     max-width: 500px !important;
   }
   .hero-description-desktop { display: none !important; }
@@ -145,15 +146,21 @@ window.addEventListener('resize', alignParagraph);
     position: static !important; transform: none !important;
     padding: 0 !important;
   }
-  .hero-description-mobile p { max-width: 50% !important; padding-right: 0 !important; }
-  .scroll-arrow { justify-content: center; }
+  .hero-description-mobile p { max-width: 80% !important; padding-right: 0 !important; }
+  .bottom-fade { display: block !important; }
 }
 @media (max-width: 600px) {
   .hero-title {
-    font-size: 88px !important;
-    max-width: 280px !important;
+    font-size: 48px !important;
+    max-width: 100% !important;
   }
   .hero-description-mobile p { max-width: 100% !important; }
+}
+.bottom-fade {
+  display: none;
+  position: fixed; bottom: 0; left: 0; width: 100%; height: 55vh;
+  background: linear-gradient(to top, rgba(41,93,132,0.85) 0%, rgba(41,93,132,0.4) 40%, transparent 100%);
+  z-index: 0; pointer-events: none;
 }
 </style>
 <div class="hero-container">
