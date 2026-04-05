@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synchron</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green: #32DE8B;
+    --green-dim: #2ba86e;
+    --dark: #1a1a1a;
+    --gray-text: #333;
+    --white: #ffffff;
+    --bg: #f5f5f5;
+    --font-display: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --pad: clamp(20px, 3vw, 40px);
+  }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #f5f5f5; color: #1a1a1a; font-family: var(--font-body); }
+  .grid-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cline x1='60' y1='0' x2='60' y2='60' stroke='rgba(0,0,0,0.08)' stroke-width='0.5'/%3E%3Cline x1='0' y1='60' x2='60' y2='60' stroke='rgba(0,0,0,0.08)' stroke-width='0.5'/%3E%3Crect x='57' y='57' width='5' height='5' rx='0.5' transform='rotate(45 60 60)' fill='none' stroke='rgba(0,0,0,0.1)' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+  canvas { display: block; position: absolute; top: 0; left: 0; z-index: 0; }
+  .vignette {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(245,245,245,0) 0%, rgba(230,230,230,0.3) 100%);
+    pointer-events: none;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  .site-nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--pad);
+    pointer-events: none;
+  }
+  .site-nav > * { pointer-events: auto; }
+  .nav-menu-btn {
+    width: 36px; height: 36px;
+    background: none; border: none; cursor: pointer;
+    position: fixed; bottom: var(--pad); right: var(--pad); z-index: 20;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-menu-btn svg { width: 28px; height: 28px; }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: #1a1a1a;
+  }
+  .nav-center {
+    display: flex; align-items: center; gap: 28px;
+    margin-left: auto;
+  }
+  .nav-center a {
+    color: rgba(0,0,0,0.6); text-decoration: none;
+    font-size: 14px; font-weight: 400;
+    white-space: nowrap; letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-center a:hover { color: var(--green); }
+
+  /* ── HERO CONTENT ────────────────────────────────── */
+  .hero-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1;
+    pointer-events: none;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 var(--pad) 60px;
+  }
+  .hero-headline {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: 60px;
+    line-height: 1.1;
+    max-width: 600px;
+    letter-spacing: -0.03em;
+    color: #1a1a1a;
+  }
+  .hero-sub {
+    position: fixed;
+    top: 190px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    max-width: 340px;
+    line-height: 1.5;
+    z-index: 2;
+    pointer-events: none;
+    text-align: left;
+  }
+
+  /* ── SCROLL INDICATOR ────────────────────────────── */
+  .scroll-indicator {
+    position: fixed; bottom: var(--pad); left: 50%; transform: translateX(-50%);
+    z-index: 10; text-align: center; color: rgba(0,0,0,0.4);
+    font-size: 12px; letter-spacing: 0.12em; pointer-events: none;
+  }
+  .scroll-indicator span { display: block; margin-bottom: 6px; }
+  .scroll-indicator svg {
+    display: block; margin: 0 auto;
+    animation: scrollBounce 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes scrollBounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(5px); }
+  }
+
+  /* ── GREEN TOP BAR (like Synchron site) ────────── */
+  .top-bar {
+    position: fixed; top: 0; left: 0; width: 100%; height: 3px;
+    background: var(--green); z-index: 20;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 1100px) {
+    .nav-center { display: none; }
+  }
+  @media (max-width: 768px) {
+    .hero-headline { font-size: 38px !important; }
+    .scroll-indicator { display: none; }
+    .nav-center { display: none; }
+    .hamburger { display: flex !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+<div class="grid-bg"></div>
+<div class="vignette"></div>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="#" class="nav-logo">
+    <svg class="nav-wordmark-svg" viewBox="0 0 175 43" height="28" fill="#1a1a1a"><path d="M90.332 0H93.6388V11.6806H93.8926C93.8926 11.6806 95.4191 8.63155 99.741 8.63155H103.048C106.862 8.63155 109.661 11.4268 109.661 15.2412V34.3289H106.355V15.511C106.355 13.2232 105.082 11.9505 102.794 11.9505H98.9797C95.6729 11.9505 93.6388 13.9885 93.6388 17.2913V34.3289H90.332V0ZM45.2676 9.15545H47.5554L48.3327 11.6809H48.5865C48.5865 11.6809 50.109 8.63184 54.4348 8.63184H58.2491C62.0635 8.63184 64.8587 11.4271 64.8587 15.2414V34.3291H61.556V15.5113C61.556 13.2235 60.2832 11.9507 57.9954 11.9507H53.9273C50.6205 11.9507 48.5865 13.9888 48.5865 17.2916V34.3291H45.2797L45.2676 9.15545ZM11.443 31.0141H0V34.329H11.6766C15.7487 34.329 18.2902 31.7874 18.2902 27.7194V26.9581C18.2902 23.905 16.0024 21.6173 12.4418 20.852L6.59349 19.5832C4.04793 19.0234 3.28668 18.0366 3.28668 16.0227C3.28668 13.7308 4.55543 12.4621 6.84724 12.4621H16.5139L17.5491 11.4431V9.15527H6.61363C2.54154 9.15527 0 11.6807 0 15.7689V16.514C0 19.5832 2.03403 21.871 5.5946 22.6323L11.443 23.893C13.9885 24.4528 15.0035 25.4396 15.0035 27.4535C15.0035 29.7413 13.7307 31.0141 11.443 31.0141ZM25.683 39.6698H23.3952V42.9847H25.683C29.4973 42.9847 31.5514 40.9506 33.5653 35.1023L41.9593 10.9356V9.15527H38.9062L32.2966 29.4996H32.0428L23.9027 9.15527H20.8496V11L30.5163 33.8335V34.329L30.2626 35.0942C29.0905 38.6548 28.0755 39.6698 25.683 39.6698ZM68.8184 15.7689V27.7194C68.8184 31.5337 71.6136 34.329 75.428 34.329H86.3634V31.0262H75.6817C73.3939 31.0262 72.1211 29.7534 72.1211 27.4656V16.0227C72.1211 13.7308 73.3939 12.4621 75.6817 12.4621H85.3484L86.3634 11.4431V9.15527H75.428C71.6136 9.15527 68.8184 11.9506 68.8184 15.7689ZM115.917 9.15545H113.629V34.313H116.936V17.2755C116.921 16.5705 117.05 15.87 117.313 15.2158C117.576 14.5617 117.969 13.9674 118.467 13.4687C118.965 12.9699 119.559 12.5769 120.213 12.3133C120.867 12.0497 121.568 11.9209 122.273 11.9346H126.852V8.63184H122.784C118.458 8.63184 116.936 11.6809 116.936 11.6809H116.678L115.917 9.15545ZM129.851 28.227V15.2576C129.851 11.4432 132.65 8.64795 136.464 8.64795H143.839C147.654 8.64795 150.449 11.4432 150.449 15.2576V28.227C150.449 32.0414 147.654 34.8407 143.839 34.8407H136.464C135.588 34.8681 134.716 34.7157 133.901 34.393C133.087 34.0704 132.347 33.5842 131.727 32.9645C131.107 32.3448 130.621 31.6048 130.298 30.79C129.976 29.9752 129.823 29.103 129.851 28.227ZM143.586 31.5339C145.873 31.5339 147.142 30.2611 147.142 27.9733V15.5113C147.142 13.2235 145.873 11.9507 143.586 11.9507H136.718C134.43 11.9507 133.158 13.2235 133.158 15.5113V27.9733C133.158 30.2611 134.43 31.5339 136.718 31.5339H143.586ZM156.71 9.15545H154.418L154.434 34.3291H157.741V17.2916C157.741 13.9888 159.775 11.9507 163.082 11.9507H167.15C169.442 11.9507 170.71 13.2235 170.71 15.5113V34.3291H174.017V15.2414C174.017 11.4271 171.222 8.63184 167.404 8.63184H163.589C159.267 8.63184 157.741 11.6809 157.741 11.6809H157.487L156.71 9.15545Z"/></svg>
+  </a>
+  <div class="nav-center">
+    <a href="#">The Challenge</a>
+    <a href="#">The Technology</a>
+    <a href="#">The Platform</a>
+    <a href="#">Research</a>
+    <a href="#">About Us</a>
+  </div>
+</nav>
+
+<!-- Crosshair icon — bottom right -->
+<button class="nav-menu-btn" aria-label="Menu">
+  <svg viewBox="0 0 28 28" fill="none" stroke="rgba(0,0,0,0.6)" stroke-width="1.2">
+    <line x1="14" y1="0" x2="14" y2="10.5"/>
+    <line x1="14" y1="17.5" x2="14" y2="28"/>
+    <line x1="0" y1="14" x2="10.5" y2="14"/>
+    <line x1="17.5" y1="14" x2="28" y2="14"/>
+    <rect x="11" y="11" width="6" height="6" rx="0.5" transform="rotate(45 14 14)" fill="none"/>
+  </svg>
+</button>
+
+<!-- HERO HEADLINE -->
+<div class="hero-overlay">
+  <h1 class="hero-headline">The brain-computer <span style="color:#32DE8B">interface</span></h1>
+</div>
+<p class="hero-sub" id="heroSub">Neurotechnology to address the limitations of the human body.</p>
+<script>
+  // Align paragraph to left edge of first nav link
+  function alignSub() {
+    const firstLink = document.querySelector('.nav-center a');
+    const sub = document.getElementById('heroSub');
+    if (firstLink && sub) {
+      sub.style.left = firstLink.getBoundingClientRect().left + 'px';
+    }
+  }
+  alignSub();
+  window.addEventListener('resize', alignSub);
+</script>
+
+<!-- SCROLL -->
+<div class="scroll-indicator">
+  <span>scroll</span>
+  <svg width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
+
+// ── RENDERER ────────────────────────────────────────────────────────
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0xf5f5f5);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xf5f5f5);
+
+const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 200);
+camera.position.set(0, 0.3, 3.5);
+camera.lookAt(0, 0.0, 0);
+
+// ── LIGHTING ────────────────────────────────────────────────────────
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+scene.add(ambientLight);
+
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.0);
+keyLight.position.set(3, 3, 4);
+scene.add(keyLight);
+
+const fillLight = new THREE.DirectionalLight(0x888888, 0.4);
+fillLight.position.set(-3, 1, 2);
+scene.add(fillLight);
+
+const rimLight = new THREE.DirectionalLight(0xaaaaaa, 0.5);
+rimLight.position.set(-1, 2, -3);
+scene.add(rimLight);
+
+// ── LOAD BRAIN MODEL ────────────────────────────────────────────────
+const loader = new OBJLoader();
+loader.load('brain.obj', (obj) => {
+  let mesh;
+  obj.traverse((child) => { if (child.isMesh) mesh = child; });
+  if (!mesh) return;
+
+  // Scale & center
+  mesh.geometry.computeBoundingBox();
+  const box = mesh.geometry.boundingBox;
+  const sz = new THREE.Vector3(); box.getSize(sz);
+  const scale = 1.41 / Math.max(sz.x, sz.y, sz.z); // 80% of 1.76
+  mesh.geometry.scale(scale, scale, scale);
+  mesh.geometry.computeBoundingBox();
+  const ctr = new THREE.Vector3();
+  mesh.geometry.boundingBox.getCenter(ctr);
+  mesh.geometry.translate(-ctr.x, -ctr.y, -ctr.z);
+  mesh.geometry = mergeVertices(mesh.geometry);
+  mesh.geometry.computeVertexNormals();
+  mesh.geometry.computeBoundingBox();
+  const bb = mesh.geometry.boundingBox;
+  const bmid = new THREE.Vector3(); bb.getCenter(bmid);
+  const bsz = new THREE.Vector3(); bb.getSize(bsz);
+
+  // Group to hold brain + glow (so they rotate together)
+  const brainGroup = new THREE.Group();
+  scene.add(brainGroup);
+
+  // ── SOLID GRAY BRAIN with green glow area ─────────────────────────
+  const brainMat = new THREE.ShaderMaterial({
+    vertexShader: `
+      varying vec3 vNormal;
+      varying vec3 vViewPos;
+      varying vec3 vWorldPos;
+      void main() {
+        vNormal = normalize(normalMatrix * normal);
+        vec4 mvPos = modelViewMatrix * vec4(position, 1.0);
+        vViewPos = -mvPos.xyz;
+        vWorldPos = position;
+        gl_Position = projectionMatrix * mvPos;
+      }
+    `,
+    fragmentShader: `
+      varying vec3 vNormal;
+      varying vec3 vViewPos;
+      varying vec3 vWorldPos;
+      uniform float uTime;
+
+      // Multiple glow regions that animate
+      #define NUM_GLOWS 8
+      uniform vec3 uGlowCenters[NUM_GLOWS];
+      uniform float uGlowRadii[NUM_GLOWS];
+      uniform float uGlowPhases[NUM_GLOWS];
+
+      void main() {
+        vec3 n = normalize(vNormal);
+        vec3 v = normalize(vViewPos);
+
+        // Soft diffuse lighting only — matte, no specular
+        vec3 l1 = normalize(vec3(3.0, 3.0, 4.0));
+        vec3 l2 = normalize(vec3(-3.0, 1.0, 2.0));
+        vec3 l3 = normalize(vec3(-1.0, 2.0, -3.0));
+
+        // Wrap lighting for softer look (foam-like), brighter overall
+        float diff1 = (dot(n, l1) * 0.5 + 0.5) * 0.45;
+        float diff2 = (dot(n, l2) * 0.5 + 0.5) * 0.25;
+        float diff3 = (dot(n, l3) * 0.5 + 0.5) * 0.15;
+        float ambient = 0.4;
+        float lighting = ambient + diff1 + diff2 + diff3;
+
+        // No specular, no fresnel — pure matte
+        // Light gray foam-like brain
+        vec3 brainColor = vec3(0.85, 0.83, 0.82) * lighting;
+
+        // Multiple green glow regions that radiate outward over time
+        vec3 greenColor = vec3(0.196, 0.871, 0.545); // #32DE8B
+        vec3 whiteGlow = vec3(1.0, 1.0, 0.95);
+        float totalGlow = 0.0;
+
+        for (int i = 0; i < NUM_GLOWS; i++) {
+          float dist = distance(vWorldPos, uGlowCenters[i]);
+          float baseRadius = uGlowRadii[i];
+          float phase = uGlowPhases[i];
+
+          // Cycle: starts small, radiates outward, then fades
+          float cycle = mod(uTime + phase, 12.0);
+          // Radius grows from 0 to full over 3s, holds 1.5s, then fades out
+          float radiusScale = smoothstep(0.0, 3.0, cycle) * (1.0 - smoothstep(5.0, 7.0, cycle));
+          float currentRadius = baseRadius * radiusScale;
+
+          // Intensity: fade in, hold, fade out — longer off period
+          float intensity = smoothstep(0.0, 2.0, cycle) * (1.0 - smoothstep(4.5, 7.0, cycle));
+
+          // Soft glow with wide spread
+          float glow = smoothstep(currentRadius, currentRadius * 0.1, dist);
+
+          // Brighter core, softer edges
+          float core = smoothstep(currentRadius * 0.6, 0.0, dist) * intensity;
+          float spread = glow * intensity;
+
+          totalGlow = max(totalGlow, spread);
+
+          brainColor = mix(brainColor, greenColor * 1.1, spread * 0.5);
+          brainColor += whiteGlow * core * core * 0.35;
+          brainColor += greenColor * spread * 0.2;
+        }
+
+        float alpha = 1.0;
+        gl_FragColor = vec4(brainColor, alpha);
+      }
+    `,
+    uniforms: {
+      uTime: { value: 0 },
+      uGlowCenters: { value: [
+        new THREE.Vector3(bmid.x, bmid.y + bsz.y * 0.4, bmid.z + bsz.z * 0.05),   // top crown / motor cortex
+        new THREE.Vector3(bmid.x - bsz.x * 0.35, bmid.y + bsz.y * 0.15, bmid.z + bsz.z * 0.25), // left frontal lobe
+        new THREE.Vector3(bmid.x + bsz.x * 0.35, bmid.y + bsz.y * 0.15, bmid.z + bsz.z * 0.25), // right frontal lobe
+        new THREE.Vector3(bmid.x - bsz.x * 0.35, bmid.y - bsz.y * 0.1, bmid.z - bsz.z * 0.15),  // left temporal
+        new THREE.Vector3(bmid.x + bsz.x * 0.35, bmid.y - bsz.y * 0.1, bmid.z - bsz.z * 0.15),  // right temporal
+        new THREE.Vector3(bmid.x, bmid.y + bsz.y * 0.15, bmid.z - bsz.z * 0.35),  // occipital
+        new THREE.Vector3(bmid.x - bsz.x * 0.2, bmid.y + bsz.y * 0.35, bmid.z - bsz.z * 0.1),   // left parietal
+        new THREE.Vector3(bmid.x + bsz.x * 0.2, bmid.y + bsz.y * 0.35, bmid.z - bsz.z * 0.1),   // right parietal
+      ]},
+      uGlowRadii: { value: [bsz.y*0.4, bsz.y*0.35, bsz.y*0.35, bsz.y*0.3, bsz.y*0.3, bsz.y*0.3, bsz.y*0.28, bsz.y*0.28] },
+      uGlowPhases: { value: [0.0, 4.0, 8.0, 2.0, 6.0, 3.5, 7.0, 1.0] },
+    },
+    side: THREE.FrontSide,
+  });
+
+  mesh.material = brainMat;
+  brainGroup.add(mesh);
+
+  // (glow handled entirely in shader — no extra spheres)
+
+  // ── MOUSE DRAG ROTATION ─────────────────────────────────────────────
+  let isDragging = false;
+  let prevMouseX = 0, prevMouseY = 0;
+  let dragRotY = 0, dragRotX = 0;
+  let autoRotOffset = 0; // accumulates auto-rotation
+
+  window.addEventListener('pointerdown', (e) => {
+    isDragging = true;
+    prevMouseX = e.clientX;
+    prevMouseY = e.clientY;
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - prevMouseX;
+    const dy = e.clientY - prevMouseY;
+    dragRotY += dx * 0.005;
+    dragRotX += dy * 0.003;
+    dragRotX = Math.max(-0.5, Math.min(0.5, dragRotX)); // clamp vertical
+    prevMouseX = e.clientX;
+    prevMouseY = e.clientY;
+  });
+  window.addEventListener('pointerup', () => { isDragging = false; });
+  window.addEventListener('pointerleave', () => { isDragging = false; });
+
+  // ── ANIMATION — continuous 360° with easing + drag ────────────────
+  const startTime = performance.now();
+  const ROTATION_PERIOD = 20;
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const elapsed = (performance.now() - startTime) * 0.001;
+    brainMat.uniforms.uTime.value = elapsed;
+
+    // Auto-rotation (pauses while dragging)
+    if (!isDragging) {
+      autoRotOffset += (1.0 / 60.0) / ROTATION_PERIOD * Math.PI * 2;
+    }
+    const easeWobble = Math.sin(elapsed * 0.3) * 0.05;
+    brainGroup.rotation.y = autoRotOffset + dragRotY + easeWobble;
+
+    // Vertical: auto tilt + drag
+    brainGroup.rotation.x = Math.sin(elapsed * 0.15) * 0.05 + dragRotX;
+
+    // Gentle float
+    brainGroup.position.y = Math.sin(elapsed * 0.5) * 0.02;
+
+
+    renderer.render(scene, camera);
+  }
+  animate();
+});
+
+// ── RESIZE ──────────────────────────────────────────────────────────
+window.addEventListener('resize', () => {
+  const w = window.innerWidth, h = window.innerHeight;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+</script>
+</body>
+</html>
