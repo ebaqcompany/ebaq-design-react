@@ -11,16 +11,12 @@
 
     :root {
       --green: #74E8B1;
-      --green-dim: rgba(116, 232, 177, 0.15);
-      --green-glow: rgba(116, 232, 177, 0.3);
-      --bg: #0a0a0a;
-      --bg-card: #111111;
-      --text: #e8e8e8;
-      --text-dim: #888888;
+      --bg: #1C2B4F;
+      --text: #ffffff;
       --border: rgba(255,255,255,0.08);
     }
 
-    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
 
     body {
       font-family: 'Inter', -apple-system, sans-serif;
@@ -30,7 +26,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Noise overlay ── */
+    /* ── Noise ── */
     body::before {
       content: '';
       position: fixed;
@@ -40,40 +36,90 @@
       z-index: 9999;
     }
 
-    /* ── Container ── */
-    .container {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 0 3rem;
+    /* ══════════════════════════════════
+       STRUCTURAL PATTERN:
+       .section-full  → 100% width, border-bottom
+         .section-frame  → max-width 1440px, border left+right
+           .section-content → max-width 1200px, centered
+       ══════════════════════════════════ */
+
+    .section-full {
       width: 100%;
+      position: relative;
     }
 
-    /* ── Navigation ── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(10, 10, 10, 0.6);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      max-width: 1440px;
+    .section-frame {
+      max-width: 1330px;
       margin: 0 auto;
-      padding: 1.25rem 3rem;
+      position: relative;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+
+    .section-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 2rem;
+    }
+
+    /* Hide frame borders when viewport < 1440 */
+    @media (max-width: 1330px) {
+      .section-frame {
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ══════════════════════════════════
+       NAVBAR
+       ══════════════════════════════════ */
+    .navbar-full {
+      width: 100%;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 100;
+      background: var(--bg);
+      flex-shrink: 0;
+    }
+
+    .navbar-frame {
+      max-width: 1330px;
+      margin: 0 auto;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    @media (max-width: 1330px) {
+      .navbar-frame {
+        border-left: none;
+        border-right: none;
+      }
     }
 
     .nav-logo {
       display: flex;
       align-items: center;
       text-decoration: none;
+      flex-shrink: 0;
     }
 
     .nav-logo img {
@@ -95,7 +141,7 @@
     }
 
     .nav-links a {
-      color: var(--text-dim);
+      color: #ffffff;
       text-decoration: none;
       font-size: 0.875rem;
       font-weight: 400;
@@ -117,29 +163,66 @@
       transition: all 0.3s;
       text-decoration: none;
       font-family: inherit;
+      white-space: nowrap;
     }
 
     .nav-cta:hover {
       background: var(--green);
       color: var(--bg);
-      box-shadow: 0 0 30px var(--green-glow);
+      box-shadow: 0 0 30px rgba(116, 232, 177, 0.3);
     }
 
-    /* ── Hero ── */
-    .hero {
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: #ffffff;
+      transition: all 0.3s;
+    }
+
+    /* ══════════════════════════════════
+       HERO
+       ══════════════════════════════════ */
+    .hero-full {
+      width: 100%;
+      flex: 1;
       position: relative;
-      width: 100vw;
-      height: 100vh;
       overflow: hidden;
     }
 
-    /* ── ASCII Canvas — true fullscreen ── */
+    .hero-frame {
+      max-width: 1330px;
+      margin: 0 auto;
+      height: 100%;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+
+    @media (max-width: 1330px) {
+      .hero-frame {
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    /* ASCII canvas — fills the entire hero-full, behind everything */
     #ascii-container {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       cursor: default;
       user-select: none;
       z-index: 1;
@@ -158,13 +241,40 @@
       pointer-events: none;
     }
 
-    /* ── Headline overlay — bottom left ── */
-    .hero-headline {
+    /* Hero text overlays — inside the frame, positioned via section-content logic */
+    .hero-subtitle {
       position: absolute;
-      bottom: 4rem;
-      left: max(3rem, calc((100vw - 1440px) / 2 + 3rem));
+      top: 2rem;
+      left: 0;
+      right: 0;
       z-index: 10;
       pointer-events: none;
+    }
+
+    .hero-subtitle .section-content {
+      display: flex;
+    }
+
+    .hero-subtitle p {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      padding-left: var(--subtitle-offset, 0);
+    }
+
+    .hero-headline {
+      position: absolute;
+      bottom: 3rem;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .hero-headline .section-content {
+      display: flex;
     }
 
     .hero-headline h1 {
@@ -179,118 +289,28 @@
       color: var(--green);
     }
 
-
-    /* ── Counter Section ── */
-    .counters {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 4rem 3rem 6rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .counters-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      background: var(--bg-card);
-    }
-
-    .counter-item {
-      padding: 3rem 2.5rem;
-      position: relative;
-      text-align: center;
-    }
-
-    .counter-item:not(:last-child)::after {
-      content: '';
+    /* ── Partner logo ── */
+    .hero-partner-logo {
       position: absolute;
+      bottom: 3rem;
+      left: 0;
       right: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: var(--border);
-    }
-
-    .counter-number {
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
-      font-weight: 700;
-      color: var(--green);
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .counter-label {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-    }
-
-    .counter-sublabel {
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.3);
-      margin-top: 0.3rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* ── Footer strip ── */
-    .footer-strip {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 2rem 3rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--text-dim);
-    }
-
-    .footer-strip a {
-      color: var(--green);
-      text-decoration: none;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 1024px) {
-      .counters-grid { grid-template-columns: repeat(2, 1fr); }
-      .counter-item:nth-child(2)::after { display: none; }
-      .counter-item:nth-child(1),
-      .counter-item:nth-child(2) {
-        border-bottom: 1px solid var(--border);
-      }
-    }
-
-    @media (max-width: 640px) {
-      nav { padding: 1rem 1.5rem; }
-      .hero-headline { bottom: 2.5rem; left: 1.5rem; }
-      .drag-hint { bottom: 2.5rem; right: 1.5rem; }
-      .counters { padding: 3rem 1.5rem 4rem; }
-      .counters-grid { grid-template-columns: 1fr 1fr; }
-      .nav-links { display: none; }
-      .footer-strip { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
-    }
-
-    /* ── Hero subtitle ── */
-    .hero-subtitle {
-      position: absolute;
-      top: 6.5rem;
       z-index: 10;
       pointer-events: none;
     }
 
-    .hero-subtitle p {
-      font-size: 0.95rem;
-      color: var(--text);
-      line-height: 1.6;
-      font-weight: 400;
-      letter-spacing: 0.01em;
+    .partner-logos {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .partner-logo {
+      height: 20px;
+      width: auto;
+      filter: grayscale(1) sepia(1) saturate(3) hue-rotate(100deg);
+      mix-blend-mode: multiply;
+      opacity: 0.5;
     }
 
     /* ── Typing cursor ── */
@@ -306,106 +326,136 @@
       50% { opacity: 0; }
     }
 
-    .highlight-dot {
-      color: var(--green);
-    }
 
-    /* ── Fade-in ── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.5s;
-    }
+    /* ══════════════════════════════════
+       RESPONSIVE
+       ══════════════════════════════════ */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-right { gap: 1rem; }
 
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+      .navbar-content { padding: 1rem 1.25rem; }
+      .section-content { padding: 0 1.25rem; }
 
-    .counter-item {
-      opacity: 0;
-      transform: translateY(20px);
-    }
+      .hero-headline h1 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+      }
 
-    .counter-item.visible {
-      animation: fadeUp 0.6s ease forwards;
+      .hero-headline {
+        bottom: 2rem;
+      }
+
+      .hero-subtitle {
+        top: 1.5rem;
+      }
+
+      .hero-subtitle p {
+        font-size: 0.85rem;
+        padding-left: 0 !important;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <img src="imerai-logo.webp" alt="imper.ai" />
-      </a>
-      <div class="nav-right">
-        <ul class="nav-links">
-          <li><a href="#" id="nav-platform">Platform</a></li>
-          <li><a href="#">Solutions</a></li>
-          <li><a href="#">Resources</a></li>
-          <li><a href="#">Company</a></li>
-        </ul>
-        <a href="#" class="nav-cta">Get a demo &rarr;</a>
-      </div>
-    </div>
-  </nav>
+  <div class="page">
 
-  <!-- Hero -->
-  <section class="hero">
-    <div id="ascii-container">
-      <canvas id="ascii-canvas"></canvas>
-      <canvas id="three-canvas" width="600" height="600"></canvas>
+    <!-- ═══ NAVBAR ═══ -->
+    <div class="navbar-full">
+      <div class="navbar-frame">
+        <div class="navbar-content">
+          <a href="#" class="nav-logo" id="nav-logo">
+            <img src="imerai-logo.webp" alt="imper.ai" />
+          </a>
+          <div class="nav-right">
+            <ul class="nav-links">
+              <li><a href="#" id="nav-platform">Platform</a></li>
+              <li><a href="#">Solutions</a></li>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">Company</a></li>
+            </ul>
+            <a href="#" class="nav-cta">Get a demo &rarr;</a>
+            <button class="nav-hamburger" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="hero-subtitle fade-up">
-      <p>The first Identity Verification Platform<br>purpose-built for the workforce.</p>
-    </div>
-    <div class="hero-headline fade-up">
-      <h1>Verify the human<br>behind every<br><span class="highlight"><span id="typed-text">password reset</span><span class="typed-cursor">|</span></span></h1>
-    </div>
-  </section>
 
-  <!-- Counters -->
-  <section class="counters">
-    <div class="counters-grid">
-      <div class="counter-item" data-target="92" data-suffix="%">
-        <div class="counter-number">0%</div>
-        <div class="counter-label">Cost Reduction</div>
-        <div class="counter-sublabel">vs. manual verification</div>
-      </div>
-      <div class="counter-item" data-target="98" data-suffix="%">
-        <div class="counter-number">0%</div>
-        <div class="counter-label">Accuracy Rate</div>
-        <div class="counter-sublabel">identity match confidence</div>
-      </div>
-      <div class="counter-item" data-target="3" data-suffix="s">
-        <div class="counter-number">0s</div>
-        <div class="counter-label">Avg. Verification</div>
-        <div class="counter-sublabel">real-time processing</div>
-      </div>
-      <div class="counter-item" data-target="10" data-suffix="M+">
-        <div class="counter-number">0M+</div>
-        <div class="counter-label">Verifications</div>
-        <div class="counter-sublabel">enterprise scale</div>
+    <!-- ═══ HERO ═══ -->
+    <div class="hero-full">
+      <div class="hero-frame">
+        <!-- ASCII canvas — fills entire hero -->
+        <div id="ascii-container">
+          <canvas id="ascii-canvas"></canvas>
+          <canvas id="three-canvas" width="600" height="600"></canvas>
+        </div>
+
+        <!-- Subtitle — top, aligned with end of logo -->
+        <div class="hero-subtitle">
+          <div class="section-content">
+            <p>The first Identity Verification Platform<br>purpose-built for the <span style="color: var(--green)">workforce</span>.</p>
+          </div>
+        </div>
+
+        <!-- Headline — bottom left -->
+        <div class="hero-headline">
+          <div class="section-content">
+            <h1>Verify the human<br>behind every<br><span class="highlight"><span id="typed-text">password reset</span><span class="typed-cursor">|</span></span></h1>
+          </div>
+        </div>
+
+        <!-- Partner logo bottom right -->
+        <div class="hero-partner-logo">
+          <div class="section-content" style="display:flex; justify-content:flex-end;">
+            <div class="partner-logos">
+              <img src="google-meet-logo.svg" alt="Google Meet" class="partner-logo" />
+              <img src="zoom-icon.svg" alt="Zoom" class="partner-logo" style="height: 24px;" />
+              <img src="microsoft-teams-logo.svg" alt="Microsoft Teams" class="partner-logo" style="height: 24px;" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer-strip">
-    <span>&copy; 2025 imper.ai — All rights reserved.</span>
-    <span>Built with purpose. <a href="#">Privacy Policy</a></span>
-  </footer>
+  </div>
 
   <!-- Three.js + OBJLoader -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
 
   <script>
-    // ─── Config ───
+    // ─── Align subtitle with Platform nav link (desktop) / flush left (mobile) ───
+    function alignSubtitle() {
+      const subtitleP = document.querySelector('.hero-subtitle p');
+      if (!subtitleP) return;
+
+      // Mobile — flush left, no offset
+      if (window.innerWidth <= 768) {
+        subtitleP.style.paddingLeft = '0';
+        return;
+      }
+
+      // Desktop — align with left edge of "Platform" link
+      const platformLink = document.getElementById('nav-platform');
+      if (!platformLink) return;
+
+      const linkRect = platformLink.getBoundingClientRect();
+      subtitleP.style.paddingLeft = '0';
+      const pRect = subtitleP.getBoundingClientRect();
+      const offset = linkRect.left - pRect.left;
+      subtitleP.style.paddingLeft = Math.max(0, offset) + 'px';
+    }
+    window.addEventListener('load', alignSubtitle);
+    window.addEventListener('resize', alignSubtitle);
+    requestAnimationFrame(alignSubtitle);
+
+    // ─── ASCII Config ───
     const RENDER_SIZE = 600;
-    // ASCII chars from dark → bright: shadows use dots/dashes, midtones use +/*, highlights use #/%/@
     const CHAR_SET_SHADOW  = [' ', ' ', '.', '.', '-', '-'];
     const CHAR_SET_MID     = [':', ':', '+', '+', '*', '*'];
     const CHAR_SET_HIGH    = ['#', '#', '%', '%', '@', '@'];
@@ -419,7 +469,6 @@
     threeCanvas.height = RENDER_SIZE;
 
     // ─── Three.js Scene ───
-    // Orthographic camera — no perspective distortion during rotation
     const scene = new THREE.Scene();
     const frustumSize = 5;
     const camera = new THREE.OrthographicCamera(
@@ -437,7 +486,6 @@
     renderer.setSize(RENDER_SIZE, RENDER_SIZE);
     renderer.setClearColor(0x000000, 0);
 
-    // Lights — strong directional for clear 3D shadows/highlights
     scene.add(new THREE.AmbientLight(0xffffff, 0.25));
 
     const keyLight = new THREE.DirectionalLight(0xffffff, 1.2);
@@ -474,25 +522,20 @@
         }
       });
 
-      // The model's tallest axis is Z (6.0) — rotate to stand upright (Z → Y)
       obj.rotation.x = -Math.PI / 2;
-
-      // Now recompute bounds after rotation
       obj.updateMatrixWorld(true);
       const box = new THREE.Box3().setFromObject(obj);
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
       const maxDim = Math.max(size.x, size.y, size.z);
-      const scale = 6.5 / maxDim; // Fill the ortho frustum nicely
+      const scale = 6.5 / maxDim;
 
       obj.position.sub(center);
       obj.scale.setScalar(scale);
       pivotGroup.add(obj);
 
-      // Initial slight Y rotation so it's not flat-on
       pivotGroup.rotation.y = 0.4;
       pivotGroup.rotation.x = 0.15;
-
       modelLoaded = true;
     });
 
@@ -544,6 +587,18 @@
     // ─── Pixel buffer ───
     const pixelBuf = new Uint8Array(RENDER_SIZE * RENDER_SIZE * 4);
 
+    // ─── Scatter animation ───
+    let assembleStartTime = null;
+    const ASSEMBLE_DURATION = 600; // ms
+    // Pre-generate random offsets for scatter (seeded by position)
+    const MAX_SCATTER_CELLS = 300 * 200;
+    const scatterX = new Float32Array(MAX_SCATTER_CELLS);
+    const scatterY = new Float32Array(MAX_SCATTER_CELLS);
+    for (let i = 0; i < MAX_SCATTER_CELLS; i++) {
+      scatterX[i] = (Math.random() - 0.5) * 2; // -1 to 1
+      scatterY[i] = (Math.random() - 0.5) * 2;
+    }
+
     // ─── Render ───
     function animate() {
       requestAnimationFrame(animate);
@@ -556,6 +611,14 @@
 
       if (!modelLoaded) return;
 
+      // Start assemble timer on first render
+      if (assembleStartTime === null) assembleStartTime = performance.now();
+      const elapsed = performance.now() - assembleStartTime;
+      // scatter factor: 1 (fully scattered) → 0 (assembled), ease out cubic
+      const scatterT = Math.max(0, 1 - elapsed / ASSEMBLE_DURATION);
+      const scatter = scatterT * scatterT * scatterT; // ease in (fast settle)
+      const scatterRange = 250; // max pixel scatter distance
+
       renderer.render(scene, camera);
 
       const gl = renderer.getContext();
@@ -563,7 +626,7 @@
 
       const cw = asciiCanvas.width;
       const ch = asciiCanvas.height;
-      asciiCtx.fillStyle = 'rgba(10, 10, 10, 1)';
+      asciiCtx.fillStyle = 'rgba(28, 43, 79, 1)';
       asciiCtx.fillRect(0, 0, cw, ch);
 
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -573,24 +636,19 @@
       const cols = Math.floor(cw / cellW);
       const rows = Math.floor(ch / cellH);
 
-      // Map the square 3D render centered on the wide canvas
-      // The render occupies a square region in the center of the canvas (in pixels)
-      const renderPixelSize = ch; // fill the full height
-      const renderPixelLeft = (cw - renderPixelSize) / 2; // center horizontally
+      const renderPixelSize = ch;
+      const renderPixelLeft = (cw - renderPixelSize) / 2;
 
       asciiCtx.font = `${fontSize}px 'JetBrains Mono', monospace`;
       asciiCtx.textBaseline = 'middle';
 
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
-          // Pixel position of this ASCII cell
           const px = col * cellW;
           const py = row * cellH;
 
-          // Map to 3D render texture coordinates
           const sx = Math.floor(((px - renderPixelLeft) / renderPixelSize) * RENDER_SIZE);
           const sy = RENDER_SIZE - 1 - Math.floor((py / ch) * RENDER_SIZE);
-          if (sx < 0 || sx >= RENDER_SIZE || sy < 0 || sy >= RENDER_SIZE) continue;
           if (sx < 0 || sx >= RENDER_SIZE || sy < 0 || sy >= RENDER_SIZE) continue;
 
           const idx = (sy * RENDER_SIZE + sx) * 4;
@@ -604,33 +662,32 @@
           const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
           if (brightness < 0.015) continue;
 
-          // Pick character based on brightness zone
           const charIdx = Math.min(Math.floor(brightness * ALL_CHARS.length), ALL_CHARS.length - 1);
           const char = ALL_CHARS[charIdx];
           if (char === ' ') continue;
 
-          // Color: dim green for shadows, vivid green for highlights
           let cr, cg, cb, ca;
           if (brightness < 0.33) {
-            // Shadow zone — very dim, subtle
             cr = 30; cg = 80 + brightness * 200; cb = 50 + brightness * 100;
             ca = 0.25 + brightness * 0.5;
           } else if (brightness < 0.66) {
-            // Midtone — medium green
             cr = 40 + brightness * 40; cg = 150 + brightness * 100; cb = 80 + brightness * 60;
             ca = 0.5 + brightness * 0.4;
           } else {
-            // Highlight — bright vivid green / near white-green
             cr = 80 + brightness * 80; cg = 200 + brightness * 55; cb = 140 + brightness * 50;
             ca = 0.7 + brightness * 0.3;
           }
 
           asciiCtx.fillStyle = `rgba(${Math.floor(cr)}, ${Math.floor(cg)}, ${Math.floor(cb)}, ${ca})`;
-          asciiCtx.fillText(char, col * cellW, row * cellH + cellH * 0.5);
+          // Apply scatter offset during assemble animation
+          const cellIdx = (row * cols + col) % MAX_SCATTER_CELLS;
+          const ox = scatter * scatterRange * scatterX[cellIdx];
+          const oy = scatter * scatterRange * scatterY[cellIdx];
+          asciiCtx.fillText(char, col * cellW + ox, row * cellH + cellH * 0.5 + oy);
         }
       }
 
-      // Ambient floating particles in the background
+      // Ambient particles
       const time = performance.now() * 0.001;
       asciiCtx.font = `${fontSize * 0.7}px 'JetBrains Mono', monospace`;
       const particleChars = ['.', ':', '+', '-', '*', '.', '.'];
@@ -645,60 +702,13 @@
 
     animate();
 
-    // ─── Counter Animation ───
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const items = entry.target.querySelectorAll('.counter-item');
-          items.forEach((item, i) => {
-            item.style.animationDelay = `${i * 0.15}s`;
-            item.classList.add('visible');
-
-            const target = parseInt(item.dataset.target);
-            const suffix = item.dataset.suffix || '';
-            const numEl = item.querySelector('.counter-number');
-            const duration = 2000;
-            const start = performance.now();
-
-            function updateCounter(now) {
-              const elapsed = now - start - (i * 150);
-              if (elapsed < 0) { requestAnimationFrame(updateCounter); return; }
-              const progress = Math.min(elapsed / duration, 1);
-              const eased = 1 - Math.pow(1 - progress, 3);
-              const current = Math.round(eased * target);
-              numEl.textContent = current + suffix;
-              if (progress < 1) requestAnimationFrame(updateCounter);
-            }
-            requestAnimationFrame(updateCounter);
-          });
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    counterObserver.observe(document.querySelector('.counters-grid'));
-
-    // ─── Align subtitle with Platform nav link ───
-    function alignSubtitle() {
-      const platformLink = document.getElementById('nav-platform');
-      const subtitle = document.querySelector('.hero-subtitle');
-      if (platformLink && subtitle) {
-        const rect = platformLink.getBoundingClientRect();
-        subtitle.style.left = rect.left + 'px';
-      }
-    }
-    alignSubtitle();
-    window.addEventListener('resize', alignSubtitle);
-
     // ─── Typing Effect ───
     const typedEl = document.getElementById('typed-text');
     const words = ['password reset', 'interview', 'account recovery', 'onboarding', 'access request'];
     let wordIndex = 0;
     let charIndex = words[0].length;
     let isDeleting = true;
-    let pauseTimer = null;
 
-    // Start after initial pause
     setTimeout(typeLoop, 2500);
 
     function typeLoop() {
@@ -728,7 +738,6 @@
         setTimeout(typeLoop, 80 + Math.random() * 40);
       }
     }
-
   </script>
 
 </body>
