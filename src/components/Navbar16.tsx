@@ -53,7 +53,7 @@ export const Navbar16 = (props: Navbar16Props) => {
             ))}
           </nav>
         )}
-        <Button {...button} variant="secondary" onClick={scrollToBook}>
+        <Button {...button} onClick={scrollToBook}>
           {button.title}
         </Button>
       </div>

@@ -74,8 +74,8 @@ export const Layout484 = (props: Layout484Props) => {
 export const Layout484Defaults: Props = {
   tagline: "Brand Sprints",
   heading:
-    "A Brand Sprint is a one-week identity project for companies that need senior design, clear positioning, and launch-ready brand assets without a long agency process. Need a website? Add a focused web sprint next.",
+    "A Brand Sprint is a one-week identity project for companies that need senior design, clear positioning, and launch-ready brand assets without a long agency process.",
   buttons: [
-    { title: "Book a Call", variant: "secondary" },
+    { title: "Book a Call" },
   ],
 };

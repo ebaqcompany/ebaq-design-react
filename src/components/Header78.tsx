@@ -302,7 +302,7 @@ export const Header78 = (props: Header78Props) => {
 export const Header78Defaults: Props = {
   heading: "World-class branding\nfor one clear price.",
   description:
-    "Ebaq Design is a senior-led branding and web design studio in New York. Get a custom logo, brand identity, guidelines, and website direction for a clear $3,000 Brand Sprint.",
+    "Ebaq Design is led by Arek, a senior brand designer in New York. Get a custom logo, brand identity, guidelines, and website direction for a clear $3,000 Brand Sprint.",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],
 
   // Row 1: Logo Animations

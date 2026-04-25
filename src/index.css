@@ -33,17 +33,40 @@ html, body {
 }
 
 /* Global button styles */
-button,
-a[class*="bg-"] {
+button:not([role="tab"]),
+button[role="tab"],
+a.button-primary,
+a.button-secondary {
   border-radius: 99px !important;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-button:hover,
-a[class*="bg-"]:hover {
+button:not([role="tab"])[class*="bg-background-alternative"],
+button[role="tab"][data-state="active"],
+a.button-primary {
+  background-color: #000 !important;
+  border-color: #000 !important;
+  color: #fff !important;
+}
+
+button:not([role="tab"])[class*="bg-background-primary"],
+button[role="tab"][data-state="inactive"],
+a.button-secondary {
+  background-color: transparent !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  color: #000 !important;
+}
+
+button:not([role="tab"])[class*="bg-background-alternative"]:hover,
+button:not([role="tab"])[class*="bg-background-primary"]:hover,
+button[role="tab"]:hover,
+a.button-primary:hover,
+a.button-secondary:hover {
   background-color: #00afec !important;
   border-color: #00afec !important;
-  color: white !important;
+  color: #fff !important;
 }
 
 /* Footer link with animated underline */

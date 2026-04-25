@@ -1,6 +1,6 @@
 # Ebaq Design
 
-> Senior-led branding, logo design, identity design, and web design studio based in New York City.
+> Senior branding, logo design, identity design, and web design by Arek, a freelance brand designer based in New York City.
 
 Ebaq Design provides brand strategy, custom logo design, brand identity systems, brand guidelines, Figma web design, website copywriting, pitch deck design, motion graphics, and Framer, Webflow, or React website development.
 
@@ -8,7 +8,7 @@ Ebaq Design provides brand strategy, custom logo design, brand identity systems,
 
 - Startups and founders that need a complete brand identity quickly.
 - Service businesses, law firms, agencies, and growing companies that want senior brand and web design without a traditional agency timeline.
-- Teams that need clear pricing, a focused process, and direct work with a senior designer.
+- Teams that need clear pricing, a focused process, and direct work with an experienced senior designer.
 
 ## Core offer
 
@@ -47,4 +47,3 @@ Ebaq Design provides brand strategy, custom logo design, brand identity systems,
 - LinkedIn: https://linkedin.com/in/arekzak
 
 Last updated: 2026-04-25
-

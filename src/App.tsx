@@ -2,6 +2,8 @@ import {
   Navbar16,
   Header78,
   Layout484,
+  Layout485,
+  Pricing8,
   Comparison,
   Layout527,
   Testimonial32,
@@ -24,6 +26,12 @@ function App() {
 
           {/* Layout484 Section */}
           <Layout484 />
+
+          {/* Founder decision guide */}
+          <Layout485 />
+
+          {/* Pricing Section */}
+          <Pricing8 />
 
           {/* Comparison Section */}
           <Comparison />

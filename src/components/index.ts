@@ -11,6 +11,7 @@ export { TextLink } from "./TextLink";
 export { Comparison } from "./Comparison";
 export { CTABadge } from "./CTABadge";
 export { Layout484 } from "./Layout484";
+export { Layout485 } from "./Layout485";
 export { Layout527 } from "./Layout527";
 export { BookerSection } from "./BookerSection";
 export { AboutSection } from "./AboutSection";

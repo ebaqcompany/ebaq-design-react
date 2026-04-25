@@ -31,11 +31,11 @@ export const BookerSection = () => {
       <div className="container relative z-10">
         <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mb-8 md:mb-12 text-center tracking-[-0.03em]">Book a free intro call</h2>
         {/* Desktop - inline embed */}
-        <div className="hidden md:block relative">
+        <div className="relative hidden h-[760px] md:block">
           <Cal
             namespace="15min"
             calLink="ebaqdesign/15min"
-            style={{ width: "100%", height: "100%", overflow: "scroll" }}
+            style={{ width: "100%", height: "760px", minHeight: "760px", overflow: "scroll" }}
             config={{ layout: "month_view" }}
           />
         </div>

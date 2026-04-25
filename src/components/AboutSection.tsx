@@ -12,12 +12,6 @@ type Props = {
   };
 };
 
-const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com/ebaqdesign" },
-  { label: "X", href: "https://x.com/ebaqdesign" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/arekzak" },
-];
-
 export type AboutSectionProps = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const AboutSection = (props: AboutSectionProps) => {
@@ -40,13 +34,13 @@ export const AboutSection = (props: AboutSectionProps) => {
               href="https://contra.com/ebaqdesign"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 md:mt-8 px-5 py-2.5 rounded-full border border-black/15 hover:border-black/40 transition-colors duration-200"
+              className="button-primary inline-flex items-center gap-2 mt-6 md:mt-8 px-5 py-2.5 rounded-full border transition-colors duration-200"
               style={{ fontFamily: "'Open Sans', sans-serif" }}
             >
               <img
                 src="https://contra.com/static/assets/contra-logo-filled.svg"
                 alt="Contra"
-                className="w-5 h-5"
+                className="w-5 h-5 invert"
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
               <span className="text-sm font-semibold tracking-wide">Hire me on Contra</span>
@@ -58,19 +52,6 @@ export const AboutSection = (props: AboutSectionProps) => {
               alt={image.alt}
               className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover"
             />
-            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-black/50">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-black transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 
