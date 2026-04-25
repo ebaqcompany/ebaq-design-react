@@ -77,20 +77,20 @@ export const Pricing8 = (props: Pricing8Props) => {
 
 export const Pricing8Defaults: Props = {
   tagline: "Pricing",
-  heading: "One clear Brand Sprint price",
-  description: "A focused senior-design engagement with clear scope before work begins.",
-  planName: "Brand Sprint",
-  planDescription: "Core brand identity package",
+  heading: "Simple pricing",
+  description: "One clear price. No hidden costs. Everything included.",
+  planName: "Monthly Retainer",
+  planDescription: "Complete branding and website design",
   price: "$3k",
-  period: " flat",
+  period: "/mo",
   features: [
     { icon: <BiCheck className="size-6" />, text: "Logo & brand identity design" },
     { icon: <BiCheck className="size-6" />, text: "Brand guidelines document" },
     { icon: <BiCheck className="size-6" />, text: "Figma web design" },
-    { icon: <BiCheck className="size-6" />, text: "Webflow, Framer, or React web dev options" },
+    { icon: <BiCheck className="size-6" />, text: "Webflow/Framer/React web dev" },
     { icon: <BiCheck className="size-6" />, text: "Website copywriting" },
     { icon: <BiCheck className="size-6" />, text: "Direct work with Arek" },
-    { icon: <BiCheck className="size-6" />, text: "One focused project at a time" },
+    { icon: <BiCheck className="size-6" />, text: "Unlimited revisions" },
   ],
   button: { title: "Book a Call" },
 };

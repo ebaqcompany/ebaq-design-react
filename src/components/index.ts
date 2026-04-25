@@ -14,4 +14,3 @@ export { Layout484 } from "./Layout484";
 export { Layout527 } from "./Layout527";
 export { BookerSection } from "./BookerSection";
 export { AboutSection } from "./AboutSection";
-export { AgentFacts } from "./AgentFacts";

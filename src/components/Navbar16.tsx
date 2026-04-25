@@ -70,11 +70,4 @@ export const Navbar16Defaults: Props = {
   button: {
     title: "Book a Call",
   },
-  navLinks: [
-    { label: "Work", href: "#work" },
-    { label: "Services", href: "#services" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
-    { label: "About", href: "#about" },
-  ],
 };

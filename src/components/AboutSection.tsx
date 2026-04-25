@@ -12,6 +12,12 @@ type Props = {
   };
 };
 
+const socialLinks = [
+  { label: "Instagram", href: "https://instagram.com/ebaqdesign" },
+  { label: "X", href: "https://x.com/ebaqdesign" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/arekzak" },
+];
+
 export type AboutSectionProps = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const AboutSection = (props: AboutSectionProps) => {
@@ -46,12 +52,25 @@ export const AboutSection = (props: AboutSectionProps) => {
               <span className="text-sm font-semibold tracking-wide">Hire me on Contra</span>
             </a>
           </div>
-          <div className="flex justify-start lg:justify-end">
+          <div className="flex flex-col items-start lg:items-end">
             <img
               src={image.src}
               alt={image.alt}
               className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover"
             />
+            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-black/50">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

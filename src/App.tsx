@@ -2,13 +2,10 @@ import {
   Navbar16,
   Header78,
   Layout484,
-  Pricing8,
   Comparison,
   Layout527,
   Testimonial32,
-  AgentFacts,
   AboutSection,
-  Footer15,
   BookerSection,
 } from "./components";
 import { useTracking } from "./hooks/useTracking";
@@ -28,12 +25,6 @@ function App() {
           {/* Layout484 Section */}
           <Layout484 />
 
-          {/* Agent-readable facts and FAQ */}
-          <AgentFacts />
-
-          {/* Pricing Section */}
-          <Pricing8 />
-
           {/* Comparison Section */}
           <Comparison />
 
@@ -45,9 +36,6 @@ function App() {
 
           {/* About Section */}
           <AboutSection />
-
-          {/* Footer */}
-          <Footer15 />
         </div>
 
         {/* Booker Section - reveals from behind */}
