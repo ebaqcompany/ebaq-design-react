@@ -273,7 +273,7 @@ export const Header78 = (props: Header78Props) => {
   const visibleRows = showRows || [1, 2, 3];
 
   return (
-    <section id="relume" className="py-16 md:py-24 lg:py-28 bg-white">
+    <section id="work" className="py-16 md:py-24 lg:py-28 bg-white">
       <div className="px-[5%] mb-12 md:mb-18 lg:mb-20">
         {tagline && <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>{tagline}</p>}
         <h1 className="text-[2.5rem] md:text-[5rem] lg:text-[6rem] whitespace-pre-line tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300", lineHeight: 1 }}>{heading}</h1>
@@ -301,7 +301,8 @@ export const Header78 = (props: Header78Props) => {
 
 export const Header78Defaults: Props = {
   heading: "World-class branding\nfor one clear price.",
-  description: "",
+  description:
+    "Ebaq Design is a senior-led branding and web design studio in New York. Get a custom logo, brand identity, guidelines, and website direction for a clear $3,000 Brand Sprint.",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],
 
   // Row 1: Logo Animations

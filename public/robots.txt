@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /proposal/
+
+Sitemap: https://ebaq.design/sitemap.xml
+

@@ -43,9 +43,9 @@ export const Testimonial32 = (props: Testimonial32Props) => {
         <div className="relative h-[300svh] lg:h-[300vh]">
           <div className="sticky top-0 grid h-svh grid-cols-1 content-center items-center justify-center px-[5%] md:flex md:content-normal md:px-0 lg:h-screen">
             <div className="absolute bottom-auto left-0 right-0 top-0 flex w-full justify-center pt-20 md:inset-auto md:pt-0">
-              <h1 className="whitespace-nowrap text-[5rem] md:text-[10rem] lg:text-[12rem] text-black tracking-[-0.06em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 200", lineHeight: 1 }}>
+              <h2 className="whitespace-nowrap text-[5rem] md:text-[10rem] lg:text-[12rem] text-black tracking-[-0.06em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 200", lineHeight: 1 }}>
                 {heading}
-              </h1>
+              </h2>
             </div>
             <div className="sticky top-0 mx-auto mt-12 flex min-h-[24.5rem] w-full max-w-md flex-col items-center justify-center sm:mt-24 md:relative lg:mt-0">
               {testimonials.map((testimonial, index) => (

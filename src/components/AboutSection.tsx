@@ -21,7 +21,7 @@ export const AboutSection = (props: AboutSectionProps) => {
   };
 
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
+    <section id="about" className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
       <div className="container">
         {/* Top section with greeting, heading and image */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-20 md:mb-28 lg:mb-36">

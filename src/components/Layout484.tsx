@@ -38,7 +38,7 @@ export const Layout484 = (props: Layout484Props) => {
   const words = heading.split(" ");
 
   return (
-    <section id="relume" className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28 bg-white">
+    <section id="process" className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28 bg-white">
       <div className="container max-w-xl">
         <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>{tagline}</p>
         <h2 ref={headingRef} className="text-5xl md:text-7xl lg:text-8xl">
@@ -74,7 +74,7 @@ export const Layout484 = (props: Layout484Props) => {
 export const Layout484Defaults: Props = {
   tagline: "Brand Sprints",
   heading:
-    "At ebaqdesign, I believe exceptional branding is possible without the wait. With nearly 20 years of experience, I've decided to create Brand Sprints. Get your branding done in just one week. Need a website?—Get it right next week.",
+    "A Brand Sprint is a one-week identity project for companies that need senior design, clear positioning, and launch-ready brand assets without a long agency process. Need a website? Add a focused web sprint next.",
   buttons: [
     { title: "Book a Call", variant: "secondary" },
   ],

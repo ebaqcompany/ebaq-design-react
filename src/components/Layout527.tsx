@@ -37,7 +37,7 @@ export const Layout527 = (props: Layout527Props) => {
   }, [hoveredIndex]);
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
+    <section id="deliverables" className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
       <div className="container">
         <h2 className="mb-12 text-4xl md:text-5xl lg:text-6xl md:mb-16">
           $3k goes a long way. All this plus much more.
@@ -128,10 +128,10 @@ export const Layout527Defaults: Props = {
     },
     {
       url: "#",
-      heading: "Colateral",
+      heading: "Collateral",
       image: {
         src: "/case-study/aero-stationery.png",
-        alt: "Aero colateral",
+        alt: "Aero collateral",
       },
     },
     {
