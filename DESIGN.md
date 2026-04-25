@@ -1,237 +1,469 @@
 ---
-version: "alpha"
+version: "1.0"
 name: "Ebaq Design"
-description: "A flat, senior-led brand and web design system for Ebaq Design: white space, black type, precise layouts, Ebaq blue accents, and portfolio-led proof."
+purpose: "Agent-facing design system for the Ebaq Design React site."
+source_of_truth: "Use this file before creating, pasting, or modifying any UI in this codebase."
+brand:
+  position: "Senior freelance brand designer for startups, founders, and marketing teams."
+  personality: "Direct, minimal, confident, editorial, senior, fast."
+  avoid_positioning:
+    - "Do not describe Ebaq as a big studio or agency team."
+    - "Do not say Arek works with one client at a time."
+    - "Do not make the site feel like SaaS marketing wallpaper."
+assets:
+  logo_on_white: "/ebaqdesign-logo-thinner.svg"
+  logo_default: "/ebaqdesign-logo.svg"
+  logo_bold: "/ebaqdesign-logo-bold.svg"
+  logo_on_black: "/ebaqdesign-logo-big.svg"
+  icon_mark_svg: "/ebaq_icon.svg"
+  icon_mark_png: "/portfolio/ebaq-mark.png"
+  profile_photo: "/arek-pic-pro.jpg"
+  portfolio_identity_assets: "/portfolio/identities/*"
+  portfolio_website_assets: "/portfolio/websites/*"
+  animated_logo_assets: "/portfolio/logos/*.json"
 colors:
-  primary: "#000000"
-  secondary: "#666666"
-  tertiary: "#00AFEC"
-  neutral: "#FFFFFF"
+  black: "#000000"
+  white: "#FFFFFF"
+  blue: "#00AFEC"
   surface: "#F5F5F5"
-  surface-soft: "#F8FAFB"
-  border: "#DADADA"
-  muted: "#666666"
-  success: "#20C66A"
-  on-primary: "#FFFFFF"
-  on-tertiary: "#000000"
-  on-neutral: "#000000"
+  surface_soft: "#F8FAFB"
+  border: "rgba(0, 0, 0, 0.2)"
+  border_light: "rgba(0, 0, 0, 0.1)"
+  muted: "rgba(0, 0, 0, 0.5)"
+  muted_strong: "rgba(0, 0, 0, 0.6)"
+  white_muted: "rgba(255, 255, 255, 0.6)"
 typography:
-  display-xl:
+  display:
     fontFamily: "Roboto Flex"
-    fontSize: "6rem"
+    fontVariationSettings: "'wght' 300"
     fontWeight: "300"
     lineHeight: "1"
     letterSpacing: "-0.05em"
-    fontVariation: "'wght' 300"
-  display-md:
+    mobile: "2.5rem"
+    tablet: "5rem"
+    desktop: "6rem"
+  section_heading:
     fontFamily: "Roboto Flex"
-    fontSize: "5rem"
-    fontWeight: "300"
+    fontVariationSettings: "'wght' 250 or 'wght' 300"
+    fontWeight: "250-300"
     lineHeight: "1"
     letterSpacing: "-0.05em"
-    fontVariation: "'wght' 300"
-  heading-md:
+    mobile: "3rem"
+    tablet: "4.5rem"
+    desktop: "6rem"
+  compact_heading:
     fontFamily: "Roboto Flex"
-    fontSize: "2.5rem"
+    fontVariationSettings: "'wght' 400"
     fontWeight: "400"
-    lineHeight: "1.05"
-    letterSpacing: "-0.04em"
-    fontVariation: "'wght' 400"
-  body-lg:
+    lineHeight: "1.3-1.4"
+    letterSpacing: "0 to -0.02em"
+    mobile: "1.125rem"
+    tablet: "1.25rem"
+    desktop: "1.5rem"
+  body:
     fontFamily: "Open Sans"
-    fontSize: "1.125rem"
     fontWeight: "400"
-    lineHeight: "1.55"
-    letterSpacing: "0px"
-  body-md:
-    fontFamily: "Open Sans"
-    fontSize: "1rem"
-    fontWeight: "400"
-    lineHeight: "1.55"
-    letterSpacing: "0px"
+    lineHeight: "1.55-1.6"
+    letterSpacing: "0"
+    mobile: "1rem"
+    tablet: "1.125rem"
   label:
     fontFamily: "Open Sans"
-    fontSize: "0.875rem"
-    fontWeight: "700"
+    fontWeight: "600"
     lineHeight: "1.2"
-    letterSpacing: "0px"
-rounded:
-  sm: "8px"
-  md: "16px"
-  lg: "24px"
-  pill: "999px"
+    letterSpacing: "0"
+    size: "0.875rem to 1rem"
+  button:
+    fontFamily: "Open Sans"
+    fontWeight: "600"
+    lineHeight: "1.2"
+    letterSpacing: "0"
+radii:
+  media_card: "8px"
+  standard_card: "8px"
+  large_panel: "16px"
+  modal_panel: "24px"
+  button_pill: "99px"
+  avatar: "999px"
 spacing:
-  xs: "4px"
-  sm: "8px"
-  md: "16px"
-  lg: "24px"
-  xl: "40px"
-  section-y: "112px"
-  page-x: "5%"
+  page_x: "5%"
+  section_y_mobile: "4rem"
+  section_y_tablet: "6rem"
+  section_y_desktop: "7rem"
+  component_gap_sm: "0.5rem"
+  component_gap_md: "1rem"
+  component_gap_lg: "1.5rem"
+  grid_gap: "2rem to 5rem"
 components:
-  button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.on-primary}"
-    border: "1px solid {colors.primary}"
-    typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "12px 22px"
-  button-primary-hover:
-    backgroundColor: "{colors.tertiary}"
-    border: "1px solid {colors.tertiary}"
-    textColor: "{colors.on-primary}"
-    rounded: "{rounded.pill}"
-  button-secondary:
-    backgroundColor: "transparent"
-    textColor: "{colors.on-neutral}"
+  primary_button:
+    background: "#000000"
+    color: "#FFFFFF"
+    border: "1px solid #000000"
+    radius: "99px"
+    hover_background: "#00AFEC"
+    hover_border: "#00AFEC"
+    hover_color: "#FFFFFF"
+  secondary_button:
+    background: "transparent"
+    color: "#000000"
     border: "1px solid rgba(0, 0, 0, 0.2)"
-    typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "12px 22px"
-  button-secondary-hover:
-    backgroundColor: "{colors.tertiary}"
-    border: "1px solid {colors.tertiary}"
-    textColor: "{colors.on-primary}"
-    rounded: "{rounded.pill}"
-  portfolio-card:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.primary}"
-    rounded: "{rounded.sm}"
-    padding: "0"
-  pricing-card:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.on-primary}"
-    rounded: "{rounded.lg}"
-    padding: "32px"
-  kanban-card:
-    backgroundColor: "{colors.neutral}"
-    textColor: "{colors.primary}"
-    rounded: "{rounded.sm}"
-    padding: "16px"
-  chat-surface:
-    backgroundColor: "{colors.surface-soft}"
-    textColor: "{colors.primary}"
-    rounded: "{rounded.lg}"
-    padding: "24px"
-  board-column:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.secondary}"
-    rounded: "{rounded.md}"
-    padding: "16px"
-  status-shipped:
-    backgroundColor: "{colors.success}"
-    textColor: "{colors.primary}"
-    rounded: "{rounded.pill}"
-    padding: "6px 10px"
+    radius: "99px"
+    hover_background: "#00AFEC"
+    hover_border: "#00AFEC"
+    hover_color: "#FFFFFF"
+  text_link:
+    background: "none"
+    border: "none"
+    color: "#000000"
+    hover_color: "#00AFEC"
+  pricing_card:
+    background: "#FFFFFF"
+    border: "1px solid rgba(0, 0, 0, 0.2)"
+    radius: "8px"
   divider:
-    backgroundColor: "{colors.border}"
-    textColor: "{colors.primary}"
-    rounded: "{rounded.sm}"
-    padding: "1px"
-  metadata:
-    backgroundColor: "{colors.neutral}"
-    textColor: "{colors.muted}"
-    typography: "{typography.label}"
-    rounded: "{rounded.sm}"
-    padding: "0"
-  blue-pill:
-    backgroundColor: "{colors.tertiary}"
-    textColor: "{colors.on-tertiary}"
-    rounded: "{rounded.pill}"
-    padding: "8px 14px"
+    color: "rgba(0, 0, 0, 0.2)"
+    thickness: "1px"
+  alternate_section:
+    background: "#F5F5F5"
 ---
 
-## Overview
+# Ebaq Design System Instructions
 
-Ebaq Design should feel like a senior designer's working desk: direct, calm, organized, and visually sharp. The system is intentionally flat and minimal, using strong typography, whitespace, portfolio imagery, and small blue interaction moments rather than decorative effects.
+This file is the design contract for agents working in this repo. Read it before changing the UI. It follows the DESIGN.md convention: machine-readable tokens in YAML frontmatter, then human-readable rules and intent in Markdown. Keep both layers in sync when the system changes.
 
-The brand promise is senior-led speed without agency drag. Interfaces and videos should make it clear that clients work directly with Arek, move through a focused weekly queue, and see tangible progress quickly.
+## Agent Rules
 
-Core reusable assets:
+- Preserve the existing Ebaq site language: minimal, senior, direct, spacious, and editorial.
+- Prefer the existing Relume component structure and Tailwind conventions already in `src/components`.
+- When pasting a new Relume component, strip out default-looking styles that conflict with this file.
+- Do not invent a new visual direction unless the user explicitly asks for a redesign.
+- Do not add decorative gradients, glassmorphism, purple SaaS palettes, floating blobs, stock-looking illustrations, or generic AI landing-page patterns.
+- Do not use bold display typography. Avoid `font-bold` and `font-extrabold` for headings, numbers, and hero text.
+- Use real project assets from `/public` before introducing new media.
+- Keep text written for founders and buyers. Do not write visible copy that addresses "AI agents" directly.
 
-- Logo: `/public/ebaqdesign-logo.svg`
-- Mark: `/public/portfolio/ebaq-mark.png` or `/public/ebaq_icon.svg`
-- Profile image: `/public/arek-pic-pro.jpg`
-- Portfolio identity tiles: `/public/portfolio/identities/*`
-- Portfolio website media: `/public/portfolio/websites/*`
+## Brand Direction
 
-## Colors
+Ebaq Design should feel like a senior designer's working desk: clean, organized, precise, and confident. The site sells direct access to Arek, a senior freelance designer, not an agency team.
 
-The palette is white, black, and precise Ebaq blue. Use gray only to separate surfaces or lower visual priority.
+The design is mostly white, black, and Ebaq blue. Blue is an interaction/accent color, not a dominant background color. The site should look editorial and portfolio-led, with large type, clean dividers, real work samples, and simple pricing.
 
-- **Primary (#000000):** headlines, pricing panels, high-emphasis buttons, final CTA backgrounds.
-- **Tertiary (#00AFEC):** Ebaq interaction color, cursor accents, active states, links, small proof highlights, and motion emphasis.
-- **Neutral (#FFFFFF):** the dominant canvas for website and video frames.
-- **Surface (#F5F5F5):** alternate section bands, kanban columns, subtle UI panels.
-- **Surface Soft (#F8FAFB):** pale gradient starts, chat backgrounds, storyboard/video transitions.
-- **Success (#20C66A):** completion states only, especially shipped cards and checkmarks.
+Use this positioning language:
 
-Avoid large full-screen blue fills except for short transition beats. The site should mostly read as white, black, and editorial.
+- "Senior design partner for startups"
+- "Senior brand designer"
+- "Freelance brand designer"
+- "Direct work with Arek"
+- "Brand Sprint"
+- "Brand + Website"
+
+Avoid this language:
+
+- "studio" unless the user specifically asks for it
+- "agency" as the primary positioning
+- "one client at a time"
+- "agent-readable" or "for AI agents" in visible page copy
+
+## Logos And Assets
+
+Use the correct logo for the background:
+
+- On white or light backgrounds, use `/ebaqdesign-logo-thinner.svg` in the navbar. It is the current site logo.
+- For default SEO/schema references, use `/ebaqdesign-logo.svg`.
+- For heavier logo treatments, use `/ebaqdesign-logo-bold.svg` only when the stronger mark is intentionally needed.
+- On black backgrounds, use `/ebaqdesign-logo-big.svg`. It contains white letterforms plus the Ebaq blue accent.
+- For favicon, app icons, or compact marks, use `/portfolio/ebaq-mark.png` or `/ebaq_icon.svg`.
+- For the profile image, use `/arek-pic-pro.jpg`.
+- For portfolio identity work, use `/portfolio/identities/*`.
+- For website work, use `/portfolio/websites/*`.
+- For animated logo rows, use `/portfolio/logos/*.json` with `lottie-react`.
+
+Do not recolor SVG logos in CSS unless the user explicitly asks. Pick the correct asset variant instead.
+
+## Color System
+
+Core palette:
+
+- Black: `#000000`
+- White: `#FFFFFF`
+- Ebaq blue: `#00AFEC`
+- Light gray section: `#F5F5F5`
+- Soft surface: `#F8FAFB`
+- Primary divider/border: `rgba(0, 0, 0, 0.2)`
+- Light divider/border: `rgba(0, 0, 0, 0.1)`
+- Muted text: `rgba(0, 0, 0, 0.5)` or Tailwind `text-black/50`
+- Strong muted text: `rgba(0, 0, 0, 0.6)` or Tailwind `text-black/60`
+
+Rules:
+
+- Use white as the main canvas.
+- Use `#F5F5F5` to alternate major sections. The testimonial section, comparison section, and Layout485-style process section can use this.
+- Use black for primary text, major CTAs, and high-emphasis panels.
+- Use Ebaq blue for hover states, active progress lines, checkmarks, active accents, and occasional small emphasis.
+- Do not make large sections blue unless the user explicitly asks.
+- Do not create one-note blue or gray palettes. The page should read as white, black, gray structure, and blue accents.
 
 ## Typography
 
-Use **Roboto Flex** for display and headings. Keep the weight light-to-regular, with tight tracking and strong scale. Use **Open Sans** for descriptions, labels, metadata, buttons, and body copy.
+Font loading happens in `index.html`. Base body font is set in `src/index.css`.
 
-Display type should be large, confident, and minimal: short phrases such as "One senior designer.", "$3,000 / week", and "Build your brand this week." Body text should explain the offer plainly without marketing clutter.
+Use two fonts only:
 
-Do not use negative letter spacing on small UI labels. Keep body and label letter spacing at `0`.
+- Display/headings/numbers: `Roboto Flex`
+- Body/labels/buttons/navigation: `Open Sans`
 
-## Layout & Spacing
+Never mix both fonts inside the same text element. Use one font per element.
 
-Layouts are full-width sections with constrained inner content. Favor generous vertical spacing, simple one-column hero messaging, and wide media rows. The default page gutter is `5%`.
+### Display And Heading Type
 
-For motion-video frames, use the same flat composition:
+Use `Roboto Flex` with light-to-regular weights:
 
-- white or black full-bleed canvas
-- one dominant message per scene
-- UI mockups built from rounded rectangles, not skeuomorphic app chrome
-- portfolio proof cards arranged in clean rows or stacks
-- cursor movement as a storytelling device
+- Hero H1: `text-[2.5rem] md:text-[5rem] lg:text-[6rem]`, `line-height: 1`, `letter-spacing: -0.05em`, `fontVariationSettings: 'wght' 300`.
+- Section H2: `text-5xl md:text-7xl lg:text-8xl`, `line-height: 1`, `letter-spacing: -0.05em`, `fontVariationSettings: 'wght' 250` or `'wght' 300`.
+- Compact H3/card headings: `text-lg md:text-xl lg:text-2xl`, `line-height: 1.3-1.4`, `letter-spacing: 0` to `-0.02em`, `fontVariationSettings: 'wght' 400`.
+- Large process numbers such as `01`, `02`, `03`: `text-[6rem] md:text-[14rem]`, `line-height: 1`, `letter-spacing: -0.06em`, `fontVariationSettings: 'wght' 250`.
 
-Avoid nested cards. Use cards for repeated work examples, pricing panels, kanban cards, and modal-like UI only.
+Rules:
 
-## Elevation & Depth
+- Do not use `font-bold` on headings or big numbers.
+- Do not use negative letter spacing on labels, buttons, body copy, or small navigation text.
+- Keep display copy short. Large type should not become paragraph-length.
 
-Depth should be quiet. Use soft shadows only when UI objects need separation from a pale background. Portfolio media can have subtle shadow and scale, but the baseline style is flat and crisp.
+### Body, Labels, Buttons
 
-Prefer:
+Use `Open Sans`:
 
-- `0 8px 24px rgba(0, 0, 0, 0.08)` for light UI cards
-- `0 16px 48px rgba(0, 0, 0, 0.16)` for floating video/storyboard objects
-- no shadow on text
+- Body: `text-base md:text-lg`, `line-height: 1.55-1.6`, `font-weight: 400`, `letter-spacing: 0`.
+- Muted body text usually uses `text-black/50` or `text-black/60`.
+- Labels/eyebrows: `text-sm` to `text-base`, `font-semibold`, `letter-spacing: 0`.
+- Buttons: `text-sm` to `text-base`, `font-semibold`, `letter-spacing: 0`.
 
-## Shapes
+Rules:
 
-Cards use `8px` radius by default. Large pricing or CTA panels can use `24px`. Buttons use a full pill radius. Circular imagery is reserved for Arek's profile photo, brand marks, avatars, and cursor/comment pins.
+- Body text should be plain and specific.
+- Labels should be useful, not decorative filler.
+- Avoid all-caps unless it is metadata or a rare small label.
 
-## Components
+## Layout And Spacing
 
-Primary buttons are black pills with white text and a black 1px border. On hover, they turn Ebaq blue with a blue border and white text. Secondary buttons are transparent pills with black text and a subtle 1px black/20 border. On hover, they also turn Ebaq blue with white text. Real text links stay as anchors, not Relume buttons, and only the text plus icon should change to blue on hover.
+Use full-width sections with a constrained `.container`.
 
-When adding new Relume components, do not keep default button behavior if it conflicts with this system. Default Relume buttons map to primary. `variant="secondary"` maps to secondary. Tab triggers are buttons too: inactive tabs use the secondary pill style, active tabs use the primary pill style, and hover turns them Ebaq blue.
+Standard section padding:
 
-Portfolio cards should preserve the original asset aspect ratios and feel like work samples, not decorative placeholders. Kanban boards use four clear columns: Backlog, In Progress, Review, and Shipped. Use blue cursors and small blue status tags to show work moving.
+- `px-[5%]`
+- `py-16 md:py-24 lg:py-28`
 
-Pricing should stay simple and legible:
+Grid and layout rules:
 
-- `$3,000 / week` for focused weekly work
-- `$10,000 / month` for bigger committed projects
-- monthly offer can be framed as the discounted commitment option
+- Keep major sections simple: one strong idea per section.
+- Avoid nested cards. Use cards for repeated work samples, pricing blocks, modal-like panels, and tools only.
+- Keep comparison and table-like sections line-based, using `border-black/20`.
+- Alternate white and `#F5F5F5` bands to create rhythm.
+- Text should not overlap or overflow at mobile widths.
+- Fixed-format UI elements should use stable dimensions, aspect ratios, or min/max constraints.
 
-## Do's and Don'ts
+## Radius And Shape Rules
 
-Do:
+Use rounded corners consistently:
 
-- Use real Ebaq assets from `/public` whenever available.
-- Keep scenes flat, direct, and consistent with the current website.
-- Make Arek's solo senior-designer positioning explicit.
-- Use Ebaq blue sparingly for motion, active states, and CTAs.
-- Show process through a board, cursor, comments, and shipped states.
+- Buttons and pills: `rounded-full` or `border-radius: 99px`.
+- Profile photos and avatar images: `rounded-full`.
+- Portfolio/media cards: `rounded-lg` (`8px`) unless the existing component uses another established value.
+- Standard cards and pricing cards: `8px` radius.
+- Larger modal/CTA panels: `16px` to `24px` only when the scale justifies it.
 
-Don't:
+Do not use sharp rectangular controls. Tabs are buttons and must be rounded pills.
 
-- Do not copy Kree8 branding, neon-green identity, characters, or exact scene layouts.
-- Do not use heavy gradients, purple-blue SaaS palettes, glassmorphism everywhere, or 3D decoration.
-- Do not make the experience feel like a large agency team.
-- Do not overfill frames with copy; one message per scene.
-- Do not invent third-party logos or use Trello branding for the work board.
+## Buttons, Tabs, And Links
+
+The global button system is in `src/index.css`. Follow it rather than restyling buttons one by one.
+
+Primary buttons:
+
+- Black fill by default.
+- White text.
+- Black 1px border.
+- Full pill radius.
+- Hover turns fill and border Ebaq blue.
+- Hover text stays white.
+
+Secondary buttons:
+
+- Transparent fill by default.
+- Black text.
+- 1px `rgba(0, 0, 0, 0.2)` border.
+- Full pill radius.
+- Hover turns fill and border Ebaq blue.
+- Hover text becomes white.
+
+Tabs:
+
+- Tabs are real buttons.
+- Active tab uses the primary button style.
+- Inactive tab uses the secondary button style.
+- Hover turns blue.
+- Tabs must never have square corners.
+
+Text links:
+
+- Text links are anchors, not Relume buttons.
+- No background, no pill, no border.
+- Whole text plus chevron/icon turns Ebaq blue on hover.
+- Use this for secondary navigation like `See Pricing`.
+
+Relume mapping:
+
+- Default Relume `Button` maps to primary.
+- `variant="secondary"` maps to secondary.
+- `variant="link"` should usually be replaced with a real `<a>` text link if it is visually a text link.
+
+## Sections And Components
+
+### Navbar
+
+- Logo: `/ebaqdesign-logo-thinner.svg`.
+- Background: white.
+- CTA: primary black button.
+- Keep nav quiet. Use `Open Sans`, small text, black/50 default, black hover.
+
+### Hero
+
+- Use large `Roboto Flex` H1 with weight 300, tight tracking, line-height 1.
+- The first viewport should quickly communicate the offer and show real portfolio media.
+- Do not replace the portfolio rows with decorative graphics.
+- CTA logic can point to pricing or booking, but primary CTA styling remains black.
+
+### Layout484 Brand Sprint Section
+
+- White background.
+- Keep the scroll text reveal.
+- Use one strong paragraph-style heading.
+- CTA should be primary unless there is a stronger primary action nearby.
+
+### Layout485 Founder Decision Section
+
+- Light gray background: `#F5F5F5`.
+- Use the exact Relume Layout485 behavior unless the user asks for a different component.
+- Keep large sticky numbers light, not bold: `Roboto Flex`, `wght 250`, `tracking -0.06em`.
+- Animated progress line is Ebaq blue.
+- `Book a Call` is a primary button.
+- `See Pricing` is a real text link.
+- Copy should address founders, not AI agents.
+
+### Pricing
+
+- The offers are `Brand Sprint` and `Brand + Website`.
+- Brand Sprint price: `$3,000/wk`.
+- Brand + Website price: show `$12,000` crossed out, then `$10,000/mo`.
+- Make the discount explicit: "Save $2,000 when you commit upfront."
+- Checkmarks are Ebaq blue.
+- Borders/dividers use `border-black/20`, not pure black.
+- Pricing cards should have rounded corners.
+- The primary booking CTA is black by default and blue on hover.
+
+### Comparison
+
+- Use light gray background.
+- Use line-based rows with `border-black/20`.
+- Keep left side strong black and right side muted black/40.
+- Checkmark icons are Ebaq blue.
+- X icons stay muted.
+
+### Portfolio
+
+- Use real identity and website assets.
+- Preserve aspect ratios.
+- Use `rounded-lg` and overflow hidden for media tiles.
+- Do not make portfolio cards feel like generic placeholders.
+
+### About
+
+- Profile image: `/arek-pic-pro.jpg`, rounded full.
+- Do not place social icons under the profile picture unless the user asks.
+- The Contra CTA uses primary button styling.
+- Services use the exact service names already present:
+  - Brand Strategy
+  - Custom Logo Design
+  - Logo Animation
+  - Color Palette
+  - Type System
+  - Brand Guidelines
+  - Figma Web Design
+  - Framer/Webflow Dev.
+  - Messaging
+  - Pitch Decks
+  - Social Media Graphics
+  - Motion Graphics
+
+### Booking Footer
+
+- The booking section is a sticky black footer reveal.
+- It uses `/ebaqdesign-logo-big.svg` as the large background logo.
+- Cal.com link: `ebaqdesign/15min`.
+- The footer needs sticky-footer scroll behavior. Existing CTAs may scroll to `document.documentElement.scrollHeight`; do not casually replace this with `scrollIntoView` without testing the sticky footer.
+- On mobile, a direct Cal.com button is acceptable when the inline embed is unreliable.
+
+## Icons
+
+- Do not add icon sets unless the user asks.
+- If icons are needed, prefer existing project icon patterns or `react-icons` already used in the repo.
+- Checkmarks in pricing/comparison are blue.
+- Do not add social icons under Arek's profile photo unless explicitly requested.
+
+## Motion
+
+Motion should feel functional and precise:
+
+- Portfolio rows can animate and drag.
+- Layout485 uses scroll progress.
+- Blue progress lines are acceptable.
+- Avoid decorative motion that does not explain work, pricing, process, or portfolio proof.
+- Do not add bouncing, parallax-heavy, or overly playful motion.
+
+## Accessibility
+
+- Use semantic headings in order.
+- Interactive elements must be keyboard accessible.
+- Text links must be anchors with real `href` values.
+- Buttons should be buttons when they perform actions like scrolling.
+- Keep visible focus states from Relume unless they conflict with the design.
+- Maintain sufficient contrast: black on white, white on black, blue as accent.
+
+## SEO And AI Discoverability
+
+The site is optimized for humans first, but structured for crawlers and LLMs:
+
+- Keep schema and metadata in `index.html` accurate.
+- Keep `/public/llms.txt` aligned with the visible offer.
+- Use plain, extractable copy for what is sold, who it is for, what it costs, and how to book.
+- Do not label sections as "agent-readable" in visible UI.
+- Use clear headings, short paragraphs, and concrete service names.
+
+## Implementation Checklist For Agents
+
+Before finishing UI work:
+
+- Check that all primary CTAs are black fill with white text by default.
+- Check that primary and secondary buttons turn blue on hover.
+- Check that tabs are rounded pills.
+- Check that headings use `Roboto Flex` and are not bold.
+- Check that body, labels, nav, and buttons use `Open Sans`.
+- Check that large display text uses tight tracking and line-height 1.
+- Check that body/label text uses normal letter spacing.
+- Check that media/cards/buttons have rounded corners.
+- Check that borders/dividers use `border-black/20` or lighter.
+- Check that blue is used as accent, not as a dominant theme.
+- Check that real Ebaq assets are used from `/public`.
+- Run `npm run build` for code changes.
+
+## Do Not Do
+
+- Do not introduce Inter, Arial, system font stacks, or new display fonts.
+- Do not use bold display type.
+- Do not use square tabs or square buttons.
+- Do not turn text links into pill buttons.
+- Do not add social icons under the profile picture unless asked.
+- Do not describe Ebaq as a big agency or studio team.
+- Do not create a new footer separate from the booking footer unless asked.
+- Do not remove or rewrite the sticky booking footer without testing.
+- Do not stage unrelated local files, generated videos, deleted case-study assets, or loose untracked assets unless the user explicitly asks.

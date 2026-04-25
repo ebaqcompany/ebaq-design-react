@@ -55,7 +55,7 @@ export const Pricing8 = (props: Pricing8Props) => {
           <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
           <h2
             className="mb-5 text-5xl md:mb-6 md:text-7xl lg:text-8xl"
-            style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300" }}
+            style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}
           >
             {heading}
           </h2>

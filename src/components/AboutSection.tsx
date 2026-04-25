@@ -26,8 +26,8 @@ export const AboutSection = (props: AboutSectionProps) => {
         {/* Top section with greeting, heading and image */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-20 md:mb-28 lg:mb-36">
           <div className="lg:col-span-2">
-            <p className="text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6 tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 250" }}>{greeting}</p>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 250" }}>
+            <p className="text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6 tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}>{greeting}</p>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}>
               {heading}
             </h2>
             <a

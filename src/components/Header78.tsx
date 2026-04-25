@@ -278,7 +278,7 @@ export const Header78 = (props: Header78Props) => {
         {tagline && <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>{tagline}</p>}
         <h1 className="text-[2.5rem] md:text-[5rem] lg:text-[6rem] whitespace-pre-line tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300", lineHeight: 1 }}>{heading}</h1>
         {description && (
-          <p className="mt-5 md:mt-6 text-base md:text-lg whitespace-pre-line text-black/50 max-w-xl" style={{ fontFamily: "'Open Sans', sans-serif" }}>{description}</p>
+          <p className="mt-5 max-w-[34rem] whitespace-pre-line text-base text-black/50 md:mt-6 md:text-lg md:leading-[1.6]" style={{ fontFamily: "'Open Sans', sans-serif" }}>{description}</p>
         )}
         {subLink && (
           <a href={subLink.url} className="inline-block mt-4 text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity" style={{ fontFamily: "'Open Sans', sans-serif" }}>{subLink.label}</a>
@@ -300,9 +300,9 @@ export const Header78 = (props: Header78Props) => {
 };
 
 export const Header78Defaults: Props = {
-  heading: "World-class branding\nfor one clear price.",
+  heading: "A Senior Design\nPartner for Startups",
   description:
-    "Ebaq Design is led by Arek, a senior brand designer in New York. Get a custom logo, brand identity, guidelines, and website direction for a clear $3,000 Brand Sprint.",
+    "I'm a senior graphic designer based in New York who specializes in branding, web, and motion design.\nBook me at $3,000/wk or $10,000/mo.",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],
 
   // Row 1: Logo Animations
