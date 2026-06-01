@@ -300,9 +300,9 @@ export const Header78 = (props: Header78Props) => {
 };
 
 export const Header78Defaults: Props = {
-  heading: "A Senior Design\nPartner for Startups",
+  heading: "Senior Design\nPartner for Startups",
   description:
-    "I'm a senior graphic designer based in New York who specializes in branding, web, and motion design.\nBook me at $3,000/wk or $10,000/mo.",
+    "I'm a senior graphic designer based in New York who specializes in branding, web, and motion design.",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],
 
   // Row 1: Logo Animations
