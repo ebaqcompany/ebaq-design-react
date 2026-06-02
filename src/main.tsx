@@ -17,6 +17,8 @@ import { LatinoForumProposal } from './components/proposal/LatinoForumProposal.t
 import { ByrdTheatreProposal } from './components/proposal/ByrdTheatreProposal.tsx'
 import { LawrencevilleProposal } from './components/proposal/LawrencevilleProposal.tsx'
 import { LandmarksILProposal } from './components/proposal/LandmarksILProposal.tsx'
+import { StartupRedesignArchive } from './components/StartupRedesignArchive.tsx'
+import { getConceptsByIndustry, getConceptsByStyle } from './data/startupRedesignConcepts.ts'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -37,6 +39,37 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/proposal/byrdtheatre" element={<ByrdTheatreProposal />} />
           <Route path="/proposal/lawrenceville" element={<LawrencevilleProposal />} />
           <Route path="/proposal/landmarks-il" element={<LandmarksILProposal />} />
+          <Route path="/startup-redesign-lab" element={<StartupRedesignArchive />} />
+          <Route
+            path="/glassmorphism-web-design"
+            element={
+              <StartupRedesignArchive
+                bucketTitle="Glassmorphism web design"
+                bucketDescription="Draft SEO bucket for startup hero concepts using glassmorphism: translucent cards, layered depth, glow, and motion-rich interaction."
+                concepts={getConceptsByStyle('glassmorphism-web-design')}
+              />
+            }
+          />
+          <Route
+            path="/cybersecurity-startup-web-design"
+            element={
+              <StartupRedesignArchive
+                bucketTitle="Cybersecurity startup web design"
+                bucketDescription="Draft SEO bucket for AI security and SOC startup homepage concepts where trust, speed, and signal clarity need to land above the fold."
+                concepts={getConceptsByIndustry('cybersecurity-startup-web-design')}
+              />
+            }
+          />
+          <Route
+            path="/healthcare-startup-web-design"
+            element={
+              <StartupRedesignArchive
+                bucketTitle="Healthcare startup web design"
+                bucketDescription="Draft SEO bucket prepared for upcoming healthcare, biotech, and clinical AI startup redesign concepts."
+                concepts={getConceptsByIndustry('healthcare-startup-web-design')}
+              />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
