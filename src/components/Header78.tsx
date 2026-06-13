@@ -343,6 +343,7 @@ export const Header78Defaults: Props = {
 
   // Row 3: Website Shots
   row3: [
+    { type: "image", src: "/portfolio/websites/elevate-web.jpg", alt: "Elevate Website" },
     { type: "image", src: "/portfolio/websites/aero-web.jpg", alt: "Aero Website" },
     { type: "video", src: "/portfolio/websites/airport-executive-web.mp4", alt: "Airport Executive Website" },
     { type: "video", src: "/portfolio/websites/brevidee-web.mp4", alt: "Brevidee Website" },
