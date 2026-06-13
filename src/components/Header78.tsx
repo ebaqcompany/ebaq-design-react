@@ -9,6 +9,7 @@ type MediaProps = {
   src: string;
   alt?: string;
   bgColor?: string;
+  fit?: "contain" | "cover";
 };
 
 type SubLinkProps = {
@@ -31,7 +32,7 @@ type Props = {
 
 export type Header78Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
-const LottieItem = ({ src, bgColor }: { src: string; bgColor?: string }) => {
+const LottieItem = ({ src, bgColor, fit = "contain" }: { src: string; bgColor?: string; fit?: "contain" | "cover" }) => {
   const [animationData, setAnimationData] = useState<object | null>(null);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ const LottieItem = ({ src, bgColor }: { src: string; bgColor?: string }) => {
   }, [src]);
 
   const backgroundColor = bgColor || "#171717";
+  const preserveAspectRatio = fit === "cover" ? "xMidYMid slice" : "xMidYMid meet";
 
   if (!animationData) {
     return <div className="absolute inset-0 size-full" style={{ backgroundColor }} />;
@@ -52,7 +54,8 @@ const LottieItem = ({ src, bgColor }: { src: string; bgColor?: string }) => {
       <Lottie
         animationData={animationData}
         loop
-        className="w-full h-full object-contain"
+        rendererSettings={{ preserveAspectRatio }}
+        className="size-full"
       />
     </div>
   );
@@ -60,7 +63,7 @@ const LottieItem = ({ src, bgColor }: { src: string; bgColor?: string }) => {
 
 const MediaItem = ({ item }: { item: MediaProps }) => {
   if (item.type === "lottie") {
-    return <LottieItem src={item.src} bgColor={item.bgColor} />;
+    return <LottieItem src={item.src} bgColor={item.bgColor} fit={item.fit} />;
   }
 
   if (item.type === "video") {
@@ -307,6 +310,7 @@ export const Header78Defaults: Props = {
 
   // Row 1: Logo Animations
   row1: [
+    { type: "lottie", src: "/portfolio/logos/ElevateLogoBGTop.json", alt: "Elevate", bgColor: "#000000", fit: "cover" },
     { type: "lottie", src: "/portfolio/logos/aero-logo.json", alt: "Aero", bgColor: "#63f3c0" },
     { type: "lottie", src: "/portfolio/logos/airporteexecutive-logo.json", alt: "Airport Executive", bgColor: "#000000" },
     { type: "lottie", src: "/portfolio/logos/brevidee-logo.json", alt: "Brevidee", bgColor: "#FCE5E9" },
@@ -323,6 +327,7 @@ export const Header78Defaults: Props = {
 
   // Row 2: Identity/Bento Shots
   row2: [
+    { type: "image", src: "/portfolio/identities/elevate-bento.jpg", alt: "Elevate Identity" },
     { type: "image", src: "/portfolio/identities/aero-bento.webp", alt: "Aero Identity" },
     { type: "image", src: "/portfolio/identities/airport-executive-bento.jpg", alt: "Airport Executive Identity" },
     { type: "image", src: "/portfolio/identities/brevidee-bento.jpg", alt: "Brevidee Identity" },
