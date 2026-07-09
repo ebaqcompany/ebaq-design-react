@@ -10,6 +10,7 @@ type MediaProps = {
   alt?: string;
   bgColor?: string;
   fit?: "contain" | "cover";
+  scale?: number;
 };
 
 type SubLinkProps = {
@@ -32,7 +33,7 @@ type Props = {
 
 export type Header78Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
-const LottieItem = ({ src, bgColor, fit = "contain" }: { src: string; bgColor?: string; fit?: "contain" | "cover" }) => {
+const LottieItem = ({ src, bgColor, fit = "contain", scale = 1 }: { src: string; bgColor?: string; fit?: "contain" | "cover"; scale?: number }) => {
   const [animationData, setAnimationData] = useState<object | null>(null);
 
   useEffect(() => {
@@ -56,6 +57,7 @@ const LottieItem = ({ src, bgColor, fit = "contain" }: { src: string; bgColor?: 
         loop
         rendererSettings={{ preserveAspectRatio }}
         className="size-full"
+        style={{ transform: scale !== 1 ? `scale(${scale})` : undefined, transformOrigin: "center" }}
       />
     </div>
   );
@@ -63,7 +65,7 @@ const LottieItem = ({ src, bgColor, fit = "contain" }: { src: string; bgColor?: 
 
 const MediaItem = ({ item }: { item: MediaProps }) => {
   if (item.type === "lottie") {
-    return <LottieItem src={item.src} bgColor={item.bgColor} fit={item.fit} />;
+    return <LottieItem src={item.src} bgColor={item.bgColor} fit={item.fit} scale={item.scale} />;
   }
 
   if (item.type === "video") {
@@ -311,7 +313,7 @@ export const Header78Defaults: Props = {
   // Row 1: Logo Animations
   row1: [
     { type: "lottie", src: "/portfolio/logos/ElevateLogoBGTop.json", alt: "Elevate", bgColor: "#000000", fit: "cover" },
-    { type: "lottie", src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-exit-enter.lottie.json", alt: "NextDim", bgColor: "#181735" },
+    { type: "lottie", src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-enter-exit-swapped.lottie.json", alt: "NextDim", bgColor: "#181735", scale: 0.72 },
     { type: "lottie", src: "/portfolio/logos/aero-logo.json", alt: "Aero", bgColor: "#63f3c0" },
     { type: "lottie", src: "/portfolio/logos/airporteexecutive-logo.json", alt: "Airport Executive", bgColor: "#000000" },
     { type: "lottie", src: "/portfolio/logos/brevidee-logo.json", alt: "Brevidee", bgColor: "#FCE5E9" },
