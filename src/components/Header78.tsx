@@ -329,6 +329,7 @@ export const Header78Defaults: Props = {
   // Row 2: Identity/Bento Shots
   row2: [
     { type: "image", src: "/portfolio/identities/elevate-bento.jpg", alt: "Elevate Identity" },
+    { type: "image", src: "/portfolio/identities/nexdim-bento.jpg", alt: "NextDim Identity" },
     { type: "image", src: "/portfolio/identities/aero-bento.webp", alt: "Aero Identity" },
     { type: "image", src: "/portfolio/identities/airport-executive-bento.jpg", alt: "Airport Executive Identity" },
     { type: "image", src: "/portfolio/identities/brevidee-bento.jpg", alt: "Brevidee Identity" },
@@ -345,6 +346,7 @@ export const Header78Defaults: Props = {
   // Row 3: Website Shots
   row3: [
     { type: "image", src: "/portfolio/websites/elevate-web.jpg", alt: "Elevate Website" },
+    { type: "image", src: "/portfolio/websites/nextdim-web-portfolio.jpg", alt: "NextDim Website" },
     { type: "image", src: "/portfolio/websites/aero-web.jpg", alt: "Aero Website" },
     { type: "video", src: "/portfolio/websites/airport-executive-web.mp4", alt: "Airport Executive Website" },
     { type: "video", src: "/portfolio/websites/brevidee-web.mp4", alt: "Brevidee Website" },
