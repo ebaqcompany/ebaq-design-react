@@ -314,7 +314,7 @@ export const Header78Defaults: Props = {
   // Row 1: Logo Animations
   row1: [
     { type: "lottie", src: "/portfolio/logos/ElevateLogoBGTop.json", alt: "Elevate", bgColor: "#000000", fit: "cover" },
-    { type: "lottie", src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-enter-exit-swapped.lottie.json", alt: "NextDim", bgColor: "#181735", scale: 1.21, offsetY: 8 },
+    { type: "lottie", src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json", alt: "NextDim", bgColor: "#181735" },
     { type: "lottie", src: "/portfolio/logos/aero-logo.json", alt: "Aero", bgColor: "#63f3c0" },
     { type: "lottie", src: "/portfolio/logos/airporteexecutive-logo.json", alt: "Airport Executive", bgColor: "#000000" },
     { type: "lottie", src: "/portfolio/logos/brevidee-logo.json", alt: "Brevidee", bgColor: "#FCE5E9" },
