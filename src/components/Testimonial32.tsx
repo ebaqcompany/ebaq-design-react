@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import type { CarouselApi } from "@relume_io/relume-ui";
+import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@relume_io/relume-ui";
-import clsx from "clsx";
 import { clientLogoClass, type ClientLogoScale } from "../clientLogo";
 
 type Testimonial = { quote: string; logo?: { src: string; alt?: string; scale?: ClientLogoScale; className?: string }; logoText?: string; avatar: { src: string; alt?: string }; name: string; position: string };
@@ -10,18 +8,15 @@ export type Testimonial9Props = Props;
 
 export const Testimonial32 = (props: Props) => {
   const { heading, description, testimonials } = { ...Testimonial32Defaults, ...props };
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  useEffect(() => { if (!api) return; const update = () => setCurrent(api.selectedScrollSnap()); update(); api.on("select", update); return () => { api.off("select", update); }; }, [api]);
   return (
     <section {...props} id="testimonials" className="testimonial-section overflow-hidden px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 w-full max-w-lg md:mb-18 lg:mb-20"><h2 className="mb-5 md:mb-6">{heading}</h2>{description && <p className="md:text-md">{description}</p>}</div>
-        <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} className="overflow-hidden">
+        <Carousel opts={{ loop: true, align: "start" }} className="overflow-hidden">
           <div className="relative pb-12 md:pb-16">
             <CarouselContent className="ml-0 items-stretch">{testimonials.map((testimonial, index) => <CarouselItem key={index} className="self-stretch pl-0 md:basis-full lg:basis-1/3 lg:pr-16"><TestimonialCard testimonial={testimonial} /></CarouselItem>)}</CarouselContent>
             <div className="mt-8 flex items-center justify-between md:mt-12">
-              <div className="mt-5 flex w-full items-start justify-start">{testimonials.map((_, index) => <button key={index} type="button" onClick={() => api?.scrollTo(index)} aria-label={`Go to testimonial ${index + 1}`} className={clsx("mx-[3px] inline-block size-2 rounded-full", current === index ? "bg-black" : "bg-neutral-light")} />)}</div>
+              <a href="https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noreferrer" className="button-primary inline-flex items-center px-5 py-2.5">Recommendations on LinkedIn</a>
               <div className="flex items-end justify-end gap-2 md:gap-4"><CarouselPrevious className="testimonial-carousel-button static right-0 top-0 size-12 -translate-y-0" /><CarouselNext className="testimonial-carousel-button static right-0 top-0 size-12 -translate-y-0" /></div>
             </div>
           </div>
