@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
 import App from './App.tsx'
+import StartPage from './StartPage.tsx'
 import { LawFirmLanding } from './components/LawFirmLanding.tsx'
 import { SenseHawkProposal } from './components/proposal/SenseHawkProposal.tsx'
 import { BellinghamProposal } from './components/proposal/BellinghamProposal.tsx'
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/start" element={<StartPage />} />
           <Route path="/law-firm-branding" element={<LawFirmLanding />} />
           <Route path="/proposal/sensehawk" element={<SenseHawkProposal />} />
           <Route path="/proposal/bellingham" element={<BellinghamProposal />} />

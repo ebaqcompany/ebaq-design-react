@@ -95,17 +95,16 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
 
 type DraggableRowProps = {
   items: MediaProps[];
-  baseSpeed?: number;
   direction?: "left" | "right";
   initialOffset?: number;
   showBorder?: boolean;
 };
 
-const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset = 0, showBorder = false }: DraggableRowProps) => {
+const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder = false }: DraggableRowProps) => {
   const directionMultiplier = direction === "left" ? 1 : -1;
   const rowRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef(-initialOffset);
-  const velocityRef = useRef(baseSpeed);
+  const velocityRef = useRef(0);
   const isDraggingRef = useRef(false);
   const lastXRef = useRef(0);
   const lastTimeRef = useRef(0);
@@ -121,22 +120,10 @@ const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset 
 
     const totalWidth = row.scrollWidth / 3;
 
-    if (!isDraggingRef.current) {
-      // Apply velocity (base speed + any momentum from drag release)
-      positionRef.current -= velocityRef.current * directionMultiplier;
-
-      // Gradually return to base speed
-      if (velocityRef.current > baseSpeed) {
-        velocityRef.current *= 0.98; // Decay momentum
-        if (velocityRef.current < baseSpeed + 0.1) {
-          velocityRef.current = baseSpeed;
-        }
-      } else if (velocityRef.current < baseSpeed) {
-        velocityRef.current *= 0.98;
-        if (velocityRef.current > -baseSpeed - 0.1 && velocityRef.current < baseSpeed) {
-          velocityRef.current = baseSpeed;
-        }
-      }
+    if (!isDraggingRef.current && Math.abs(velocityRef.current) > 0.01) {
+      positionRef.current += velocityRef.current;
+      velocityRef.current *= 0.94;
+      if (Math.abs(velocityRef.current) <= 0.01) velocityRef.current = 0;
     }
 
     // Wrap around for seamless loop
@@ -148,7 +135,7 @@ const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset 
 
     row.style.transform = `translateX(${positionRef.current}px)`;
     animationRef.current = requestAnimationFrame(animate);
-  }, [baseSpeed, directionMultiplier]);
+  }, []);
 
   useEffect(() => {
     animationRef.current = requestAnimationFrame(animate);
@@ -158,6 +145,18 @@ const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset 
       }
     };
   }, [animate]);
+
+  useEffect(() => {
+    let previousScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const deltaY = currentScrollY - previousScrollY;
+      previousScrollY = currentScrollY;
+      if (!isDraggingRef.current) positionRef.current -= deltaY * 0.35 * directionMultiplier;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [directionMultiplier]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     isDraggingRef.current = true;
@@ -188,14 +187,7 @@ const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset 
   const handleMouseUp = () => {
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
-      // Apply momentum from drag - speed up in drag direction
-      const momentum = Math.abs(dragVelocityRef.current);
-      if (momentum > 1) {
-        // If dragged right (positive), go left faster; if dragged left (negative), go right
-        velocityRef.current = dragVelocityRef.current > 0
-          ? -momentum * 2  // Dragged right, speed up going left
-          : momentum * 2;   // Dragged left, speed up going right
-      }
+      velocityRef.current = dragVelocityRef.current * 1.35;
     }
   };
 
@@ -232,12 +224,7 @@ const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset 
   const handleTouchEnd = () => {
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
-      const momentum = Math.abs(dragVelocityRef.current);
-      if (momentum > 1) {
-        velocityRef.current = dragVelocityRef.current > 0
-          ? -momentum * 2
-          : momentum * 2;
-      }
+      velocityRef.current = dragVelocityRef.current * 1.35;
     }
   };
 
@@ -271,44 +258,37 @@ const DraggableRow = ({ items, baseSpeed = 1, direction = "left", initialOffset 
 };
 
 export const Header78 = (props: Header78Props) => {
-  const { heading, description, buttons: _buttons, row1, row2, row3, showRows, tagline, subLink, showScrollArrow } = {
+  const { heading, description, row1, row2, row3, showRows, subLink, showScrollArrow } = {
     ...Header78Defaults,
     ...props,
   };
-
   const visibleRows = showRows || [1, 2, 3];
 
   return (
-    <section id="work" className="py-16 md:py-24 lg:py-28 bg-white">
-      <div className="px-[5%] mb-12 md:mb-18 lg:mb-20">
-        {tagline && <p className="mb-3 font-semibold md:mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>{tagline}</p>}
-        <h1 className="text-[2.5rem] md:text-[5rem] lg:text-[6rem] whitespace-pre-line tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 300", lineHeight: 1 }}>{heading}</h1>
-        {description && (
-          <p className="mt-5 max-w-[34rem] whitespace-pre-line text-base text-black/50 md:mt-6 md:text-lg md:leading-[1.6]" style={{ fontFamily: "'Open Sans', sans-serif" }}>{description}</p>
-        )}
-        {subLink && (
-          <a href={subLink.url} className="inline-block mt-4 text-sm font-semibold uppercase tracking-widest hover:opacity-70 transition-opacity" style={{ fontFamily: "'Open Sans', sans-serif" }}>{subLink.label}</a>
-        )}
-        {showScrollArrow && (
-          <div className="mt-8 animate-bounce">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <section className="overflow-hidden bg-white px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container">
+        <div className="mb-12 grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:mb-18 md:grid-cols-2 lg:mb-20 lg:gap-x-20">
+          <div>
+            <h1 className="whitespace-pre-line">{heading}</h1>
           </div>
-        )}
+          {description && <div className="mx-[7.5%] self-end md:mt-48"><div className="mb-6 flex w-fit items-center gap-3"><img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 rounded-full object-cover" /><div className="flex flex-col gap-2"><h5 className="whitespace-nowrap">Arek Dvornechuck</h5><div className="flex shrink-0 items-center gap-1" role="list" aria-label="Tools I use as a senior designer: Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Figma, Framer, Webflow, Jitter, LottieFiles, and Rive"><img src="/adobe-illustrator.svg" alt="Adobe Illustrator" className="size-4 rounded-[20%] object-cover" /><img src="/adobe-photoshop.svg" alt="Adobe Photoshop" className="size-4 rounded-[20%] object-cover" /><img src="/adobe-after-effects.svg" alt="Adobe After Effects" className="size-4 rounded-[20%] object-cover" /><img src="/figma-mark-baked.png" alt="Figma" className="size-4 rounded-[20%] object-cover" /><img src="/figma-mark.png" alt="Framer" className="size-4 rounded-[20%] object-cover" /><img src="/webflow-mark.png" alt="Webflow" className="size-4 rounded-[20%] object-cover" /><img src="/jitter-mark.png" alt="Jitter" className="size-4 rounded-[20%] object-cover" /><img src="/lottiefiles-mark.png" alt="LottieFiles" className="size-4 rounded-[20%] object-cover" /><img src="/hero-tool-mark.png" alt="Motion design tool" className="size-4 rounded-[20%] object-cover" /><img src="/rive-mark.png" alt="Rive" className="size-4 rounded-[20%] object-cover" /></div></div></div><p className="md:text-md">{description}</p></div>}
+          {subLink && <a href={subLink.url} className="text-sm font-semibold uppercase tracking-widest hover:opacity-70">{subLink.label}</a>}
+          {showScrollArrow && <div className="animate-bounce"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg></div>}
+        </div>
       </div>
 
-      <div className="flex flex-col gap-4">
-        {visibleRows.includes(1) && <DraggableRow items={row1} baseSpeed={1} direction="left" />}
-        {visibleRows.includes(2) && <DraggableRow items={row2} baseSpeed={1} direction="right" showBorder />}
-        {visibleRows.includes(3) && <DraggableRow items={row3} baseSpeed={1.5} direction="left" initialOffset={208} />}
+      <div id="work" className="relative left-1/2 flex w-screen -translate-x-1/2 scroll-mt-4 flex-col gap-4">
+        {visibleRows.includes(1) && <DraggableRow items={row1} direction="left" />}
+        {visibleRows.includes(2) && <DraggableRow items={row2} direction="right" showBorder />}
+        {visibleRows.includes(3) && <DraggableRow items={row3} direction="left" initialOffset={208} />}
       </div>
     </section>
   );
 };
 
 export const Header78Defaults: Props = {
-  heading: "Senior Design\nPartner for Startups",
-  description:
-    "I'm a senior graphic designer based in New York who specializes in branding, web, and motion design.",
+  heading: "Strategic branding for\nambitious companies",
+  description: "Hello 👋 Arek here, I’m a senior designer based in NY, working with clients worldwide.",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],
 
   // Row 1: Logo Animations

@@ -5,7 +5,8 @@ import {
   BiLogoLinkedinSquare,
   BiLogoYoutube,
 } from "react-icons/bi";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { setupFooterLogoGame } from "./footerLogoGame";
 import { ContraIcon } from "./ContraIcon";
 
 type ImageProps = {
@@ -50,7 +51,7 @@ type Props = {
   rightsText?: string;
 };
 
-export type Footer15Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Footer15InteractiveProps = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 const DraggableFooterGuide = ({ footerRef }: { footerRef: React.RefObject<HTMLElement | null> }) => {
   const guideRef = useRef<HTMLDivElement>(null);
@@ -100,8 +101,9 @@ const DraggableFooterGuide = ({ footerRef }: { footerRef: React.RefObject<HTMLEl
   );
 };
 
-export const Footer15 = (props: Footer15Props) => {
+export const Footer15Interactive = (props: Footer15InteractiveProps) => {
   const footerRef = useRef<HTMLElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
   const {
     logo,
     address,
@@ -115,6 +117,13 @@ export const Footer15 = (props: Footer15Props) => {
     ...Footer15Defaults,
     ...props,
   };
+
+  useEffect(() => {
+    const root = logoRef.current;
+    const footer = footerRef.current;
+    if (!root || !footer) return;
+    return setupFooterLogoGame({ root, footer, src: companyImage.src });
+  }, [companyImage.src]);
 
   return (
     <footer ref={footerRef} id="relume" className="dark-section-ruler bg-black px-[5%] pt-12 text-white md:pt-18 lg:pt-20">
@@ -136,13 +145,13 @@ export const Footer15 = (props: Footer15Props) => {
                 <p className="text-sm font-semibold">{contact.label}</p>
                 <a
                   href={`tel:${contact.phone}`}
-                  className="block w-fit text-sm"
+                  className="block text-sm underline decoration-white underline-offset-1"
                 >
                   {contact.phone}
                 </a>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="block w-fit text-sm"
+                  className="block text-sm underline decoration-white underline-offset-1"
                 >
                   {contact.email}
                 </a>
@@ -174,8 +183,7 @@ export const Footer15 = (props: Footer15Props) => {
           </div>
         </div>
         <div className="relative mt-10 aspect-[566.93/155.96817] md:mt-14">
-          {/* The preserved gravity-enabled version lives in Footer15Interactive.tsx. */}
-          <img src={companyImage.src} alt={companyImage.alt} className="h-full w-full object-contain" />
+          <div ref={logoRef} className="h-full w-full" role="img" aria-label={companyImage.alt} />
         </div>
         <DraggableFooterGuide footerRef={footerRef} />
         <div className="flex flex-col-reverse items-start justify-between py-6 text-sm md:flex-row md:items-center md:py-8">

@@ -8,9 +8,15 @@ module.exports = {
   presets: [require("@relume_io/relume-tailwind")],
   theme: {
     extend: {
+      fontSize: {
+        "10xl": ["5.5rem", { lineHeight: "1" }],
+      },
+      lineHeight: {
+        display: "0.9",
+      },
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
-        heading: ['"Roboto"', 'sans-serif'],
+        heading: ['"Roboto Condensed"', 'sans-serif'],
       },
       animation: {
         "marquee-top": "marquee-top 30s linear infinite",

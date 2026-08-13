@@ -1,7 +1,11 @@
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
-export const BookerSection = () => {
+type BookerSectionProps = {
+  pinLogoToViewport?: boolean;
+};
+
+export const BookerSection = ({ pinLogoToViewport = false }: BookerSectionProps) => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "15min" });
@@ -19,9 +23,11 @@ export const BookerSection = () => {
   return (
     <section id="book" className="relative px-[5%] pt-24 md:pt-32 lg:pt-40 pb-16 bg-black sticky bottom-0 z-0 overflow-hidden min-h-svh md:min-h-0">
       {/* Big Logo in Background - stuck to bottom */}
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center pointer-events-none">
+      <div
+        className={`${pinLogoToViewport ? "fixed" : "absolute"} bottom-0 left-0 right-0 flex justify-center pointer-events-none`}
+      >
         <img
-          src="/ebaqdesign-logo-big.svg"
+          src="/ebaqdesign-logo-bold-light.svg"
           alt=""
           className="w-full max-w-6xl"
         />
@@ -29,7 +35,10 @@ export const BookerSection = () => {
 
       {/* Cal.com form - overlays the logo */}
       <div className="container relative z-10">
-        <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mb-8 md:mb-12 text-center tracking-[-0.03em]">Book a free intro call</h2>
+        <h2 className="mb-4 text-center md:mb-6">
+          <span className="block text-brand-primary">Reserve your spot</span>
+          <span className="block text-white">Book a free intro call</span>
+        </h2>
         {/* Desktop - inline embed */}
         <div className="relative hidden h-[760px] md:block">
           <Cal

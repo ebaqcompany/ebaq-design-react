@@ -2,13 +2,14 @@ import {
   Navbar16,
   Header78,
   Layout484,
-  Layout485,
   Pricing8,
-  Comparison,
-  Layout527,
+  Layout425,
+  Banner12,
+  Logo3,
   Testimonial32,
-  AboutSection,
-  BookerSection,
+  Faq4,
+  Cta17,
+  Footer15,
 } from "./components";
 import { useTracking } from "./hooks/useTracking";
 
@@ -21,33 +22,38 @@ function App() {
           {/* Navbar */}
           <Navbar16 />
 
+          {/* Services banner */}
+          <Banner12 />
+
           {/* Hero Section */}
           <Header78 />
 
-          {/* Layout484 Section */}
+          {/* Client logos */}
+          <Logo3 />
+
+          {/* Service offer */}
           <Layout484 />
 
-          {/* Founder decision guide */}
-          <Layout485 />
+          {/* Layout527 Section */}
+          <Layout425 />
 
           {/* Pricing Section */}
           <Pricing8 />
 
-          {/* Comparison Section */}
-          <Comparison />
-
-          {/* Layout527 Section */}
-          <Layout527 />
-
           {/* Testimonials Section */}
           <Testimonial32 />
 
-          {/* About Section */}
-          <AboutSection />
+          {/* FAQ Section */}
+          <Faq4 />
+
+          {/* CTA Section */}
+          <Cta17 />
+
+          {/* Footer */}
+          <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
+
         </div>
 
-        {/* Booker Section - reveals from behind */}
-        <BookerSection />
     </div>
   );
 }
