@@ -51,7 +51,11 @@ export const Layout484 = (props: Layout484Props) => {
             const highlightStart = Math.max(0, start - 0.08);
             const highlightEnd = Math.min(1, end + 0.22);
             const highlightProgress = useTransform(scrollYProgress, [highlightStart, highlightEnd], [0, 1]);
-            const highlightOpacity = useTransform(highlightProgress, [0, 0.015], [0, 1]);
+            const highlightOpacity = useTransform(highlightProgress, (value) => value >= 0.08 ? 1 : 0);
+            const crossOutFirstStroke = useTransform(highlightProgress, [0, 0.5], [0, 1]);
+            const crossOutSecondStroke = useTransform(highlightProgress, [0.5, 1], [0, 1]);
+            const crossOutFirstOpacity = useTransform(crossOutFirstStroke, (value) => value >= 0.08 ? 1 : 0);
+            const crossOutSecondOpacity = useTransform(crossOutSecondStroke, (value) => value >= 0.08 ? 1 : 0);
             const shouldCircle = token === "AI,";
             const shouldOvalPhrase = token === "AI has no taste,";
             const shouldUnderlineBranding = token === "branding" && index === firstBrandingIndex;
@@ -120,8 +124,8 @@ export const Layout484 = (props: Layout484Props) => {
                   )}
                   {shouldCrossOutSlowedDown && (
                     <svg aria-hidden="true" className="pointer-events-none absolute -inset-x-[0.04em] -inset-y-[0.04em] h-[calc(100%+0.08em)] w-[calc(100%+0.08em)] overflow-visible" viewBox="0 0 100 45" preserveAspectRatio="none">
-                      <motion.path className="layout484-highlight-path" d="M 2 3 C 26 14, 73 31, 98 42" fill="none" stroke="#00AEEF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
-                      <motion.path className="layout484-highlight-path" d="M 97 2 C 75 12, 25 33, 3 43" fill="none" stroke="#00AEEF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
+                      <motion.path className="layout484-highlight-path" d="M 3 43 C 25 33, 75 12, 97 2" fill="none" stroke="#00AEEF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: crossOutFirstOpacity, pathLength: crossOutFirstStroke } as MotionStyle} />
+                      <motion.path className="layout484-highlight-path" d="M 2 3 C 26 14, 73 31, 98 42" fill="none" stroke="#00AEEF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: crossOutSecondOpacity, pathLength: crossOutSecondStroke } as MotionStyle} />
                     </svg>
                   )}
                   {shouldExclaim && (
