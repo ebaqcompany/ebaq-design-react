@@ -125,9 +125,9 @@ export const Layout484 = (props: Layout484Props) => {
                     </svg>
                   )}
                   {shouldExclaim && (
-                    <svg aria-hidden="true" className="pointer-events-none absolute left-[calc(100%+0.06em)] top-[-0.08em] h-[1.05em] w-[0.3em] overflow-visible" viewBox="0 0 20 50" preserveAspectRatio="none">
-                      <motion.path className="layout484-highlight-path" d="M 10 3 C 8 14, 12 25, 9 34" fill="none" stroke="#00AEEF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
-                      <motion.path className="layout484-highlight-path" d="M 10 45 L 10 46" fill="none" stroke="#00AEEF" strokeWidth="7" strokeLinecap="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
+                    <svg aria-hidden="true" className="pointer-events-none absolute left-[calc(100%+0.08em)] top-[calc(-0.18em-5px)] h-[1.4em] w-[0.5em] rotate-6 overflow-visible" viewBox="0 0 24 50" preserveAspectRatio="none">
+                      <motion.path className="layout484-highlight-path" d="M 4 3 C 9 2, 15 3, 20 5 L 14 35 C 12 37, 10 37, 8 34 Z" fill="none" stroke="#00AEEF" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
+                      <motion.path className="layout484-highlight-path" d="M 7 44 C 8 40, 15 40, 17 44 C 18 48, 9 49, 7 44 Z" fill="none" stroke="#00AEEF" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
                     </svg>
                   )}
                 </motion.span>
