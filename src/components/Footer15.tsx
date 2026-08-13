@@ -7,6 +7,7 @@ import {
 } from "react-icons/bi";
 import { useRef, useState } from "react";
 import { ContraIcon } from "./ContraIcon";
+import { FooterWordmark } from "./FooterWordmark";
 
 type ImageProps = {
   url?: string;
@@ -48,6 +49,7 @@ type Props = {
   companyImage: ImageProps;
   footerText?: string;
   rightsText?: string;
+  wordmarkMode?: "static" | "reorder";
 };
 
 export type Footer15Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
@@ -111,6 +113,7 @@ export const Footer15 = (props: Footer15Props) => {
     socialMediaLinks,
     footerText,
     rightsText,
+    wordmarkMode,
   } = {
     ...Footer15Defaults,
     ...props,
@@ -175,7 +178,7 @@ export const Footer15 = (props: Footer15Props) => {
         </div>
         <div className="relative mt-10 aspect-[566.93/155.96817] md:mt-14">
           {/* The preserved gravity-enabled version lives in Footer15Interactive.tsx. */}
-          <img src={companyImage.src} alt={companyImage.alt} className="h-full w-full object-contain" />
+          <FooterWordmark src={companyImage.src} alt={companyImage.alt ?? "Ebaq Design"} mode={wordmarkMode} />
         </div>
         <DraggableFooterGuide footerRef={footerRef} />
         <div className="flex flex-col-reverse items-start justify-between py-6 text-sm md:flex-row md:items-center md:py-8">
@@ -233,4 +236,5 @@ export const Footer15Defaults: Props = {
   ],
   footerText: "© 2026 Ebaq Design LLC",
   rightsText: "All rights reserved.",
+  wordmarkMode: "reorder",
 };
