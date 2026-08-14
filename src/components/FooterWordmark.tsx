@@ -124,6 +124,7 @@ const initialLetters: Letter[] = [
 
 const interactiveLogoSrc = "/ebaqdesign-logo-interactive.svg";
 const logoHeight = 155.96817;
+const dimSwipeThreshold = 48;
 
 const LetterShape = ({
   dragOffset = 0,
@@ -165,6 +166,8 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
   const [letterMarkup, setLetterMarkup] = useState<Record<string, string[]> | null>(null);
   const [dragState, setDragState] = useState<{ id: string; offset: number; startSlotX: number } | null>(null);
   const draggedLetter = useRef<string | null>(null);
+  const pointerStart = useRef<{ id: string; x: number; y: number } | null>(null);
+  const swipeAction = useRef<string | null>(null);
   const wordmarkRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -204,7 +207,7 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
   }
 
   const cycleTransform = (id: string) => {
-    if (draggedLetter.current === id) return;
+    if (draggedLetter.current === id || swipeAction.current === id) return;
     setLetters((current) => current.map((letter) => (
       letter.id === id && letter.transforms.length > 1
         ? { ...letter, transformIndex: (letter.transformIndex + 1) % letter.transforms.length }
@@ -274,6 +277,33 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
             event.preventDefault();
             event.stopPropagation();
             toggleDimmed(letter.id);
+          }}
+          onPointerDown={(event) => {
+            pointerStart.current = { id: letter.id, x: event.clientX, y: event.clientY };
+          }}
+          onPointerUp={(event) => {
+            const start = pointerStart.current;
+            pointerStart.current = null;
+            if (!start || start.id !== letter.id) return;
+
+            const deltaX = event.clientX - start.x;
+            const deltaY = event.clientY - start.y;
+            const isUpwardDimSwipe = deltaY <= -dimSwipeThreshold
+              && Math.abs(deltaY) > Math.abs(deltaX) * 1.2;
+
+            if (!isUpwardDimSwipe) return;
+            event.preventDefault();
+            event.stopPropagation();
+            swipeAction.current = letter.id;
+            draggedLetter.current = letter.id;
+            toggleDimmed(letter.id);
+            window.setTimeout(() => {
+              if (swipeAction.current === letter.id) swipeAction.current = null;
+              if (draggedLetter.current === letter.id) draggedLetter.current = null;
+            }, 0);
+          }}
+          onPointerCancel={() => {
+            pointerStart.current = null;
           }}
           onDragStart={() => {
             draggedLetter.current = letter.id;
