@@ -16,12 +16,21 @@ type LetterTransform = {
   translateY?: number;
 };
 
+type LetterGlyph = {
+  accentId?: string;
+  pathId: string;
+  rightKerning?: number;
+  sourceX: number;
+  visualBounds?: { left: number; right: number };
+};
+
 type Letter = {
   accentId?: string;
   bodyWidth: number;
   id: string;
   label: string;
   pathId: string;
+  glyphs?: LetterGlyph[];
   rightKerning?: number;
   transforms: LetterTransform[];
   visualBounds?: Array<{ left: number; right: number }>;
@@ -35,16 +44,21 @@ type InteractiveLetter = Letter & {
 
 const unchanged: LetterTransform[] = [{}];
 const sAndZ: LetterTransform[] = [{}, { scaleX: -1 }];
+const qAndG: LetterTransform[] = [{}, {}];
 // The lowercase body runs from y=33.471 to the shared y=119.085 baseline.
 // Rotating around the full wordmark center adds 3.412 units, so remove exactly that drift.
 const baselineCorrection = -3.412;
 const eAndA: LetterTransform[] = [{}, { rotate: 180, translateY: baselineCorrection }];
 const nAndU: LetterTransform[] = [{}, { scaleY: -1, translateY: baselineCorrection }];
-const bdpq: LetterTransform[] = [
+const bdpFromB: LetterTransform[] = [
+  {},
+  { scaleX: -1 },
+  { scaleY: -1, translateY: baselineCorrection },
+];
+const bdpFromD: LetterTransform[] = [
   {},
   { scaleX: -1 },
   { scaleX: -1, scaleY: -1, translateY: baselineCorrection },
-  { scaleY: -1, translateY: baselineCorrection },
 ];
 
 const standardBodyWidth = 51.34;
@@ -53,7 +67,7 @@ const qVisualWidth = 76.85;
 
 const initialLetters: Letter[] = [
   { id: "e1", label: "e", pathId: "letter-e1", accentId: "accent-e1", x: 0, bodyWidth: standardBodyWidth, transforms: eAndA },
-  { id: "b", label: "b", pathId: "letter-b", x: 61.09, bodyWidth: standardBodyWidth, transforms: bdpq },
+  { id: "b", label: "b", pathId: "letter-b", x: 61.09, bodyWidth: standardBodyWidth, transforms: bdpFromB },
   { id: "a", label: "a", pathId: "letter-a", accentId: "accent-a", x: 122.18, bodyWidth: standardBodyWidth, transforms: eAndA },
   {
     id: "q",
@@ -62,20 +76,49 @@ const initialLetters: Letter[] = [
     accentId: "accent-q",
     x: 183.27,
     bodyWidth: standardBodyWidth,
-    rightKerning: standardBodyWidth - qVisualWidth,
-    transforms: bdpq,
-    visualBounds: [
-      { left: 0, right: qVisualWidth },
-      { left: standardBodyWidth - qVisualWidth, right: standardBodyWidth },
-      { left: standardBodyWidth - qVisualWidth, right: standardBodyWidth },
-      { left: 0, right: qVisualWidth },
+    transforms: qAndG,
+    glyphs: [
+      {
+        pathId: "letter-q",
+        accentId: "accent-q",
+        sourceX: 183.27,
+        rightKerning: standardBodyWidth - qVisualWidth,
+        visualBounds: { left: 0, right: qVisualWidth },
+      },
+      {
+        pathId: "letter-g",
+        accentId: "accent-g",
+        sourceX: 454.5,
+      },
     ],
   },
-  { id: "d", label: "d", pathId: "letter-d", x: 244.42, bodyWidth: standardBodyWidth, transforms: bdpq },
+  { id: "d", label: "d", pathId: "letter-d", x: 244.42, bodyWidth: standardBodyWidth, transforms: bdpFromD },
   { id: "e2", label: "e", pathId: "letter-e2", accentId: "accent-e2", x: 305.51, bodyWidth: standardBodyWidth, transforms: eAndA },
   { id: "s", label: "s", pathId: "letter-s", x: 366.6, bodyWidth: standardBodyWidth, transforms: sAndZ },
   { id: "i", label: "i", pathId: "letter-i", accentId: "accent-i", x: 427.69, bodyWidth: 17.06, transforms: unchanged },
-  { id: "g", label: "g", pathId: "letter-g", accentId: "accent-g", x: 454.5, bodyWidth: standardBodyWidth, transforms: unchanged },
+  {
+    id: "g",
+    label: "g",
+    pathId: "letter-g",
+    accentId: "accent-g",
+    x: 454.5,
+    bodyWidth: standardBodyWidth,
+    transforms: qAndG,
+    glyphs: [
+      {
+        pathId: "letter-g",
+        accentId: "accent-g",
+        sourceX: 454.5,
+      },
+      {
+        pathId: "letter-q",
+        accentId: "accent-q",
+        sourceX: 183.27,
+        rightKerning: standardBodyWidth - qVisualWidth,
+        visualBounds: { left: 0, right: qVisualWidth },
+      },
+    ],
+  },
   { id: "n", label: "n", pathId: "letter-n", x: 515.59, bodyWidth: standardBodyWidth, transforms: nAndU },
 ];
 
@@ -86,18 +129,20 @@ const LetterShape = ({
   dragOffset = 0,
   letter,
   markup,
+  sourceX,
   slotX,
 }: {
   dragOffset?: number;
   letter: InteractiveLetter;
   markup: string;
+  sourceX: number;
   slotX: number;
 }) => {
   const transform = letter.transforms[letter.transformIndex];
-  const centerX = letter.x + letter.bodyWidth / 2;
+  const centerX = sourceX + letter.bodyWidth / 2;
   const centerY = logoHeight / 2;
   const svgTransform = [
-    `translate(${slotX - letter.x + dragOffset} ${transform.translateY ?? 0})`,
+    `translate(${slotX - sourceX + dragOffset} ${transform.translateY ?? 0})`,
     `translate(${centerX} ${centerY})`,
     `rotate(${transform.rotate ?? 0})`,
     `scale(${transform.scaleX ?? 1} ${transform.scaleY ?? 1})`,
@@ -117,7 +162,7 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
   const [letters, setLetters] = useState<InteractiveLetter[]>(
     initialLetters.map((letter) => ({ ...letter, dimmed: false, transformIndex: 0 })),
   );
-  const [letterMarkup, setLetterMarkup] = useState<Record<string, string> | null>(null);
+  const [letterMarkup, setLetterMarkup] = useState<Record<string, string[]> | null>(null);
   const [dragState, setDragState] = useState<{ id: string; offset: number; startSlotX: number } | null>(null);
   const draggedLetter = useRef<string | null>(null);
   const wordmarkRef = useRef<HTMLDivElement | null>(null);
@@ -130,13 +175,20 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
       .then((source) => {
         const document = new DOMParser().parseFromString(source, "image/svg+xml");
         const markup = Object.fromEntries(initialLetters.map((letter) => {
-          const mainElement = document.getElementById(letter.pathId);
-          const accentElement = letter.accentId ? document.getElementById(letter.accentId) : null;
-          mainElement?.setAttribute("fill", "#fff");
-          accentElement?.setAttribute("fill", "#00afec");
-          const main = mainElement?.outerHTML ?? "";
-          const accent = accentElement?.outerHTML ?? "";
-          return [letter.id, `${main}${accent}`];
+          const glyphs = letter.glyphs ?? [{
+            pathId: letter.pathId,
+            accentId: letter.accentId,
+            sourceX: letter.x,
+          }];
+          return [letter.id, glyphs.map((glyph) => {
+            const mainElement = document.getElementById(glyph.pathId)?.cloneNode(true) as Element | undefined;
+            const accentElement = glyph.accentId
+              ? document.getElementById(glyph.accentId)?.cloneNode(true) as Element | undefined
+              : undefined;
+            mainElement?.setAttribute("fill", "#fff");
+            accentElement?.setAttribute("fill", "#00afec");
+            return `${mainElement?.outerHTML ?? ""}${accentElement?.outerHTML ?? ""}`;
+          })];
         }));
         setLetterMarkup(markup);
       })
@@ -168,9 +220,13 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
 
   let nextSlotX = 0;
   const positionedLetters = letters.map((letter) => {
-    const bounds = letter.visualBounds?.[letter.transformIndex] ?? { left: 0, right: letter.bodyWidth };
-    const layoutWidth = bounds.right - bounds.left + opticalGap + (letter.rightKerning ?? 0);
-    const positionedLetter = { letter, layoutWidth, slotX: nextSlotX };
+    const glyph = letter.glyphs?.[letter.transformIndex];
+    const bounds = glyph?.visualBounds
+      ?? letter.visualBounds?.[letter.transformIndex]
+      ?? { left: 0, right: letter.bodyWidth };
+    const layoutWidth = bounds.right - bounds.left + opticalGap
+      + (glyph?.rightKerning ?? letter.rightKerning ?? 0);
+    const positionedLetter = { glyph, letter, layoutWidth, slotX: nextSlotX };
     nextSlotX += layoutWidth;
     return positionedLetter;
   });
@@ -193,11 +249,12 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
         viewBox={`0 0 ${logoWidth} ${logoHeight}`}
         aria-hidden="true"
       >
-        {positionedLetters.map(({ letter, slotX }) => (
+        {positionedLetters.map(({ glyph, letter, slotX }) => (
           <LetterShape
             key={letter.id}
             letter={letter}
-            markup={letterMarkup[letter.id]}
+            markup={letterMarkup[letter.id][letter.glyphs ? letter.transformIndex : 0]}
+            sourceX={glyph?.sourceX ?? letter.x}
             slotX={slotX}
             dragOffset={dragState?.id === letter.id
               ? dragState.offset - (slotX - dragState.startSlotX)
