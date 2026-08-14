@@ -166,8 +166,6 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
   const [letterMarkup, setLetterMarkup] = useState<Record<string, string[]> | null>(null);
   const [dragState, setDragState] = useState<{ id: string; offset: number; startSlotX: number } | null>(null);
   const draggedLetter = useRef<string | null>(null);
-  const pointerStart = useRef<{ id: string; x: number; y: number } | null>(null);
-  const swipeAction = useRef<string | null>(null);
   const wordmarkRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -207,7 +205,7 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
   }
 
   const cycleTransform = (id: string) => {
-    if (draggedLetter.current === id || swipeAction.current === id) return;
+    if (draggedLetter.current === id) return;
     setLetters((current) => current.map((letter) => (
       letter.id === id && letter.transforms.length > 1
         ? { ...letter, transformIndex: (letter.transformIndex + 1) % letter.transforms.length }
@@ -278,33 +276,6 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
             event.stopPropagation();
             toggleDimmed(letter.id);
           }}
-          onPointerDown={(event) => {
-            pointerStart.current = { id: letter.id, x: event.clientX, y: event.clientY };
-          }}
-          onPointerUp={(event) => {
-            const start = pointerStart.current;
-            pointerStart.current = null;
-            if (!start || start.id !== letter.id) return;
-
-            const deltaX = event.clientX - start.x;
-            const deltaY = event.clientY - start.y;
-            const isUpwardDimSwipe = deltaY <= -dimSwipeThreshold
-              && Math.abs(deltaY) > Math.abs(deltaX) * 1.2;
-
-            if (!isUpwardDimSwipe) return;
-            event.preventDefault();
-            event.stopPropagation();
-            swipeAction.current = letter.id;
-            draggedLetter.current = letter.id;
-            toggleDimmed(letter.id);
-            window.setTimeout(() => {
-              if (swipeAction.current === letter.id) swipeAction.current = null;
-              if (draggedLetter.current === letter.id) draggedLetter.current = null;
-            }, 0);
-          }}
-          onPointerCancel={() => {
-            pointerStart.current = null;
-          }}
           onDragStart={() => {
             draggedLetter.current = letter.id;
             setDragState({ id: letter.id, offset: 0, startSlotX: slotByLetter[letter.id] });
@@ -315,7 +286,10 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
               ? { ...current, offset: info.offset.x * (logoWidth / renderedWidth) }
               : current);
           }}
-          onDragEnd={() => {
+          onDragEnd={(_, info) => {
+            const isUpwardDimSwipe = info.offset.y <= -dimSwipeThreshold
+              && Math.abs(info.offset.y) > Math.abs(info.offset.x) * 1.2;
+            if (isUpwardDimSwipe) toggleDimmed(letter.id);
             setDragState(null);
             window.setTimeout(() => { draggedLetter.current = null; }, 0);
           }}
