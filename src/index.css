@@ -151,6 +151,8 @@
   left: 30px;
   width: calc(100% - 30px);
   height: 30px;
+  box-sizing: border-box;
+  border-bottom: 0.5px solid white;
   background-image: url('/textures/ruler-y.svg');
   background-repeat: repeat-x;
   background-size: 120px 30px;
@@ -161,6 +163,8 @@
   left: 0;
   width: 30px;
   height: 100%;
+  box-sizing: border-box;
+  border-right: 0.5px solid white;
   background-image: url('/textures/ruler-x.svg');
   background-repeat: repeat-y;
   background-size: 30px 120px;
