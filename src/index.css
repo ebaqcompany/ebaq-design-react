@@ -456,68 +456,6 @@ h6,
   font-size: 20px;
 }
 
-.profile-photo-trigger {
-  position: relative;
-  z-index: 2;
-}
-
-.profile-photo-image {
-  transition: transform 260ms cubic-bezier(.22, 1, .36, 1);
-}
-
-.profile-photo-stage.is-visible .profile-photo-image {
-  transform: scale(.65);
-}
-
-.profile-tool-orbit {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.profile-tool-orbit img {
-  position: absolute;
-  top: 32px;
-  left: 32px;
-  width: 16px;
-  height: 16px;
-  border-radius: 20%;
-  object-fit: cover;
-  opacity: 0;
-  transform: translate(0, 0) scale(.2);
-  transition: opacity 160ms ease, transform 300ms cubic-bezier(.22, 1, .36, 1);
-}
-
-.profile-tool-orbit.is-visible { animation: profile-tool-orbit-spin 20s linear infinite; }
-.profile-tool-orbit.is-visible img { opacity: 1; animation: profile-tool-orbit-counter-spin 20s linear infinite; }
-.profile-tool-orbit.is-visible img:nth-child(1) { transform: rotate(0deg) translateX(44px) rotate(0deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(2) { transform: rotate(32.727deg) translateX(44px) rotate(-32.727deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(3) { transform: rotate(65.455deg) translateX(44px) rotate(-65.455deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(4) { transform: rotate(98.182deg) translateX(44px) rotate(-98.182deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(5) { transform: rotate(130.909deg) translateX(44px) rotate(-130.909deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(6) { transform: rotate(163.636deg) translateX(44px) rotate(-163.636deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(7) { transform: rotate(196.364deg) translateX(44px) rotate(-196.364deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(8) { transform: rotate(229.091deg) translateX(44px) rotate(-229.091deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(9) { transform: rotate(261.818deg) translateX(44px) rotate(-261.818deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(10) { transform: rotate(294.545deg) translateX(44px) rotate(-294.545deg) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(11) { transform: rotate(327.273deg) translateX(44px) rotate(-327.273deg) scale(1); }
-
-@keyframes profile-tool-orbit-spin {
-  to { transform: rotate(1turn); }
-}
-
-@keyframes profile-tool-orbit-counter-spin {
-  to { rotate: -1turn; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .profile-photo-image,
-  .profile-tool-orbit img { transition: none; }
-  .profile-tool-orbit.is-visible,
-  .profile-tool-orbit.is-visible img { animation: none; }
-}
-
 @media (max-width: 767px) {
   h1 { font-size: 48px; }
   h2 { font-size: 36px; }

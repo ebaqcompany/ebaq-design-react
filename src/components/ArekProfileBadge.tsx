@@ -5,7 +5,6 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
-import { useId, useState } from "react";
 import { ContraIcon } from "./ContraIcon";
 
 type Props = {
@@ -37,12 +36,8 @@ const socialLinks = [
 ] as const;
 
 export const ArekProfileBadge = ({ className = "", variant = "tools" }: Props) => {
-  const [showTools, setShowTools] = useState(false);
-  const toolsId = useId();
-  const canHover = () => window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-
   return <div className={`flex w-fit items-center gap-4 ${className}`.trim()}>
-    {variant === "author" ? <div className={`profile-photo-stage relative size-20 shrink-0 ${showTools ? "is-visible" : ""}`.trim()} onMouseEnter={() => { if (canHover()) setShowTools(true); }} onMouseLeave={() => setShowTools(false)}><button type="button" aria-label="Show software tools used by Arek Dvornechuck" aria-controls={toolsId} aria-expanded={showTools} className="profile-photo-trigger size-20 rounded-full border-0 bg-transparent p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary" onFocus={(event) => { if (event.currentTarget.matches(":focus-visible")) setShowTools(true); }} onBlur={() => setShowTools(false)}><img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="profile-photo-image size-20 rounded-full object-cover" /></button><div id={toolsId} role="list" aria-label="Software tools used by Arek Dvornechuck" aria-hidden={!showTools} className={`profile-tool-orbit ${showTools ? "is-visible" : ""}`}>{arekToolIcons.map(([src, alt, iconClassName]) => <img key={src} src={src} alt={alt} className={iconClassName ?? ""} />)}</div></div> : <img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 rounded-full object-cover" />}
+    <img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 shrink-0 rounded-full object-cover" />
     <div className="flex min-w-0 flex-col">
       <div className="flex flex-col gap-0">
         {variant === "author" ? <p className="heading-h7 whitespace-nowrap">Arek Dvornechuck</p> : <h5 className="whitespace-nowrap">Arek Dvornechuck</h5>}

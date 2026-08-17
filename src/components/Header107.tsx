@@ -1,3 +1,5 @@
+import { arekToolIcons } from "./ArekProfileBadge";
+
 type ImageProps = { src: string; alt: string };
 type Props = { title: string; description: string; images: ImageProps[] };
 
@@ -16,6 +18,9 @@ export const Header107 = (props: Header107Props) => {
         <div className="w-full max-w-lg">
           <h1 className="mb-5 md:mb-6">{title}</h1>
           <p className="md:text-md">{description}</p>
+          <div className="mt-5 flex flex-wrap items-center gap-2 md:mt-6" role="list" aria-label="Software tools used by Arek Dvornechuck">
+            {arekToolIcons.map(([src, alt, iconClassName]) => <img key={src} src={src} alt={alt} role="listitem" className={`size-5 rounded-[20%] object-cover ${iconClassName ?? ""}`.trim()} />)}
+          </div>
         </div>
 
         <div className="mt-12 grid grid-cols-3 items-start gap-2 md:mt-16 md:gap-5 lg:mt-20 lg:gap-8">
