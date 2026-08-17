@@ -51,7 +51,7 @@ export const Content32 = ({ articleTitle, articleUrl, children }: Content32Props
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.5fr_1fr] lg:gap-x-20">
           <aside className="order-last lg:order-none">
             <div className="lg:sticky lg:top-20 lg:max-w-xxs">
-              <ArekProfileBadge variant="author" />
+              <ArekProfileBadge variant="author" portraitHref="/about" />
               {tocItems.length > 0 && <nav aria-label={`Table of contents for ${articleTitle}`} className="mt-6"><Accordion type="single" collapsible><AccordionItem value="article-contents" className="border-none"><AccordionTrigger icon={<RxChevronDown className="size-5 shrink-0 transition-transform duration-300" />} className="heading-h6 w-full gap-4 py-3 text-left [&[data-state=open]>svg]:rotate-180">{articleTitle}</AccordionTrigger><AccordionContent className="pb-0"><ul className="space-y-1.5 pt-2">{tocItems.map((item) => <li key={item.id} className="leading-[1.5]"><a href={`#${item.id}`} className="inline text-base leading-[1.5]">{item.label}</a></li>)}</ul></AccordionContent></AccordionItem></Accordion></nav>}
               <div className="mt-8 flex flex-col items-start bg-black p-6 text-white">
                 <h6 className="mb-3">Looking for a designer?</h6>

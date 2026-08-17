@@ -35,7 +35,6 @@
     { "source": "/paradromics", "destination": "/paradromics.html" },
     { "source": "/echo", "destination": "/echo.html" },
     { "source": "/motif", "destination": "/motif.html" },
-    { "source": "/imper", "destination": "/imper.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/imper", "destination": "/imper.html" }
   ]
 }

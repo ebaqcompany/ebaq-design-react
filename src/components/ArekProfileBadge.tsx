@@ -5,11 +5,13 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import { ContraIcon } from "./ContraIcon";
 
 type Props = {
   className?: string;
   variant?: "tools" | "author";
+  portraitHref?: string;
 };
 
 export const arekToolIcons = [
@@ -35,9 +37,9 @@ const socialLinks = [
   { label: "Contra", url: "https://contra.com/ebaqdesign", icon: <ContraIcon className="size-4" /> },
 ] as const;
 
-export const ArekProfileBadge = ({ className = "", variant = "tools" }: Props) => {
+export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHref }: Props) => {
   return <div className={`flex w-fit items-center gap-4 ${className}`.trim()}>
-    <img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 shrink-0 rounded-full object-cover" />
+    {portraitHref ? <Link to={portraitHref} aria-label="About Arek Dvornechuck" className="shrink-0"><img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 rounded-full object-cover" /></Link> : <img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 shrink-0 rounded-full object-cover" />}
     <div className="flex min-w-0 flex-col">
       <div className="flex flex-col gap-0">
         {variant === "author" ? <p className="heading-h7 whitespace-nowrap">Arek Dvornechuck</p> : <h5 className="whitespace-nowrap">Arek Dvornechuck</h5>}
