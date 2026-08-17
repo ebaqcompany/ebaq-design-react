@@ -489,28 +489,26 @@ h6,
   transition: opacity 160ms ease, transform 300ms cubic-bezier(.22, 1, .36, 1);
 }
 
-.profile-tool-orbit.is-visible { animation: profile-tool-orbit-drift 8s ease-in-out infinite alternate; }
-.profile-tool-orbit.is-visible img { opacity: 1; animation: profile-tool-float 3s ease-in-out infinite; }
-.profile-tool-orbit.is-visible img:nth-child(1) { transform: translate(0, -34px) scale(1); }
-.profile-tool-orbit.is-visible img:nth-child(2) { transform: translate(18px, -29px) scale(1); animation-delay: -1.1s; }
-.profile-tool-orbit.is-visible img:nth-child(3) { transform: translate(31px, -14px) scale(1); animation-delay: -2.2s; }
-.profile-tool-orbit.is-visible img:nth-child(4) { transform: translate(34px, 5px) scale(1); animation-delay: -.6s; }
-.profile-tool-orbit.is-visible img:nth-child(5) { transform: translate(26px, 22px) scale(1); animation-delay: -1.7s; }
-.profile-tool-orbit.is-visible img:nth-child(6) { transform: translate(10px, 33px) scale(1); animation-delay: -2.8s; }
-.profile-tool-orbit.is-visible img:nth-child(7) { transform: translate(-10px, 33px) scale(1); animation-delay: -.3s; }
-.profile-tool-orbit.is-visible img:nth-child(8) { transform: translate(-26px, 22px) scale(1); animation-delay: -1.4s; }
-.profile-tool-orbit.is-visible img:nth-child(9) { transform: translate(-34px, 5px) scale(1); animation-delay: -2.5s; }
-.profile-tool-orbit.is-visible img:nth-child(10) { transform: translate(-31px, -14px) scale(1); animation-delay: -.9s; }
-.profile-tool-orbit.is-visible img:nth-child(11) { transform: translate(-18px, -29px) scale(1); animation-delay: -2s; }
+.profile-tool-orbit.is-visible { animation: profile-tool-orbit-spin 20s linear infinite; }
+.profile-tool-orbit.is-visible img { opacity: 1; animation: profile-tool-orbit-counter-spin 20s linear infinite; }
+.profile-tool-orbit.is-visible img:nth-child(1) { transform: rotate(0deg) translateX(44px) rotate(0deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(2) { transform: rotate(32.727deg) translateX(44px) rotate(-32.727deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(3) { transform: rotate(65.455deg) translateX(44px) rotate(-65.455deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(4) { transform: rotate(98.182deg) translateX(44px) rotate(-98.182deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(5) { transform: rotate(130.909deg) translateX(44px) rotate(-130.909deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(6) { transform: rotate(163.636deg) translateX(44px) rotate(-163.636deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(7) { transform: rotate(196.364deg) translateX(44px) rotate(-196.364deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(8) { transform: rotate(229.091deg) translateX(44px) rotate(-229.091deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(9) { transform: rotate(261.818deg) translateX(44px) rotate(-261.818deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(10) { transform: rotate(294.545deg) translateX(44px) rotate(-294.545deg) scale(1); }
+.profile-tool-orbit.is-visible img:nth-child(11) { transform: rotate(327.273deg) translateX(44px) rotate(-327.273deg) scale(1); }
 
-@keyframes profile-tool-orbit-drift {
-  from { transform: rotate(-2deg); }
-  to { transform: rotate(2deg); }
+@keyframes profile-tool-orbit-spin {
+  to { transform: rotate(1turn); }
 }
 
-@keyframes profile-tool-float {
-  0%, 100% { translate: 0 0; }
-  50% { translate: 0 -2px; }
+@keyframes profile-tool-orbit-counter-spin {
+  to { rotate: -1turn; }
 }
 
 @media (prefers-reduced-motion: reduce) {

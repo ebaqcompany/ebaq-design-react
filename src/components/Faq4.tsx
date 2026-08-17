@@ -6,7 +6,7 @@ import {
   useMediaQuery,
 } from "@relume_io/relume-ui";
 import { useEffect, useRef, useState } from "react";
-import { RxChevronDown, RxChevronUp } from "react-icons/rx";
+import { RxChevronDown } from "react-icons/rx";
 import { AIToolIconRow } from "./AIToolIconRow";
 import { arekToolIcons } from "./ArekProfileBadge";
 
@@ -79,7 +79,7 @@ export const Faq4 = (props: Faq4Props) => {
                 <span className="vector-card-handle vector-card-handle-bottom-left" />
               </div>
               <AccordionTrigger
-                icon={isOpen ? <RxChevronUp className="size-6 shrink-0 md:size-8" /> : <RxChevronDown className="size-6 shrink-0 md:size-8" />}
+                icon={<RxChevronDown className="size-6 shrink-0 md:size-8" />}
                 onPointerDown={clearHoverTimer}
                 onKeyDown={(event) => toggleFromKeyboard(event, itemValue)}
                 className="gap-4 py-4 font-heading text-base leading-[1.2] tracking-normal md:py-5 md:text-md"

@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/studio", "destination": "/about", "statusCode": 301 },
     { "source": "/strategy-guide", "destination": "/shop/strategy-guide", "statusCode": 301 },
     { "source": "/strategy-guide-old", "destination": "/shop/strategy-guide", "statusCode": 301 },
     { "source": "/naming-guide", "destination": "/shop/naming-guide", "statusCode": 301 },
