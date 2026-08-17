@@ -11,12 +11,12 @@ export const Testimonial32 = (props: Props) => {
   return (
     <section {...props} id="testimonials" className="testimonial-section overflow-hidden px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
-        <div className="mb-12 w-full max-w-lg md:mb-18 lg:mb-20"><h2 className="mb-5 md:mb-6">{heading}</h2>{description && <p className="md:text-md">{description}</p>}</div>
+        <div className="mb-12 w-full max-w-lg md:mb-18 lg:mb-20"><p className="mb-3 font-semibold text-brand-primary md:mb-4">Testimonials</p><h2 className="mb-5 md:mb-6">{heading}</h2>{description && <p className="md:text-md">{description}</p>}</div>
         <Carousel opts={{ loop: true, align: "start" }} className="overflow-hidden">
           <div className="relative pb-12 md:pb-16">
             <CarouselContent className="ml-0 items-stretch">{testimonials.map((testimonial, index) => <CarouselItem key={index} className="self-stretch pl-0 md:basis-full lg:basis-1/3 lg:pr-16"><TestimonialCard testimonial={testimonial} /></CarouselItem>)}</CarouselContent>
             <div className="mt-8 flex items-center justify-between md:mt-12">
-              <a href="https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noreferrer" className="button-primary inline-flex items-center px-5 py-2.5">Recommendations on LinkedIn</a>
+              <a href="https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">Verified on LinkedIn</a>
               <div className="flex items-end justify-end gap-2 md:gap-4"><CarouselPrevious className="testimonial-carousel-button static right-0 top-0 size-12 -translate-y-0" /><CarouselNext className="testimonial-carousel-button static right-0 top-0 size-12 -translate-y-0" /></div>
             </div>
           </div>

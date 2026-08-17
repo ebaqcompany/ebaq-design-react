@@ -4,6 +4,7 @@ import {
   Layout484,
   Pricing8,
   Layout425,
+  Layout350Preview,
   Banner12,
   Logo3,
   Testimonial32,
@@ -36,6 +37,9 @@ function App() {
 
           {/* Layout527 Section */}
           <Layout425 />
+
+          {/* Strategy-to-launch capabilities */}
+          <Layout350Preview />
 
           {/* Pricing Section */}
           <Pricing8 />

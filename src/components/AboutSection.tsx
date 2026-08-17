@@ -26,8 +26,8 @@ export const AboutSection = (props: AboutSectionProps) => {
         {/* Top section with greeting, heading and image */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-20 md:mb-28 lg:mb-36">
           <div className="lg:col-span-2">
-            <p className="text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6 tracking-[-0.05em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}>{greeting}</p>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}>
+            <p className="text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6 tracking-[-0.05em]" style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wght' 400" }}>{greeting}</p>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl" style={{ fontFamily: "'Roboto Condensed', sans-serif", fontWeight: 600 }}>
               {heading}
             </h2>
             <a
@@ -35,7 +35,7 @@ export const AboutSection = (props: AboutSectionProps) => {
               target="_blank"
               rel="noopener noreferrer"
               className="button-primary inline-flex items-center gap-2 mt-6 md:mt-8 px-5 py-2.5 rounded-full border transition-colors duration-200"
-              style={{ fontFamily: "'Open Sans', sans-serif" }}
+              style={{ fontFamily: "'Roboto', sans-serif" }}
             >
               <img
                 src="https://contra.com/static/assets/contra-logo-filled.svg"
@@ -57,16 +57,16 @@ export const AboutSection = (props: AboutSectionProps) => {
 
         {/* Services section */}
         <div>
-          <p className="text-base mb-6 md:mb-8 font-semibold" style={{ fontFamily: "'Open Sans', sans-serif" }}>{servicesLabel}</p>
+          <p className="text-base mb-6 md:mb-8 font-semibold" style={{ fontFamily: "'Roboto', sans-serif" }}>{servicesLabel}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-24">
             <div className="flex flex-col gap-1">
               {servicesLeft.map((service, index) => (
-                <p key={index} className="text-lg md:text-xl md:leading-[1.3] lg:text-2xl tracking-[0.01em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}>{service}</p>
+                <p key={index} className="text-lg md:text-xl md:leading-[1.3] lg:text-2xl tracking-[0.01em]" style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wght' 400" }}>{service}</p>
               ))}
             </div>
             <div className="flex flex-col gap-1 mt-1 md:mt-0">
               {servicesRight.map((service, index) => (
-                <p key={index} className="text-lg md:text-xl md:leading-[1.3] lg:text-2xl tracking-[0.01em]" style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}>{service}</p>
+                <p key={index} className="text-lg md:text-xl md:leading-[1.3] lg:text-2xl tracking-[0.01em]" style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wght' 400" }}>{service}</p>
               ))}
             </div>
           </div>
@@ -78,7 +78,7 @@ export const AboutSection = (props: AboutSectionProps) => {
 
 export const AboutSectionDefaults: Props = {
   greeting: "Hello 👋",
-  heading: "I'm Arek, a senior designer based in NY, working with clients worldwide.",
+  heading: "I'm Arek, a senior designer based in NY, working with clients worldwide",
   servicesLabel: "Services I offer",
   servicesLeft: [
     "Brand Strategy",

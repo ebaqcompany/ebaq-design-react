@@ -1,4 +1,28 @@
 {
+  "redirects": [
+    { "source": "/strategy-guide", "destination": "/shop/strategy-guide", "statusCode": 301 },
+    { "source": "/strategy-guide-old", "destination": "/shop/strategy-guide", "statusCode": 301 },
+    { "source": "/naming-guide", "destination": "/shop/naming-guide", "statusCode": 301 },
+    { "source": "/proposal-template", "destination": "/shop/proposal-template", "statusCode": 301 },
+    { "source": "/guidelines-kit", "destination": "/shop/guidelines-kit", "statusCode": 301 },
+    { "source": "/brand-master", "destination": "/shop/brand-master", "statusCode": 301 },
+    { "source": "/storytelling-guide", "destination": "/shop/storytelling-guide", "statusCode": 301 },
+    { "source": "/creative-suite", "destination": "/shop/creative-suite", "statusCode": 301 },
+    { "source": "/one-page-style-guide", "destination": "/shop/one-page-style-guide", "statusCode": 301 },
+    { "source": "/brand-archetypes", "destination": "/shop/brand-archetypes", "statusCode": 301 },
+    { "source": "/brand-archetypes-copy", "destination": "/shop/brand-archetypes", "statusCode": 301 },
+    { "source": "/style-guide-kit", "destination": "/shop/guidelines-kit", "statusCode": 301 },
+    { "source": "/guides", "destination": "/shop", "statusCode": 301 },
+    { "source": "/work/ami", "destination": "/work", "statusCode": 301 },
+    { "source": "/work/ava-couture", "destination": "/work", "statusCode": 301 },
+    { "source": "/work/carwao", "destination": "/work", "statusCode": 301 },
+    { "source": "/work/focal", "destination": "/work", "statusCode": 301 },
+    { "source": "/work/forward", "destination": "/work", "statusCode": 301 },
+    { "source": "/work/laura-ceara", "destination": "/work", "statusCode": 301 },
+    { "source": "/work/lyntics", "destination": "/work", "statusCode": 301 },
+    { "source": "/work/rentsway", "destination": "/work", "statusCode": 301 },
+    { "source": "/work/snm", "destination": "/work", "statusCode": 301 }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/additiontx", "destination": "/additiontx.html" },

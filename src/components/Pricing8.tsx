@@ -7,13 +7,13 @@ type Props = { tagline: string; heading: string; description: string; pricingPla
 export type Pricing8Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Pricing8 = (props: Pricing8Props) => {
-  const { heading, description, pricingPlans } = { ...Pricing8Defaults, ...props };
+  const { tagline, heading, pricingPlans } = { ...Pricing8Defaults, ...props };
   return (
     <section {...props} id="pricing" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container max-w-xl">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
-          <h2 className="mb-5 md:mb-6">{heading}</h2>
-          <p className="md:text-md">{description}</p>
+          <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
+          <h2>{heading}</h2>
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {pricingPlans.map((plan, index) => <PricingPlan key={index} plan={plan} />)}
@@ -44,7 +44,7 @@ const PricingPlan = ({ plan }: { plan: PricingPlan }) => (
 
 export const Pricing8Defaults: Props = {
   tagline: "Pricing",
-  heading: "Simple pricing",
+  heading: "Hire me by the week or month",
   description: "Choose the pace that fits your business.",
   pricingPlans: [
     { planName: "Weekly subscription", planDescription: "", monthlyPrice: "$3,000", yearlyPrice: "$10,000", period: "/wk", alternateLabel: "Branding fundamentals typically take one week.", availability: "2 spots available", features: ["Custom Logo Design", "Logo Animation", "Color Palette", "Typography", "Custom visuals (icons, etc.)", "Brand Guidelines", "Hero design", "Social Media Graphics", "Unlimited revisions"], button: { title: "Book a Call" } },

@@ -40,7 +40,7 @@ export const Layout527 = (props: Layout527Props) => {
     <section id="deliverables" className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
       <div className="container">
         <h2 className="mb-12 text-4xl md:text-5xl lg:text-6xl md:mb-16">
-          $3k goes a long way. All this plus much more.
+          $3k goes a long way. All this plus much more
         </h2>
         <div className="relative block lg:grid lg:grid-cols-4 lg:items-start lg:gap-8">
           {/* Image container - shows on left side (3/4 width) */}
@@ -87,7 +87,7 @@ export const Layout527 = (props: Layout527Props) => {
                 )}
                 onMouseEnter={() => setHoveredIndex(index)}
               >
-                <h3
+                <h4
                   className={clsx(
                     "text-lg transition-colors duration-300 md:text-xl md:leading-[1.3] lg:text-2xl tracking-[0.01em]",
                     {
@@ -95,10 +95,10 @@ export const Layout527 = (props: Layout527Props) => {
                       "lg:text-black": hoveredIndex === index || hoveredIndex === null,
                     },
                   )}
-                  style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 400" }}
+                  style={{ fontFamily: "'Roboto Condensed', sans-serif", fontWeight: 600 }}
                 >
                   {link.heading}
-                </h3>
+                </h4>
               </div>
             ))}
           </div>

@@ -9,6 +9,8 @@ const TRACK_ENDPOINT = '/api/track';
  * - If a lead cookie exists (set by email pixel redirect), we send it explicitly.
  */
 export function useTracking() {
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+
   useEffect(() => {
     const page = window.location.pathname + window.location.search;
 
@@ -33,5 +35,5 @@ export function useTracking() {
 
     window.addEventListener('beforeunload', handleUnload);
     return () => window.removeEventListener('beforeunload', handleUnload);
-  }, [typeof window !== 'undefined' ? window.location.pathname : '']);
+  }, [pathname]);
 }

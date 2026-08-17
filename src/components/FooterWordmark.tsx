@@ -18,6 +18,7 @@ type LetterTransform = {
 
 type LetterGlyph = {
   accentId?: string;
+  label?: string;
   pathId: string;
   rightKerning?: number;
   sourceX: number;
@@ -42,9 +43,9 @@ type InteractiveLetter = Letter & {
   transformIndex: number;
 };
 
-const unchanged: LetterTransform[] = [{}];
+const iAndJ: LetterTransform[] = [{}, {}];
 const sAndZ: LetterTransform[] = [{}, { scaleX: -1 }];
-const qAndG: LetterTransform[] = [{}, {}];
+const qGAndY: LetterTransform[] = [{}, {}, {}];
 // The lowercase body runs from y=33.471 to the shared y=119.085 baseline.
 // Rotating around the full wordmark center adds 3.412 units, so remove exactly that drift.
 const baselineCorrection = -3.412;
@@ -76,7 +77,7 @@ const initialLetters: Letter[] = [
     accentId: "accent-q",
     x: 183.27,
     bodyWidth: standardBodyWidth,
-    transforms: qAndG,
+    transforms: qGAndY,
     glyphs: [
       {
         pathId: "letter-q",
@@ -88,6 +89,12 @@ const initialLetters: Letter[] = [
       {
         pathId: "letter-g",
         accentId: "accent-g",
+        sourceX: 454.5,
+      },
+      {
+        pathId: "letter-y",
+        accentId: "accent-g",
+        label: "y",
         sourceX: 454.5,
       },
     ],
@@ -95,7 +102,30 @@ const initialLetters: Letter[] = [
   { id: "d", label: "d", pathId: "letter-d", x: 244.42, bodyWidth: standardBodyWidth, transforms: bdpFromD },
   { id: "e2", label: "e", pathId: "letter-e2", accentId: "accent-e2", x: 305.51, bodyWidth: standardBodyWidth, transforms: eAndA },
   { id: "s", label: "s", pathId: "letter-s", x: 366.6, bodyWidth: standardBodyWidth, transforms: sAndZ },
-  { id: "i", label: "i", pathId: "letter-i", accentId: "accent-i", x: 427.69, bodyWidth: 17.06, transforms: unchanged },
+  {
+    id: "i",
+    label: "i",
+    pathId: "letter-i",
+    accentId: "accent-i",
+    x: 427.69,
+    bodyWidth: 17.06,
+    transforms: iAndJ,
+    glyphs: [
+      {
+        pathId: "letter-i",
+        accentId: "accent-i",
+        sourceX: 427.69,
+      },
+      {
+        pathId: "letter-j",
+        accentId: "accent-j",
+        label: "j",
+        sourceX: 427.69,
+        rightKerning: -25.67,
+        visualBounds: { left: -25.67, right: 17.06 },
+      },
+    ],
+  },
   {
     id: "g",
     label: "g",
@@ -103,7 +133,7 @@ const initialLetters: Letter[] = [
     accentId: "accent-g",
     x: 454.5,
     bodyWidth: standardBodyWidth,
-    transforms: qAndG,
+    transforms: qGAndY,
     glyphs: [
       {
         pathId: "letter-g",
@@ -116,6 +146,12 @@ const initialLetters: Letter[] = [
         sourceX: 183.27,
         rightKerning: standardBodyWidth - qVisualWidth,
         visualBounds: { left: 0, right: qVisualWidth },
+      },
+      {
+        pathId: "letter-y",
+        accentId: "accent-g",
+        label: "y",
+        sourceX: 454.5,
       },
     ],
   },
@@ -263,7 +299,7 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
           />
         ))}
       </svg>
-      {positionedLetters.map(({ letter, layoutWidth }) => (
+      {positionedLetters.map(({ glyph, letter, layoutWidth }) => (
         <Reorder.Item
           as="div"
           key={letter.id}
@@ -298,7 +334,7 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
           <button
             type="button"
             className="footer-wordmark-letter block h-full w-full touch-none select-none bg-transparent p-0"
-            aria-label={`${letter.label} logo letter${letter.transforms.length > 1 ? ", click to transform" : ""}`}
+            aria-label={`${glyph?.label ?? letter.label} logo letter${letter.transforms.length > 1 ? ", click to transform" : ""}`}
             onClick={() => cycleTransform(letter.id)}
           />
         </Reorder.Item>

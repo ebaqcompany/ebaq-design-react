@@ -40,13 +40,16 @@ export const Layout484 = (props: Layout484Props) => {
     <section id="about" className="dark-section-ruler overflow-hidden bg-black px-[5%] py-16 text-white md:py-24 lg:py-28">
       <div className="container max-w-xl">
         <h2 ref={headingRef}>
-          {tokens.map((token, index) => {
+          {/* The token sequence is fixed for a mounted heading; transforms must
+              be created in the same stable order to preserve the animation. */}
+          {tokens.map(function AnimatedToken(token, index) {
             if (token === "\n") {
               return <React.Fragment key={index}><br /><br /></React.Fragment>;
             }
 
             const start = index / tokens.length;
             const end = Math.min(1, start + 1 / tokens.length);
+            /* eslint-disable react-hooks/rules-of-hooks */
             const opacity = useTransform(scrollYProgress, [start, end], [0.25, 1]);
             const highlightStart = Math.max(0, start - 0.08);
             const highlightEnd = Math.min(1, end + 0.22);
@@ -56,6 +59,7 @@ export const Layout484 = (props: Layout484Props) => {
             const crossOutSecondStroke = useTransform(highlightProgress, [0.5, 1], [0, 1]);
             const crossOutFirstOpacity = useTransform(crossOutFirstStroke, (value) => value >= 0.08 ? 1 : 0);
             const crossOutSecondOpacity = useTransform(crossOutSecondStroke, (value) => value >= 0.08 ? 1 : 0);
+            /* eslint-enable react-hooks/rules-of-hooks */
             const shouldCircle = token === "AI,";
             const shouldOvalPhrase = token === "AI has no taste,";
             const shouldUnderlineBranding = token === "branding" && index === firstBrandingIndex;
@@ -149,7 +153,7 @@ export const Layout484 = (props: Layout484Props) => {
 export const Layout484Defaults: Props = {
   tagline: "Brand Sprint",
   heading:
-    "In the age of AI, branding is more important than ever. Anyone can make a website and generate a logo now, but too many brands look alike—AI has no taste, and sameness costs you credibility.\nTraditional agencies charge $25k–$100k+ and take months to deliver. Avoid guesswork, endless handoffs, and patchwork solutions.\nDon’t get slowed down by bloated agencies. At Ebaq Design, you work directly with me. I believe good branding is possible without the wait or breaking the bank.",
+    "In the age of AI, branding is more important than ever. Anyone can make a website and generate a logo now, but too many brands look alike—AI has no taste, and sameness costs you credibility.\nTraditional agencies charge $25k–$100k+ and take months to deliver. Avoid guesswork, endless handoffs, and patchwork solutions.\nDon’t get slowed down by bloated agencies. At Ebaq Design, you work directly with me. Good branding is possible without the wait or breaking the bank",
   buttons: [
     { title: "Book a Call" },
   ],

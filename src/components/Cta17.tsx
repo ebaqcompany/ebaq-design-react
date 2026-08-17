@@ -8,12 +8,14 @@ type Props = {
   heading: string;
   description: string;
   buttons: CtaButton[];
+  price?: string;
+  oldPrice?: string;
 };
 
 export type Cta17Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Cta17 = (props: Cta17Props) => {
-  const { heading, description, buttons } = {
+  const { heading, description, buttons, price, oldPrice } = {
     ...Cta17Defaults,
     ...props,
   };
@@ -25,9 +27,15 @@ export const Cta17 = (props: Cta17Props) => {
           <h2 className="text-black">{heading}</h2>
           <div>
             <p className="font-semibold text-black md:text-md">{description}</p>
+            {price && (
+              <div className="mt-6 flex items-baseline gap-3">
+                <span className="text-3xl font-semibold text-white">{price}</span>
+                {oldPrice && <del className="text-3xl font-semibold text-black">{oldPrice}</del>}
+              </div>
+            )}
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
               {buttons.map(({ href, external, title }, index) => (
-                <a key={index} className="button-inverted" href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>{title}</a>
+                <a key={index} className="button-inverted button-inverted--brand-surface" href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>{title}</a>
               ))}
             </div>
           </div>

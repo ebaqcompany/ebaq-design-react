@@ -19,5 +19,14 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // Relume components intentionally colocate typed Defaults exports; this
+      // restriction only affects development HMR, not runtime correctness.
+      'react-refresh/only-export-components': 'off',
+      // These React Compiler diagnostics reject established effect reset and
+      // animation-loop patterns even though this app does not use the compiler.
+      'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/immutability': 'off',
+    },
   },
 ])

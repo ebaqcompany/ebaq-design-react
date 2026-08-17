@@ -2,7 +2,6 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 // KV store via Vercel KV or fallback to in-memory (resets on cold start)
 // For production: connect Vercel KV or use a simple JSON blob store
-const STORE_URL = process.env.TRACK_STORE_URL; // optional external store
 
 interface TrackEvent {
   timestamp: string;

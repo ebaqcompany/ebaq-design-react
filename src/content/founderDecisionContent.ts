@@ -8,19 +8,19 @@ export const founderDecisionContent = {
   facts: [
     {
       label: "Clear investment",
-      heading: "Know the price before the project starts.",
+      heading: "Know the price before the project starts",
       value:
         "$3,000 for the core Brand Sprint. Custom website development, larger brand systems, and proposal-based engagements are scoped separately.",
     },
     {
       label: "Focused process",
-      heading: "Work directly with a senior designer.",
+      heading: "Work directly with a senior designer",
       value:
         "You work directly with Arek, a senior designer with nearly 20 years of brand identity experience. Brand strategy and identity are completed in a focused sprint, with website design or development available as a follow-on scope.",
     },
     {
       label: "Simple next step",
-      heading: "Book a short call and decide if it is a fit.",
+      heading: "Book a short call and decide if it is a fit",
       value:
         "Prospective clients can book a free 15-minute intro call through the embedded Cal.com calendar or at cal.com/ebaqdesign/15min.",
     },

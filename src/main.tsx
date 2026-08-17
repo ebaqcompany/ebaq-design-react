@@ -6,20 +6,29 @@ import './index.css'
 import App from './App.tsx'
 import StartPage from './StartPage.tsx'
 import { LawFirmLanding } from './components/LawFirmLanding.tsx'
-import { SenseHawkProposal } from './components/proposal/SenseHawkProposal.tsx'
-import { BellinghamProposal } from './components/proposal/BellinghamProposal.tsx'
-import { CAKProposal } from './components/proposal/CAKProposal.tsx'
-import { AugustaProposal } from './components/proposal/AugustaProposal.tsx'
-import { MStateProposal } from './components/proposal/MStateProposal.tsx'
-import { ChesterBowlProposal } from './components/proposal/ChesterBowlProposal.tsx'
-import { BrookfieldProposal } from './components/proposal/BrookfieldProposal.tsx'
-import { TreeHouseProposal } from './components/proposal/TreeHouseProposal.tsx'
-import { LatinoForumProposal } from './components/proposal/LatinoForumProposal.tsx'
-import { ByrdTheatreProposal } from './components/proposal/ByrdTheatreProposal.tsx'
-import { LawrencevilleProposal } from './components/proposal/LawrencevilleProposal.tsx'
-import { LandmarksILProposal } from './components/proposal/LandmarksILProposal.tsx'
-import { StartupRedesignArchive } from './components/StartupRedesignArchive.tsx'
-import { getConceptsByIndustry, getConceptsByStyle } from './data/startupRedesignConcepts.ts'
+import { CaseStudyPage } from './components/CaseStudyPage.tsx'
+import { WorkPage } from './components/WorkPage.tsx'
+import { BlogPage } from './components/BlogPage.tsx'
+import { BlogPostPage } from './components/BlogPostPage.tsx'
+import { PodcastPage } from './components/PodcastPage.tsx'
+import { PodcastEpisodePage } from './components/PodcastEpisodePage.tsx'
+import { ShopPage } from './components/ShopPage.tsx'
+import { AboutPage } from './components/AboutPage.tsx'
+import { ContactPage } from './components/ContactPage.tsx'
+import { ToolsPage } from './components/ToolsPage.tsx'
+import { FulfillmentPolicyPage, PrivacyPolicyPage } from './components/LegalPage.tsx'
+import { NotFoundPage } from './components/NotFoundPage.tsx'
+import {
+  BrandArchetypesPage,
+  OnePageStyleGuidePage,
+  BrandMasterPage,
+  CreativeSuitePage,
+  GuidelinesKitPage,
+  NamingGuidePage,
+  ProposalTemplatePage,
+  StorytellingGuidePage,
+  StrategyGuidePage,
+} from './components/ProductLandingPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -29,49 +38,28 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<App />} />
           <Route path="/start" element={<StartPage />} />
           <Route path="/law-firm-branding" element={<LawFirmLanding />} />
-          <Route path="/proposal/sensehawk" element={<SenseHawkProposal />} />
-          <Route path="/proposal/bellingham" element={<BellinghamProposal />} />
-          <Route path="/proposal/cak" element={<CAKProposal />} />
-          <Route path="/proposal/augusta" element={<AugustaProposal />} />
-          <Route path="/proposal/mstate" element={<MStateProposal />} />
-          <Route path="/proposal/chesterbowl" element={<ChesterBowlProposal />} />
-          <Route path="/proposal/brookfield" element={<BrookfieldProposal />} />
-          <Route path="/proposal/treehouse" element={<TreeHouseProposal />} />
-          <Route path="/proposal/latinoforum" element={<LatinoForumProposal />} />
-          <Route path="/proposal/byrdtheatre" element={<ByrdTheatreProposal />} />
-          <Route path="/proposal/lawrenceville" element={<LawrencevilleProposal />} />
-          <Route path="/proposal/landmarks-il" element={<LandmarksILProposal />} />
-          <Route path="/startup-redesign-lab" element={<StartupRedesignArchive />} />
-          <Route
-            path="/glassmorphism-web-design"
-            element={
-              <StartupRedesignArchive
-                bucketTitle="Glassmorphism web design"
-                bucketDescription="Draft SEO bucket for startup hero concepts using glassmorphism: translucent cards, layered depth, glow, and motion-rich interaction."
-                concepts={getConceptsByStyle('glassmorphism-web-design')}
-              />
-            }
-          />
-          <Route
-            path="/cybersecurity-startup-web-design"
-            element={
-              <StartupRedesignArchive
-                bucketTitle="Cybersecurity startup web design"
-                bucketDescription="Draft SEO bucket for AI security and SOC startup homepage concepts where trust, speed, and signal clarity need to land above the fold."
-                concepts={getConceptsByIndustry('cybersecurity-startup-web-design')}
-              />
-            }
-          />
-          <Route
-            path="/healthcare-startup-web-design"
-            element={
-              <StartupRedesignArchive
-                bucketTitle="Healthcare startup web design"
-                bucketDescription="Draft SEO bucket prepared for upcoming healthcare, biotech, and clinical AI startup redesign concepts."
-                concepts={getConceptsByIndustry('healthcare-startup-web-design')}
-              />
-            }
-          />
+          <Route path="/work" element={<WorkPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/tools" element={<ToolsPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/fulfillment-policy" element={<FulfillmentPolicyPage />} />
+          <Route path="/work/:slug" element={<CaseStudyPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/podcast" element={<PodcastPage />} />
+          <Route path="/podcast/:slug" element={<PodcastEpisodePage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/shop/strategy-guide" element={<StrategyGuidePage />} />
+          <Route path="/shop/naming-guide" element={<NamingGuidePage />} />
+          <Route path="/shop/proposal-template" element={<ProposalTemplatePage />} />
+          <Route path="/shop/guidelines-kit" element={<GuidelinesKitPage />} />
+          <Route path="/shop/brand-master" element={<BrandMasterPage />} />
+          <Route path="/shop/storytelling-guide" element={<StorytellingGuidePage />} />
+          <Route path="/shop/creative-suite" element={<CreativeSuitePage />} />
+          <Route path="/shop/brand-archetypes" element={<BrandArchetypesPage />} />
+          <Route path="/shop/one-page-style-guide" element={<OnePageStyleGuidePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

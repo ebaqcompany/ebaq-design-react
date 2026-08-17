@@ -41,6 +41,8 @@ type SetupOptions = {
   root: HTMLDivElement;
   footer: HTMLElement;
   src: string;
+  autoStartDelay?: number;
+  wordmarkColor?: string;
 };
 
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -52,7 +54,6 @@ const PIECE_POSES: PiecePose[] = [
   { rotation: 0, mirrored: true },
   { rotation: -90, mirrored: false },
 ];
-
 const relativePose = (source: PiecePose, target: PiecePose) => {
   const matrix = (pose: PiecePose) => {
     const radians = pose.rotation * Math.PI / 180;
@@ -78,9 +79,10 @@ const relativePose = (source: PiecePose, target: PiecePose) => {
   };
 };
 
-export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
+export const setupFooterLogoGame = ({ root, footer, src, autoStartDelay, wordmarkColor = "white" }: SetupOptions) => {
   let disposed = false;
   let disposeGame = () => {};
+  let autoStartTimer = 0;
 
   fetch(src)
     .then((response) => {
@@ -106,10 +108,11 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
           "path, rect, circle, ellipse, polygon, polyline, line",
         ),
       );
-      const pieces = drawableElements.filter((piece) => {
+      const accentPieces = drawableElements.filter((piece) => {
         const fill = getComputedStyle(piece).fill;
         return piece.classList.contains("cls-2") || /rgb\(0, 175, 236\)/.test(fill);
       });
+      const pieces = accentPieces;
       const wordmarkPaths = drawableElements.filter((piece) => !pieces.includes(piece));
       const instanceId = Math.random().toString(36).slice(2);
       let defs = svgRoot.querySelector("defs");
@@ -120,7 +123,7 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
 
       wordmarkPaths.forEach((path) => {
         path.dataset.footerWordmark = "true";
-        path.style.fill = "white";
+        path.style.fill = wordmarkColor;
         path.style.fillOpacity = "1";
         path.style.stroke = "none";
         path.style.strokeWidth = "0";
@@ -128,6 +131,7 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
 
       const targets: Target[] = [];
       const bodies: Body[] = pieces.map((piece, index) => {
+        const isAccent = accentPieces.includes(piece);
         piece.dataset.footerPiece = "true";
         piece.dataset.footerPieceIndex = String(index);
         piece.style.cursor = "grab";
@@ -152,7 +156,7 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
         guide.removeAttribute("data-footer-piece-index");
         guide.dataset.footerTarget = "true";
         guide.dataset.footerTargetIndex = String(index);
-        guide.setAttribute("fill", "#00afec");
+        guide.setAttribute("fill", isAccent ? "#00afec" : wordmarkColor);
         guide.setAttribute("fill-opacity", "0.15");
         guide.setAttribute("stroke", "none");
         guide.setAttribute("stroke-width", "0");
@@ -207,6 +211,9 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
       let activePointerId: number | null = null;
       let dragStartPointer = { x: 0, y: 0 };
       let dragStartBody = { x: 0, y: 0 };
+      let dragVelocity = { x: 0, y: 0 };
+      let lastDragPointer = { x: 0, y: 0 };
+      let lastDragTime = 0;
 
       const releaseActivePointer = () => {
         const body = activeBody;
@@ -224,6 +231,7 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
       };
 
       const renderBody = (body: Body) => {
+        body.element.dataset.footerRotation = String(body.rotation);
         gsap.set(body.element, {
           x: body.x,
           y: body.y,
@@ -324,6 +332,11 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
             body.y += correction.y;
             renderBody(body);
 
+            if (body.bounceCount >= 3 && Math.abs(body.vy) < 4) {
+              settleBody(body);
+              return;
+            }
+
             if (body.vy > 1.1) {
               const restitution = body.bounceCount === 0 ? 0.3 : 0.18;
               body.vy = -body.vy * restitution;
@@ -351,6 +364,59 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
           }
         });
 
+        for (let firstIndex = 0; firstIndex < bodies.length; firstIndex += 1) {
+          for (let secondIndex = firstIndex + 1; secondIndex < bodies.length; secondIndex += 1) {
+            const first = bodies[firstIndex];
+            const second = bodies[secondIndex];
+            if (!['falling', 'sleeping'].includes(first.state) || !['falling', 'sleeping'].includes(second.state)) continue;
+            if (first.state === 'sleeping' && second.state === 'sleeping') continue;
+            const firstRect = first.element.getBoundingClientRect();
+            const secondRect = second.element.getBoundingClientRect();
+            const overlapX = Math.min(firstRect.right, secondRect.right) - Math.max(firstRect.left, secondRect.left);
+            const overlapY = Math.min(firstRect.bottom, secondRect.bottom) - Math.max(firstRect.top, secondRect.top);
+            if (overlapX <= 0 || overlapY <= 0) continue;
+            const impactSpeed = Math.max(
+              Math.abs(first.vx - second.vx),
+              Math.abs(first.vy - second.vy),
+              Math.abs(first.angularVelocity - second.angularVelocity),
+            );
+            if (impactSpeed < 0.8) continue;
+
+            const firstCenterX = firstRect.left + firstRect.width / 2;
+            const firstCenterY = firstRect.top + firstRect.height / 2;
+            const secondCenterX = secondRect.left + secondRect.width / 2;
+            const secondCenterY = secondRect.top + secondRect.height / 2;
+            const separateOnX = overlapX < overlapY;
+            const direction = separateOnX
+              ? (firstCenterX < secondCenterX ? -1 : 1)
+              : (firstCenterY < secondCenterY ? -1 : 1);
+            const correction = separateOnX
+              ? clientDeltaToSvg(direction * overlapX * 0.52, 0)
+              : clientDeltaToSvg(0, direction * overlapY * 0.52);
+            first.x += correction.x;
+            first.y += correction.y;
+            second.x -= correction.x;
+            second.y -= correction.y;
+
+            if (first.state === 'sleeping' && impactSpeed > 1.5) setState(first, 'falling');
+            if (second.state === 'sleeping' && impactSpeed > 1.5) setState(second, 'falling');
+            const firstVx = first.vx;
+            const firstVy = first.vy;
+            first.vx = second.vx * 0.72;
+            first.vy = second.vy * 0.58;
+            second.vx = firstVx * 0.72;
+            second.vy = firstVy * 0.58;
+            first.angularVelocity = Math.max(-8, Math.min(8, first.angularVelocity + direction * 0.55));
+            second.angularVelocity = Math.max(-8, Math.min(8, second.angularVelocity - direction * 0.55));
+            if (impactSpeed > 1) {
+              first.floorFrames = 0;
+              second.floorFrames = 0;
+            }
+            renderBody(first);
+            renderBody(second);
+          }
+        }
+
         if (!hasFallingBody || !bodies.some((body) => body.state === "falling")) {
           physicsRunning = false;
           previousTime = 0;
@@ -361,8 +427,8 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
 
       const setWordmarkActive = () => {
         gsap.set(wordmarkPaths, {
-          fill: "white",
-          fillOpacity: 0.15,
+          fill: wordmarkColor,
+          fillOpacity: 1,
           stroke: "none",
           strokeWidth: 0,
           opacity: 1,
@@ -371,7 +437,7 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
 
       const setWordmarkSolid = () => {
         gsap.set(wordmarkPaths, {
-          fill: "white",
+          fill: wordmarkColor,
           fillOpacity: 1,
           stroke: "none",
           strokeWidth: 0,
@@ -453,19 +519,21 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
         targets.forEach((target) => target.guide.setAttribute("opacity", "0"));
         bodies.forEach((body) => { body.element.style.cursor = "default"; });
         blinkTimeline?.kill();
+        const logoElements = bodies.map((body) => body.element);
         blinkTimeline = gsap.timeline()
-          .set(wordmarkPaths, { fill: "white", fillOpacity: 1, opacity: 1 })
-          .to(wordmarkPaths, { opacity: 0.18, duration: 0.08, ease: "none" })
-          .to(wordmarkPaths, { opacity: 1, duration: 0.1, ease: "none" })
-          .to(wordmarkPaths, { opacity: 0.28, duration: 0.08, ease: "none", delay: 0.06 })
-          .to(wordmarkPaths, { opacity: 1, duration: 0.16, ease: "power1.out" });
+          .set(logoElements, { opacity: 1 })
+          .to(logoElements, { opacity: 0.18, duration: 0.08, ease: "none" })
+          .to(logoElements, { opacity: 1, duration: 0.1, ease: "none" })
+          .to(logoElements, { opacity: 0.28, duration: 0.08, ease: "none", delay: 0.06 })
+          .to(logoElements, { opacity: 1, duration: 0.16, ease: "power1.out" })
+          .call(() => window.location.assign("/"));
       };
 
       const startFalling = (body: Body) => {
         clearTarget(body);
         gsap.killTweensOf(body);
-        body.vx = 0;
-        body.vy = 0.12;
+        body.vx = Math.max(-10, Math.min(10, dragVelocity.x));
+        body.vy = Math.max(-18, Math.min(18, dragVelocity.y || 0.12));
         body.angularVelocity = (body.index % 2 === 0 ? -1 : 1) * (1.35 + (body.index % 3) * 0.25);
         body.scaleX = 1;
         body.scaleY = 1;
@@ -571,6 +639,9 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
         activePointerId = event.pointerId;
         dragStartPointer = clientToSvg(event.clientX, event.clientY);
         dragStartBody = { x: body.x, y: body.y };
+        lastDragPointer = dragStartPointer;
+        lastDragTime = performance.now();
+        dragVelocity = { x: 0, y: 0 };
         body.vx = 0;
         body.vy = 0;
         body.angularVelocity = 0;
@@ -583,6 +654,14 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
       const onPointerMove = (event: PointerEvent) => {
         if (!activeBody || activePointerId !== event.pointerId) return;
         const pointer = clientToSvg(event.clientX, event.clientY);
+        const now = performance.now();
+        const frameScale = Math.max(0.25, (now - lastDragTime) / 16.667);
+        dragVelocity = {
+          x: (pointer.x - lastDragPointer.x) / frameScale,
+          y: (pointer.y - lastDragPointer.y) / frameScale,
+        };
+        lastDragPointer = pointer;
+        lastDragTime = now;
         activeBody.x = dragStartBody.x + pointer.x - dragStartPointer.x;
         activeBody.y = dragStartBody.y + pointer.y - dragStartPointer.y;
         renderBody(activeBody);
@@ -631,10 +710,15 @@ export const setupFooterLogoGame = ({ root, footer, src }: SetupOptions) => {
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("resize", onResize);
       svgRoot.dataset.footerGameState = "idle";
-      onScroll();
+      if (typeof autoStartDelay === "number") {
+        autoStartTimer = window.setTimeout(activateGame, autoStartDelay);
+      } else {
+        onScroll();
+      }
 
       disposeGame = () => {
         disposed = true;
+        window.clearTimeout(autoStartTimer);
         releaseActivePointer();
         stopPhysics();
         blinkTimeline?.kill();

@@ -3,9 +3,10 @@ import { useEffect } from "react";
 
 type BookerSectionProps = {
   pinLogoToViewport?: boolean;
+  sticky?: boolean;
 };
 
-export const BookerSection = ({ pinLogoToViewport = false }: BookerSectionProps) => {
+export const BookerSection = ({ pinLogoToViewport = false, sticky = true }: BookerSectionProps) => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "15min" });
@@ -21,7 +22,7 @@ export const BookerSection = ({ pinLogoToViewport = false }: BookerSectionProps)
   }, []);
 
   return (
-    <section id="book" className="relative px-[5%] pt-24 md:pt-32 lg:pt-40 pb-16 bg-black sticky bottom-0 z-0 overflow-hidden min-h-svh md:min-h-0">
+    <section id="book" className={`relative px-[5%] pt-24 md:pt-32 lg:pt-40 pb-16 bg-black ${sticky ? "sticky bottom-0" : ""} z-0 overflow-hidden min-h-svh md:min-h-0`}>
       {/* Big Logo in Background - stuck to bottom */}
       <div
         className={`${pinLogoToViewport ? "fixed" : "absolute"} bottom-0 left-0 right-0 flex justify-center pointer-events-none`}

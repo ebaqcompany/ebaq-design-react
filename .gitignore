@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Archived ebaqdesign.com website
+/ebaqdesign-com/
+/ebaqdesign.com/

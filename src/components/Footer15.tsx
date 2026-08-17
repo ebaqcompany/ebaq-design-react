@@ -6,6 +6,7 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { ContraIcon } from "./ContraIcon";
 import { FooterWordmark } from "./FooterWordmark";
 
@@ -168,7 +169,15 @@ export const Footer15 = (props: Footer15Props) => {
                 <ul key={index}>
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex} className="py-2 text-sm font-semibold">
-                      <a href={link.url}>{link.title}</a>
+                      <Link
+                        to={link.url}
+                        onClick={() => {
+                          document.documentElement.scrollTop = 0;
+                          document.body.scrollTop = 0;
+                        }}
+                      >
+                        {link.title}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -213,16 +222,19 @@ export const Footer15Defaults: Props = {
   columnLinks: [
     {
       links: [
+        { title: "About", url: "/about" },
         { title: "Work", url: "/#work" },
-        { title: "About", url: "/#about" },
-        { title: "Brand Sprint", url: "/#brand-sprint" },
+        { title: "Blog", url: "/blog" },
+        { title: "Podcast", url: "/podcast" },
+        { title: "Contact", url: "/contact" },
       ],
     },
     {
       links: [
-        { title: "Pricing", url: "/#pricing" },
-        { title: "Testimonials", url: "/#testimonials" },
-        { title: "Contact", url: "/start" },
+        { title: "Shop", url: "/shop" },
+        { title: "Tools", url: "/tools" },
+        { title: "Privacy Policy", url: "/privacy-policy" },
+        { title: "Fulfillment Policy", url: "/fulfillment-policy" },
       ],
     },
   ],

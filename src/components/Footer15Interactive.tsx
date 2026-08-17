@@ -227,7 +227,7 @@ export const Footer15Defaults: Props = {
       links: [
         { title: "Pricing", url: "/#pricing" },
         { title: "Testimonials", url: "/#testimonials" },
-        { title: "Contact", url: "/start" },
+        { title: "Contact", url: "/contact" },
       ],
     },
   ],

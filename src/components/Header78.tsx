@@ -3,6 +3,7 @@
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { useRef, useEffect, useCallback, useState } from "react";
 import Lottie from "lottie-react";
+import { ArekProfileBadge } from "./ArekProfileBadge";
 
 type MediaProps = {
   type: "image" | "lottie" | "video";
@@ -271,7 +272,7 @@ export const Header78 = (props: Header78Props) => {
           <div>
             <h1 className="whitespace-pre-line">{heading}</h1>
           </div>
-          {description && <div className="mx-[7.5%] self-end md:mt-48"><div className="mb-6 flex w-fit items-center gap-3"><img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 rounded-full object-cover" /><div className="flex flex-col gap-2"><h5 className="whitespace-nowrap">Arek Dvornechuck</h5><div className="flex shrink-0 items-center gap-1" role="list" aria-label="Tools I use as a senior designer: Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Figma, Framer, Webflow, Jitter, LottieFiles, and Rive"><img src="/adobe-illustrator.svg" alt="Adobe Illustrator" className="size-4 rounded-[20%] object-cover" /><img src="/adobe-photoshop.svg" alt="Adobe Photoshop" className="size-4 rounded-[20%] object-cover" /><img src="/adobe-after-effects.svg" alt="Adobe After Effects" className="size-4 rounded-[20%] object-cover" /><img src="/figma-mark-baked.png" alt="Figma" className="size-4 rounded-[20%] object-cover" /><img src="/figma-mark.png" alt="Framer" className="size-4 rounded-[20%] object-cover" /><img src="/webflow-mark.png" alt="Webflow" className="size-4 rounded-[20%] object-cover" /><img src="/jitter-mark.png" alt="Jitter" className="size-4 rounded-[20%] object-cover" /><img src="/lottiefiles-mark.png" alt="LottieFiles" className="size-4 rounded-[20%] object-cover" /><img src="/hero-tool-mark.png" alt="Motion design tool" className="size-4 rounded-[20%] object-cover" /><img src="/rive-mark.png" alt="Rive" className="size-4 rounded-[20%] object-cover" /></div></div></div><p className="md:text-md">{description}</p></div>}
+          {description && <div className="mx-[7.5%] self-end md:mt-48"><ArekProfileBadge variant="author" className="mb-6" /><p className="md:text-md">{description}</p></div>}
           {subLink && <a href={subLink.url} className="text-sm font-semibold uppercase tracking-widest hover:opacity-70">{subLink.label}</a>}
           {showScrollArrow && <div className="animate-bounce"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg></div>}
         </div>

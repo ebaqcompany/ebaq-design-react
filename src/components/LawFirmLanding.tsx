@@ -65,19 +65,19 @@ const foxHoverLinks = [
 // Pain points — law firm specific
 const painPoints = [
   {
-    title: "First impressions close cases.",
+    title: "First impressions close cases",
     body: "Clients decide in seconds. A professional brand signals competence before you say a word\u2014and lets you charge what you\u2019re worth.",
   },
   {
-    title: "Your website is your intake form.",
+    title: "Your website is your intake form",
     body: "It needs to load fast, work on every device, and make it dead simple to book a consultation. Slow or broken = lost retainer.",
   },
   {
-    title: "Stand out in a saturated market.",
+    title: "Stand out in a saturated market",
     body: "Most law firms look identical. A distinctive identity\u2014custom logo, bold typography, clear color system\u2014makes you the obvious choice.",
   },
   {
-    title: "One week. Done.",
+    title: "One week. Done",
     body: "No 6-month agency engagements. No junior designers. You work directly with Arek\u2014nearly 20 years of experience, delivered in a focused sprint.",
   },
 ];
@@ -87,26 +87,26 @@ const PainPointsSection = () => (
     <div className="container max-w-6xl">
       <p
         className="mb-3 font-semibold md:mb-4"
-        style={{ fontFamily: "'Open Sans', sans-serif" }}
+        style={{ fontFamily: "'Roboto', sans-serif" }}
       >
         Why it matters
       </p>
       <h2
         className="mb-12 text-5xl md:text-7xl lg:text-8xl tracking-[-0.04em] max-w-3xl"
         style={{
-          fontFamily: "'Roboto Flex', sans-serif",
-          fontVariationSettings: "'wght' 300",
+          fontFamily: "'Roboto Condensed', sans-serif",
+          fontWeight: 600,
           lineHeight: 1.05,
         }}
       >
-        Your brand is your strongest argument.
+        Your brand is your strongest argument
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         {painPoints.map((point, i) => (
           <div key={i} className="border-t border-black/10 pt-6">
             <h3
               className="text-xl md:text-2xl mb-3 tracking-[-0.02em]"
-              style={{ fontFamily: "'Roboto Flex', sans-serif" }}
+              style={{ fontFamily: "'Roboto Condensed', sans-serif" }}
             >
               {point.title}
             </h3>
@@ -141,19 +141,19 @@ const DeliverablesSection = () => (
         <div>
           <p
             className="mb-3 font-semibold md:mb-4"
-            style={{ fontFamily: "'Open Sans', sans-serif" }}
+            style={{ fontFamily: "'Roboto', sans-serif" }}
           >
             What you get
           </p>
           <h2
             className="text-5xl md:text-6xl lg:text-7xl tracking-[-0.04em] mb-6"
             style={{
-              fontFamily: "'Roboto Flex', sans-serif",
-              fontVariationSettings: "'wght' 300",
+              fontFamily: "'Roboto Condensed', sans-serif",
+              fontWeight: 600,
               lineHeight: 1.05,
             }}
           >
-            Everything a law firm needs to look the part.
+            Everything a law firm needs to look the part
           </h2>
           <p className="text-black/50 text-base md:text-lg leading-relaxed">
             One price. One designer. Logo through live website &mdash; complete in two focused weeks.
@@ -184,7 +184,7 @@ const LawFirmTestimonial = () => (
       <blockquote
         className="text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight mb-10"
         style={{
-          fontFamily: "'Roboto Flex', sans-serif",
+          fontFamily: "'Roboto', sans-serif",
           fontVariationSettings: "'wght' 300",
         }}
       >
@@ -225,7 +225,7 @@ const LawFirmTestimonial = () => (
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs text-black/40 hover:text-black transition-colors whitespace-nowrap"
-            style={{ fontFamily: "'Open Sans', sans-serif" }}
+            style={{ fontFamily: "'Roboto', sans-serif" }}
           >
             View live website &rarr;
           </a>
@@ -248,9 +248,9 @@ export const LawFirmLanding = () => (
         name="keywords"
         content="law firm branding, law firm website design, branding for lawyers, legal branding agency, logo design for law firms, brand identity attorney, law firm web design, lawyer branding, legal website design"
       />
-      <link rel="canonical" href="https://ebaq.design/law-firm-branding" />
+      <link rel="canonical" href="https://ebaqdesign.com/law-firm-branding" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://ebaq.design/law-firm-branding" />
+      <meta property="og:url" content="https://ebaqdesign.com/law-firm-branding" />
       <meta property="og:title" content="Law Firm Branding & Web Design | Ebaq Design" />
       <meta
         property="og:description"
@@ -272,7 +272,7 @@ export const LawFirmLanding = () => (
           "@type": "ProfessionalService",
           name: "Ebaq Design",
           description: "Professional branding and website design for law firms",
-          url: "https://ebaq.design/law-firm-branding",
+          url: "https://ebaqdesign.com/law-firm-branding",
           areaServed: { "@type": "City", name: "New York City" },
           serviceType: ["Law Firm Branding", "Logo Design", "Website Design"],
           founder: { "@type": "Person", name: "Arek Dvornechuck" },
@@ -306,7 +306,7 @@ export const LawFirmLanding = () => (
         <Layout527 hoverLinks={foxHoverLinks} />
       </div>
       <LawFirmTestimonial />
-      <AboutSection heading="I'm Arek, a senior designer based in NYC, helping law firms look professional." />
+      <AboutSection heading="I'm Arek, a senior designer based in NYC, helping law firms look professional" />
     </div>
 
     <BookerSection />

@@ -60,7 +60,7 @@ export const Layout485 = (props: Layout485Props) => {
           <div className="static top-[20%] hidden h-56 overflow-hidden md:sticky md:flex md:items-start">
             <div
               className="text-[6rem] leading-[1] tracking-[-0.06em] md:text-[14rem]"
-              style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 250" }}
+              style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wght' 250" }}
             >
               0
             </div>
@@ -69,7 +69,7 @@ export const Layout485 = (props: Layout485Props) => {
                 <div
                   key={index}
                   className="text-[6rem] leading-[1] tracking-[-0.06em] md:text-[14rem]"
-                  style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 250" }}
+                  style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wght' 250" }}
                 >
                   {number}
                 </div>
@@ -100,7 +100,7 @@ const FeatureCard = ({ ...feature }: Feature) => {
     <div className="flex flex-col items-start justify-center py-8 md:py-0">
       <div
         className="mt-10 flex text-[6rem] leading-[1] tracking-[-0.06em] md:mt-0 md:hidden md:text-[14rem]"
-        style={{ fontFamily: "'Roboto Flex', sans-serif", fontVariationSettings: "'wght' 250" }}
+        style={{ fontFamily: "'Roboto', sans-serif", fontVariationSettings: "'wght' 250" }}
       >
         {feature.number}
       </div>

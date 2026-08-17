@@ -10,13 +10,22 @@ module.exports = {
     extend: {
       fontSize: {
         "10xl": ["5.5rem", { lineHeight: "1" }],
+        handwriting: ["1.75rem", { lineHeight: "2.25rem" }],
       },
       lineHeight: {
         display: "0.9",
       },
+      maxWidth: {
+        "archive-search": "25rem",
+        "archive-search-compact": "21rem",
+      },
       fontFamily: {
-        sans: ['"Open Sans"', 'sans-serif'],
+        sans: ['"Roboto"', 'sans-serif'],
         heading: ['"Roboto Condensed"', 'sans-serif'],
+        handwriting: ['"Caveat"', 'sans-serif'],
+      },
+      letterSpacing: {
+        handwriting: "-0.03em",
       },
       animation: {
         "marquee-top": "marquee-top 30s linear infinite",

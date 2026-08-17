@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /proposal/
 
-Sitemap: https://ebaq.design/sitemap.xml
+Sitemap: https://ebaqdesign.com/sitemap.xml
 
