@@ -223,7 +223,7 @@ export const Footer15Defaults: Props = {
     {
       links: [
         { title: "About", url: "/about" },
-        { title: "Work", url: "/#work" },
+        { title: "Work", url: "/work" },
         { title: "Blog", url: "/blog" },
         { title: "Podcast", url: "/podcast" },
         { title: "Contact", url: "/contact" },

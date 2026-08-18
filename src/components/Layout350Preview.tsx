@@ -14,7 +14,7 @@ const portfolio22Services = [
     heading: "More",
     label: "More",
     image: {
-      src: "/case-study/next-dimension/showreel.mp4",
+      src: "/case-study/aero-more.gif",
       alt: "More brand design work",
     },
   },
