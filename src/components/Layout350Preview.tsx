@@ -4,10 +4,21 @@ import { useMediaQuery } from "@relume_io/relume-ui";
 import { Layout527Defaults } from "./Layout527";
 
 const portfolio22Labels = ["Logo Design", "Colors & Fonts", "Stationery", "Social", "UI Design", "Websites", "Ads"];
-const portfolio22Services = Layout527Defaults.hoverLinks.slice(0, 7).map((item, index) => ({
-  ...item,
-  label: portfolio22Labels[index],
-}));
+const portfolio22Services = [
+  ...Layout527Defaults.hoverLinks.slice(0, 7).map((item, index) => ({
+    ...item,
+    label: portfolio22Labels[index],
+  })),
+  {
+    url: "#",
+    heading: "More",
+    label: "More",
+    image: {
+      src: "/case-study/next-dimension/showreel.mp4",
+      alt: "More brand design work",
+    },
+  },
+];
 
 type Layout350PreviewProps = {
   eyebrow?: string;
@@ -17,23 +28,25 @@ type Layout350PreviewProps = {
 const ServiceMedia = ({ src, alt }: { src: string; alt?: string }) => {
   const reduceMotion = useReducedMotion();
 
-  if (src.endsWith(".mp4")) {
-    return (
+  return (
+    <div className="aspect-video w-full overflow-hidden">
+      {src.endsWith(".mp4") ? (
       <video
         key={src}
         src={src}
         aria-label={alt}
-        className="h-auto max-h-[80vh] w-full object-contain"
+        className="size-full object-contain"
         autoPlay={!reduceMotion}
         loop={!reduceMotion}
         muted
         playsInline
         preload="metadata"
       />
-    );
-  }
-
-  return <img key={src} src={src} alt={alt} className="h-auto max-h-[80vh] w-full object-contain" />;
+      ) : (
+        <img key={src} src={src} alt={alt} className="size-full object-contain" />
+      )}
+    </div>
+  );
 };
 
 export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everything your brand needs" }: Layout350PreviewProps) => {
@@ -56,13 +69,13 @@ export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everythi
           <h2 id="layout350-preview-heading">{heading}</h2>
         </div>
 
-        <div className="grid items-start gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:gap-16 lg:gap-20">
+        <div className="grid items-start gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:gap-12">
           <div className="sticky top-24 hidden md:block">
             <ServiceMedia src={activeItem.image.src} alt={activeItem.image.alt} />
           </div>
 
           <div
-            className="flex flex-col gap-7 md:gap-9"
+            className="flex flex-col gap-5"
             onMouseLeave={restoreInitialPreview}
             onBlur={(event) => {
               if (!event.currentTarget.contains(event.relatedTarget)) restoreInitialPreview();
@@ -101,11 +114,11 @@ export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everythi
                       setActiveIndex(index);
                       setIsInteracting(true);
                     }}
-                    className={`portfolio22-service group block w-full rounded-none bg-transparent p-0 text-left transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary ${
-                      isDimmed ? "text-white/35" : "text-white"
+                    className={`portfolio22-service group inline-block rounded-none bg-transparent p-0 text-left transition-colors duration-200 hover:text-brand-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary ${
+                      isDimmed ? "text-white/35" : ""
                     }`}
                   >
-                    <span className="block font-heading text-3xl font-bold leading-none md:text-4xl lg:text-5xl">{item.label}</span>
+                    <h4>{item.label}</h4>
                   </button>
                   {isExpanded && (
                     <div

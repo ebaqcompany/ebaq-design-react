@@ -15,11 +15,18 @@ type CaseStudyImage = {
   scale?: ClientLogoScale;
 };
 
-type CaseStudyGalleryImage = CaseStudyImage & {
+export type CaseStudyGalleryImage = CaseStudyImage & {
   url?: string;
   kind?: "image" | "video" | "lottie";
   span?: "full" | "half";
   overlaySrc?: string;
+};
+
+export type CaseStudyBrandSprintGallery = {
+  logo: CaseStudyGalleryImage;
+  typeface: CaseStudyGalleryImage;
+  color: CaseStudyGalleryImage;
+  website: CaseStudyGalleryImage;
 };
 
 export type CaseStudyContentBlock =
@@ -63,6 +70,7 @@ export type CaseStudy = {
   preview: CaseStudyImage;
   hero: CaseStudyMedia;
   leadGallery: CaseStudyGalleryImage[];
+  brandSprintGallery?: CaseStudyBrandSprintGallery;
   content: CaseStudyContentBlock[];
   testimonial?: CaseStudyTestimonial;
   nextProject?: CaseStudyNextProject;
@@ -92,6 +100,12 @@ export const caseStudies: CaseStudy[] = [
       { src: "/case-study/next-dimension/old-site/02-type.png", alt: "NextDimension typography system" },
       { src: "/case-study/next-dimension/old-site/03-colors.png", alt: "NextDimension color palette" },
     ],
+    brandSprintGallery: {
+      logo: { src: "/case-study/next-dimension/logos.png", alt: "NextDimension logo design" },
+      typeface: { src: "/case-study/next-dimension/type.png", alt: "NextDimension typeface" },
+      color: { src: "/case-study/next-dimension/colors.png", alt: "NextDimension color palette" },
+      website: { src: "/case-study/next-dimension/old-site/04-website.jpg", alt: "NextDimension website design" },
+    },
     testimonial: {
       quote:
         '"Arek worked with us on the complete redesign of the NextDimension AI visual identity and website. He was thoughtful, responsive, and patient throughout the process, from exploring the logo direction to refining the website’s content, design, and functionality. What stood out most was his ability to clearly explain and defend his creative vision while still listening to our feedback. We are both convinced by the final direction and very happy with the result."',
@@ -338,6 +352,12 @@ export const caseStudies: CaseStudy[] = [
       { src: "/case-study/aero/02-color.png", alt: "Aero color system" },
       { src: "/case-study/aero/03-stationery.png", alt: "Aero stationery system" },
     ],
+    brandSprintGallery: {
+      logo: { src: "/case-study/aero-logo.png", alt: "Aero logo design" },
+      typeface: { src: "/case-study/aero-fonts.png", alt: "Aero typeface" },
+      color: { src: "/case-study/aero-palette.webp", alt: "Aero color palette" },
+      website: { src: "/case-study/aero-web-pro.webp", alt: "Aero website design" },
+    },
     content: [
       {
         type: "header",

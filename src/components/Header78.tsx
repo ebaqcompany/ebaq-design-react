@@ -270,9 +270,16 @@ export const Header78 = (props: Header78Props) => {
       <div className="container">
         <div className="mb-12 grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:mb-18 md:grid-cols-2 lg:mb-20 lg:gap-x-20">
           <div>
+            <div className="inline-flex items-center gap-2">
+              <span className="relative mb-3 size-2 md:mb-4" aria-hidden="true">
+                <span className="absolute inset-0 rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" />
+                <span className="relative block size-2 rounded-full bg-brand-primary" />
+              </span>
+              <p className="mb-3 font-semibold text-brand-primary md:mb-4">Available for work</p>
+            </div>
             <h1 className="whitespace-pre-line">{heading}</h1>
           </div>
-          {description && <div className="mx-[7.5%] self-end md:mt-48"><ArekProfileBadge variant="author" className="mb-6" /><p className="md:text-md">{description}</p></div>}
+          {description && <div className="mx-[7.5%] self-end md:mt-56"><ArekProfileBadge variant="author" className="mb-6" /><p className="md:text-md">{description}</p></div>}
           {subLink && <a href={subLink.url} className="text-sm font-semibold uppercase tracking-widest hover:opacity-70">{subLink.label}</a>}
           {showScrollArrow && <div className="animate-bounce"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg></div>}
         </div>
