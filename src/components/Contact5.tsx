@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "@relume_io/relume-ui";
 import { BiLogoFacebookCircle, BiLogoInstagram, BiLogoLinkedinSquare, BiLogoYoutube } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiOutlineEnvelope, HiOutlineMapPin, HiOutlinePhone } from "react-icons/hi2";
@@ -22,7 +23,8 @@ const socialLinks = [
 const services = ["Brand Strategy", "Brand Identity", "Web Design", "Web Development", "Motion Graphics", "Other"];
 
 export const Contact5 = () => {
-  const [investment, setInvestment] = useState<"" | "yes" | "no">("");
+  const [investmentConfirmed, setInvestmentConfirmed] = useState(false);
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
   return <div className="flex flex-col">
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
@@ -56,47 +58,75 @@ export const Contact5 = () => {
         <form className="grid gap-6" onSubmit={(event) => event.preventDefault()}>
           <div className="grid gap-6 sm:grid-cols-2">
             <label className="grid gap-2 font-medium" htmlFor="contact-name">Name
-              <input className="min-h-12 rounded-md border border-black bg-white px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-name" name="name" type="text" autoComplete="name" />
+              <input className="min-h-12 border border-black bg-transparent px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-name" name="name" type="text" autoComplete="name" />
             </label>
             <label className="grid gap-2 font-medium" htmlFor="contact-email">Email
-              <input className="min-h-12 rounded-md border border-black bg-white px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-email" name="email" type="email" autoComplete="email" />
+              <input className="min-h-12 border border-black bg-transparent px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-email" name="email" type="email" autoComplete="email" />
             </label>
             <label className="grid gap-2 font-medium" htmlFor="contact-company">Company name
-              <input className="min-h-12 rounded-md border border-black bg-white px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-company" name="company" type="text" autoComplete="organization" />
+              <input className="min-h-12 border border-black bg-transparent px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-company" name="company" type="text" autoComplete="organization" />
             </label>
             <label className="grid gap-2 font-medium" htmlFor="contact-website">Company website
-              <input className="min-h-12 rounded-md border border-black bg-white px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-website" name="website" type="url" autoComplete="url" placeholder="https://" />
+              <input className="min-h-12 border border-black bg-transparent px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-website" name="website" type="url" autoComplete="url" placeholder="https://" />
             </label>
           </div>
 
           <label className="grid gap-2 font-medium" htmlFor="contact-description">Short project description
-            <textarea className="min-h-36 resize-y rounded-md border border-black bg-white px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-description" name="description" />
+            <textarea className="min-h-36 resize-y border border-black bg-transparent px-4 py-3 font-normal outline-none transition-colors focus:border-brand-primary" id="contact-description" name="description" />
           </label>
 
           <fieldset className="grid gap-3">
             <legend className="mb-1 font-medium">What are you looking to get done?</legend>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {services.map((service) => <label key={service} className="flex cursor-pointer items-center gap-3 rounded-md border border-black bg-white px-4 py-3 font-medium">
-                <input type="checkbox" name="services" value={service} className="size-4 accent-black" />
-                {service}
-              </label>)}
+            <div className="flex flex-wrap gap-2">
+              {services.map((service) => {
+                const selected = selectedServices.includes(service);
+                return <Button key={service} asChild variant="link" className={`archive-filter-button shrink-0 px-4 py-2 ${selected ? "archive-filter-button--active border-border-primary" : "border-black/20"}`}>
+                  <label className="cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="services"
+                      value={service}
+                      checked={selected}
+                      onChange={(event) => setSelectedServices((current) => event.target.checked ? [...current, service] : current.filter((item) => item !== service))}
+                      className="sr-only"
+                    />
+                    {service}
+                  </label>
+                </Button>;
+              })}
             </div>
           </fieldset>
 
           <fieldset className="grid gap-3">
             <legend className="mb-1 font-medium">Are you prepared to invest at least $3,000 per week or $10,000 per month?</legend>
-            <div className="flex flex-wrap gap-3">
-              {(["yes", "no"] as const).map((value) => <label key={value} className="flex min-w-28 cursor-pointer items-center gap-3 rounded-md border border-black bg-white px-4 py-3 font-medium">
-                <input type="radio" name="investment" value={value} checked={investment === value} onChange={() => setInvestment(value)} className="size-4 accent-black" />
-                {value === "yes" ? "Yes" : "No"}
-              </label>)}
+            <div className="flex items-center gap-3">
+              <span className={!investmentConfirmed ? "font-semibold" : "text-neutral-600"}>No</span>
+              <label className={`archive-filter-button relative inline-flex h-8 w-14 cursor-pointer items-center border border-black/20 p-1 transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-black ${investmentConfirmed ? "bg-brand-primary hover:!bg-brand-primary" : "bg-neutral-400 hover:!bg-neutral-400"}`}>
+                <input
+                  type="checkbox"
+                  name="investment"
+                  value="yes"
+                  role="switch"
+                  aria-label="Prepared to invest at least $3,000 per week or $10,000 per month"
+                  checked={investmentConfirmed}
+                  onChange={(event) => setInvestmentConfirmed(event.target.checked)}
+                  className="sr-only"
+                />
+                <span aria-hidden="true" className={`size-6 rounded-full bg-white transition-transform ${investmentConfirmed ? "translate-x-6" : "translate-x-0"}`} />
+              </label>
+              <span className={investmentConfirmed ? "font-semibold" : "text-neutral-600"}>Yes</span>
             </div>
           </fieldset>
 
           <div className="min-h-12" aria-live="polite">
-            {investment === "yes" && <a href="/start" className="button-primary inline-flex px-6 py-3 font-semibold">Book my call</a>}
-            {investment === "no" && <p className="font-semibold">Sorry, I can’t work with you right now.</p>}
-            {!investment && <p className="text-sm text-neutral-600">Select Yes or No to see the next step.</p>}
+            <button
+              type="button"
+              disabled={!investmentConfirmed}
+              onClick={() => { window.location.href = "/start"; }}
+              className="contact-submit px-6 py-3 font-semibold disabled:cursor-not-allowed"
+            >
+              Book my call
+            </button>
           </div>
         </form>
       </div>

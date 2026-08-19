@@ -423,6 +423,7 @@ h1.heading-h3 {
 .archive-filter-button.archive-filter-button {
   border-width: 1px;
   border-style: solid;
+  border-radius: 99px !important;
 }
 
 .archive-filter-button--active {
@@ -859,4 +860,14 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
 
 .footer-marquee:hover {
   animation-play-state: paused;
+}
+
+.contact-submit {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.contact-submit:disabled {
+  background-color: #a3a3a3 !important;
+  color: #525252 !important;
 }
