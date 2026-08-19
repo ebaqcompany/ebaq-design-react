@@ -24,7 +24,7 @@ export const BlogPostHeader4 = (props: BlogPostHeader4Props) => {
               {postDetails.map((detail) => <p key={detail.title} className="text-sm">{detail.title} {detail.description}</p>)}
             </div>
           </div>
-          <div className="mx-auto aspect-video w-full overflow-hidden bg-background-secondary xl:relative xl:-left-[10%] xl:w-[120%] xl:max-w-none xl:self-start">
+          <div className="mx-auto aspect-video w-full overflow-hidden bg-background-secondary xl:relative xl:-left-[20%] xl:w-[120%] xl:max-w-none xl:self-start">
             <img src={image.src || "/ebaqdesign-logo-big.svg"} onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }} className="size-full object-cover" alt={image.alt ?? heading} />
           </div>
         </div>
