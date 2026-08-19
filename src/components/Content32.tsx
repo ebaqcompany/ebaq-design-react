@@ -5,6 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { RxChevronDown } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { ArekProfileBadge } from "./ArekProfileBadge";
+import { Banner12 } from "./Banner12";
 
 type Props = {
   articleTitle: string;
@@ -73,6 +74,7 @@ export const Content32 = ({ articleTitle, articleUrl, children }: Content32Props
                   </Link>
                 </Button>
               </div>
+              <Banner12 className="mt-4 w-full" scrollDriven />
               <p className="mt-8 font-bold md:text-md">Share</p>
               <div className="mt-5 flex items-start gap-3 md:mt-6">
                 {shareLinks.map((link) => <a key={link.label} aria-label={link.label} href={link.url} target="_blank" rel="noreferrer" className="blog-share-link">{link.icon}</a>)}
