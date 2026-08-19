@@ -15,7 +15,7 @@ export const BlogPostHeader4 = (props: BlogPostHeader4Props) => {
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid gap-x-20 gap-y-12 xl:grid-cols-2">
-          <div className="mx-auto flex size-full max-w-lg flex-col items-start justify-start xl:justify-center">
+          <div className="mx-auto flex size-full max-w-lg flex-col items-start justify-start">
             <div className="mb-5 flex w-full items-center justify-start md:mb-6">
               <p className="rounded-full border border-black/20 px-3 py-1 text-sm font-normal">{category}</p>
             </div>
@@ -24,7 +24,7 @@ export const BlogPostHeader4 = (props: BlogPostHeader4Props) => {
               {postDetails.map((detail) => <p key={detail.title} className="text-sm">{detail.title} {detail.description}</p>)}
             </div>
           </div>
-          <div className="mx-auto aspect-video w-full overflow-hidden bg-background-secondary xl:self-center">
+          <div className="mx-auto aspect-video w-full overflow-hidden bg-background-secondary xl:relative xl:-left-[10%] xl:w-[120%] xl:max-w-none xl:self-start">
             <img src={image.src || "/ebaqdesign-logo-big.svg"} onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }} className="size-full object-cover" alt={image.alt ?? heading} />
           </div>
         </div>
