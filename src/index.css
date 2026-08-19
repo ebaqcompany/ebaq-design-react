@@ -24,7 +24,7 @@
   background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
   background-size: 32px 32px;
   background-position: -16px -11px;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .bg-brand-primary {
@@ -345,24 +345,18 @@
   filter: brightness(0) invert(1);
 }
 
-.notification-services-panel {
+.notification-services-frame {
   display: none;
 }
 
 @media (min-width: 1280px) {
-  .notification-services-panel {
+  .notification-services-frame {
     display: flex;
     width: 66.6667%;
     min-width: 0;
     flex: 0 0 66.6667%;
     align-self: stretch;
-    color: #000;
-  }
-
-  .notification-services-panel .services-marquee-group {
-    gap: 3rem;
-    padding-block: 1rem;
-    padding-inline-end: 3rem;
+    overflow: hidden;
   }
 }
 
@@ -778,6 +772,18 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   to { transform: translate3d(0, 0, 0); }
 }
 
+.services-marquee {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  color: #000;
+}
+
+.notification-services-panel {
+  height: 100%;
+}
+
 .services-marquee-track {
   display: flex;
   flex: none;
@@ -785,6 +791,17 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   min-width: 100%;
   will-change: transform;
   animation: marquee-right 48s linear infinite;
+}
+
+.services-marquee--scroll-driven .services-marquee-track {
+  animation: none;
+  transform: translate3d(-50%, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-marquee--scroll-driven .services-marquee-track {
+    transform: translate3d(0, 0, 0) !important;
+  }
 }
 
 .services-marquee-group {

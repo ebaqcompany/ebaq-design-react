@@ -41,7 +41,9 @@ export const NotificationBar = (props: NotificationBarProps) => {
           <h6 className="text-xl font-semibold leading-tight md:text-[1.5625rem] md:leading-none">{heading}</h6>
         </div>
         <div className="contents xl:flex xl:h-full xl:min-w-0 xl:items-center">
-          <Banner12 className="notification-services-panel" />
+          <div className="notification-services-frame">
+            <Banner12 className="notification-services-panel" scrollDriven />
+          </div>
           <Button asChild size="sm" className="button-inverted--dark-surface mb-3 self-start md:mb-0 md:mr-6 md:self-auto xl:ml-4 xl:mr-0">
             <Link
               to="/work"
