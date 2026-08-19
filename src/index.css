@@ -339,6 +339,16 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
   background: #000;
   color: #fff;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 200ms ease, visibility 0s;
+}
+
+.notification-bar--footer-visible {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease, visibility 0s 200ms;
 }
 
 .notification-bar-logo {
@@ -357,16 +367,6 @@
     flex: 0 0 66.6667%;
     align-self: stretch;
     overflow: hidden;
-  }
-}
-
-.notification-bar + main {
-  padding-bottom: 8rem;
-}
-
-@media (min-width: 768px) {
-  .notification-bar + main {
-    padding-bottom: 5rem;
   }
 }
 
@@ -800,6 +800,11 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .notification-bar,
+  .notification-bar--footer-visible {
+    transition: none;
+  }
+
   .services-marquee--scroll-driven .services-marquee-track {
     transform: translate3d(0, 0, 0) !important;
   }
