@@ -75,8 +75,9 @@ export const Blog2 = (props: Blog2Props) => {
                     className="size-full object-cover transition-transform duration-500 hover:scale-[1.02]"
                   />
                 </a>
-                <div className="mb-4 flex w-full items-center justify-start">
+                <div className="mb-4 flex w-full flex-wrap items-center justify-start gap-x-4 gap-y-2">
                   <p className="rounded-full border border-black/20 px-3 py-1 text-sm font-normal">{post.category}</p>
+                  <p className="text-sm">Published on {post.date}</p>
                 </div>
                 <div className="flex w-full grow flex-col items-start justify-start">
                   <a className="heading-link mb-2" href={post.url}><h2 className="heading-h5">{post.title}</h2></a>
