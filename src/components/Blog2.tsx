@@ -18,7 +18,15 @@ export const Blog2 = (props: Blog2Props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [visibleLimit, setVisibleLimit] = useState(24);
   const categories = useMemo(
-    () => Array.from(new Map(blogPosts.map((post) => [post.categorySlug, post.category])).entries()),
+    () => Array.from(new Map(blogPosts.map((post) => [post.categorySlug, post.category])).entries())
+      .sort(([firstSlug], [secondSlug]) => {
+        const categoryOrder: Record<string, number> = {
+          "logo-design": -1,
+          freelancing: 1,
+          "buying-guides": 2,
+        };
+        return (categoryOrder[firstSlug] ?? 0) - (categoryOrder[secondSlug] ?? 0);
+      }),
     [blogPosts],
   );
   const normalizedQuery = searchQuery.trim().toLocaleLowerCase();
