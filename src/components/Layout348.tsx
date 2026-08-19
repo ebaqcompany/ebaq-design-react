@@ -89,7 +89,7 @@ export const Layout348 = (props: Layout348Props) => {
             {contents.map((content, index) => (
               <div key={index}>
                 <div className="flex flex-col items-start justify-center md:h-screen">
-                  <p className="mb-3 font-semibold md:mb-4">{content.tagline}</p>
+                  <p className="mb-3 font-semibold text-brand-primary md:mb-4">{content.tagline}</p>
                   <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
                     {content.heading}
                   </h2>

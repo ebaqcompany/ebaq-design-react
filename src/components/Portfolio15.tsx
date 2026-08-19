@@ -57,7 +57,7 @@ const Project = ({ title, subheading, image, images = [], lottie, url }: Project
     <article className="grid grid-cols-1 items-center gap-x-12 gap-y-6 py-8 md:grid-cols-2 md:gap-y-0 lg:gap-x-20 lg:py-12">
       <RotatingProjectPreview image={image} images={images} lottie={lottie} url={url} className="aspect-video w-full" />
       <div className="md:pr-[10%]">
-        <p className="mb-3 font-semibold md:mb-4">Next project</p>
+        <p className="mb-3 font-semibold text-brand-primary md:mb-4">Next project</p>
         <h3 className="mb-2">
           <a href={url}>{title}</a>
         </h3>

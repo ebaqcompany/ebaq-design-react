@@ -23,7 +23,7 @@
   background-color: var(--color-brand-primary);
   background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
   background-size: 32px 32px;
-  background-position: -16px -16px;
+  background-position: -16px -11px;
   background-attachment: fixed;
 }
 
@@ -343,6 +343,27 @@
 
 .notification-bar-logo {
   filter: brightness(0) invert(1);
+}
+
+.notification-services-panel {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .notification-services-panel {
+    display: flex;
+    width: 66.6667%;
+    min-width: 0;
+    flex: 0 0 66.6667%;
+    align-self: stretch;
+    color: #000;
+  }
+
+  .notification-services-panel .services-marquee-group {
+    gap: 3rem;
+    padding-block: 1rem;
+    padding-inline-end: 3rem;
+  }
 }
 
 .notification-bar + main {

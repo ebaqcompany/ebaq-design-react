@@ -37,7 +37,7 @@ export function ShopPage() {
       <main>
         <header className="px-[5%] pb-12 pt-16 text-center md:pb-16 md:pt-24 lg:pb-20 lg:pt-28">
           <div className="mx-auto max-w-3xl">
-            <p className="mb-3 font-semibold md:mb-4">Shop secret sauce</p>
+            <p className="mb-3 font-semibold text-brand-primary md:mb-4">Shop secret sauce</p>
             <h1>Branding Resources</h1>
             <p className="mx-auto mt-6 max-w-md text-lg leading-relaxed text-neutral-600">Whether you are a creative professional or a business owner, we have content that can give you the edge over your competitors.</p>
           </div>
@@ -67,7 +67,7 @@ export function ShopPage() {
           </div>
         </section>
         <section className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
-          <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-3 font-semibold md:mb-4">Testimonials</p><h2>What people say</h2><p className="mt-6">Still not convinced?—Don’t take my word for it! Check out some of the emails and social media messages I get from people who enjoyed my courses.</p></div><div className="columns-2 gap-4 md:columns-3 lg:columns-4">{shopTestimonials.map((image, index) => <img key={image} src={image} alt={`Customer testimonial ${index + 1}`} loading="lazy" className="mb-4 w-full break-inside-avoid" />)}</div></div>
+          <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-3 font-semibold text-brand-primary md:mb-4">Testimonials</p><h2>What people say</h2><p className="mt-6">Still not convinced?—Don’t take my word for it! Check out some of the emails and social media messages I get from people who enjoyed my courses.</p></div><div className="columns-2 gap-4 md:columns-3 lg:columns-4">{shopTestimonials.map((image, index) => <img key={image} src={image} alt={`Customer testimonial ${index + 1}`} loading="lazy" className="mb-4 w-full break-inside-avoid" />)}</div></div>
         </section>
       </main>
       <Footer15 logo={{ url: '/', src: '/ebaq-mark-one-color.svg', alt: 'Ebaq Design' }} />

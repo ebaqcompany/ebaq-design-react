@@ -29,7 +29,7 @@ export const Contact5 = () => {
       <div className="container mx-auto grid grid-cols-1 items-stretch gap-y-10 md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
         <img src="/images/about-candidates/arek-brevidio-logo-review.jpeg" alt="Arek Dvornechuck reviewing logo concepts in his Brooklyn studio" className="aspect-[4/5] size-full object-cover" />
         <div className="flex flex-col justify-center">
-          <p className="mb-3 font-semibold md:mb-4">Start a conversation</p>
+          <p className="mb-3 font-semibold text-brand-primary md:mb-4">Start a conversation</p>
           <h1 className="mb-5 text-h1 md:mb-6">Tell me about your project</h1>
           <p className="max-w-lg text-md">Share what you’re launching, changing, or trying to make clearer. I’ll reply personally with the most useful next step.</p>
           <div className="mt-8 grid gap-4">
@@ -48,7 +48,7 @@ export const Contact5 = () => {
     <section className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto grid grid-cols-1 items-start gap-y-10 md:grid-cols-[0.8fr_1.2fr] md:gap-x-12 lg:gap-x-20">
         <div>
-          <p className="mb-3 font-semibold md:mb-4">Project fit</p>
+          <p className="mb-3 font-semibold text-brand-primary md:mb-4">Project fit</p>
           <h2 className="mb-5 md:mb-6">A few details before we talk</h2>
           <p className="max-w-md text-md">This front-end form helps you check fit before booking. Your answers are not submitted, saved, or stored.</p>
         </div>
