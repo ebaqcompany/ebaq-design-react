@@ -15,7 +15,7 @@ export const BlogPostHeader4 = (props: BlogPostHeader4Props) => {
     <section className="px-[5%] py-8 md:py-12 lg:py-12">
       <div className="container">
         <div className="grid gap-x-20 gap-y-16 md:gap-y-20 xl:relative xl:block xl:min-h-[588px]">
-          <div className="relative z-10 mx-auto flex size-full max-w-lg flex-col items-start justify-start xl:mx-0 xl:h-[588px] xl:max-w-[611px]">
+          <div className="relative z-10 mx-auto flex size-full max-w-lg flex-col items-start justify-start xl:mx-0 xl:h-[588px] xl:max-w-[720px]">
             <div className="mb-5 flex w-full items-center justify-start md:mb-6">
               <p className="rounded-full border border-black/20 px-3 py-1 text-sm font-normal">{category}</p>
             </div>
