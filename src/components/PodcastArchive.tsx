@@ -49,7 +49,10 @@ export const PodcastArchive = ({ episodes }: { episodes: PodcastEpisodeSummary[]
                 <img src={episode.image.src || "/ebaqdesign-logo-big.svg"} onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }} alt={episode.image.alt ?? episode.title} loading="lazy" className="size-full object-cover transition-transform duration-500 hover:scale-[1.02]" />
                 <span className="absolute bottom-3 left-3 rounded-full bg-black px-3 py-1 text-sm font-semibold text-white">Episode {episode.episodeNumber}</span>
               </a>
-              <p className="mb-3 rounded-full border border-black/20 px-3 py-1 text-sm font-normal">with {episode.guest}</p>
+              <div className="mb-3 flex w-full flex-wrap items-center justify-start gap-x-4 gap-y-2">
+                <p className="rounded-full border border-black/20 px-3 py-1 text-sm font-normal">{episode.category}</p>
+                <p className="text-sm">with {episode.guest}</p>
+              </div>
               <a href={episode.url} className="heading-link"><h2 className="heading-h5">{episode.title}</h2></a>
             </article>
           ))}
