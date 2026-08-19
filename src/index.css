@@ -781,6 +781,10 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   color: #000;
 }
 
+.services-marquee.bg-brand-grid {
+  background-position: -16px -16px;
+}
+
 .notification-services-panel {
   height: 100%;
 }
