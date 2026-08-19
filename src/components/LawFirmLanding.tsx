@@ -86,7 +86,7 @@ const PainPointsSection = () => (
   <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
     <div className="container max-w-6xl">
       <p
-        className="mb-3 font-semibold md:mb-4"
+        className="mb-3 font-semibold text-brand-primary md:mb-4"
         style={{ fontFamily: "'Roboto', sans-serif" }}
       >
         Why it matters
@@ -140,7 +140,7 @@ const DeliverablesSection = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
           <p
-            className="mb-3 font-semibold md:mb-4"
+            className="mb-3 font-semibold text-brand-primary md:mb-4"
             style={{ fontFamily: "'Roboto', sans-serif" }}
           >
             What you get

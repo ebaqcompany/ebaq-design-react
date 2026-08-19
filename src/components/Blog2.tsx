@@ -41,7 +41,7 @@ export const Blog2 = (props: Blog2Props) => {
       <div className="relative px-[5%] py-16 md:py-24 lg:py-28">
         <div className="container">
           <div className="mx-auto w-full max-w-lg text-center">
-            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+            <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
             <h1 className="mb-5 md:mb-6">{heading}</h1>
             <p className="mx-auto max-w-md md:text-md">{description}</p>
           </div>

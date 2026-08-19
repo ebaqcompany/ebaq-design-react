@@ -107,7 +107,7 @@ const FeatureCard = ({ ...feature }: Feature) => {
       <div ref={ref} className="mb-8 mt-8 h-0.5 w-full bg-neutral-lighter md:mt-0">
         <motion.div className="h-0.5 w-8 bg-[#00afec]" style={width} />
       </div>
-      <p className="mb-3 font-semibold md:mb-4">{feature.tagline}</p>
+      <p className="mb-3 font-semibold text-brand-primary md:mb-4">{feature.tagline}</p>
       <h2 className="rb-5 mb-5 text-5xl md:mb-6 md:text-7xl lg:text-8xl">
         {feature.heading}
       </h2>

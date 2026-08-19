@@ -74,7 +74,7 @@ export function ToolsPage() {
       <main>
         <header className="px-[5%] pb-12 pt-16 text-center md:pb-16 md:pt-24 lg:pb-20 lg:pt-28">
           <div className="mx-auto max-w-3xl">
-            <p className="mb-3 font-semibold md:mb-4">Tools &amp; Resources</p>
+            <p className="mb-3 font-semibold text-brand-primary md:mb-4">Tools &amp; Resources</p>
             <h1>Branding Tools</h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
               Accelerate your process with our specialized tools, and other resources. From naming &amp; slogan generators to an AI-powered brand strategist assistant and beyond.

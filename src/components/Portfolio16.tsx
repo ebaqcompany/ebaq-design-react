@@ -36,7 +36,7 @@ export const Portfolio16 = (props: Portfolio16Props) => {
     <section {...sectionProps} className={`px-[5%] py-16 md:py-24 lg:py-28 ${className ?? ""}`}>
       <div className="container">
         <header className="mb-12 max-w-lg md:mb-18 lg:mb-20">
-          <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+          <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
           <h1 className="mb-5 md:mb-6">{heading}</h1>
           <p className="md:text-md">{description}</p>
         </header>

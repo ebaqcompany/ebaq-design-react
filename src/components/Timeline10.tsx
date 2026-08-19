@@ -20,7 +20,7 @@ export const Timeline10 = (props: Timeline10Props) => {
         <div className="flex flex-col items-center">
           <div className="mb-12 text-center md:mb-18 lg:mb-20">
             <div className="relative z-10 w-full max-w-lg">
-              <p className={clsx("mb-3 font-semibold md:mb-4", taglineClassName)}>{tagline}</p>
+              <p className={clsx("mb-3 font-semibold text-brand-primary md:mb-4", taglineClassName)}>{tagline}</p>
               <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
               <p className="md:text-md">{description}</p>
               <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">

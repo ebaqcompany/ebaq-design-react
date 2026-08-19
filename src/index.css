@@ -23,8 +23,8 @@
   background-color: var(--color-brand-primary);
   background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
   background-size: 32px 32px;
-  background-position: -16px -16px;
-  background-attachment: fixed;
+  background-position: -16px -11px;
+  background-attachment: scroll;
 }
 
 .bg-brand-primary {
@@ -339,19 +339,34 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
   background: #000;
   color: #fff;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 200ms ease, visibility 0s;
+}
+
+.notification-bar--footer-visible {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease, visibility 0s 200ms;
 }
 
 .notification-bar-logo {
   filter: brightness(0) invert(1);
 }
 
-.notification-bar + main {
-  padding-bottom: 8rem;
+.notification-services-frame {
+  display: none;
 }
 
-@media (min-width: 768px) {
-  .notification-bar + main {
-    padding-bottom: 5rem;
+@media (min-width: 1280px) {
+  .notification-services-frame {
+    display: flex;
+    width: 66.6667%;
+    min-width: 0;
+    flex: 0 0 66.6667%;
+    align-self: stretch;
+    overflow: hidden;
   }
 }
 
@@ -408,6 +423,7 @@ h1.heading-h3 {
 .archive-filter-button.archive-filter-button {
   border-width: 1px;
   border-style: solid;
+  border-radius: 99px !important;
 }
 
 .archive-filter-button--active {
@@ -757,6 +773,18 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   to { transform: translate3d(0, 0, 0); }
 }
 
+.services-marquee {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  color: #000;
+}
+
+.notification-services-panel {
+  height: 100%;
+}
+
 .services-marquee-track {
   display: flex;
   flex: none;
@@ -764,6 +792,22 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   min-width: 100%;
   will-change: transform;
   animation: marquee-right 48s linear infinite;
+}
+
+.services-marquee--scroll-driven .services-marquee-track {
+  animation: none;
+  transform: translate3d(-50%, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notification-bar,
+  .notification-bar--footer-visible {
+    transition: none;
+  }
+
+  .services-marquee--scroll-driven .services-marquee-track {
+    transform: translate3d(0, 0, 0) !important;
+  }
 }
 
 .services-marquee-group {
@@ -821,4 +865,14 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
 
 .footer-marquee:hover {
   animation-play-state: paused;
+}
+
+.contact-submit {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.contact-submit:disabled {
+  background-color: #a3a3a3 !important;
+  color: #525252 !important;
 }

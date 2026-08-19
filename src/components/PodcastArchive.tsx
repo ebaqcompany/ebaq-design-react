@@ -20,7 +20,7 @@ export const PodcastArchive = ({ episodes }: { episodes: PodcastEpisodeSummary[]
       <div className="relative px-[5%] py-16 md:py-24 lg:py-28">
         <div className="container">
         <header className="mx-auto w-full max-w-lg text-center">
-          <p className="mb-3 font-semibold md:mb-4">Learn branding</p>
+          <p className="mb-3 font-semibold text-brand-primary md:mb-4">Learn branding</p>
           <h1 className="mb-5 md:mb-6">On Branding Podcast</h1>
           <p className="mx-auto max-w-md md:text-md">Want to know what it takes to brand a business? Check out our interviews with top branding experts.</p>
           <div id="podcast-controls" className="mt-8 w-full scroll-mt-24 text-left md:mt-10">
