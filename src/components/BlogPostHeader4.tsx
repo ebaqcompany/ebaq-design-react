@@ -12,10 +12,10 @@ export type BlogPostHeader4Props = React.ComponentPropsWithoutRef<"section"> & P
 export const BlogPostHeader4 = (props: BlogPostHeader4Props) => {
   const { category, heading, image, postDetails } = { ...BlogPostHeader4Defaults, ...props };
   return (
-    <section className="px-[5%] py-8 md:py-12 lg:py-16">
+    <section className="px-[5%] py-8 md:py-12 lg:py-12">
       <div className="container">
-        <div className="grid gap-x-20 gap-y-16 md:gap-y-20 xl:grid-cols-[0.5fr_1fr]">
-          <div className="relative z-10 mx-auto flex size-full max-w-lg flex-col items-start justify-start">
+        <div className="grid gap-x-20 gap-y-16 md:gap-y-20 xl:relative xl:block xl:min-h-[588px]">
+          <div className="relative z-10 mx-auto flex size-full max-w-lg flex-col items-start justify-start xl:mx-0 xl:h-[588px] xl:max-w-[611px]">
             <div className="mb-5 flex w-full items-center justify-start md:mb-6">
               <p className="rounded-full border border-black/20 px-3 py-1 text-sm font-normal">{category}</p>
             </div>
@@ -24,7 +24,7 @@ export const BlogPostHeader4 = (props: BlogPostHeader4Props) => {
               {postDetails.map((detail) => <p key={detail.title} className="text-sm">{detail.title} {detail.description}</p>)}
             </div>
           </div>
-          <div className="relative z-0 mx-auto mt-8 aspect-video w-full overflow-hidden bg-background-secondary xl:-left-[40%] xl:mt-8 xl:self-end">
+          <div className="relative z-0 mx-auto mt-8 aspect-video w-full overflow-hidden bg-background-secondary xl:absolute xl:left-[37.2%] xl:top-[288px] xl:mt-0 xl:w-[41.7%]">
             <img src={image.src || "/ebaqdesign-logo-big.svg"} onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }} className="size-full object-cover" alt={image.alt ?? heading} />
           </div>
         </div>
