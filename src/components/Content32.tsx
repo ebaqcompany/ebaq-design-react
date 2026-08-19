@@ -74,7 +74,7 @@ export const Content32 = ({ articleTitle, articleUrl, children }: Content32Props
                   </Link>
                 </Button>
               </div>
-              <Banner12 className="mt-4 w-full" scrollDriven />
+              <Banner12 className="w-full" scrollDriven />
               <p className="mt-8 font-bold md:text-md">Share</p>
               <div className="mt-5 flex items-start gap-3 md:mt-6">
                 {shareLinks.map((link) => <a key={link.label} aria-label={link.label} href={link.url} target="_blank" rel="noreferrer" className="blog-share-link">{link.icon}</a>)}
