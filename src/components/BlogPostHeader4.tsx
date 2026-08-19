@@ -12,9 +12,9 @@ export type BlogPostHeader4Props = React.ComponentPropsWithoutRef<"section"> & P
 export const BlogPostHeader4 = (props: BlogPostHeader4Props) => {
   const { category, heading, image, postDetails } = { ...BlogPostHeader4Defaults, ...props };
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section className="px-[5%] py-12 md:py-20 lg:py-24">
       <div className="container">
-        <div className="grid gap-x-20 gap-y-12 xl:grid-cols-2">
+        <div className="grid gap-x-20 gap-y-16 md:gap-y-20 xl:grid-cols-2">
           <div className="relative z-10 mx-auto flex size-full max-w-lg flex-col items-start justify-start">
             <div className="mb-5 flex w-full items-center justify-start md:mb-6">
               <p className="rounded-full border border-black/20 px-3 py-1 text-sm font-normal">{category}</p>
