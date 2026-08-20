@@ -20,11 +20,10 @@ function App() {
     <div className="relative">
         {/* Main content - scrolls over footer */}
         <div className="relative z-10 bg-white">
-          {/* Navbar */}
           <Navbar16 />
 
-          {/* Services banner */}
-          <Banner12 />
+          <main>
+            <Banner12 />
 
           {/* Hero Section */}
           <Header78 />
@@ -53,7 +52,7 @@ function App() {
           {/* CTA Section */}
           <Cta17 />
 
-          {/* Footer */}
+          </main>
           <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
 
         </div>

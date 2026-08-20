@@ -42,7 +42,7 @@ export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHr
     {portraitHref ? <Link to={portraitHref} aria-label="About Arek Dvornechuck" className="shrink-0"><img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 rounded-full object-cover" /></Link> : <img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 shrink-0 rounded-full object-cover" />}
     <div className="flex min-w-0 flex-col">
       <div className="flex flex-col gap-0">
-        {variant === "author" ? <p className="heading-h7 whitespace-nowrap">Arek Dvornechuck</p> : <h5 className="whitespace-nowrap">Arek Dvornechuck</h5>}
+        <p className={variant === "author" ? "heading-h7 whitespace-nowrap" : "whitespace-nowrap"}>Arek Dvornechuck</p>
         {variant === "author" && <p className="heading-h7 whitespace-nowrap text-brand-primary">Branding Expert</p>}
       </div>
       {variant === "author" ? <>

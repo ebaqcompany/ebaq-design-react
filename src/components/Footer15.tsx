@@ -91,9 +91,13 @@ const DraggableFooterGuide = ({ footerRef }: { footerRef: React.RefObject<HTMLEl
       ref={guideRef}
       className="footer-guide mt-10 md:mt-14"
       style={{ transform: `translate(-50%, ${offsetY}px)` }}
-      role="separator"
-      aria-label="Draggable footer guide"
+      role="slider"
+      aria-label="Draggable footer guide position"
       aria-orientation="horizontal"
+      aria-valuemin={-100}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(offsetY)}
+      aria-valuetext={`${Math.round(offsetY)} pixels`}
       tabIndex={0}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
@@ -157,7 +161,8 @@ export const Footer15 = (props: Footer15Props) => {
                 <a
                   key={index}
                   href={link.url}
-                  className="transition-colors duration-300 hover:text-brand-primary"
+                  aria-label={`Visit ${new URL(link.url).hostname.replace("www.", "")}`}
+                  className="p-2 transition-colors duration-300 hover:text-brand-primary"
                 >
                   {link.icon}
                 </a>

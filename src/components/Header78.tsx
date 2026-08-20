@@ -79,6 +79,8 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
         loop
         muted
         playsInline
+        preload="none"
+        aria-hidden="true"
         draggable={false}
       />
     );

@@ -59,6 +59,18 @@ export const BlogPostPage = () => {
   const postImage = post.seo.image || post.image.src;
   const absolutePostImage = postImage.startsWith("/") ? `https://ebaqdesign.com${postImage}` : postImage;
   const articleBody = normalizeVideoEmbeds(post.body || `<p>${post.description}</p>`).replace(/\s+src=(['"])\1/gi, "").replace(/\s+srcset=(['"])\1/gi, "");
+  const youtubeEmbed = post.youtubeEmbed;
+  const youtubeVideoId = youtubeEmbed?.match(/\/embed\/([^?&#/]+)/i)?.[1];
+  const videoStructuredData = youtubeVideoId ? {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: post.title,
+    description: post.description,
+    thumbnailUrl: [`https://i.ytimg.com/vi/${youtubeVideoId}/hqdefault.jpg`],
+    uploadDate: post.date,
+    embedUrl: youtubeEmbed,
+    contentUrl: `https://www.youtube.com/watch?v=${youtubeVideoId}`,
+  } : null;
   return (
     <div className="relative bg-white">
       <Helmet>
@@ -74,11 +86,12 @@ export const BlogPostPage = () => {
         <meta name="twitter:description" content={post.seo.description || post.description} />
         <meta name="twitter:image" content={absolutePostImage} />
         <link rel="canonical" href={canonicalUrl} />
+        {videoStructuredData && <script type="application/ld+json">{JSON.stringify(videoStructuredData)}</script>}
       </Helmet>
       <Navbar16 />
       <NotificationBar />
       <main>
-        <BlogPostHeader4 category={post.category} heading={post.title} image={post.image} postDetails={[{ title: "Published on", description: post.date }]} />
+        <BlogPostHeader4 category={post.category} heading={post.title} image={post.image} youtubeEmbed={youtubeEmbed} postDetails={[{ title: "Published on", description: post.date }]} />
         <Content32 articleTitle={post.title} articleUrl={canonicalUrl}><div dangerouslySetInnerHTML={{ __html: articleBody }} /></Content32>
       </main>
       <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />

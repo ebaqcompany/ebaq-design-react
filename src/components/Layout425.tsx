@@ -109,7 +109,7 @@ export const useLayoutTransforms = (scrollYProgress: MotionValue<number>, isMobi
   };
 };
 
-const Media = ({ image }: { image: ImageProps }) => image.kind === "video" || image.src.endsWith(".mp4") ? <video src={image.src} autoPlay loop muted playsInline className="size-full" /> : <img src={image.src} alt={image.alt ?? ""} className="size-full" />;
+const Media = ({ image }: { image: ImageProps }) => image.kind === "video" || image.src.endsWith(".mp4") ? <video src={image.src} autoPlay loop muted playsInline preload="none" aria-hidden="true" className="size-full" /> : <img src={image.src} alt={image.alt ?? ""} className="size-full" />;
 
 export const Layout425 = (props: Props) => {
   const sectionRef = useRef<HTMLElement>(null);

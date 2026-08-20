@@ -51,7 +51,7 @@ export const NotificationBar = (props: NotificationBarProps) => {
           <a href={logo.url} className="shrink-0">
             <img src={logo.src} alt={logo.alt} className="notification-bar-logo mr-4 size-8" />
           </a>
-          <h6 className="text-xl font-semibold leading-tight md:text-[1.5625rem] md:leading-none">{heading}</h6>
+          <p className="text-xl font-semibold leading-tight md:text-[1.5625rem] md:leading-none">{heading}</p>
         </div>
         <div className="contents xl:flex xl:h-full xl:min-w-0 xl:items-center">
           <div className="notification-services-frame">
@@ -68,7 +68,7 @@ export const NotificationBar = (props: NotificationBarProps) => {
               See my work
             </Link>
           </Button>
-          <button type="button" aria-label="Dismiss designer notification" className="absolute right-2 top-2 ml-4 text-white md:static" onClick={() => setIsVisible(false)}>
+          <button type="button" aria-label="Dismiss designer notification" className="absolute right-2 top-2 ml-4 min-h-11 min-w-11 text-white md:static" onClick={() => setIsVisible(false)}>
             <RxCross2 className="size-8 p-1" />
           </button>
         </div>

@@ -18,6 +18,7 @@ export type BlogPostSummary = {
 export type BlogPost = BlogPostSummary & {
   author: string;
   body: string;
+  youtubeEmbed?: string;
   tags: string[];
   seo: {
     title: string;
