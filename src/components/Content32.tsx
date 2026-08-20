@@ -59,7 +59,7 @@ export const Content32 = ({ articleTitle, articleUrl, children }: Content32Props
                   <Link to="/" aria-label="Ebaq Design home">
                     <img src="/ebaq-mark-one-color.svg" alt="Ebaq Design" className="notification-bar-logo mr-4 size-8" />
                   </Link>
-                  <p className="font-semibold">Need a designer?</p>
+                  <p className="text-xl font-semibold leading-tight md:text-[1.5625rem] md:leading-none">Need a designer?</p>
                 </div>
                 <p className="mb-5">See selected brand and web work, then get in touch if it feels right.</p>
                 <Button asChild size="sm" className="button-inverted--dark-surface">
