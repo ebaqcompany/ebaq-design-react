@@ -167,7 +167,7 @@ export const Footer15Interactive = (props: Footer15InteractiveProps) => {
                   key={index}
                   href={link.url}
                   aria-label={`Visit ${new URL(link.url).hostname.replace("www.", "")}`}
-                  className="p-2 transition-colors duration-300 hover:text-brand-primary"
+                  className="transition-colors duration-300 hover:text-brand-primary"
                 >
                   {link.icon}
                 </a>
