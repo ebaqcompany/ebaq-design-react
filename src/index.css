@@ -356,17 +356,60 @@
 }
 
 .notification-services-frame {
-  display: none;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 @media (min-width: 1280px) {
   .notification-services-frame {
-    display: flex;
     width: 66.6667%;
     min-width: 0;
     flex: 0 0 66.6667%;
+    margin: 0;
     align-self: stretch;
     overflow: hidden;
+  }
+}
+
+@media (max-width: 1279px) {
+  .notification-services-frame {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .notification-bar .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .notification-bar .container > div:first-child {
+    margin-bottom: 0;
+    min-width: 0;
+  }
+
+  .notification-bar .container > div:first-child p,
+  .notification-bar .container a {
+    white-space: nowrap;
+  }
+
+  .notification-bar button[aria-label="Dismiss designer notification"] {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    margin-left: 1rem;
+  }
+
+  .notification-bar .button-inverted--dark-surface {
+    align-self: center;
+    margin-bottom: 0;
   }
 }
 

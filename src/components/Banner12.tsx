@@ -14,7 +14,6 @@ export const Banner12 = (props: Banner12Props) => {
     const group = track?.firstElementChild as HTMLElement | null;
     if (!track || !group) return;
 
-    const desktopQuery = window.matchMedia("(min-width: 1280px)");
     const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
     let active = false;
@@ -36,7 +35,7 @@ export const Banner12 = (props: Banner12Props) => {
       track.style.removeProperty("transform");
     };
     const syncMotion = () => {
-      const shouldRun = desktopQuery.matches && !reducedMotionQuery.matches;
+      const shouldRun = !reducedMotionQuery.matches;
       if (!shouldRun) {
         deactivate();
         return;
@@ -49,11 +48,9 @@ export const Banner12 = (props: Banner12Props) => {
     };
 
     syncMotion();
-    desktopQuery.addEventListener("change", syncMotion);
     reducedMotionQuery.addEventListener("change", syncMotion);
     return () => {
       deactivate();
-      desktopQuery.removeEventListener("change", syncMotion);
       reducedMotionQuery.removeEventListener("change", syncMotion);
     };
   }, [scrollDriven]);
