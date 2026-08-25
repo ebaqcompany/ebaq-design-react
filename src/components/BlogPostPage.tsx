@@ -59,6 +59,7 @@ export const BlogPostPage = () => {
   const postImage = post.seo.image || post.image.src;
   const absolutePostImage = postImage.startsWith("/") ? `https://ebaqdesign.com${postImage}` : postImage;
   const articleBody = normalizeVideoEmbeds(post.body || `<p>${post.description}</p>`).replace(/\s+src=(['"])\1/gi, "").replace(/\s+srcset=(['"])\1/gi, "");
+  const hasInlineImages = /<img\b/i.test(articleBody);
   const youtubeEmbed = post.youtubeEmbed;
   const youtubeVideoId = youtubeEmbed?.match(/\/embed\/([^?&#/]+)/i)?.[1];
   const videoStructuredData = youtubeVideoId ? {
@@ -92,7 +93,10 @@ export const BlogPostPage = () => {
       <NotificationBar />
       <main>
         <BlogPostHeader4 category={post.category} heading={post.title} image={post.image} youtubeEmbed={youtubeEmbed} postDetails={[{ title: "Published on", description: post.date }]} />
-        <Content32 articleTitle={post.title} articleUrl={canonicalUrl}><div dangerouslySetInnerHTML={{ __html: articleBody }} /></Content32>
+        <Content32 articleTitle={post.title} articleUrl={canonicalUrl}>
+          {!hasInlineImages && <figure className="mb-8 w-full"><img src={post.image.src} alt={post.image.alt || post.title} className="h-auto w-full" /></figure>}
+          <div dangerouslySetInnerHTML={{ __html: articleBody }} />
+        </Content32>
       </main>
       <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
     </div>

@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
 import App from './App.tsx'
@@ -30,6 +30,11 @@ import {
   StrategyGuidePage,
 } from './components/ProductLandingPage.tsx'
 
+const LegacyGearRedirect = () => {
+  const { slug = '' } = useParams()
+  return <Navigate to={`/blog/${encodeURIComponent(slug)}`} replace />
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HelmetProvider>
@@ -47,6 +52,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/work/:slug" element={<CaseStudyPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/gear/:slug" element={<LegacyGearRedirect />} />
+          <Route path="/gear" element={<Navigate to="/blog" replace />} />
           <Route path="/podcast" element={<PodcastPage />} />
           <Route path="/podcast/:slug" element={<PodcastEpisodePage />} />
           <Route path="/shop" element={<ShopPage />} />
