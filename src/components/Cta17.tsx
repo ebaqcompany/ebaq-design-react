@@ -26,7 +26,7 @@ export const Cta17 = (props: Cta17Props) => {
         <div className="grid grid-rows-1 items-start gap-y-5 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20 lg:gap-y-16">
           <h2 className="text-black">{heading}</h2>
           <div>
-            <p className="heading-h6 font-semibold text-black md:text-md">{description}</p>
+            <p className="heading-h6 font-semibold text-black">{description}</p>
             {price && (
               <div className="mt-6 flex items-baseline gap-3">
                 <span className="text-3xl font-semibold text-white">{price}</span>
