@@ -12,7 +12,7 @@ type Props = {
   buttons: ButtonProps[];
 };
 
-export const HomepageMarkerCircle = () => <svg aria-hidden="true" className="pointer-events-none absolute -inset-x-[0.28em] -inset-y-[0.18em] h-[calc(100%+0.36em)] w-[calc(100%+0.56em)] overflow-visible" viewBox="0 0 100 45" preserveAspectRatio="none"><path d="M 7 24 C 8 12, 24 4, 45 3 C 68 2, 91 8, 96 20 C 101 32, 83 41, 61 43 C 38 45, 15 41, 8 32" className="layout484-highlight-path" fill="none" stroke="#00AEEF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+export const HomepageMarkerCircle = () => <svg aria-hidden="true" className="pointer-events-none absolute -inset-x-[0.42em] -inset-y-[0.18em] h-[calc(100%+0.36em)] w-[calc(100%+0.84em)] overflow-visible" viewBox="0 0 100 45" preserveAspectRatio="none"><path d="M 7 24 C 8 12, 24 4, 45 3 C 68 2, 91 8, 96 20 C 101 32, 83 41, 61 43 C 38 45, 15 41, 8 32" className="layout484-highlight-path" fill="none" stroke="#00AEEF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>;
 
 export type Layout484Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 

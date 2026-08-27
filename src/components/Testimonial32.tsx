@@ -7,7 +7,7 @@ type Testimonial = { quote: string; logo?: { src: string; alt?: string; scale?: 
 type Props = React.ComponentPropsWithoutRef<"section"> & { heading?: string; description?: string; testimonials?: Testimonial[] };
 export type Testimonial9Props = Props;
 
-export const TestimonialCarouselArrow = ({ direction, onClick, label }: { direction: "previous" | "next"; onClick?: () => void; label?: string }) => <button type="button" aria-label={label ?? `${direction === "previous" ? "Previous" : "Next"} slide`} onClick={onClick} className="testimonial-carousel-button static size-12 -translate-y-0"><span aria-hidden="true">{direction === "previous" ? <RxChevronLeft className="size-6" /> : <RxChevronRight className="size-6" />}</span></button>;
+export const TestimonialCarouselArrow = ({ direction, onClick, label }: { direction: "previous" | "next"; onClick?: () => void; label?: string }) => <button type="button" aria-label={label ?? `${direction === "previous" ? "Previous" : "Next"} slide`} onClick={onClick} className="testimonial-carousel-button static inline-flex size-12 -translate-y-0 items-center justify-center"><span aria-hidden="true" className="flex items-center justify-center">{direction === "previous" ? <RxChevronLeft className="size-6" /> : <RxChevronRight className="size-6" />}</span></button>;
 
 export const Testimonial32 = (props: Props) => {
   const { heading, description, testimonials } = { ...Testimonial32Defaults, ...props };
