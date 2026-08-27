@@ -1,10 +1,13 @@
 import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@relume_io/relume-ui";
 import { clientLogoClass, type ClientLogoScale } from "../clientLogo";
+import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
 
 type Testimonial = { quote: string; logo?: { src: string; alt?: string; scale?: ClientLogoScale; className?: string }; logoText?: string; avatar: { src: string; alt?: string }; name: string; position: string };
 type Props = React.ComponentPropsWithoutRef<"section"> & { heading?: string; description?: string; testimonials?: Testimonial[] };
 export type Testimonial9Props = Props;
+
+export const TestimonialCarouselArrow = ({ direction, onClick, label }: { direction: "previous" | "next"; onClick?: () => void; label?: string }) => <button type="button" aria-label={label ?? `${direction === "previous" ? "Previous" : "Next"} slide`} onClick={onClick} className="testimonial-carousel-button static size-12 -translate-y-0"><span aria-hidden="true">{direction === "previous" ? <RxChevronLeft className="size-6" /> : <RxChevronRight className="size-6" />}</span></button>;
 
 export const Testimonial32 = (props: Props) => {
   const { heading, description, testimonials } = { ...Testimonial32Defaults, ...props };

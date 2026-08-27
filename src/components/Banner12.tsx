@@ -5,7 +5,7 @@ export type Banner12Props = React.ComponentPropsWithoutRef<"section"> & Partial<
 
 export const Banner12 = (props: Banner12Props) => {
   const { headings, scrollDriven, className, ...sectionProps } = { ...Banner12Defaults, ...props };
-  const loopHeadings = [...headings, ...headings, ...headings];
+  const loopHeadings = headings;
   const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,7 +20,9 @@ export const Banner12 = (props: Banner12Props) => {
     const update = () => {
       frame = 0;
       const groupWidth = group.getBoundingClientRect().width;
-      track.style.transform = `translate3d(${-groupWidth + window.scrollY * 0.12}px, 0, 0)`;
+      if (!groupWidth) return;
+      const loopOffset = (window.scrollY * 0.12) % groupWidth;
+      track.style.transform = `translate3d(${-groupWidth + loopOffset}px, 0, 0)`;
     };
     const requestUpdate = () => {
       if (!frame) frame = window.requestAnimationFrame(update);

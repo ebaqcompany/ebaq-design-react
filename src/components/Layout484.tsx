@@ -12,6 +12,8 @@ type Props = {
   buttons: ButtonProps[];
 };
 
+export const HomepageMarkerCircle = () => <svg aria-hidden="true" className="pointer-events-none absolute -inset-x-[0.16em] -inset-y-[0.18em] h-[calc(100%+0.36em)] w-[calc(100%+0.32em)] overflow-visible" viewBox="0 0 100 45" preserveAspectRatio="none"><path d="M 7 24 C 8 12, 24 4, 45 3 C 68 2, 91 8, 96 20 C 101 32, 83 41, 61 43 C 38 45, 15 41, 8 32" className="layout484-highlight-path" fill="none" stroke="#00AEEF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+
 export type Layout484Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Layout484 = (props: Layout484Props) => {
@@ -77,25 +79,7 @@ export const Layout484 = (props: Layout484Props) => {
                   style={{ opacity: 1 } as MotionStyle}
                 >
                   <motion.span style={{ opacity } as MotionStyle}>{token}</motion.span>
-                  {shouldCircle && (
-                    <svg
-                      aria-hidden="true"
-                      className="pointer-events-none absolute -inset-x-[0.16em] -inset-y-[0.18em] h-[calc(100%+0.36em)] w-[calc(100%+0.32em)] overflow-visible"
-                      viewBox="0 0 100 45"
-                      preserveAspectRatio="none"
-                    >
-                      <motion.path
-                        d="M 50 2 C 78 2, 98 10, 98 23 C 98 36, 78 43, 50 43 C 22 43, 2 36, 2 23 C 2 10, 22 2, 50 2 Z"
-                        className="layout484-highlight-path"
-                        fill="none"
-                        stroke="#00AEEF"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle}
-                      />
-                    </svg>
-                  )}
+                  {shouldCircle && <HomepageMarkerCircle />}
                   {shouldOvalPhrase && (
                     <svg aria-hidden="true" className="pointer-events-none absolute -inset-x-[0.08em] -inset-y-[0.12em] h-[calc(100%+0.24em)] w-[calc(100%+0.16em)] overflow-visible" viewBox="0 0 180 45" preserveAspectRatio="none">
                       <motion.path className="layout484-highlight-path" d="M 91 2 C 142 1, 178 10, 176 23 C 174 37, 137 44, 88 42 C 39 44, 3 36, 4 22 C 5 9, 39 3, 91 2 Z" fill="none" stroke="#00AEEF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />

@@ -2,26 +2,28 @@ import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { RxChevronRight } from "react-icons/rx";
 import { RotatingProjectPreview } from "./RotatingProjectPreview";
+import { HomepageMarkerCircle } from "./Layout484";
 
 type ImageProps = {
   src: string;
   alt?: string;
 };
 
-type ProjectProps = {
+export type Portfolio16ProjectProps = {
   title: string;
   description: string;
   image: ImageProps;
   images?: ImageProps[];
   lottie?: ImageProps;
   url: string;
+  highlightDescriptionPhrase?: string;
 };
 
 type Props = {
   tagline: string;
   heading: string;
   description: string;
-  projects: ProjectProps[];
+  projects: Portfolio16ProjectProps[];
 };
 
 export type Portfolio16Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
@@ -42,7 +44,7 @@ export const Portfolio16 = (props: Portfolio16Props) => {
         </header>
         <div>
           {projects.map((project, index) => (
-            <Project key={project.url} {...project} reverse={index % 2 === 1} />
+            <Portfolio16Project key={project.url} {...project} reverse={index % 2 === 1} />
           ))}
         </div>
       </div>
@@ -50,7 +52,7 @@ export const Portfolio16 = (props: Portfolio16Props) => {
   );
 };
 
-const Project = ({ title, description, image, images, lottie, url, reverse }: ProjectProps & { reverse: boolean }) => {
+export const Portfolio16Project = ({ title, description, image, images, lottie, url, reverse, highlightDescriptionPhrase }: Portfolio16ProjectProps & { reverse: boolean }) => {
   const button: ButtonProps = {
     title: "View case study",
     variant: "link",
@@ -71,8 +73,8 @@ const Project = ({ title, description, image, images, lottie, url, reverse }: Pr
         <h2 className="heading-h3 mb-3 md:mb-4">
           <a href={url}>{title}</a>
         </h2>
-        <h3 className="heading-h5 mb-4 md:mb-5">{description}</h3>
-        <Button {...button} asChild className="mt-6 md:mt-8">
+        <h3 className="heading-h5 mb-4 md:mb-5">{highlightDescriptionPhrase && description.includes(highlightDescriptionPhrase) ? <>{description.split(highlightDescriptionPhrase)[0]}<span className="relative inline-block mx-[0.08em]">{highlightDescriptionPhrase}<HomepageMarkerCircle /></span>{description.split(highlightDescriptionPhrase).slice(1).join(highlightDescriptionPhrase)}</> : description}</h3>
+        <Button {...button} asChild className="mt-6 md:mt-8 underline underline-offset-4 hover:text-brand-primary focus-visible:text-brand-primary">
           <a href={url}>{button.title}</a>
         </Button>
       </div>

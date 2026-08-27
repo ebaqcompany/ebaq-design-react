@@ -57,7 +57,7 @@ export const Blog2 = (props: Blog2Props) => {
             </div>
           </div>
         </div>
-        <a href="#blog-results" aria-label="Go to Blog posts" className="absolute bottom-4 left-1/2 inline-flex size-12 -translate-x-1/2 items-center justify-center md:bottom-6">
+        <a href="#blog-results" aria-label="Go to Blog posts" className="blog-scroll-arrow absolute bottom-4 left-1/2 inline-flex size-12 -translate-x-1/2 items-center justify-center md:bottom-6">
           <RxChevronDown aria-hidden="true" className="size-8" />
         </a>
       </div>

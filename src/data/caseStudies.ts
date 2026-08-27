@@ -243,7 +243,7 @@ export const caseStudies: CaseStudy[] = [
     },
     nextProject: {
       title: "Elevate",
-      subheading: "A progressive identity for a Shopify testing platform built around growth",
+      subheading: "A progressive SaaS identity for a Shopify testing platform built around growth",
       image: { src: "/portfolio/identities/elevate-bento.jpg", alt: "Elevate brand identity" },
       url: "/work/elevate",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
@@ -252,7 +252,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "elevate",
     client: "Elevate",
-    title: "A progressive identity for a Shopify testing platform built around growth",
+    title: "A progressive SaaS identity for a Shopify testing platform built around growth",
     summary:
       "Elevate is a Shopify-native A/B testing platform that helps store owners improve performance through faster, smarter experimentation. We created an abstract growth mark and bespoke wordmark that balance technical precision with confidence and momentum, giving the brand a clear and ownable presence in the Shopify ecosystem.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
