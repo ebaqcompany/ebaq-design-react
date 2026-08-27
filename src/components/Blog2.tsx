@@ -30,9 +30,20 @@ export const Blog2 = (props: Blog2Props) => {
     [blogPosts],
   );
   const normalizedQuery = searchQuery.trim().toLocaleLowerCase();
-  const filteredPosts = blogPosts.filter((post) =>
-    (!activeCategory || post.categorySlug === activeCategory)
-    && (!normalizedQuery || post.title.toLocaleLowerCase().includes(normalizedQuery)),
+  const filteredPosts = useMemo(
+    () => [...blogPosts]
+      .sort((firstPost, secondPost) => {
+        const firstDate = Date.parse(firstPost.date);
+        const secondDate = Date.parse(secondPost.date);
+
+        if (Number.isNaN(firstDate) || Number.isNaN(secondDate)) return 0;
+        return secondDate - firstDate;
+      })
+      .filter((post) =>
+        (!activeCategory || post.categorySlug === activeCategory)
+        && (!normalizedQuery || post.title.toLocaleLowerCase().includes(normalizedQuery)),
+      ),
+    [activeCategory, blogPosts, normalizedQuery],
   );
   const visiblePosts = filteredPosts.slice(0, visibleLimit);
 
