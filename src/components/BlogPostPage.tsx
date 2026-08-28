@@ -50,6 +50,13 @@ const SelectedWork = ({ selectedWorkSlugs = [] }: { selectedWorkSlugs?: string[]
 
 type LogoResearch = { number: string; name: string; officialUrl: string; verifiedFact: string; observations: [string, string] };
 
+const factAfterLinkedName = (fact: string, name: string) => {
+  const trimmedFact = fact.trim();
+  const startsWithName = trimmedFact.slice(0, name.length).toLocaleLowerCase() === name.toLocaleLowerCase();
+  const fragment = startsWithName ? trimmedFact.slice(name.length).trimStart() : trimmedFact;
+  return `${/^[,.;:!?]/.test(fragment) ? "" : " "}${fragment}`;
+};
+
 const buildLogoRosterBody = (roster: string[], pageImages: Array<Array<{ src: string; alt: string }>> = [], tileImages: Array<{ src: string; alt: string }> = [], research: LogoResearch[] = [], config?: BlogPost["logoRosterConfig"]) => {
   const sectionNames = ["Quiet Authority", "Distinctive Wordmarks", "Specialist Character", "Modern Restraint", "Confident Typography", "International Scale", "Regional Clarity", "Warmth and Approachability", "Systems That Travel", "Memorable Finishing Details", "Practical Distinction"];
   const observations = [
@@ -86,7 +93,7 @@ const buildLogoRosterBody = (roster: string[], pageImages: Array<Array<{ src: st
     const researched = research[index];
     if (researched) {
       const cleanObservation = (observation: string) => observation.replace("but the duplicate offers no distinct visual variation from entry 50.", "while the restrained treatment keeps the identity visually consistent with the surrounding system.").replace("This tile duplicates entry 51's tightly stacked black Rajah & Tann lettering with Asia set below in orange.", "The tile uses tightly stacked black Rajah & Tann lettering with Asia set below in orange, creating a compact two-level lockup.");
-      html += `<p><a href="${escapeHtml(researched.officialUrl)}" target="_blank" rel="noreferrer noopener"><strong>${escapeHtml(researched.name)}</strong></a> ${escapeHtml(researched.verifiedFact)}</p><p>${highlightPhrase(cleanObservation(researched.observations[0]), logoScanHighlights[entryNumber])}</p><p>${highlightPhrase(cleanObservation(researched.observations[1]), logoScanHighlights[entryNumber])}</p>`;
+      html += `<p><a href="${escapeHtml(researched.officialUrl)}" target="_blank" rel="noreferrer noopener"><strong>${escapeHtml(researched.name)}</strong></a>${escapeHtml(factAfterLinkedName(researched.verifiedFact, researched.name))}</p><p>${highlightPhrase(cleanObservation(researched.observations[0]), logoScanHighlights[entryNumber])}</p><p>${highlightPhrase(cleanObservation(researched.observations[1]), logoScanHighlights[entryNumber])}</p>`;
     }
     else {
       const fallback = config?.entryFallbacks[index % config.entryFallbacks.length];
