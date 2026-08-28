@@ -25,6 +25,18 @@ export type BlogPost = BlogPostSummary & {
   logoTileImages?: Array<{ src: string; alt: string }>;
   logoResearch?: Array<{ number: string; name: string; officialUrl: string; verifiedFact: string; observations: [string, string] }>;
   logoResearchOverrides?: Record<string, { number: string; name: string; officialUrl: string; verifiedFact: string; observations: [string, string] }>;
+  logoRosterConfig?: {
+    listHeading: string;
+    listIntro: string[];
+    sectionNames: string[];
+    sectionIntroductions: string[];
+    sectionBridge: [string, string];
+    entryFallbacks: Array<[string, string]>;
+    findings: Array<{ heading: string; text: string }>;
+    checklistHeading: string;
+    checklistItems: string[];
+    conclusionHtml: string;
+  };
   selectedWorkSlugs?: string[];
   youtubeEmbed?: string;
   tags: string[];

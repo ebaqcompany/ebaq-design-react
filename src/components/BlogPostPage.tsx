@@ -50,7 +50,7 @@ const SelectedWork = ({ selectedWorkSlugs = [] }: { selectedWorkSlugs?: string[]
 
 type LogoResearch = { number: string; name: string; officialUrl: string; verifiedFact: string; observations: [string, string] };
 
-const buildLogoRosterBody = (roster: string[], pageImages: Array<Array<{ src: string; alt: string }>> = [], tileImages: Array<{ src: string; alt: string }> = [], research: LogoResearch[] = []) => {
+const buildLogoRosterBody = (roster: string[], pageImages: Array<Array<{ src: string; alt: string }>> = [], tileImages: Array<{ src: string; alt: string }> = [], research: LogoResearch[] = [], config?: BlogPost["logoRosterConfig"]) => {
   const sectionNames = ["Quiet Authority", "Distinctive Wordmarks", "Specialist Character", "Modern Restraint", "Confident Typography", "International Scale", "Regional Clarity", "Warmth and Approachability", "Systems That Travel", "Memorable Finishing Details", "Practical Distinction"];
   const observations = [
     "I read this as a study in proportion: the name does the work, while the restrained treatment gives it authority.",
@@ -65,15 +65,20 @@ const buildLogoRosterBody = (roster: string[], pageImages: Array<Array<{ src: st
     "The takeaway is simple: one memorable detail can give an otherwise restrained identity a strong visual handle.",
     "I value the balance here between recognition and restraint. It gives the firm a clear signature without overworking the mark."
   ];
-  let html = '<h2 id="ninety-nine-examples">99 Best Law Firm Logos for Design Inspiration</h2><p>Here is the complete 01–99 roster from the current LAW FIRM LOGOS board.</p><p>I am reviewing each mark for clarity, confidence, distinctiveness, and how well its visual logic can extend into a professional identity system.</p><p><strong>Editorial note:</strong> the live board contains exact duplicates at 50 and 60, Allen &amp; Gledhill, and at 51 and 63, Rajah &amp; Tann Asia.</p><p>I have preserved the authoritative order and count rather than silently replacing either entry.</p>';
+  let html = config
+    ? `<h2 id="logo-examples">${escapeHtml(config.listHeading)}</h2>${config.listIntro.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}`
+    : '<h2 id="ninety-nine-examples">99 Best Law Firm Logos for Design Inspiration</h2><p>Here is the complete 01–99 roster from the current LAW FIRM LOGOS board.</p><p>I am reviewing each mark for clarity, confidence, distinctiveness, and how well its visual logic can extend into a professional identity system.</p><p><strong>Editorial note:</strong> the live board contains exact duplicates at 50 and 60, Allen &amp; Gledhill, and at 51 and 63, Rajah &amp; Tann Asia.</p><p>I have preserved the authoritative order and count rather than silently replacing either entry.</p>';
   roster.forEach((name, index) => {
     if (index % 9 === 0) {
       const section = Math.floor(index / 9);
       const sectionNumber = String(section + 1).padStart(2, "0");
-      html += `<h2>${sectionNumber} — ${sectionNames[section]}</h2><p>${observations[section]}</p>`;
+      const sectionName = config?.sectionNames[section] || sectionNames[section];
+      const sectionIntroduction = config?.sectionIntroductions[section] || observations[section];
+      html += `<h2>${sectionNumber} — ${escapeHtml(sectionName)}</h2><p>${escapeHtml(sectionIntroduction)}</p>`;
       const sectionImages = pageImages[section] || [];
       sectionImages.forEach((pageImage) => { html += `<figure><img src="${escapeHtml(pageImage.src)}" alt="${escapeHtml(pageImage.alt)}" loading="lazy"></figure>`; });
-      html += '<p>This section is a comparison of visual decisions rather than a ranking.</p><p>I am looking for the detail that gives each identity a clear role in the wider firm system.</p>';
+      const bridge = config?.sectionBridge || ["This section is a comparison of visual decisions rather than a ranking.", "I am looking for the detail that gives each identity a clear role in the wider firm system."];
+      html += `<p>${escapeHtml(bridge[0])}</p><p>${escapeHtml(bridge[1])}</p>`;
     }
     const entryNumber = String(index + 1).padStart(2, "0");
     html += `<h3>${entryNumber} ${escapeHtml(name)}</h3>`;
@@ -83,8 +88,19 @@ const buildLogoRosterBody = (roster: string[], pageImages: Array<Array<{ src: st
       const cleanObservation = (observation: string) => observation.replace("but the duplicate offers no distinct visual variation from entry 50.", "while the restrained treatment keeps the identity visually consistent with the surrounding system.").replace("This tile duplicates entry 51's tightly stacked black Rajah & Tann lettering with Asia set below in orange.", "The tile uses tightly stacked black Rajah & Tann lettering with Asia set below in orange, creating a compact two-level lockup.");
       html += `<p><a href="${escapeHtml(researched.officialUrl)}" target="_blank" rel="noreferrer noopener"><strong>${escapeHtml(researched.name)}</strong></a> ${escapeHtml(researched.verifiedFact)}</p><p>${highlightPhrase(cleanObservation(researched.observations[0]), logoScanHighlights[entryNumber])}</p><p>${highlightPhrase(cleanObservation(researched.observations[1]), logoScanHighlights[entryNumber])}</p>`;
     }
-    else html += `<p>${observations[index % observations.length]}</p><p>Look for how the visible logo handles name length, contrast, and reduction at smaller sizes.</p>`;
+    else {
+      const fallback = config?.entryFallbacks[index % config.entryFallbacks.length];
+      html += fallback
+        ? `<p>${escapeHtml(fallback[0])}</p><p>${escapeHtml(fallback[1])}</p>`
+        : `<p>${observations[index % observations.length]}</p><p>Look for how the visible logo handles name length, contrast, and reduction at smaller sizes.</p>`;
+    }
   });
+  if (config) {
+    html += `<h2 id="recurring-lessons">What these ${roster.length} examples reveal</h2>`;
+    config.findings.forEach((finding) => { html += `<h4>${escapeHtml(finding.heading)}</h4><p>${escapeHtml(finding.text)}</p>`; });
+    html += `<h2 id="logo-checklist">${escapeHtml(config.checklistHeading)}</h2><ul>${config.checklistItems.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>${config.conclusionHtml}`;
+    return html;
+  }
   html += '<h2 id="recurring-lessons">What these 99 examples reveal</h2><p><strong>Clarity beats symbolism.</strong></p><p>The most useful marks make the firm name easy to recognize before asking a viewer to decode an icon.</p><p><strong>Distinctiveness comes from decisions.</strong></p><p>A specific typographic voice, unexpected proportion, or controlled accent color can separate a firm from a sea of similar identities.</p><p><strong>Design the system, not only the mark.</strong></p><p>A law firm logo must behave on a website, proposal, letterhead, social profile, and sign without losing its character.</p><h2 id="logo-checklist">A practical design checklist</h2><ul><li>Can a new client read the name immediately?</li><li>Does the identity communicate the firm’s actual positioning?</li><li>Does it remain distinctive in one color and at small sizes?</li><li>Can the typography and palette scale into a complete identity system?</li><li>Has the team tested it on real digital and physical touchpoints?</li></ul><h2 id="conclusion">Need help with branding?</h2><p>I help professional-services firms build clear identities and websites that are ready for real client conversations.</p><p>See my <a href="https://www.ebaqdesign.com/work"><strong>past work</strong></a> and <a href="https://www.ebaqdesign.com/start"><strong>get in touch</strong></a> if you want to discuss your firm.</p><h2 id="fox-berman-proof">A verified EBAQ example: Fox Berman</h2><p>Fox Berman is the EBAQ project in this roster.</p><p><a href="/work/fox-berman"><strong>I designed its identity</strong></a> for a boutique law firm in Sint Maarten, balancing a clean all-caps wordmark and distinctive inktraps with a bright orange accent that reflects its Caribbean context.</p><p>The identity extends across the firm’s website, stationery, signage, and other client-facing materials.</p><p>It is a useful example of how a legal brand can feel credible and differentiated without losing professional clarity.</p>';
   html = html.replace(/<p><strong>(Clarity beats symbolism|Distinctiveness comes from decisions|Design the system, not only the mark)\.<\/strong><\/p>/g, (_match, finding) => `<h4>${finding}</h4>`);
   html = html.replace(/<h2 id="ninety-nine-examples">99 Best Law Firm Logos for Design Inspiration<\/h2><p>Here is the complete 01–99 roster from the current LAW FIRM LOGOS board\.<\/p><p>I am reviewing each mark for clarity, confidence, distinctiveness, and how well its visual logic can extend into a professional identity system\.<\/p><p><strong>Editorial note:<\/strong> the live board contains exact duplicates at 50 and 60, Allen &amp; Gledhill, and at 51 and 63, Rajah &amp; Tann Asia\.<\/p><p>I have preserved the authoritative order and count rather than silently replacing either entry\.<\/p>/, "");
@@ -113,11 +129,13 @@ export const BlogPostPage = () => {
     const ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
     const ogDescription = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
     const ogImage = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
+    const twitterImage = document.querySelector<HTMLMetaElement>('meta[name="twitter:image"]');
     const previousCanonical = canonical?.href;
     const previousDescription = description?.content;
     const previousOgTitle = ogTitle?.content;
     const previousOgDescription = ogDescription?.content;
     const previousOgImage = ogImage?.content;
+    const previousTwitterImage = twitterImage?.content;
     const postImage = post.image.src || post.seo.image || "/ebaqdesign-logo-big.svg";
     const absolutePostImage = postImage.startsWith("/") ? `https://ebaqdesign.com${postImage}` : postImage;
     if (canonical) canonical.href = `https://ebaqdesign.com${post.url}`;
@@ -125,12 +143,14 @@ export const BlogPostPage = () => {
     if (ogTitle) ogTitle.content = post.seo.title || post.title;
     if (ogDescription) ogDescription.content = post.seo.description || post.description;
     if (ogImage) ogImage.content = absolutePostImage;
+    if (twitterImage) twitterImage.content = absolutePostImage;
     return () => {
       if (canonical && previousCanonical) canonical.href = previousCanonical;
       if (description && previousDescription) description.content = previousDescription;
       if (ogTitle && previousOgTitle) ogTitle.content = previousOgTitle;
       if (ogDescription && previousOgDescription) ogDescription.content = previousOgDescription;
       if (ogImage && previousOgImage) ogImage.content = previousOgImage;
+      if (twitterImage && previousTwitterImage) twitterImage.content = previousTwitterImage;
     };
   }, [post]);
 
@@ -141,7 +161,7 @@ export const BlogPostPage = () => {
   const postImage = post.image.src || post.seo.image || "/ebaqdesign-logo-big.svg";
   const absolutePostImage = postImage.startsWith("/") ? `https://ebaqdesign.com${postImage}` : postImage;
   const research = post.logoResearch?.map((entry) => post.logoResearchOverrides?.[entry.number] || entry);
-  const articleBody = normalizeVideoEmbeds(post.logoRoster ? buildLogoRosterBody(post.logoRoster, post.logoPageImages, post.logoTileImages, research) : post.body || `<p>${post.description}</p>`).replace(/\s+src=(['"])\1/gi, "").replace(/\s+srcset=(['"])\1/gi, "");
+  const articleBody = normalizeVideoEmbeds(post.logoRoster ? buildLogoRosterBody(post.logoRoster, post.logoPageImages, post.logoTileImages, research, post.logoRosterConfig) : post.body || `<p>${post.description}</p>`).replace(/\s+src=(['"])\1/gi, "").replace(/\s+srcset=(['"])\1/gi, "");
   const articleIntro = post.intro ? normalizeVideoEmbeds(post.intro) : "";
   const hasInlineImages = /<img\b/i.test(articleBody);
   const youtubeEmbed = post.youtubeEmbed;
