@@ -15,6 +15,10 @@ import { NotFoundPage } from "./NotFoundPage";
 import { Portfolio16Project, type Portfolio16ProjectProps } from "./Portfolio16";
 
 const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const toSchemaDate = (date: string) => {
+  const parsed = new Date(`${date} 00:00:00 UTC`);
+  return Number.isNaN(parsed.getTime()) ? date : parsed.toISOString().slice(0, 10);
+};
 const selectedWorkHighlights: Record<string, string> = { "next-dimension": "healthcare", "fox-berman": "law firm", elevate: "SaaS", aero: "clinical", brevidee: "video-editing", wingnut: "high-end interiors", ventur: "AI travel planner", "airport-executive": "London chauffeur", sweetgrass: "cannabis dispensary", periti: "HubSpot consultancy", medihuanna: "medicinal cannabis" };
 const logoScanHighlights: Record<string, string> = { "01": "formal, distinctive tone", "05": "purple uppercase serif wordmark", "20": "compact two-level lockup", "50": "purple uppercase serif wordmark", "60": "small centered strapline", "63": "slim vertical divider", "84": "open, geometric lettering", "99": "strong visual handle" };
 const highlightPhrase = (text: string, phrase?: string) => { if (!phrase) return escapeHtml(text); const parts = text.split(phrase); return parts.map((part, index) => `${escapeHtml(part)}${index < parts.length - 1 ? `<strong>${escapeHtml(phrase)}</strong>` : ""}`).join(""); };
@@ -179,7 +183,7 @@ export const BlogPostPage = () => {
     name: post.title,
     description: post.description,
     thumbnailUrl: [`https://i.ytimg.com/vi/${youtubeVideoId}/hqdefault.jpg`],
-    uploadDate: post.date,
+    uploadDate: toSchemaDate(post.date),
     embedUrl: youtubeEmbed,
     contentUrl: `https://www.youtube.com/watch?v=${youtubeVideoId}`,
   } : null;
