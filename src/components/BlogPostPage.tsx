@@ -33,7 +33,10 @@ const buildLogoRedesignExamples = (examples: NonNullable<BlogPost["logoRedesignE
     const comparison = example.image
       ? `<img src="${escapeHtml(example.image)}" alt="${escapeHtml(example.name)} logo before and after redesign" loading="lazy">`
       : `<div><div><span>Before</span><img src="${escapeHtml(example.before)}" alt="${escapeHtml(example.name)} logo before redesign" loading="lazy"></div><div><span>After</span><img src="${escapeHtml(example.after)}" alt="${escapeHtml(example.name)} logo after redesign" loading="lazy"></div></div>`;
-    return `${heading}<p>${escapeHtml(example.summary)}</p><figure class="logo-redesign-pair${example.image ? " logo-redesign-pair--baked" : ""}">${comparison}<figcaption>${escapeHtml(example.name)} before and after logo redesign by Ebaqdesign.</figcaption></figure><h4>What changed</h4><ul>${changes}</ul>`;
+    const credit = example.slug === "ccl"
+      ? `<p>This identity was designed by me while I was working at <a href="https://cghnyc.com/" target="_blank" rel="noopener noreferrer"><strong>Chermayeff &amp; Geismar &amp; Haviv</strong></a>.</p>`
+      : "";
+    return `${heading}<p>${escapeHtml(example.summary)}</p>${credit}<figure class="logo-redesign-pair${example.image ? " logo-redesign-pair--baked" : ""}">${comparison}<figcaption>${escapeHtml(example.name)} before and after logo redesign by Ebaqdesign.</figcaption></figure><h4>What changed</h4><ul>${changes}</ul>`;
   }).join("");
   return `<h2 id="logo-redesign-examples">${examples.length} Logo Redesigns: Before and After</h2><p>These are real redesigns from my archive, ranging from careful refinements to complete identity changes.</p><p>For each example, compare the original problem with the final design and look at the specific choices that improved clarity, distinction, and usability.</p>${entries}`;
 };
@@ -184,7 +187,7 @@ export const BlogPostPage = () => {
   if (!post) return <div className="min-h-screen bg-white"><Navbar16 /><main className="container px-[5%] py-28"><p>Loading article…</p></main></div>;
 
   const canonicalUrl = `https://ebaqdesign.com${post.url}`;
-  const postImage = post.image.src || post.seo.image || "/ebaqdesign-logo-big.svg";
+  const postImage = post.seo.image || post.image.src || "/ebaqdesign-logo-big.svg";
   const absolutePostImage = postImage.startsWith("/") ? `https://ebaqdesign.com${postImage}` : postImage;
   const research = post.logoResearch?.map((entry) => post.logoResearchOverrides?.[entry.number] || entry);
   const redesignExamples = post.logoRedesignExamples?.length ? buildLogoRedesignExamples(post.logoRedesignExamples) : "";

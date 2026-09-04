@@ -693,6 +693,10 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   margin: 2.5rem 0;
 }
 
+.blog-rich-text li > strong:first-child {
+  font-weight: 700;
+}
+
 .blog-rich-text figure > div {
   max-width: 100%;
 }
@@ -762,8 +766,28 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
 }
 
 .blog-rich-text iframe {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.blog-rich-text figure.w-richtext-figure-type-video {
+  width: 100%;
+  padding: 0 !important;
+}
+
+.blog-rich-text figure.w-richtext-figure-type-video > div {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.blog-rich-text figure.w-richtext-figure-type-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .blog-video-with-poster > div {
