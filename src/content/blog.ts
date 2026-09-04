@@ -38,6 +38,16 @@ export type BlogPost = BlogPostSummary & {
     conclusionHtml: string;
   };
   selectedWorkSlugs?: string[];
+  logoRedesignExamples?: Array<{
+    slug: string;
+    name: string;
+    before: string;
+    after: string;
+    image?: string;
+    summary: string;
+    changes: string[];
+    caseStudyUrl?: string;
+  }>;
   youtubeEmbed?: string;
   tags: string[];
   seo: {

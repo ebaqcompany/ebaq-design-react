@@ -703,6 +703,64 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   display: block;
 }
 
+.blog-rich-text .logo-redesign-pair > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid #111;
+}
+
+.blog-rich-text .logo-redesign-pair > div > div {
+  position: relative;
+  display: grid;
+  min-height: 240px;
+  place-items: center;
+  background: #fff;
+  padding: 2rem;
+}
+
+.blog-rich-text .logo-redesign-pair span {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 1;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.65rem;
+  text-transform: uppercase;
+}
+
+.blog-rich-text .logo-redesign-pair img {
+  width: min(80%, 480px);
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.blog-rich-text .logo-redesign-pair--baked > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: initial;
+}
+
+@media (max-width: 640px) {
+  .blog-rich-text .logo-redesign-pair > div {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-rich-text .logo-redesign-pair > div > div {
+    min-height: 190px;
+  }
+}
+
 .blog-rich-text iframe {
   width: 100%;
   aspect-ratio: 16 / 9;

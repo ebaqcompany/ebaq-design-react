@@ -806,7 +806,10 @@
     "category": "Branding",
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
-    "image": { "src": "", "alt": "Best Cannabis Dispensary Logos in 2026" }
+    "image": {
+      "src": "",
+      "alt": "Best Cannabis Dispensary Logos in 2026"
+    }
   },
   {
     "slug": "best-cursive-fonts",
@@ -1179,7 +1182,10 @@
     "category": "Branding",
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
-    "image": { "src": "", "alt": "How To Use A.I. for Brand Strategy in 2026" }
+    "image": {
+      "src": "",
+      "alt": "How To Use A.I. for Brand Strategy in 2026"
+    }
   },
   {
     "slug": "brand-strategy-books",
@@ -1959,7 +1965,10 @@
     "category": "Branding",
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
-    "image": { "src": "", "alt": "10 Best Framer Templates in 2026" }
+    "image": {
+      "src": "",
+      "alt": "10 Best Framer Templates in 2026"
+    }
   },
   {
     "slug": "free-logo-makers",
@@ -2634,15 +2643,15 @@
   {
     "slug": "logo-redesign",
     "url": "/blog/logo-redesign",
-    "title": "How To Redesign A Company Logo in 2026",
-    "description": "Learn how to redesign a company logo in 2026. Step-by-step guide for refreshing your brand identity.",
+    "title": "How to Redesign a Logo: 17 Before & After Examples",
+    "description": "A comprehensive logo redesign guide with 17 real before-and-after examples, a practical process, and the decisions behind every transformation.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "readTime": "20 min read",
+    "date": "Sep 4, 2026",
     "image": {
-      "src": "https://cdn.prod.website-files.com/5de2db6d3719a1e2f3e4454c/67673ced745f6cfaac738712_Arek2-papers2.jpg",
-      "alt": "How To Redesign A Company Logo in 2026"
+      "src": "/content/blog/logo-redesign/cover.webp",
+      "alt": "Logo redesign before and after examples arranged on an Ebaqdesign cutting-mat grid"
     }
   },
   {
@@ -2681,7 +2690,10 @@
     "category": "Branding",
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
-    "image": { "src": "", "alt": "How To Sketch Logo Ideas Like a Pro in 2026" }
+    "image": {
+      "src": "",
+      "alt": "How To Sketch Logo Ideas Like a Pro in 2026"
+    }
   },
   {
     "slug": "logo-sketches",

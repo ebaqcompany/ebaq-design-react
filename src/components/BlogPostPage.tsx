@@ -23,6 +23,21 @@ const selectedWorkHighlights: Record<string, string> = { "next-dimension": "heal
 const logoScanHighlights: Record<string, string> = { "01": "formal, distinctive tone", "05": "purple uppercase serif wordmark", "20": "compact two-level lockup", "50": "purple uppercase serif wordmark", "60": "small centered strapline", "63": "slim vertical divider", "84": "open, geometric lettering", "99": "strong visual handle" };
 const highlightPhrase = (text: string, phrase?: string) => { if (!phrase) return escapeHtml(text); const parts = text.split(phrase); return parts.map((part, index) => `${escapeHtml(part)}${index < parts.length - 1 ? `<strong>${escapeHtml(phrase)}</strong>` : ""}`).join(""); };
 
+const buildLogoRedesignExamples = (examples: NonNullable<BlogPost["logoRedesignExamples"]>) => {
+  const entries = examples.map((example, index) => {
+    const title = `${String(index + 1).padStart(2, "0")} — ${escapeHtml(example.name)}`;
+    const heading = example.caseStudyUrl
+      ? `<h3><a href="${escapeHtml(example.caseStudyUrl)}"><strong>${title}</strong></a></h3>`
+      : `<h3>${title}</h3>`;
+    const changes = example.changes.map((change) => `<li>${escapeHtml(change)}</li>`).join("");
+    const comparison = example.image
+      ? `<img src="${escapeHtml(example.image)}" alt="${escapeHtml(example.name)} logo before and after redesign" loading="lazy">`
+      : `<div><div><span>Before</span><img src="${escapeHtml(example.before)}" alt="${escapeHtml(example.name)} logo before redesign" loading="lazy"></div><div><span>After</span><img src="${escapeHtml(example.after)}" alt="${escapeHtml(example.name)} logo after redesign" loading="lazy"></div></div>`;
+    return `${heading}<p>${escapeHtml(example.summary)}</p><figure class="logo-redesign-pair${example.image ? " logo-redesign-pair--baked" : ""}">${comparison}<figcaption>${escapeHtml(example.name)} before and after logo redesign by Ebaqdesign.</figcaption></figure><h4>What changed</h4><ul>${changes}</ul>`;
+  }).join("");
+  return `<h2 id="logo-redesign-examples">${examples.length} Logo Redesigns: Before and After</h2><p>These are real redesigns from my archive, ranging from careful refinements to complete identity changes.</p><p>For each example, compare the original problem with the final design and look at the specific choices that improved clarity, distinction, and usability.</p>${entries}`;
+};
+
 const SelectedWork = ({ selectedWorkSlugs = [] }: { selectedWorkSlugs?: string[] }) => {
   const projects = [...selectedWorkSlugs.map((slug) => caseStudies.find((study) => study.slug === slug)).filter(Boolean), ...caseStudies.filter((study) => !selectedWorkSlugs.includes(study.slug))].filter((study, index, all) => study && all.findIndex((item) => item?.slug === study.slug) === index);
   const [index, setIndex] = useState(0);
@@ -172,7 +187,9 @@ export const BlogPostPage = () => {
   const postImage = post.image.src || post.seo.image || "/ebaqdesign-logo-big.svg";
   const absolutePostImage = postImage.startsWith("/") ? `https://ebaqdesign.com${postImage}` : postImage;
   const research = post.logoResearch?.map((entry) => post.logoResearchOverrides?.[entry.number] || entry);
-  const articleBody = normalizeVideoEmbeds(post.logoRoster ? buildLogoRosterBody(post.logoRoster, post.logoPageImages, post.logoTileImages, research, post.logoRosterConfig) : post.body || `<p>${post.description}</p>`).replace(/\s+src=(['"])\1/gi, "").replace(/\s+srcset=(['"])\1/gi, "");
+  const redesignExamples = post.logoRedesignExamples?.length ? buildLogoRedesignExamples(post.logoRedesignExamples) : "";
+  const baseBody = post.logoRoster ? buildLogoRosterBody(post.logoRoster, post.logoPageImages, post.logoTileImages, research, post.logoRosterConfig) : post.body || `<p>${post.description}</p>`;
+  const articleBody = normalizeVideoEmbeds(redesignExamples ? baseBody.replace(/<h2[^>]*>Conclusion<\/h2>/i, `${redesignExamples}<h2 id="conclusion">Conclusion</h2>`) : baseBody).replace(/\s+src=(['"])\1/gi, "").replace(/\s+srcset=(['"])\1/gi, "");
   const articleIntro = post.intro ? normalizeVideoEmbeds(post.intro) : "";
   const hasInlineImages = /<img\b/i.test(articleBody);
   const youtubeEmbed = post.youtubeEmbed;

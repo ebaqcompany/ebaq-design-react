@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="900" viewBox="0 0 1600 900">
+  <style>image { transform-box: fill-box; transform-origin: center; transform: scale(.72); }</style>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse" patternTransform="translate(-16 -11)">
+      <path d="M32 0H0V32" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#003d52" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="#00afec"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <g opacity=".55" stroke="#fff" stroke-width="2">
+    <path d="M64 64h80M64 64v80M1536 64h-80M1536 64v80M64 836h80M64 836v-80M1536 836h-80M1536 836v-80"/>
+    <circle cx="800" cy="450" r="280" fill="none" stroke-dasharray="5 11"/>
+  </g>
+
+  <g transform="translate(80 92) rotate(-7 210 120)" filter="url(#shadow)">
+    <rect width="420" height="240" rx="4" fill="#fff"/>
+    <image x="28" y="28" width="364" height="184" xlink:href="ae-after-crop.png" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  <g transform="translate(555 42) rotate(4 190 115)" filter="url(#shadow)">
+    <rect width="380" height="230" rx="4" fill="#fff"/>
+    <image x="25" y="23" width="330" height="184" xlink:href="periti-after-crop.png" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  <g transform="translate(1065 92) rotate(8 210 120)" filter="url(#shadow)">
+    <rect width="420" height="240" rx="4" fill="#fff"/>
+    <image x="28" y="28" width="364" height="184" xlink:href="sweetgrass-after-crop.png" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <g transform="translate(38 352) rotate(5 190 115)" filter="url(#shadow)">
+    <rect width="380" height="230" rx="4" fill="#fff"/>
+    <image x="25" y="23" width="330" height="184" xlink:href="ccl-after-crop.png" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  <g transform="translate(470 300) rotate(-3 250 145)" filter="url(#shadow)">
+    <rect width="500" height="290" rx="4" fill="#fff"/>
+    <image x="28" y="28" width="444" height="234" xlink:href="medihuanna-after-crop.png" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  <g transform="translate(1020 342) rotate(-6 250 140)" filter="url(#shadow)">
+    <rect width="500" height="280" rx="4" fill="#fff"/>
+    <image x="28" y="23" width="444" height="234" xlink:href="sukoon-after-crop.png" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <g transform="translate(118 638) rotate(-5 190 105)" filter="url(#shadow)">
+    <rect width="380" height="210" rx="4" fill="#fff"/>
+    <image x="25" y="18" width="330" height="174" xlink:href="probasket-after-crop.png" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  <g transform="translate(605 646) rotate(3 190 105)" filter="url(#shadow)">
+    <rect width="380" height="210" rx="4" fill="#fff"/>
+    <image x="25" y="18" width="330" height="174" xlink:href="lyntics-after-crop.png" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  <g transform="translate(1080 650) rotate(6 190 105)" filter="url(#shadow)">
+    <rect width="380" height="210" rx="4" fill="#fff"/>
+    <image x="25" y="18" width="330" height="174" xlink:href="flush-after-crop.png" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+</svg>
