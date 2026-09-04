@@ -10,8 +10,12 @@ const paths = [...sitemap.matchAll(/<loc>https:\/\/ebaqdesign\.com([^<]*)<\/loc>
 
 for (const path of paths) {
   const destination = join(outputDir.pathname, path, 'index.html')
+  const canonicalUrl = `https://www.ebaqdesign.com${path}`
+  const routeHtml = indexHtml
+    .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${canonicalUrl}" />`)
+    .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, `<meta property="og:url" content="${canonicalUrl}" />`)
   await mkdir(dirname(destination), { recursive: true })
-  await writeFile(destination, indexHtml)
+  await writeFile(destination, routeHtml)
 }
 
 await writeFile(new URL('404.html', outputDir), indexHtml)

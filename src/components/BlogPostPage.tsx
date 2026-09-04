@@ -165,9 +165,9 @@ export const BlogPostPage = () => {
     const previousOgDescription = ogDescription?.content;
     const previousOgImage = ogImage?.content;
     const previousTwitterImage = twitterImage?.content;
-    const postImage = post.image.src || post.seo.image || "/ebaqdesign-logo-big.svg";
-    const absolutePostImage = postImage.startsWith("/") ? `https://ebaqdesign.com${postImage}` : postImage;
-    if (canonical) canonical.href = `https://ebaqdesign.com${post.url}`;
+    const postImage = post.seo.image || post.image.src || "/ebaqdesign-logo-big.svg";
+    const absolutePostImage = postImage.startsWith("/") ? `https://www.ebaqdesign.com${postImage}` : postImage;
+    if (canonical) canonical.href = `https://www.ebaqdesign.com${post.url}`;
     if (description) description.content = post.seo.description || post.description;
     if (ogTitle) ogTitle.content = post.seo.title || post.title;
     if (ogDescription) ogDescription.content = post.seo.description || post.description;
@@ -186,9 +186,9 @@ export const BlogPostPage = () => {
   if (missing) return <NotFoundPage />;
   if (!post) return <div className="min-h-screen bg-white"><Navbar16 /><main className="container px-[5%] py-28"><p>Loading article…</p></main></div>;
 
-  const canonicalUrl = `https://ebaqdesign.com${post.url}`;
+  const canonicalUrl = `https://www.ebaqdesign.com${post.url}`;
   const postImage = post.seo.image || post.image.src || "/ebaqdesign-logo-big.svg";
-  const absolutePostImage = postImage.startsWith("/") ? `https://ebaqdesign.com${postImage}` : postImage;
+  const absolutePostImage = postImage.startsWith("/") ? `https://www.ebaqdesign.com${postImage}` : postImage;
   const research = post.logoResearch?.map((entry) => post.logoResearchOverrides?.[entry.number] || entry);
   const redesignExamples = post.logoRedesignExamples?.length ? buildLogoRedesignExamples(post.logoRedesignExamples) : "";
   const baseBody = post.logoRoster ? buildLogoRosterBody(post.logoRoster, post.logoPageImages, post.logoTileImages, research, post.logoRosterConfig) : post.body || `<p>${post.description}</p>`;
