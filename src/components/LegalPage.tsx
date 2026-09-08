@@ -12,7 +12,7 @@ function LegalPage({ title, updated, description, sections }: { title: string; u
     const descriptionMeta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
     const previous = canonical?.href
     const previousDescription = descriptionMeta?.content
-    if (canonical) canonical.href = `https://ebaqdesign.com${path}`
+    if (canonical) canonical.href = `https://www.ebaqdesign.com${path}`
     if (descriptionMeta) descriptionMeta.content = description
     return () => {
       if (canonical && previous) canonical.href = previous
@@ -25,7 +25,7 @@ function LegalPage({ title, updated, description, sections }: { title: string; u
       <Helmet>
         <title>{title} | Ebaqdesign</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href={`https://ebaqdesign.com${path}`} />
+        <link rel="canonical" href={`https://www.ebaqdesign.com${path}`} />
       </Helmet>
       <Navbar16 />
       <main className="px-[5%] py-16 md:py-24 lg:py-28">

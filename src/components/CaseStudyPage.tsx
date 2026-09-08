@@ -43,7 +43,7 @@ export const CaseStudyPage = () => {
       element.content = item.content;
       return { element, originalContent, created: !existing };
     });
-    if (canonical) canonical.href = `https://ebaqdesign.com/work/${study.slug}`;
+    if (canonical) canonical.href = `https://www.ebaqdesign.com/work/${study.slug}`;
 
     return () => {
       document.title = previousTitle;
@@ -57,8 +57,8 @@ export const CaseStudyPage = () => {
 
   if (!study) return <NotFoundPage />;
 
-  const canonicalUrl = `https://ebaqdesign.com/work/${study.slug}`;
-  const socialImage = study.preview.src.startsWith("/") ? `https://ebaqdesign.com${study.preview.src}` : study.preview.src;
+  const canonicalUrl = `https://www.ebaqdesign.com/work/${study.slug}`;
+  const socialImage = study.preview.src.startsWith("/") ? `https://www.ebaqdesign.com${study.preview.src}` : study.preview.src;
 
   const addPreviewImages = (project: NonNullable<typeof study.nextProject>) => {
     const targetStudy = caseStudies.find((caseStudy) => `/work/${caseStudy.slug}` === project.url);

@@ -22,7 +22,7 @@ export function ShopPage() {
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]')
     const previous = canonical?.href
     const previousDescription = description?.content
-    if (canonical) canonical.href = 'https://ebaqdesign.com/shop'
+    if (canonical) canonical.href = 'https://www.ebaqdesign.com/shop'
     if (description) description.content = 'Practical branding guides, courses and templates for creative professionals and business owners.'
     return () => {
       if (canonical && previous) canonical.href = previous
@@ -32,7 +32,7 @@ export function ShopPage() {
 
   return (
     <div className="relative bg-white text-black">
-      <Helmet><title>Branding Resources | Ebaq Design</title><meta name="description" content="Practical branding guides, courses and templates for creative professionals and business owners." /><link rel="canonical" href="https://ebaqdesign.com/shop" /></Helmet>
+      <Helmet><title>Branding Resources | Ebaq Design</title><meta name="description" content="Practical branding guides, courses and templates for creative professionals and business owners." /><link rel="canonical" href="https://www.ebaqdesign.com/shop" /></Helmet>
       <Navbar16 />
       <main>
         <header className="px-[5%] pb-12 pt-16 text-center md:pb-16 md:pt-24 lg:pb-20 lg:pt-28">

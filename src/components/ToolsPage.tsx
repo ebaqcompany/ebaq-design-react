@@ -55,7 +55,7 @@ export function ToolsPage() {
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]')
     const previous = canonical?.href
     const previousDescription = description?.content
-    if (canonical) canonical.href = 'https://ebaqdesign.com/tools'
+    if (canonical) canonical.href = 'https://www.ebaqdesign.com/tools'
     if (description) description.content = 'Accelerate your branding with free online tools. AI brand consultant, name generator, slogan creator, and more to streamline your brand development process.'
     return () => {
       if (canonical && previous) canonical.href = previous
@@ -68,7 +68,7 @@ export function ToolsPage() {
       <Helmet>
         <title>Free Branding Tools | Name Generator, AI Consultant & More | Ebaqdesign</title>
         <meta name="description" content="Accelerate your branding with free online tools. AI brand consultant, name generator, slogan creator, and more to streamline your brand development process." />
-        <link rel="canonical" href="https://ebaqdesign.com/tools" />
+        <link rel="canonical" href="https://www.ebaqdesign.com/tools" />
       </Helmet>
       <Navbar16 />
       <main>

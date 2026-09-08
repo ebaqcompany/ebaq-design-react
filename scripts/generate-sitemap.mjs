@@ -9,7 +9,7 @@ const loadTypeScriptModule = async (path) => {
   return import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`)
 }
 
-const siteUrl = 'https://ebaqdesign.com'
+const siteUrl = 'https://www.ebaqdesign.com'
 const blog = JSON.parse(await readFile(new URL('../public/content/blog/index.json', import.meta.url), 'utf8'))
 const podcast = JSON.parse(await readFile(new URL('../public/content/podcast/index.json', import.meta.url), 'utf8'))
 const { caseStudies } = await loadTypeScriptModule('../src/data/caseStudies.ts')

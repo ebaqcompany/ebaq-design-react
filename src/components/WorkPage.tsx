@@ -52,8 +52,8 @@ export const WorkPage = () => {
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://ebaqdesign.com/work" />
-      <link rel="canonical" href="https://ebaqdesign.com/work" />
+      <meta property="og:url" content="https://www.ebaqdesign.com/work" />
+      <link rel="canonical" href="https://www.ebaqdesign.com/work" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />

@@ -12,7 +12,7 @@ export const PodcastPage = () => {
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     const previousCanonical = canonical?.href;
     const previousDescription = description?.content;
-    if (canonical) canonical.href = 'https://ebaqdesign.com/podcast';
+    if (canonical) canonical.href = 'https://www.ebaqdesign.com/podcast';
     if (description) description.content = 'Interviews with branding experts, creative leaders, and entrepreneurs about building memorable brands.';
     fetch(PODCAST_INDEX_URL).then((response) => { if (!response.ok) throw new Error("Unable to load podcast index"); return response.json() as Promise<PodcastEpisodeSummary[]>; }).then(setEpisodes).catch(console.error);
     return () => {

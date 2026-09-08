@@ -248,9 +248,9 @@ export const LawFirmLanding = () => (
         name="keywords"
         content="law firm branding, law firm website design, branding for lawyers, legal branding agency, logo design for law firms, brand identity attorney, law firm web design, lawyer branding, legal website design"
       />
-      <link rel="canonical" href="https://ebaqdesign.com/law-firm-branding" />
+      <link rel="canonical" href="https://www.ebaqdesign.com/law-firm-branding" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://ebaqdesign.com/law-firm-branding" />
+      <meta property="og:url" content="https://www.ebaqdesign.com/law-firm-branding" />
       <meta property="og:title" content="Law Firm Branding & Web Design | Ebaq Design" />
       <meta
         property="og:description"
@@ -272,7 +272,7 @@ export const LawFirmLanding = () => (
           "@type": "ProfessionalService",
           name: "Ebaq Design",
           description: "Professional branding and website design for law firms",
-          url: "https://ebaqdesign.com/law-firm-branding",
+          url: "https://www.ebaqdesign.com/law-firm-branding",
           areaServed: { "@type": "City", name: "New York City" },
           serviceType: ["Law Firm Branding", "Logo Design", "Website Design"],
           founder: { "@type": "Person", name: "Arek Dvornechuck" },

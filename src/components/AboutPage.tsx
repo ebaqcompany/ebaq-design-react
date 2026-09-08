@@ -11,8 +11,8 @@ export const AboutPage = () => <div className="relative bg-white">
   <Helmet>
     <title>About Arek Dvornechuck | Ebaq Design</title>
     <meta name="description" content="Meet Arek Dvornechuck, a New York-based senior designer and art director working directly with companies worldwide across brand, web, and motion." />
-    <link rel="canonical" href="https://ebaqdesign.com/about" />
-    <meta property="og:url" content="https://ebaqdesign.com/about" />
+    <link rel="canonical" href="https://www.ebaqdesign.com/about" />
+    <meta property="og:url" content="https://www.ebaqdesign.com/about" />
   </Helmet>
   <Navbar16 />
   <main>

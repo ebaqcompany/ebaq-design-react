@@ -67,7 +67,7 @@ function StorySection({ product }: { product: ShopProduct }) {
 function ProductLandingPage({ product }: { product: ShopProduct }) {
   const legacyRestorationSlugs = [...legacyIncludedContentsSlugs, 'one-page-style-guide']
   const usesLegacyRestorationLayout = legacyRestorationSlugs.includes(product.slug)
-  const canonicalUrl = `https://ebaqdesign.com/shop/${product.slug}`
+  const canonicalUrl = `https://www.ebaqdesign.com/shop/${product.slug}`
   const seoTitle = product.seo?.title ?? `${product.title} | Ebaq Design`
   const seoDescription = product.seo?.description ?? product.description
   useEffect(() => {

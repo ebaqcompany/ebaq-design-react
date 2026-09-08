@@ -7,8 +7,8 @@ export const ContactPage = () => <div className="relative bg-white">
   <Helmet>
     <title>Contact Ebaq Design | Start a Branding or Web Project</title>
     <meta name="description" content="Contact Arek Dvornechuck at Ebaq Design to discuss branding, identity, web design, or ongoing creative direction." />
-    <link rel="canonical" href="https://ebaqdesign.com/contact" />
-    <meta property="og:url" content="https://ebaqdesign.com/contact" />
+    <link rel="canonical" href="https://www.ebaqdesign.com/contact" />
+    <meta property="og:url" content="https://www.ebaqdesign.com/contact" />
   </Helmet>
   <Navbar16 />
   <main className="min-h-[70vh]">

@@ -13,7 +13,7 @@ export const BlogPage = () => {
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     const previousCanonical = canonical?.href;
     const previousDescription = description?.content;
-    if (canonical) canonical.href = 'https://ebaqdesign.com/blog';
+    if (canonical) canonical.href = 'https://www.ebaqdesign.com/blog';
     if (description) description.content = 'Brand strategy, identity, logo design, web design, and creative business insights from Ebaq Design.';
     fetch(BLOG_INDEX_URL).then((response) => {
       if (!response.ok) throw new Error("Unable to load the blog index");
