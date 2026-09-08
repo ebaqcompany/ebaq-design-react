@@ -12,3 +12,5 @@
 - Keep article paragraphs deliberately short: one sentence per paragraph wherever the source structure permits. Use images to break up long sections, placing each relevant image directly under its heading after one introductory sentence.
 - Add selective `<strong>` emphasis to the ideas a reader should be able to scan: key concepts, conclusions, decisions, and action phrases. Do not bold whole paragraphs or make emphasis so frequent that it stops signaling meaning.
 - Retain useful internal and authoritative external links, but remove empty, obsolete, or non-functional links. Do not use placeholder anchors in article navigation; plain list items are preferred unless the target section IDs actually exist.
+
+- When making a substantive article update, set its publication date to today (America/New_York) in both the article JSON and `public/content/blog/index.json`, so the refreshed article appears in the latest blog grid. Do not change the date for spelling, grammar, or similarly minor corrections.
