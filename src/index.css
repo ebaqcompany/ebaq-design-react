@@ -427,6 +427,10 @@
 /*
  * Shared heading scale from the approved Figma type system.
  */
+:is(h1, h2, h3, h4, h5, h6, .heading-h1, .heading-h2, .heading-h3, .heading-h4, .heading-h5, .heading-h6, .heading-h7) {
+  line-height: 0.9 !important;
+}
+
 h1,
 h2,
 h3,

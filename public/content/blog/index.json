@@ -3493,15 +3493,20 @@
   {
     "slug": "top-logo-designers-nyc",
     "url": "/blog/top-logo-designers-nyc",
-    "title": "Top Logo & Brand Identity Designers in NYC 2026",
-    "description": "Discover the top logo and brand identity designers in NYC for 2026. Find expert branding agencies in New York.",
+    "title": "Best Brand Identity Designers in NYC",
+    "description": "Compare 26 independent brand identity designers in NYC, explore their specialties, and learn how to choose the right designer for your project.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
-    "readTime": "5 min read",
+    "readTime": "14 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "https://cdn.prod.website-files.com/5de2db6d3719a1e2f3e4454c/688cde7b9f137270dbffa1f7_top-logo-designers-nyc.jpg",
-      "alt": "Top Logo & Brand Identity Designers in NYC 2026"
+      "src": "/images/blog/top-logo-designers-nyc/best-brand-identity-designers-nyc-cover.webp",
+      "alt": "Best Brand Identity Designers in NYC"
+    },
+    "seo": {
+      "title": "Best Brand Identity Designers in NYC",
+      "description": "Compare 26 independent brand identity designers in NYC, explore their specialties, and learn how to choose the right designer for your project.",
+      "image": "/images/blog/top-logo-designers-nyc/best-brand-identity-designers-nyc-cover.webp"
     }
   },
   {
