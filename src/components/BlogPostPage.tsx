@@ -145,10 +145,12 @@ export const BlogPostPage = () => {
   useEffect(() => {
     setPost(null);
     setMissing(false);
-    fetch(getBlogPostUrl(slug)).then((response) => {
+    const controller = new AbortController();
+    fetch(getBlogPostUrl(slug), { signal: controller.signal }).then((response) => {
       if (!response.ok) throw new Error("Post not found");
       return response.json() as Promise<BlogPost>;
-    }).then(setPost).catch(() => setMissing(true));
+    }).then(setPost).catch(() => { if (!controller.signal.aborted) setMissing(true); });
+    return () => controller.abort();
   }, [slug]);
 
   useEffect(() => {
