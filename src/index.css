@@ -222,11 +222,12 @@
 .available-button--nav,
 .available-button--pricing {
   position: relative;
-  display: block;
+  display: inline-flex;
   box-sizing: border-box;
-  width: 11.5rem;
+  width: fit-content;
+  flex: 0 0 auto;
   height: 3rem;
-  padding: 0;
+  padding: 0 1rem 0 3rem;
   border: 0;
 }
 
@@ -239,11 +240,11 @@
 @media (max-width: 767px) {
   .available-button--nav {
     width: 3rem;
+    padding: 0;
   }
 
   .available-button--nav .available-button-label {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
   }
 }
 
@@ -265,16 +266,13 @@
 
 .available-button--nav .available-button-label,
 .available-button--pricing .available-button-label {
-  position: absolute;
-  top: 50%;
-  left: 3rem;
+  position: relative;
   z-index: 1;
-  transform: translateY(-50%);
-  transition: left 520ms cubic-bezier(.22, 1, .36, 1), transform 520ms cubic-bezier(.22, 1, .36, 1);
+  transform: none;
+  transition: transform 520ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .available-button--pricing .available-button-label {
-  left: 3rem;
   line-height: 1.15;
 }
 
@@ -287,8 +285,7 @@
 
 .available-button--nav:is(:hover, :focus-visible) .available-button-label,
 .available-button--pricing:is(:hover, :focus-visible) .available-button-label {
-  left: 1rem;
-  transform: translateY(-50%);
+  transform: translateX(-2rem);
 }
 
 .available-button--inverse:is(:hover, :focus-visible) .available-button-mark {
@@ -298,8 +295,7 @@
 }
 
 .available-button--inverse:is(:hover, :focus-visible) .available-button-label {
-  left: 3rem;
-  transform: translateY(-50%);
+  transform: none;
 }
 
 .button-inverted {

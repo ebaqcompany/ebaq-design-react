@@ -23,7 +23,7 @@ const metadata = new Map()
 for (const [path, component] of Object.entries({
   '/about': 'AboutPage', '/contact': 'ContactPage', '/blog': 'BlogPage',
   '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage',
-  '/law-firm-branding': 'LawFirmLanding',
+  '/law-firm-branding': 'LawFirmLanding', '/saas-web-design': 'SaasWebDesignLanding',
 })) {
   const source = await read(`../src/components/${component}.tsx`)
   const title = source.match(/<title>([^<{]+)<\/title>/)?.[1]?.replaceAll('&amp;', '&')

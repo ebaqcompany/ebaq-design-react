@@ -28,6 +28,7 @@ const staticPaths = [
   '/privacy-policy',
   '/fulfillment-policy',
   '/law-firm-branding',
+  '/saas-web-design',
 ]
 
 const paths = [

@@ -37,8 +37,8 @@ export const BookerSection = ({ pinLogoToViewport = false, sticky = true }: Book
       {/* Cal.com form - overlays the logo */}
       <div className="container relative z-10">
         <h2 className="mb-4 text-center md:mb-6">
-          <span className="block text-brand-primary">Reserve your spot</span>
-          <span className="block text-white">Book a free intro call</span>
+          <span className="block text-brand-primary">Book a call</span>
+          <span className="block text-white">A free 15-minute introduction</span>
         </h2>
         {/* Desktop - inline embed */}
         <div className="relative hidden h-[760px] md:block">
@@ -57,7 +57,7 @@ export const BookerSection = ({ pinLogoToViewport = false, sticky = true }: Book
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 text-lg font-medium text-black bg-white rounded-[99px] hover:bg-[#00afec] hover:text-white transition-colors"
           >
-            Schedule a Time
+            Book a call
           </a>
         </div>
       </div>

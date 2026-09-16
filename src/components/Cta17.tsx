@@ -49,6 +49,6 @@ export const Cta17Defaults: Props = {
   heading: "Ready to build a brand people remember?",
   description: "Tell me what you’re launching, changing, or trying to make look better.",
   buttons: [
-    { title: "Book a call", href: "https://cal.com/ebaqdesign/15min", external: true },
+    { title: "Book a call", href: "/start" },
   ],
 };

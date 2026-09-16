@@ -27,3 +27,6 @@ dist-ssr
 # Archived ebaqdesign.com website
 /ebaqdesign-com/
 /ebaqdesign.com/
+
+# Local scratch files
+/tmp/

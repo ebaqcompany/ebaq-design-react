@@ -19,6 +19,7 @@ const toSchemaDate = (date: string) => {
   const parsed = new Date(`${date} 00:00:00 UTC`);
   return Number.isNaN(parsed.getTime()) ? date : parsed.toISOString().slice(0, 10);
 };
+const startupPostSlugs = new Set(["saas-logos", "saas-websites", "ai-startups-logos", "ai-startup-landing-page-examples", "tech-startup-logos", "biotech-startup-branding"]);
 const selectedWorkHighlights: Record<string, string> = { "next-dimension": "healthcare", "fox-berman": "law firm", elevate: "SaaS", aero: "clinical", brevidee: "video-editing", wingnut: "high-end interiors", ventur: "AI travel planner", "airport-executive": "London chauffeur", sweetgrass: "cannabis dispensary", periti: "HubSpot consultancy", medihuanna: "medicinal cannabis" };
 const logoScanHighlights: Record<string, string> = { "01": "formal, distinctive tone", "05": "purple uppercase serif wordmark", "20": "compact two-level lockup", "50": "purple uppercase serif wordmark", "60": "small centered strapline", "63": "slim vertical divider", "84": "open, geometric lettering", "99": "strong visual handle" };
 const highlightPhrase = (text: string, phrase?: string) => { if (!phrase) return escapeHtml(text); const parts = text.split(phrase); return parts.map((part, index) => `${escapeHtml(part)}${index < parts.length - 1 ? `<strong>${escapeHtml(phrase)}</strong>` : ""}`).join(""); };
@@ -239,7 +240,9 @@ export const BlogPostPage = () => {
           <div dangerouslySetInnerHTML={{ __html: articleBody }} />
         </Content32>
         <SelectedWork selectedWorkSlugs={post.selectedWorkSlugs} />
-        <Cta17 />
+        {startupPostSlugs.has(post.slug)
+          ? <Cta17 heading="Building a SaaS or AI startup?" description="I design and build startup websites that explain the product fast and turn visitors into demos." buttons={[{ title: "See SaaS web design", href: "/saas-web-design" }, { title: "Book a call", href: "/start" }]} />
+          : <Cta17 />}
       </main>
       <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
     </div>

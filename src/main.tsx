@@ -6,6 +6,7 @@ import './index.css'
 import App from './App.tsx'
 import StartPage from './StartPage.tsx'
 import { LawFirmLanding } from './components/LawFirmLanding.tsx'
+import { SaasWebDesignLanding } from './components/SaasWebDesignLanding.tsx'
 import { CaseStudyPage } from './components/CaseStudyPage.tsx'
 import { WorkPage } from './components/WorkPage.tsx'
 import { BlogPage } from './components/BlogPage.tsx'
@@ -43,6 +44,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<App />} />
           <Route path="/start" element={<StartPage />} />
           <Route path="/law-firm-branding" element={<LawFirmLanding />} />
+          <Route path="/saas-web-design" element={<SaasWebDesignLanding />} />
           <Route path="/work" element={<WorkPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />

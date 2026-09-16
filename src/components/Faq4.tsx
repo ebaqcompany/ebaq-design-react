@@ -103,7 +103,7 @@ export const Faq4Defaults: Props = {
   questions: [
     {
       title: "How fast can you start?",
-      answer: <div className="flex flex-col items-start gap-3"><p>Availability depends on the current schedule. Reserve your spot and I’ll confirm the earliest realistic start date after learning what you need.</p><div className="flex flex-wrap gap-2" aria-label="Current availability"><span role="status" aria-label="1 monthly spot available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>1 monthly spot available</span><span role="status" aria-label="2 weekly spots available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>2 weekly spots available</span></div></div>,
+      answer: <div className="flex flex-col items-start gap-3"><p>Availability depends on the current schedule. Book a call and I’ll confirm the earliest realistic start date after learning what you need.</p><div className="flex flex-wrap gap-2" aria-label="Current availability"><span role="status" aria-label="1 monthly spot available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>1 monthly spot available</span><span role="status" aria-label="2 weekly spots available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>2 weekly spots available</span></div></div>,
     },
     {
       title: "What tools do you use?",
@@ -119,7 +119,7 @@ export const Faq4Defaults: Props = {
     },
     {
       title: "What’s the minimum engagement?",
-      answer: "Focused engagements start at $3,000 for one week. Broader ongoing work typically starts at $10,000 per month, and the contact form helps confirm the right fit before we book a call.",
+      answer: "Focused engagements start at $3,000 for one week. Broader ongoing work typically starts at $10,000 per month, and an intro call helps us confirm the right fit.",
     },
   ],
 };

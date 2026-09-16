@@ -1,10 +1,10 @@
 type Props = { availability?: string; className?: string; inverse?: boolean; nav?: boolean; pricing?: boolean };
 
 export const AvailableButton = ({ availability = "2 spots available", className = "", inverse = false, nav = false, pricing = false }: Props) => (
-  <a href="/contact" className={`available-button${nav ? " available-button--nav" : ""}${pricing ? " available-button--pricing" : ""}${inverse ? " available-button--inverse" : ""} ${className}`.trim()}>
+  <a href="/start" aria-label={nav ? "Book a call" : undefined} className={`available-button${nav ? " available-button--nav" : ""}${pricing ? " available-button--pricing" : ""}${inverse ? " available-button--inverse" : ""} ${className}`.trim()}>
     <span className="available-button-mark">{!nav && !pricing && <img src="/ebaqdesign-logo-bold.svg" alt="" />}</span>
     <span className="available-button-label">
-      <span className="block">Reserve your spot</span>
+      <span className="block">Book a call</span>
       {pricing && <span className="block text-xs font-normal">{availability}</span>}
     </span>
   </a>
