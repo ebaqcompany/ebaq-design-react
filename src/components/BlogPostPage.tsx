@@ -5,6 +5,7 @@ import { TestimonialCarouselArrow } from "./Testimonial32";
 import { getBlogPostUrl, type BlogPost } from "../content/blog";
 import { caseStudies } from "../data/caseStudies";
 import { normalizeVideoEmbeds } from "../content/richText";
+import { buildBlogPostingSchema, buildFaqSchema, buildVideoSchema, resolveFaqPairs, serializeJsonLd } from "../content/structuredData";
 import { BlogPostHeader4 } from "./BlogPostHeader4";
 import { Content32 } from "./Content32";
 import { Cta17 } from "./Cta17";
@@ -15,10 +16,7 @@ import { NotFoundPage } from "./NotFoundPage";
 import { Portfolio16Project, type Portfolio16ProjectProps } from "./Portfolio16";
 
 const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-const toSchemaDate = (date: string) => {
-  const parsed = new Date(`${date} 00:00:00 UTC`);
-  return Number.isNaN(parsed.getTime()) ? date : parsed.toISOString().slice(0, 10);
-};
+const siteUrl = "https://www.ebaqdesign.com";
 const startupPostSlugs = new Set(["saas-logos", "saas-websites", "ai-startups-logos", "ai-startup-landing-page-examples", "tech-startup-logos", "biotech-startup-branding"]);
 const selectedWorkHighlights: Record<string, string> = { "next-dimension": "healthcare", "fox-berman": "law firm", elevate: "SaaS", aero: "clinical", brevidee: "video-editing", wingnut: "high-end interiors", ventur: "AI travel planner", "airport-executive": "London chauffeur", sweetgrass: "cannabis dispensary", periti: "HubSpot consultancy", medihuanna: "medicinal cannabis" };
 const logoScanHighlights: Record<string, string> = { "01": "formal, distinctive tone", "05": "purple uppercase serif wordmark", "20": "compact two-level lockup", "50": "purple uppercase serif wordmark", "60": "small centered strapline", "63": "slim vertical divider", "84": "open, geometric lettering", "99": "strong visual handle" };
@@ -199,17 +197,9 @@ export const BlogPostPage = () => {
   const articleIntro = post.intro ? normalizeVideoEmbeds(post.intro) : "";
   const hasInlineImages = /<img\b/i.test(articleBody);
   const youtubeEmbed = post.youtubeEmbed;
-  const youtubeVideoId = youtubeEmbed?.match(/\/embed\/([^?&#/]+)/i)?.[1];
-  const videoStructuredData = youtubeVideoId ? {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    name: post.title,
-    description: post.description,
-    thumbnailUrl: [`https://i.ytimg.com/vi/${youtubeVideoId}/hqdefault.jpg`],
-    uploadDate: toSchemaDate(post.date),
-    embedUrl: youtubeEmbed,
-    contentUrl: `https://www.youtube.com/watch?v=${youtubeVideoId}`,
-  } : null;
+  const videoStructuredData = buildVideoSchema(post);
+  const articleStructuredData = buildBlogPostingSchema(post, siteUrl);
+  const faqStructuredData = buildFaqSchema(resolveFaqPairs(post, articleBody), canonicalUrl);
   return (
     <div className="relative bg-white">
       <Helmet>
@@ -225,7 +215,9 @@ export const BlogPostPage = () => {
         <meta name="twitter:description" content={post.seo.description || post.description} />
         <meta name="twitter:image" content={absolutePostImage} />
         <link rel="canonical" href={canonicalUrl} />
-        {videoStructuredData && <script type="application/ld+json">{JSON.stringify(videoStructuredData)}</script>}
+        <script type="application/ld+json">{serializeJsonLd(articleStructuredData)}</script>
+        {faqStructuredData && <script type="application/ld+json">{serializeJsonLd(faqStructuredData)}</script>}
+        {videoStructuredData && <script type="application/ld+json">{serializeJsonLd(videoStructuredData)}</script>}
       </Helmet>
       <Navbar16 />
       <NotificationBar />

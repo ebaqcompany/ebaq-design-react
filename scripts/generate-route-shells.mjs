@@ -18,6 +18,7 @@ const indexHtml = await read('../dist/index.html')
 const sitemap = await read('../public/sitemap.xml')
 const paths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => new URL(url).pathname).filter((path) => path !== '/')
 const metadata = new Map()
+const { buildBlogPostingSchema, buildFaqSchema, buildVideoSchema, resolveFaqPairs, serializeJsonLd } = await loadData('../src/content/structuredData.ts')
 
 // Read existing static-page copy so generated titles stay aligned with React.
 for (const [path, component] of Object.entries({
@@ -37,10 +38,12 @@ for (const match of legal.matchAll(/<LegalPage title="([^"]+)" updated="[^"]+" d
   metadata.set(`/${match[1].toLowerCase().replaceAll(' ', '-')}`, { title: `${match[1]} | Ebaqdesign`, description: match[2] })
 }
 metadata.set('/start', { title: 'Book a Call | Ebaq Design', description: 'Book a call with Arek Dvornechuck to discuss your branding, website, or motion design project.' })
+// Roster posts build their body in React, so only posts with a static body can carry FAQ schema here.
+const blogSchemas = (post, path) => [buildBlogPostingSchema({ ...post, url: path }, siteUrl), post.logoRoster ? null : buildFaqSchema(resolveFaqPairs(post, post.body || ''), `${siteUrl}${path}`), buildVideoSchema(post)].filter(Boolean)
 for (const collection of ['blog', 'podcast']) {
   for (const { slug } of await json(`../public/content/${collection}/index.json`)) {
     const post = await json(`../public/content/${collection}/${slug}.json`)
-    metadata.set(`/${collection}/${slug}`, { title: post.seo?.title || post.title, description: post.seo?.description || post.description, image: post.seo?.image || post.image?.src, type: 'article' })
+    metadata.set(`/${collection}/${slug}`, { title: post.seo?.title || post.title, description: post.seo?.description || post.description, image: post.seo?.image || post.image?.src, type: 'article', schemas: collection === 'blog' ? blogSchemas(post, `/blog/${slug}`) : [] })
   }
 }
 const { caseStudies } = await loadData('../src/data/caseStudies.ts')
@@ -62,8 +65,9 @@ function render(path, meta) {
     `<link data-rh="true" rel="canonical" href="${escape(url)}" />`,
     ...Object.entries({ description: meta.description, 'twitter:card': 'summary_large_image', 'twitter:title': meta.socialTitle || meta.title, 'twitter:description': meta.socialDescription || meta.description, 'twitter:image': image }).map(([name, value]) => `<meta data-rh="true" name="${name}" content="${escape(value)}" />`),
     ...Object.entries({ 'og:site_name': 'Ebaq Design', 'og:type': meta.type || 'website', 'og:url': url, 'og:title': meta.socialTitle || meta.title, 'og:description': meta.socialDescription || meta.description, 'og:image': image }).map(([property, value]) => `<meta data-rh="true" property="${property}" content="${escape(value)}" />`),
+    ...(meta.schemas || []).map((schema) => `<script data-rh="true" type="application/ld+json">${serializeJsonLd(schema)}</script>`),
   ]
-  return shell.replace('</head>', `${tags.join('\n    ')}\n  </head>`)
+  return shell.replace('</head>', () => `${tags.join('\n    ')}\n  </head>`)
 }
 for (const path of paths) {
   const destination = join(outputDir.pathname, path)
