@@ -297,7 +297,7 @@ export const Header78 = (props: Header78Props) => {
 };
 
 export const Header78Defaults: Props = {
-  heading: "Strategic branding for\nambitious companies",
+  heading: "Good design\nis good business",
   description: "Hello 👋 Arek here, I’m a senior designer based in NY, working with clients worldwide. I specialize in branding, motion, web.",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],
 
