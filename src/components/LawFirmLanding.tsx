@@ -8,23 +8,22 @@ import {
   BookerSection,
 } from "./index";
 
-// Fox Berman CDN images
-const CDN = "https://cdn.prod.website-files.com/5de2db6d3719a1a1cee44545";
+// Fox Berman images
 
 const FB = {
-  logos: `${CDN}/68e2d4ccccf2d263b1514f7c_fox-berman-logos.png`,
-  cards: `${CDN}/68e2d4e1b725b2d2890a6b37_FoxBerman_cards2.jpg`,
-  web: `${CDN}/68eebc3595149260b83ed0a0_FoxBerman_web2.jpg`,
-  sign2: `${CDN}/68e2d55b3e2a76afeac86840_FoxBerman_sign2.jpg`,
-  sign3: `${CDN}/68e2d50cbc2f8e7f7df16e85_FoxBerman_sign3.jpg`,
-  linkedin: `${CDN}/68e2d575462ce99fd24fd489_FoxBerman-LinkedIn.jpg`,
-  folder: `${CDN}/68e2d5867879ae62a61ef780_FoxBerman-folder.jpg`,
-  letterhead: `${CDN}/68e2db0fa8f710b7f0c9354f_FoxBerman_letterhead.jpg`,
-  letterhead2: `${CDN}/68e2da0ec795495cbadf443c_FoxBerman_letterhead2.jpg`,
-  booklet: `${CDN}/69a09f4f7c15d5cffec68e2d_FoxBerman_booklet%20(1)-p-2000.webp`,
-  favicon: `${CDN}/68e2d89c8972c00821c8aa8e_FoxBerman-favicon.jpg`,
-  pin: `${CDN}/68e2d5f8e9fde343d71d4444_FoxBErman_pin.jpg`,
-  office: `${CDN}/68eacc5fde17cec38b404a98_FoxBerman-office-exterior.jpg`,
+  logos: "/images/site/law-firm-landing/fox-berman-logos.webp",
+  cards: "/images/site/law-firm-landing/foxberman-cards2.webp",
+  web: "/images/site/law-firm-landing/foxberman-web2.webp",
+  sign2: "/images/site/law-firm-landing/foxberman-sign2.webp",
+  sign3: "/images/site/law-firm-landing/foxberman-sign3.webp",
+  linkedin: "/images/site/law-firm-landing/foxberman-linkedin.webp",
+  folder: "/images/site/law-firm-landing/foxberman-folder.webp",
+  letterhead: "/images/site/law-firm-landing/foxberman-letterhead.webp",
+  letterhead2: "/images/site/law-firm-landing/foxberman-letterhead2.webp",
+  booklet: "/images/site/law-firm-landing/foxberman-booklet-1-p-2000.webp",
+  favicon: "/images/site/law-firm-landing/foxberman-favicon.webp",
+  pin: "/images/site/law-firm-landing/foxberman-pin.webp",
+  office: "/images/site/law-firm-landing/foxberman-office-exterior.webp",
 };
 
 // Header rows — Fox Berman case study
@@ -258,7 +257,7 @@ export const LawFirmLanding = () => (
       />
       <meta
         property="og:image"
-        content="https://cdn.prod.website-files.com/5de2db6d3719a1a1cee44545/68e2d4ccccf2d263b1514f7c_fox-berman-logos.png"
+        content="/images/site/law-firm-landing/fox-berman-logos.webp"
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Law Firm Branding & Web Design | Ebaq Design" />

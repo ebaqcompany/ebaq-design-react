@@ -80,7 +80,7 @@ export function CreativeSuiteProof({ product }: { product: ShopProduct }) {
   return (
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto max-w-5xl text-center">
-        <img src="https://cdn.prod.website-files.com/5de2db6d3719a1a1cee44545/5de8003e154e7e4d116936f5_arek-dvornechuck-profile-pic-320.jpg" alt="Arek Dvornechuck" className="mx-auto size-28 object-contain" />
+        <img src="/images/site/creative-suite-sections/arek-dvornechuck-profile-pic-320.webp" alt="Arek Dvornechuck" className="mx-auto size-28 object-contain" />
         <blockquote className="mx-auto mt-8 max-w-4xl text-2xl leading-relaxed md:text-3xl">“{product.story.body}”</blockquote>
         <p className="mt-6 font-semibold">{product.story.byline}</p>
         <img src={product.gallery[0]} alt={`${product.title} complete bundle`} className="mt-12 h-auto w-full object-contain" />

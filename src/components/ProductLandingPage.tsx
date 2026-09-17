@@ -166,7 +166,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
                 <img src={section.image} alt="" className={product.slug === 'strategy-guide' || usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />
                 {product.slug === 'strategy-guide' && section.title === 'Worksheets in various formats' && (
                   <img
-                    src="https://cdn.prod.website-files.com/5de2db6d3719a1a1cee44545/637fb2a21fadf1080bff469d_replace%20logo%20strategy%20worksheets%20trimmed%20zoomed%20optimized.gif"
+                    src="/images/site/product-landing-page/replace-logo-strategy-worksheets-trimmed-zoomed-optimized.gif"
                     alt="Preview of replacing the logo in the Strategy Worksheets"
                     className="mt-4 h-auto w-32 object-contain sm:w-40 xl:absolute xl:-left-6 xl:top-16 xl:mt-0 xl:w-52"
                   />

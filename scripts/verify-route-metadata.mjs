@@ -48,6 +48,20 @@ for (const url of urls) {
     assert.ok(html.includes(`name="description" content="${escape(post.seo?.description || post.description)}"`), path)
   }
 }
+// Every content image must be hosted in this repo: no external hosts, and every local path must exist.
+const { readdir, access } = await import('node:fs/promises')
+const externalImage = /<img\b[^>]*?\ssrc=\\?"https?:\/\/|\ssrcset=\\?"[^"]*https?:\/\/|"(?:src|sourceSrc|image|before|after)":\s*"https?:\/\//i
+const localImage = /"(\/(?:images|case-study|content|portfolio|client-logos|shop-assets)\/[^"\\\s]+?\.(?:webp|jpe?g|png|gif|svg|avif))\\?"/gi
+for (const collection of ['blog', 'podcast']) {
+  for (const name of await readdir(new URL(`../public/content/${collection}/`, import.meta.url))) {
+    if (!name.endsWith('.json')) continue
+    const raw = await read(`../public/content/${collection}/${name}`)
+    assert.ok(!externalImage.test(raw), `${collection}/${name}: image hosted on an external domain; host it under public/ instead`)
+    for (const [, path] of raw.matchAll(localImage)) {
+      await access(new URL(`../public${decodeURIComponent(path)}`, import.meta.url)).catch(() => assert.fail(`${collection}/${name}: missing local image ${path}`))
+    }
+  }
+}
 const missing = await read('../dist/404.html')
 assert.ok(missing.includes('content="noindex,follow"'))
 assert.ok(missing.includes('<title>Page not found | Ebaq Design</title>'))
