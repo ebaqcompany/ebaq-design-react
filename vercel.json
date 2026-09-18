@@ -91,11 +91,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/adobe-fonts",
-      "destination": "/blog/logo-fonts",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/adobe-software-list",
       "destination": "/blog/best-adobe-discounts",
       "statusCode": 301
@@ -126,18 +121,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/baseball-fonts",
-      "destination": "/blog/logo-fonts",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/best-ai-tools",
       "destination": "/blog/ai-design-tools-brand-designers",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/best-cursive-fonts",
-      "destination": "/blog/script-logo-fonts",
       "statusCode": 301
     },
     {
@@ -286,23 +271,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/luxury-fonts",
-      "destination": "/blog/elegant-logo-fonts",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/marketing-frameworks",
       "destination": "/blog/brand-strategy",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/military-fonts",
-      "destination": "/blog/logo-fonts",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/minimalist-fonts",
-      "destination": "/blog/logo-fonts",
       "statusCode": 301
     },
     {
@@ -401,11 +371,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/tattoo-number-fonts",
-      "destination": "/blog/logo-fonts",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/tech-startup-logos-old",
       "destination": "/blog/tech-startup-logos",
       "statusCode": 301
@@ -451,11 +416,6 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/adobe-fonts",
-      "destination": "/blog/logo-fonts",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/adobe-software-list",
       "destination": "/blog/best-adobe-discounts",
       "statusCode": 301
@@ -486,18 +446,8 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/baseball-fonts",
-      "destination": "/blog/logo-fonts",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/best-ai-tools",
       "destination": "/blog/ai-design-tools-brand-designers",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/best-cursive-fonts",
-      "destination": "/blog/script-logo-fonts",
       "statusCode": 301
     },
     {
@@ -646,23 +596,8 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/luxury-fonts",
-      "destination": "/blog/elegant-logo-fonts",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/marketing-frameworks",
       "destination": "/blog/brand-strategy",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/military-fonts",
-      "destination": "/blog/logo-fonts",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/minimalist-fonts",
-      "destination": "/blog/logo-fonts",
       "statusCode": 301
     },
     {
@@ -758,11 +693,6 @@
     {
       "source": "/gear/superhero-logos",
       "destination": "/blog/best-logos",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/tattoo-number-fonts",
-      "destination": "/blog/logo-fonts",
       "statusCode": 301
     },
     {

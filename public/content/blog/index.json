@@ -1,5 +1,103 @@
 [
   {
+    "slug": "adobe-fonts",
+    "url": "/blog/adobe-fonts",
+    "title": "20 Best Adobe Fonts for Designers in 2026",
+    "description": "Explore the best Adobe Fonts for designers in 2026. Find premium typefaces for branding and web design.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "5 min read",
+    "date": "Jan 27, 2026",
+    "image": {
+      "src": "/images/blog/adobe-fonts/4-5dbfac811d7ad1f5b3f9890fbf623102.webp",
+      "alt": "20 Best Adobe Fonts for Designers in 2026"
+    }
+  },
+  {
+    "slug": "best-cursive-fonts",
+    "url": "/blog/best-cursive-fonts",
+    "title": "10 Best Cursive Fonts for Logos & Branding in 2026",
+    "description": "Discover the best cursive fonts for logos in 2026. Find elegant script typefaces for branding projects.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "5 min read",
+    "date": "Jan 27, 2026",
+    "image": {
+      "src": "/images/blog/best-cursive-fonts/cursive-fonts-bg.webp",
+      "alt": "10 Best Cursive Fonts for Logos & Branding in 2026"
+    }
+  },
+  {
+    "slug": "luxury-fonts",
+    "url": "/blog/luxury-fonts",
+    "title": "10 Best Luxury Fonts for Graphic Design in 2026",
+    "description": "Discover the best luxury fonts in 2026. Elegant typefaces for high-end branding and design projects.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "5 min read",
+    "date": "Jan 27, 2026",
+    "image": {
+      "src": "/images/blog/luxury-fonts/luxury-font-for-graphic-design-bg.webp",
+      "alt": "10 Best Luxury Fonts for Graphic Design in 2026"
+    }
+  },
+  {
+    "slug": "minimalist-fonts",
+    "url": "/blog/minimalist-fonts",
+    "title": "Top 10 Fonts For Minimalist Logo Design in 2026",
+    "description": "Discover the best fonts for minimalist logos in 2026. Clean typefaces for modern brand design.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "5 min read",
+    "date": "Jan 27, 2026",
+    "image": {
+      "src": "/images/blog/minimalist-fonts/top-10-fonts-for-minimalist-logo-designbg.webp",
+      "alt": "Top 10 Fonts For Minimalist Logo Design in 2026"
+    }
+  },
+  {
+    "slug": "military-fonts",
+    "url": "/blog/military-fonts",
+    "title": "10 Best Military Fonts for Design & Branding in 2026",
+    "description": "Discover the best military fonts for design in 2026. Find bold typefaces for tactical and army projects.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "5 min read",
+    "date": "Jan 27, 2026",
+    "image": {
+      "src": "/images/blog/military-fonts/military-font-bg.webp",
+      "alt": "10 Best Military Fonts for Design & Branding in 2026"
+    }
+  },
+  {
+    "slug": "baseball-fonts",
+    "url": "/blog/baseball-fonts",
+    "title": "10 Best Baseball Fonts for Design & Branding in 2026",
+    "description": "Discover the best baseball fonts for design in 2026. Find sporty typefaces for athletic branding.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "5 min read",
+    "date": "Jan 27, 2026",
+    "image": {
+      "src": "/images/blog/baseball-fonts/baseball-fonts-bg-ff6057.jpg",
+      "alt": "10 Best Baseball Fonts for Design & Branding in 2026"
+    }
+  },
+  {
+    "slug": "tattoo-number-fonts",
+    "url": "/blog/tattoo-number-fonts",
+    "title": "15 Best Number Fonts for Tattoos [2026 Styles Guide]",
+    "description": "Find the perfect number font for your tattoo. 15 styles from bold to elegant, with placement tips and artist recommendations.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "5 min read",
+    "date": "Jan 28, 2026",
+    "image": {
+      "src": "/images/blog/tattoo-number-fonts/coverimagefonts1-3f4f5915566349c5ca61bc905b3aa5e3.jpg",
+      "alt": "15 Best Number Fonts for Tattoos [2026 Styles Guide]"
+    }
+  },
+  {
     "slug": "sf-pro-alternatives",
     "url": "/blog/sf-pro-alternatives",
     "title": "Top 9 Fonts Similar To SF Pro (Alternatives)",
