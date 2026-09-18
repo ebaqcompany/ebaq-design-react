@@ -1,42 +1,895 @@
 {
   "redirects": [
-    { "source": "/studio", "destination": "/about", "statusCode": 301 },
-    { "source": "/strategy-guide", "destination": "/shop/strategy-guide", "statusCode": 301 },
-    { "source": "/strategy-guide-old", "destination": "/shop/strategy-guide", "statusCode": 301 },
-    { "source": "/naming-guide", "destination": "/shop/naming-guide", "statusCode": 301 },
-    { "source": "/proposal-template", "destination": "/shop/proposal-template", "statusCode": 301 },
-    { "source": "/guidelines-kit", "destination": "/shop/guidelines-kit", "statusCode": 301 },
-    { "source": "/brand-master", "destination": "/shop/brand-master", "statusCode": 301 },
-    { "source": "/storytelling-guide", "destination": "/shop/storytelling-guide", "statusCode": 301 },
-    { "source": "/creative-suite", "destination": "/shop/creative-suite", "statusCode": 301 },
-    { "source": "/one-page-style-guide", "destination": "/shop/one-page-style-guide", "statusCode": 301 },
-    { "source": "/brand-archetypes", "destination": "/shop/brand-archetypes", "statusCode": 301 },
-    { "source": "/brand-archetypes-copy", "destination": "/shop/brand-archetypes", "statusCode": 301 },
-    { "source": "/style-guide-kit", "destination": "/shop/guidelines-kit", "statusCode": 301 },
-    { "source": "/guides", "destination": "/shop", "statusCode": 301 },
-    { "source": "/gear", "destination": "/blog", "statusCode": 301 },
-    { "source": "/gear/:slug", "destination": "/blog/:slug", "statusCode": 301 },
-    { "source": "/work/ami", "destination": "/work", "statusCode": 301 },
-    { "source": "/work/ava-couture", "destination": "/work", "statusCode": 301 },
-    { "source": "/work/carwao", "destination": "/work", "statusCode": 301 },
-    { "source": "/work/focal", "destination": "/work", "statusCode": 301 },
-    { "source": "/work/forward", "destination": "/work", "statusCode": 301 },
-    { "source": "/work/laura-ceara", "destination": "/work", "statusCode": 301 },
-    { "source": "/work/lyntics", "destination": "/work", "statusCode": 301 },
-    { "source": "/work/rentsway", "destination": "/work", "statusCode": 301 },
-    { "source": "/work/snm", "destination": "/work", "statusCode": 301 }
+    {
+      "source": "/studio",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/strategy-guide",
+      "destination": "/shop/strategy-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/strategy-guide-old",
+      "destination": "/shop/strategy-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/naming-guide",
+      "destination": "/shop/naming-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/proposal-template",
+      "destination": "/shop/proposal-template",
+      "statusCode": 301
+    },
+    {
+      "source": "/guidelines-kit",
+      "destination": "/shop/guidelines-kit",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand-master",
+      "destination": "/shop/brand-master",
+      "statusCode": 301
+    },
+    {
+      "source": "/storytelling-guide",
+      "destination": "/shop/storytelling-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/creative-suite",
+      "destination": "/shop/creative-suite",
+      "statusCode": 301
+    },
+    {
+      "source": "/one-page-style-guide",
+      "destination": "/shop/one-page-style-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand-archetypes",
+      "destination": "/shop/brand-archetypes",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand-archetypes-copy",
+      "destination": "/shop/brand-archetypes",
+      "statusCode": 301
+    },
+    {
+      "source": "/style-guide-kit",
+      "destination": "/shop/guidelines-kit",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides",
+      "destination": "/shop",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/adobe-alternatives",
+      "destination": "/blog/illustrator-alternatives",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/adobe-animate-free",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/adobe-black-friday",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/adobe-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/adobe-software-list",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/adobe-stock-contributor",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/adobe-student-offer",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/ai-branding-tools",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/ai-tools-black-friday",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/ai-web-design",
+      "destination": "/blog/midjourney-web-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/baseball-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/best-ai-tools",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/best-cursive-fonts",
+      "destination": "/blog/script-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/best-cyber-security-logos-visual-guardians-of-the-digital-realm",
+      "destination": "/blog/cyber-security-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/best-drawing-tablets-screen",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/best-logo-books",
+      "destination": "/blog/graphic-design-books",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/black-friday",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/brand-design-process",
+      "destination": "/blog/branding-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/brand-strategy-ai",
+      "destination": "/blog/ai-brand-strategy-tool",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/brand-strategy-resources",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/branding-courses",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/contra-fiverr-upwork",
+      "destination": "/blog/logo-design-clients",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/cryptocurrency-logos",
+      "destination": "/blog/crypto-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/dalle3-logo-design",
+      "destination": "/blog/midjourney-logo-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/drawing-tablets-beginners",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/email-marketing-tools-designers",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/framer-templates",
+      "destination": "/blog/wordpress-vs-webflow-vs-framer",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/gifts-designers",
+      "destination": "/blog/graphic-design-books",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/graphic-design-chairs",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/graphic-design-courses",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/graphic-design-desks",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/graphic-design-mouses",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/graphic-design-phone",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/graphic-design-tablet",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/huion-tablets",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/illustrator-free",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/laptop-docking-stations",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/logo-design-courses",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/logo-design-resources",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/logo-designers-nyc",
+      "destination": "/blog/top-logo-designers-nyc",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/logo-redesign-a83ef",
+      "destination": "/blog/logo-redesign",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/logo-sketch",
+      "destination": "/blog/logo-sketches",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/luxury-fonts",
+      "destination": "/blog/elegant-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/marketing-frameworks",
+      "destination": "/blog/brand-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/military-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/minimalist-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/naming-courses",
+      "destination": "/blog/brand-naming",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/nano-banana",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/negative-logo-design-old",
+      "destination": "/blog/negative-space-logo-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/no-code-website",
+      "destination": "/blog/ai-site-builder",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/noise-cancelling-earbuds",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/packaging-design-courses",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/photo-stocks",
+      "destination": "/blog/midjourney-stock-photos",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/photoshop-alternatives",
+      "destination": "/blog/illustrator-alternatives",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/photoshop-free",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/project-management-tools-designers",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/shopify-templates",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/shopify-themes-beauty-products",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/shopify-themes-electronics",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/shopify-themes-jewelry",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/shopify-themes-restaurant",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/squarespace-templates-blog",
+      "destination": "/blog/website-builders-design-portfolios",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/squarespace-templates-portfolios",
+      "destination": "/blog/website-builders-design-portfolios",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/startup-brand-strategy",
+      "destination": "/blog/brand-strategy-framework-startups",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/superhero-logos",
+      "destination": "/blog/best-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/tattoo-number-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/tech-startup-logos-old",
+      "destination": "/blog/tech-startup-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/ultimate-guide-to-logo-design",
+      "destination": "/blog/logo-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/webflow-templates",
+      "destination": "/blog/wordpress-vs-webflow-vs-framer",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/webflow-templates-blog",
+      "destination": "/blog/wordpress-vs-webflow-vs-framer",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/webflow-templates-portfolio",
+      "destination": "/blog/website-builders-design-portfolios",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/webflow-templates-startups",
+      "destination": "/blog/wordpress-vs-webflow-vs-framer",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/adobe-alternatives",
+      "destination": "/blog/illustrator-alternatives",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/adobe-animate-free",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/adobe-black-friday",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/adobe-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/adobe-software-list",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/adobe-stock-contributor",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/adobe-student-offer",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/ai-branding-tools",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/ai-tools-black-friday",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/ai-web-design",
+      "destination": "/blog/midjourney-web-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/baseball-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/best-ai-tools",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/best-cursive-fonts",
+      "destination": "/blog/script-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/best-cyber-security-logos-visual-guardians-of-the-digital-realm",
+      "destination": "/blog/cyber-security-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/best-drawing-tablets-screen",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/best-logo-books",
+      "destination": "/blog/graphic-design-books",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/black-friday",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/brand-design-process",
+      "destination": "/blog/branding-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/brand-strategy-ai",
+      "destination": "/blog/ai-brand-strategy-tool",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/brand-strategy-resources",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/branding-courses",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/contra-fiverr-upwork",
+      "destination": "/blog/logo-design-clients",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/cryptocurrency-logos",
+      "destination": "/blog/crypto-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/dalle3-logo-design",
+      "destination": "/blog/midjourney-logo-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/drawing-tablets-beginners",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/email-marketing-tools-designers",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/framer-templates",
+      "destination": "/blog/wordpress-vs-webflow-vs-framer",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/gifts-designers",
+      "destination": "/blog/graphic-design-books",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/graphic-design-chairs",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/graphic-design-courses",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/graphic-design-desks",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/graphic-design-mouses",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/graphic-design-phone",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/graphic-design-tablet",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/huion-tablets",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/illustrator-free",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/laptop-docking-stations",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/logo-design-courses",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/logo-design-resources",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/logo-designers-nyc",
+      "destination": "/blog/top-logo-designers-nyc",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/logo-redesign-a83ef",
+      "destination": "/blog/logo-redesign",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/logo-sketch",
+      "destination": "/blog/logo-sketches",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/luxury-fonts",
+      "destination": "/blog/elegant-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/marketing-frameworks",
+      "destination": "/blog/brand-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/military-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/minimalist-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/naming-courses",
+      "destination": "/blog/brand-naming",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/nano-banana",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/negative-logo-design-old",
+      "destination": "/blog/negative-space-logo-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/no-code-website",
+      "destination": "/blog/ai-site-builder",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/noise-cancelling-earbuds",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/packaging-design-courses",
+      "destination": "/blog/brand-strategy-courses",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/photo-stocks",
+      "destination": "/blog/midjourney-stock-photos",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/photoshop-alternatives",
+      "destination": "/blog/illustrator-alternatives",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/photoshop-free",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/project-management-tools-designers",
+      "destination": "/blog/ai-design-tools-brand-designers",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/shopify-templates",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/shopify-themes-beauty-products",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/shopify-themes-electronics",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/shopify-themes-jewelry",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/shopify-themes-restaurant",
+      "destination": "/blog/web-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/squarespace-templates-blog",
+      "destination": "/blog/website-builders-design-portfolios",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/squarespace-templates-portfolios",
+      "destination": "/blog/website-builders-design-portfolios",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/startup-brand-strategy",
+      "destination": "/blog/brand-strategy-framework-startups",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/superhero-logos",
+      "destination": "/blog/best-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/tattoo-number-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/tech-startup-logos-old",
+      "destination": "/blog/tech-startup-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/ultimate-guide-to-logo-design",
+      "destination": "/blog/logo-design-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/webflow-templates",
+      "destination": "/blog/wordpress-vs-webflow-vs-framer",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/webflow-templates-blog",
+      "destination": "/blog/wordpress-vs-webflow-vs-framer",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/webflow-templates-portfolio",
+      "destination": "/blog/website-builders-design-portfolios",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/webflow-templates-startups",
+      "destination": "/blog/wordpress-vs-webflow-vs-framer",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/:slug",
+      "destination": "/blog/:slug",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/ami",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/ava-couture",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/carwao",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/focal",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/forward",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/laura-ceara",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/lyntics",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/rentsway",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/snm",
+      "destination": "/work",
+      "statusCode": 301
+    }
   ],
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/additiontx", "destination": "/additiontx.html" },
-    { "source": "/tunetx", "destination": "/tunetx.html" },
-    { "source": "/regenx", "destination": "/regenx.html" },
-    { "source": "/arbor", "destination": "/arbor-biotech.html" },
-    { "source": "/synchron", "destination": "/synchron.html" },
-    { "source": "/blackrock", "destination": "/blackrock.html" },
-    { "source": "/paradromics", "destination": "/paradromics.html" },
-    { "source": "/echo", "destination": "/echo.html" },
-    { "source": "/motif", "destination": "/motif.html" },
-    { "source": "/imper", "destination": "/imper.html" }
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/additiontx",
+      "destination": "/additiontx.html"
+    },
+    {
+      "source": "/tunetx",
+      "destination": "/tunetx.html"
+    },
+    {
+      "source": "/regenx",
+      "destination": "/regenx.html"
+    },
+    {
+      "source": "/arbor",
+      "destination": "/arbor-biotech.html"
+    },
+    {
+      "source": "/synchron",
+      "destination": "/synchron.html"
+    },
+    {
+      "source": "/blackrock",
+      "destination": "/blackrock.html"
+    },
+    {
+      "source": "/paradromics",
+      "destination": "/paradromics.html"
+    },
+    {
+      "source": "/echo",
+      "destination": "/echo.html"
+    },
+    {
+      "source": "/motif",
+      "destination": "/motif.html"
+    },
+    {
+      "source": "/imper",
+      "destination": "/imper.html"
+    }
   ]
 }
