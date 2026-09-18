@@ -736,6 +736,196 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/70s-fonts",
+      "destination": "/blog/best-cursive-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/70s-fonts",
+      "destination": "/blog/best-cursive-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/best-coffee-logos",
+      "destination": "/blog/best-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/best-coffee-logos",
+      "destination": "/blog/best-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/brooklyn-branding",
+      "destination": "/blog/branding-agency-nyc",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/brooklyn-branding",
+      "destination": "/blog/branding-agency-nyc",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/computers-graphic-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/computers-graphic-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/free-graphic-design-software",
+      "destination": "/blog/illustrator-alternatives",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/free-graphic-design-software",
+      "destination": "/blog/illustrator-alternatives",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/futura-alternatives",
+      "destination": "/blog/modern-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/futura-alternatives",
+      "destination": "/blog/modern-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/gotham-alternatives",
+      "destination": "/blog/modern-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/gotham-alternatives",
+      "destination": "/blog/modern-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/graphic-design-tablets",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/graphic-design-tablets",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/healthcare-logos",
+      "destination": "/blog/best-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/healthcare-logos",
+      "destination": "/blog/best-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/helvetica-alternatives",
+      "destination": "/blog/modern-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/helvetica-alternatives",
+      "destination": "/blog/modern-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/indesign-alternatives",
+      "destination": "/blog/illustrator-alternatives",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/indesign-alternatives",
+      "destination": "/blog/illustrator-alternatives",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/laptops-graphic-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/laptops-graphic-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/monitors-graphic-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/monitors-graphic-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/newspaper-fonts",
+      "destination": "/blog/professional-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/newspaper-fonts",
+      "destination": "/blog/professional-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/number-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/number-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/portfolio-templates-framer",
+      "destination": "/blog/website-builders-design-portfolios",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/portfolio-templates-framer",
+      "destination": "/blog/website-builders-design-portfolios",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/printers-graphic-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/printers-graphic-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/square-fonts",
+      "destination": "/blog/modern-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/square-fonts",
+      "destination": "/blog/modern-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/times-alternatives",
+      "destination": "/blog/elegant-logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/times-alternatives",
+      "destination": "/blog/elegant-logo-fonts",
+      "statusCode": 301
+    },
+    {
       "source": "/gear/:slug",
       "destination": "/blog/:slug",
       "statusCode": 301
