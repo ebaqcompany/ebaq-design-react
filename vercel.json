@@ -726,6 +726,16 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/tattoo-number-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
+      "source": "/gear/tattoo-number-fonts",
+      "destination": "/blog/logo-fonts",
+      "statusCode": 301
+    },
+    {
       "source": "/gear/:slug",
       "destination": "/blog/:slug",
       "statusCode": 301
