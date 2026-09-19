@@ -1,6 +1,81 @@
 {
   "redirects": [
     {
+      "source": "/go/adobeacrobatpro",
+      "destination": "https://www.adobe.com/acrobat/online.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobelightroom",
+      "destination": "https://www.adobe.com/products/photoshop-lightroom.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe",
+      "destination": "https://www.adobe.com/?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobecreativecloud",
+      "destination": "https://www.adobe.com/creativecloud.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/stock",
+      "destination": "https://stock.adobe.com/?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/express",
+      "destination": "https://www.adobe.com/express/?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/firefly",
+      "destination": "https://www.adobe.com/products/firefly.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/acrobat",
+      "destination": "https://www.adobe.com/acrobat.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/acrobatpro",
+      "destination": "https://www.adobe.com/acrobat/online.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/lightroom",
+      "destination": "https://www.adobe.com/products/photoshop-lightroom.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/aftereffects",
+      "destination": "https://www.adobe.com/products/aftereffects.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/premierepro",
+      "destination": "https://www.adobe.com/products/premiere.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/indesign",
+      "destination": "https://www.adobe.com/products/indesign.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/illustrator",
+      "destination": "https://www.adobe.com/products/illustrator.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/photoshop",
+      "destination": "https://www.adobe.com/products/photoshop.html?sdid=49F59KY6",
+      "statusCode": 302
+    },
+    {
       "source": "/go/pond5",
       "destination": "https://www.pond5.com?ref=Arek74873",
       "statusCode": 302
@@ -22,7 +97,7 @@
     },
     {
       "source": "/go/adobepodcast",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/?sdid=49F59KY6",
       "statusCode": 302
     },
     {
@@ -177,82 +252,82 @@
     },
     {
       "source": "/go/adobecc",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/creativecloud.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobecc-photoshop",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/products/photoshop.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobecc-student",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/creativecloud/buy/students.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobecc-teams",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/creativecloud/business/teams.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobeillustrator",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/products/illustrator.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobeindesign",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/products/indesign.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobephotoshop",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/products/photoshop.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobexd",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/products/xd.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobefirefly",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/products/firefly.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobepremierepro",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/products/premiere.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobeexpress",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/express/?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobepremiererush",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/products/premiere-rush.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobeacrobat",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/acrobat.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobeaftereffects",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/products/aftereffects.html?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobespark",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://www.adobe.com/express/?sdid=49F59KY6",
       "statusCode": 302
     },
     {
       "source": "/go/adobestock",
-      "destination": "https://prf.hn/l/gxqnkmy",
+      "destination": "https://stock.adobe.com/?sdid=49F59KY6",
       "statusCode": 302
     },
     {
