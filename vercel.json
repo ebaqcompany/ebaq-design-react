@@ -1,6 +1,111 @@
 {
   "redirects": [
     {
+      "source": "/go/marketing-plan-book",
+      "destination": "https://www.amazon.com/1-Page-Marketing-Plan-Customers-Money/dp/1989025013",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/ideas-book",
+      "destination": "https://www.amazon.com/Ideas-Book-Kevin-Duncan/dp/190779420X",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/brand-thinking-book",
+      "destination": "https://www.amazon.com/Brand-Thinking-Other-Noble-Pursuits/dp/1621532479",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/creative-strategy-book",
+      "destination": "https://www.amazon.com/Creative-Strategy-Business-Design-Douglas/dp/1631590993",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/mark-pollard-course",
+      "destination": "https://skillshare.eqcm.net/9aMMY",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/brand-gap",
+      "destination": "https://www.amazon.com/Brand-Gap-Distance-Business-Strategy/dp/0321348109",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/brand-names-book",
+      "destination": "https://www.amazon.com/Hello-My-Name-Awesome-Create/dp/1609948675",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/strategy-book",
+      "destination": "https://www.amazon.com/Dim-Sum-Strategy-stronger-brands/dp/B0B5L5Y5YX",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/naming-book",
+      "destination": "https://www.amazon.com/Naming-Book-Brad-Flowers/dp/1734245109",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/brand-identity-book",
+      "destination": "https://www.amazon.com/Brand-Identity-Breakthrough-Gregory-V-Diehl/dp/1684012096",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/storytelling-graphic-design",
+      "destination": "https://www.amazon.com/Design-Storytelling-Ellen-Lupton/dp/194230319X",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/logo-creed-book",
+      "destination": "https://www.amazon.com/Logo-Creed-Mystery-Method-Designing/dp/1592538282",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/business-systems",
+      "destination": "https://www.amazon.com/SYSTEMology-Create-profits-business-systems/dp/0648871037",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/midjourneyai",
+      "destination": "https://www.midjourney.com/home",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/midjourney",
+      "destination": "https://www.midjourney.com/home",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/floraai",
+      "destination": "https://www.flora.ai/",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/flora",
+      "destination": "https://www.flora.ai/",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/designing-brand-symbols",
+      "destination": "https://www.skillshare.com/en/classes/designing-brand-symbols-the-principles-and-process-of-making-logos-that-last/404415631",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/brand-naming-course",
+      "destination": "https://eatmywords.com/brand-names-course/",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/brand-fluency",
+      "destination": "https://www.kayeputnam.com/branding-courses/",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/bodymovin",
+      "destination": "https://lottiefiles.com/plugins/after-effects",
+      "statusCode": 302
+    },
+    {
       "source": "/go/adobeacrobatpro",
       "destination": "https://www.adobe.com/acrobat/online.html?sdid=49F59KY6",
       "statusCode": 302
