@@ -1,6 +1,81 @@
 {
   "redirects": [
     {
+      "source": "/go/leonardo",
+      "destination": "https://leonardo.ai/",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/recraft",
+      "destination": "https://www.recraft.ai/invite/DQwN35NgJH",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/lovable",
+      "destination": "https://lovablelabs.pxf.io/oNPA0n",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/klingai",
+      "destination": "https://klingaiaffiliate.pxf.io/vPRjY3",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/kling",
+      "destination": "https://klingaiaffiliate.pxf.io/vPRjY3",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/printify",
+      "destination": "https://try.printify.com/lx31p3vz7ml1",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/accessibe",
+      "destination": "https://accessibe.com/a/a92syks",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/elevenlabs",
+      "destination": "https://try.elevenlabs.io/dmk820h9mi7p",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/opusclip",
+      "destination": "https://www.opus.pro/?via=ebaq",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/opus",
+      "destination": "https://www.opus.pro/?via=ebaq",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/artflow",
+      "destination": "https://app.artflow.ai/auth/register?via=ebaq",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/pictory",
+      "destination": "https://pictory.ai/?ref=arek88",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/relume",
+      "destination": "https://library.relume.io/?via=ebaq",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/heygen",
+      "destination": "https://app.heygen.com/guest?sid=rewardful&via=ebaq",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/florafauna",
+      "destination": "https://dub.florafauna.ai/ebaq",
+      "statusCode": 302
+    },
+    {
       "source": "/go/marketing-plan-book",
       "destination": "https://www.amazon.com/1-Page-Marketing-Plan-Customers-Money/dp/1989025013",
       "statusCode": 302
@@ -77,12 +152,12 @@
     },
     {
       "source": "/go/floraai",
-      "destination": "https://www.flora.ai/",
+      "destination": "https://dub.florafauna.ai/ebaq",
       "statusCode": 302
     },
     {
       "source": "/go/flora",
-      "destination": "https://www.flora.ai/",
+      "destination": "https://dub.florafauna.ai/ebaq",
       "statusCode": 302
     },
     {
