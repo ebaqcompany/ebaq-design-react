@@ -117,7 +117,7 @@
     },
     {
       "source": "/go/adobepremiere",
-      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fpremiere.html",
+      "destination": "https://www.adobe.com/products/premiere.html?sdid=49F59KY6",
       "statusCode": 301
     },
     {
@@ -187,17 +187,17 @@
     },
     {
       "source": "/go/illustratorbeta",
-      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fillustrator%2Fgenerative-recolor.html",
+      "destination": "https://www.adobe.com/products/illustrator.html?sdid=49F59KY6",
       "statusCode": 301
     },
     {
       "source": "/go/photoshopbeta",
-      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fphotoshop%2Fgenerative-fill.html",
+      "destination": "https://www.adobe.com/products/photoshop.html?sdid=49F59KY6",
       "statusCode": 301
     },
     {
       "source": "/go/adobedreamweaver",
-      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fdreamweaver.html",
+      "destination": "https://www.adobe.com/products/dreamweaver.html?sdid=49F59KY6",
       "statusCode": 301
     },
     {
@@ -212,17 +212,17 @@
     },
     {
       "source": "/go/adobeanimate",
-      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fanimate.html",
+      "destination": "https://www.adobe.com/products/animate.html?sdid=49F59KY6",
       "statusCode": 301
     },
     {
       "source": "/go/adobecolor",
-      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fcolor.adobe.com%2Fcreate%2Fcolor-wheel",
+      "destination": "https://color.adobe.com/create/color-wheel?sdid=49F59KY6",
       "statusCode": 301
     },
     {
       "source": "/go/adobefonts",
-      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Ffonts.adobe.com%2F",
+      "destination": "https://fonts.adobe.com/?sdid=49F59KY6",
       "statusCode": 301
     },
     {
@@ -1237,7 +1237,7 @@
     },
     {
       "source": "/logopacker",
-      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fexchange.adobe.com%2Fapps%2Fcc%2F106003%2Flogo-packer",
+      "destination": "https://exchange.adobe.com/apps/cc/106003/logo-packer?sdid=49F59KY6",
       "statusCode": 301
     },
     {
@@ -1577,7 +1577,7 @@
     },
     {
       "source": "/go/godaddy",
-      "destination": "https://www.anrdoezrs.net/links/9176212/type/dlg/https%3A//www.godaddy.com/",
+      "destination": "https://www.godaddy.com/",
       "statusCode": 302
     },
     {
@@ -1607,7 +1607,7 @@
     },
     {
       "source": "/go/printful",
-      "destination": "https://www.printful.com/a/243201%3A055c493b66f95aecdf3dc9aaf17ae869",
+      "destination": "https://www.printful.com/",
       "statusCode": 302
     },
     {
