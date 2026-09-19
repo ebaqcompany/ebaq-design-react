@@ -1577,7 +1577,7 @@
     },
     {
       "source": "/go/godaddy",
-      "destination": "https://www.anrdoezrs.net/links/9176212/type/dlg/https://www.godaddy.com/",
+      "destination": "https://www.anrdoezrs.net/links/9176212/type/dlg/https%3A//www.godaddy.com/",
       "statusCode": 302
     },
     {
