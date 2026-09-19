@@ -1,6 +1,86 @@
 {
   "redirects": [
     {
+      "source": "/go/adobecc",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobecc-photoshop",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobecc-student",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobecc-teams",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobeillustrator",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobeindesign",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobephotoshop",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobexd",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobefirefly",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobepremierepro",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobeexpress",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobepremiererush",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobeacrobat",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobeaftereffects",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobespark",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobestock",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
       "source": "/studio",
       "destination": "/about",
       "statusCode": 301
