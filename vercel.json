@@ -177,7 +177,7 @@
     },
     {
       "source": "/go/printful",
-      "destination": "https://www.printful.com/a/243201:055c493b66f95aecdf3dc9aaf17ae869",
+      "destination": "https://www.printful.com/a/243201%3A055c493b66f95aecdf3dc9aaf17ae869",
       "statusCode": 302
     },
     {
