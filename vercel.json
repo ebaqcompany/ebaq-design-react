@@ -1,6 +1,1256 @@
 {
   "redirects": [
     {
+      "source": "/octane-ascii",
+      "destination": "https://octane-ascii-generator-706711204467.us-west1.run.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/foxberman2",
+      "destination": "https://indd.adobe.com/view/5e00d5ec-acc8-4935-a1a4-ba75737beb09",
+      "statusCode": 301
+    },
+    {
+      "source": "/foxberman",
+      "destination": "https://indd.adobe.com/view/db9e4420-7cc4-4a3c-973f-a6fa5384ed30",
+      "statusCode": 301
+    },
+    {
+      "source": "/harmonize",
+      "destination": "https://prf.hn/l/AJDB5AX/",
+      "statusCode": 301
+    },
+    {
+      "source": "/wingnut",
+      "destination": "https://indd.adobe.com/view/794f8b04-e0d6-4a6c-b1fd-3efdf91b1c3a",
+      "statusCode": 301
+    },
+    {
+      "source": "/ventur",
+      "destination": "https://indd.adobe.com/view/7ec08f0c-9a1a-4088-9433-eda369f3cdce",
+      "statusCode": 301
+    },
+    {
+      "source": "/lauraceara",
+      "destination": "https://indd.adobe.com/view/98932ddf-a98c-4660-8de7-9ba0e7c42e0d",
+      "statusCode": 301
+    },
+    {
+      "source": "/snm",
+      "destination": "https://indd.adobe.com/view/248db630-bdcd-4aa2-95a5-ac957cab1a5b",
+      "statusCode": 301
+    },
+    {
+      "source": "/brevidee",
+      "destination": "https://indd.adobe.com/view/c61d2b64-94e3-43e7-a208-682b22969530",
+      "statusCode": 301
+    },
+    {
+      "source": "/brevidio",
+      "destination": "https://indd.adobe.com/view/c61d2b64-94e3-43e7-a208-682b22969530",
+      "statusCode": 301
+    },
+    {
+      "source": "/logofix",
+      "destination": "https://logofix.replit.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dti2",
+      "destination": "https://indd.adobe.com/view/d7594544-b181-4140-a55c-f89ead510085",
+      "statusCode": 301
+    },
+    {
+      "source": "/dti",
+      "destination": "https://indd.adobe.com/view/2b69abe0-db13-48d7-9133-e1cf42098fc6",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/startup-branding-agencies",
+      "destination": "/gear/startup-branding-agencies",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/web-design-services",
+      "destination": "/services/web-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/start",
+      "destination": "https://cal.com/ebaqdesign/15min",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/brand-archetypes-guide",
+      "destination": "/blog/brand-archetypes",
+      "statusCode": 301
+    },
+    {
+      "source": "/sweetgrass-brand-guidelines",
+      "destination": "https://indd.adobe.com/view/5b85fc9a-0e79-4ec8-8fbf-c4a28d520a96",
+      "statusCode": 301
+    },
+    {
+      "source": "/ae-style-guide",
+      "destination": "https://indd.adobe.com/view/e1d52c5d-e741-4830-b2d1-b0554fda2025",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/luxury-buildings-branding",
+      "destination": "/blog/luxury-real-estate",
+      "statusCode": 301
+    },
+    {
+      "source": "/richdesigner",
+      "destination": "/rich-designer",
+      "statusCode": 301
+    },
+    {
+      "source": "/rich-designer-book",
+      "destination": "/rich-designer",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/96",
+      "destination": "/podcast/creating-a-purpose-driven-brand",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/adobepremiere",
+      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fpremiere.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ebaqdesign-brand-guidelines",
+      "destination": "https://indd.adobe.com/view/1752292a-ae4d-4252-bc21-098b290f43d1",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/52",
+      "destination": "/podcast/building-your-brand-on-amazon",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/quickbooks",
+      "destination": "https://quickbooks.grsm.io/fvzjbiyxrhxp",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/keap",
+      "destination": "https://keap.grsm.io/vz35dwog237a",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/sendinblue",
+      "destination": "https://www.sendinblue.com/?tap_a=30591-fb13f0&tap_s=2980886-f01a4e",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/51",
+      "destination": "/podcast/storytelling-for-startups",
+      "statusCode": 301
+    },
+    {
+      "source": "/tufinnovate-proposal",
+      "destination": "https://indd.adobe.com/view/cd12f57f-f687-48e2-a73d-8ea93d5367bf",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/50",
+      "destination": "/podcast/marketing-that-makes-brands-soar",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/airtable",
+      "destination": "https://get.airtable.com/tkekrqxr57q0",
+      "statusCode": 301
+    },
+    {
+      "source": "/brandinggpt",
+      "destination": "https://chat.openai.com/g/g-YyQjyGgeQ-branding-gpt",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/whatthefont",
+      "destination": "https://www.anrdoezrs.net/click-9176212-13941263?url=https%3A%2F%2Fwww.myfonts.com%2Fpages%2Fwhatthefont",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/illustroke",
+      "destination": "https://illustroke.com?aff=DnbGUXYX",
+      "statusCode": 301
+    },
+    {
+      "source": "/mariana-proposal",
+      "destination": "https://www.dropbox.com/s/xu3xw9clds0je95/ebaqdesign-proposal-cybersecurity.pdf?dl=0",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/illustratorbeta",
+      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fillustrator%2Fgenerative-recolor.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/photoshopbeta",
+      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fphotoshop%2Fgenerative-fill.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/adobedreamweaver",
+      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fdreamweaver.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/acer-monitors",
+      "destination": "/blog/acer-best-monitors",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/graphic-design-laptops",
+      "destination": "/blog/best-graphic-design-laptops",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/adobeanimate",
+      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fwww.adobe.com%2Fproducts%2Fanimate.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/adobecolor",
+      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fcolor.adobe.com%2Fcreate%2Fcolor-wheel",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/adobefonts",
+      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Ffonts.adobe.com%2F",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/hubspotmarketing",
+      "destination": "https://hubspot.sjv.io/x93QzA",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/omnisend",
+      "destination": "https://omnisend.grsm.io/qqr3af2stns3",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/constantcontact",
+      "destination": "https://constant-contact.ibfwsl.net/rn3yAd",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/drip",
+      "destination": "https://drip.grsm.io/arekdvornechuck8684",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/aweber",
+      "destination": "https://www.aweber.com/easy-email.htm?id=535369",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/getresponse",
+      "destination": "https://www.getresponse.com?a=TgyhmNfPgN",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/templatenet",
+      "destination": "https://www.template.net?ref=arkadiuszdworniczak",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/ultimatelogocreator",
+      "destination": "https://ultimatelogocreator.com?sca_ref=2196694.cdivLXqEZA",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/odinlake",
+      "destination": "https://odinlake.pxf.io/c/1927590/1380686/14868",
+      "statusCode": 301
+    },
+    {
+      "source": "/lyntics-proposal",
+      "destination": "https://indd.adobe.com/view/c1f4b4a0-fa84-47a9-b786-fc47c5a8f255",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/47",
+      "destination": "/podcast/startup-get-funded",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/49",
+      "destination": "/podcast/seo-brand-awareness",
+      "statusCode": 301
+    },
+    {
+      "source": "/sweetgrass-logo",
+      "destination": "https://indd.adobe.com/view/df30db03-11d9-482c-b414-8c02dc444158",
+      "statusCode": 301
+    },
+    {
+      "source": "/sweetgrass-proposal",
+      "destination": "https://indd.adobe.com/view/ab76fc23-86cb-4fc8-b32c-a7bb4a7d285c",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/adobe-discounts",
+      "destination": "/blog/best-adobe-discounts",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/48",
+      "destination": "/podcast/tiktok-marketing-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/lyntics-brand-guidelines",
+      "destination": "https://indd.adobe.com/view/6fa671e7-fe19-4504-8981-ab4e04d91a2f",
+      "statusCode": 301
+    },
+    {
+      "source": "/lyntics-copy",
+      "destination": "https://quip.com/1tU3Ab4ja5aa/Lyntics-Website-Copy",
+      "statusCode": 301
+    },
+    {
+      "source": "/lyntics-presentation",
+      "destination": "https://indd.adobe.com/view/31ec01dd-5d94-472b-a3f9-ee68d36ae2a1",
+      "statusCode": 301
+    },
+    {
+      "source": "/oxford-proposal",
+      "destination": "https://indd.adobe.com/view/efec8777-c48f-449e-a736-5ac1f257cb22",
+      "statusCode": 301
+    },
+    {
+      "source": "/bcr-proposal",
+      "destination": "https://indd.adobe.com/view/8777f8e9-1b5f-4226-befc-c1df43a775c5",
+      "statusCode": 301
+    },
+    {
+      "source": "/ami-brand-guidelines",
+      "destination": "https://indd.adobe.com/view/26170c61-432b-491a-82c6-22eeb1bf27b6",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-logo-files",
+      "destination": "https://www.dropbox.com/sh/ywfsru4hi3lyar4/AABI7v19K487S1VxwHPInywVa?dl=0",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/istock",
+      "destination": "https://istockphoto.6q33.net/9Wj6K4",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/43",
+      "destination": "/podcast/how-to-build-cognitive-brands",
+      "statusCode": 301
+    },
+    {
+      "source": "/ami-logo",
+      "destination": "https://indd.adobe.com/view/c5399abe-aa42-499d-b8b3-253d7833520e",
+      "statusCode": 301
+    },
+    {
+      "source": "/goodcharlie-strategy",
+      "destination": "https://indd.adobe.com/view/3e7e9333-cf16-46d5-ad28-bbc59c149f76",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/42",
+      "destination": "/podcast/how-to-create-strategic-positioning",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/44",
+      "destination": "/podcast/brand-positioning",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/brand-architecture-guide",
+      "destination": "/blog/brand-architecture",
+      "statusCode": 301
+    },
+    {
+      "source": "/ami-todo",
+      "destination": "https://quip.com/8YMNADfUxdc7/AMI-Logo-Update-Brand-Guidelines",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/protonvpn",
+      "destination": "https://go.getproton.me/aff_c?offer_id=26&aff_id=3118",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/privatevpn",
+      "destination": "https://www.anrdoezrs.net/click-9176212-15049972",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/vpnproxymaster",
+      "destination": "https://www.tkqlhce.com/click-9176212-15040645",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/hotbotvpn",
+      "destination": "https://www.dpbolvw.net/click-9176212-15232554",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/purevpn",
+      "destination": "https://billing.purevpn.com/aff.php?aff=50285",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/atlasvpn",
+      "destination": "https://www.dpbolvw.net/click-9176212-15140447",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/cyberghost",
+      "destination": "https://www.jdoqocy.com/click-9176212-14454138",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/46",
+      "destination": "/podcast/seo-for-brands",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/45",
+      "destination": "/podcast/copywriters-handbook",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-logo-file",
+      "destination": "https://www.dropbox.com/s/p4z5vxxlu0gd9n2/final%20logo%20periti.ai?dl=0",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-storytelling",
+      "destination": "https://quip.com/LQZYAfa3lugf/Periti-Digital-Storytelling-Script",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/36",
+      "destination": "/podcast/making-brands-future-ready",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/37",
+      "destination": "/podcast/how-to-elevate-your-brand",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-final-logo",
+      "destination": "https://indd.adobe.com/view/756b70cb-7a8c-428f-b26f-3efa1fa80663",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-logo",
+      "destination": "https://arek865813.invisionapp.com/board/Periti-Digital-ckyjgc336004g18yv6lxedwkd",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-identity",
+      "destination": "https://indd.adobe.com/view/10b5370f-0ce2-47da-8591-93d95e7b1c40",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/35",
+      "destination": "/podcast/how-to-build-a-brand-culture",
+      "statusCode": 301
+    },
+    {
+      "source": "/ium-strategy",
+      "destination": "https://indd.adobe.com/view/1eb45d24-cbe4-4a93-84a4-e93a97aa6bba",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/34",
+      "destination": "/podcast/how-to-win-the-brand-game",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/canvacolor",
+      "destination": "https://partner.canva.com/e4amnX",
+      "statusCode": 301
+    },
+    {
+      "source": "/miro",
+      "destination": "https://miro.com/miroverse/profile/arek-dvornechuck/",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/shawacademy",
+      "destination": "https://shawacademy.sjv.io/c/1927590/647059/10255?u=https%3A%2F%2Fwww.shawacademy.com%2F",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-brand-guidelines",
+      "destination": "https://indd.adobe.com/view/f088380d-7ba9-47b9-b4bb-5a881e492c73",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/41",
+      "destination": "/podcast/crafting-magnetic-brand-stories",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/40",
+      "destination": "/podcast/how-to-build-global-brands",
+      "statusCode": 301
+    },
+    {
+      "source": "/phonecallfree",
+      "destination": "https://calendly.com/ebaqdesign/discovery-call-clone",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/39",
+      "destination": "/podcast/building-brand-communities",
+      "statusCode": 301
+    },
+    {
+      "source": "/jawad-naming",
+      "destination": "https://www.dropbox.com/s/y3uz5af3jn8nnem/Jawad%20Naming%20Presentation.pdf?dl=0",
+      "statusCode": 301
+    },
+    {
+      "source": "/ami-strategy",
+      "destination": "https://indd.adobe.com/view/32c1a1a8-3027-44ed-b3f0-702ddf9b324d",
+      "statusCode": 301
+    },
+    {
+      "source": "/zoom",
+      "destination": "https://us06web.zoom.us/j/9292459811?pwd=cExlWHBEa0cvcnk2clhiZ2pMRWROUT09",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-web-design",
+      "destination": "https://www.figma.com/proto/lLuM27Iu5VZDsxATUSBzog/Periti-Digital-Web-Design?node-id=1%3A264&scaling=min-zoom&page-id=0%3A1",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-pay-extra",
+      "destination": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GZSJ63BCSBTHQ",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-website",
+      "destination": "https://periti-digital.webflow.io/",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/38",
+      "destination": "/podcast/from-mess-to-brand-success",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-pay",
+      "destination": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3KMX8V2GBKP5S",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-website-copy",
+      "destination": "https://quip.com/oNaDAaSpjMTx/Periti-Digital-Website-Copy",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/masterclass",
+      "destination": "https://shareasale.com/r.cfm?b=797461&u=2173792&m=62509&urllink=&afftrack",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/29",
+      "destination": "https://www.ebaqdesign.com/podcast/building-brand-assets",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/28",
+      "destination": "https://www.ebaqdesign.com/podcast/brand-mapping-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/logocore",
+      "destination": "https://www.logocore.com/learn/ref/5127/",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/27",
+      "destination": "https://www.ebaqdesign.com/podcast/defining-designing-brands",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/futurelearn",
+      "destination": "https://click.linksynergy.com/fs-bin/click?id=NfdiyPEasHk&offerid=871630.73&type=3&subid=0",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/26",
+      "destination": "https://www.ebaqdesign.com/podcast/creating-business-systems",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/25",
+      "destination": "https://www.ebaqdesign.com/podcast/storytelling-graphic-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/24",
+      "destination": "https://www.ebaqdesign.com/podcast/graphic-design-layout",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/graphic-design-layout",
+      "destination": "https://amzn.to/3olT0MX",
+      "statusCode": 301
+    },
+    {
+      "source": "/jawad-brand-strategy",
+      "destination": "https://www.dropbox.com/s/r5rk21sruaoqmpg/Jawad%20Water%20Enhancer%20%E2%80%94%20Brand%20Strategy.pdf?dl=0",
+      "statusCode": 301
+    },
+    {
+      "source": "/jawad-brand-brief",
+      "destination": "https://indd.adobe.com/view/00e341c5-e1a8-4d3a-b933-c43719363227",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/33",
+      "destination": "/podcast/how-brands-achieve-forgiveness",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/32",
+      "destination": "/podcast/branding-with-purpose",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-proposal",
+      "destination": "https://indd.adobe.com/view/7fbfa702-3ace-4d56-b919-0f3d41855631",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/31",
+      "destination": "/podcast/how-design-makes-us-think",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/legalshield",
+      "destination": "https://www.pjatr.com/t/TUJGRk1JSUJGTUtJTEpCRktMRUhF?url=https%3A%2F%2Fwww.legalshield.com%2Fintellectual-property%2Ftrademark",
+      "statusCode": 301
+    },
+    {
+      "source": "/periti-strategy",
+      "destination": "https://indd.adobe.com/view/c0aa9834-087a-4497-8529-7263da624210",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/30",
+      "destination": "/podcast/digital-marketing-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/vog-logo-files",
+      "destination": "https://www.dropbox.com/sh/tf4qs39rmtzm1ns/AACLJnbzQys9rwsyrSKz1Gn8a?dl=0",
+      "statusCode": 301
+    },
+    {
+      "source": "/pay-proposal",
+      "destination": "https://indd.adobe.com/view/16f79250-3be2-4e56-95a6-1aa4daa5b229",
+      "statusCode": 301
+    },
+    {
+      "source": "/vog-logo",
+      "destination": "https://arek865813.invisionapp.com/boards/PC80335562RZE7J",
+      "statusCode": 301
+    },
+    {
+      "source": "/vog-logo-presentation",
+      "destination": "https://indd.adobe.com/view/51b73ad4-8875-4027-b447-503a513800ee",
+      "statusCode": 301
+    },
+    {
+      "source": "/focalpm",
+      "destination": "https://xd.adobe.com/view/bb08d285-8403-470a-8931-fc88688ec80f-ee5b/?fullscreen",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/21",
+      "destination": "https://www.ebaqdesign.com/podcast/brand-building-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/brand-strategist",
+      "destination": "https://www.ebaqdesign.com/blog/become-brand-strategist",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/20",
+      "destination": "https://www.ebaqdesign.com/podcast/brand-identity-startup",
+      "statusCode": 301
+    },
+    {
+      "source": "/buy/pro",
+      "destination": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2FFBXJBMED6YE",
+      "statusCode": 301
+    },
+    {
+      "source": "/buy/plus",
+      "destination": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V43Q3KMSHCHQC",
+      "statusCode": 301
+    },
+    {
+      "source": "/buy/base",
+      "destination": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=X5VYAJVCU2KDQ",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "https://www.ebaqdesign.com/studio",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/22",
+      "destination": "https://www.ebaqdesign.com/podcast/effective-brand-naming",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/creativemarket",
+      "destination": "https://creativemarket.com?u=arek.dworniczak",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/23",
+      "destination": "https://www.ebaqdesign.com/podcast/becoming-brand-master",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/domestika",
+      "destination": "https://www.domestika.org/en/courses/category/3-design?atag=99a7d4&utm_medium=affiliates&utm_source=ebaq_99a7d4",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/adobetrial",
+      "destination": "https://clk.tradedoubler.com/click?p(264355)a(3043657)g(22804962)url(https://www.adobe.com/?mv=affiliate",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna-website",
+      "destination": "https://xd.adobe.com/view/c5fc5f4b-c3a4-4573-a762-93d7a8724572-90af/?fullscreen",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna-mockups",
+      "destination": "https://arekdvornechuck632762.invisionapp.com/board/Medihuanna-New-Mockups-ckobox1tb086913ult1psh802",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna-presentation",
+      "destination": "https://indd.adobe.com/view/cb02be1f-87d0-4917-bbbc-d6b5342a79b0",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/coursera",
+      "destination": "https://click.linksynergy.com/fs-bin/click?id=NfdiyPEasHk&offerid=916798.581&subid=0&type=4",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna-brand-guidelines",
+      "destination": "https://indd.adobe.com/view/9907a87c-29c2-4164-92ee-dac1551442c3",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/brand-advantage",
+      "destination": "https://kayeputnam.teachable.com/p/brand-advantage?affcode=69042_0f650cdx",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna-styleguide-inspi",
+      "destination": "https://arekdvornechuck632762.invisionapp.com/boards/RW79992709GBAPJ",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/strategic-brand-management",
+      "destination": "https://click.linksynergy.com/deeplink?id=NfdiyPEasHk&mid=44015&murl=https%3A%2F%2Fwww.futurelearn.com%2Fcourses%2Fintroduction-to-brand-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/identity-strategy",
+      "destination": "https://click.linksynergy.com/link?id=NfdiyPEasHk&offerid=759505.14021095812&type=2&murl=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fbrand-identity-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/16",
+      "destination": "https://www.ebaqdesign.com/podcast/effective-logo-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/fontbundles",
+      "destination": "https://fontbundles.net?rel=7GLIzi",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/branding-masterplan",
+      "destination": "https://my.masterplan.pro/a/aff_x9p0xjhf/external?affcode=555002_rrt4n6i1",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/blinkist-bf",
+      "destination": "https://blinkist.o6eiov.net/c/1927590/942991/10732",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/iconscout",
+      "destination": "https://iconscout.com/offer/black-friday-2020?referral_code=E6BGMUOC7KD",
+      "statusCode": 301
+    },
+    {
+      "source": "/blackfriday",
+      "destination": "https://medium.com/ebaqdesign/2020-black-friday-cyber-monday-deals-for-designers-7a83bc54315",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/iconfinder",
+      "destination": "https://www.iconfinder.com?ref=ebaqdesign",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/blinkist",
+      "destination": "https://blinkist.o6eiov.net/DY2eo",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/stockunlimited",
+      "destination": "https://shareasale.com/r.cfm?b=940623&u=2173792&m=68806&urllink=&afftrack",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/myfonts",
+      "destination": "https://www.kqzyfj.com/click-9176212-13915291",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/designing-identity-book",
+      "destination": "https://amzn.to/38Msx76",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/17",
+      "destination": "https://www.ebaqdesign.com/podcast/archetypes-branding",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/site123",
+      "destination": "https://www.site123.com/?aff=7348645",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/weebly",
+      "destination": "https://shareasale.com/r.cfm?b=358504&u=2173792&m=37723&urllink=&afftrack",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/wix",
+      "destination": "https://wixstats.com/?a=21722&c=2252&s1",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/19",
+      "destination": "https://www.ebaqdesign.com/podcast/marketing-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/18",
+      "destination": "https://www.ebaqdesign.com/podcast/creative-brainstorming-techniques",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/yellowimages",
+      "destination": "https://yellowimages.com/?yi=21085",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/linotype",
+      "destination": "https://www.kqzyfj.com/click-9176212-13915241",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/fontshop",
+      "destination": "https://www.dpbolvw.net/click-9176212-13915189",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/font-explorer",
+      "destination": "https://www.tkqlhce.com/click-9176212-14302297",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/holabrief",
+      "destination": "https://www.holabrief.com/?track=arek",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/10",
+      "destination": "https://www.ebaqdesign.com/podcast/brand-names",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/9",
+      "destination": "https://www.ebaqdesign.com/podcast/creative-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna-guidelines",
+      "destination": "https://www.dropbox.com/s/zbpzf97d76nwtl8/Medihuanna_guidelines_updated.pdf?dl=0",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/8",
+      "destination": "https://www.ebaqdesign.com/podcast/brand-building",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/7",
+      "destination": "https://www.ebaqdesign.com/podcast/brand-culture",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna-logo",
+      "destination": "https://www.dropbox.com/sh/i7272ulewxpnwqc/AAAdUPvW25F4-SZEHdUJvJhha?dl=0",
+      "statusCode": 301
+    },
+    {
+      "source": "/iris-lp-ppc",
+      "destination": "https://xd.adobe.com/view/1a264ab2-6fdf-421e-5e8f-a3a816948496-6c17/",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna-identity",
+      "destination": "https://indd.adobe.com/view/236e4e69-32dd-4eaa-8f85-1e8790e9ea68",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna3",
+      "destination": "https://sothedate.invisionapp.com/board/Medihuanna-Concept-3-ckayk6kti095d19w25bj5ks9e",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/brand-culture-book",
+      "destination": "https://amzn.to/2ZBcKTt",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/identity-essentials-book",
+      "destination": "https://amzn.to/3c8yxGW",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/11",
+      "destination": "https://www.ebaqdesign.com/podcast/logo-design-ideas",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/creativity-book",
+      "destination": "https://amzn.to/2IJK30P",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/15",
+      "destination": "https://www.ebaqdesign.com/podcast/brand-strategy-framework",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/14",
+      "destination": "https://www.ebaqdesign.com/podcast/brand-naming-process",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/13",
+      "destination": "https://www.ebaqdesign.com/podcast/brand-thinking",
+      "statusCode": 301
+    },
+    {
+      "source": "/podcast/12",
+      "destination": "https://www.ebaqdesign.com/podcast/small-business-branding",
+      "statusCode": 301
+    },
+    {
+      "source": "/sukoon-all",
+      "destination": "https://arekdvornechuck947322.invisionapp.com/board/Sukoon-2020-ck5svzoi400k314u1xgoboset?v=Qc4gPtFQjNONO5Fq5YY7JA%3D%3D&linkshare=urlcopied",
+      "statusCode": 301
+    },
+    {
+      "source": "/sukoon-itinerary",
+      "destination": "https://indd.adobe.com/view/bef485f8-2719-43a3-a941-88b3a58df344",
+      "statusCode": 301
+    },
+    {
+      "source": "/leads",
+      "destination": "https://docs.google.com/spreadsheets/d/18vJqpWQj4Ytu2dVOYJLNk-SCfk17o_Kf7TZcor7y7v0/edit?usp=sharing",
+      "statusCode": 301
+    },
+    {
+      "source": "/top-logos-meaning",
+      "destination": "/top-logos-explained",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/2018/04/brand-name-types.jpg",
+      "destination": "https://uploads-ssl.webflow.com/5de2db6d3719a1e2f3e4454c/5de981c631edead388b3bfc7_brand-names-types.jpg",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/grindcrew",
+      "destination": "https://gumroad.com/a/970568819",
+      "statusCode": 301
+    },
+    {
+      "source": "/cawley-development",
+      "destination": "https://xd.adobe.com/view/0722f77d-06c6-43e0-6daf-d70d3d9afa77-7113/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cawley-dev",
+      "destination": "https://xd.adobe.com/view/0722f77d-06c6-43e0-6daf-d70d3d9afa77-7113/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hudsondance-strategy",
+      "destination": "https://indd.adobe.com/view/41b97152-a2ed-4586-a780-53f6780338ae",
+      "statusCode": 301
+    },
+    {
+      "source": "/company/privacy-policy",
+      "destination": "/privacy-policy",
+      "statusCode": 301
+    },
+    {
+      "source": "/works/carwao",
+      "destination": "/work/carwao",
+      "statusCode": 301
+    },
+    {
+      "source": "/branding-guide",
+      "destination": "https://uploads-ssl.webflow.com/5de2db6d3719a1a1cee44545/5df54b806a31d57ec43a2ae5_ebaqdesign-branding-guide.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna2",
+      "destination": "https://sothedate.invisionapp.com/board/Medihuanna-Concept-2-ckay282to01so18utohozb8la",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna1",
+      "destination": "https://sothedate.invisionapp.com/board/Medihuanna-Concept-1-ckaxt43bw01zm18t26l2w2see",
+      "statusCode": 301
+    },
+    {
+      "source": "/iris-lp-brief",
+      "destination": "https://docs.google.com/document/d/1UH_TYMoIjjRRtVkQbNO-CbDeQn4yicszkaW-9LA8My4/edit?usp=sharing",
+      "statusCode": 301
+    },
+    {
+      "source": "/iris-logo",
+      "destination": "https://projects.invisionapp.com/boards/9E3ZNP7UTYH/",
+      "statusCode": 301
+    },
+    {
+      "source": "/iris-lp",
+      "destination": "https://xd.adobe.com/view/1a264ab2-6fdf-421e-5e8f-a3a816948496-6c17/?fullscreen",
+      "statusCode": 301
+    },
+    {
+      "source": "/iris-brandtease",
+      "destination": "https://xd.adobe.com/view/9e33a63b-1bf7-4214-5f5c-8e9a801902dd-e802/?fullscreen",
+      "statusCode": 301
+    },
+    {
+      "source": "/medihuanna-brief",
+      "destination": "https://indd.adobe.com/view/7898331c-2316-4995-9423-ded05f58ad87",
+      "statusCode": 301
+    },
+    {
+      "source": "/iris-logo-animation",
+      "destination": "https://arekdvornechuck427298.invisionapp.com/board/Iris-Brand-Tease-ck9kctbwt0kuj18t3pl5cgiwj?v=M938JMhTBxjIh64lWX9jPQ%3D%3D&linkshare=urlcopied",
+      "statusCode": 301
+    },
+    {
+      "source": "/strategy-call",
+      "destination": "https://calendly.com/ebaqdesign/strategy-workshop",
+      "statusCode": 301
+    },
+    {
+      "source": "/strategy-guide-copy",
+      "destination": "/strategy-workshop",
+      "statusCode": 301
+    },
+    {
+      "source": "/hudsondance-story",
+      "destination": "https://indd.adobe.com/view/7662b8c8-0cff-415e-89ec-1cfca1f853e3",
+      "statusCode": 301
+    },
+    {
+      "source": "/hudsondance-website",
+      "destination": "https://xd.adobe.com/view/7f09e182-866b-4653-5a3b-004b40f8d0a8-0938/?fullscreen",
+      "statusCode": 301
+    },
+    {
+      "source": "/thecrowdsline",
+      "destination": "https://xd.adobe.com/view/f0f7a995-bf13-4339-6a87-676c101154f1-86c6/?fullscreen",
+      "statusCode": 301
+    },
+    {
+      "source": "/tcl",
+      "destination": "https://arek4632.invisionapp.com/board/The-Crowds-Line-ck0igd7p214ka0srsyepf0nn4?v=WdnQIRvxy+uQI9NsBPQHVg==&linkshare=urlcopied",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/graphic-design-masterclass",
+      "destination": "https://www.udemy.com/course/graphic-design/?ranMID=39197&ranEAID=NfdiyPEasHk&ranSiteID=NfdiyPEasHk-DAn95z_qxxw6uElvE23Y8w&LSNPUBID=NfdiyPEasHk",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/graphic-design-bootcamp",
+      "destination": "https://www.udemy.com/course/graphic-design-for-beginners/?ranMID=39197&ranEAID=NfdiyPEasHk&ranSiteID=NfdiyPEasHk-00V0bev1ya6gfJbRUXKimg&LSNPUBID=NfdiyPEasHk",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/customizing-type",
+      "destination": "https://skillshare.eqcm.net/9aMMY",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/effective-uxdesign",
+      "destination": "https://www.creativelive.com/design/web/fast-and-effective-ux-design-learn-the-process-jose-callaber?sscid=c1k3_audzr&utm_source=2173792&utm_campaign=SASoffer&utm_content=733599&utm_medium=affiliate",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/webdesign-essentials",
+      "destination": "https://www.udemy.com/course/responsive-web-design-tutorial-course-html5-css3-bootstrap/",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/brand-called-you",
+      "destination": "https://www.creativelive.com/class/a-brand-called-you-debbie-millman?sscid=c1k3_aucwh&utm_source=2173792&utm_campaign=SASoffer&utm_content=733599&utm_medium=affiliate",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/basics-adobe-cc",
+      "destination": "https://www.creativelive.com/design/adobe-photoshop/basics-of-adobe-cc-photoshop-illustrator-indesign-jason-hoppe?sscid=c1k3_aubwp&utm_source=2173792&utm_campaign=SASoffer&utm_content=733599&utm_medium=affiliate",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/fontspring",
+      "destination": "http://www.fontspring.com?refby=ebaqdesign",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/graphic-design-fundamentals",
+      "destination": "https://www.shareasale.com/m-pr.cfm?merchantID=59453&userID=2173792&productID=630757802",
+      "statusCode": 301
+    },
+    {
+      "source": "/phonecall",
+      "destination": "https://calendly.com/ebaqdesign/15min",
+      "statusCode": 301
+    },
+    {
+      "source": "/meeting",
+      "destination": "https://calendly.com/ebaqdesign/15min",
+      "statusCode": 301
+    },
+    {
+      "source": "/naming-brief-example",
+      "destination": "https://drive.google.com/file/d/1-G4nMOMEcMSbiqoAaPcDlxOZdaHzWqdf/view?usp=sharing",
+      "statusCode": 301
+    },
+    {
+      "source": "/naming-brief",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfhiElVoEVO5o1cq9DQKj_Oh162EKb9n2IO2m5i_DFBh1wnLw/viewform",
+      "statusCode": 301
+    },
+    {
+      "source": "/slogan-makers",
+      "destination": "https://www.shopify.com/tools/slogan-maker?ref=ebaqdesign",
+      "statusCode": 301
+    },
+    {
+      "source": "/logo-makers",
+      "destination": "https://www.shopify.com/tools/logo-maker?ref=ebaqdesign",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/designcuts",
+      "destination": "https://www.designcuts.com/?ref=ebaqdesign",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/hubspot",
+      "destination": "http://hubs.to/BrMCF",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/gsuite",
+      "destination": "https://gsuite.google.com/landing/partners/referral/trial.html?utm_source=sign-up&utm_medium=referral&utm_campaign=apps-referral-program&utm_content=GZXVQ7M",
+      "statusCode": 301
+    },
+    {
+      "source": "/cawley-web",
+      "destination": "https://xd.adobe.com/view/0722f77d-06c6-43e0-6daf-d70d3d9afa77-7113/?fullscreen&hints=off",
+      "statusCode": 301
+    },
+    {
+      "source": "/cawley",
+      "destination": "https://arekdvornechuck947322.invisionapp.com/board/The-Cawley-Family-Dog-Foundation-ck2420nn70b2a0su2fgd5e3qj?v=Qc4gPtFQjNONO5Fq5YY7JA==&linkshare=urlcopied",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/designcutsmockup",
+      "destination": "https://www.designcuts.com/product/branding-mockup-essentials?ref=ebaqdesign",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/legal",
+      "destination": "https://www.pntra.com/t/SkNJSExHSE1DR05MSk1LQ0dMSU5KRg",
+      "statusCode": 301
+    },
+    {
+      "source": "/personality-slider",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLScRuMDCl89XRT0Jy1qULYqVbrh9SfBdw8odXYovPxFj72X-jg/viewform",
+      "statusCode": 301
+    },
+    {
+      "source": "/go/business-branding",
+      "destination": "https://www.udemy.com/course/business-branding-complete-course/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ae-presentation",
+      "destination": "https://indd.adobe.com/view/891ddec9-9394-4f68-ad8c-53ba56c7cece",
+      "statusCode": 301
+    },
+    {
+      "source": "/logopacker",
+      "destination": "https://adobe.prf.hn/click/camref%3A1100lrfJw/destination%3Ahttps%3A%2F%2Fexchange.adobe.com%2Fapps%2Fcc%2F106003%2Flogo-packer",
+      "statusCode": 301
+    },
+    {
+      "source": "/brand-presentation",
+      "destination": "/creative-suite",
+      "statusCode": 301
+    },
+    {
+      "source": "/proposal-ae",
+      "destination": "https://indd.adobe.com/view/e670cf0d-2a89-482d-9ef0-157ed99bed4d",
+      "statusCode": 301
+    },
+    {
       "source": "/go/leonardo",
       "destination": "https://leonardo.ai/",
       "statusCode": 302
