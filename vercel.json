@@ -1,6 +1,181 @@
 {
   "redirects": [
     {
+      "source": "/go/pond5",
+      "destination": "https://www.pond5.com?ref=Arek74873",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/branding-book",
+      "destination": "https://amzn.to/3eKfm7C",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/99designs",
+      "destination": "https://99designs.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/activecampaign",
+      "destination": "https://www.activecampaign.com/?_r=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobepodcast",
+      "destination": "https://prf.hn/l/gxqnkmy",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/alamy",
+      "destination": "https://www.alamy.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/bluehost",
+      "destination": "https://bluehost.sjv.io/darYg3",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/canva",
+      "destination": "https://partner.canva.com/DYgmG",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/convertkit",
+      "destination": "https://convertkit.com?lmref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/creativelive",
+      "destination": "https://www.creativelive.com/?via=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/envato",
+      "destination": "https://elements.envato.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/fiverr",
+      "destination": "https://www.fiverr.com/?utm_source=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/framer",
+      "destination": "https://www.framer.com?via=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/freshbooks",
+      "destination": "https://www.freshbooks.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/godaddy",
+      "destination": "https://www.anrdoezrs.net/links/9176212/type/dlg/https://www.godaddy.com/",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/inkydeals",
+      "destination": "https://inkydeals.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/legalzoom",
+      "destination": "https://www.legalzoom.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/mailerlite",
+      "destination": "https://www.mailerlite.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/namecheap",
+      "destination": "https://www.dpbolvw.net/click-9176212-14326263",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/nordvpn",
+      "destination": "https://nordvpn.sjv.io/ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/printful",
+      "destination": "https://www.printful.com/a/243201:055c493b66f95aecdf3dc9aaf17ae869",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/shopify",
+      "destination": "https://www.shopify.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/shutterstock",
+      "destination": "https://shutterstock.7eer.net/zmYPO",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/siteground",
+      "destination": "https://www.siteground.com/index.htm?afcode=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/skillshare",
+      "destination": "https://skillshare.eqcm.net/9aMMY",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/smartmockups",
+      "destination": "https://a.paddle.com/v2/click/19214/104957?link=783",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/squarespace",
+      "destination": "https://squarespace.syuh.net/2n3QO",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/surfshark",
+      "destination": "https://surfshark.sjv.io/ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/teachable",
+      "destination": "https://teachable.sjv.io/a10NmM",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/thelogopckg",
+      "destination": "https://gumroad.com/l/logopackageexpressextension/ebaq20",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/udemy",
+      "destination": "https://click.linksynergy.com/deeplink?id=NfdiyPEasHk&mid=39197&murl=https%3A%2F%2Fwww.udemy.com%2F",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/upwork",
+      "destination": "https://www.upwork.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/webflow",
+      "destination": "https://try.webflow.com/ebaq",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/weglot",
+      "destination": "https://weglot.com/?ref=ebaqdesign",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/wpengine",
+      "destination": "https://wpengine.pivrtrk.com/6RZqG",
+      "statusCode": 302
+    },
+    {
       "source": "/go/adobecc",
       "destination": "https://prf.hn/l/gxqnkmy",
       "statusCode": 302
