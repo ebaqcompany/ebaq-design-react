@@ -23,7 +23,7 @@ const { buildBlogPostingSchema, buildFaqSchema, buildVideoSchema, resolveFaqPair
 // Read existing static-page copy so generated titles stay aligned with React.
 for (const [path, component] of Object.entries({
   '/about': 'AboutPage', '/contact': 'ContactPage', '/blog': 'BlogPage',
-  '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage',
+  '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage', '/services': 'ServicesPage',
   '/law-firm-branding': 'LawFirmLanding', '/saas-web-design': 'SaasWebDesignLanding',
 })) {
   const source = await read(`../src/components/${component}.tsx`)

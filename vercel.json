@@ -2886,23 +2886,18 @@
       "statusCode": 301
     },
     {
-      "source": "/services",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
       "source": "/services/brand-strategy",
-      "destination": "/blog/brand-strategy",
+      "destination": "/services",
       "statusCode": 301
     },
     {
       "source": "/services/logo-design",
-      "destination": "/work",
+      "destination": "/services",
       "statusCode": 301
     },
     {
       "source": "/services/web-design",
-      "destination": "/saas-web-design",
+      "destination": "/services",
       "statusCode": 301
     },
     {
