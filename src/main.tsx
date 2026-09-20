@@ -17,7 +17,6 @@ import { ShopPage } from './components/ShopPage.tsx'
 import { AboutPage } from './components/AboutPage.tsx'
 import { ContactPage } from './components/ContactPage.tsx'
 import { ToolsPage } from './components/ToolsPage.tsx'
-import { ServicesPage } from './components/ServicesPage.tsx'
 import { FulfillmentPolicyPage, PrivacyPolicyPage } from './components/LegalPage.tsx'
 import { NotFoundPage } from './components/NotFoundPage.tsx'
 import {
@@ -50,7 +49,6 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/tools" element={<ToolsPage />} />
-          <Route path="/services" element={<ServicesPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/fulfillment-policy" element={<FulfillmentPolicyPage />} />
           <Route path="/work/:slug" element={<CaseStudyPage />} />

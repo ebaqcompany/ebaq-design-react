@@ -25,7 +25,6 @@ const staticPaths = [
   '/podcast',
   '/shop',
   '/tools',
-  '/services',
   '/privacy-policy',
   '/fulfillment-policy',
   '/law-firm-branding',
