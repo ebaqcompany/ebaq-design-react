@@ -1,5 +1,19 @@
 [
   {
+    "slug": "superhero-logos",
+    "url": "/blog/superhero-logos",
+    "title": "9 Best Superhero Logos Explained in 2026",
+    "description": "Explore the best superhero logos in 2026. Discover the meaning behind iconic symbols from Batman to Superman.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "5 min read",
+    "date": "Jan 27, 2026",
+    "image": {
+      "src": "/images/blog/superhero-logos/superhero-logos-th.webp",
+      "alt": "Nine iconic superhero logos explained"
+    }
+  },
+  {
     "slug": "adobe-fonts",
     "url": "/blog/adobe-fonts",
     "title": "20 Best Adobe Fonts for Designers in 2026",

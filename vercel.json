@@ -2126,11 +2126,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/superhero-logos",
-      "destination": "/blog/best-logos",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/tech-startup-logos-old",
       "destination": "/blog/tech-startup-logos",
       "statusCode": 301
@@ -2452,7 +2447,7 @@
     },
     {
       "source": "/gear/superhero-logos",
-      "destination": "/blog/best-logos",
+      "destination": "/blog/superhero-logos",
       "statusCode": 301
     },
     {
