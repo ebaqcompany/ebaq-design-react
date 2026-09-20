@@ -612,7 +612,7 @@
     },
     {
       "source": "/jawad-brand-strategy",
-      "destination": "https://www.dropbox.com/s/r5rk21sruaoqmpg/Jawad Water Enhancer \u2014 Brand Strategy.pdf?dl=0",
+      "destination": "https://www.dropbox.com/s/r5rk21sruaoqmpg/Jawad Water Enhancer — Brand Strategy.pdf?dl=0",
       "statusCode": 301
     },
     {
@@ -2036,11 +2036,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/marketing-frameworks",
-      "destination": "/blog/brand-strategy",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/naming-courses",
       "destination": "/blog/brand-naming",
       "statusCode": 301
@@ -2362,7 +2357,7 @@
     },
     {
       "source": "/gear/marketing-frameworks",
-      "destination": "/blog/brand-strategy",
+      "destination": "/blog/marketing-frameworks",
       "statusCode": 301
     },
     {
