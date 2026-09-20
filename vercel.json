@@ -72,7 +72,7 @@
     },
     {
       "source": "/services/web-design-services",
-      "destination": "/services/web-design",
+      "destination": "/saas-web-design",
       "statusCode": 301
     },
     {
@@ -102,12 +102,12 @@
     },
     {
       "source": "/richdesigner",
-      "destination": "/rich-designer",
+      "destination": "/shop",
       "statusCode": 301
     },
     {
       "source": "/rich-designer-book",
-      "destination": "/rich-designer",
+      "destination": "/shop",
       "statusCode": 301
     },
     {
@@ -711,11 +711,6 @@
       "statusCode": 301
     },
     {
-      "source": "/about",
-      "destination": "https://www.ebaqdesign.com/studio",
-      "statusCode": 301
-    },
-    {
       "source": "/podcast/22",
       "destination": "https://www.ebaqdesign.com/podcast/effective-brand-naming",
       "statusCode": 301
@@ -1032,7 +1027,7 @@
     },
     {
       "source": "/works/carwao",
-      "destination": "/work/carwao",
+      "destination": "/work",
       "statusCode": 301
     },
     {
@@ -1087,7 +1082,7 @@
     },
     {
       "source": "/strategy-guide-copy",
-      "destination": "/strategy-workshop",
+      "destination": "/blog/brand-strategy",
       "statusCode": 301
     },
     {
@@ -1242,7 +1237,7 @@
     },
     {
       "source": "/brand-presentation",
-      "destination": "/creative-suite",
+      "destination": "/shop/creative-suite",
       "statusCode": 301
     },
     {
@@ -2728,6 +2723,201 @@
     {
       "source": "/work/snm",
       "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-brand-consultant",
+      "destination": "/tools",
+      "statusCode": 301
+    },
+    {
+      "source": "/archetypes-quiz",
+      "destination": "/blog/brand-archetypes",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/arek-dvornechuck",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/arek-dvornechuck-2",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/arek-dvornechuck-ebaqdesign",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/editor-editovsky",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/guest-post",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/jake",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/jennifer",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/jennifer-matou",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/my-editor",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/new-team-member",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-categories/brand-strategy",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-categories/buying-guides",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-categories/freelancing",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-categories/logo-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-categories/marketing",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-categories/naming",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-categories/web-design",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/branding-package",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/checkout",
+      "destination": "/shop",
+      "statusCode": 301
+    },
+    {
+      "source": "/enhanced-designer",
+      "destination": "/shop",
+      "statusCode": 301
+    },
+    {
+      "source": "/fix-logo",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/guest",
+      "destination": "/podcast",
+      "statusCode": 301
+    },
+    {
+      "source": "/home-gsap",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/order-confirmation",
+      "destination": "/shop",
+      "statusCode": 301
+    },
+    {
+      "source": "/paypal-checkout",
+      "destination": "/shop",
+      "statusCode": 301
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/resources",
+      "destination": "/tools",
+      "statusCode": 301
+    },
+    {
+      "source": "/rich-designer",
+      "destination": "/shop",
+      "statusCode": 301
+    },
+    {
+      "source": "/search",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/services",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/brand-strategy",
+      "destination": "/blog/brand-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/logo-design",
+      "destination": "/work",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/web-design",
+      "destination": "/saas-web-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/strategy-9292459811",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/strategy-workshop",
+      "destination": "/blog/brand-strategy",
+      "statusCode": 301
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/shop",
       "statusCode": 301
     }
   ],
