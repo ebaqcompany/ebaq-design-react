@@ -344,6 +344,7 @@ export const Header78Defaults: Props = {
 
   // Row 3: Website Shots
   row3: [
+    { type: "image", src: "/portfolio/websites/orbio-web.webp", alt: "Orbio Website" },
     { type: "image", src: "/portfolio/websites/elevate-web.jpg", alt: "Elevate Website" },
     { type: "image", src: "/portfolio/websites/nextdim-web-portfolio.jpg", alt: "NextDim Website" },
     { type: "image", src: "/portfolio/websites/aero-web.jpg", alt: "Aero Website" },
