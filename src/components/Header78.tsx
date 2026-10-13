@@ -326,6 +326,7 @@ export const Header78Defaults: Props = {
 
   // Row 2: Identity/Bento Shots
   row2: [
+    { type: "image", src: "/portfolio/identities/orbio-bento.webp", alt: "Orbio Identity" },
     { type: "image", src: "/portfolio/identities/elevate-bento.jpg", alt: "Elevate Identity" },
     { type: "image", src: "/portfolio/identities/nexdim-bento.jpg", alt: "NextDim Identity" },
     { type: "image", src: "/portfolio/identities/aero-bento.webp", alt: "Aero Identity" },
