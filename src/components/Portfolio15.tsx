@@ -27,7 +27,7 @@ export const Portfolio15 = (props: Portfolio15Props) => {
   };
 
   return (
-    <section {...sectionProps} className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section {...sectionProps} className="bg-[#f5f5f5] px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <Carousel opts={{ loop: true, align: "start" }} className="overflow-hidden">
           <CarouselContent className="ml-0">

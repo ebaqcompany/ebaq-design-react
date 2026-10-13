@@ -18,7 +18,7 @@ const indexHtml = await read('../dist/index.html')
 const sitemap = await read('../public/sitemap.xml')
 const paths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => new URL(url).pathname).filter((path) => path !== '/')
 const metadata = new Map()
-const { buildBlogPostingSchema, buildFaqSchema, buildVideoSchema, resolveFaqPairs, serializeJsonLd } = await loadData('../src/content/structuredData.ts')
+const { buildBlogPostingSchema, buildCaseStudySchema, buildFaqSchema, buildVideoSchema, resolveFaqPairs, serializeJsonLd } = await loadData('../src/content/structuredData.ts')
 
 // Read existing static-page copy so generated titles stay aligned with React.
 for (const [path, component] of Object.entries({
@@ -47,7 +47,7 @@ for (const collection of ['blog', 'podcast']) {
   }
 }
 const { caseStudies } = await loadData('../src/data/caseStudies.ts')
-for (const study of caseStudies) metadata.set(`/work/${study.slug}`, { title: `${study.client} — ${study.title}`, description: study.summary, image: study.preview.src })
+for (const study of caseStudies) metadata.set(`/work/${study.slug}`, { title: study.seo?.title || `${study.client} — ${study.title}`, description: study.seo?.description || study.summary, image: study.preview.src, schemas: [buildCaseStudySchema(study, siteUrl)] })
 const { shopProducts } = await loadData('../src/data/shopProducts.ts')
 for (const product of shopProducts) metadata.set(`/shop/${product.slug}`, { title: product.seo?.title ?? `${product.title} | Ebaq Design`, description: product.seo?.description ?? product.description, image: product.seo?.image || product.image, socialTitle: product.seo?.ogTitle, socialDescription: product.seo?.ogDescription })
 

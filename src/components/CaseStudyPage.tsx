@@ -10,12 +10,14 @@ import { Gallery1 } from "./Gallery1";
 import { Header49 } from "./Header49";
 import { Portfolio15 } from "./Portfolio15";
 import { caseStudies, getCaseStudy } from "../data/caseStudies";
+import { buildCaseStudySchema, serializeJsonLd } from "../content/structuredData";
 import { NotFoundPage } from "./NotFoundPage";
 
 export const CaseStudyPage = () => {
   const { slug = "" } = useParams();
   const study = getCaseStudy(slug);
-  const seoTitle = study ? `${study.client} — ${study.title}` : "";
+  const seoTitle = study ? study.seo?.title ?? `${study.client} — ${study.title}` : "";
+  const seoDescription = study ? study.seo?.description ?? study.summary : "";
 
   useEffect(() => {
     if (!study) return;
@@ -24,13 +26,13 @@ export const CaseStudyPage = () => {
     const previousTitle = document.title;
     document.title = seoTitle;
     const meta = [
-      { selector: 'meta[name="description"]', attribute: "name", value: "description", content: study.summary },
+      { selector: 'meta[name="description"]', attribute: "name", value: "description", content: seoDescription },
       { selector: 'meta[property="og:title"]', attribute: "property", value: "og:title", content: seoTitle },
-      { selector: 'meta[property="og:description"]', attribute: "property", value: "og:description", content: study.summary },
+      { selector: 'meta[property="og:description"]', attribute: "property", value: "og:description", content: seoDescription },
       { selector: 'meta[property="og:type"]', attribute: "property", value: "og:type", content: "website" },
       { selector: 'meta[name="twitter:card"]', attribute: "name", value: "twitter:card", content: "summary_large_image" },
       { selector: 'meta[name="twitter:title"]', attribute: "name", value: "twitter:title", content: seoTitle },
-      { selector: 'meta[name="twitter:description"]', attribute: "name", value: "twitter:description", content: study.summary },
+      { selector: 'meta[name="twitter:description"]', attribute: "name", value: "twitter:description", content: seoDescription },
     ];
     const previous = meta.map((item) => {
       const existing = document.head.querySelector<HTMLMetaElement>(item.selector);
@@ -53,7 +55,7 @@ export const CaseStudyPage = () => {
         else element.content = originalContent ?? "";
       });
     };
-  }, [seoTitle, study]);
+  }, [seoDescription, seoTitle, study]);
 
   if (!study) return <NotFoundPage />;
 
@@ -95,15 +97,16 @@ export const CaseStudyPage = () => {
     <div className="relative bg-white">
       <Helmet>
         <title>{seoTitle}</title>
-        <meta name="description" content={study.summary} />
+        <meta name="description" content={seoDescription} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={seoTitle} />
-        <meta property="og:description" content={study.summary} />
+        <meta property="og:description" content={seoDescription} />
         <meta property="og:image" content={socialImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoTitle} />
-        <meta name="twitter:description" content={study.summary} />
+        <meta name="twitter:description" content={seoDescription} />
+        <script type="application/ld+json">{serializeJsonLd(buildCaseStudySchema(study, "https://www.ebaqdesign.com"))}</script>
         <meta name="twitter:image" content={socialImage} />
       </Helmet>
       <main>
@@ -117,20 +120,29 @@ export const CaseStudyPage = () => {
           image={{
             src: study.hero.src,
             alt: study.hero.alt,
-            kind: study.hero.kind === "lottie" ? "lottie" : "image",
+            kind: study.hero.kind ?? "image",
             backgroundColor: study.hero.backgroundColor,
           }}
         />
 
         <Gallery1 heading="" description="" images={study.leadGallery} />
 
-        {study.content.map((block, index) =>
-          block.type === "header" ? (
-            <Header49 key={`header-${index}`} heading={block.heading} description={block.description} />
-          ) : (
-            <Gallery1 key={`gallery-${index}`} heading="" description="" images={block.images} />
-          ),
-        )}
+        {study.content
+          // merge back-to-back galleries so every image shares the same grid gap
+          .reduce<typeof study.content>((acc, block) => {
+            const last = acc[acc.length - 1];
+            if (block.type === "gallery" && last?.type === "gallery") {
+              acc[acc.length - 1] = { ...last, images: [...last.images, ...block.images] };
+            } else acc.push(block);
+            return acc;
+          }, [])
+          .map((block, index) =>
+            block.type === "header" ? (
+              <Header49 key={`header-${index}`} heading={block.heading} description={block.description} />
+            ) : (
+              <Gallery1 key={`gallery-${index}`} heading="" description="" images={block.images} />
+            ),
+          )}
 
         {study.testimonial && <Testimonial1 {...study.testimonial} />}
         {nextProjects.length > 0 && <Portfolio15 projects={nextProjects} />}

@@ -1,6 +1,7 @@
 "use client";
 
 import type { ButtonProps } from "@relume_io/relume-ui";
+import { VideoSources } from "./Gallery1";
 import { useRef, useEffect, useCallback, useState } from "react";
 import Lottie from "lottie-react";
 import { ArekProfileBadge } from "./ArekProfileBadge";
@@ -74,7 +75,8 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
     return (
       <video
         className="absolute inset-0 size-full object-cover"
-        src={item.src}
+        style={{ backgroundColor: item.bgColor }}
+        src={item.src.endsWith(".webm") ? undefined : item.src}
         autoPlay
         loop
         muted
@@ -82,7 +84,9 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
         preload="none"
         aria-hidden="true"
         draggable={false}
-      />
+      >
+        <VideoSources src={item.src} />
+      </video>
     );
   }
 
@@ -303,6 +307,7 @@ export const Header78Defaults: Props = {
 
   // Row 1: Logo Animations
   row1: [
+    { type: "video", src: "/portfolio/logos/orbio-logo.webm", alt: "Orbio", bgColor: "#0B0B0C" },
     { type: "lottie", src: "/portfolio/logos/ElevateLogoBGTop.json", alt: "Elevate", bgColor: "#000000", fit: "cover" },
     { type: "lottie", src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json", alt: "NextDim", bgColor: "#181735" },
     { type: "lottie", src: "/portfolio/logos/aero-logo.json", alt: "Aero", bgColor: "#63f3c0" },

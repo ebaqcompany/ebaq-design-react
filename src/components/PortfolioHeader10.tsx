@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Lottie, { type LottieRefCurrentProps } from "lottie-react";
+import { VideoSources } from "./Gallery1";
 
 type ImageProps = {
   src: string;
   alt?: string;
-  kind?: "image" | "lottie";
+  kind?: "image" | "video" | "lottie";
   backgroundColor?: string;
 };
 
@@ -64,6 +65,24 @@ const HeaderMedia = ({ image }: { image: ImageProps }) => {
           />
         )}
       </button>
+    );
+  }
+
+  if (image.kind === "video") {
+    return (
+      <div className="absolute inset-0" style={{ backgroundColor: image.backgroundColor }}>
+        <video
+          src={image.src.endsWith(".webm") ? undefined : image.src}
+          aria-label={image.alt}
+          className="size-full object-contain"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <VideoSources src={image.src} />
+        </video>
+      </div>
     );
   }
 

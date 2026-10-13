@@ -140,4 +140,44 @@ export const buildVideoSchema = (post: SchemaPost) => {
   } : null;
 };
 
+// A case study as a CreativeWork, so search engines and AI overviews can tie the project to the studio and its topics.
+export const buildCaseStudySchema = (
+  study: {
+    slug: string;
+    client: string;
+    title: string;
+    summary: string;
+    services: string[];
+    industry: string;
+    year: string;
+    preview: { src: string };
+    seo?: { title?: string; description?: string; keywords?: string[] };
+  },
+  siteUrl: string,
+) => {
+  const canonical = `${siteUrl}/work/${study.slug}`;
+  const organization = { "@type": "Organization", "@id": `${siteUrl}/#organization`, name: "Ebaq Design", url: `${siteUrl}/` };
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `${canonical}#case-study`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+    url: canonical,
+    name: study.seo?.title || `${study.client}: ${study.title}`,
+    headline: study.title,
+    description: study.seo?.description || study.summary,
+    abstract: study.summary,
+    image: [toAbsoluteUrl(study.preview.src, siteUrl)],
+    genre: "Brand identity case study",
+    about: [{ "@type": "Organization", name: study.client }, ...study.services.map((name) => ({ "@type": "Thing", name }))],
+    ...(study.seo?.keywords?.length ? { keywords: study.seo.keywords.join(", ") } : {}),
+    dateCreated: study.year,
+    creator: organization,
+    author: { "@type": "Person", "@id": `${siteUrl}/#founder`, name: "Arek Dvornechuck", url: `${siteUrl}/about`, jobTitle: "Senior Brand Designer" },
+    publisher: { ...organization, logo: { "@type": "ImageObject", url: `${siteUrl}/ebaqdesign-logo.svg` } },
+    audience: { "@type": "Audience", audienceType: `${study.industry} companies` },
+    inLanguage: "en-US",
+  };
+};
+
 export const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");

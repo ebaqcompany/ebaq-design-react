@@ -20,6 +20,7 @@ export type CaseStudyGalleryImage = CaseStudyImage & {
   kind?: "image" | "video" | "lottie";
   span?: "full" | "half";
   overlaySrc?: string;
+  aspectRatio?: string;
 };
 
 export type CaseStudyBrandSprintGallery = {
@@ -74,9 +75,156 @@ export type CaseStudy = {
   content: CaseStudyContentBlock[];
   testimonial?: CaseStudyTestimonial;
   nextProject?: CaseStudyNextProject;
+  // Search and AI-overview copy; falls back to "client — title" and the summary.
+  seo?: { title?: string; description?: string; keywords?: string[] };
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: "orbio",
+    client: "Orbio",
+    title: "A Greco-Roman brand evolution for tokenized AI inference",
+    summary:
+      "Orbio is an AI startup that tokenizes AI inference: every CREDIT is $1 of AI usage, earned by $ORBIO stakers, traded below list price, and spent through one API key across every major model. In a one-week AI startup branding sprint, we evolved the identity rather than replacing it, keeping the 3D marble orb and building one system around it: an all-caps serif wordmark, a marble-and-brass palette with a single orange accent, a three-face type system, and social templates designed to move.",
+    services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
+    industry: "AI infrastructure",
+    year: "2026",
+    seo: {
+      title: "Orbio: AI Startup Branding Case Study | Ebaq Design",
+      description:
+        "AI startup branding case study: a one-week brand sprint for Orbio, an AI inference platform, covering the logo system, color palette, typography, motion and social templates.",
+      keywords: [
+        "AI startup branding",
+        "AI brand identity",
+        "AI company logo design",
+        "brand sprint",
+        "crypto brand identity",
+        "Web3 branding",
+        "motion branding",
+        "social media templates",
+      ],
+    },
+    preview: { src: "/case-study/orbio/thumbnail.jpg", alt: "Horizontal Orbio logo lockup: the 3D marble orb beside the ORBIO wordmark" },
+    hero: {
+      src: "/case-study/orbio/hero-orb.webm",
+      alt: "Horizontal Orbio logo lockup: the 3D marble orb turning beside the ORBIO wordmark",
+      kind: "video",
+      backgroundColor: "#0B0B0C",
+    },
+    leadGallery: [
+      { src: "/case-study/orbio/01-logos.webp", alt: "Orbio logo lockups in 3D and flat versions on light and dark" },
+      { src: "/case-study/orbio/01-flat-orb-sky.webp", alt: "Flat Orbio orb over a Renaissance sky painting" },
+    ],
+    content: [
+      {
+        type: "header",
+        heading: "One master brand, one accent",
+        description:
+          "Orbio leads, and each product is named with a plain descriptor: Orbio Launchpad, Orbio Marketplace, Orbio Incognito. The palette comes from the marble itself. Void, Marble, and Stone set the fields, Vein orange is the only accent, and Brass, Celeste, and Iris give Marketplace, Launchpad, and Incognito their own color.",
+      },
+      {
+        type: "gallery",
+        images: [
+          { src: "/case-study/orbio/02-brand-architecture.webp", alt: "Orbio brand architecture with Launchpad, Marketplace, and Incognito lockups" },
+          {
+            src: "/case-study/orbio/03-colors.webm",
+            alt: "Orbio primary and secondary color palette in motion",
+            kind: "video",
+          },
+        ],
+      },
+      {
+        type: "header",
+        heading: "Three typefaces, each with one job",
+        description:
+          "ABC Arizona Flare sets the headlines in caps. Geist Mono handles labels, menus, and data in tracked caps, and Geist sets everything people read at length.",
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: "/case-study/orbio/25-type-trio.webm",
+            alt: "Orbio typefaces typed in sequence: Arizona Flare as the primary typeface, then Geist as the secondary and Geist Mono as the tertiary",
+            kind: "video",
+          },
+          {
+            src: "/case-study/orbio/24-type-scale.webp",
+            alt: "Orbio type scale on black with headline, subhead, body, and label samples and their font, size, leading, tracking, and scale specs",
+          },
+        ],
+      },
+      {
+        type: "header",
+        heading: "Marble leads, the bits stay quiet",
+        description:
+          "Every surface has one dominant visual. Marble sculptures come first, Renaissance paintings second, and a field of zeros and ones adds depth at low opacity. On the website heroes the bits wake up under the cursor and fade as it moves on.",
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: "/case-study/orbio/04-heroes.webm",
+            alt: "Orbio website heroes for Home, Launchpad, Marketplace, and Incognito in sequence",
+            kind: "video",
+            aspectRatio: "4 / 3",
+          },
+          {
+            src: "/case-study/orbio/05-banner.webm",
+            alt: "Orbio banner with CREDIT coins tossed across the headline",
+            kind: "video",
+          },
+        ],
+      },
+      {
+        type: "header",
+        heading: "Built to move",
+        description:
+          "The cards, posts, and templates were designed as motion from the start, so the same layouts work as still graphics, short loops, and social clips.",
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: "/case-study/orbio/11-card-carousel.webm",
+            alt: "Orbio card carousel with fresco paintings and serif headlines",
+            kind: "video",
+          },
+          {
+            src: "/case-study/orbio/12-card-where-meets.webm",
+            alt: "Orbio cards pairing paintings with Where X meets Y headlines",
+            kind: "video",
+          },
+          {
+            src: "/case-study/orbio/16-social-wall.webm",
+            alt: "Wall of nine Orbio Instagram posts sliding in three columns on stone",
+            kind: "video",
+          },
+        ],
+      },
+      {
+        type: "header",
+        heading: "Out in the world",
+        description:
+          "The same rules hold at street scale and in your hand: a long billboard on a brick wall, a coffee cup, a tote, and a tee.",
+      },
+      {
+        type: "gallery",
+        images: [
+          { src: "/case-study/orbio/28-billboard.webp", alt: "Long Orbio billboard on a brick wall: a reclining marble figure holding the orb between Smarter spend and Same tokens on dusty blue" },
+          { src: "/case-study/orbio/27-cup.webp", alt: "Hand holding a black Orbio coffee cup printed in orange: Humans run on coffee. Agents run on credit.", span: "half" },
+          { src: "/case-study/orbio/20-tote.webp", alt: "Brass-gold Orbio tote bag with a marble head over a fading grid of zeros and ones and the serif wordmark", span: "half" },
+          { src: "/case-study/orbio/26-tee-horae.webp", alt: "White Orbio T-shirt with a round Renaissance painting of four women dancing around a marble orb, ringed by the words Every model within reach" },
+        ],
+      },
+    ],
+    nextProject: {
+      title: "NextDim AI",
+      subheading: "A futuristic brand identity for AI-powered healthcare, beyond the clinical",
+      image: { src: "/portfolio/identities/nexdim-bento.jpg", alt: "NextDim AI brand identity" },
+      url: "/work/next-dimension",
+      tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
+    },
+  },
   {
     slug: "next-dimension",
     client: "NextDim AI",

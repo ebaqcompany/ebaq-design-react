@@ -8,7 +8,17 @@ type ImageProps = {
   kind?: "image" | "video" | "lottie";
   span?: "full" | "half";
   overlaySrc?: string;
+  aspectRatio?: string;
 };
+
+// WebM first, with the MP4 next to it as the fallback for browsers without VP9 (older Safari).
+export const VideoSources = ({ src }: { src: string }) =>
+  src.endsWith(".webm") ? (
+    <>
+      <source src={src} type="video/webm" />
+      <source src={src.replace(/\.webm$/, ".mp4")} type="video/mp4" />
+    </>
+  ) : null;
 
 const GalleryLottie = ({ src, alt }: Pick<ImageProps, "src" | "alt">) => {
   const [animationData, setAnimationData] = useState<object | null>(null);
@@ -68,16 +78,21 @@ export const Gallery1 = (props: Gallery1Props) => {
         <div className="grid auto-cols-fr grid-cols-1 gap-8 md:grid-cols-2">
           {images.map((image) => {
             const media = image.kind === "video" ? (
-              <div className="relative aspect-video w-full overflow-hidden">
+              <div
+                className={`relative w-full overflow-hidden ${image.aspectRatio ? "" : "aspect-video"}`}
+                style={image.aspectRatio ? { aspectRatio: image.aspectRatio } : undefined}
+              >
                 <video
-                  src={image.src}
+                  src={image.src.endsWith(".webm") ? undefined : image.src}
                   aria-label={image.alt}
                   className="size-full object-cover"
                   autoPlay
                   muted
                   loop
                   playsInline
-                />
+                >
+                  <VideoSources src={image.src} />
+                </video>
                 {image.overlaySrc && (
                   <img src={image.overlaySrc} alt="" aria-hidden="true" className="absolute inset-0 size-full object-cover" />
                 )}

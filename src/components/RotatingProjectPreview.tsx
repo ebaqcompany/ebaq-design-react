@@ -101,10 +101,12 @@ export const RotatingProjectPreview = ({
   );
 
   const currentImage = previewImages[imageIndex] ?? image;
+  // At rest, show the project's own preview image; the gallery only rotates on hover.
+  const shownImage = isHovering ? currentImage : image;
   const content = !isHovering && lottie ? (
     <StaticLastFrameLottie {...lottie} fallback={currentImage} />
   ) : (
-    <img src={currentImage.src} className={`size-full object-cover object-center ${imageClassName ?? ""}`.trim()} alt={currentImage.alt} />
+    <img src={shownImage.src} className={`size-full object-cover object-center ${imageClassName ?? ""}`.trim()} alt={shownImage.alt} />
   );
   const linkClassName = `flex items-center justify-center overflow-hidden ${className ?? ""}`;
 
