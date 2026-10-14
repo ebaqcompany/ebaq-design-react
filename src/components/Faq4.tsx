@@ -71,7 +71,7 @@ export const Faq4 = (props: Faq4Props) => {
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto w-full max-w-lg text-center">
             <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
-            <h2>{heading}</h2>
+            <h2 className="whitespace-pre-line text-balance">{heading}</h2>
           </div>
         </div>
         <Accordion type="single" collapsible value={openItem} onValueChange={setOpenItem} className="mx-auto grid w-full max-w-md grid-cols-1 items-start gap-3 md:gap-4">
