@@ -28,7 +28,7 @@ export const Contact5 = () => {
           <p className="mb-3 font-semibold text-brand-primary md:mb-4">Start a conversation</p>
           <h1 className="mb-5 text-h1 md:mb-6">Tell me about your project</h1>
           <p className="max-w-lg text-md">Book a free 15-minute call to discuss your branding or website project, or email me directly.</p>
-          <AvailableButton className="mt-8 self-start" />
+          <AvailableButton nav keepLabel className="mt-8 self-start" />
           <div className="mt-8 grid gap-4">
             {contactDetails.map(({ href, icon: Icon, label }) => {
               const content = <><Icon className="size-6 shrink-0" /><span>{label}</span></>;

@@ -246,6 +246,15 @@
   .available-button--nav .available-button-label {
     display: none;
   }
+
+  .available-button--nav.available-button--keep-label {
+    width: fit-content;
+    padding: 0 1rem 0 3rem;
+  }
+
+  .available-button--nav.available-button--keep-label .available-button-label {
+    display: inline-block;
+  }
 }
 
 .available-button--nav .available-button-mark,

@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import { pricing, studio } from "../content/siteFacts";
-import { BiCheck, BiSolidStar } from "react-icons/bi";
+import { pricing, siteUrl, studio } from "../content/siteFacts";
+import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 import {
   Navbar16,
   Header78,
@@ -8,6 +8,8 @@ import {
   AboutSection,
   BookerSection,
 } from "./index";
+import { Faq4 } from "./Faq4";
+import { DeliverablesSection, IndustryTestimonial, PainPointsSection } from "./IndustryLandingSections";
 
 // Fox Berman images
 
@@ -82,164 +84,88 @@ const painPoints = [
   },
 ];
 
-const PainPointsSection = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
-    <div className="container max-w-6xl">
-      <p
-        className="mb-3 font-semibold text-brand-primary md:mb-4"
-        style={{ fontFamily: "'Roboto', sans-serif" }}
-      >
-        Why it matters
-      </p>
-      <h2
-        className="mb-12 text-5xl md:text-7xl lg:text-8xl tracking-[-0.04em] max-w-3xl"
-        style={{
-          fontFamily: "'Roboto Condensed', sans-serif",
-          fontWeight: 600,
-          lineHeight: 1.05,
-        }}
-      >
-        Your brand is your strongest argument
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-        {painPoints.map((point, i) => (
-          <div key={i} className="border-t border-black/10 pt-6">
-            <h3
-              className="text-xl md:text-2xl mb-3 tracking-[-0.02em]"
-              style={{ fontFamily: "'Roboto Condensed', sans-serif" }}
-            >
-              {point.title}
-            </h3>
-            <p className="text-black/50 text-base md:text-lg leading-relaxed">
-              {point.body}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
 // Deliverables — law firm specific
 const deliverables = [
   "Custom logo (SVG, PNG, dark/light variants)",
+  "Logo animation",
   "Brand guidelines \u2014 colors, typography, usage rules",
   "Business cards + letterhead",
   "Email signature",
+  "Social media graphics for LinkedIn and Instagram",
   "Figma web design \u2014 desktop, tablet, mobile",
   "Framer or Webflow build \u2014 live and fast",
-  "Website copywriting (homepage + services)",
+  "Website copywriting (homepage + practice areas)",
   "Booking / intake integration",
-  "1 revision round included",
+  "Revisions included",
   "All source files delivered",
 ];
 
-const DeliverablesSection = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
-    <div className="container max-w-6xl">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <div>
-          <p
-            className="mb-3 font-semibold text-brand-primary md:mb-4"
-            style={{ fontFamily: "'Roboto', sans-serif" }}
-          >
-            What you get
-          </p>
-          <h2
-            className="text-5xl md:text-6xl lg:text-7xl tracking-[-0.04em] mb-6"
-            style={{
-              fontFamily: "'Roboto Condensed', sans-serif",
-              fontWeight: 600,
-              lineHeight: 1.05,
-            }}
-          >
-            Everything a law firm needs to look the part
-          </h2>
-          <p className="text-black/50 text-base md:text-lg leading-relaxed">
-            One price. One designer. Logo through live website &mdash; complete in two focused weeks.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-4">
-          {deliverables.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <BiCheck className="size-5 flex-shrink-0 mt-0.5" />
-              <span className="text-base md:text-lg">{item}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-);
 
-// Testimonial — L. Berman
-const LawFirmTestimonial = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
-    <div className="mx-auto max-w-lg text-center">
-      <div className="flex justify-center gap-1 mb-6">
-        {[...Array(5)].map((_, i) => (
-          <BiSolidStar key={i} className="size-5 text-yellow-400" />
-        ))}
-      </div>
-      <blockquote
-        className="text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] leading-tight mb-10"
-        style={{
-          fontFamily: "'Roboto', sans-serif",
-          fontVariationSettings: "'wght' 300",
-        }}
-      >
-        &ldquo;Excellent work! Fast, reliable and look and feel matched beyond our expectations.&rdquo;
-      </blockquote>
-      <div className="flex items-center justify-center gap-4">
-        <a
-          href="https://www.linkedin.com/in/lucasbermanattorney/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/testimonials/lucas.jpeg"
-            alt="L. Berman"
-            className="size-11 rounded-full object-cover flex-shrink-0 hover:opacity-80 transition-opacity"
-          />
-        </a>
-        <div className="text-left">
-          <p className="font-semibold text-sm leading-tight">L. Berman (LL.M)</p>
-          <p className="text-sm text-black/50">Partner, Fox Berman</p>
-        </div>
-        <div className="h-8 w-px bg-black/20 mx-1" />
-        <div className="flex flex-col items-center gap-1">
-          <a
-            href="https://foxberman.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-70 transition-opacity"
-          >
-            <img
-              src="https://framerusercontent.com/images/p2L0pocENjLjCA6lN08CcTL45g.svg?height=120"
-              alt="Fox Berman"
-              className="h-5 w-auto"
-            />
-          </a>
-          <a
-            href="https://foxberman.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-black/40 hover:text-black transition-colors whitespace-nowrap"
-            style={{ fontFamily: "'Roboto', sans-serif" }}
-          >
-            View live website &rarr;
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-);
+
+// Law firm questions, answered in full so search engines and AI assistants can quote them.
+const pageUrl = `${siteUrl}/law-firm-branding`;
+const lawFirmFaqs = [
+  {
+    question: "How much does law firm branding cost?",
+    answer: `${pricing.weekly} per week, flat. A new law firm brand identity or rebrand (logo, logo animation, colors, typography, brand guidelines, business cards, letterhead, email signature, and LinkedIn and Instagram graphics) is delivered in one week, guaranteed, for ${pricing.weekly} total. A website adds one to two more weeks at the same rate, agreed before work starts.`,
+  },
+  {
+    question: "How long does a law firm rebrand take?",
+    answer: "One week for the brand identity, guaranteed. The website follows in one to two more weeks, depending on the number of pages. There are no months-long agency timelines.",
+  },
+  {
+    question: "Have you branded a law firm before?",
+    answer: "Yes. For Fox Berman, a boutique business and international law firm in Sint Maarten, I designed a custom wordmark, logo animation, brand guidelines, stationery, signage, Instagram and LinkedIn graphics, and a new website. Partner Lucas Berman: \u201cExcellent work! Fast, reliable and look and feel matched beyond our expectations.\u201d",
+  },
+  {
+    question: "Do you design law firm websites and social media too?",
+    answer: "Yes. I design the website in Figma and build it in Framer or Webflow, with homepage and practice-area copy and consultation booking, plus LinkedIn banners, Instagram posts, and profile images that match the new brand.",
+  },
+  {
+    question: "Do you work with law firms outside New York?",
+    answer: `Yes. I'm based in ${studio.location} and work with firms across the US and internationally. Fox Berman is in the Dutch Caribbean, and the whole process runs remotely.`,
+  },
+  {
+    question: "Who will I work with?",
+    answer: "Arek Dvornechuck, a senior brand designer with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.",
+  },
+];
+
+const lawFirmSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Law firm branding and website design",
+    serviceType: ["Law Firm Branding", "Law Firm Logo Design", "Law Firm Website Design", "Law Firm Social Media Graphics"],
+    description: `Brand identity, logo, logo animation, brand guidelines, stationery, social media graphics, and websites for law firms. ${pricing.summary} ${pricing.guarantee}`,
+    url: pageUrl,
+    audience: { "@type": "BusinessAudience", audienceType: "Law firms and attorneys" },
+    provider: { "@type": "ProfessionalService", "@id": `${siteUrl}/#organization`, name: studio.name },
+    areaServed: [{ "@type": "City", name: "New York City" }, { "@type": "Country", name: "United States" }, { "@type": "Place", name: "Worldwide" }],
+    offers: {
+      "@type": "Offer",
+      price: String(pricing.weeklyRate),
+      priceCurrency: pricing.currency,
+      priceSpecification: { "@type": "UnitPriceSpecification", price: String(pricing.weeklyRate), priceCurrency: pricing.currency, unitText: "WEEK" },
+      description: pricing.guarantee,
+    },
+    subjectOf: { "@type": "CreativeWork", "@id": `${siteUrl}/work/fox-berman#case-study`, name: "Fox Berman: Law Firm Branding Case Study", url: `${siteUrl}/work/fox-berman` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: lawFirmFaqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })),
+  },
+  buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Law firm branding", path: "/law-firm-branding" }], siteUrl),
+];
 
 // Main page component
 export const LawFirmLanding = () => (
   <div className="relative">
     <Helmet>
-      <title>Law Firm Branding &amp; Web Design | Ebaq Design</title>
+      <title>Law Firm Branding &amp; Website Design in NYC | Ebaq Design</title>
       <meta
         name="description"
         content="Law firm branding and websites by a senior designer in Brooklyn, NYC: logo, brand identity, social media graphics, and a fast website. Brand identity in one week, $3,000 flat."
@@ -251,7 +177,7 @@ export const LawFirmLanding = () => (
       <link rel="canonical" href="https://www.ebaqdesign.com/law-firm-branding" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.ebaqdesign.com/law-firm-branding" />
-      <meta property="og:title" content="Law Firm Branding & Web Design | Ebaq Design" />
+      <meta property="og:title" content="Law Firm Branding & Website Design in NYC | Ebaq Design" />
       <meta
         property="og:description"
         content="Professional branding and website design for law firms. Custom logo, brand identity, and fast-loading website built to attract high-value clients."
@@ -261,7 +187,7 @@ export const LawFirmLanding = () => (
         content="/images/site/law-firm-landing/fox-berman-logos.webp"
       />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Law Firm Branding & Web Design | Ebaq Design" />
+      <meta name="twitter:title" content="Law Firm Branding & Website Design in NYC | Ebaq Design" />
       <meta
         name="twitter:description"
         content="Professional branding and website design for law firms. Custom logo, brand identity, and website built to attract high-value clients."
@@ -289,6 +215,9 @@ export const LawFirmLanding = () => (
           },
         })}
       </script>
+      {lawFirmSchemas.map((schema) => (
+        <script key={schema["@type"]} type="application/ld+json">{serializeJsonLd(schema)}</script>
+      ))}
     </Helmet>
 
     <div className="relative z-10 bg-white">
@@ -304,13 +233,27 @@ export const LawFirmLanding = () => (
         row3={foxRow3}
         showRows={[1, 2, 3]}
       />
-      <PainPointsSection />
-      <DeliverablesSection />
+      <PainPointsSection heading="Your brand is your strongest argument" points={painPoints} />
+      <DeliverablesSection
+        heading="Everything a law firm needs to look the part"
+        description="One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows in one to two more weeks at the same rate, depending on the page count."
+        items={deliverables}
+      />
       <div id="fox-berman">
         <Layout527 hoverLinks={foxHoverLinks} />
       </div>
-      <LawFirmTestimonial />
-      <AboutSection heading="I'm Arek, a senior designer based in NYC, helping law firms look professional" />
+      <IndustryTestimonial
+        quote="Excellent work! Fast, reliable and look and feel matched beyond our expectations."
+        name="L. Berman (LL.M)"
+        role="Partner, Fox Berman"
+        avatar="/testimonials/lucas.jpeg"
+        personUrl="https://www.linkedin.com/in/lucasbermanattorney/"
+        logo={{ src: "/client-logos/foxberman-wordmark.svg", alt: "Fox Berman" }}
+        websiteUrl="https://foxberman.com/"
+        caseStudyUrl="/work/fox-berman"
+      />
+      <Faq4 tagline="FAQs" heading="Law firm branding questions" questions={lawFirmFaqs.map(({ question, answer }) => ({ title: question, answer }))} />
+      <AboutSection heading="I'm Arek, a senior designer based in Brooklyn, NYC, helping law firms look professional" />
     </div>
 
     <BookerSection />

@@ -10,7 +10,7 @@ import { Gallery1 } from "./Gallery1";
 import { Header49 } from "./Header49";
 import { Portfolio15 } from "./Portfolio15";
 import { caseStudies, getCaseStudy } from "../data/caseStudies";
-import { buildCaseStudySchema, serializeJsonLd } from "../content/structuredData";
+import { buildBreadcrumbSchema, buildCaseStudySchema, serializeJsonLd } from "../content/structuredData";
 import { NotFoundPage } from "./NotFoundPage";
 
 export const CaseStudyPage = () => {
@@ -107,6 +107,7 @@ export const CaseStudyPage = () => {
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
         <script type="application/ld+json">{serializeJsonLd(buildCaseStudySchema(study, "https://www.ebaqdesign.com"))}</script>
+        <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Work", path: "/work" }, { name: study.client, path: `/work/${study.slug}` }], "https://www.ebaqdesign.com"))}</script>
         <meta name="twitter:image" content={socialImage} />
       </Helmet>
       <main>
@@ -116,7 +117,7 @@ export const CaseStudyPage = () => {
           subheading={study.title}
           description={study.summary}
           tags={study.services.map((service) => ({ label: service }))}
-          links={[study.website, study.guidelines].filter((link): link is NonNullable<typeof link> => Boolean(link))}
+          links={[study.website, study.guidelines, study.landingPage].filter((link): link is NonNullable<typeof link> => Boolean(link))}
           image={{
             src: study.hero.src,
             alt: study.hero.alt,

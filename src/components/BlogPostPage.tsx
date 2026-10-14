@@ -19,6 +19,8 @@ import { Portfolio16Project, type Portfolio16ProjectProps } from "./Portfolio16"
 const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const siteUrl = "https://www.ebaqdesign.com";
 const startupPostSlugs = new Set(["saas-logos", "saas-websites", "ai-startups-logos", "ai-startup-landing-page-examples", "tech-startup-logos", "biotech-startup-branding"]);
+// Industry roundups link to the matching landing page and lead with the matching case study.
+const lawFirmPostSlugs = new Set(["law-firm-logos"]);
 const selectedWorkHighlights: Record<string, string> = { "next-dimension": "healthcare", "fox-berman": "law firm", elevate: "SaaS", aero: "clinical", brevidee: "video-editing", wingnut: "high-end interiors", ventur: "AI travel planner", "airport-executive": "London chauffeur", sweetgrass: "cannabis dispensary", periti: "HubSpot consultancy", medihuanna: "medicinal cannabis" };
 const logoScanHighlights: Record<string, string> = { "01": "formal, distinctive tone", "05": "purple uppercase serif wordmark", "20": "compact two-level lockup", "50": "purple uppercase serif wordmark", "60": "small centered strapline", "63": "slim vertical divider", "84": "open, geometric lettering", "99": "strong visual handle" };
 const highlightPhrase = (text: string, phrase?: string) => { if (!phrase) return escapeHtml(text); const parts = text.split(phrase); return parts.map((part, index) => `${escapeHtml(part)}${index < parts.length - 1 ? `<strong>${escapeHtml(phrase)}</strong>` : ""}`).join(""); };
@@ -237,8 +239,10 @@ export const BlogPostPage = () => {
           {articleIntro && <div dangerouslySetInnerHTML={{ __html: articleIntro }} />}
           <div dangerouslySetInnerHTML={{ __html: articleBody }} />
         </Content32>
-        <SelectedWork selectedWorkSlugs={post.selectedWorkSlugs} />
-        {startupPostSlugs.has(post.slug)
+        <SelectedWork selectedWorkSlugs={post.selectedWorkSlugs ?? (lawFirmPostSlugs.has(post.slug) ? ["fox-berman"] : undefined)} />
+        {lawFirmPostSlugs.has(post.slug)
+          ? <Cta17 heading="Need a law firm brand like these?" description="I design logos, brand identities, and websites for law firms. Your brand identity in one week, guaranteed, for $3,000." buttons={[{ title: "See law firm branding", href: "/law-firm-branding" }, { title: "Book a call", href: "/start" }]} />
+          : startupPostSlugs.has(post.slug)
           ? <Cta17 heading="Building a SaaS or AI startup?" description="I design and build startup websites that explain the product fast and turn visitors into demos." buttons={[{ title: "See SaaS web design", href: "/saas-web-design" }, { title: "Book a call", href: "/start" }]} />
           : <Cta17 />}
       </main>
