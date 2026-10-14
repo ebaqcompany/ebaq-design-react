@@ -1000,6 +1000,15 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   to { transform: translate3d(0, 0, 0); }
 }
 
+/* Marquee items look like h2s but aren't headings: repeated service names would bury each page's real outline. */
+.services-marquee-item {
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
 .services-marquee {
   display: flex;
   width: 100%;

@@ -46,37 +46,35 @@ export const PainPointsSection = ({ heading, points }: { heading: string; points
 export const DeliverablesSection = ({ heading, description, items }: { heading: string; description: string; items: string[] }) => (
   <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
     <div className="container max-w-6xl">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <div>
-          <p
-            className="mb-3 font-semibold text-brand-primary md:mb-4"
-            style={{ fontFamily: "'Roboto', sans-serif" }}
-          >
-            What you get
-          </p>
-          <h2
-            className="text-5xl md:text-6xl lg:text-7xl tracking-[-0.04em] mb-6"
-            style={{
-              fontFamily: "'Roboto Condensed', sans-serif",
-              fontWeight: 600,
-              lineHeight: 1.05,
-            }}
-          >
-            {heading}
-          </h2>
-          <p className="text-black/50 text-base md:text-lg leading-relaxed">
-            {description}
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-4">
-          {items.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <BiCheck className="size-5 flex-shrink-0 mt-0.5" />
-              <span className="text-base md:text-lg">{item}</span>
-            </div>
-          ))}
-        </div>
+      <div className="mb-10 max-w-3xl md:mb-14">
+        <p
+          className="mb-3 font-semibold text-brand-primary md:mb-4"
+          style={{ fontFamily: "'Roboto', sans-serif" }}
+        >
+          What you get
+        </p>
+        <h2
+          className="text-5xl md:text-6xl lg:text-7xl tracking-[-0.04em] mb-6"
+          style={{
+            fontFamily: "'Roboto Condensed', sans-serif",
+            fontWeight: 600,
+            lineHeight: 1.05,
+          }}
+        >
+          {heading}
+        </h2>
+        <p className="text-black/50 text-base md:text-lg leading-relaxed">
+          {description}
+        </p>
       </div>
+      <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((item) => (
+          <li key={item} className="flex items-start gap-3">
+            <BiCheck className="size-6 flex-none text-brand-primary" aria-hidden="true" />
+            <span className="text-base">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 );

@@ -32,6 +32,8 @@ type Props = {
   tagline?: string;
   subLink?: SubLinkProps;
   showScrollArrow?: boolean;
+  // Tile ratio for the media rows; use "16/9" when the media is widescreen.
+  mediaAspect?: "4/3" | "16/9";
 };
 
 export type Header78Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
@@ -105,9 +107,16 @@ type DraggableRowProps = {
   direction?: "left" | "right";
   initialOffset?: number;
   showBorder?: boolean;
+  mediaAspect?: "4/3" | "16/9";
 };
 
-const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder = false }: DraggableRowProps) => {
+const tileClasses = {
+  "4/3": "w-[60vw] sm:w-[18rem] md:w-[26rem] aspect-[4/3]",
+  // Wider tiles keep 16:9 media at roughly the same height as the 4:3 rows.
+  "16/9": "w-[80vw] sm:w-[24rem] md:w-[34rem] aspect-video",
+};
+
+const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder = false, mediaAspect = "4/3" }: DraggableRowProps) => {
   const directionMultiplier = direction === "left" ? 1 : -1;
   const rowRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef(-initialOffset);
@@ -254,7 +263,7 @@ const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder
         {duplicatedItems.map((item, index) => (
           <div
             key={index}
-            className={`relative flex-shrink-0 w-[60vw] sm:w-[18rem] md:w-[26rem] aspect-[4/3] rounded-lg overflow-hidden ${showBorder ? "border border-gray-200" : ""}`}
+            className={`relative flex-shrink-0 ${tileClasses[mediaAspect]} rounded-lg overflow-hidden ${showBorder ? "border border-gray-200" : ""}`}
           >
             <MediaItem item={item} />
           </div>
@@ -265,7 +274,7 @@ const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder
 };
 
 export const Header78 = (props: Header78Props) => {
-  const { heading, description, row1, row2, row3, showRows, subLink, showScrollArrow } = {
+  const { heading, description, row1, row2, row3, showRows, subLink, showScrollArrow, mediaAspect } = {
     ...Header78Defaults,
     ...props,
   };
@@ -292,9 +301,9 @@ export const Header78 = (props: Header78Props) => {
       </div>
 
       <div id="work" className="relative left-1/2 flex w-screen -translate-x-1/2 scroll-mt-4 flex-col gap-4">
-        {visibleRows.includes(1) && <DraggableRow items={row1} direction="left" />}
-        {visibleRows.includes(2) && <DraggableRow items={row2} direction="right" showBorder />}
-        {visibleRows.includes(3) && <DraggableRow items={row3} direction="left" initialOffset={208} />}
+        {visibleRows.includes(1) && <DraggableRow items={row1} direction="left" mediaAspect={mediaAspect} />}
+        {visibleRows.includes(2) && <DraggableRow items={row2} direction="right" showBorder mediaAspect={mediaAspect} />}
+        {visibleRows.includes(3) && <DraggableRow items={row3} direction="left" initialOffset={208} mediaAspect={mediaAspect} />}
       </div>
     </section>
   );

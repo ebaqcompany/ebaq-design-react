@@ -54,7 +54,7 @@ export const Layout527 = (props: Layout527Props) => {
                     ref={(el) => { videoRefs.current[index] = el; }}
                     className={clsx(
                       "w-full h-auto transition-opacity duration-300",
-                      hoveredIndex === index ? "opacity-100 relative" : "opacity-0 absolute inset-0",
+                      hoveredIndex === index ? "opacity-100 relative" : "pointer-events-none opacity-0 absolute inset-0",
                     )}
                     src={link.image.src}
                     autoPlay
@@ -67,7 +67,7 @@ export const Layout527 = (props: Layout527Props) => {
                     key={index}
                     className={clsx(
                       "w-full h-auto transition-opacity duration-300",
-                      hoveredIndex === index ? "opacity-100 relative" : "opacity-0 absolute inset-0",
+                      hoveredIndex === index ? "opacity-100 relative" : "pointer-events-none opacity-0 absolute inset-0",
                     )}
                     src={link.image.src}
                     alt={link.image.alt}

@@ -109,7 +109,7 @@ const buildLogoRosterBody = (roster: string[], pageImages: Array<Array<{ src: st
       const sectionImages = pageImages[section] || [];
       sectionImages.forEach((pageImage) => { html += `<figure><img src="${escapeHtml(pageImage.src)}" alt="${escapeHtml(pageImage.alt)}" loading="lazy"></figure>`; });
       const bridge = config?.sectionBridge || ["This section is a comparison of visual decisions rather than a ranking.", "I am looking for the detail that gives each identity a clear role in the wider firm system."];
-      html += `<p>${escapeHtml(bridge[0])}</p><p>${escapeHtml(bridge[1])}</p>`;
+      html += bridge.filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join("");
     }
     const entryNumber = String(index + 1).padStart(2, "0");
     html += `<h3>${entryNumber} ${escapeHtml(name)}</h3>`;
@@ -238,6 +238,10 @@ export const BlogPostPage = () => {
           </section>}
           {articleIntro && <div dangerouslySetInnerHTML={{ __html: articleIntro }} />}
           <div dangerouslySetInnerHTML={{ __html: articleBody }} />
+          {post.faq && post.faq.length > 0 && post.logoRoster && <section aria-labelledby="faq" className="mt-12">
+            <h2 id="faq">Frequently asked questions</h2>
+            {post.faq.map((item) => <div key={item.question} className="mt-6"><h3>{item.question}</h3><p>{item.answer}</p></div>)}
+          </section>}
         </Content32>
         <SelectedWork selectedWorkSlugs={post.selectedWorkSlugs ?? (lawFirmPostSlugs.has(post.slug) ? ["fox-berman"] : undefined)} />
         {lawFirmPostSlugs.has(post.slug)

@@ -90,7 +90,7 @@ export const Faq4 = (props: Faq4Props) => {
                 icon={<RxChevronDown className="size-6 shrink-0 md:size-8" />}
                 onPointerDown={clearHoverTimer}
                 onKeyDown={(event) => toggleFromKeyboard(event, itemValue)}
-                className="gap-4 py-4 font-heading text-base leading-[1.2] tracking-normal md:py-5 md:text-md"
+                className="gap-4 py-4 text-left font-heading text-base leading-[1.2] tracking-normal md:py-5 md:text-md"
               >
                 {question.title}
               </AccordionTrigger>

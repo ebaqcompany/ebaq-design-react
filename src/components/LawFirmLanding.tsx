@@ -4,64 +4,45 @@ import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredDat
 import {
   Navbar16,
   Header78,
-  Layout527,
+  Layout350Preview,
   AboutSection,
   BookerSection,
 } from "./index";
 import { Faq4 } from "./Faq4";
 import { DeliverablesSection, IndustryTestimonial, PainPointsSection } from "./IndustryLandingSections";
 
-// Fox Berman images
+// Fox Berman media: widescreen (16:9) only, so the rows and the preview frame never crop or letterbox.
+const FBV = "/case-study/fox-berman";
 
-const FB = {
-  logos: "/images/site/law-firm-landing/fox-berman-logos.webp",
-  cards: "/images/site/law-firm-landing/foxberman-cards2.webp",
-  web: "/images/site/law-firm-landing/foxberman-web2.webp",
-  sign2: "/images/site/law-firm-landing/foxberman-sign2.webp",
-  sign3: "/images/site/law-firm-landing/foxberman-sign3.webp",
-  linkedin: "/images/site/law-firm-landing/foxberman-linkedin.webp",
-  folder: "/images/site/law-firm-landing/foxberman-folder.webp",
-  letterhead: "/images/site/law-firm-landing/foxberman-letterhead.webp",
-  letterhead2: "/images/site/law-firm-landing/foxberman-letterhead2.webp",
-  booklet: "/images/site/law-firm-landing/foxberman-booklet-1-p-2000.webp",
-  favicon: "/images/site/law-firm-landing/foxberman-favicon.webp",
-  pin: "/images/site/law-firm-landing/foxberman-pin.webp",
-  office: "/images/site/law-firm-landing/foxberman-office-exterior.webp",
-};
-
-// Header rows — Fox Berman case study
 const foxRow1 = [
-  { type: "lottie" as const, src: "/portfolio/logos/foxberman-logo.json", bgColor: "#f3603c" },
-  { type: "image" as const, src: FB.cards, alt: "Fox Berman business cards" },
-  { type: "image" as const, src: FB.favicon, alt: "Fox Berman favicon" },
-  { type: "image" as const, src: FB.pin, alt: "Fox Berman pin" },
-  { type: "image" as const, src: FB.linkedin, alt: "Fox Berman LinkedIn banner" },
+  { type: "lottie" as const, src: "/portfolio/logos/foxberman-logo.json", alt: "Animated Fox Berman logo", bgColor: "#f3603c" },
+  { type: "image" as const, src: "/images/site/law-firm-landing/fox-berman-logos.webp", alt: "Fox Berman logo system" },
+  { type: "video" as const, src: `${FBV}/02-colors.mp4`, alt: "Fox Berman colors in motion" },
+  { type: "image" as const, src: "/foxberman/foxberman-fonts.png", alt: "Fox Berman typography" },
 ];
 
 const foxRow2 = [
-  { type: "image" as const, src: FB.letterhead, alt: "Fox Berman letterhead" },
-  { type: "image" as const, src: FB.letterhead2, alt: "Fox Berman letterhead 2" },
-  { type: "image" as const, src: FB.folder, alt: "Fox Berman folder" },
-  { type: "image" as const, src: FB.booklet, alt: "Fox Berman booklet" },
+  { type: "image" as const, src: "/foxberman/foxberman-colors.png", alt: "Fox Berman color palette" },
+  { type: "video" as const, src: "/foxberman/foxberman-social.mp4", alt: "Fox Berman social media graphics" },
+  { type: "image" as const, src: "/foxberman/foxberman-signature.jpg", alt: "Fox Berman email signature" },
+  { type: "image" as const, src: "/images/site/law-firm-landing/foxberman-office-exterior.webp", alt: "Fox Berman office signage" },
 ];
 
 const foxRow3 = [
-  { type: "video" as const, src: "/portfolio/websites/fox-berman-web.mp4", alt: "Fox Berman website" },
-  { type: "image" as const, src: FB.office, alt: "Fox Berman office exterior" },
-  { type: "image" as const, src: FB.sign2, alt: "Fox Berman wall sign" },
-  { type: "image" as const, src: FB.sign3, alt: "Fox Berman pylon sign" },
+  { type: "video" as const, src: `${FBV}/15-lawyers.mp4`, alt: "Fox Berman attorneys" },
+  { type: "image" as const, src: `${FBV}/01-logos.png`, alt: "Fox Berman logo variations" },
+  { type: "video" as const, src: `${FBV}/08-social.mp4`, alt: "Fox Berman social identity in motion" },
+  { type: "image" as const, src: `${FBV}/05-signature.jpg`, alt: "Fox Berman email signature design" },
 ];
 
-const foxHoverLinks = [
-  { url: "#", heading: "Logo", image: { src: FB.logos, alt: "Fox Berman logo" } },
-  { url: "#", heading: "Colors", image: { src: "/foxberman/foxberman-colors.png", alt: "Fox Berman brand colors" } },
-  { url: "#", heading: "Type", image: { src: "/foxberman/foxberman-fonts.png", alt: "Fox Berman typography" } },
-  { url: "#", heading: "Business Cards", image: { src: FB.cards, alt: "Fox Berman business cards" } },
-  { url: "#", heading: "Collateral", image: { src: FB.folder, alt: "Fox Berman collateral" } },
-  { url: "#", heading: "Social", image: { src: "/foxberman/foxberman-social.mp4", alt: "Fox Berman social media" } },
-  { url: "https://foxberman.com/", heading: "Web Design", image: { src: FB.web, alt: "Fox Berman website design" } },
-  { url: "#", heading: "Signature", image: { src: "/foxberman/foxberman-signature.jpg", alt: "Fox Berman email signature" } },
-  { url: "#", heading: "+ More", image: { src: FB.office, alt: "Fox Berman office signage" } },
+const foxPreview = [
+  { label: "Logo Design", image: { src: "/images/site/law-firm-landing/fox-berman-logos.webp", alt: "Fox Berman logo system" } },
+  { label: "Colors", image: { src: `${FBV}/02-colors.mp4`, alt: "Fox Berman colors in motion" } },
+  { label: "Typography", image: { src: "/foxberman/foxberman-fonts.png", alt: "Fox Berman typography" } },
+  { label: "Social", image: { src: "/foxberman/foxberman-social.mp4", alt: "Fox Berman social media graphics" } },
+  { label: "Email Signature", image: { src: "/foxberman/foxberman-signature.jpg", alt: "Fox Berman email signature" } },
+  { label: "Signage", image: { src: "/images/site/law-firm-landing/foxberman-office-exterior.webp", alt: "Fox Berman office signage" } },
+  { label: "In Use", image: { src: `${FBV}/15-lawyers.mp4`, alt: "Fox Berman attorneys" } },
 ];
 
 // Pain points — law firm specific
@@ -223,15 +204,13 @@ export const LawFirmLanding = () => (
     <div className="relative z-10 bg-white">
       <Navbar16 />
       <Header78
-        heading={`Branding and Websites\nfor Law Firms`}
-        tagline="Law Firm Branding"
+        heading={`Branding and Web\nfor Law Firms`}
         description={`Get a professional brand and website that commands trust,\nattracts high-value clients, and helps your firm charge what it's worth.`}
-        subLink={{ label: "see our work", url: "#fox-berman" }}
-        showScrollArrow
         row1={foxRow1}
         row2={foxRow2}
         row3={foxRow3}
         showRows={[1, 2, 3]}
+        mediaAspect="16/9"
       />
       <PainPointsSection heading="Your brand is your strongest argument" points={painPoints} />
       <DeliverablesSection
@@ -240,7 +219,7 @@ export const LawFirmLanding = () => (
         items={deliverables}
       />
       <div id="fox-berman">
-        <Layout527 hoverLinks={foxHoverLinks} />
+        <Layout350Preview eyebrow="Fox Berman case study" heading="$3k goes a long way. All this plus much more" items={foxPreview} />
       </div>
       <IndustryTestimonial
         quote="Excellent work! Fast, reliable and look and feel matched beyond our expectations."
@@ -252,7 +231,7 @@ export const LawFirmLanding = () => (
         websiteUrl="https://foxberman.com/"
         caseStudyUrl="/work/fox-berman"
       />
-      <Faq4 tagline="FAQs" heading="Law firm branding questions" questions={lawFirmFaqs.map(({ question, answer }) => ({ title: question, answer }))} />
+      <Faq4 tagline="FAQs" heading="Questions law firm partners ask" questions={lawFirmFaqs.map(({ question, answer }) => ({ title: question, answer }))} />
       <AboutSection heading="I'm Arek, a senior designer based in Brooklyn, NYC, helping law firms look professional" />
     </div>
 

@@ -72,10 +72,12 @@ export const extractFaqFromHtml = (html: string): FaqPair[] => {
   return [];
 };
 
-// A faq field is only rendered on the page for non-roster posts, so only then may it feed the schema.
+// A faq field is always rendered on the page, so it feeds the schema first. Roster posts build their
+// visible body from the roster, so their stored body is never scanned for questions.
 export const resolveFaqPairs = (post: Pick<SchemaPost, "faq" | "logoRoster">, bodyHtml: string): FaqPair[] => {
-  const listed = post.logoRoster ? [] : (post.faq || []).map((item) => cleanPair(item.question, item.answer)).filter(isComplete);
-  return listed.length ? listed : extractFaqFromHtml(bodyHtml);
+  const listed = (post.faq || []).map((item) => cleanPair(item.question, item.answer)).filter(isComplete);
+  if (listed.length) return listed;
+  return post.logoRoster ? [] : extractFaqFromHtml(bodyHtml);
 };
 
 export const toSchemaDate = (date?: string): string | null => {

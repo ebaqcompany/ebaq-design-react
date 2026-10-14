@@ -42,8 +42,8 @@ for (const match of legal.matchAll(/<LegalPage title="([^"]+)" updated="[^"]+" d
   metadata.set(`/${match[1].toLowerCase().replaceAll(' ', '-')}`, { title: `${match[1]} | Ebaqdesign`, description: match[2] })
 }
 metadata.set('/start', { title: 'Book a Call | Ebaq Design', description: 'Book a call with Arek Dvornechuck to discuss your branding, website, or motion design project.' })
-// Roster posts build their body in React, so only posts with a static body can carry FAQ schema here.
-const blogSchemas = (post, path) => [buildBlogPostingSchema({ ...post, url: path }, siteUrl), post.logoRoster ? null : buildFaqSchema(resolveFaqPairs(post, post.body || ''), `${siteUrl}${path}`), buildVideoSchema(post)].filter(Boolean)
+// resolveFaqPairs uses the rendered faq field and never scans a roster post's unrendered body.
+const blogSchemas = (post, path) => [buildBlogPostingSchema({ ...post, url: path }, siteUrl), buildFaqSchema(resolveFaqPairs(post, post.body || ''), `${siteUrl}${path}`), buildVideoSchema(post)].filter(Boolean)
 for (const collection of ['blog', 'podcast']) {
   const index = await json(`../public/content/${collection}/index.json`)
   preloads.set(`/${collection}`, { [`${collection}-index`]: index })

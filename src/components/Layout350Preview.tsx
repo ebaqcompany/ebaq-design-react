@@ -20,9 +20,13 @@ const portfolio22Services = [
   },
 ];
 
+export type PreviewItem = { label: string; image: { src: string; alt?: string } };
+
 type Layout350PreviewProps = {
   eyebrow?: string;
   heading?: string;
+  // Landing pages pass their own case-study media. Keep it 16:9: the preview frame is aspect-video.
+  items?: PreviewItem[];
 };
 
 const ServiceMedia = ({ src, alt }: { src: string; alt?: string }) => {
@@ -49,12 +53,12 @@ const ServiceMedia = ({ src, alt }: { src: string; alt?: string }) => {
   );
 };
 
-export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everything your brand needs" }: Layout350PreviewProps) => {
+export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everything your brand needs", items = portfolio22Services }: Layout350PreviewProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isInteracting, setIsInteracting] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const isMobile = useMediaQuery("(max-width: 767px)");
-  const activeItem = portfolio22Services[activeIndex] ?? portfolio22Services[0];
+  const activeItem = items[activeIndex] ?? items[0];
 
   const restoreInitialPreview = () => {
     setActiveIndex(0);
@@ -81,13 +85,13 @@ export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everythi
               if (!event.currentTarget.contains(event.relatedTarget)) restoreInitialPreview();
             }}
           >
-            {portfolio22Services.map((item, index) => {
+            {items.map((item, index) => {
               const isActive = activeIndex === index;
               const isDimmed = isInteracting && !isActive;
               const isExpanded = expandedIndex === index;
 
               return (
-                <div key={item.heading}>
+                <div key={item.label}>
                   <button
                     id={`portfolio22-service-trigger-${index}`}
                     type="button"
