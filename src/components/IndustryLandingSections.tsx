@@ -79,14 +79,15 @@ export const DeliverablesSection = ({ heading, description, items }: { heading: 
   </section>
 );
 
-type IndustryTestimonialProps = {
+export type IndustryTestimonialProps = {
   quote: string;
   name: string;
   role: string;
   avatar: string;
   personUrl?: string;
   logo: { src: string; alt: string };
-  websiteUrl: string;
+  // Not every client has a live site to point to.
+  websiteUrl?: string;
   caseStudyUrl: string;
   // Long quotes read better a size down.
   compact?: boolean;
@@ -127,23 +128,29 @@ export const IndustryTestimonial = ({ quote, name, role, avatar, personUrl, logo
           </div>
           <div className="h-8 w-px bg-black/20 mx-1" />
           <div className="flex flex-col items-center gap-1">
-            <a
-              href={websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-70 transition-opacity"
-            >
+            {websiteUrl ? (
+              <a
+                href={websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-70 transition-opacity"
+              >
+                <img src={logo.src} alt={logo.alt} className="h-5 w-auto" />
+              </a>
+            ) : (
               <img src={logo.src} alt={logo.alt} className="h-5 w-auto" />
-            </a>
-            <a
-              href={websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={textLink}
-              style={{ fontFamily: "'Roboto', sans-serif" }}
-            >
-              View live website &rarr;
-            </a>
+            )}
+            {websiteUrl && (
+              <a
+                href={websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={textLink}
+                style={{ fontFamily: "'Roboto', sans-serif" }}
+              >
+                View live website &rarr;
+              </a>
+            )}
             <a href={caseStudyUrl} className={textLink} style={{ fontFamily: "'Roboto', sans-serif" }}>
               Read the case study &rarr;
             </a>

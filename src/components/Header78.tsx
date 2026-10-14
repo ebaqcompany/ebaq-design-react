@@ -6,7 +6,7 @@ import { useRef, useEffect, useCallback, useState } from "react";
 import Lottie from "lottie-react";
 import { ArekProfileBadge } from "./ArekProfileBadge";
 
-type MediaProps = {
+export type MediaProps = {
   type: "image" | "lottie" | "video";
   src: string;
   alt?: string;

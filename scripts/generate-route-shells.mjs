@@ -28,7 +28,7 @@ const preloads = new Map()
 for (const [path, component] of Object.entries({
   '/about': 'AboutPage', '/contact': 'ContactPage', '/blog': 'BlogPage',
   '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage',
-  '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding',
+  '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding',
 })) {
   const source = await read(`../src/components/${component}.tsx`)
   const title = source.match(/<title>([^<{]+)<\/title>/)?.[1]?.replaceAll('&amp;', '&')
@@ -156,6 +156,9 @@ const llmsSummary = `# ${studio.name}
 - [Law firm branding](${siteUrl}/law-firm-branding)
 - [AI healthcare branding](${siteUrl}/ai-healthcare-branding)
 - [SaaS branding](${siteUrl}/saas-branding)
+- [Luxury branding](${siteUrl}/luxury-branding)
+- [Cannabis branding](${siteUrl}/cannabis-branding)
+- [Consultancy branding](${siteUrl}/consultancy-branding)
 - [SaaS and startup website design](${siteUrl}/saas-web-design)
 - [Contact](${siteUrl}/contact)
 - [Full details for AI assistants](${siteUrl}/llms-full.txt)

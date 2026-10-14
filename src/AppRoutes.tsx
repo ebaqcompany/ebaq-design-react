@@ -4,6 +4,9 @@ import StartPage from './StartPage.tsx'
 import { LawFirmLanding } from './components/LawFirmLanding.tsx'
 import { AiHealthcareLanding } from './components/AiHealthcareLanding.tsx'
 import { SaasBrandingLanding } from './components/SaasBrandingLanding.tsx'
+import { LuxuryBrandingLanding } from './components/LuxuryBrandingLanding.tsx'
+import { CannabisBrandingLanding } from './components/CannabisBrandingLanding.tsx'
+import { ConsultancyBrandingLanding } from './components/ConsultancyBrandingLanding.tsx'
 import { SaasWebDesignLanding } from './components/SaasWebDesignLanding.tsx'
 import { CaseStudyPage } from './components/CaseStudyPage.tsx'
 import { WorkPage } from './components/WorkPage.tsx'
@@ -42,6 +45,9 @@ export const AppRoutes = () => (
     <Route path="/law-firm-branding" element={<LawFirmLanding />} />
     <Route path="/ai-healthcare-branding" element={<AiHealthcareLanding />} />
     <Route path="/saas-branding" element={<SaasBrandingLanding />} />
+    <Route path="/luxury-branding" element={<LuxuryBrandingLanding />} />
+    <Route path="/cannabis-branding" element={<CannabisBrandingLanding />} />
+    <Route path="/consultancy-branding" element={<ConsultancyBrandingLanding />} />
     <Route path="/saas-web-design" element={<SaasWebDesignLanding />} />
     <Route path="/work" element={<WorkPage />} />
     <Route path="/about" element={<AboutPage />} />

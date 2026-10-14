@@ -22,7 +22,15 @@ const startupPostSlugs = new Set(["saas-websites", "ai-startup-landing-page-exam
 // Industry roundups link to the matching landing page and lead with the matching case study.
 type IndustryCta = { work: string; heading: string; description: string; button: { title: string; href: string } };
 const saasBrandingCta: IndustryCta = { work: "elevate", heading: "Building a SaaS brand?", description: "I design logos, app icons, and brand identities for SaaS and AI startups. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See SaaS branding", href: "/saas-branding" } };
+const luxuryCta: IndustryCta = { work: "airport-executive", heading: "Building a premium brand?", description: "I design monograms, logos, and refined brand identities for luxury and premium brands. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See luxury branding", href: "/luxury-branding" } };
+const cannabisCta: IndustryCta = { work: "sweetgrass", heading: "Building a cannabis brand?", description: "I design logos, packaging, and websites for dispensaries and cannabis brands. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See cannabis branding", href: "/cannabis-branding" } };
 const industryPosts: Record<string, IndustryCta> = {
+  "luxury-car-logos": luxuryCta,
+  "jewelry-logos": luxuryCta,
+  "fashion-logos": luxuryCta,
+  "cannabis-branding": cannabisCta,
+  "cannabis-branding-agencies": cannabisCta,
+  "consultancy-branding": { work: "periti", heading: "Need a sharper consultancy brand?", description: "I design logos, positioning, pitch decks, and websites for consultancies and B2B firms. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See consultancy branding", href: "/consultancy-branding" } },
   "law-firm-logos": { work: "fox-berman", heading: "Need a law firm brand like these?", description: "I design logos, brand identities, and websites for law firms. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See law firm branding", href: "/law-firm-branding" } },
   "saas-logos": saasBrandingCta,
   "tech-startup-logos": saasBrandingCta,
