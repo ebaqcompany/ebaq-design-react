@@ -117,7 +117,7 @@ export const CaseStudyPage = () => {
           subheading={study.title}
           description={study.summary}
           tags={study.services.map((service) => ({ label: service }))}
-          links={[study.website, study.guidelines, study.landingPage].filter((link): link is NonNullable<typeof link> => Boolean(link))}
+          links={[study.website, study.guidelines].filter((link): link is NonNullable<typeof link> => Boolean(link))}
           image={{
             src: study.hero.src,
             alt: study.hero.alt,

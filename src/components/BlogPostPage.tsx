@@ -18,9 +18,17 @@ import { Portfolio16Project, type Portfolio16ProjectProps } from "./Portfolio16"
 
 const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const siteUrl = "https://www.ebaqdesign.com";
-const startupPostSlugs = new Set(["saas-logos", "saas-websites", "ai-startups-logos", "ai-startup-landing-page-examples", "tech-startup-logos", "biotech-startup-branding"]);
+const startupPostSlugs = new Set(["saas-websites", "ai-startup-landing-page-examples"]);
 // Industry roundups link to the matching landing page and lead with the matching case study.
-const lawFirmPostSlugs = new Set(["law-firm-logos"]);
+type IndustryCta = { work: string; heading: string; description: string; button: { title: string; href: string } };
+const saasBrandingCta: IndustryCta = { work: "elevate", heading: "Building a SaaS brand?", description: "I design logos, app icons, and brand identities for SaaS and AI startups. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See SaaS branding", href: "/saas-branding" } };
+const industryPosts: Record<string, IndustryCta> = {
+  "law-firm-logos": { work: "fox-berman", heading: "Need a law firm brand like these?", description: "I design logos, brand identities, and websites for law firms. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See law firm branding", href: "/law-firm-branding" } },
+  "saas-logos": saasBrandingCta,
+  "tech-startup-logos": saasBrandingCta,
+  "ai-startups-logos": saasBrandingCta,
+  "biotech-startup-branding": { work: "next-dimension", heading: "Building in health tech or biotech?", description: "I design brand identities and websites for AI healthcare and health tech companies. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See AI healthcare branding", href: "/ai-healthcare-branding" } },
+};
 const selectedWorkHighlights: Record<string, string> = { "next-dimension": "healthcare", "fox-berman": "law firm", elevate: "SaaS", aero: "clinical", brevidee: "video-editing", wingnut: "high-end interiors", ventur: "AI travel planner", "airport-executive": "London chauffeur", sweetgrass: "cannabis dispensary", periti: "HubSpot consultancy", medihuanna: "medicinal cannabis" };
 const logoScanHighlights: Record<string, string> = { "01": "formal, distinctive tone", "05": "purple uppercase serif wordmark", "20": "compact two-level lockup", "50": "purple uppercase serif wordmark", "60": "small centered strapline", "63": "slim vertical divider", "84": "open, geometric lettering", "99": "strong visual handle" };
 const highlightPhrase = (text: string, phrase?: string) => { if (!phrase) return escapeHtml(text); const parts = text.split(phrase); return parts.map((part, index) => `${escapeHtml(part)}${index < parts.length - 1 ? `<strong>${escapeHtml(phrase)}</strong>` : ""}`).join(""); };
@@ -243,9 +251,9 @@ export const BlogPostPage = () => {
             {post.faq.map((item) => <div key={item.question} className="mt-6"><h3>{item.question}</h3><p>{item.answer}</p></div>)}
           </section>}
         </Content32>
-        <SelectedWork selectedWorkSlugs={post.selectedWorkSlugs ?? (lawFirmPostSlugs.has(post.slug) ? ["fox-berman"] : undefined)} />
-        {lawFirmPostSlugs.has(post.slug)
-          ? <Cta17 heading="Need a law firm brand like these?" description="I design logos, brand identities, and websites for law firms. Your brand identity in one week, guaranteed, for $3,000." buttons={[{ title: "See law firm branding", href: "/law-firm-branding" }, { title: "Book a call", href: "/start" }]} />
+        <SelectedWork selectedWorkSlugs={post.selectedWorkSlugs ?? (industryPosts[post.slug] ? [industryPosts[post.slug].work] : undefined)} />
+        {industryPosts[post.slug]
+          ? <Cta17 heading={industryPosts[post.slug].heading} description={industryPosts[post.slug].description} buttons={[industryPosts[post.slug].button, { title: "Book a call", href: "/start" }]} />
           : startupPostSlugs.has(post.slug)
           ? <Cta17 heading="Building a SaaS or AI startup?" description="I design and build startup websites that explain the product fast and turn visitors into demos." buttons={[{ title: "See SaaS web design", href: "/saas-web-design" }, { title: "Book a call", href: "/start" }]} />
           : <Cta17 />}

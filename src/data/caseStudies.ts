@@ -70,8 +70,6 @@ export type CaseStudy = {
   deliverables?: string[];
   website?: { label: string; href: string };
   guidelines?: { label: string; href: string };
-  // The industry landing page built around this project, linked from the case study header.
-  landingPage?: { label: string; href: string };
   preview: CaseStudyImage;
   hero: CaseStudyMedia;
   leadGallery: CaseStudyGalleryImage[];
@@ -338,7 +336,6 @@ export const caseStudies: CaseStudy[] = [
     },
     website: { label: "Visit live website", href: "https://www.foxberman.com/" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/foxberman" },
-    landingPage: { label: "Law firm branding", href: "/law-firm-branding" },
     preview: { src: "/portfolio/identities/forberman-bento.jpg", alt: "Fox Berman brand identity" },
     hero: {
       src: "/case-study/fox-berman/hero-logo.json",
