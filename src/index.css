@@ -650,7 +650,7 @@ a:has(> :is(h1, h2, h3, h4, h5, h6)):is(:hover, :focus-visible),
 }
 
 /* Global button styles */
-button:not([role="tab"]):not(.portfolio-header-replay):not(.portfolio22-service),
+button:not([role="tab"]):not(.portfolio-header-replay):not(.portfolio22-service):not(.gallery-lottie),
 button[role="tab"]:not(.service-text-tab),
 a.button-primary,
 a.button-secondary,

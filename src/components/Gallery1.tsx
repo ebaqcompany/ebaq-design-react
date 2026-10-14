@@ -20,8 +20,8 @@ export const VideoSources = ({ src }: { src: string }) =>
     </>
   ) : null;
 
-const GalleryLottie = ({ src, alt }: Pick<ImageProps, "src" | "alt">) => {
-  const [animationData, setAnimationData] = useState<object | null>(null);
+const GalleryLottie = ({ src, alt, aspectRatio }: Pick<ImageProps, "src" | "alt" | "aspectRatio">) => {
+  const [animationData, setAnimationData] = useState<{ w?: number; h?: number } | null>(null);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
 
   useEffect(() => {
@@ -32,9 +32,12 @@ const GalleryLottie = ({ src, alt }: Pick<ImageProps, "src" | "alt">) => {
   }, [src]);
 
   return (
+    // The frame takes the animation's own ratio (portrait animations sit beside portrait photos);
+    // gallery-lottie opts out of the global pill-shaped button style.
     <button
       type="button"
-      className="flex aspect-video w-full cursor-pointer items-center justify-center overflow-hidden"
+      className="gallery-lottie flex w-full cursor-pointer items-center justify-center overflow-hidden"
+      style={{ aspectRatio: aspectRatio ?? (animationData?.w && animationData?.h ? `${animationData.w} / ${animationData.h}` : "16 / 9") }}
       onClick={() => lottieRef.current?.goToAndPlay(0, true)}
       aria-label={`Replay ${alt ?? "gallery animation"}`}
     >
@@ -98,7 +101,7 @@ export const Gallery1 = (props: Gallery1Props) => {
                 )}
               </div>
             ) : image.kind === "lottie" ? (
-              <GalleryLottie src={image.src} alt={image.alt} />
+              <GalleryLottie src={image.src} alt={image.alt} aspectRatio={image.aspectRatio} />
             ) : (
               <div className="w-full overflow-hidden">
                 <img src={image.src} alt={image.alt} className="h-auto w-full" />

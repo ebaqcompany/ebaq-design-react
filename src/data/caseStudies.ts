@@ -1110,9 +1110,9 @@ export const caseStudies: CaseStudy[] = [
             alt: "Medihuanna social identity animation",
             kind: "lottie",
             span: "half",
+            aspectRatio: "2 / 3",
           },
           { src: "/case-study/medihuanna/06-stationery.jpg", alt: "Medihuanna stationery system" },
-          { src: "/case-study/medihuanna/07-bag.jpg", alt: "Medihuanna branded bag" },
         ],
       },
       {
@@ -1124,7 +1124,8 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/medihuanna/08-billboard.jpg", alt: "Medihuanna billboard campaign" },
+          { src: "/case-study/medihuanna/07-bag.jpg", alt: "Medihuanna branded bag", span: "half" },
+          { src: "/case-study/medihuanna/08-billboard.jpg", alt: "Medihuanna billboard campaign", span: "half" },
           { src: "/case-study/medihuanna/09-signage.jpg", alt: "Medihuanna environmental signage" },
           { src: "/case-study/medihuanna/10-logo-before.png", alt: "Medihuanna logo before redesign", span: "half" },
           { src: "/case-study/medihuanna/11-logo-after.png", alt: "Medihuanna logo after redesign", span: "half" },
