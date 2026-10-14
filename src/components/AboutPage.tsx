@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet-async";
+import { founder, pricing, siteUrl, studio } from "../content/siteFacts";
+import { serializeJsonLd } from "../content/structuredData";
 import { Navbar16 } from "./Navbar16";
 import { Footer15 } from "./Footer15";
 import { Testimonial32 } from "./Testimonial32";
@@ -10,9 +12,29 @@ import { Layout350Preview } from "./Layout350Preview";
 export const AboutPage = () => <div className="relative bg-white">
   <Helmet>
     <title>About Arek Dvornechuck | Ebaq Design</title>
-    <meta name="description" content="Meet Arek Dvornechuck, a New York-based senior designer and art director working directly with companies worldwide across brand, web, and motion." />
+    <meta name="description" content="Arek Dvornechuck is a senior brand designer in Brooklyn, NYC, previously at Chermayeff & Geismar & Haviv. Brand identity in one week, guaranteed, for $3,000 flat." />
     <link rel="canonical" href="https://www.ebaqdesign.com/about" />
     <meta property="og:url" content="https://www.ebaqdesign.com/about" />
+    <script type="application/ld+json">{serializeJsonLd({
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": `${siteUrl}/about#profile`,
+      url: `${siteUrl}/about`,
+      name: "About Arek Dvornechuck",
+      mainEntity: {
+        "@type": "Person",
+        "@id": `${siteUrl}/#founder`,
+        name: founder.name,
+        jobTitle: founder.jobTitle,
+        description: `Senior brand designer in ${studio.location} with ${founder.experience} of experience, including work at ${founder.formerStudio.name} (${founder.formerStudio.year}). ${pricing.summary} ${pricing.guarantee}`,
+        image: `${siteUrl}${founder.image}`,
+        worksFor: { "@type": "ProfessionalService", "@id": `${siteUrl}/#organization`, name: studio.name },
+        alumniOf: { "@type": "Organization", name: founder.formerStudio.name, url: founder.formerStudio.url },
+        homeLocation: { "@type": "Place", name: studio.location },
+        knowsAbout: founder.knowsAbout,
+        sameAs: founder.sameAs,
+      },
+    })}</script>
   </Helmet>
   <Navbar16 />
   <main>

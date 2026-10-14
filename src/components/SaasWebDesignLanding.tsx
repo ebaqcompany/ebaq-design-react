@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { pricing, studio } from "../content/siteFacts";
 import { BiCheck, BiSolidStar } from "react-icons/bi";
 import {
   Navbar16,
@@ -55,7 +56,7 @@ const painPoints = [
   },
   {
     title: "Senior designer, no hand-offs",
-    body: "You work directly with Arek, with nearly 20 years of experience, from positioning and copy through the live build.",
+    body: "You work directly with Arek, with over 20 years of experience, from positioning and copy through the live build.",
   },
 ];
 
@@ -205,7 +206,11 @@ export const SaasWebDesignLanding = () => (
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
+          "@id": "https://www.ebaqdesign.com/#organization",
           name: "Ebaq Design",
+          priceRange: `${pricing.weekly} per week`,
+          address: { "@type": "PostalAddress", streetAddress: studio.address.street, addressLocality: studio.address.locality, addressRegion: studio.address.region, postalCode: studio.address.postalCode, addressCountry: studio.address.country },
+          makesOffer: { "@type": "Offer", price: String(pricing.weeklyRate), priceCurrency: pricing.currency, description: `${pricing.summary} ${pricing.guarantee}` },
           description: "Website design and development for SaaS and AI startups",
           url: pageUrl,
           serviceType: ["SaaS Website Design", "Startup Website Design", "Framer Development", "Webflow Development"],

@@ -10,13 +10,13 @@ export const founderDecisionContent = {
       label: "Clear investment",
       heading: "Know the price before the project starts",
       value:
-        "$3,000 for the core Brand Sprint. Custom website development, larger brand systems, and proposal-based engagements are scoped separately.",
+        "A flat $3,000 per week. The Brand Sprint (a new brand identity or rebrand) is delivered in one week, guaranteed, so it costs $3,000 in total. Websites, motion, and pitch decks add weeks at the same rate, agreed before work starts.",
     },
     {
       label: "Focused process",
       heading: "Work directly with a senior designer",
       value:
-        "You work directly with Arek, a senior designer with nearly 20 years of brand identity experience. Brand strategy and identity are completed in a focused sprint, with website design or development available as a follow-on scope.",
+        "You work directly with Arek, a senior designer with over 20 years of brand identity experience. Brand strategy and identity are completed in a focused sprint, with website design or development available as a follow-on scope.",
     },
     {
       label: "Simple next step",
@@ -34,12 +34,12 @@ export const founderDecisionContent = {
     {
       question: "How much does a Brand Sprint cost?",
       answer:
-        "The core Brand Sprint is a clear $3,000 engagement. Larger websites, retainers, or proposal-based projects are scoped separately before work begins.",
+        "The Brand Sprint is $3,000 flat and takes one week, guaranteed. Every additional week of design or development is the same $3,000, and ongoing work is $10,000 per month.",
     },
     {
       question: "How long does the branding process take?",
       answer:
-        "A focused Brand Sprint takes one week. Website design or implementation can follow in a separate sprint depending on scope.",
+        "The Brand Sprint takes one week, guaranteed. Website design and development follow in one to three more weeks, depending on the page count.",
     },
   ],
 };

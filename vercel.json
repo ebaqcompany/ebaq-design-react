@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/old-home",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/octane-ascii",
       "destination": "https://octane-ascii-generator-706711204467.us-west1.run.app/",
       "statusCode": 301

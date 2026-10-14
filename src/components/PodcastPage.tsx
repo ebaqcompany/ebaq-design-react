@@ -4,9 +4,10 @@ import { PODCAST_INDEX_URL, type PodcastEpisodeSummary } from "../content/podcas
 import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 import { PodcastArchive } from "./PodcastArchive";
+import { preloadKeys, readPreloaded } from "../content/preload";
 
 export const PodcastPage = () => {
-  const [episodes, setEpisodes] = useState<PodcastEpisodeSummary[]>([]);
+  const [episodes, setEpisodes] = useState<PodcastEpisodeSummary[]>(() => readPreloaded<PodcastEpisodeSummary[]>(preloadKeys.podcastIndex) ?? []);
   useEffect(() => {
     const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
@@ -14,7 +15,7 @@ export const PodcastPage = () => {
     const previousDescription = description?.content;
     if (canonical) canonical.href = 'https://www.ebaqdesign.com/podcast';
     if (description) description.content = 'Interviews with branding experts, creative leaders, and entrepreneurs about building memorable brands.';
-    fetch(PODCAST_INDEX_URL).then((response) => { if (!response.ok) throw new Error("Unable to load podcast index"); return response.json() as Promise<PodcastEpisodeSummary[]>; }).then(setEpisodes).catch(console.error);
+    if (!readPreloaded(preloadKeys.podcastIndex)) fetch(PODCAST_INDEX_URL).then((response) => { if (!response.ok) throw new Error("Unable to load podcast index"); return response.json() as Promise<PodcastEpisodeSummary[]>; }).then(setEpisodes).catch(console.error);
     return () => {
       if (canonical && previousCanonical) canonical.href = previousCanonical;
       if (description && previousDescription) description.content = previousDescription;

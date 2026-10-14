@@ -7,13 +7,14 @@ type Props = { tagline: string; heading: string; description: string; pricingPla
 export type Pricing8Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Pricing8 = (props: Pricing8Props) => {
-  const { tagline, heading, pricingPlans } = { ...Pricing8Defaults, ...props };
+  const { tagline, heading, description, pricingPlans, ...sectionProps } = { ...Pricing8Defaults, ...props };
   return (
-    <section {...props} id="pricing" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
+    <section {...sectionProps} id="pricing" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container max-w-xl">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
-          <h2>{heading}</h2>
+          <h2 className="text-balance">{heading}</h2>
+          {description && <p className="mt-5 md:mt-6 md:text-md">{description}</p>}
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {pricingPlans.map((plan, index) => <PricingPlan key={index} plan={plan} />)}
@@ -44,10 +45,10 @@ const PricingPlan = ({ plan }: { plan: PricingPlan }) => (
 
 export const Pricing8Defaults: Props = {
   tagline: "Pricing",
-  heading: "Hire me by the week or month",
-  description: "Choose the pace that fits your business.",
+  heading: "One flat weekly rate. Guaranteed deliverables.",
+  description: "Your brand identity is delivered in one week, guaranteed, for $3,000 total. Need a website, motion, or a pitch deck too? Each extra week is the same flat rate, agreed before we start.",
   pricingPlans: [
-    { planName: "Weekly subscription", planDescription: "", monthlyPrice: "$3,000", yearlyPrice: "$10,000", period: "/wk", alternateLabel: "Branding fundamentals typically take one week.", availability: "2 spots available", features: ["Custom Logo Design", "Logo Animation", "Color Palette", "Typography", "Custom visuals (icons, etc.)", "Brand Guidelines", "Hero design", "Social Media Graphics", "Unlimited revisions"], button: { title: "Book a Call" } },
-    { planName: "Monthly subscription", planDescription: "", monthlyPrice: "$10,000", yearlyPrice: "$3,000", period: "/mo", alternateLabel: "Save $2,000 when you commit upfront", availability: "1 spot available", features: ["Everything as in weekly", "Brand Strategy", "Messaging", "Pitch Decks", "Figma Web Design", "Framer/Webflow Dev.", "Motion Graphics", "Web Development", "Unlimited revisions"], button: { title: "Book a Call" } },
+    { planName: "Weekly", planDescription: "", monthlyPrice: "$3,000", yearlyPrice: "$10,000", period: "/week", alternateLabel: "Brand identity or rebrand delivered in one week, guaranteed. Flat fee.", availability: "2 spots available", features: ["Custom Logo Design", "Logo Animation", "Color Palette", "Typography", "Custom visuals (icons, etc.)", "Brand Guidelines", "Hero design", "Social Media Graphics", "Revisions included"], button: { title: "Book a Call" } },
+    { planName: "Monthly", planDescription: "", monthlyPrice: "$10,000", yearlyPrice: "$3,000", period: "/month", alternateLabel: "Save $2,000 when you commit upfront", availability: "1 spot available", features: ["Everything as in weekly", "Brand Strategy", "Messaging", "Pitch Decks", "Figma Web Design", "Framer/Webflow Dev.", "Motion Graphics", "Web Development", "Revisions included"], button: { title: "Book a Call" } },
   ],
 };

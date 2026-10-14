@@ -9,12 +9,13 @@ import { Navbar16 } from "./Navbar16";
 import { NotificationBar } from "./NotificationBar";
 import { PodcastEpisodeHeader } from "./PodcastEpisodeHeader";
 import { NotFoundPage } from "./NotFoundPage";
+import { preloadKeys, readPreloaded } from "../content/preload";
 
 export const PodcastEpisodePage = () => {
   const { slug = "" } = useParams();
-  const [episode, setEpisode] = useState<PodcastEpisode | null>(null);
+  const [episode, setEpisode] = useState<PodcastEpisode | null>(() => readPreloaded<PodcastEpisode>(preloadKeys.podcastEpisode(slug)) ?? null);
   const [missing, setMissing] = useState(false);
-  useEffect(() => { setEpisode(null); setMissing(false); fetch(getPodcastEpisodeUrl(slug)).then((response) => { if (!response.ok) throw new Error("Episode not found"); return response.json() as Promise<PodcastEpisode>; }).then(setEpisode).catch(() => setMissing(true)); }, [slug]);
+  useEffect(() => { const preloaded = readPreloaded<PodcastEpisode>(preloadKeys.podcastEpisode(slug)); setMissing(false); if (preloaded) { setEpisode(preloaded); return; } setEpisode(null); fetch(getPodcastEpisodeUrl(slug)).then((response) => { if (!response.ok) throw new Error("Episode not found"); return response.json() as Promise<PodcastEpisode>; }).then(setEpisode).catch(() => setMissing(true)); }, [slug]);
   useEffect(() => {
     if (!episode) return;
     const previousTitle = document.title;

@@ -9,6 +9,12 @@ import { useEffect, useRef, useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import { AIToolIconRow } from "./AIToolIconRow";
 import { arekToolIcons } from "./ArekProfileBadge";
+import { founder, pricingFaqs, studioFaqs, type FactFaq } from "../content/siteFacts";
+
+// Closed answers are only mounted when opened, so the prerendered HTML force-mounts
+// them (hidden) to keep every answer readable by crawlers that don't run JavaScript.
+const isServer = typeof window === "undefined";
+const factQuestion = ({ question, answer }: FactFaq): Question => ({ title: question, answer });
 
 type Question = {
   title: string;
@@ -32,6 +38,8 @@ export const Faq4 = (props: Faq4Props) => {
     ...Faq4Defaults,
     ...props,
   };
+  // Content props configure the section; only real HTML attributes belong on the element.
+  const sectionProps = Object.fromEntries(Object.entries(props).filter(([key]) => !(key in Faq4Defaults)));
 
   const clearHoverTimer = () => {
     if (hoverTimer.current !== null) window.clearTimeout(hoverTimer.current);
@@ -58,7 +66,7 @@ export const Faq4 = (props: Faq4Props) => {
   };
 
   return (
-    <section {...props} id="faq" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
+    <section {...sectionProps} id="faq" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto w-full max-w-lg text-center">
@@ -86,7 +94,7 @@ export const Faq4 = (props: Faq4Props) => {
               >
                 {question.title}
               </AccordionTrigger>
-              <AccordionContent className="pb-4 text-sm leading-relaxed md:pb-6 md:text-base">{question.answer}</AccordionContent>
+              <AccordionContent forceMount={isServer || undefined} className="pb-4 text-sm leading-relaxed md:pb-6 md:text-base">{question.answer}</AccordionContent>
             </AccordionItem>
             );
           })}
@@ -101,25 +109,19 @@ export const Faq4Defaults: Props = {
   heading: "What clients often ask",
   description: "A few practical details about working together.",
   questions: [
+    ...pricingFaqs.slice(0, 4).map(factQuestion),
     {
       title: "How fast can you start?",
       answer: <div className="flex flex-col items-start gap-3"><p>Availability depends on the current schedule. Book a call and I’ll confirm the earliest realistic start date after learning what you need.</p><div className="flex flex-wrap gap-2" aria-label="Current availability"><span role="status" aria-label="1 monthly spot available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>1 monthly spot available</span><span role="status" aria-label="2 weekly spots available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>2 weekly spots available</span></div></div>,
     },
+    ...studioFaqs.map(factQuestion),
     {
       title: "What tools do you use?",
-      answer: <div className="flex flex-col gap-3"><p>With over 20 years of experience, I use Adobe Illustrator, Photoshop, and After Effects across branding and motion projects. I design websites—and increasingly brand identities—in Figma, then develop primarily in Framer or Webflow, with deep expertise in both. I use Spline for 3D design and animation, alongside Jitter, Lottie, Rive, and Unicorn for animation and motion graphics.</p><div className="flex flex-wrap items-center gap-2" role="list" aria-label="Software I use">{arekToolIcons.map(([src, alt, className]) => <img key={src} src={src} alt={alt} className={`size-5 rounded-[20%] object-cover ${className ?? ""}`.trim()} />)}</div></div>,
+      answer: <div className="flex flex-col gap-3"><p>With {founder.experience} of experience, I use Adobe Illustrator, Photoshop, and After Effects across branding and motion projects. I design websites—and increasingly brand identities—in Figma, then develop primarily in Framer or Webflow, with deep expertise in both. I use Spline for 3D design and animation, alongside Jitter, Lottie, Rive, and Unicorn for animation and motion graphics.</p><div className="flex flex-wrap items-center gap-2" role="list" aria-label="Software I use">{arekToolIcons.map(([src, alt, className]) => <img key={src} src={src} alt={alt} className={`size-5 rounded-[20%] object-cover ${className ?? ""}`.trim()} />)}</div></div>,
     },
     {
       title: "Do you use AI?",
       answer: <div className="flex flex-col gap-3"><p>Yes—when it genuinely supports the work. Once I’ve established the creative direction, I may use tools such as Figma MCP, Codex, ChatGPT, and Claude to help with appropriate production tasks, from batch-uploading content across a website to batch-processing assets in Photoshop or Figma. I retain the human art direction and orchestrate the process, so clients can move suitable multi-page or content-heavy projects forward faster and get more done without giving up design judgment, strategy, or craft.</p><AIToolIconRow /></div>,
-    },
-    {
-      title: "Who are you best for?",
-      answer: "Ambitious founders and teams who value clear thinking, distinctive design, direct collaboration, and the momentum to make decisions and move the work forward.",
-    },
-    {
-      title: "What’s the minimum engagement?",
-      answer: "Focused engagements start at $3,000 for one week. Broader ongoing work typically starts at $10,000 per month, and an intro call helps us confirm the right fit.",
     },
   ],
 };

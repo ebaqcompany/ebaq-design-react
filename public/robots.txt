@@ -1,6 +1,24 @@
+# Search engines and AI assistants are welcome to read and cite this site.
 User-agent: *
 Allow: /
 Disallow: /proposal/
 
-Sitemap: https://www.ebaqdesign.com/sitemap.xml
+# AI search and answer engines, listed explicitly so a future blanket rule can't block them by accident.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: DuckAssistBot
+User-agent: meta-externalagent
+Allow: /
+Disallow: /proposal/
 
+Sitemap: https://www.ebaqdesign.com/sitemap.xml

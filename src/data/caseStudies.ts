@@ -66,6 +66,8 @@ export type CaseStudy = {
   services: string[];
   industry: string;
   year: string;
+  // What was actually designed, for structured data and llms-full.txt (the services tags stay broad).
+  deliverables?: string[];
   website?: { label: string; href: string };
   guidelines?: { label: string; href: string };
   preview: CaseStudyImage;
@@ -89,6 +91,7 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "AI infrastructure",
     year: "2026",
+    deliverables: ["Brand evolution", "Logo design in 3D and flat versions", "Logo animation", "Brand architecture for three products", "Color palette", "Type system", "Website design", "Instagram posts", "Billboard design", "Merchandise design"],
     seo: {
       title: "Orbio: AI Startup Branding Case Study | Ebaq Design",
       description:
@@ -234,6 +237,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Healthcare AI",
     year: "2026",
+    deliverables: ["Brand strategy", "Logo design", "Logo animation", "Typography", "Color palette", "Brand guidelines on guidelines.online", "Website design with an interactive shader", "Presentation folders and business cards", "Animated billboard", "Merchandise design"],
+    seo: {
+      title: "NextDim AI: Healthcare AI Branding Case Study | Ebaq Design",
+      description: "Healthcare AI branding case study: a new logo, logo animation, color palette, typography, online brand guidelines, and an interactive website for NextDimension, an AI-agent platform for medical practices.",
+      keywords: ["healthcare AI branding", "AI startup branding", "healthcare logo design", "medical AI website design", "logo animation"],
+    },
     website: { label: "Visit live website", href: "https://nextdim.io" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online" },
     preview: { src: "/portfolio/identities/nexdim-bento.jpg", alt: "NextDim AI brand identity" },
@@ -319,6 +328,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Legal services",
     year: "2025",
+    deliverables: ["Logo design (custom wordmark)", "Logo animation", "Color palette", "Brand guidelines on guidelines.online", "Business cards", "Letterhead and presentation folder", "Printed booklet", "Email signature", "Website design", "Social media graphics for Instagram and LinkedIn", "Wall and pylon signage", "Favicon"],
+    seo: {
+      title: "Fox Berman: Law Firm Branding Case Study | Ebaq Design",
+      description: "Law firm branding case study: a custom wordmark, logo animation, brand guidelines, stationery, signage, Instagram and LinkedIn graphics, and a website for Fox Berman, a boutique business law firm in Sint Maarten.",
+      keywords: ["law firm branding", "law firm logo design", "legal brand identity", "law firm website design", "law firm social media graphics"],
+    },
     website: { label: "Visit live website", href: "https://www.foxberman.com/" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/foxberman" },
     preview: { src: "/portfolio/identities/forberman-bento.jpg", alt: "Fox Berman brand identity" },
@@ -406,6 +421,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Ecommerce technology",
     year: "2026",
+    deliverables: ["Logo design", "Logo animation", "Icon system", "Brand guidelines on guidelines.online", "Website design", "Business cards and collateral", "Team ID badge", "Merchandise design", "Office branding"],
+    seo: {
+      title: "Elevate: SaaS Branding Case Study | Ebaq Design",
+      description: "SaaS branding case study: a growth mark, bespoke wordmark, logo animation, icon system, online brand guidelines, and website design for Elevate, a Shopify A/B testing platform.",
+      keywords: ["SaaS branding", "SaaS logo design", "Shopify app branding", "startup brand identity", "SaaS website design"],
+    },
     website: { label: "Visit live website", href: "https://elevateab.com/" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/elevate-ab" },
     preview: { src: "/portfolio/identities/elevate-bento.jpg", alt: "Elevate brand identity" },
@@ -484,6 +505,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Health technology",
     year: "2026",
+    deliverables: ["Logo design", "Logo animation", "Color system", "Typography", "Stationery", "Website design", "Mobile and wearable app design", "Environmental signage", "Billboard campaign", "Event branding", "Social media content in motion"],
+    seo: {
+      title: "Aero: Health Tech Branding Case Study | Ebaq Design",
+      description: "Health tech branding case study: a custom lowercase wordmark, logo animation, lab-grade color system, website, app, signage, and campaign design for Aero, a breath-analysis company.",
+      keywords: ["health tech branding", "medical device branding", "healthcare logo design", "health app design", "logo animation"],
+    },
     preview: { src: "/portfolio/identities/aero-bento.webp", alt: "Aero brand identity" },
     hero: {
       src: "/case-study/aero/hero-logo.json",
@@ -575,6 +602,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Education technology",
     year: "2025",
+    deliverables: ["Logo design", "Logo animation", "App icon", "Teacher mobile app design", "Website design", "Social media design", "Business cards", "Educational booklet and flyers", "Event banner", "Merchandise design"],
+    seo: {
+      title: "Brevidee: EdTech Branding Case Study | Ebaq Design",
+      description: "EdTech branding case study: a playful logo with a teacher-and-camera symbol, logo animation, app icon, teacher app, social media design, print, and website for Brevidee, a video-editing platform for schools.",
+      keywords: ["edtech branding", "education SaaS logo", "school software branding", "app icon design", "logo animation"],
+    },
     website: { label: "Visit live website", href: "https://www.brevidee.com/" },
     preview: { src: "/portfolio/identities/brevidee-bento.jpg", alt: "Brevidee brand identity" },
     hero: {
@@ -647,6 +680,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Digital marketing",
     year: "2025",
+    deliverables: ["Logo design", "Logo animation", "Pitch deck", "Social media system", "Website design for desktop and mobile", "Business cards", "Employee badge", "Merchandise design", "Office branding"],
+    seo: {
+      title: "Wingnut Social: Logo & Pitch Deck Case Study | Ebaq Design",
+      description: "Agency branding case study: a refined logo, logo animation, pitch deck, social media system, and website for Wingnut Social, a digital marketing agency for interior designers and home brands.",
+      keywords: ["marketing agency branding", "pitch deck design", "agency logo design", "social media design", "interior design marketing brand"],
+    },
     preview: { src: "/portfolio/identities/wingnut-bento.jpg", alt: "Wingnut brand identity" },
     hero: {
       src: "/case-study/wingnut/hero-logo.json",
@@ -723,6 +762,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Travel technology",
     year: "2025",
+    deliverables: ["Logo design (V monogram)", "Logo animation", "Social media graphics in motion", "Mobile app design", "Website design", "Billboard campaign", "Merchandise design"],
+    seo: {
+      title: "Ventur: Travel App Branding Case Study | Ebaq Design",
+      description: "Travel app branding case study: a flowing V monogram, logo animation, vibrant palette, social media motion, mobile app, website, and billboard design for Ventur, an AI travel planner.",
+      keywords: ["travel app branding", "AI app logo design", "monogram logo", "mobile app branding", "logo animation"],
+    },
     website: { label: "Visit live website", href: "https://www.venturtravel.com/" },
     preview: { src: "/portfolio/identities/ventur-bento.jpg", alt: "Ventur brand identity" },
     hero: {
@@ -787,6 +832,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Luxury transportation",
     year: "2025",
+    deliverables: ["Rebrand", "Monogram and logo design", "Logo animation", "Business cards", "Branded publication", "Campaign banners", "Chauffeur badge", "App icon", "Website design", "Environmental signage"],
+    seo: {
+      title: "Airport Executive: Luxury Chauffeur Rebrand | Ebaq Design",
+      description: "Luxury rebrand case study: an aviation-inspired monogram, elegant typography, logo animation, print, signage, and website for Airport Executive, a premium London chauffeur service.",
+      keywords: ["luxury rebrand", "luxury brand identity", "monogram logo design", "chauffeur service branding", "premium website design"],
+    },
     website: { label: "Visit live website", href: "https://www.airportexecutive.com/" },
     preview: { src: "/portfolio/identities/airport-executive-bento.jpg", alt: "Airport Executive brand identity" },
     hero: {
@@ -862,6 +913,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Packaging", "Web design"],
     industry: "Cannabis retail",
     year: "2025",
+    deliverables: ["Logo design (Art Deco wordmark)", "Logo animation", "Custom typography and patterns", "Packaging design", "Brand guidelines", "Business cards", "Brochure", "Billboard and outdoor advertising", "Website design"],
+    seo: {
+      title: "SweetGrass: Cannabis Branding & Packaging Case Study | Ebaq Design",
+      description: "Cannabis branding case study: an Art Deco wordmark, custom typography, patterns, packaging, brochure, billboards, and website for SweetGrass, a luxury dispensary in Mississippi.",
+      keywords: ["cannabis branding", "dispensary logo design", "cannabis packaging design", "luxury retail branding", "dispensary website design"],
+    },
     website: { label: "Visit live website", href: "https://www.sweetgrassdispensaries.com/" },
     guidelines: {
       label: "Brand guidelines",
@@ -939,6 +996,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Verbal identity", "Web design"],
     industry: "Digital consultancy",
     year: "2025",
+    deliverables: ["Logo design", "Logo animation", "Verbal identity and positioning", "Brand guidelines", "Business cards, letterhead, and stationery", "Email signature", "Website design", "Social media system", "Promotional flyer"],
+    seo: {
+      title: "Periti Digital: Consultancy Branding Case Study | Ebaq Design",
+      description: "Consultancy branding case study: an architectural mark, logo animation, verbal identity, stationery, social media system, and website for Periti Digital, a pan-European HubSpot consultancy.",
+      keywords: ["consultancy branding", "B2B brand identity", "professional services logo", "HubSpot partner branding", "B2B website design"],
+    },
     website: { label: "Visit live website", href: "https://peritidigital.com/" },
     guidelines: {
       label: "Brand guidelines",
@@ -1004,6 +1067,12 @@ export const caseStudies: CaseStudy[] = [
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Medical education",
     year: "2025",
+    deliverables: ["Logo redesign", "Logo animation", "Social media animation", "Brand guidelines", "Business cards and stationery", "Educational documents", "Billboard campaign", "Environmental signage"],
+    seo: {
+      title: "Medihuanna: Medical Education Rebrand Case Study | Ebaq Design",
+      description: "Rebrand case study: a minimalist logo redesign, logo animation, social media animation, stationery, and print for Medihuanna, an accredited medicinal cannabis education provider in Sydney.",
+      keywords: ["rebrand case study", "logo redesign", "medical education branding", "healthcare brand identity", "logo animation"],
+    },
     website: { label: "Visit live website", href: "https://www.medihuanna.com/" },
     guidelines: {
       label: "Brand guidelines",

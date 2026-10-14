@@ -13,6 +13,7 @@ import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 import { NotificationBar } from "./NotificationBar";
 import { NotFoundPage } from "./NotFoundPage";
+import { preloadKeys, readPreloaded } from "../content/preload";
 import { Portfolio16Project, type Portfolio16ProjectProps } from "./Portfolio16";
 
 const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -44,7 +45,7 @@ const SelectedWork = ({ selectedWorkSlugs = [] }: { selectedWorkSlugs?: string[]
   const projects = [...selectedWorkSlugs.map((slug) => caseStudies.find((study) => study.slug === slug)).filter(Boolean), ...caseStudies.filter((study) => !selectedWorkSlugs.includes(study.slug))].filter((study, index, all) => study && all.findIndex((item) => item?.slug === study.slug) === index);
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [documentHidden, setDocumentHidden] = useState(() => document.visibilityState === "hidden");
+  const [documentHidden, setDocumentHidden] = useState(() => typeof document !== "undefined" && document.visibilityState === "hidden");
   const [manualPause, setManualPause] = useState(false);
   const dragStart = useRef<number | null>(null);
   const dragged = useRef(false);
@@ -138,12 +139,17 @@ const buildLogoRosterBody = (roster: string[], pageImages: Array<Array<{ src: st
 
 export const BlogPostPage = () => {
   const { slug = "" } = useParams();
-  const [post, setPost] = useState<BlogPost | null>(null);
+  const [post, setPost] = useState<BlogPost | null>(() => readPreloaded<BlogPost>(preloadKeys.blogPost(slug)) ?? null);
   const [missing, setMissing] = useState(false);
 
   useEffect(() => {
-    setPost(null);
+    const preloaded = readPreloaded<BlogPost>(preloadKeys.blogPost(slug));
     setMissing(false);
+    if (preloaded) {
+      setPost(preloaded);
+      return;
+    }
+    setPost(null);
     const controller = new AbortController();
     fetch(getBlogPostUrl(slug), { signal: controller.signal }).then((response) => {
       if (!response.ok) throw new Error("Post not found");

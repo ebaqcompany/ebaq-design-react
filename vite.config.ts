@@ -7,4 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     entries: ['index.html'],
   },
+  // Only applies to the prerender build (vite build --ssr): bundle every dependency so
+  // CommonJS packages like react-helmet-async load in Node without interop errors.
+  ssr: { noExternal: true },
 })

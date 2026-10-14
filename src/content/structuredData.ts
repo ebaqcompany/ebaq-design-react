@@ -150,6 +150,8 @@ export const buildCaseStudySchema = (
     services: string[];
     industry: string;
     year: string;
+    deliverables?: string[];
+    website?: { href: string };
     preview: { src: string };
     seo?: { title?: string; description?: string; keywords?: string[] };
   },
@@ -169,14 +171,155 @@ export const buildCaseStudySchema = (
     abstract: study.summary,
     image: [toAbsoluteUrl(study.preview.src, siteUrl)],
     genre: "Brand identity case study",
-    about: [{ "@type": "Organization", name: study.client }, ...study.services.map((name) => ({ "@type": "Thing", name }))],
+    about: [
+      { "@type": "Organization", name: study.client, ...(study.website?.href ? { url: study.website.href } : {}) },
+      ...study.services.map((name) => ({ "@type": "Thing", name })),
+    ],
+    // The concrete work, so an answer engine can match "logo plus social graphics for a law firm" to this project.
+    ...(study.deliverables?.length ? { hasPart: study.deliverables.map((name) => ({ "@type": "CreativeWork", name })) } : {}),
     ...(study.seo?.keywords?.length ? { keywords: study.seo.keywords.join(", ") } : {}),
     dateCreated: study.year,
     creator: organization,
     author: { "@type": "Person", "@id": `${siteUrl}/#founder`, name: "Arek Dvornechuck", url: `${siteUrl}/about`, jobTitle: "Senior Brand Designer" },
     publisher: { ...organization, logo: { "@type": "ImageObject", url: `${siteUrl}/ebaqdesign-logo.svg` } },
     audience: { "@type": "Audience", audienceType: `${study.industry} companies` },
+    isPartOf: { "@type": "CollectionPage", "@id": `${siteUrl}/work`, name: "Ebaq Design portfolio" },
     inLanguage: "en-US",
+  };
+};
+
+export const buildBreadcrumbSchema = (items: { name: string; path: string }[], siteUrl: string) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.name, item: `${siteUrl}${item.path}` })),
+});
+
+// The studio, its founder, the website and the priced offers as one graph. Built from
+// src/content/siteFacts.ts (passed in, so this file stays dependency-free) and placed on the homepage.
+type Facts = typeof import("./siteFacts");
+
+export const buildSiteGraph = (facts: Facts, faqs: FaqPair[], dateModified: string) => {
+  const { siteUrl, studio, founder, pricing, brandSprint, weekPlan, industries } = facts;
+  const organizationId = `${siteUrl}/#organization`;
+  const founderId = `${siteUrl}/#founder`;
+  const offer = (id: string, name: string, description: string, price: number, unitText?: string) => ({
+    "@type": "Offer",
+    "@id": `${siteUrl}/#${id}`,
+    name,
+    description,
+    price: String(price),
+    priceCurrency: pricing.currency,
+    ...(unitText ? { priceSpecification: { "@type": "UnitPriceSpecification", price: String(price), priceCurrency: pricing.currency, unitText } } : {}),
+    url: `${siteUrl}/#pricing`,
+    availability: "https://schema.org/InStock",
+    seller: { "@id": organizationId },
+  });
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: `${siteUrl}/`,
+        name: studio.name,
+        description: facts.positioning,
+        publisher: { "@id": organizationId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/#webpage`,
+        url: `${siteUrl}/`,
+        name: "Branding Agency NYC | Logo, Identity & Web Design | Ebaq Design",
+        description: `${pricing.guarantee} ${pricing.summary}`,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": organizationId },
+        dateModified,
+        inLanguage: "en-US",
+      },
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": organizationId,
+        name: studio.name,
+        legalName: studio.legalName,
+        alternateName: studio.alternateNames,
+        url: `${siteUrl}/`,
+        logo: `${siteUrl}${studio.logo}`,
+        image: `${siteUrl}${studio.image}`,
+        description: `${facts.positioning} ${pricing.summary} ${pricing.guarantee}`,
+        slogan: "Good design is good business",
+        email: studio.email,
+        telephone: studio.telephone,
+        priceRange: `${pricing.weekly} per week`,
+        currenciesAccepted: pricing.currency,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: studio.address.street,
+          addressLocality: studio.address.locality,
+          addressRegion: studio.address.region,
+          postalCode: studio.address.postalCode,
+          addressCountry: studio.address.country,
+        },
+        geo: { "@type": "GeoCoordinates", latitude: studio.geo.latitude, longitude: studio.geo.longitude },
+        areaServed: [
+          { "@type": "City", name: "New York City" },
+          { "@type": "AdministrativeArea", name: "Brooklyn" },
+          { "@type": "Country", name: "United States" },
+          { "@type": "Place", name: "Worldwide" },
+        ],
+        knowsAbout: founder.knowsAbout,
+        audience: industries.map((audienceType) => ({ "@type": "BusinessAudience", audienceType })),
+        founder: { "@id": founderId },
+        employee: { "@id": founderId },
+        sameAs: studio.sameAs,
+        makesOffer: [
+          {
+            ...offer("brand-sprint-offer", brandSprint.name, `${brandSprint.description} Includes: ${brandSprint.deliverables.join(", ")}.`, pricing.weeklyRate),
+            itemOffered: {
+              "@type": "Service",
+              name: "Brand Identity Design Sprint",
+              serviceType: "Brand identity design",
+              description: pricing.guarantee,
+              provider: { "@id": organizationId },
+              areaServed: "Worldwide",
+            },
+          },
+          offer("weekly-offer", "Weekly design engagement", pricing.summary, pricing.weeklyRate, "WEEK"),
+          offer("monthly-offer", "Monthly design partnership", "Ongoing brand, web, and motion work for growing teams.", pricing.monthlyRate, "MONTH"),
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Branding, motion, and web design, priced per week",
+          itemListElement: weekPlan.map((step) => ({
+            "@type": "Offer",
+            name: `${step.weeks}: ${step.name}`,
+            description: step.detail,
+            priceSpecification: { "@type": "PriceSpecification", price: step.price.replace(/[^0-9]/g, ""), priceCurrency: pricing.currency },
+            itemOffered: { "@type": "Service", name: step.name, provider: { "@id": organizationId } },
+          })),
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": founderId,
+        name: founder.name,
+        jobTitle: founder.jobTitle,
+        description: `Senior brand designer in ${studio.location} with ${founder.experience} of experience, including work at ${founder.formerStudio.name} (${founder.formerStudio.year}).`,
+        image: `${siteUrl}${founder.image}`,
+        url: `${siteUrl}/about`,
+        worksFor: { "@id": organizationId },
+        alumniOf: { "@type": "Organization", name: founder.formerStudio.name, url: founder.formerStudio.url },
+        homeLocation: { "@type": "Place", name: studio.location },
+        knowsAbout: founder.knowsAbout,
+        sameAs: founder.sameAs,
+      },
+      ...(faqs.length >= 2 ? [{
+        "@type": "FAQPage",
+        "@id": `${siteUrl}/#faq`,
+        isPartOf: { "@id": `${siteUrl}/#webpage` },
+        mainEntity: faqs.map((pair) => ({ "@type": "Question", name: pair.question, acceptedAnswer: { "@type": "Answer", text: pair.answer } })),
+      }] : []),
+    ],
   };
 };
 

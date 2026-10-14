@@ -148,4 +148,4 @@ export const Layout425 = (props: Props) => {
   </section>;
 };
 
-export const Layout425Defaults = { heading: "Branding Done\nIn One Week", description: "Start with a weekly engagement. Typical branding foundation takes a week. Need a landing page? It can be done right next week." };
+export const Layout425Defaults = { heading: "Branding Done\nIn One Week", description: "Your new brand identity, delivered in one week. Guaranteed, for a flat $3,000. Need a website next? It can be done right next week." };

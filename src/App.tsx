@@ -23,7 +23,7 @@ function App() {
         <title>Branding Agency NYC | Logo, Identity & Web Design | Ebaq Design</title>
         <meta
       name="description"
-      content="Ebaq Design is led by Arek, a senior NYC brand designer. Get a custom logo, brand identity, guidelines, and website direction in a clear $3,000 Brand Sprint."
+      content="Senior brand designer in Brooklyn, NYC. A new brand identity or rebrand in one week, guaranteed, for a flat $3,000. Websites, motion, and pitch decks at the same weekly rate."
     />
         <link rel="canonical" href="https://www.ebaqdesign.com/" />
         <meta property="og:type" content="website" />
@@ -32,7 +32,7 @@ function App() {
         <meta property="og:title" content="Branding Agency NYC | Logo, Identity & Web Design | Ebaq Design" />
         <meta
       property="og:description"
-      content="Senior brand identity and web design for startups, founders, law firms, agencies, and growing companies. Clear $3,000 Brand Sprint pricing."
+      content="Arek Dvornechuck, senior brand designer in Brooklyn, NYC: logo, brand identity, and guidelines in one week, guaranteed, for $3,000 flat. Web, motion, and decks at $3,000 per week."
     />
         <meta property="og:image" content="https://www.ebaqdesign.com/social-x-cover-brand-grid.png" />
         <meta property="og:image:alt" content="Ebaq Design — Strategic branding for ambitious companies" />
@@ -40,7 +40,7 @@ function App() {
         <meta name="twitter:title" content="Branding Agency NYC | Logo, Identity & Web Design | Ebaq Design" />
         <meta
       name="twitter:description"
-      content="Senior brand identity and web design with clear $3,000 Brand Sprint pricing."
+      content="Brand identity in one week, guaranteed, for $3,000 flat. Senior brand designer in Brooklyn, NYC."
     />
         <meta name="twitter:image" content="https://www.ebaqdesign.com/social-x-cover-brand-grid.png" />
       </Helmet>

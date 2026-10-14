@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { pricing, studio } from "../content/siteFacts";
 import { BiCheck, BiSolidStar } from "react-icons/bi";
 import {
   Navbar16,
@@ -77,7 +78,7 @@ const painPoints = [
   },
   {
     title: "One week. Done",
-    body: "No 6-month agency engagements. No junior designers. You work directly with Arek\u2014nearly 20 years of experience, delivered in a focused sprint.",
+    body: "No 6-month agency engagements. No junior designers. You work directly with Arek\u2014over 20 years of experience, delivered in a focused sprint.",
   },
 ];
 
@@ -241,7 +242,7 @@ export const LawFirmLanding = () => (
       <title>Law Firm Branding &amp; Web Design | Ebaq Design</title>
       <meta
         name="description"
-        content="Professional branding and website design for law firms. Custom logo, brand identity, and fast-loading website — designed to attract high-value clients and help your firm charge more. Senior designer based in NYC."
+        content="Law firm branding and websites by a senior designer in Brooklyn, NYC: logo, brand identity, social media graphics, and a fast website. Brand identity in one week, $3,000 flat."
       />
       <meta
         name="keywords"
@@ -269,10 +270,14 @@ export const LawFirmLanding = () => (
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
+          "@id": "https://www.ebaqdesign.com/#organization",
           name: "Ebaq Design",
+          priceRange: `${pricing.weekly} per week`,
+          address: { "@type": "PostalAddress", streetAddress: studio.address.street, addressLocality: studio.address.locality, addressRegion: studio.address.region, postalCode: studio.address.postalCode, addressCountry: studio.address.country },
+          makesOffer: { "@type": "Offer", price: String(pricing.weeklyRate), priceCurrency: pricing.currency, description: `${pricing.summary} ${pricing.guarantee}` },
           description: "Professional branding and website design for law firms",
           url: "https://www.ebaqdesign.com/law-firm-branding",
-          areaServed: { "@type": "City", name: "New York City" },
+          areaServed: [{ "@type": "City", name: "New York City" }, { "@type": "Country", name: "United States" }, { "@type": "Place", name: "Worldwide" }],
           serviceType: ["Law Firm Branding", "Logo Design", "Website Design"],
           founder: { "@type": "Person", name: "Arek Dvornechuck" },
           review: {
