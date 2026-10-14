@@ -29,6 +29,7 @@ for (const [path, component] of Object.entries({
   '/about': 'AboutPage', '/contact': 'ContactPage', '/blog': 'BlogPage',
   '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage',
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding',
+  '/pricing': 'PricingPage',
 })) {
   const source = await read(`../src/components/${component}.tsx`)
   const title = source.match(/<title>([^<{]+)<\/title>/)?.[1]?.replaceAll('&amp;', '&')
@@ -151,6 +152,7 @@ const llmsSummary = `# ${studio.name}
 ## Key pages
 
 - [Homepage](${siteUrl}/)
+- [Pricing: $3,000 per week, brand identity in one week](${siteUrl}/pricing)
 - [Work: case studies](${siteUrl}/work)
 - [About Arek Dvornechuck](${siteUrl}/about)
 - [Law firm branding](${siteUrl}/law-firm-branding)

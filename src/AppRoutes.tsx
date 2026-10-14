@@ -20,6 +20,7 @@ import { ContactPage } from './components/ContactPage.tsx'
 import { ToolsPage } from './components/ToolsPage.tsx'
 import { FulfillmentPolicyPage, PrivacyPolicyPage } from './components/LegalPage.tsx'
 import { NotFoundPage } from './components/NotFoundPage.tsx'
+import { PricingPage } from './components/PricingPage.tsx'
 import {
   BrandArchetypesPage,
   OnePageStyleGuidePage,
@@ -53,6 +54,7 @@ export const AppRoutes = () => (
     <Route path="/about" element={<AboutPage />} />
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/tools" element={<ToolsPage />} />
+    <Route path="/pricing" element={<PricingPage />} />
     <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
     <Route path="/fulfillment-policy" element={<FulfillmentPolicyPage />} />
     <Route path="/work/:slug" element={<CaseStudyPage />} />
