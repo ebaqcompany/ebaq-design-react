@@ -232,7 +232,7 @@ export const LawFirmLanding = () => (
         caseStudyUrl="/work/fox-berman"
       />
       <Faq4 tagline="FAQs" heading={"Questions law firm\npartners ask"} questions={lawFirmFaqs.map(({ question, answer }) => ({ title: question, answer }))} />
-      <AboutSection heading="I'm Arek, a senior designer based in Brooklyn, NYC, helping law firms look professional" />
+      <AboutSection heading="I help law firms look professional." />
     </div>
 
     <BookerSection />

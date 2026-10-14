@@ -193,7 +193,7 @@ export const AiHealthcareLanding = () => (
         caseStudyUrl="/work/next-dimension"
       />
       <Faq4 tagline="FAQs" heading={"Questions AI healthcare\nfounders ask"} questions={healthcareFaqs.map(({ question, answer }) => ({ title: question, answer }))} />
-      <AboutSection heading="I'm Arek, a senior designer based in Brooklyn, NYC, helping AI healthcare companies earn trust" />
+      <AboutSection heading="I help AI healthcare companies earn trust." />
     </div>
 
     <BookerSection />

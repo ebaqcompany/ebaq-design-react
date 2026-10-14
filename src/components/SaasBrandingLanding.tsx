@@ -202,7 +202,7 @@ export const SaasBrandingLanding = () => (
         caseStudyUrl="/work/elevate"
       />
       <Faq4 tagline="FAQs" heading={"Questions SaaS\nfounders ask"} questions={visibleFaqs} />
-      <AboutSection heading="I'm Arek, a senior designer based in Brooklyn, NYC, helping SaaS startups look like category leaders" />
+      <AboutSection heading="I help SaaS startups look like category leaders." />
     </div>
 
     <BookerSection />

@@ -252,7 +252,7 @@ export const SaasWebDesignLanding = () => (
       </div>
       <SaasTestimonial />
       <FaqSection />
-      <AboutSection heading="I'm Arek, a senior designer based in NYC, helping startups launch websites that sell" />
+      <AboutSection heading="I help startups launch websites that sell." />
     </div>
 
     <BookerSection />
