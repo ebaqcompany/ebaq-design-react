@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import Lottie from "lottie-react";
+import { LottiePlayer as Lottie } from "./LottiePlayer";
+import { LazyVideo } from "./Media";
 import { Navbar16 } from "./Navbar16";
 import { AvailableButton } from "./AvailableButton";
 import { Pricing8 } from "./Pricing8";
@@ -48,15 +49,15 @@ const schemas = [
 
 // Week 1 shown, not listed: each deliverable with a real piece of client work (16:9 media only).
 const sprintDeliverables = [
-  { title: "Logo design", body: "Several concepts, refined into one distinctive mark.", media: "/case-study/next-dimension/logos.png", alt: "NextDimension logo system" },
+  { title: "Logo design", body: "Several concepts, refined into one distinctive mark.", media: "/case-study/next-dimension/logos.webp", alt: "NextDimension logo system" },
   { title: "Logo animation", body: "Your logo in motion, ready for the web, social, and video.", media: "/portfolio/logos/airporteexecutive-logo.json", alt: "Airport Executive logo animation" },
-  { title: "Final logo files", body: "Every version in SVG, PNG, and PDF, for print and screen.", media: "/case-study/fox-berman/01-logos.png", alt: "Fox Berman logo variations" },
+  { title: "Final logo files", body: "Every version in SVG, PNG, and PDF, for print and screen.", media: "/case-study/fox-berman/01-logos.webp", alt: "Fox Berman logo variations" },
   { title: "Color palette", body: "A primary palette and accents, with values for every medium.", media: "/case-study/orbio/03-colors.mp4", alt: "Orbio color palette" },
-  { title: "Typography", body: "Typefaces and a type scale for headlines and body copy.", media: "/foxberman/foxberman-fonts.png", alt: "Fox Berman typography" },
+  { title: "Typography", body: "Typefaces and a type scale for headlines and body copy.", media: "/foxberman/foxberman-fonts.webp", alt: "Fox Berman typography" },
   { title: "Brand guidelines", body: "A live style guide on guidelines.online, not a forgotten PDF.", media: "/images/site/pricing/guidelines-online.mp4", alt: "Next Dimension brand guidelines on guidelines.online" },
-  { title: "Business cards", body: "Print-ready cards your team can order the same week.", media: "/case-study/elevate/05-business-cards.jpg", alt: "Elevate business cards" },
+  { title: "Business cards", body: "Print-ready cards your team can order the same week.", media: "/case-study/elevate/05-business-cards.webp", alt: "Elevate business cards" },
   { title: "Social media kit", body: "Profile images and launch posts for LinkedIn and Instagram.", media: "/images/site/pricing/social-wall.mp4", alt: "Orbio social media posts" },
-  { title: "Email signature", body: "A branded signature for every inbox on the team.", media: "/foxberman/foxberman-signature.jpg", alt: "Fox Berman email signature" },
+  { title: "Email signature", body: "A branded signature for every inbox on the team.", media: "/foxberman/foxberman-signature.webp", alt: "Fox Berman email signature" },
 ];
 
 // Lottie tiles load on the client, on the same black backdrop as the homepage grid; the prerender shows the backdrop.
@@ -85,7 +86,7 @@ const BrandSprintIncluded = () => (
                   <LottieTile src={media} />
                 </div>
               ) : media.endsWith(".mp4") ? (
-                <video src={media} aria-label={alt} className="size-full object-cover" autoPlay muted loop playsInline preload="metadata" />
+                <LazyVideo src={media} aria-label={alt} className="size-full object-cover" preload="metadata" />
               ) : (
                 <img src={media} alt={alt} loading="lazy" className="size-full object-cover" />
               )}
@@ -116,7 +117,7 @@ const PricingHero = () => (
         </div>
       </div>
       <div className="mx-auto w-full max-w-[30rem] overflow-hidden rounded-lg md:mr-0">
-        <img
+        <img loading="eager" fetchPriority="high"
           src="/images/site/pricing/invoice.webp"
           alt="A real Ebaq Design invoice for a one-week brand sprint, client name hidden: $3,000 paid in full, covering logo design with revisions, a style guide, and logo animation"
           width={1600}
@@ -131,13 +132,13 @@ const PricingHero = () => (
 export const PricingPage = () => (
   <div className="relative bg-white">
     <Helmet>
-      <title>Pricing | $3,000 per Week, Brand Identity in One Week | Ebaq Design</title>
-      <meta name="description" content="Ebaq Design pricing: a flat $3,000 per week for branding, motion, pitch decks, and websites. A new brand identity or rebrand is delivered in one week, guaranteed." />
+      <title>Pricing: Brand Identity in One Week for $3,000 | Ebaq Design</title>
+      <meta name="description" content="A flat $3,000 per week for branding, motion, pitch decks, and websites. A new brand identity or rebrand is delivered in one week, guaranteed." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
-      <meta property="og:title" content="Pricing | $3,000 per Week, Brand Identity in One Week | Ebaq Design" />
-      <meta property="og:description" content="Ebaq Design pricing: a flat $3,000 per week for branding, motion, pitch decks, and websites. A new brand identity or rebrand is delivered in one week, guaranteed." />
+      <meta property="og:title" content="Pricing: Brand Identity in One Week for $3,000 | Ebaq Design" />
+      <meta property="og:description" content="A flat $3,000 per week for branding, motion, pitch decks, and websites. A new brand identity or rebrand is delivered in one week, guaranteed." />
       {schemas.map((schema) => (
         <script key={schema["@type"]} type="application/ld+json">{serializeJsonLd(schema)}</script>
       ))}

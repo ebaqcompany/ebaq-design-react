@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Button } from "@relume_io/relume-ui";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Button } from "./ui";
 import { useEffect, useRef, useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import { Link } from "react-router-dom";
@@ -44,11 +44,11 @@ export const Content32 = ({ articleTitle, children }: Content32Props) => {
           <aside className="order-last lg:order-none">
             <div className="lg:sticky lg:top-20 lg:max-w-xxs">
               <ArekProfileBadge variant="author" portraitHref="/about" />
-              {tocItems.length > 0 && <nav aria-label={`Table of contents for ${articleTitle}`} className="blog-toc mt-6"><Accordion type="single" collapsible><AccordionItem value="article-contents" className="border-none"><AccordionTrigger icon={<RxChevronDown className="size-5 shrink-0 transition-transform duration-300" />} className="heading-h5 w-full gap-4 py-3 text-left [&[data-state=open]>svg]:rotate-180">{articleTitle}</AccordionTrigger><AccordionContent className="pb-0"><ul className="space-y-1.5 pt-2">{tocItems.map((item) => <li key={item.id} className="leading-[1.5]"><a href={`#${item.id}`} className="inline text-base leading-[1.5]">{item.label}</a></li>)}</ul></AccordionContent></AccordionItem></Accordion></nav>}
+              {tocItems.length > 0 && <nav aria-label={`Table of contents for ${articleTitle}`} className="blog-toc mt-6"><Accordion type="single" collapsible><AccordionItem value="article-contents" className="border-none"><AccordionTrigger header="div" icon={<RxChevronDown className="size-5 shrink-0 transition-transform duration-300" />} className="heading-h5 w-full gap-4 py-3 text-left [&[data-state=open]>svg]:rotate-180">{articleTitle}</AccordionTrigger><AccordionContent className="pb-0"><ul className="space-y-1.5 pt-2">{tocItems.map((item) => <li key={item.id} className="leading-[1.5]"><a href={`#${item.id}`} className="inline text-base leading-[1.5]">{item.label}</a></li>)}</ul></AccordionContent></AccordionItem></Accordion></nav>}
               <div className="mt-8 flex w-full flex-col items-start bg-black p-4 text-white lg:p-6">
                 <div className="mb-3 flex items-center">
                   <Link to="/" aria-label="Ebaq Design home">
-                    <img src="/ebaq-mark-one-color.svg" alt="Ebaq Design" className="notification-bar-logo mr-4 size-8" />
+                    <img loading="lazy" decoding="async" src="/ebaq-mark-one-color.svg" alt="Ebaq Design" width={32} height={32} className="notification-bar-logo mr-4 size-8" />
                   </Link>
                   <p className="text-xl font-semibold leading-tight md:text-[1.5625rem] md:leading-none">Need a designer?</p>
                 </div>

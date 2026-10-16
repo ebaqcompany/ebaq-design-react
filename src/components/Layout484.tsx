@@ -1,6 +1,6 @@
 "use client";
 
-import type { ButtonProps } from "@relume_io/relume-ui";
+import type { ButtonProps } from "./ui";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import type { MotionStyle } from "framer-motion";

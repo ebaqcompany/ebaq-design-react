@@ -18,14 +18,14 @@ export const arekToolIcons = [
   ["/adobe-illustrator.svg", "Adobe Illustrator"],
   ["/adobe-photoshop.svg", "Adobe Photoshop"],
   ["/adobe-after-effects.svg", "Adobe After Effects"],
-  ["/figma-mark-baked.png", "Figma"],
-  ["/figma-mark.png", "Framer"],
-  ["/webflow-mark.png", "Webflow"],
-  ["/spline-mark.png", "Spline", "bg-black p-0.5"],
-  ["/jitter-mark.png", "Jitter"],
-  ["/lottiefiles-mark.png", "LottieFiles"],
-  ["/hero-tool-mark.png", "Motion design tool"],
-  ["/rive-mark.png", "Rive"],
+  ["/figma-mark-baked.webp", "Figma"],
+  ["/figma-mark.webp", "Framer"],
+  ["/webflow-mark.webp", "Webflow"],
+  ["/spline-mark.webp", "Spline", "bg-black p-0.5"],
+  ["/jitter-mark.webp", "Jitter"],
+  ["/lottiefiles-mark.webp", "LottieFiles"],
+  ["/hero-tool-mark.webp", "Motion design tool"],
+  ["/rive-mark.webp", "Rive"],
 ] as const;
 
 const socialLinks = [
@@ -39,18 +39,18 @@ const socialLinks = [
 
 export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHref }: Props) => {
   return <div className={`flex w-fit items-center gap-4 ${className}`.trim()}>
-    {portraitHref ? <Link to={portraitHref} aria-label="About Arek Dvornechuck" className="shrink-0"><img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 rounded-full object-cover" /></Link> : <img src="/arek-profile-hero.png" alt="Arek Dvornechuck" className="size-20 shrink-0 rounded-full object-cover" />}
+    {portraitHref ? <Link to={portraitHref} aria-label="About Arek Dvornechuck" className="shrink-0"><img loading="eager" src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 rounded-full object-cover" /></Link> : <img loading="eager" src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 shrink-0 rounded-full object-cover" />}
     <div className="flex min-w-0 flex-col">
       <div className="flex flex-col gap-0">
         <p className={variant === "author" ? "heading-h7 whitespace-nowrap" : "whitespace-nowrap"}>Arek Dvornechuck</p>
-        {variant === "author" && <p className="heading-h7 whitespace-nowrap text-brand-primary">Branding Expert</p>}
+        {variant === "author" && <p className="heading-h7 whitespace-nowrap text-brand-primary">Senior Graphic Designer</p>}
       </div>
       {variant === "author" ? <>
         <div className="mt-1 flex items-center gap-1 text-black" aria-label="Arek Dvornechuck on social media">
-          {socialLinks.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noreferrer" aria-label={link.label} className="heading-link inline-flex text-black">{link.icon}</a>)}
+          {socialLinks.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noreferrer" aria-label={link.label} className="heading-link -m-1 inline-flex p-1 text-black">{link.icon}</a>)}
         </div>
-      </> : <div className="flex shrink-0 items-center gap-1" role="list" aria-label="Tools I use as a senior designer">
-        {arekToolIcons.map(([src, alt, className]) => <img key={src} src={src} alt={alt} className={`size-4 rounded-[20%] object-cover ${className ?? ""}`.trim()} />)}
+      </> : <div className="flex shrink-0 items-center gap-1" role="group" aria-label="Tools I use as a senior designer">
+        {arekToolIcons.map(([src, alt, className]) => <img loading="lazy" decoding="async" key={src} src={src} alt={alt} className={`size-4 rounded-[20%] object-cover ${className ?? ""}`.trim()} />)}
       </div>}
     </div>
   </div>

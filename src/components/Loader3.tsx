@@ -38,8 +38,10 @@ export const Loader3 = () => {
     >
       {!isExiting && (
         <div className="flex flex-col items-center justify-center">
-          <img
+          <img loading="eager"
             src="/ebaqdesign-logo.svg"
+            width={1617}
+            height={457}
             alt="Ebaq Design"
             className={`h-12 w-auto invert transition-all duration-500 ease-out ${
               showImage ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"

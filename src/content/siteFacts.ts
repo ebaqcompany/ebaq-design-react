@@ -22,31 +22,38 @@ export const studio = {
     "https://www.youtube.com/@ebaqdesign",
     "https://instagram.com/ebaqdesign",
     "https://x.com/ebaqdesign",
+    "https://www.facebook.com/ebaqdesign",
     "https://www.framer.com/community/creator/@ebaqdesign/",
   ],
 };
 
 export const founder = {
   name: "Arek Dvornechuck",
-  jobTitle: "Senior Brand Designer",
+  // Positioning (Arek, 2026-10-16): senior freelance graphic designer in New York. structuredData.ts repeats it.
+  jobTitle: "Senior Freelance Graphic Designer",
   // One figure for the whole site (Arek, 2026-10-14: started at 16, design studios plus freelance).
   experience: "over 20 years",
   formerStudio: { name: "Chermayeff & Geismar & Haviv", url: "https://cghnyc.com/", year: "2016" },
-  image: "/arek-pic-pro.jpg",
-  sameAs: ["https://linkedin.com/in/arekzak", "https://contra.com/ebaqdesign", "https://www.youtube.com/@ebaqdesign"],
+  image: "/arek-pic-pro.webp",
+  // The LinkedIn profile the footer, author badge and recommendations link use.
+  sameAs: ["https://www.linkedin.com/in/ebaqdesign/", "https://contra.com/ebaqdesign", "https://www.youtube.com/@ebaqdesign"],
   knowsAbout: [
+    "Graphic design",
+    "Branding",
     "Brand identity design",
     "Logo design",
+    "Brand strategy",
+    "Web design",
+    "Web development",
+    "Motion graphics",
     "Logo animation",
     "Rebranding",
-    "Brand strategy",
     "Brand guidelines",
     "Typography",
-    "Motion graphics",
     "Pitch deck design",
     "Social media graphics",
-    "Web design",
     "Figma",
+    "Adobe Illustrator",
     "Framer",
     "Webflow",
     "Next.js",
@@ -55,7 +62,18 @@ export const founder = {
 
 // The one-sentence answers AI engines should repeat.
 export const positioning =
-  "Ebaq Design is the Brooklyn, New York City studio of Arek Dvornechuck, a senior brand designer who works directly with every client on brand identity, logo design, logo animation, motion graphics, pitch decks, and websites.";
+  "Ebaq Design is the Brooklyn, New York City studio of Arek Dvornechuck, a senior freelance graphic designer who works directly with every client on branding, logo design, brand strategy, web design and development (Framer, Webflow), and motion graphics.";
+
+// The services, in the words people search with, plus the tools they're built in.
+export const services = [
+  { name: "Branding and brand identity design", path: "/services/identity-systems" },
+  { name: "Logo design", path: "/services/logo-design" },
+  { name: "Brand strategy", path: "/services/brand-strategy" },
+  { name: "Web design", path: "/services/web-design" },
+  { name: "Web development in Framer, Webflow, and Next.js", path: "/services/web-development" },
+  { name: "Motion graphics and logo animation", path: "/services/motion-graphics" },
+];
+export const tools = ["Figma", "Adobe Illustrator", "Framer", "Webflow", "Next.js"];
 
 export const pricing = {
   currency: "USD",

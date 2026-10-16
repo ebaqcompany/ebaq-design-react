@@ -5,10 +5,13 @@ import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 import { Portfolio16 } from "./Portfolio16";
+import { buildBreadcrumbSchema, buildCollectionSchema, serializeJsonLd } from "../content/structuredData";
 
-const pageTitle = "Selected work — Brand identity and website case studies | Ebaq Design";
+const siteUrl = "https://www.ebaqdesign.com";
+
+const pageTitle = "Portfolio: Branding, Logo & Web Design Case Studies | Ebaq Design";
 const pageDescription =
-  "Explore branding, visual identity, motion, and website case studies created by Ebaq Design for ambitious companies across technology, healthcare, professional services, and consumer markets.";
+  "Branding, logo design, and website case studies by Arek Dvornechuck, a senior freelance graphic designer in NYC, for AI, health tech, law, and consumer brands.";
 
 export const WorkPage = () => {
   useEffect(() => {
@@ -57,6 +60,8 @@ export const WorkPage = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
+      <script type="application/ld+json">{serializeJsonLd(buildCollectionSchema({ path: "/work", name: "Ebaq Design portfolio", description: pageDescription }, caseStudies.map((study) => ({ name: `${study.client}: ${study.title}`, path: `/work/${study.slug}` })), siteUrl))}</script>
+      <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Work", path: "/work" }], siteUrl))}</script>
     </Helmet>
     <Navbar16 />
     <main>

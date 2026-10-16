@@ -5,6 +5,9 @@ import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 import { PodcastArchive } from "./PodcastArchive";
 import { preloadKeys, readPreloaded } from "../content/preload";
+import { buildBreadcrumbSchema, buildCollectionSchema, podcastSeries, serializeJsonLd } from "../content/structuredData";
+
+const siteUrl = "https://www.ebaqdesign.com";
 
 export const PodcastPage = () => {
   const [episodes, setEpisodes] = useState<PodcastEpisodeSummary[]>(() => readPreloaded<PodcastEpisodeSummary[]>(preloadKeys.podcastIndex) ?? []);
@@ -21,5 +24,5 @@ export const PodcastPage = () => {
       if (description && previousDescription) description.content = previousDescription;
     };
   }, []);
-  return <div className="relative bg-white"><Helmet><title>On Branding Podcast | Ebaq Design</title><meta name="description" content="Interviews with branding experts, creative leaders, and entrepreneurs about building memorable brands." /></Helmet><Navbar16 /><main><PodcastArchive episodes={episodes} /></main><Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} /></div>;
+  return <div className="relative bg-white"><Helmet><title>On Branding Podcast | Ebaq Design</title><meta name="description" content="Interviews with branding experts, creative leaders, and entrepreneurs about building memorable brands." /><script type="application/ld+json">{serializeJsonLd(buildCollectionSchema({ path: "/podcast", name: "On Branding Podcast", description: "Arek Dvornechuck interviews brand strategists, designers, and founders about building memorable brands.", about: podcastSeries(siteUrl) }, episodes.map((episode) => ({ name: episode.title, path: episode.url })), siteUrl))}</script><script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Podcast", path: "/podcast" }], siteUrl))}</script></Helmet><Navbar16 /><main><PodcastArchive episodes={episodes} /></main><Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} /></div>;
 };

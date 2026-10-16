@@ -9,7 +9,7 @@ export const PodcastEpisodeHeader = ({ episode }: { episode: PodcastEpisode }) =
           <h1>{episode.title}</h1>
           <p className="mt-5 rounded-full border border-black/20 px-3 py-1 text-sm font-normal md:mt-6">with {episode.guest}</p>
         </div>
-        <div className="mx-auto aspect-video w-full overflow-hidden bg-background-secondary xl:self-center"><img src={episode.heroImage.src || episode.image.src || "/ebaqdesign-logo-big.svg"} onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }} alt={episode.heroImage.alt ?? episode.title} className="size-full object-cover" /></div>
+        <div className="mx-auto aspect-video w-full overflow-hidden bg-background-secondary xl:self-center"><img loading="eager" fetchPriority="high" src={episode.heroImage.src || episode.image.src || "/ebaqdesign-logo-big.svg"} onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }} alt={episode.heroImage.alt ?? episode.title} className="size-full object-cover" /></div>
       </div>
     </section>
   );

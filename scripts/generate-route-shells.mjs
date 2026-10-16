@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import ts from 'typescript'
 
@@ -14,22 +14,50 @@ const loadData = async (path) => {
 }
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 const absolute = (value) => new URL(value, siteUrl).href
-const indexHtml = await read('../dist/index.html')
+// Every route ships its full content in the HTML (links work without JavaScript), so the app's JavaScript
+// waits for the first paint instead of competing with it for bandwidth; the timeout covers tabs that
+// open in the background, where animation frames don't run.
+const deferEntryScript = (html) => html.replace(/<script type="module" crossorigin src="(\/assets\/[^"]+\.js)"><\/script>/, (_, src) => `<script>
+      (function () {
+        var started = false;
+        var start = function () {
+          if (started) return;
+          started = true;
+          var script = document.createElement('script');
+          script.type = 'module';
+          script.crossOrigin = '';
+          script.src = '${src}';
+          document.head.appendChild(script);
+        };
+        requestAnimationFrame(function () { setTimeout(start); });
+        setTimeout(start, 1500);
+      })();
+    </script>`)
+const indexHtml = deferEntryScript(await read('../dist/index.html'))
+if (!indexHtml.includes("script.type = 'module'")) throw new Error('Could not find the entry script in dist/index.html')
 const sitemap = await read('../public/sitemap.xml')
 const paths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => new URL(url).pathname).filter((path) => path !== '/')
 const metadata = new Map()
-const { buildBlogPostingSchema, buildBreadcrumbSchema, buildCaseStudySchema, buildFaqSchema, buildSiteGraph, buildVideoSchema, resolveFaqPairs, serializeJsonLd } = await loadData('../src/content/structuredData.ts')
+const { buildBlogPostingSchema, buildBreadcrumbSchema, buildCaseStudySchema, buildFaqSchema, buildPodcastEpisodeSchema, buildProductSchema, buildSiteGraph, buildVideoSchema, resolveFaqPairs, serializeJsonLd } = await loadData('../src/content/structuredData.ts')
 const facts = await loadData('../src/content/siteFacts.ts')
 // The prerender bundle (vite build --ssr src/entry-server.tsx --outDir dist-ssr).
 const ssr = await import(new URL('../dist-ssr/entry-server.js', import.meta.url))
+await ssr.preloadAllRoutes()
 const preloads = new Map()
 
 // Read existing static-page copy so generated titles stay aligned with React.
 for (const [path, component] of Object.entries({
   '/about': 'AboutPage', '/contact': 'ContactPage', '/blog': 'BlogPage',
   '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage',
-  '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding',
+  '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
   '/pricing': 'PricingPage',
+  '/services': 'ServicesPage',
+  '/services/brand-strategy': 'BrandStrategyPage',
+  '/services/logo-design': 'LogoDesignPage',
+  '/services/identity-systems': 'IdentitySystemsPage',
+  '/services/web-design': 'WebDesignPage',
+  '/services/web-development': 'WebDevelopmentPage',
+  '/services/motion-graphics': 'MotionGraphicsPage',
 })) {
   const source = await read(`../src/components/${component}.tsx`)
   const title = source.match(/<title>([^<{]+)<\/title>/)?.[1]?.replaceAll('&amp;', '&')
@@ -40,27 +68,34 @@ const work = await read('../src/components/WorkPage.tsx')
 metadata.set('/work', { title: work.match(/const pageTitle = "([^"]+)"/)?.[1], description: work.match(/const pageDescription =\s*"([^"]+)"/)?.[1] })
 const legal = await read('../src/components/LegalPage.tsx')
 for (const match of legal.matchAll(/<LegalPage title="([^"]+)" updated="[^"]+" description="([^"]+)"/g)) {
-  metadata.set(`/${match[1].toLowerCase().replaceAll(' ', '-')}`, { title: `${match[1]} | Ebaqdesign`, description: match[2] })
+  metadata.set(`/${match[1].toLowerCase().replaceAll(' ', '-')}`, { title: `${match[1]} | Ebaq Design`, description: match[2] })
 }
 metadata.set('/start', { title: 'Book a Call | Ebaq Design', description: 'Book a call with Arek Dvornechuck to discuss your branding, website, or motion design project.' })
 // resolveFaqPairs uses the rendered faq field and never scans a roster post's unrendered body.
-const blogSchemas = (post, path) => [buildBlogPostingSchema({ ...post, url: path }, siteUrl), buildFaqSchema(resolveFaqPairs(post, post.body || ''), `${siteUrl}${path}`), buildVideoSchema(post)].filter(Boolean)
+const blogSchemas = (post, path) => [buildBlogPostingSchema({ ...post, url: path }, siteUrl), buildFaqSchema(resolveFaqPairs(post, post.body || ''), `${siteUrl}${path}`), buildVideoSchema(post), buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: post.title, path }], siteUrl)].filter(Boolean)
+const podcastSchemas = (episode, path) => [buildPodcastEpisodeSchema({ ...episode, url: path }, siteUrl), buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Podcast', path: '/podcast' }, { name: episode.title, path }], siteUrl)]
 for (const collection of ['blog', 'podcast']) {
   const index = await json(`../public/content/${collection}/index.json`)
   preloads.set(`/${collection}`, { [`${collection}-index`]: index })
   for (const { slug } of index) {
     const post = await json(`../public/content/${collection}/${slug}.json`)
     preloads.set(`/${collection}/${slug}`, { [`${collection}:${slug}`]: post })
-    metadata.set(`/${collection}/${slug}`, { title: post.seo?.title || post.title, description: post.seo?.description || post.description, image: post.seo?.image || post.image?.src, type: 'article', schemas: collection === 'blog' ? blogSchemas(post, `/blog/${slug}`) : [] })
+    metadata.set(`/${collection}/${slug}`, { title: post.seo?.title || post.title, description: post.seo?.description || post.description, image: post.seo?.image || post.image?.src, type: 'article', schemas: collection === 'blog' ? blogSchemas(post, `/blog/${slug}`) : podcastSchemas(post, `/podcast/${slug}`) })
   }
 }
 const { caseStudies } = await loadData('../src/data/caseStudies.ts')
 for (const study of caseStudies) metadata.set(`/work/${study.slug}`, { title: study.seo?.title || `${study.client} — ${study.title}`, description: study.seo?.description || study.summary, image: study.preview.src, schemas: [buildCaseStudySchema(study, siteUrl), buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Work', path: '/work' }, { name: study.client, path: `/work/${study.slug}` }], siteUrl)] })
 const { shopProducts } = await loadData('../src/data/shopProducts.ts')
-for (const product of shopProducts) metadata.set(`/shop/${product.slug}`, { title: product.seo?.title ?? `${product.title} | Ebaq Design`, description: product.seo?.description ?? product.description, image: product.seo?.image || product.image, socialTitle: product.seo?.ogTitle, socialDescription: product.seo?.ogDescription })
+for (const product of shopProducts) metadata.set(`/shop/${product.slug}`, { title: product.seo?.title ?? `${product.title} | Ebaq Design`, description: product.seo?.description ?? product.description, image: product.seo?.image || product.image, socialTitle: product.seo?.ogTitle, socialDescription: product.seo?.ogDescription, schemas: [buildProductSchema(product, siteUrl), buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Shop', path: '/shop' }, { name: product.title, path: `/shop/${product.slug}` }], siteUrl)] })
 
 const serializeData = (value) => JSON.stringify(value).replace(/</g, '\\u003c')
-const prerenderStyle = '<style>#root[data-prerendered]{visibility:hidden}</style>'
+
+// The prerendered text paints before any JavaScript runs, in these three faces. Preloading them lets the
+// first paint use them, instead of a fallback font that reflows the page when they arrive.
+const fontPreloads = (await readdir(new URL('assets/', outputDir)))
+  .filter((file) => /^(?:roboto-latin-(?:400|600)|roboto-condensed-latin-600)-normal-[\w-]+\.woff2$/.test(file))
+  .map((file) => `<link rel="preload" href="/assets/${file}" as="font" type="font/woff2" crossorigin />`)
+if (fontPreloads.length !== 3) throw new Error(`Expected 3 font files to preload, found ${fontPreloads.length}`)
 const prerenderStats = { rendered: 0, failed: [] }
 
 // Render the route with React so the static HTML carries the page's real content.
@@ -79,7 +114,7 @@ function prerender(path) {
       .replace(/<iframe\b([^>]*?)\ssrc=/gi, '<iframe$1 data-src=')
     prerenderStats.rendered += 1
     const data = Object.keys(preload).length ? `<script type="application/json" id="route-data">${serializeData(preload)}</script>` : ''
-    return { root: `<div id="root" data-prerendered>${html}</div>${data}`, structuredData }
+    return { root: `<div id="root">${html}</div>${data}`, structuredData }
   } catch (error) {
     prerenderStats.failed.push(`${path}: ${error.message.split('\n')[0]}`)
     return { root: '<div id="root"></div>', structuredData: '' }
@@ -107,7 +142,7 @@ function render(path, meta) {
   const { root, structuredData } = prerender(path)
   // Pages that declare their own JSON-LD in <Helmet> (landing and service pages) keep it in the static HTML too.
   if (!meta.schemas?.length && structuredData) tags.push(structuredData)
-  tags.push(prerenderStyle)
+  tags.push(...fontPreloads)
   return shell.replace('</head>', () => `${tags.join('\n    ')}\n  </head>`).replace('<div id="root"></div>', () => root)
 }
 for (const path of paths) {
@@ -123,17 +158,24 @@ const siteGraph = buildSiteGraph(facts, homeFaqs, new Date().toISOString().slice
 const home = prerender('/')
 await writeFile(new URL('index.html', outputDir), indexHtml
   .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
-  .replace('</head>', () => `  <script type="application/ld+json">${serializeJsonLd(siteGraph)}</script>\n    ${prerenderStyle}\n  </head>`)
+  .replace('</head>', () => `  <script type="application/ld+json">${serializeJsonLd(siteGraph)}</script>\n    ${fontPreloads.join('\n    ')}\n  </head>`)
   .replace('<div id="root"></div>', () => home.root))
 
 // llms.txt (summary) and llms-full.txt (everything an answer engine needs to describe and price the studio).
-const { pricing, brandSprint, weekPlan, studio, founder, industries, pricingFaqs, studioFaqs, positioning, bookingUrl } = facts
+const { pricing, brandSprint, weekPlan, studio, founder, industries, pricingFaqs, studioFaqs, positioning, bookingUrl, services, tools } = facts
 const list = (items) => items.map((item) => `- ${item}`).join('\n')
 const faqText = [...pricingFaqs, ...studioFaqs].map(({ question, answer }) => `### ${question}\n\n${answer}`).join('\n\n')
 const weekTable = ['| When | What | Price |', '| --- | --- | --- |', ...weekPlan.map((step) => `| ${step.weeks} | **${step.name}**: ${step.detail} | ${step.price} |`)].join('\n')
+const serviceList = list(services.map((service) => `[${service.name}](${siteUrl}${service.path})`))
 const llmsSummary = `# ${studio.name}
 
 > ${positioning} ${pricing.summary} ${pricing.guarantee}
+
+## Services
+
+${serviceList}
+
+Tools: ${tools.join(', ')}.
 
 ## Pricing (canonical)
 
@@ -152,10 +194,12 @@ const llmsSummary = `# ${studio.name}
 ## Key pages
 
 - [Homepage](${siteUrl}/)
+- [Services](${siteUrl}/services)
 - [Pricing: $3,000 per week, brand identity in one week](${siteUrl}/pricing)
 - [Work: case studies](${siteUrl}/work)
-- [About Arek Dvornechuck](${siteUrl}/about)
+- [About Arek Dvornechuck, senior freelance graphic designer](${siteUrl}/about)
 - [Law firm branding](${siteUrl}/law-firm-branding)
+- [AI startup branding](${siteUrl}/ai-startup-branding)
 - [AI healthcare branding](${siteUrl}/ai-healthcare-branding)
 - [SaaS branding](${siteUrl}/saas-branding)
 - [Luxury branding](${siteUrl}/luxury-branding)
@@ -163,6 +207,8 @@ const llmsSummary = `# ${studio.name}
 - [Consultancy branding](${siteUrl}/consultancy-branding)
 - [SaaS and startup website design](${siteUrl}/saas-web-design)
 - [Contact](${siteUrl}/contact)
+- [Blog: branding, logo design, and web design articles](${siteUrl}/blog)
+- [On Branding podcast: interviews with brand experts](${siteUrl}/podcast)
 - [Full details for AI assistants](${siteUrl}/llms-full.txt)
 - [Sitemap](${siteUrl}/sitemap.xml)
 
@@ -187,6 +233,12 @@ const llmsFull = `# ${studio.name}: full reference for AI assistants
 ${pricing.summary} ${pricing.guarantee} ${pricing.fixedTotal}
 
 ${weekTable}
+
+## Services
+
+${serviceList}
+
+Tools: ${tools.join(', ')}.
 
 ## The Brand Sprint (week 1)
 

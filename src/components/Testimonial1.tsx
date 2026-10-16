@@ -17,13 +17,13 @@ export const Testimonial1 = (props: Testimonial1Props) => {
         <div className="flex flex-col items-center text-center">
           {showLogo !== false && (
             <div className="mb-6 md:mb-8">
-              <img src={logo.src} alt={logo.alt} className={clientLogoClass(logo.scale)} />
+              <img loading="lazy" decoding="async" src={logo.src} alt={logo.alt} className={clientLogoClass(logo.scale)} />
             </div>
           )}
           <blockquote className="text-xl font-bold md:text-2xl">{quote}</blockquote>
           <div className="mt-6 flex flex-col items-center justify-center md:mt-8">
             <div className="mb-3 md:mb-4">
-              <img
+              <img loading="lazy" decoding="async"
                 src={avatar.src}
                 alt={avatar.alt}
                 className="size-16 min-h-16 min-w-16 rounded-full object-cover"

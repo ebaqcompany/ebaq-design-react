@@ -19,33 +19,33 @@ const ND = "/case-study/next-dimension";
 // NextDim media: widescreen (16:9) only, so the rows and the preview frame never crop or letterbox.
 const ndRow1 = [
   { type: "lottie" as const, src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json", alt: "Animated NextDimension logo", bgColor: "#181735" },
-  { type: "image" as const, src: `${ND}/logos.png`, alt: "NextDimension logo system" },
+  { type: "image" as const, src: `${ND}/logos.webp`, alt: "NextDimension logo system" },
   { type: "video" as const, src: `${ND}/old-site/05-hero-shader.mp4`, alt: "NextDimension interactive website shader" },
-  { type: "image" as const, src: `${ND}/glass.jpg`, alt: "NextDimension reeded glass graphics" },
+  { type: "image" as const, src: `${ND}/glass.webp`, alt: "NextDimension reeded glass graphics" },
 ];
 
 const ndRow2 = [
-  { type: "image" as const, src: `${ND}/colors.png`, alt: "NextDimension color palette" },
-  { type: "image" as const, src: `${ND}/hero.jpg`, alt: "NextDimension brand imagery" },
-  { type: "image" as const, src: `${ND}/type.png`, alt: "NextDimension typography" },
-  { type: "image" as const, src: `${ND}/billboard.jpg`, alt: "NextDimension billboard" },
+  { type: "image" as const, src: `${ND}/colors.webp`, alt: "NextDimension color palette" },
+  { type: "image" as const, src: `${ND}/hero.webp`, alt: "NextDimension brand imagery" },
+  { type: "image" as const, src: `${ND}/type.webp`, alt: "NextDimension typography" },
+  { type: "image" as const, src: `${ND}/billboard.webp`, alt: "NextDimension billboard" },
 ];
 
 const ndRow3 = [
-  { type: "image" as const, src: `${ND}/old-site/01-logos.png`, alt: "NextDimension logo design" },
+  { type: "image" as const, src: `${ND}/old-site/01-logos.webp`, alt: "NextDimension logo design" },
   { type: "lottie" as const, src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-exit-enter.lottie.json", alt: "NextDimension logo animation", bgColor: "#181735" },
-  { type: "image" as const, src: `${ND}/old-site/03-colors.png`, alt: "NextDimension brand colors" },
-  { type: "image" as const, src: `${ND}/old-site/02-type.png`, alt: "NextDimension typeface" },
+  { type: "image" as const, src: `${ND}/old-site/03-colors.webp`, alt: "NextDimension brand colors" },
+  { type: "image" as const, src: `${ND}/old-site/02-type.webp`, alt: "NextDimension typeface" },
 ];
 
 const ndPreview = [
-  { label: "Logo Design", image: { src: `${ND}/logos.png`, alt: "NextDimension logo system" } },
-  { label: "Typography", image: { src: `${ND}/type.png`, alt: "NextDimension typography" } },
-  { label: "Colors", image: { src: `${ND}/colors.png`, alt: "NextDimension color palette" } },
+  { label: "Logo Design", image: { src: `${ND}/logos.webp`, alt: "NextDimension logo system" } },
+  { label: "Typography", image: { src: `${ND}/type.webp`, alt: "NextDimension typography" } },
+  { label: "Colors", image: { src: `${ND}/colors.webp`, alt: "NextDimension color palette" } },
   { label: "Website Shader", image: { src: `${ND}/old-site/05-hero-shader.mp4`, alt: "NextDimension interactive website shader" } },
-  { label: "Reeded Glass", image: { src: `${ND}/glass.jpg`, alt: "NextDimension reeded glass graphics" } },
-  { label: "Billboard", image: { src: `${ND}/billboard.jpg`, alt: "NextDimension billboard" } },
-  { label: "Brand World", image: { src: `${ND}/hero.jpg`, alt: "NextDimension brand imagery" } },
+  { label: "Reeded Glass", image: { src: `${ND}/glass.webp`, alt: "NextDimension reeded glass graphics" } },
+  { label: "Billboard", image: { src: `${ND}/billboard.webp`, alt: "NextDimension billboard" } },
+  { label: "Brand World", image: { src: `${ND}/hero.webp`, alt: "NextDimension brand imagery" } },
 ];
 
 const painPoints = [
@@ -107,7 +107,7 @@ const healthcareFaqs = [
   },
   {
     question: "Who will I work with?",
-    answer: `Arek Dvornechuck, a senior brand designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.`,
+    answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.`,
   },
 ];
 
@@ -187,7 +187,7 @@ export const AiHealthcareLanding = () => (
         quote="Arek worked with us on the complete redesign of the NextDimension AI visual identity and website. He was thoughtful, responsive, and patient throughout the process, from exploring the logo direction to refining the website’s content, design, and functionality. What stood out most was his ability to clearly explain and defend his creative vision while still listening to our feedback."
         name="Lakshita Chhikara"
         role="Co-Founder, NextDimension AI"
-        avatar="/testimonials/lakshita-chhikara.jpg"
+        avatar="/testimonials/lakshita-chhikara.webp"
         logo={{ src: "/client-logos/nextdim-wordmark.svg", alt: "NextDimension AI" }}
         websiteUrl="https://nextdim.io"
         caseStudyUrl="/work/next-dimension"

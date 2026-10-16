@@ -1,6 +1,8 @@
 export type BlogImage = {
   src: string;
   alt?: string;
+  // A 768px-wide copy for cards and grids (scripts/make-blog-thumbnails.mjs); index entries only.
+  thumbnail?: string;
 };
 
 export type BlogPostSummary = {

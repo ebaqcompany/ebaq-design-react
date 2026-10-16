@@ -90,7 +90,7 @@ const config: IndustryLandingConfig = {
       { question: "Have you branded a consultancy before?", answer: "Yes. Periti Digital is a HubSpot consultancy with teams across Dublin, Bray, Lisbon, and Munich. I designed its architectural mark, verbal positioning, visual system, website, stationery, social templates, and email signature. I've also branded Wingnut Social, a digital marketing agency for interior designers and home brands, including its logo, pitch deck, and social media system." },
       { question: "Do you help with positioning and messaging?", answer: "Yes. Positioning comes first, because a consultancy's brand is mostly what it says. Periti's identity included a verbal identity and clear positioning alongside the visual system." },
       { question: "Do you design proposals and pitch decks?", answer: "Yes. I design proposal templates and pitch decks that match the brand, like the deck I designed for Wingnut Social, so every document a client receives looks like the same firm." },
-      { question: "Who will I work with?", answer: `Arek Dvornechuck, a senior brand designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.` },
+      { question: "Who will I work with?", answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.` },
     ],
   },
   aboutHeading: "I help consultancies look as senior as they are.",

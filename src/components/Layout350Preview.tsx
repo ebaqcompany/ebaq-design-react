@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useReducedMotion } from "framer-motion";
-import { useMediaQuery } from "@relume_io/relume-ui";
+import { useMediaQuery } from "./ui";
+import { LazyVideo } from "./Media";
 import { Layout527Defaults } from "./Layout527";
 
 const portfolio22Labels = ["Logo Design", "Colors & Fonts", "Stationery", "Social", "UI Design", "Websites", "Ads"];
@@ -14,7 +15,7 @@ const portfolio22Services = [
     heading: "More",
     label: "More",
     image: {
-      src: "/case-study/aero-more.gif",
+      src: "/case-study/aero-more.webp",
       alt: "More brand design work",
     },
   },
@@ -35,19 +36,17 @@ const ServiceMedia = ({ src, alt }: { src: string; alt?: string }) => {
   return (
     <div className="aspect-video w-full overflow-hidden">
       {src.endsWith(".mp4") ? (
-      <video
+      <LazyVideo
         key={src}
         src={src}
         aria-label={alt}
         className="size-full object-contain"
         autoPlay={!reduceMotion}
         loop={!reduceMotion}
-        muted
-        playsInline
         preload="metadata"
       />
       ) : (
-        <img key={src} src={src} alt={alt} className="size-full object-contain" />
+        <img key={src} src={src} alt={alt} loading="lazy" decoding="async" className="size-full object-contain" />
       )}
     </div>
   );
@@ -122,7 +121,7 @@ export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everythi
                       isDimmed ? "text-white/35" : ""
                     }`}
                   >
-                    <h4>{item.label}</h4>
+                    <span className="heading-h4 block">{item.label}</span>
                   </button>
                   {isExpanded && (
                     <div

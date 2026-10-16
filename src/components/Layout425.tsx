@@ -1,4 +1,5 @@
-import { useMediaQuery } from "@relume_io/relume-ui";
+import { useMediaQuery } from "./ui";
+import { LazyVideo } from "./Media";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { caseStudies, type CaseStudyBrandSprintGallery } from "../data/caseStudies";
@@ -109,7 +110,7 @@ export const useLayoutTransforms = (scrollYProgress: MotionValue<number>, isMobi
   };
 };
 
-const Media = ({ image }: { image: ImageProps }) => image.kind === "video" || image.src.endsWith(".mp4") ? <video src={image.src} autoPlay loop muted playsInline preload="none" aria-hidden="true" className="size-full" /> : <img src={image.src} alt={image.alt ?? ""} className="size-full" />;
+const Media = ({ image }: { image: ImageProps }) => image.kind === "video" || image.src.endsWith(".mp4") ? <LazyVideo src={image.src} preload="none" aria-hidden="true" className="size-full" /> : <img src={image.src} alt={image.alt ?? ""} loading="lazy" decoding="async" className="size-full" />;
 
 export const Layout425 = (props: Props) => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -118,15 +119,29 @@ export const Layout425 = (props: Props) => {
   const { heading, description } = { ...Layout425Defaults, ...props };
   const images = props.images ?? randomCaseStudy.images;
   const caseStudyUrl = props.caseStudyUrl ?? randomCaseStudy.url;
+  // Picking the project downloads its images to measure them, so wait until the section is close.
+  const [isNear, setIsNear] = useState(false);
   useEffect(() => {
-    if (props.images) return;
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setIsNear(true);
+      observer.disconnect();
+    }, { rootMargin: "800px 0px" });
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    if (props.images || !isNear) return;
     let isActive = true;
     getRandomLandscapeCaseStudy().then((nextCaseStudy) => {
       if (isActive) setRandomCaseStudy(nextCaseStudy);
     });
     return () => { isActive = false; };
-  }, [props.images]);
+  }, [props.images, isNear]);
   useEffect(() => {
+    if (!isNear) return;
     let isActive = true;
     setFifthImage(null);
     const additionalImages = props.images ? [] : randomCaseStudy.additionalImages;
@@ -134,7 +149,7 @@ export const Layout425 = (props: Props) => {
       if (isActive) setFifthImage(nextImage);
     });
     return () => { isActive = false; };
-  }, [caseStudyUrl, images, props.images, randomCaseStudy.additionalImages]);
+  }, [caseStudyUrl, images, props.images, randomCaseStudy.additionalImages, isNear]);
   const isMobile = useMediaQuery("(max-width: 767px)");
   const isTablet = useMediaQuery("(max-width: 991px)");
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });

@@ -63,7 +63,7 @@ export function NotFoundPage() {
 
       <div className="absolute inset-0 flex items-center justify-center px-[7%] pt-24" role="img" aria-label={reduceMotion ? 'Ebaq Design logo' : 'Interactive Ebaq Design logo pieces that can be dragged and thrown'}>
         {reduceMotion ? (
-          <img src="/ebaqdesign-logo-bold.svg" alt="Ebaq Design" className="w-full max-w-5xl" />
+          <img loading="eager" src="/ebaqdesign-logo-bold.svg" alt="Ebaq Design" width={567} height={156} className="w-full max-w-5xl" />
         ) : (
           <div ref={logoRef} className="aspect-[566.93/155.96817] w-full max-w-5xl touch-none" aria-hidden="true" />
         )}

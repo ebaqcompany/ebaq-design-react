@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/portfolio/ebaq-mark.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Branding Agency NYC | Logo, Identity & Web Design | Ebaq Design</title>
+    <title>Freelance Graphic Designer NYC | Branding & Web | Ebaq Design</title>
     <meta data-rh="true"
       name="description"
-      content="Senior brand designer in Brooklyn, NYC. A new brand identity or rebrand in one week, guaranteed, for a flat $3,000. Websites, motion, and pitch decks at the same weekly rate."
+      content="Arek Dvornechuck, senior freelance graphic designer in New York: branding, logo design, brand strategy, Framer and Webflow websites, and motion. $3,000/week."
     />
     <meta
       name="keywords"
-      content="branding agency NYC, logo design NYC, brand identity design, brand sprint, web design NYC, senior brand designer, startup branding, Ebaq Design"
+      content="freelance graphic designer NYC, senior graphic designer, brand designer New York, logo design, brand strategy, Framer designer, Webflow designer, web design NYC, motion graphics, Ebaq Design"
     />
     <link data-rh="true" rel="canonical" href="https://www.ebaqdesign.com/" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
@@ -20,33 +20,38 @@
     <meta data-rh="true" property="og:type" content="website" />
     <meta data-rh="true" property="og:site_name" content="Ebaq Design" />
     <meta data-rh="true" property="og:url" content="https://www.ebaqdesign.com/" />
-    <meta data-rh="true" property="og:title" content="Branding Agency NYC | Logo, Identity & Web Design | Ebaq Design" />
+    <meta data-rh="true" property="og:title" content="Freelance Graphic Designer NYC | Branding & Web | Ebaq Design" />
     <meta data-rh="true"
       property="og:description"
-      content="Arek Dvornechuck, senior brand designer in Brooklyn, NYC: logo, brand identity, and guidelines in one week, guaranteed, for $3,000 flat. Web, motion, and decks at $3,000 per week."
+      content="Senior freelance graphic designer in Brooklyn, New York. Brand identity in one week, guaranteed, for $3,000 flat; websites (Framer, Webflow), motion, and decks at the same weekly rate."
     />
     <meta data-rh="true" property="og:image" content="https://www.ebaqdesign.com/social-x-cover-brand-grid.png" />
-    <meta data-rh="true" property="og:image:alt" content="Ebaq Design — Strategic branding for ambitious companies" />
+    <meta data-rh="true" property="og:image:alt" content="Ebaq Design: senior freelance graphic designer in New York" />
     <meta data-rh="true" name="twitter:card" content="summary_large_image" />
-    <meta data-rh="true" name="twitter:title" content="Branding Agency NYC | Logo, Identity & Web Design | Ebaq Design" />
+    <meta data-rh="true" name="twitter:title" content="Freelance Graphic Designer NYC | Branding & Web | Ebaq Design" />
     <meta data-rh="true"
       name="twitter:description"
-      content="Brand identity in one week, guaranteed, for $3,000 flat. Senior brand designer in Brooklyn, NYC."
+      content="Senior freelance graphic designer in NYC. Brand identity in one week, guaranteed, for $3,000 flat."
     />
     <meta data-rh="true" name="twitter:image" content="https://www.ebaqdesign.com/social-x-cover-brand-grid.png" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <!-- Structured data is generated at build time from src/content/siteFacts.ts (scripts/generate-route-shells.mjs). -->
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PP6620RJY1"></script>
+    <!-- Google Analytics (GA4). Commands queue in dataLayer right away; gtag.js itself loads once the
+         page has finished loading, so it never competes with the page's own code. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-PP6620RJY1');
+      addEventListener('load', function () {
+        setTimeout(function () {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PP6620RJY1';
+          document.head.appendChild(script);
+        }, 2000);
+      });
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@600&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>

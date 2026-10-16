@@ -1,8 +1,14 @@
 {
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/old-home",
       "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/web-design-services",
+      "destination": "/services/web-design",
       "statusCode": 301
     },
     {
@@ -68,16 +74,6 @@
     {
       "source": "/dti",
       "destination": "https://indd.adobe.com/view/2b69abe0-db13-48d7-9133-e1cf42098fc6",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/startup-branding-agencies",
-      "destination": "/gear/startup-branding-agencies",
-      "statusCode": 301
-    },
-    {
-      "source": "/services/web-design-services",
-      "destination": "/saas-web-design",
       "statusCode": 301
     },
     {
@@ -207,12 +203,12 @@
     },
     {
       "source": "/blog/acer-monitors",
-      "destination": "/blog/acer-best-monitors",
+      "destination": "/blog",
       "statusCode": 301
     },
     {
       "source": "/blog/graphic-design-laptops",
-      "destination": "/blog/best-graphic-design-laptops",
+      "destination": "/blog",
       "statusCode": 301
     },
     {
@@ -997,7 +993,7 @@
     },
     {
       "source": "/top-logos-meaning",
-      "destination": "/top-logos-explained",
+      "destination": "/blog/top-logos-explained",
       "statusCode": 301
     },
     {
@@ -2861,6 +2857,51 @@
       "statusCode": 301
     },
     {
+      "source": "/news/perplexity-rebrand",
+      "destination": "/blog/ai-company-branding",
+      "statusCode": 301
+    },
+    {
+      "source": "/news/dribbble-rebrand",
+      "destination": "/blog/rebranding-examples",
+      "statusCode": 301
+    },
+    {
+      "source": "/news/lg-rebrand",
+      "destination": "/blog/rebranding-examples",
+      "statusCode": 301
+    },
+    {
+      "source": "/news/facebook-redesign",
+      "destination": "/blog/rebranding-examples",
+      "statusCode": 301
+    },
+    {
+      "source": "/news/johnson-johnson-rebrand",
+      "destination": "/blog/rebranding-examples",
+      "statusCode": 301
+    },
+    {
+      "source": "/news/:slug",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/luxury-car_logos",
+      "destination": "/blog/luxury-car-logos",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/the-magician-archetype-10-branding-examples",
+      "destination": "/blog/magician-archetype",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/nextdim",
+      "destination": "/work/next-dimension",
+      "statusCode": 301
+    },
+    {
       "source": "/order-confirmation",
       "destination": "/shop",
       "statusCode": 301
@@ -2888,26 +2929,6 @@
     {
       "source": "/search",
       "destination": "/blog",
-      "statusCode": 301
-    },
-    {
-      "source": "/services",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/services/brand-strategy",
-      "destination": "/blog/brand-strategy",
-      "statusCode": 301
-    },
-    {
-      "source": "/services/logo-design",
-      "destination": "/work",
-      "statusCode": 301
-    },
-    {
-      "source": "/services/web-design",
-      "destination": "/saas-web-design",
       "statusCode": 301
     },
     {
@@ -2970,6 +2991,44 @@
     {
       "source": "/imper",
       "destination": "/imper.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/:dir(images|case-study|portfolio|shop-assets|client-logos|testimonials|textures|fonts|foxberman)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/:page(additiontx|tunetx|regenx|arbor|arbor-biotech|synchron|blackrock|paradromics|echo|motif|imper)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/:page(additiontx|tunetx|regenx|arbor|arbor-biotech|synchron|blackrock|paradromics|echo|motif|imper).html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

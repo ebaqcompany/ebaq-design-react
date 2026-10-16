@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import Lottie, { type LottieRefCurrentProps } from "lottie-react";
+import type { LottieRefCurrentProps } from "lottie-react";
+import { LottiePlayer as Lottie } from "./LottiePlayer";
+import { LazyVideo } from "./Media";
 
 type ImageProps = {
   url?: string;
@@ -11,14 +13,7 @@ type ImageProps = {
   aspectRatio?: string;
 };
 
-// WebM first, with the MP4 next to it as the fallback for browsers without VP9 (older Safari).
-export const VideoSources = ({ src }: { src: string }) =>
-  src.endsWith(".webm") ? (
-    <>
-      <source src={src} type="video/webm" />
-      <source src={src.replace(/\.webm$/, ".mp4")} type="video/mp4" />
-    </>
-  ) : null;
+export { VideoSources } from "./Media";
 
 const GalleryLottie = ({ src, alt, aspectRatio }: Pick<ImageProps, "src" | "alt" | "aspectRatio">) => {
   const [animationData, setAnimationData] = useState<{ w?: number; h?: number } | null>(null);
@@ -85,26 +80,16 @@ export const Gallery1 = (props: Gallery1Props) => {
                 className={`relative w-full overflow-hidden ${image.aspectRatio ? "" : "aspect-video"}`}
                 style={image.aspectRatio ? { aspectRatio: image.aspectRatio } : undefined}
               >
-                <video
-                  src={image.src.endsWith(".webm") ? undefined : image.src}
-                  aria-label={image.alt}
-                  className="size-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <VideoSources src={image.src} />
-                </video>
+                <LazyVideo src={image.src} aria-label={image.alt} className="size-full object-cover" preload="metadata" />
                 {image.overlaySrc && (
-                  <img src={image.overlaySrc} alt="" aria-hidden="true" className="absolute inset-0 size-full object-cover" />
+                  <img loading="lazy" decoding="async" src={image.overlaySrc} alt="" aria-hidden="true" className="absolute inset-0 size-full object-cover" />
                 )}
               </div>
             ) : image.kind === "lottie" ? (
               <GalleryLottie src={image.src} alt={image.alt} aspectRatio={image.aspectRatio} />
             ) : (
               <div className="w-full overflow-hidden">
-                <img src={image.src} alt={image.alt} className="h-auto w-full" />
+                <img loading="lazy" decoding="async" src={image.src} alt={image.alt} className="h-auto w-full" />
               </div>
             );
 

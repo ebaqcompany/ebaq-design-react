@@ -5,7 +5,7 @@ import { TestimonialCarouselArrow } from "./Testimonial32";
 import { getBlogPostUrl, type BlogPost } from "../content/blog";
 import { caseStudies } from "../data/caseStudies";
 import { normalizeVideoEmbeds } from "../content/richText";
-import { buildBlogPostingSchema, buildFaqSchema, buildVideoSchema, resolveFaqPairs, serializeJsonLd } from "../content/structuredData";
+import { buildBlogPostingSchema, buildBreadcrumbSchema, buildFaqSchema, buildVideoSchema, resolveFaqPairs, serializeJsonLd } from "../content/structuredData";
 import { BlogPostHeader4 } from "./BlogPostHeader4";
 import { Content32 } from "./Content32";
 import { Cta17 } from "./Cta17";
@@ -24,6 +24,7 @@ type IndustryCta = { work: string; heading: string; description: string; button:
 const saasBrandingCta: IndustryCta = { work: "elevate", heading: "Building a SaaS brand?", description: "I design logos, app icons, and brand identities for SaaS and AI startups. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See SaaS branding", href: "/saas-branding" } };
 const luxuryCta: IndustryCta = { work: "airport-executive", heading: "Building a premium brand?", description: "I design monograms, logos, and refined brand identities for luxury and premium brands. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See luxury branding", href: "/luxury-branding" } };
 const cannabisCta: IndustryCta = { work: "sweetgrass", heading: "Building a cannabis brand?", description: "I design logos, packaging, and websites for dispensaries and cannabis brands. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See cannabis branding", href: "/cannabis-branding" } };
+const aiStartupCta: IndustryCta = { work: "orbio", heading: "Building an AI startup?", description: "I design logos, brand identities, pitch decks, and websites for AI startups. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See AI startup branding", href: "/ai-startup-branding" } };
 const industryPosts: Record<string, IndustryCta> = {
   "luxury-car-logos": luxuryCta,
   "jewelry-logos": luxuryCta,
@@ -34,7 +35,8 @@ const industryPosts: Record<string, IndustryCta> = {
   "law-firm-logos": { work: "fox-berman", heading: "Need a law firm brand like these?", description: "I design logos, brand identities, and websites for law firms. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See law firm branding", href: "/law-firm-branding" } },
   "saas-logos": saasBrandingCta,
   "tech-startup-logos": saasBrandingCta,
-  "ai-startups-logos": saasBrandingCta,
+  "ai-startups-logos": aiStartupCta,
+  "ai-company-branding": aiStartupCta,
   "biotech-startup-branding": { work: "next-dimension", heading: "Building in health tech or biotech?", description: "I design brand identities and websites for AI healthcare and health tech companies. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See AI healthcare branding", href: "/ai-healthcare-branding" } },
 };
 const selectedWorkHighlights: Record<string, string> = { "next-dimension": "healthcare", "fox-berman": "law firm", elevate: "SaaS", aero: "clinical", brevidee: "video-editing", wingnut: "high-end interiors", ventur: "AI travel planner", "airport-executive": "London chauffeur", sweetgrass: "cannabis dispensary", periti: "HubSpot consultancy", medihuanna: "medicinal cannabis" };
@@ -224,6 +226,7 @@ export const BlogPostPage = () => {
   const videoStructuredData = buildVideoSchema(post);
   const articleStructuredData = buildBlogPostingSchema(post, siteUrl);
   const faqStructuredData = buildFaqSchema(resolveFaqPairs(post, articleBody), canonicalUrl);
+  const breadcrumbStructuredData = buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }, { name: post.title, path: post.url }], siteUrl);
   return (
     <div className="relative bg-white">
       <Helmet>
@@ -242,13 +245,14 @@ export const BlogPostPage = () => {
         <script type="application/ld+json">{serializeJsonLd(articleStructuredData)}</script>
         {faqStructuredData && <script type="application/ld+json">{serializeJsonLd(faqStructuredData)}</script>}
         {videoStructuredData && <script type="application/ld+json">{serializeJsonLd(videoStructuredData)}</script>}
+        <script type="application/ld+json">{serializeJsonLd(breadcrumbStructuredData)}</script>
       </Helmet>
       <Navbar16 />
       <NotificationBar />
       <main>
         <BlogPostHeader4 category={post.category} heading={post.title} image={post.image} youtubeEmbed={youtubeEmbed} postDetails={[{ title: "Published on", description: post.date }]} />
         <Content32 articleTitle={post.title} articleUrl={canonicalUrl}>
-          {!hasInlineImages && <figure className="mb-8 w-full"><img src={post.image.src} alt={post.image.alt || post.title} className="h-auto w-full" /></figure>}
+          {!hasInlineImages && <figure className="mb-8 w-full"><img loading="lazy" decoding="async" src={post.image.src} alt={post.image.alt || post.title} className="h-auto w-full" /></figure>}
           {post.faq && post.faq.length > 0 && !post.logoRoster && <section aria-label="Common questions" className="mt-12 pt-8">
             {post.faq.map((item) => <div key={item.question} className="mt-6"><h3>{item.question}</h3><p>{item.answer}</p></div>)}
           </section>}

@@ -1,9 +1,10 @@
 "use client";
 
-import type { ButtonProps } from "@relume_io/relume-ui";
-import { VideoSources } from "./Gallery1";
+import type { ButtonProps } from "./ui";
+import { LazyVideo, useNearViewport } from "./Media";
 import { useRef, useEffect, useCallback, useState } from "react";
-import Lottie from "lottie-react";
+import type { LottieRefCurrentProps } from "lottie-react";
+import { LottiePlayer } from "./LottiePlayer";
 import { ArekProfileBadge } from "./ArekProfileBadge";
 
 export type MediaProps = {
@@ -38,32 +39,52 @@ type Props = {
 
 export type Header78Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
+// Each row repeats its tiles three times for the seamless loop, so the same file is fetched once and shared.
+const lottieData = new Map<string, Promise<object>>();
+const loadLottie = (src: string) => {
+  if (!lottieData.has(src)) lottieData.set(src, fetch(src).then((res) => res.json()));
+  return lottieData.get(src)!;
+};
+
+// Tiles only fetch and start their animation once they scroll near the screen, and pause off screen:
+// the three rows hold 45 logo animations, and running them all at once kept the main thread busy.
 const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY = 0 }: { src: string; bgColor?: string; fit?: "contain" | "cover"; scale?: number; offsetY?: number }) => {
   const [animationData, setAnimationData] = useState<object | null>(null);
+  const { ref, near, inView } = useNearViewport<HTMLDivElement>("100px");
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
 
   useEffect(() => {
-    fetch(src)
-      .then((res) => res.json())
-      .then((data) => setAnimationData(data))
+    if (!near) return;
+    let active = true;
+    loadLottie(src)
+      .then((data) => active && setAnimationData(data))
       .catch((err) => console.error("Failed to load Lottie:", err));
-  }, [src]);
+    return () => {
+      active = false;
+    };
+  }, [near, src]);
+
+  useEffect(() => {
+    if (inView) lottieRef.current?.play();
+    else lottieRef.current?.pause();
+  }, [inView, animationData]);
 
   const backgroundColor = bgColor || "#171717";
   const preserveAspectRatio = fit === "cover" ? "xMidYMid slice" : "xMidYMid meet";
 
-  if (!animationData) {
-    return <div className="absolute inset-0 size-full" style={{ backgroundColor }} />;
-  }
-
   return (
-    <div className="absolute inset-0 size-full flex items-center justify-center" style={{ backgroundColor }}>
-      <Lottie
-        animationData={animationData}
-        loop
-        rendererSettings={{ preserveAspectRatio }}
-        className="size-full"
-        style={{ transform: `translateY(${offsetY}px) scale(${scale})`, transformOrigin: "center" }}
-      />
+    <div ref={ref} className="absolute inset-0 size-full flex items-center justify-center" style={{ backgroundColor }}>
+      {animationData && (
+        <LottiePlayer
+          lottieRef={lottieRef}
+          animationData={animationData}
+          loop
+          autoplay={inView}
+          rendererSettings={{ preserveAspectRatio }}
+          className="size-full"
+          style={{ transform: `translateY(${offsetY}px) scale(${scale})`, transformOrigin: "center" }}
+        />
+      )}
     </div>
   );
 };
@@ -75,20 +96,15 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
 
   if (item.type === "video") {
     return (
-      <video
-        className="absolute inset-0 size-full object-cover"
-        style={{ backgroundColor: item.bgColor }}
-        src={item.src.endsWith(".webm") ? undefined : item.src}
-        autoPlay
-        loop
-        muted
-        playsInline
+      <LazyVideo
+        src={item.src}
+        frameClassName="absolute inset-0 size-full"
+        frameStyle={{ backgroundColor: item.bgColor }}
+        className="size-full object-cover"
         preload="none"
         aria-hidden="true"
         draggable={false}
-      >
-        <VideoSources src={item.src} />
-      </video>
+      />
     );
   }
 
@@ -97,6 +113,8 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
       className="absolute inset-0 size-full object-cover"
       src={item.src}
       alt={item.alt}
+      loading="lazy"
+      decoding="async"
       draggable={false}
     />
   );
@@ -311,7 +329,7 @@ export const Header78 = (props: Header78Props) => {
 
 export const Header78Defaults: Props = {
   heading: "Good design\nis good business",
-  description: "Hello 👋 Arek here, I’m a senior designer based in Brooklyn, NY, working with clients worldwide. I specialize in branding, motion, web.",
+  description: "Hello 👋 Arek here, a senior freelance graphic designer based in Brooklyn, NY, working with clients worldwide. I specialize in branding, logo design, websites, and motion.",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],
 
   // Row 1: Logo Animations
@@ -336,34 +354,34 @@ export const Header78Defaults: Props = {
   // Row 2: Identity/Bento Shots
   row2: [
     { type: "image", src: "/portfolio/identities/orbio-bento.webp", alt: "Orbio Identity" },
-    { type: "image", src: "/portfolio/identities/elevate-bento.jpg", alt: "Elevate Identity" },
-    { type: "image", src: "/portfolio/identities/nexdim-bento.jpg", alt: "NextDim Identity" },
+    { type: "image", src: "/portfolio/identities/elevate-bento.webp", alt: "Elevate Identity" },
+    { type: "image", src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim Identity" },
     { type: "image", src: "/portfolio/identities/aero-bento.webp", alt: "Aero Identity" },
-    { type: "image", src: "/portfolio/identities/airport-executive-bento.jpg", alt: "Airport Executive Identity" },
-    { type: "image", src: "/portfolio/identities/brevidee-bento.jpg", alt: "Brevidee Identity" },
-    { type: "image", src: "/portfolio/identities/forberman-bento.jpg", alt: "Foxberman Identity" },
-    { type: "image", src: "/portfolio/identities/laura-ceara-bento.jpg", alt: "Laura Ceara Identity" },
-    { type: "image", src: "/portfolio/identities/lyntics-bento.jpg", alt: "Lyntics Identity" },
-    { type: "image", src: "/portfolio/identities/medihuanna-bento.jpg", alt: "Medihuanna Identity" },
-    { type: "image", src: "/portfolio/identities/periti-bento.jpg", alt: "Periti Identity" },
-    { type: "image", src: "/portfolio/identities/sweetgrass-bento.jpg", alt: "Sweetgrass Identity" },
-    { type: "image", src: "/portfolio/identities/ventur-bento.jpg", alt: "Ventur Identity" },
-    { type: "image", src: "/portfolio/identities/wingnut-bento.jpg", alt: "Wingnut Identity" },
+    { type: "image", src: "/portfolio/identities/airport-executive-bento.webp", alt: "Airport Executive Identity" },
+    { type: "image", src: "/portfolio/identities/brevidee-bento.webp", alt: "Brevidee Identity" },
+    { type: "image", src: "/portfolio/identities/forberman-bento.webp", alt: "Foxberman Identity" },
+    { type: "image", src: "/portfolio/identities/laura-ceara-bento.webp", alt: "Laura Ceara Identity" },
+    { type: "image", src: "/portfolio/identities/lyntics-bento.webp", alt: "Lyntics Identity" },
+    { type: "image", src: "/portfolio/identities/medihuanna-bento.webp", alt: "Medihuanna Identity" },
+    { type: "image", src: "/portfolio/identities/periti-bento.webp", alt: "Periti Identity" },
+    { type: "image", src: "/portfolio/identities/sweetgrass-bento.webp", alt: "Sweetgrass Identity" },
+    { type: "image", src: "/portfolio/identities/ventur-bento.webp", alt: "Ventur Identity" },
+    { type: "image", src: "/portfolio/identities/wingnut-bento.webp", alt: "Wingnut Identity" },
   ],
 
   // Row 3: Website Shots
   row3: [
     { type: "image", src: "/portfolio/websites/orbio-web.webp", alt: "Orbio Website" },
-    { type: "image", src: "/portfolio/websites/elevate-web.jpg", alt: "Elevate Website" },
-    { type: "image", src: "/portfolio/websites/nextdim-web-portfolio.jpg", alt: "NextDim Website" },
-    { type: "image", src: "/portfolio/websites/aero-web.jpg", alt: "Aero Website" },
+    { type: "image", src: "/portfolio/websites/elevate-web.webp", alt: "Elevate Website" },
+    { type: "image", src: "/portfolio/websites/nextdim-web-portfolio.webp", alt: "NextDim Website" },
+    { type: "image", src: "/portfolio/websites/aero-web.webp", alt: "Aero Website" },
     { type: "video", src: "/portfolio/websites/airport-executive-web.mp4", alt: "Airport Executive Website" },
     { type: "video", src: "/portfolio/websites/brevidee-web.mp4", alt: "Brevidee Website" },
     { type: "video", src: "/portfolio/websites/fox-berman-web.mp4", alt: "Foxberman Website" },
-    { type: "image", src: "/portfolio/websites/laura-ceara-web.jpg", alt: "Laura Ceara Website" },
+    { type: "image", src: "/portfolio/websites/laura-ceara-web.webp", alt: "Laura Ceara Website" },
     { type: "video", src: "/portfolio/websites/periti-web.mp4", alt: "Periti Website" },
-    { type: "image", src: "/portfolio/websites/sweetgras-web.jpg", alt: "Sweetgrass Website" },
-    { type: "image", src: "/portfolio/websites/ventur-web.jpg", alt: "Ventur Website" },
+    { type: "image", src: "/portfolio/websites/sweetgras-web.webp", alt: "Sweetgrass Website" },
+    { type: "image", src: "/portfolio/websites/ventur-web.webp", alt: "Ventur Website" },
     { type: "video", src: "/portfolio/websites/wingnut-web.mp4", alt: "Wingnut Website" },
   ],
 };

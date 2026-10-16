@@ -1,5 +1,5 @@
-import { Button } from "@relume_io/relume-ui";
-import type { ButtonProps } from "@relume_io/relume-ui";
+import { Button } from "./ui";
+import type { ButtonProps } from "./ui";
 import { RxChevronRight } from "react-icons/rx";
 import { RotatingProjectPreview } from "./RotatingProjectPreview";
 import { HomepageMarkerCircle } from "./Layout484";
@@ -17,6 +17,7 @@ export type Portfolio16ProjectProps = {
   lottie?: ImageProps;
   url: string;
   highlightDescriptionPhrase?: string;
+  priority?: boolean;
 };
 
 type Props = {
@@ -44,7 +45,7 @@ export const Portfolio16 = (props: Portfolio16Props) => {
         </header>
         <div>
           {projects.map((project, index) => (
-            <Portfolio16Project key={project.url} {...project} reverse={index % 2 === 1} />
+            <Portfolio16Project key={project.url} {...project} reverse={index % 2 === 1} priority={index === 0} />
           ))}
         </div>
       </div>
@@ -52,7 +53,7 @@ export const Portfolio16 = (props: Portfolio16Props) => {
   );
 };
 
-export const Portfolio16Project = ({ title, description, image, images, lottie, url, reverse, highlightDescriptionPhrase }: Portfolio16ProjectProps & { reverse: boolean }) => {
+export const Portfolio16Project = ({ title, description, image, images, lottie, url, reverse, highlightDescriptionPhrase, priority }: Portfolio16ProjectProps & { reverse: boolean }) => {
   const button: ButtonProps = {
     title: "View case study",
     variant: "link",
@@ -67,6 +68,7 @@ export const Portfolio16Project = ({ title, description, image, images, lottie, 
         images={images}
         lottie={lottie}
         url={url}
+        priority={priority}
         className={`aspect-video w-full ${reverse ? "md:order-2" : "md:order-1"}`}
       />
       <div className={reverse ? "md:order-1 md:pl-[10%]" : "md:order-2 md:pr-[10%]"}>

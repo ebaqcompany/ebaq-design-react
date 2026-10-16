@@ -23,7 +23,7 @@ export const Contact5 = () => {
   return <div className="flex flex-col">
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto grid grid-cols-1 items-stretch gap-y-10 md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
-        <img src="/images/about-candidates/arek-brevidio-logo-review.jpeg" alt="Arek Dvornechuck reviewing logo concepts in his Brooklyn studio" className="aspect-[4/5] size-full object-cover" />
+        <img loading="eager" fetchPriority="high" src="/images/about-candidates/arek-brevidio-logo-review.webp" alt="Arek Dvornechuck reviewing logo concepts in his Brooklyn studio" className="aspect-[4/5] size-full object-cover" />
         <div className="flex flex-col justify-center">
           <p className="mb-3 font-semibold text-brand-primary md:mb-4">Start a conversation</p>
           <h1 className="mb-5 text-h1 md:mb-6">Tell me about your project</h1>

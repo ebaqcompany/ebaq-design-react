@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import Lottie, { type LottieRefCurrentProps } from "lottie-react";
+import type { LottieRefCurrentProps } from "lottie-react";
+import { LottiePlayer as Lottie } from "./LottiePlayer";
+import { useNearViewport } from "./Media";
 import { Link } from "react-router-dom";
 
 export type ProjectPreviewImage = {
@@ -15,18 +17,25 @@ type RotatingProjectPreviewProps = {
   className?: string;
   imageClassName?: string;
   useRouterLink?: boolean;
+  // The first card on a page is on screen at load (often the largest paint), so it isn't lazy.
+  priority?: boolean;
 };
 
 const StaticLastFrameLottie = ({
   src,
   alt,
   fallback,
-}: ProjectPreviewImage & { fallback: ProjectPreviewImage }) => {
+  priority = false,
+}: ProjectPreviewImage & { fallback: ProjectPreviewImage; priority?: boolean }) => {
   const [animationData, setAnimationData] = useState<object | null>(null);
   const [hasError, setHasError] = useState(false);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
+  // Fetch the animation only as the card comes near the screen; a page of cards would otherwise
+  // download every card's animation at load.
+  const { ref, near } = useNearViewport<HTMLDivElement>("300px");
 
   useEffect(() => {
+    if (!near) return;
     setAnimationData(null);
     setHasError(false);
     fetch(src)
@@ -39,14 +48,14 @@ const StaticLastFrameLottie = ({
         setHasError(true);
         console.error("Failed to load project-preview Lottie:", error);
       });
-  }, [src]);
+  }, [src, near]);
 
   if (!animationData || hasError) {
-    return <img src={fallback.src} className="size-full object-cover object-center" alt={fallback.alt} />;
+    return <div ref={ref} className="size-full"><img loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" src={fallback.src} className="size-full object-cover object-center" alt={fallback.alt} /></div>;
   }
 
   return (
-    <div className="flex size-full items-center justify-center overflow-hidden">
+    <div ref={ref} className="flex size-full items-center justify-center overflow-hidden">
       <Lottie
         lottieRef={lottieRef}
         animationData={animationData}
@@ -72,6 +81,7 @@ export const RotatingProjectPreview = ({
   className,
   imageClassName,
   useRouterLink = false,
+  priority = false,
 }: RotatingProjectPreviewProps) => {
   const previewImages = images.length > 0 ? images : [image];
   const [imageIndex, setImageIndex] = useState(0);
@@ -104,9 +114,9 @@ export const RotatingProjectPreview = ({
   // At rest, show the project's own preview image; the gallery only rotates on hover.
   const shownImage = isHovering ? currentImage : image;
   const content = !isHovering && lottie ? (
-    <StaticLastFrameLottie {...lottie} fallback={currentImage} />
+    <StaticLastFrameLottie {...lottie} fallback={currentImage} priority={priority} />
   ) : (
-    <img src={shownImage.src} className={`size-full object-cover object-center ${imageClassName ?? ""}`.trim()} alt={shownImage.alt} />
+    <img loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" src={shownImage.src} className={`size-full object-cover object-center ${imageClassName ?? ""}`.trim()} alt={shownImage.alt} />
   );
   const linkClassName = `flex items-center justify-center overflow-hidden ${className ?? ""}`;
 

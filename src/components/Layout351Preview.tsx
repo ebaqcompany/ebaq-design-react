@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useMediaQuery } from "@relume_io/relume-ui";
+import { useMediaQuery } from "./ui";
 import { Layout527Defaults } from "./Layout527";
 
 const legacyDeliverables = Layout527Defaults.hoverLinks;
@@ -39,7 +39,7 @@ const DeliverableMedia = ({ src, alt }: { src: string; alt?: string }) => {
   if (src.endsWith(".mp4")) {
     return <video key={src} src={src} aria-label={alt} className="size-full object-cover" autoPlay={!reduceMotion} loop={!reduceMotion} muted playsInline preload="metadata" />;
   }
-  return <img key={src} src={src} alt={alt} className="size-full object-cover" />;
+  return <img loading="lazy" decoding="async" key={src} src={src} alt={alt} className="size-full object-cover" />;
 };
 
 export const Layout351Preview = () => {

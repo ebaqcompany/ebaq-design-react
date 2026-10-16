@@ -38,7 +38,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/best-cursive-fonts/cursive-fonts-bg.webp",
-      "alt": "10 Best Cursive Fonts for Logos & Branding in 2026"
+      "alt": "10 Best Cursive Fonts for Logos & Branding in 2026",
+      "thumbnail": "/images/blog/best-cursive-fonts/cursive-fonts-bg-768w.webp"
     }
   },
   {
@@ -52,7 +53,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/luxury-fonts/luxury-font-for-graphic-design-bg.webp",
-      "alt": "10 Best Luxury Fonts for Graphic Design in 2026"
+      "alt": "10 Best Luxury Fonts for Graphic Design in 2026",
+      "thumbnail": "/images/blog/luxury-fonts/luxury-font-for-graphic-design-bg-768w.webp"
     }
   },
   {
@@ -66,7 +68,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/minimalist-fonts/top-10-fonts-for-minimalist-logo-designbg.webp",
-      "alt": "Top 10 Fonts For Minimalist Logo Design in 2026"
+      "alt": "Top 10 Fonts For Minimalist Logo Design in 2026",
+      "thumbnail": "/images/blog/minimalist-fonts/top-10-fonts-for-minimalist-logo-designbg-768w.webp"
     }
   },
   {
@@ -80,7 +83,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/military-fonts/military-font-bg.webp",
-      "alt": "10 Best Military Fonts for Design & Branding in 2026"
+      "alt": "10 Best Military Fonts for Design & Branding in 2026",
+      "thumbnail": "/images/blog/military-fonts/military-font-bg-768w.webp"
     }
   },
   {
@@ -94,7 +98,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/baseball-fonts/baseball-fonts-bg-ff6057.jpg",
-      "alt": "10 Best Baseball Fonts for Design & Branding in 2026"
+      "alt": "10 Best Baseball Fonts for Design & Branding in 2026",
+      "thumbnail": "/images/blog/baseball-fonts/baseball-fonts-bg-ff6057-768w.webp"
     }
   },
   {
@@ -136,7 +141,8 @@
     "date": "Sep 18, 2026",
     "image": {
       "src": "/images/blog/logos-look-alike-brands-sound-same/cover-pepsi-korean-air.webp",
-      "alt": "The Pepsi logo and the Korean Air logo side by side on two white sheets of paper against a blue grid background, separated by a handwritten \"vs\", showing how alike the two circular red and blue marks are"
+      "alt": "The Pepsi logo and the Korean Air logo side by side on two white sheets of paper against a blue grid background, separated by a handwritten \"vs\", showing how alike the two circular red and blue marks are",
+      "thumbnail": "/images/blog/logos-look-alike-brands-sound-same/cover-pepsi-korean-air-768w.webp"
     }
   },
   {
@@ -149,8 +155,9 @@
     "readTime": "25 min read",
     "date": "Sep 17, 2026",
     "image": {
-      "src": "/case-study/airport-executive/10-signage.jpg",
-      "alt": "Airport Executive monogram and serif wordmark on environmental signage after the rebrand under new ownership"
+      "src": "/case-study/airport-executive/10-signage.webp",
+      "alt": "Airport Executive monogram and serif wordmark on environmental signage after the rebrand under new ownership",
+      "thumbnail": "/case-study/airport-executive/10-signage-768w.webp"
     }
   },
   {
@@ -164,7 +171,8 @@
     "date": "Aug 21, 2026",
     "image": {
       "src": "/content/blog/web-design-process/01-cover.webp",
-      "alt": "Web Design Process step by step"
+      "alt": "Web Design Process step by step",
+      "thumbnail": "/content/blog/web-design-process/01-cover-768w.webp"
     }
   },
   {
@@ -178,7 +186,8 @@
     "date": "Jul 24, 2026",
     "image": {
       "src": "/images/blog/kimi-k3-vs-designer-cover.webp",
-      "alt": "Kimi K3 vs. Web Designer: Is AI Better Than Human?"
+      "alt": "Kimi K3 vs. Web Designer: Is AI Better Than Human?",
+      "thumbnail": "/images/blog/kimi-k3-vs-designer-cover-768w.webp"
     }
   },
   {
@@ -193,7 +202,8 @@
     "image": {
       "src": "/images/blog/best-saas-websites.webp",
       "alt": "14 Best SaaS Website Examples in 2026 | A Designer's Review",
-      "sourceSrc": "/images/blog/saas-websites/slide-01.webp"
+      "sourceSrc": "/images/blog/saas-websites/slide-01.webp",
+      "thumbnail": "/images/blog/best-saas-websites-768w.webp"
     }
   },
   {
@@ -207,7 +217,8 @@
     "date": "Jul 24, 2026",
     "image": {
       "src": "/images/blog/ai-website-builders-cover.webp",
-      "alt": "I Tested 10 Best AI Website Builders (2026)"
+      "alt": "I Tested 10 Best AI Website Builders (2026)",
+      "thumbnail": "/images/blog/ai-website-builders-cover-768w.webp"
     }
   },
   {
@@ -221,7 +232,8 @@
     "date": "Jul 21, 2026",
     "image": {
       "src": "/images/blog/wordpress-vs-webflow-vs-framer/wordpress-webflow-framer-main-image.webp",
-      "alt": "WordPress vs Webflow vs Framer: Which Is Better?"
+      "alt": "WordPress vs Webflow vs Framer: Which Is Better?",
+      "thumbnail": "/images/blog/wordpress-vs-webflow-vs-framer/wordpress-webflow-framer-main-image-768w.webp"
     }
   },
   {
@@ -235,7 +247,8 @@
     "date": "Mar 24, 2026",
     "image": {
       "src": "/images/blog/best-ai-presentation-maker-2026/ai-pres-main.webp",
-      "alt": "12 Best AI Presentation Makers in 2026 — A Designer’s Review"
+      "alt": "12 Best AI Presentation Makers in 2026 — A Designer’s Review",
+      "thumbnail": "/images/blog/best-ai-presentation-maker-2026/ai-pres-main-768w.webp"
     }
   },
   {
@@ -305,7 +318,8 @@
     "date": "Feb 1, 2026",
     "image": {
       "src": "/images/blog/luxury-car-logos/top-luxury-car-logo-bg.webp",
-      "alt": "30+ Luxury Car Logos & Their Hidden Meanings [2026 Guide]"
+      "alt": "30+ Luxury Car Logos & Their Hidden Meanings [2026 Guide]",
+      "thumbnail": "/images/blog/luxury-car-logos/top-luxury-car-logo-bg-768w.webp"
     }
   },
   {
@@ -319,7 +333,8 @@
     "date": "Feb 1, 2026",
     "image": {
       "src": "/images/blog/mlb-logos/best-mlb-logos.webp",
-      "alt": "All 30 MLB Team Logos Ranked & Explained [2026 Edition]"
+      "alt": "All 30 MLB Team Logos Ranked & Explained [2026 Edition]",
+      "thumbnail": "/images/blog/mlb-logos/best-mlb-logos-768w.webp"
     }
   },
   {
@@ -333,7 +348,8 @@
     "date": "Feb 1, 2026",
     "image": {
       "src": "/images/blog/nfl-logos/nfl-logos-arek.jpg",
-      "alt": "Top 9 Most Iconic NFL Team Logos in 2026"
+      "alt": "Top 9 Most Iconic NFL Team Logos in 2026",
+      "thumbnail": "/images/blog/nfl-logos/nfl-logos-arek-768w.webp"
     }
   },
   {
@@ -347,7 +363,8 @@
     "date": "Feb 1, 2026",
     "image": {
       "src": "/images/blog/website-builders-design-portfolios/webflow-website-macbook.webp",
-      "alt": "Best Website Builders for Design Portfolios in 2026"
+      "alt": "Best Website Builders for Design Portfolios in 2026",
+      "thumbnail": "/images/blog/website-builders-design-portfolios/webflow-website-macbook-768w.webp"
     }
   },
   {
@@ -375,7 +392,8 @@
     "date": "Jan 31, 2026",
     "image": {
       "src": "/images/blog/ai-startups-logos/ai-logos-hexagon.webp",
-      "alt": "AI Startup Logos & Why They Look Alike"
+      "alt": "AI Startup Logos & Why They Look Alike",
+      "thumbnail": "/images/blog/ai-startups-logos/ai-logos-hexagon-768w.webp"
     }
   },
   {
@@ -389,7 +407,8 @@
     "date": "Jan 31, 2026",
     "image": {
       "src": "/images/shared/brand-strategy-framework-done.webp",
-      "alt": "Brand Strategy Framework for Startups: The 9-Step Process [2026 Guide]"
+      "alt": "Brand Strategy Framework for Startups: The 9-Step Process [2026 Guide]",
+      "thumbnail": "/images/shared/brand-strategy-framework-done-768w.webp"
     }
   },
   {
@@ -403,7 +422,8 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/best-adobe-discounts/adobe-cover.webp",
-      "alt": "Adobe Creative Cloud Discounts: Save Up to 60% [2026]"
+      "alt": "Adobe Creative Cloud Discounts: Save Up to 60% [2026]",
+      "thumbnail": "/images/blog/best-adobe-discounts/adobe-cover-768w.webp"
     }
   },
   {
@@ -417,7 +437,8 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/brand-architecture/brand-architecture-bg.webp",
-      "alt": "Brand Architecture Explained: 4 Types + Examples [2026]"
+      "alt": "Brand Architecture Explained: 4 Types + Examples [2026]",
+      "thumbnail": "/images/blog/brand-architecture/brand-architecture-bg-768w.webp"
     }
   },
   {
@@ -459,7 +480,8 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/elegant-logo-fonts/elegant-logo-fonts-bg-86319f58ae985246aac03da29c1e0818.webp",
-      "alt": "20+ Elegant Logo Fonts for Luxury Brands [Free & Premium]"
+      "alt": "20+ Elegant Logo Fonts for Luxury Brands [Free & Premium]",
+      "thumbnail": "/images/blog/elegant-logo-fonts/elegant-logo-fonts-bg-86319f58ae985246aac03da29c1e0818-768w.webp"
     }
   },
   {
@@ -473,7 +495,8 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/hotel-logos/hotel-logos.webp",
-      "alt": "35+ Best Hotel Logo Designs & What Makes Them Work [2026]"
+      "alt": "35+ Best Hotel Logo Designs & What Makes Them Work [2026]",
+      "thumbnail": "/images/blog/hotel-logos/hotel-logos-768w.webp"
     }
   },
   {
@@ -487,7 +510,8 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/logo-fonts/logo-font-bg-4f512f.webp",
-      "alt": "How to Choose the Perfect Logo Font [2026 Guide + Tips]"
+      "alt": "How to Choose the Perfect Logo Font [2026 Guide + Tips]",
+      "thumbnail": "/images/blog/logo-fonts/logo-font-bg-4f512f-768w.webp"
     }
   },
   {
@@ -501,7 +525,8 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/monogram-logo-design/ebaq-blog-post-1.webp",
-      "alt": "Monogram Logo Design: 25+ Examples & Tips [2026 Guide]"
+      "alt": "Monogram Logo Design: 25+ Examples & Tips [2026 Guide]",
+      "thumbnail": "/images/blog/monogram-logo-design/ebaq-blog-post-1-768w.webp"
     }
   },
   {
@@ -515,7 +540,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/abstract-logo-design/4.webp",
-      "alt": "Best Examples of Abstract Logo Designs in 2026"
+      "alt": "Best Examples of Abstract Logo Designs in 2026",
+      "thumbnail": "/images/blog/abstract-logo-design/4-768w.webp"
     }
   },
   {
@@ -543,7 +569,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/ai-brand-strategy-tool/social.webp",
-      "alt": "AI Brand Strategy Tool: Develop Your Strategy in 2026"
+      "alt": "AI Brand Strategy Tool: Develop Your Strategy in 2026",
+      "thumbnail": "/images/blog/ai-brand-strategy-tool/social-768w.webp"
     }
   },
   {
@@ -557,7 +584,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/ai-company-branding/best-ai-company-logos.webp",
-      "alt": "9 Best AI Company Branding Examples in 2026"
+      "alt": "9 Best AI Company Branding Examples in 2026",
+      "thumbnail": "/images/blog/ai-company-branding/best-ai-company-logos-768w.webp"
     }
   },
   {
@@ -599,7 +627,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/airline-logos/airline-logo-explained-bg.webp",
-      "alt": "Top 10 Best Airline Logos Explained in 2026"
+      "alt": "Top 10 Best Airline Logos Explained in 2026",
+      "thumbnail": "/images/blog/airline-logos/airline-logo-explained-bg-768w.webp"
     }
   },
   {
@@ -627,7 +656,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/architecture-logos/1.webp",
-      "alt": "30 Best Architecture Firm Logos for Branding Inspiration in 2026"
+      "alt": "30 Best Architecture Firm Logos for Branding Inspiration in 2026",
+      "thumbnail": "/images/blog/architecture-logos/1-768w.webp"
     }
   },
   {
@@ -655,7 +685,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/b2b-logos/1.webp",
-      "alt": "25 Best B2B Company Logos for Branding Inspiration in 2026"
+      "alt": "25 Best B2B Company Logos for Branding Inspiration in 2026",
+      "thumbnail": "/images/blog/b2b-logos/1-768w.webp"
     }
   },
   {
@@ -669,7 +700,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/become-brand-strategist/become-brand-strategist-bg-1-b75331b4d6081e557bdcb8bc6fc85038.webp",
-      "alt": "How To Become A Brand Strategist in 2026"
+      "alt": "How To Become A Brand Strategist in 2026",
+      "thumbnail": "/images/blog/become-brand-strategist/become-brand-strategist-bg-1-b75331b4d6081e557bdcb8bc6fc85038-768w.webp"
     }
   },
   {
@@ -683,7 +715,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/best-branding-books/15-best-branding-books-of-all-time-bg.webp",
-      "alt": "Top 15 Branding Books of All Time (Updated for 2026)"
+      "alt": "Top 15 Branding Books of All Time (Updated for 2026)",
+      "thumbnail": "/images/blog/best-branding-books/15-best-branding-books-of-all-time-bg-768w.webp"
     }
   },
   {
@@ -710,7 +743,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/best-logos/arek-logo-book-960.webp",
-      "alt": "The Best Logos Are Simple in 2026: It's All in the Idea"
+      "alt": "The Best Logos Are Simple in 2026: It's All in the Idea",
+      "thumbnail": "/images/blog/best-logos/arek-logo-book-960-768w.webp"
     }
   },
   {
@@ -724,7 +758,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/best-nhl-logos/1.webp",
-      "alt": "12 Best NHL Logos of All Time in 2026"
+      "alt": "12 Best NHL Logos of All Time in 2026",
+      "thumbnail": "/images/blog/best-nhl-logos/1-768w.webp"
     }
   },
   {
@@ -780,7 +815,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/boxing-gym-branding/2.webp",
-      "alt": "Boxing Gym Branding in 2026: Complete Guide & Examples"
+      "alt": "Boxing Gym Branding in 2026: Complete Guide & Examples",
+      "thumbnail": "/images/blog/boxing-gym-branding/2-768w.webp"
     }
   },
   {
@@ -794,7 +830,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-archetypes/brand-archetypes-cover-1600px.jpg",
-      "alt": "Brand Archetypes: The Definitive Guide for 2026 (48 Examples)"
+      "alt": "Brand Archetypes: The Definitive Guide for 2026 (48 Examples)",
+      "thumbnail": "/images/blog/brand-archetypes/brand-archetypes-cover-1600px-768w.webp"
     }
   },
   {
@@ -807,8 +844,9 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/brand-audit/brand-audit-th.jpg",
-      "alt": "How To Do a Brand Audit in 2026 (Complete Guide)"
+      "src": "/images/blog/brand-audit/brand-audit-th.webp",
+      "alt": "How To Do a Brand Audit in 2026 (Complete Guide)",
+      "thumbnail": "/images/blog/brand-audit/brand-audit-th-768w.webp"
     }
   },
   {
@@ -835,7 +873,7 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/brand-collabs/best-brand-collabs-th.jpg",
+      "src": "/images/blog/brand-collabs/best-brand-collabs-th.webp",
       "alt": "Best Brand Collaborations in 2026 (Inspiring Examples)"
     }
   },
@@ -850,7 +888,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-discovery/brand-discovery-workshop-online.webp",
-      "alt": "How To Conduct A Brand Discovery in 2026 (Free Guide)"
+      "alt": "How To Conduct A Brand Discovery in 2026 (Free Guide)",
+      "thumbnail": "/images/blog/brand-discovery/brand-discovery-workshop-online-768w.webp"
     }
   },
   {
@@ -906,7 +945,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-mood-board/brand-mood-board-th.webp",
-      "alt": "How To Create a Brand Mood Board in 2026 (Complete Guide)"
+      "alt": "How To Create a Brand Mood Board in 2026 (Complete Guide)",
+      "thumbnail": "/images/blog/brand-mood-board/brand-mood-board-th-768w.webp"
     }
   },
   {
@@ -920,7 +960,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-naming/naming-workshop-recording-photo-1600px.webp",
-      "alt": "How To Create A Brand Name in 2026"
+      "alt": "How To Create A Brand Name in 2026",
+      "thumbnail": "/images/blog/brand-naming/naming-workshop-recording-photo-1600px-768w.webp"
     }
   },
   {
@@ -989,7 +1030,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-story/brand-story-bg.webp",
-      "alt": "How To Tell Your Brand Story in 2026"
+      "alt": "How To Tell Your Brand Story in 2026",
+      "thumbnail": "/images/blog/brand-story/brand-story-bg-768w.webp"
     }
   },
   {
@@ -1003,7 +1045,8 @@
     "date": "Sep 18, 2026",
     "image": {
       "src": "/images/blog/brand-strategy/brand-strategy-workshop-ebaqdesign.webp",
-      "alt": "Arek running a brand strategy workshop with worksheets on the wall"
+      "alt": "Arek running a brand strategy workshop with worksheets on the wall",
+      "thumbnail": "/images/blog/brand-strategy/brand-strategy-workshop-ebaqdesign-768w.webp"
     }
   },
   {
@@ -1017,7 +1060,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-strategy-books/brand-strategy-books-bg-3cd0a7.jpg",
-      "alt": "10 Best Books On Brand Strategy Development in 2026"
+      "alt": "10 Best Books On Brand Strategy Development in 2026",
+      "thumbnail": "/images/blog/brand-strategy-books/brand-strategy-books-bg-3cd0a7-768w.webp"
     }
   },
   {
@@ -1045,7 +1089,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-strategy-elements/brand-strategy-elements-bg.webp",
-      "alt": "The 9 Key Elements of Brand Strategy in 2026"
+      "alt": "The 9 Key Elements of Brand Strategy in 2026",
+      "thumbnail": "/images/blog/brand-strategy-elements/brand-strategy-elements-bg-768w.webp"
     }
   },
   {
@@ -1059,7 +1104,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-strategy-examples/brand-strategy-examples-bg-5a672fdc8c382378f7405bf3bf2e0236-5c1f9b.jpg",
-      "alt": "7 Examples of Great Brand Strategy in 2026"
+      "alt": "7 Examples of Great Brand Strategy in 2026",
+      "thumbnail": "/images/blog/brand-strategy-examples/brand-strategy-examples-bg-5a672fdc8c382378f7405bf3bf2e0236-5c1f9b-768w.webp"
     }
   },
   {
@@ -1073,7 +1119,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-strategy-template/strategy-guide-worksheets-both.webp",
-      "alt": "Free Brand Strategy Template 2026: Top 10 Sites"
+      "alt": "Free Brand Strategy Template 2026: Top 10 Sites",
+      "thumbnail": "/images/blog/brand-strategy-template/strategy-guide-worksheets-both-768w.webp"
     }
   },
   {
@@ -1087,7 +1134,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-strategy-types/different-types-of-brand-strategy-bg.webp",
-      "alt": "10 Different Types of Brand Strategies in 2026"
+      "alt": "10 Different Types of Brand Strategies in 2026",
+      "thumbnail": "/images/blog/brand-strategy-types/different-types-of-brand-strategy-bg-768w.webp"
     }
   },
   {
@@ -1129,7 +1177,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/branding-agency-nyc/branding-agencies-in-nyc-bg.webp",
-      "alt": "Top 10 Branding Agencies in NYC in 2026"
+      "alt": "Top 10 Branding Agencies in NYC in 2026",
+      "thumbnail": "/images/blog/branding-agency-nyc/branding-agencies-in-nyc-bg-768w.webp"
     }
   },
   {
@@ -1157,7 +1206,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/branding-checklist/branding-checklist-photo.webp",
-      "alt": "My 9-Step Branding Checklist for Building Your Brand in 2026"
+      "alt": "My 9-Step Branding Checklist for Building Your Brand in 2026",
+      "thumbnail": "/images/blog/branding-checklist/branding-checklist-photo-768w.webp"
     }
   },
   {
@@ -1199,7 +1249,8 @@
     "date": "Sep 10, 2026",
     "image": {
       "src": "/images/blog/branding-package/branding-package-three.webp",
-      "alt": "Branding Package For Small Businesses & Startups in 2026"
+      "alt": "Branding Package For Small Businesses & Startups in 2026",
+      "thumbnail": "/images/blog/branding-package/branding-package-three-768w.webp"
     }
   },
   {
@@ -1213,7 +1264,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/branding-podcasts/branding-podcasts-bg.webp",
-      "alt": "Top 10 Branding Podcasts To Listen To in 2026"
+      "alt": "Top 10 Branding Podcasts To Listen To in 2026",
+      "thumbnail": "/images/blog/branding-podcasts/branding-podcasts-bg-768w.webp"
     }
   },
   {
@@ -1227,7 +1279,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/branding-process/my-branding-process.webp",
-      "alt": "My Branding Process: From Client Call To Delivery in 2026"
+      "alt": "My Branding Process: From Client Call To Delivery in 2026",
+      "thumbnail": "/images/blog/branding-process/my-branding-process-768w.webp"
     }
   },
   {
@@ -1241,7 +1294,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/branding-questionnaire/branding-questionnaire.webp",
-      "alt": "Branding Questionnaire: Key Questions To Ask Clients in 2026"
+      "alt": "Branding Questionnaire: Key Questions To Ask Clients in 2026",
+      "thumbnail": "/images/blog/branding-questionnaire/branding-questionnaire-768w.webp"
     }
   },
   {
@@ -1254,7 +1308,7 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/branding-workshop/branding-workshop1.jpg",
+      "src": "/images/blog/branding-workshop/branding-workshop1.webp",
       "alt": "How To Run A Branding Workshop in 2026"
     }
   },
@@ -1296,8 +1350,9 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/cannabis-branding/best-dispensary-logos.jpg",
-      "alt": "12 Best Examples of Cannabis Branding in 2026"
+      "src": "/images/blog/cannabis-branding/best-dispensary-logos.webp",
+      "alt": "12 Best Examples of Cannabis Branding in 2026",
+      "thumbnail": "/images/blog/cannabis-branding/best-dispensary-logos-768w.webp"
     }
   },
   {
@@ -1311,7 +1366,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/cannabis-branding-agencies/bg-cannabis-branding-agencies.webp",
-      "alt": "Top 9 Cannabis Branding Agencies in 2026"
+      "alt": "Top 9 Cannabis Branding Agencies in 2026",
+      "thumbnail": "/images/blog/cannabis-branding-agencies/bg-cannabis-branding-agencies-768w.webp"
     }
   },
   {
@@ -1325,7 +1381,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/caregiver-archetype/caregiver-archetype-bg.webp",
-      "alt": "The Caregiver Archetype in 2026: 10 Branding Examples"
+      "alt": "The Caregiver Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/caregiver-archetype/caregiver-archetype-bg-768w.webp"
     }
   },
   {
@@ -1381,7 +1438,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/client-website/client-website-bg-f1f3a2bbf4a25ed67e97ed6dd3e0961c.webp",
-      "alt": "How To Build A $10k+ Client Website in 2026"
+      "alt": "How To Build A $10k+ Client Website in 2026",
+      "thumbnail": "/images/blog/client-website/client-website-bg-f1f3a2bbf4a25ed67e97ed6dd3e0961c-768w.webp"
     }
   },
   {
@@ -1423,7 +1481,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/construction-logos/construction-logos-th.webp",
-      "alt": "30 Best Construction Logos in 2026 (Design Inspiration)"
+      "alt": "30 Best Construction Logos in 2026 (Design Inspiration)",
+      "thumbnail": "/images/blog/construction-logos/construction-logos-th-768w.webp"
     }
   },
   {
@@ -1465,7 +1524,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/create-style-guide/create-style-guide-bg.webp",
-      "alt": "How To Create A Brand Style Guide in 2026"
+      "alt": "How To Create A Brand Style Guide in 2026",
+      "thumbnail": "/images/blog/create-style-guide/create-style-guide-bg-768w.webp"
     }
   },
   {
@@ -1493,7 +1553,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/creator-archetype/creator-archetype-bg.webp",
-      "alt": "The Creator Archetype in 2026: 10 Branding Examples"
+      "alt": "The Creator Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/creator-archetype/creator-archetype-bg-768w.webp"
     }
   },
   {
@@ -1520,8 +1581,9 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/cyber-security-logos/copy-of-best-startup-logos-1.png",
-      "alt": "25 Best Cyber Security Logos for Branding Inspiration in 2026"
+      "src": "/images/blog/cyber-security-logos/copy-of-best-startup-logos-1.webp",
+      "alt": "25 Best Cyber Security Logos for Branding Inspiration in 2026",
+      "thumbnail": "/images/blog/cyber-security-logos/copy-of-best-startup-logos-1-768w.webp"
     }
   },
   {
@@ -1535,7 +1597,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/design-client-call/client-call-arek.webp",
-      "alt": "How To Talk to Clients: Guide for Designers in 2026"
+      "alt": "How To Talk to Clients: Guide for Designers in 2026",
+      "thumbnail": "/images/blog/design-client-call/client-call-arek-768w.webp"
     }
   },
   {
@@ -1549,7 +1612,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/design-proposal/design-proposal-bg.webp",
-      "alt": "How To Write A Design Proposal in 2026"
+      "alt": "How To Write A Design Proposal in 2026",
+      "thumbnail": "/images/blog/design-proposal/design-proposal-bg-768w.webp"
     }
   },
   {
@@ -1562,8 +1626,9 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/design-subscription/design-subscription.jpg",
-      "alt": "Unlimited Creativity: The Rise of Design Subscriptions in 2026"
+      "src": "/images/blog/design-subscription/design-subscription.webp",
+      "alt": "Unlimited Creativity: The Rise of Design Subscriptions in 2026",
+      "thumbnail": "/images/blog/design-subscription/design-subscription-768w.webp"
     }
   },
   {
@@ -1619,7 +1684,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/electric-car-logos/electric-car-logos-bg-962e9e79d71bec1c9b8848ab7a1767e0.webp",
-      "alt": "Top 10 Electric Car Logos Explained in 2026"
+      "alt": "Top 10 Electric Car Logos Explained in 2026",
+      "thumbnail": "/images/blog/electric-car-logos/electric-car-logos-bg-962e9e79d71bec1c9b8848ab7a1767e0-768w.webp"
     }
   },
   {
@@ -1633,7 +1699,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/everyman-archetype/everyman-archetypes-bg.webp",
-      "alt": "The Everyman Archetype in 2026: 10 Branding Examples"
+      "alt": "The Everyman Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/everyman-archetype/everyman-archetypes-bg-768w.webp"
     }
   },
   {
@@ -1647,7 +1714,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/explorer-archetype/the-explorer-archetype-bg.webp",
-      "alt": "The Explorer Archetype in 2026: 10 Branding Examples"
+      "alt": "The Explorer Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/explorer-archetype/the-explorer-archetype-bg-768w.webp"
     }
   },
   {
@@ -1661,7 +1729,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/famous-graphic-designers/famous-graphic-designers-bg-f2b352.jpg",
-      "alt": "25 Famous Graphic Designers of All Time in 2026"
+      "alt": "25 Famous Graphic Designers of All Time in 2026",
+      "thumbnail": "/images/blog/famous-graphic-designers/famous-graphic-designers-bg-f2b352-768w.webp"
     }
   },
   {
@@ -1675,7 +1744,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/fintech-logos/fintech-bg-copy-6cfb968e2dd7bc0a5238459fa3fd2eec.webp",
-      "alt": "Top 10 Fintech Logos Explained in 2026"
+      "alt": "Top 10 Fintech Logos Explained in 2026",
+      "thumbnail": "/images/blog/fintech-logos/fintech-bg-copy-6cfb968e2dd7bc0a5238459fa3fd2eec-768w.webp"
     }
   },
   {
@@ -1689,7 +1759,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/fix-your-logo/logo-fix-pro.webp",
-      "alt": "How to Fix Your Logo The Right Way in 2026"
+      "alt": "How to Fix Your Logo The Right Way in 2026",
+      "thumbnail": "/images/blog/fix-your-logo/logo-fix-pro-768w.webp"
     }
   },
   {
@@ -1703,7 +1774,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/font-combinations/font-combinations-bg.webp",
-      "alt": "10 Most Professional Font Combinations in 2026"
+      "alt": "10 Most Professional Font Combinations in 2026",
+      "thumbnail": "/images/blog/font-combinations/font-combinations-bg-768w.webp"
     }
   },
   {
@@ -1731,7 +1803,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/geometric-logos/geometric-logos.webp",
-      "alt": "50 Best Geometric Logos for Design Inspiration in 2026"
+      "alt": "50 Best Geometric Logos for Design Inspiration in 2026",
+      "thumbnail": "/images/blog/geometric-logos/geometric-logos-768w.webp"
     }
   },
   {
@@ -1759,7 +1832,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/graphic-design-books/best-graphic-design-books-bg.webp",
-      "alt": "10 Best Graphic Design Books of All Times in 2026"
+      "alt": "10 Best Graphic Design Books of All Times in 2026",
+      "thumbnail": "/images/blog/graphic-design-books/best-graphic-design-books-bg-768w.webp"
     }
   },
   {
@@ -1801,7 +1875,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/hero-archetype/hero-archetype-bg.jpg",
-      "alt": "The Hero Archetype in 2026: 10 Branding Examples"
+      "alt": "The Hero Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/hero-archetype/hero-archetype-bg-768w.webp"
     }
   },
   {
@@ -1815,7 +1890,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/html-email-signature/design-custom-email-signature-bg.webp",
-      "alt": "How To Design A Custom HTML Email Signature in 2026"
+      "alt": "How To Design A Custom HTML Email Signature in 2026",
+      "thumbnail": "/images/blog/html-email-signature/design-custom-email-signature-bg-768w.webp"
     }
   },
   {
@@ -1841,8 +1917,9 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/ideogram-logo-design/ideogram-logo-design-th.png",
-      "alt": "How to Use Ideogram for Logo Design in 2026"
+      "src": "/images/blog/ideogram-logo-design/ideogram-logo-design-th.webp",
+      "alt": "How to Use Ideogram for Logo Design in 2026",
+      "thumbnail": "/images/blog/ideogram-logo-design/ideogram-logo-design-th-768w.webp"
     }
   },
   {
@@ -1870,7 +1947,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/illustrator-alternatives/illustrator-alternatives-bg.webp",
-      "alt": "10 Best Adobe Illustrator Alternatives in 2026"
+      "alt": "10 Best Adobe Illustrator Alternatives in 2026",
+      "thumbnail": "/images/blog/illustrator-alternatives/illustrator-alternatives-bg-768w.webp"
     }
   },
   {
@@ -1884,7 +1962,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/innocent-archetype/innocent-archetype-bg.webp",
-      "alt": "The Innocent Archetype in 2026: 10 Branding Examples"
+      "alt": "The Innocent Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/innocent-archetype/innocent-archetype-bg-768w.webp"
     }
   },
   {
@@ -1898,7 +1977,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/jester-archetype/jester-arachetypes-bg.webp",
-      "alt": "The Jester Archetype in 2026: 10 Branding Examples"
+      "alt": "The Jester Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/jester-archetype/jester-arachetypes-bg-768w.webp"
     }
   },
   {
@@ -1912,7 +1992,8 @@
     "date": "Aug 27, 2026",
     "image": {
       "src": "/images/blog/investment-firm-logos/54-best-investment-firm-logos-hero-1920x1080.webp",
-      "alt": "Investment team reviewing a presentation of investment firm logos"
+      "alt": "Investment team reviewing a presentation of investment firm logos",
+      "thumbnail": "/images/blog/investment-firm-logos/54-best-investment-firm-logos-hero-1920x1080-768w.webp"
     }
   },
   {
@@ -1926,7 +2007,8 @@
     "date": "Oct 14, 2026",
     "image": {
       "src": "/images/blog/law-firm-logos/law-firm-logos-cover-lawyer-flat-sheet-scales-1920x1080.webp",
-      "alt": "99 Best Law Firm Logos: Examples and Design Ideas"
+      "alt": "99 Best Law Firm Logos: Examples and Design Ideas",
+      "thumbnail": "/images/blog/law-firm-logos/law-firm-logos-cover-lawyer-flat-sheet-scales-1920x1080-768w.webp"
     }
   },
   {
@@ -1954,7 +2036,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/lettermark-logo-design/3.webp",
-      "alt": "Lettermark Logo Design: Best Examples & Tips for 2026"
+      "alt": "Lettermark Logo Design: Best Examples & Tips for 2026",
+      "thumbnail": "/images/blog/lettermark-logo-design/3-768w.webp"
     }
   },
   {
@@ -1968,7 +2051,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-animation/logo-animation-bg.webp",
-      "alt": "How To Animate A Logo For Web in 2026"
+      "alt": "How To Animate A Logo For Web in 2026",
+      "thumbnail": "/images/blog/logo-animation/logo-animation-bg-768w.webp"
     }
   },
   {
@@ -1982,7 +2066,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-animation-examples/logo-animation-examples-bg.webp",
-      "alt": "10+ Best Logo Animation Examples in 2026"
+      "alt": "10+ Best Logo Animation Examples in 2026",
+      "thumbnail": "/images/blog/logo-animation-examples/logo-animation-examples-bg-768w.webp"
     }
   },
   {
@@ -1996,7 +2081,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-brief/logo-brief-template.webp",
-      "alt": "How to Write a Logo Design Brief in 2026 (+ Template)"
+      "alt": "How to Write a Logo Design Brief in 2026 (+ Template)",
+      "thumbnail": "/images/blog/logo-brief/logo-brief-template-768w.webp"
     }
   },
   {
@@ -2010,7 +2096,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-color/logo-color-bg.webp",
-      "alt": "How To Choose Colors For Logo Design in 2026"
+      "alt": "How To Choose Colors For Logo Design in 2026",
+      "thumbnail": "/images/blog/logo-color/logo-color-bg-768w.webp"
     }
   },
   {
@@ -2024,7 +2111,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-design-clients/get-logo-design-clients-og.webp",
-      "alt": "How To Get Logo Design Clients in 2026 (Proven Strategies)"
+      "alt": "How To Get Logo Design Clients in 2026 (Proven Strategies)",
+      "thumbnail": "/images/blog/logo-design-clients/get-logo-design-clients-og-768w.webp"
     }
   },
   {
@@ -2038,7 +2126,8 @@
     "date": "Sep 8, 2026",
     "image": {
       "src": "/images/blog/logo-design-cost/cover.webp",
-      "alt": "Hands sketching a geometric logo beside a stack of dollar bills"
+      "alt": "Hands sketching a geometric logo beside a stack of dollar bills",
+      "thumbnail": "/images/blog/logo-design-cost/cover-768w.webp"
     }
   },
   {
@@ -2052,7 +2141,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-design-portfolio/1.webp",
-      "alt": "How to Create a Logo Design Portfolio in 2026"
+      "alt": "How to Create a Logo Design Portfolio in 2026",
+      "thumbnail": "/images/blog/logo-design-portfolio/1-768w.webp"
     }
   },
   {
@@ -2065,7 +2155,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-design-principles/logo-design-principles.webp",
-      "alt": "Logo Design Principles: A Complete Guide for 2026"
+      "alt": "Logo Design Principles: A Complete Guide for 2026",
+      "thumbnail": "/images/blog/logo-design-principles/logo-design-principles-768w.webp"
     }
   },
   {
@@ -2079,7 +2170,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-design-process/logo-design-process-bg-172b99.webp",
-      "alt": "Logo Design Process From Start To Finish in 2026"
+      "alt": "Logo Design Process From Start To Finish in 2026",
+      "thumbnail": "/images/blog/logo-design-process/logo-design-process-bg-172b99-768w.webp"
     }
   },
   {
@@ -2107,7 +2199,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-design-tips/logo-design-tips-bg-5f1436.jpg",
-      "alt": "10 Best Logo Design Tips From An Expert in 2026"
+      "alt": "10 Best Logo Design Tips From An Expert in 2026",
+      "thumbnail": "/images/blog/logo-design-tips/logo-design-tips-bg-5f1436-768w.webp"
     }
   },
   {
@@ -2148,7 +2241,7 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/logo-evolution/logo-evolution-6a757d197a5a1d173f84fb9fe8251192.jpg",
+      "src": "/images/blog/logo-evolution/logo-evolution-6a757d197a5a1d173f84fb9fe8251192.webp",
       "alt": "Logo Evolution of 10 Famous Brands in 2026"
     }
   },
@@ -2163,7 +2256,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-files/logo-files-bg-679bfb.webp",
-      "alt": "How To Create And Deliver Logo Files in 2026"
+      "alt": "How To Create And Deliver Logo Files in 2026",
+      "thumbnail": "/images/blog/logo-files/logo-files-bg-679bfb-768w.webp"
     }
   },
   {
@@ -2191,7 +2285,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-presentation/logo-presentation-arek.webp",
-      "alt": "How To Present Logo Design Projects in 2026"
+      "alt": "How To Present Logo Design Projects in 2026",
+      "thumbnail": "/images/blog/logo-presentation/logo-presentation-arek-768w.webp"
     }
   },
   {
@@ -2205,7 +2300,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-presentation-template/logo-proposa-template-th.webp",
-      "alt": "Logo Presentation Template: Tips & Examples in 2026"
+      "alt": "Logo Presentation Template: Tips & Examples in 2026",
+      "thumbnail": "/images/blog/logo-presentation-template/logo-proposa-template-th-768w.webp"
     }
   },
   {
@@ -2219,7 +2315,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-pricing/logo-pricing-bg.webp",
-      "alt": "Pricing Logo Design in 2026: Guide for Freelancers"
+      "alt": "Pricing Logo Design in 2026: Guide for Freelancers",
+      "thumbnail": "/images/blog/logo-pricing/logo-pricing-bg-768w.webp"
     }
   },
   {
@@ -2233,7 +2330,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-proposal/one-page-proposal-template.webp",
-      "alt": "How to Write a Logo Design Proposal in 2026 (+ Template)"
+      "alt": "How to Write a Logo Design Proposal in 2026 (+ Template)",
+      "thumbnail": "/images/blog/logo-proposal/one-page-proposal-template-768w.webp"
     }
   },
   {
@@ -2247,7 +2345,8 @@
     "date": "Sep 4, 2026",
     "image": {
       "src": "/content/blog/logo-redesign/cover-thumbnail.webp",
-      "alt": "Three logo redesigns shown before and after on a precise editorial grid"
+      "alt": "Three logo redesigns shown before and after on a precise editorial grid",
+      "thumbnail": "/content/blog/logo-redesign/cover-thumbnail-768w.webp"
     }
   },
   {
@@ -2289,7 +2388,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/lover-archetype/lover-archetype-bg.webp",
-      "alt": "The Lover Archetype in 2026: 10 Branding Examples"
+      "alt": "The Lover Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/lover-archetype/lover-archetype-bg-768w.webp"
     }
   },
   {
@@ -2317,7 +2417,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/magician-archetype/magician-archetype-bg.webp",
-      "alt": "The Magician Archetype in 2026: 10 Branding Examples"
+      "alt": "The Magician Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/magician-archetype/magician-archetype-bg-768w.webp"
     }
   },
   {
@@ -2344,7 +2445,7 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/midjourney-stock-photos/stock-photos-midjourney-th.jpg",
+      "src": "/images/blog/midjourney-stock-photos/stock-photos-midjourney-th.webp",
       "alt": "How To Recreate Stock Photos with Midjourney in 2026"
     }
   },
@@ -2358,7 +2459,7 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/midjourney-web-design/midjourney-webdesign-th.jpg",
+      "src": "/images/blog/midjourney-web-design/midjourney-webdesign-th.webp",
       "alt": "How To Use Midjourney for Web Design in 2026"
     }
   },
@@ -2414,7 +2515,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/motorcycle-logos/motorcycle-explained-bg.webp",
-      "alt": "Top 13 Motorcycle Logos Explained in 2026"
+      "alt": "Top 13 Motorcycle Logos Explained in 2026",
+      "thumbnail": "/images/blog/motorcycle-logos/motorcycle-explained-bg-768w.webp"
     }
   },
   {
@@ -2428,7 +2530,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/nba-logos/1.webp",
-      "alt": "14 Best NBA Logos of All Time in 2026"
+      "alt": "14 Best NBA Logos of All Time in 2026",
+      "thumbnail": "/images/blog/nba-logos/1-768w.webp"
     }
   },
   {
@@ -2484,7 +2587,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/outlaw-archetype/outlaw-archetype-bg.webp",
-      "alt": "The Outlaw Archetype in 2026: 10 Branding Examples"
+      "alt": "The Outlaw Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/outlaw-archetype/outlaw-archetype-bg-768w.webp"
     }
   },
   {
@@ -2526,7 +2630,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/professional-fonts/professional-fonts-bg.webp",
-      "alt": "Top 10 Professional Fonts for Designers in 2026"
+      "alt": "Top 10 Professional Fonts for Designers in 2026",
+      "thumbnail": "/images/blog/professional-fonts/professional-fonts-bg-768w.webp"
     }
   },
   {
@@ -2540,7 +2645,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/proposal-templates/proposal-templates-bg.webp",
-      "alt": "Best Design Proposal Templates for Freelancers in 2026"
+      "alt": "Best Design Proposal Templates for Freelancers in 2026",
+      "thumbnail": "/images/blog/proposal-templates/proposal-templates-bg-768w.webp"
     }
   },
   {
@@ -2567,7 +2673,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/rebranding-examples/rebranding.webp",
-      "alt": "Rebranding Examples: 7 Case Studies for 2026 (Rebrand vs Redesign)"
+      "alt": "Rebranding Examples: 7 Case Studies for 2026 (Rebrand vs Redesign)",
+      "thumbnail": "/images/blog/rebranding-examples/rebranding-768w.webp"
     }
   },
   {
@@ -2581,7 +2688,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/robotics-logos/1.webp",
-      "alt": "30 Best Robotics Company Logos for Inspiration in 2026"
+      "alt": "30 Best Robotics Company Logos for Inspiration in 2026",
+      "thumbnail": "/images/blog/robotics-logos/1-768w.webp"
     }
   },
   {
@@ -2595,7 +2703,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/ruler-archetype/rulerr-archetype-bg.webp",
-      "alt": "The Ruler Archetype in 2026: 10 Branding Examples"
+      "alt": "The Ruler Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/ruler-archetype/rulerr-archetype-bg-768w.webp"
     }
   },
   {
@@ -2609,7 +2718,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/saas-logos/best-saas-logos.png",
-      "alt": "35 Best SaaS Company Logos for Branding Inspiration in 2026"
+      "alt": "35 Best SaaS Company Logos for Branding Inspiration in 2026",
+      "thumbnail": "/images/blog/saas-logos/best-saas-logos-768w.webp"
     }
   },
   {
@@ -2623,7 +2733,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/sage-archetype/sage-archetype-bg.webp",
-      "alt": "The Sage Archetype in 2026: 10 Branding Examples"
+      "alt": "The Sage Archetype in 2026: 10 Branding Examples",
+      "thumbnail": "/images/blog/sage-archetype/sage-archetype-bg-768w.webp"
     }
   },
   {
@@ -2637,7 +2748,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/script-logo-fonts/script-font-logos-bg.webp",
-      "alt": "10 Best Script Fonts for Logo Design in 2026"
+      "alt": "10 Best Script Fonts for Logo Design in 2026",
+      "thumbnail": "/images/blog/script-logo-fonts/script-font-logos-bg-768w.webp"
     }
   },
   {
@@ -2651,7 +2763,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/sell-brand-strategy/selling-brand-strategy-bg-e1327fd15f051387f06b6234b8f28afd.webp",
-      "alt": "How To Sell Brand Strategy Like A Pro in 2026"
+      "alt": "How To Sell Brand Strategy Like A Pro in 2026",
+      "thumbnail": "/images/blog/sell-brand-strategy/selling-brand-strategy-bg-e1327fd15f051387f06b6234b8f28afd-768w.webp"
     }
   },
   {
@@ -2665,7 +2778,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/solar-logos/1.webp",
-      "alt": "30 Best Solar Company Logos for Inspiration in 2026"
+      "alt": "30 Best Solar Company Logos for Inspiration in 2026",
+      "thumbnail": "/images/blog/solar-logos/1-768w.webp"
     }
   },
   {
@@ -2693,7 +2807,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/style-guide-templates/best-style-guide-templates-bg.webp",
-      "alt": "50+ Best Style Guide Templates in 2026"
+      "alt": "50+ Best Style Guide Templates in 2026",
+      "thumbnail": "/images/blog/style-guide-templates/best-style-guide-templates-bg-768w.webp"
     }
   },
   {
@@ -2707,7 +2822,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/style-guides/100-best-brands-guidelines.webp",
-      "alt": "100+ Best Brand Style Guides in 2026 (Famous Brands)"
+      "alt": "100+ Best Brand Style Guides in 2026 (Famous Brands)",
+      "thumbnail": "/images/blog/style-guides/100-best-brands-guidelines-768w.webp"
     }
   },
   {
@@ -2721,7 +2837,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/symmetry-logo-design/symmetry-logo-design.webp",
-      "alt": "Best Examples of Symmetry in Logo Design for 2026"
+      "alt": "Best Examples of Symmetry in Logo Design for 2026",
+      "thumbnail": "/images/blog/symmetry-logo-design/symmetry-logo-design-768w.webp"
     }
   },
   {
@@ -2735,7 +2852,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/tech-startup-logos/best-startup-logos.webp",
-      "alt": "Best Tech Startup Logos & Why They're So Good in 2026"
+      "alt": "Best Tech Startup Logos & Why They're So Good in 2026",
+      "thumbnail": "/images/blog/tech-startup-logos/best-startup-logos-768w.webp"
     }
   },
   {
@@ -2763,7 +2881,8 @@
     "date": "Sep 8, 2026",
     "image": {
       "src": "/images/blog/top-logo-designers-nyc/best-brand-identity-designers-nyc-cover.webp",
-      "alt": "26 Best Brand Identity Designers in NYC"
+      "alt": "26 Best Brand Identity Designers in NYC",
+      "thumbnail": "/images/blog/top-logo-designers-nyc/best-brand-identity-designers-nyc-cover-768w.webp"
     },
     "seo": {
       "title": "26 Best Brand Identity Designers in NYC",
@@ -2810,7 +2929,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/translate-strategy/translate-brand-strategy-into-visual-design-bg.webp",
-      "alt": "How To Translate Brand Strategy Into Design in 2026"
+      "alt": "How To Translate Brand Strategy Into Design in 2026",
+      "thumbnail": "/images/blog/translate-strategy/translate-brand-strategy-into-visual-design-bg-768w.webp"
     }
   },
   {
@@ -2838,7 +2958,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/typography-books/typography-books-bg-7e75b6a12a57d171cafb19bd4c235c96.webp",
-      "alt": "12 Best Typography Books For Designers in 2026"
+      "alt": "12 Best Typography Books For Designers in 2026",
+      "thumbnail": "/images/blog/typography-books/typography-books-bg-7e75b6a12a57d171cafb19bd4c235c96-768w.webp"
     }
   },
   {
@@ -2851,8 +2972,9 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/university-logos/best-university-logos.jpg",
-      "alt": "30 Best University Logos in 2026 (Inspiring Examples)"
+      "src": "/images/blog/university-logos/best-university-logos.webp",
+      "alt": "30 Best University Logos in 2026 (Inspiring Examples)",
+      "thumbnail": "/images/blog/university-logos/best-university-logos-768w.webp"
     }
   },
   {
@@ -2866,7 +2988,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/vector-raster-logo/vector-vs-raster-bg.webp",
-      "alt": "Vector vs. Raster in 2026: Which is Better for Logo?"
+      "alt": "Vector vs. Raster in 2026: Which is Better for Logo?",
+      "thumbnail": "/images/blog/vector-raster-logo/vector-vs-raster-bg-768w.webp"
     }
   },
   {
@@ -2894,7 +3017,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/webflow-templates-ecommerce/weblfow-templates-ecommerce-bg.webp",
-      "alt": "10 Best Webflow Templates for eCommerce in 2026"
+      "alt": "10 Best Webflow Templates for eCommerce in 2026",
+      "thumbnail": "/images/blog/webflow-templates-ecommerce/weblfow-templates-ecommerce-bg-768w.webp"
     }
   },
   {
@@ -2908,7 +3032,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/what-is-a-brand/what-is-brand-7a0d82.webp",
-      "alt": "What Is a Brand? The 12 Essential Elements for 2026"
+      "alt": "What Is a Brand? The 12 Essential Elements for 2026",
+      "thumbnail": "/images/blog/what-is-a-brand/what-is-brand-7a0d82-768w.webp"
     }
   },
   {
@@ -2921,7 +3046,7 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "/images/blog/what-is-branding/what-is-branding.jpg",
+      "src": "/images/blog/what-is-branding/what-is-branding.webp",
       "alt": "What Is Branding in 2026? Defined By 10 Experts"
     }
   },
@@ -2936,7 +3061,8 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/wordmark-logo-design/4.webp",
-      "alt": "Beginner's Guide to Wordmark Logo Design in 2026"
+      "alt": "Beginner's Guide to Wordmark Logo Design in 2026",
+      "thumbnail": "/images/blog/wordmark-logo-design/4-768w.webp"
     }
   },
   {
@@ -2964,7 +3090,8 @@
     "date": "May 13, 2025",
     "image": {
       "src": "/images/blog/startup-branding-agencies/startup-branding-agencies-nyc.jpg",
-      "alt": "Top 10 Startup Branding Agencies in 2026"
+      "alt": "Top 10 Startup Branding Agencies in 2026",
+      "thumbnail": "/images/blog/startup-branding-agencies/startup-branding-agencies-nyc-768w.webp"
     }
   }
 ]

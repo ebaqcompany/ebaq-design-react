@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   useMediaQuery,
-} from "@relume_io/relume-ui";
+} from "./ui";
 import { useEffect, useRef, useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import { AIToolIconRow } from "./AIToolIconRow";
@@ -117,7 +117,7 @@ export const Faq4Defaults: Props = {
     ...studioFaqs.map(factQuestion),
     {
       title: "What tools do you use?",
-      answer: <div className="flex flex-col gap-3"><p>With {founder.experience} of experience, I use Adobe Illustrator, Photoshop, and After Effects across branding and motion projects. I design websites—and increasingly brand identities—in Figma, then develop primarily in Framer or Webflow, with deep expertise in both. I use Spline for 3D design and animation, alongside Jitter, Lottie, Rive, and Unicorn for animation and motion graphics.</p><div className="flex flex-wrap items-center gap-2" role="list" aria-label="Software I use">{arekToolIcons.map(([src, alt, className]) => <img key={src} src={src} alt={alt} className={`size-5 rounded-[20%] object-cover ${className ?? ""}`.trim()} />)}</div></div>,
+      answer: <div className="flex flex-col gap-3"><p>With {founder.experience} of experience, I use Adobe Illustrator, Photoshop, and After Effects across branding and motion projects. I design websites—and increasingly brand identities—in Figma, then develop primarily in Framer or Webflow, with deep expertise in both. I use Spline for 3D design and animation, alongside Jitter, Lottie, Rive, and Unicorn for animation and motion graphics.</p><div className="flex flex-wrap items-center gap-2" role="list" aria-label="Software I use">{arekToolIcons.map(([src, alt, className]) => <img loading="lazy" decoding="async" key={src} src={src} alt={alt} className={`size-5 rounded-[20%] object-cover ${className ?? ""}`.trim()} />)}</div></div>,
     },
     {
       title: "Do you use AI?",

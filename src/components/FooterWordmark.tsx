@@ -237,7 +237,7 @@ export const FooterWordmark = ({ alt, mode = "static", src }: FooterWordmarkProp
   }, [mode]);
 
   if (mode === "static" || !letterMarkup) {
-    return <img src={src} alt={alt} className="h-full w-full object-contain" />;
+    return <img loading="lazy" decoding="async" src={src} alt={alt} className="h-full w-full object-contain" />;
   }
 
   const cycleTransform = (id: string) => {

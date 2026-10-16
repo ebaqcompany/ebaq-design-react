@@ -18,13 +18,13 @@ const foxRow1 = [
   { type: "lottie" as const, src: "/portfolio/logos/foxberman-logo.json", alt: "Animated Fox Berman logo", bgColor: "#f3603c" },
   { type: "image" as const, src: "/images/site/law-firm-landing/fox-berman-logos.webp", alt: "Fox Berman logo system" },
   { type: "video" as const, src: `${FBV}/02-colors.mp4`, alt: "Fox Berman colors in motion" },
-  { type: "image" as const, src: "/foxberman/foxberman-fonts.png", alt: "Fox Berman typography" },
+  { type: "image" as const, src: "/foxberman/foxberman-fonts.webp", alt: "Fox Berman typography" },
 ];
 
 const foxRow2 = [
-  { type: "image" as const, src: "/foxberman/foxberman-colors.png", alt: "Fox Berman color palette" },
+  { type: "image" as const, src: "/foxberman/foxberman-colors.webp", alt: "Fox Berman color palette" },
   { type: "video" as const, src: "/foxberman/foxberman-social.mp4", alt: "Fox Berman social media graphics" },
-  { type: "image" as const, src: "/foxberman/foxberman-signature.jpg", alt: "Fox Berman email signature" },
+  { type: "image" as const, src: "/foxberman/foxberman-signature.webp", alt: "Fox Berman email signature" },
   { type: "image" as const, src: "/images/site/law-firm-landing/foxberman-office-exterior.webp", alt: "Fox Berman office signage" },
 ];
 
@@ -32,15 +32,15 @@ const foxRow3 = [
   { type: "video" as const, src: `${FBV}/15-lawyers.mp4`, alt: "Fox Berman attorneys" },
   { type: "image" as const, src: `${FBV}/01-logos.png`, alt: "Fox Berman logo variations" },
   { type: "video" as const, src: `${FBV}/08-social.mp4`, alt: "Fox Berman social identity in motion" },
-  { type: "image" as const, src: `${FBV}/05-signature.jpg`, alt: "Fox Berman email signature design" },
+  { type: "image" as const, src: `${FBV}/05-signature.webp`, alt: "Fox Berman email signature design" },
 ];
 
 const foxPreview = [
   { label: "Logo Design", image: { src: "/images/site/law-firm-landing/fox-berman-logos.webp", alt: "Fox Berman logo system" } },
   { label: "Colors", image: { src: `${FBV}/02-colors.mp4`, alt: "Fox Berman colors in motion" } },
-  { label: "Typography", image: { src: "/foxberman/foxberman-fonts.png", alt: "Fox Berman typography" } },
+  { label: "Typography", image: { src: "/foxberman/foxberman-fonts.webp", alt: "Fox Berman typography" } },
   { label: "Social", image: { src: "/foxberman/foxberman-social.mp4", alt: "Fox Berman social media graphics" } },
-  { label: "Email Signature", image: { src: "/foxberman/foxberman-signature.jpg", alt: "Fox Berman email signature" } },
+  { label: "Email Signature", image: { src: "/foxberman/foxberman-signature.webp", alt: "Fox Berman email signature" } },
   { label: "Signage", image: { src: "/images/site/law-firm-landing/foxberman-office-exterior.webp", alt: "Fox Berman office signage" } },
   { label: "In Use", image: { src: `${FBV}/15-lawyers.mp4`, alt: "Fox Berman attorneys" } },
 ];
@@ -109,7 +109,7 @@ const lawFirmFaqs = [
   },
   {
     question: "Who will I work with?",
-    answer: "Arek Dvornechuck, a senior brand designer with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.",
+    answer: "Arek Dvornechuck, a senior freelance graphic designer with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.",
   },
 ];
 
@@ -225,7 +225,7 @@ export const LawFirmLanding = () => (
         quote="Excellent work! Fast, reliable and look and feel matched beyond our expectations."
         name="L. Berman (LL.M)"
         role="Partner, Fox Berman"
-        avatar="/testimonials/lucas.jpeg"
+        avatar="/testimonials/lucas.webp"
         personUrl="https://www.linkedin.com/in/lucasbermanattorney/"
         logo={{ src: "/client-logos/foxberman-wordmark.svg", alt: "Fox Berman" }}
         websiteUrl="https://foxberman.com/"

@@ -76,4 +76,4 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@relume_io/relume-ui";
+} from "./ui";

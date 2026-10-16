@@ -28,8 +28,8 @@ export function CreativeSuiteFeatureSequence({ product }: { product: ShopProduct
               </ul>
             </div>
             <div className={`relative ${index % 2 ? 'xl:order-1' : ''}`}>
-              <img src={feature.image} alt="" className="h-auto w-full bg-neutral-100 object-contain" />
-              {feature.secondaryImage && <img src={feature.secondaryImage} alt="" className="mt-4 h-auto w-32 object-contain sm:w-40 xl:absolute xl:bottom-6 xl:right-0 xl:mt-0 xl:w-52" />}
+              <img loading="lazy" decoding="async" src={feature.image} alt="" className="h-auto w-full bg-neutral-100 object-contain" />
+              {feature.secondaryImage && <img loading="lazy" decoding="async" src={feature.secondaryImage} alt="" className="mt-4 h-auto w-32 object-contain sm:w-40 xl:absolute xl:bottom-6 xl:right-0 xl:mt-0 xl:w-52" />}
             </div>
           </div>
         </section>
@@ -80,10 +80,10 @@ export function CreativeSuiteProof({ product }: { product: ShopProduct }) {
   return (
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto max-w-5xl text-center">
-        <img src="/images/site/creative-suite-sections/arek-dvornechuck-profile-pic-320.webp" alt="Arek Dvornechuck" className="mx-auto size-28 object-contain" />
+        <img loading="lazy" decoding="async" src="/images/site/creative-suite-sections/arek-dvornechuck-profile-pic-320.webp" alt="Arek Dvornechuck" className="mx-auto size-28 object-contain" />
         <blockquote className="mx-auto mt-8 max-w-4xl text-2xl leading-relaxed md:text-3xl">“{product.story.body}”</blockquote>
         <p className="mt-6 font-semibold">{product.story.byline}</p>
-        <img src={product.gallery[0]} alt={`${product.title} complete bundle`} className="mt-12 h-auto w-full object-contain" />
+        <img loading="lazy" decoding="async" src={product.gallery[0]} alt={`${product.title} complete bundle`} className="mt-12 h-auto w-full object-contain" />
       </div>
     </section>
   )

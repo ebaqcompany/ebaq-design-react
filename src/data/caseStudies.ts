@@ -107,7 +107,7 @@ export const caseStudies: CaseStudy[] = [
         "social media templates",
       ],
     },
-    preview: { src: "/case-study/orbio/thumbnail.jpg", alt: "Horizontal Orbio logo lockup: the 3D marble orb beside the ORBIO wordmark" },
+    preview: { src: "/case-study/orbio/thumbnail.webp", alt: "Horizontal Orbio logo lockup: the 3D marble orb beside the ORBIO wordmark" },
     hero: {
       src: "/case-study/orbio/hero-orb.webm",
       alt: "Horizontal Orbio logo lockup: the 3D marble orb turning beside the ORBIO wordmark",
@@ -223,7 +223,7 @@ export const caseStudies: CaseStudy[] = [
     nextProject: {
       title: "NextDim AI",
       subheading: "A futuristic brand identity for AI-powered healthcare, beyond the clinical",
-      image: { src: "/portfolio/identities/nexdim-bento.jpg", alt: "NextDim AI brand identity" },
+      image: { src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim AI brand identity" },
       url: "/work/next-dimension",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     },
@@ -245,7 +245,7 @@ export const caseStudies: CaseStudy[] = [
     },
     website: { label: "Visit live website", href: "https://nextdim.io" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online" },
-    preview: { src: "/portfolio/identities/nexdim-bento.jpg", alt: "NextDim AI brand identity" },
+    preview: { src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim AI brand identity" },
     hero: {
       src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json",
       alt: "Animated NextDimension logo",
@@ -253,21 +253,21 @@ export const caseStudies: CaseStudy[] = [
       backgroundColor: "#181735",
     },
     leadGallery: [
-      { src: "/case-study/next-dimension/old-site/01-logos.png", alt: "NextDimension logo system" },
-      { src: "/case-study/next-dimension/old-site/02-type.png", alt: "NextDimension typography system" },
-      { src: "/case-study/next-dimension/old-site/03-colors.png", alt: "NextDimension color palette" },
+      { src: "/case-study/next-dimension/old-site/01-logos.webp", alt: "NextDimension logo system" },
+      { src: "/case-study/next-dimension/old-site/02-type.webp", alt: "NextDimension typography system" },
+      { src: "/case-study/next-dimension/old-site/03-colors.webp", alt: "NextDimension color palette" },
     ],
     brandSprintGallery: {
-      logo: { src: "/case-study/next-dimension/logos.png", alt: "NextDimension logo design" },
-      typeface: { src: "/case-study/next-dimension/type.png", alt: "NextDimension typeface" },
-      color: { src: "/case-study/next-dimension/colors.png", alt: "NextDimension color palette" },
-      website: { src: "/case-study/next-dimension/old-site/04-website.jpg", alt: "NextDimension website design" },
+      logo: { src: "/case-study/next-dimension/logos.webp", alt: "NextDimension logo design" },
+      typeface: { src: "/case-study/next-dimension/type.webp", alt: "NextDimension typeface" },
+      color: { src: "/case-study/next-dimension/colors.webp", alt: "NextDimension color palette" },
+      website: { src: "/case-study/next-dimension/old-site/04-website.webp", alt: "NextDimension website design" },
     },
     testimonial: {
       quote:
         '"Arek worked with us on the complete redesign of the NextDimension AI visual identity and website. He was thoughtful, responsive, and patient throughout the process, from exploring the logo direction to refining the website’s content, design, and functionality. What stood out most was his ability to clearly explain and defend his creative vision while still listening to our feedback. We are both convinced by the final direction and very happy with the result."',
       logo: { src: "/client-logos/nextdim-wordmark.svg", alt: "NextDimension AI", scale: 90 },
-      avatar: { src: "/testimonials/lakshita-chhikara.jpg", alt: "Lakshita Chhikara" },
+      avatar: { src: "/testimonials/lakshita-chhikara.webp", alt: "Lakshita Chhikara" },
       name: "Lakshita Chhikara",
       position: "Co-Founder",
       companyName: "NextDimension AI",
@@ -275,7 +275,7 @@ export const caseStudies: CaseStudy[] = [
     nextProject: {
       title: "Fox Berman",
       subheading: "A modern brand identity for a boutique law firm with Caribbean character",
-      image: { src: "/portfolio/identities/forberman-bento.jpg", alt: "Fox Berman brand identity" },
+      image: { src: "/portfolio/identities/forberman-bento.webp", alt: "Fox Berman brand identity" },
       url: "/work/fox-berman",
       tags: ["Brand strategy", "Visual identity", "Web design"],
     },
@@ -288,13 +288,13 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/next-dimension/old-site/04-website.jpg", alt: "NextDimension website design" },
+          { src: "/case-study/next-dimension/old-site/04-website.webp", alt: "NextDimension website design" },
           {
             src: "/case-study/next-dimension/old-site/05-hero-shader.mp4",
             alt: "NextDimension interactive website shader",
             kind: "video",
           },
-          { src: "/case-study/next-dimension/old-site/06-full-website.jpg", alt: "Full NextDimension website design" },
+          { src: "/case-study/next-dimension/old-site/06-full-website.webp", alt: "Full NextDimension website design" },
         ],
       },
       {
@@ -305,15 +305,15 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/next-dimension/old-site/07-cap.jpg", alt: "NextDimension branded cap", span: "half" },
-          { src: "/case-study/next-dimension/old-site/08-bottle.jpg", alt: "NextDimension branded bottle", span: "half" },
-          { src: "/case-study/next-dimension/old-site/09-folders.jpg", alt: "NextDimension presentation folders" },
-          { src: "/case-study/next-dimension/old-site/10-cards.jpg", alt: "NextDimension branded cards" },
+          { src: "/case-study/next-dimension/old-site/07-cap.webp", alt: "NextDimension branded cap", span: "half" },
+          { src: "/case-study/next-dimension/old-site/08-bottle.webp", alt: "NextDimension branded bottle", span: "half" },
+          { src: "/case-study/next-dimension/old-site/09-folders.webp", alt: "NextDimension presentation folders" },
+          { src: "/case-study/next-dimension/old-site/10-cards.webp", alt: "NextDimension branded cards" },
           {
             src: "/case-study/next-dimension/old-site/11-billboard-loop.mp4",
             alt: "NextDimension animated billboard",
             kind: "video",
-            overlaySrc: "/case-study/next-dimension/old-site/11-billboard-overlay.jpg",
+            overlaySrc: "/case-study/next-dimension/old-site/11-billboard-overlay.webp",
           },
         ],
       },
@@ -336,7 +336,7 @@ export const caseStudies: CaseStudy[] = [
     },
     website: { label: "Visit live website", href: "https://www.foxberman.com/" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/foxberman" },
-    preview: { src: "/portfolio/identities/forberman-bento.jpg", alt: "Fox Berman brand identity" },
+    preview: { src: "/portfolio/identities/forberman-bento.webp", alt: "Fox Berman brand identity" },
     hero: {
       src: "/case-study/fox-berman/hero-logo.json",
       alt: "Animated Fox Berman logo",
@@ -344,13 +344,13 @@ export const caseStudies: CaseStudy[] = [
       backgroundColor: "#f3603c",
     },
     leadGallery: [
-      { src: "/case-study/fox-berman/01-logos.png", alt: "Fox Berman logo system" },
+      { src: "/case-study/fox-berman/01-logos.webp", alt: "Fox Berman logo system" },
       {
         src: "/case-study/fox-berman/02-colors.mp4",
         alt: "Fox Berman color palette in motion",
         kind: "video",
       },
-      { src: "/case-study/fox-berman/03-cards.jpg", alt: "Fox Berman business cards" },
+      { src: "/case-study/fox-berman/03-cards.webp", alt: "Fox Berman business cards" },
     ],
     content: [
       {
@@ -362,10 +362,10 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/fox-berman/04-website.jpg", alt: "Fox Berman website design" },
-          { src: "/case-study/fox-berman/05-signature.jpg", alt: "Fox Berman email signature" },
-          { src: "/case-study/fox-berman/06-signage-wall.jpg", alt: "Fox Berman wall signage", span: "half" },
-          { src: "/case-study/fox-berman/07-signage-pylon.jpg", alt: "Fox Berman pylon signage", span: "half" },
+          { src: "/case-study/fox-berman/04-website.webp", alt: "Fox Berman website design" },
+          { src: "/case-study/fox-berman/05-signature.webp", alt: "Fox Berman email signature" },
+          { src: "/case-study/fox-berman/06-signage-wall.webp", alt: "Fox Berman wall signage", span: "half" },
+          { src: "/case-study/fox-berman/07-signage-pylon.webp", alt: "Fox Berman pylon signage", span: "half" },
           {
             src: "/case-study/fox-berman/08-social.mp4",
             alt: "Fox Berman social identity in motion",
@@ -382,12 +382,12 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/fox-berman/09-folder.jpg", alt: "Fox Berman presentation folder" },
-          { src: "/case-study/fox-berman/10-letterhead.jpg", alt: "Fox Berman letterhead", span: "half" },
-          { src: "/case-study/fox-berman/11-letterhead-detail.jpg", alt: "Fox Berman letterhead detail", span: "half" },
+          { src: "/case-study/fox-berman/09-folder.webp", alt: "Fox Berman presentation folder" },
+          { src: "/case-study/fox-berman/10-letterhead.webp", alt: "Fox Berman letterhead", span: "half" },
+          { src: "/case-study/fox-berman/11-letterhead-detail.webp", alt: "Fox Berman letterhead detail", span: "half" },
           { src: "/case-study/fox-berman/12-booklet.webp", alt: "Fox Berman printed booklet" },
-          { src: "/case-study/fox-berman/13-favicon.jpg", alt: "Fox Berman favicon", span: "half" },
-          { src: "/case-study/fox-berman/14-pin.jpg", alt: "Fox Berman branded pin", span: "half" },
+          { src: "/case-study/fox-berman/13-favicon.webp", alt: "Fox Berman favicon", span: "half" },
+          { src: "/case-study/fox-berman/14-pin.webp", alt: "Fox Berman branded pin", span: "half" },
           {
             src: "/case-study/fox-berman/15-lawyers.mp4",
             alt: "Fox Berman attorneys",
@@ -399,7 +399,7 @@ export const caseStudies: CaseStudy[] = [
     testimonial: {
       quote: '"Excellent work! Fast, reliable and look and feel matched beyond our expectations."',
       logo: { src: "/client-logos/foxberman-wordmark.svg", alt: "Fox Berman", scale: 50 },
-      avatar: { src: "/testimonials/lucas.jpeg", alt: "Lucas Berman" },
+      avatar: { src: "/testimonials/lucas.webp", alt: "Lucas Berman" },
       name: "Lucas Berman",
       position: "Partner",
       companyName: "Fox Berman",
@@ -407,7 +407,7 @@ export const caseStudies: CaseStudy[] = [
     nextProject: {
       title: "Elevate",
       subheading: "A progressive SaaS identity for a Shopify testing platform built around growth",
-      image: { src: "/portfolio/identities/elevate-bento.jpg", alt: "Elevate brand identity" },
+      image: { src: "/portfolio/identities/elevate-bento.webp", alt: "Elevate brand identity" },
       url: "/work/elevate",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     },
@@ -429,7 +429,7 @@ export const caseStudies: CaseStudy[] = [
     },
     website: { label: "Visit live website", href: "https://elevateab.com/" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/elevate-ab" },
-    preview: { src: "/portfolio/identities/elevate-bento.jpg", alt: "Elevate brand identity" },
+    preview: { src: "/portfolio/identities/elevate-bento.webp", alt: "Elevate brand identity" },
     hero: {
       src: "/case-study/elevate/hero-logo.json",
       alt: "Animated Elevate logo",
@@ -437,9 +437,9 @@ export const caseStudies: CaseStudy[] = [
       backgroundColor: "#000000",
     },
     leadGallery: [
-      { src: "/case-study/elevate/01-logos.png", alt: "Elevate logo system" },
-      { src: "/case-study/elevate/02-icon-set.png", alt: "Elevate icon system" },
-      { src: "/case-study/elevate/03-website.jpg", alt: "Elevate website design" },
+      { src: "/case-study/elevate/01-logos.webp", alt: "Elevate logo system" },
+      { src: "/case-study/elevate/02-icon-set.webp", alt: "Elevate icon system" },
+      { src: "/case-study/elevate/03-website.webp", alt: "Elevate website design" },
     ],
     content: [
       {
@@ -456,8 +456,8 @@ export const caseStudies: CaseStudy[] = [
             alt: "Elevate merchandise in motion",
             kind: "video",
           },
-          { src: "/case-study/elevate/05-business-cards.jpg", alt: "Elevate business cards" },
-          { src: "/case-study/elevate/06-collateral.jpg", alt: "Elevate branded collateral" },
+          { src: "/case-study/elevate/05-business-cards.webp", alt: "Elevate business cards" },
+          { src: "/case-study/elevate/06-collateral.webp", alt: "Elevate branded collateral" },
         ],
       },
       {
@@ -469,8 +469,8 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/elevate/07-envelope.jpg", alt: "Elevate branded envelope" },
-          { src: "/case-study/elevate/08-id-badge.jpg", alt: "Elevate team ID badge" },
+          { src: "/case-study/elevate/07-envelope.webp", alt: "Elevate branded envelope" },
+          { src: "/case-study/elevate/08-id-badge.webp", alt: "Elevate team ID badge" },
           {
             src: "/case-study/elevate/09-office.mp4",
             alt: "Elevate office branding in motion",
@@ -483,7 +483,7 @@ export const caseStudies: CaseStudy[] = [
       quote:
         '"Arek did an outstanding job on our full brand redesign. From understanding our vision, to crafting the direction, to executing with speed, he nailed it from the beginning. We absolutely love all of it. What stood out most was how quickly he understood exactly what we were looking for. He was creative, came back with ideas that felt modern and genuinely good, and landed on something that fit our brand perfectly. He made himself available throughout the process and kept things moving fast without cutting corners on quality. Working with him was easy from start to finish. I’d recommend him to anyone looking for a designer who gets it and delivers. Thanks, Arek."',
       logo: { src: "/client-logos/elevate-wordmark.svg", alt: "Elevate", scale: 80 },
-      avatar: { src: "/testimonials/karim-zitouni.jpg", alt: "Karim Zitouni" },
+      avatar: { src: "/testimonials/karim-zitouni.webp", alt: "Karim Zitouni" },
       name: "Karim Zitouni",
       position: "Co-Founder",
       companyName: "Elevate",
@@ -524,12 +524,12 @@ export const caseStudies: CaseStudy[] = [
         alt: "Aero logo construction in motion",
         kind: "video",
       },
-      { src: "/case-study/aero/02-color.png", alt: "Aero color system" },
-      { src: "/case-study/aero/03-stationery.png", alt: "Aero stationery system" },
+      { src: "/case-study/aero/02-color.webp", alt: "Aero color system" },
+      { src: "/case-study/aero/03-stationery.webp", alt: "Aero stationery system" },
     ],
     brandSprintGallery: {
-      logo: { src: "/case-study/aero-logo.png", alt: "Aero logo design" },
-      typeface: { src: "/case-study/aero-fonts.png", alt: "Aero typeface" },
+      logo: { src: "/case-study/aero-logo.webp", alt: "Aero logo design" },
+      typeface: { src: "/case-study/aero-fonts.webp", alt: "Aero typeface" },
       color: { src: "/case-study/aero-palette.webp", alt: "Aero color palette" },
       website: { src: "/case-study/aero-web-pro.webp", alt: "Aero website design" },
     },
@@ -588,7 +588,7 @@ export const caseStudies: CaseStudy[] = [
     nextProject: {
       title: "Brevidee",
       subheading: "A playful identity for a video-editing platform built for schools",
-      image: { src: "/portfolio/identities/brevidee-bento.jpg", alt: "Brevidee brand identity" },
+      image: { src: "/portfolio/identities/brevidee-bento.webp", alt: "Brevidee brand identity" },
       url: "/work/brevidee",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     },
@@ -609,7 +609,7 @@ export const caseStudies: CaseStudy[] = [
       keywords: ["edtech branding", "education SaaS logo", "school software branding", "app icon design", "logo animation"],
     },
     website: { label: "Visit live website", href: "https://www.brevidee.com/" },
-    preview: { src: "/portfolio/identities/brevidee-bento.jpg", alt: "Brevidee brand identity" },
+    preview: { src: "/portfolio/identities/brevidee-bento.webp", alt: "Brevidee brand identity" },
     hero: {
       src: "/case-study/brevidee/hero-logo.json",
       alt: "Animated Brevidee logo",
@@ -618,9 +618,9 @@ export const caseStudies: CaseStudy[] = [
     },
     leadGallery: [
       { src: "/case-study/brevidee/01-logos.png", alt: "Brevidee logo system" },
-      { src: "/case-study/brevidee/02-cards.jpg", alt: "Brevidee business cards" },
-      { src: "/case-study/brevidee/03-app-icon.jpg", alt: "Brevidee application icon", span: "half" },
-      { src: "/case-study/brevidee/04-teacher-phone.jpg", alt: "Brevidee teacher mobile application", span: "half" },
+      { src: "/case-study/brevidee/02-cards.webp", alt: "Brevidee business cards" },
+      { src: "/case-study/brevidee/03-app-icon.webp", alt: "Brevidee application icon", span: "half" },
+      { src: "/case-study/brevidee/04-teacher-phone.webp", alt: "Brevidee teacher mobile application", span: "half" },
     ],
     content: [
       {
@@ -632,10 +632,10 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/brevidee/05-hoodie.jpg", alt: "Brevidee branded hoodie" },
-          { src: "/case-study/brevidee/06-bag.jpg", alt: "Brevidee branded bag", span: "half" },
-          { src: "/case-study/brevidee/07-banner.jpg", alt: "Brevidee event banner", span: "half" },
-          { src: "/case-study/brevidee/08-flyers.jpg", alt: "Brevidee promotional flyers" },
+          { src: "/case-study/brevidee/05-hoodie.webp", alt: "Brevidee branded hoodie" },
+          { src: "/case-study/brevidee/06-bag.webp", alt: "Brevidee branded bag", span: "half" },
+          { src: "/case-study/brevidee/07-banner.webp", alt: "Brevidee event banner", span: "half" },
+          { src: "/case-study/brevidee/08-flyers.webp", alt: "Brevidee promotional flyers" },
         ],
       },
       {
@@ -647,10 +647,10 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/brevidee/09-social.jpg", alt: "Brevidee social media design" },
-          { src: "/case-study/brevidee/10-website.jpg", alt: "Brevidee website design" },
-          { src: "/case-study/brevidee/11-book.jpg", alt: "Brevidee educational booklet", span: "half" },
-          { src: "/case-study/brevidee/12-beanie.jpg", alt: "Brevidee branded beanie", span: "half" },
+          { src: "/case-study/brevidee/09-social.webp", alt: "Brevidee social media design" },
+          { src: "/case-study/brevidee/10-website.webp", alt: "Brevidee website design" },
+          { src: "/case-study/brevidee/11-book.webp", alt: "Brevidee educational booklet", span: "half" },
+          { src: "/case-study/brevidee/12-beanie.webp", alt: "Brevidee branded beanie", span: "half" },
         ],
       },
     ],
@@ -658,7 +658,7 @@ export const caseStudies: CaseStudy[] = [
       quote:
         '"After struggling to build our website on Squarespace and wasting valuable time with underwhelming designers on Upwork, we finally discovered Arek at Ebaqdesign—and what a game-changer that was. From the very start, he understood our vision, took control of the process, and delivered a brand transformation that exceeded all our expectations. The results were beyond anything we could have imagined!"',
       logo: { src: "/client-logos/brevidee-logo.svg", alt: "Brevidee", scale: 80 },
-      avatar: { src: "/case-study/brevidee/alan-rudt.png", alt: "Alan Rudt" },
+      avatar: { src: "/case-study/brevidee/alan-rudt.webp", alt: "Alan Rudt" },
       name: "Alan Rudt",
       position: "Founder",
       companyName: "Brevidee",
@@ -666,7 +666,7 @@ export const caseStudies: CaseStudy[] = [
     nextProject: {
       title: "Wingnut",
       subheading: "A refined identity for a digital agency serving high-end interiors",
-      image: { src: "/portfolio/identities/wingnut-bento.jpg", alt: "Wingnut brand identity" },
+      image: { src: "/portfolio/identities/wingnut-bento.webp", alt: "Wingnut brand identity" },
       url: "/work/wingnut",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     },
@@ -686,7 +686,7 @@ export const caseStudies: CaseStudy[] = [
       description: "Agency branding case study: a refined logo, logo animation, pitch deck, social media system, and website for Wingnut Social, a digital marketing agency for interior designers and home brands.",
       keywords: ["marketing agency branding", "pitch deck design", "agency logo design", "social media design", "interior design marketing brand"],
     },
-    preview: { src: "/portfolio/identities/wingnut-bento.jpg", alt: "Wingnut brand identity" },
+    preview: { src: "/portfolio/identities/wingnut-bento.webp", alt: "Wingnut brand identity" },
     hero: {
       src: "/case-study/wingnut/hero-logo.json",
       alt: "Animated Wingnut logo",
@@ -695,8 +695,8 @@ export const caseStudies: CaseStudy[] = [
     },
     leadGallery: [
       { src: "/case-study/wingnut/01-logos.png", alt: "Wingnut logo system" },
-      { src: "/case-study/wingnut/02-cards.jpg", alt: "Wingnut business cards" },
-      { src: "/case-study/wingnut/03-website.jpg", alt: "Wingnut website design" },
+      { src: "/case-study/wingnut/02-cards.webp", alt: "Wingnut business cards" },
+      { src: "/case-study/wingnut/03-website.webp", alt: "Wingnut website design" },
     ],
     content: [
       {
@@ -708,10 +708,10 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/wingnut/04-iphone.jpg", alt: "Wingnut mobile website", span: "half" },
-          { src: "/case-study/wingnut/05-socks.jpg", alt: "Wingnut branded socks", span: "half" },
-          { src: "/case-study/wingnut/06-social.jpg", alt: "Wingnut social media system" },
-          { src: "/case-study/wingnut/07-macbook.jpg", alt: "Wingnut video content on a laptop" },
+          { src: "/case-study/wingnut/04-iphone.webp", alt: "Wingnut mobile website", span: "half" },
+          { src: "/case-study/wingnut/05-socks.webp", alt: "Wingnut branded socks", span: "half" },
+          { src: "/case-study/wingnut/06-social.webp", alt: "Wingnut social media system" },
+          { src: "/case-study/wingnut/07-macbook.webp", alt: "Wingnut video content on a laptop" },
         ],
       },
       {
@@ -723,11 +723,11 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/wingnut/08-badge.jpg", alt: "Wingnut employee badge", span: "half" },
-          { src: "/case-study/wingnut/09-tote.jpg", alt: "Wingnut branded tote bag", span: "half" },
-          { src: "/case-study/wingnut/10-deck.jpg", alt: "Wingnut presentation deck" },
-          { src: "/case-study/wingnut/11-shirt.jpg", alt: "Wingnut branded shirt", span: "half" },
-          { src: "/case-study/wingnut/12-pins.jpg", alt: "Wingnut branded pins", span: "half" },
+          { src: "/case-study/wingnut/08-badge.webp", alt: "Wingnut employee badge", span: "half" },
+          { src: "/case-study/wingnut/09-tote.webp", alt: "Wingnut branded tote bag", span: "half" },
+          { src: "/case-study/wingnut/10-deck.webp", alt: "Wingnut presentation deck" },
+          { src: "/case-study/wingnut/11-shirt.webp", alt: "Wingnut branded shirt", span: "half" },
+          { src: "/case-study/wingnut/12-pins.webp", alt: "Wingnut branded pins", span: "half" },
           {
             src: "/case-study/wingnut/13-office.mp4",
             alt: "Wingnut office branding in motion",
@@ -740,7 +740,7 @@ export const caseStudies: CaseStudy[] = [
       quote:
         '"We had a terrific experience working with Arek on our logos and pitch deck. Highly recommended!"',
       logo: { src: "/client-logos/wingnut-logo-black.svg", alt: "Wingnut Social", scale: 105 },
-      avatar: { src: "/case-study/wingnut/darla-powell.jpg", alt: "Darla Powell" },
+      avatar: { src: "/case-study/wingnut/darla-powell.webp", alt: "Darla Powell" },
       name: "Darla Powell",
       position: "Founder",
       companyName: "Wingnut Social",
@@ -748,7 +748,7 @@ export const caseStudies: CaseStudy[] = [
     nextProject: {
       title: "Ventur",
       subheading: "A vibrant identity for an AI travel planner built around discovery",
-      image: { src: "/portfolio/identities/ventur-bento.jpg", alt: "Ventur brand identity" },
+      image: { src: "/portfolio/identities/ventur-bento.webp", alt: "Ventur brand identity" },
       url: "/work/ventur",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     },
@@ -769,7 +769,7 @@ export const caseStudies: CaseStudy[] = [
       keywords: ["travel app branding", "AI app logo design", "monogram logo", "mobile app branding", "logo animation"],
     },
     website: { label: "Visit live website", href: "https://www.venturtravel.com/" },
-    preview: { src: "/portfolio/identities/ventur-bento.jpg", alt: "Ventur brand identity" },
+    preview: { src: "/portfolio/identities/ventur-bento.webp", alt: "Ventur brand identity" },
     hero: {
       src: "/case-study/ventur/hero-logo.json",
       alt: "Animated Ventur logo",
@@ -783,7 +783,7 @@ export const caseStudies: CaseStudy[] = [
         alt: "Ventur social identity in motion",
         kind: "video",
       },
-      { src: "/case-study/ventur/03-billboard.jpg", alt: "Ventur billboard campaign" },
+      { src: "/case-study/ventur/03-billboard.webp", alt: "Ventur billboard campaign" },
     ],
     content: [
       {
@@ -795,9 +795,9 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/ventur/04-app.jpg", alt: "Ventur mobile application", span: "half" },
-          { src: "/case-study/ventur/05-cup.jpg", alt: "Ventur branded travel cup", span: "half" },
-          { src: "/case-study/ventur/06-website.jpg", alt: "Ventur website design" },
+          { src: "/case-study/ventur/04-app.webp", alt: "Ventur mobile application", span: "half" },
+          { src: "/case-study/ventur/05-cup.webp", alt: "Ventur branded travel cup", span: "half" },
+          { src: "/case-study/ventur/06-website.webp", alt: "Ventur website design" },
         ],
       },
       {
@@ -809,16 +809,16 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/ventur/07-mobile.jpg", alt: "Ventur mobile brand experience", span: "half" },
-          { src: "/case-study/ventur/08-bag.jpg", alt: "Ventur branded travel bag", span: "half" },
-          { src: "/case-study/ventur/09-shirt.jpg", alt: "Ventur branded shirt" },
+          { src: "/case-study/ventur/07-mobile.webp", alt: "Ventur mobile brand experience", span: "half" },
+          { src: "/case-study/ventur/08-bag.webp", alt: "Ventur branded travel bag", span: "half" },
+          { src: "/case-study/ventur/09-shirt.webp", alt: "Ventur branded shirt" },
         ],
       },
     ],
     nextProject: {
       title: "Airport Executive",
       subheading: "A sophisticated identity for a London chauffeur service built around discreet travel",
-      image: { src: "/portfolio/identities/airport-executive-bento.jpg", alt: "Airport Executive brand identity" },
+      image: { src: "/portfolio/identities/airport-executive-bento.webp", alt: "Airport Executive brand identity" },
       url: "/work/airport-executive",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     },
@@ -839,7 +839,7 @@ export const caseStudies: CaseStudy[] = [
       keywords: ["luxury rebrand", "luxury brand identity", "monogram logo design", "chauffeur service branding", "premium website design"],
     },
     website: { label: "Visit live website", href: "https://www.airportexecutive.com/" },
-    preview: { src: "/portfolio/identities/airport-executive-bento.jpg", alt: "Airport Executive brand identity" },
+    preview: { src: "/portfolio/identities/airport-executive-bento.webp", alt: "Airport Executive brand identity" },
     hero: {
       src: "/case-study/airport-executive/hero-logo.json",
       alt: "Animated Airport Executive logo",
@@ -847,7 +847,7 @@ export const caseStudies: CaseStudy[] = [
       backgroundColor: "#000000",
     },
     leadGallery: [
-      { src: "/case-study/airport-executive/01-logos.png", alt: "Airport Executive logo system" },
+      { src: "/case-study/airport-executive/01-logos.webp", alt: "Airport Executive logo system" },
       { src: "/case-study/airport-executive/02-business-cards.webp", alt: "Airport Executive business cards" },
       { src: "/case-study/airport-executive/03-book.webp", alt: "Airport Executive branded publication" },
     ],
@@ -861,10 +861,10 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/airport-executive/04-banner.jpg", alt: "Airport Executive campaign banner" },
-          { src: "/case-study/airport-executive/05-badge.jpg", alt: "Airport Executive chauffeur badge", span: "half" },
-          { src: "/case-study/airport-executive/06-app-icon.jpg", alt: "Airport Executive application icon", span: "half" },
-          { src: "/case-study/airport-executive/07-website.jpg", alt: "Airport Executive website design" },
+          { src: "/case-study/airport-executive/04-banner.webp", alt: "Airport Executive campaign banner" },
+          { src: "/case-study/airport-executive/05-badge.webp", alt: "Airport Executive chauffeur badge", span: "half" },
+          { src: "/case-study/airport-executive/06-app-icon.webp", alt: "Airport Executive application icon", span: "half" },
+          { src: "/case-study/airport-executive/07-website.webp", alt: "Airport Executive website design" },
         ],
       },
       {
@@ -876,9 +876,9 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/airport-executive/08-banner-detail.jpg", alt: "Airport Executive banner detail", span: "half" },
-          { src: "/case-study/airport-executive/09-merchandise.jpg", alt: "Airport Executive branded merchandise", span: "half" },
-          { src: "/case-study/airport-executive/10-signage.jpg", alt: "Airport Executive environmental signage" },
+          { src: "/case-study/airport-executive/08-banner-detail.webp", alt: "Airport Executive banner detail", span: "half" },
+          { src: "/case-study/airport-executive/09-merchandise.webp", alt: "Airport Executive branded merchandise", span: "half" },
+          { src: "/case-study/airport-executive/10-signage.webp", alt: "Airport Executive environmental signage" },
           {
             src: "/case-study/airport-executive/11-escalator.mp4",
             alt: "Airport Executive escalator campaign in motion",
@@ -891,7 +891,7 @@ export const caseStudies: CaseStudy[] = [
       quote:
         '"Arek is a branding expert with extensive experience in graphic design, logos, and web design. We have collaborated with him on several rebranding projects. I highly recommend him."',
       logo: { src: "/client-logos/airport-executive-logo.svg", alt: "Airport Executive" },
-      avatar: { src: "/case-study/airport-executive/chris-nixon.jpeg", alt: "Chris Nixon" },
+      avatar: { src: "/case-study/airport-executive/chris-nixon.webp", alt: "Chris Nixon" },
       name: "Chris Nixon",
       position: "Founder",
       companyName: "Airport Executive",
@@ -899,7 +899,7 @@ export const caseStudies: CaseStudy[] = [
     nextProject: {
       title: "SweetGrass",
       subheading: "A refined identity for a Southern cannabis dispensary rooted in luxury",
-      image: { src: "/portfolio/identities/sweetgrass-bento.jpg", alt: "SweetGrass brand identity" },
+      image: { src: "/portfolio/identities/sweetgrass-bento.webp", alt: "SweetGrass brand identity" },
       url: "/work/sweetgrass",
       tags: ["Brand strategy", "Visual identity", "Packaging", "Web design"],
     },
@@ -924,7 +924,7 @@ export const caseStudies: CaseStudy[] = [
       label: "Brand guidelines",
       href: "https://indd.adobe.com/view/5b85fc9a-0e79-4ec8-8fbf-c4a28d520a96?startpage=1&allowFullscreen=true",
     },
-    preview: { src: "/portfolio/identities/sweetgrass-bento.jpg", alt: "SweetGrass brand identity" },
+    preview: { src: "/portfolio/identities/sweetgrass-bento.webp", alt: "SweetGrass brand identity" },
     hero: {
       src: "/case-study/sweetgrass/hero-logo.json",
       alt: "Animated SweetGrass logo",
@@ -932,13 +932,13 @@ export const caseStudies: CaseStudy[] = [
       backgroundColor: "#434343",
     },
     leadGallery: [
-      { src: "/case-study/sweetgrass/01-bag.jpg", alt: "SweetGrass cannabis packaging" },
+      { src: "/case-study/sweetgrass/01-bag.webp", alt: "SweetGrass cannabis packaging" },
       {
         src: "/case-study/sweetgrass/02-product.mp4",
         alt: "SweetGrass product identity in motion",
         kind: "video",
       },
-      { src: "/case-study/sweetgrass/03-business-cards.jpg", alt: "SweetGrass business cards" },
+      { src: "/case-study/sweetgrass/03-business-cards.webp", alt: "SweetGrass business cards" },
     ],
     content: [
       {
@@ -950,10 +950,10 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/sweetgrass/04-dropper.jpg", alt: "SweetGrass cannabis dropper packaging" },
-          { src: "/case-study/sweetgrass/05-polo.jpg", alt: "SweetGrass branded polo shirt", span: "half" },
-          { src: "/case-study/sweetgrass/06-billboard.jpg", alt: "SweetGrass billboard campaign", span: "half" },
-          { src: "/case-study/sweetgrass/07-billboard-2.jpg", alt: "SweetGrass outdoor advertising" },
+          { src: "/case-study/sweetgrass/04-dropper.webp", alt: "SweetGrass cannabis dropper packaging" },
+          { src: "/case-study/sweetgrass/05-polo.webp", alt: "SweetGrass branded polo shirt", span: "half" },
+          { src: "/case-study/sweetgrass/06-billboard.webp", alt: "SweetGrass billboard campaign", span: "half" },
+          { src: "/case-study/sweetgrass/07-billboard-2.webp", alt: "SweetGrass outdoor advertising" },
         ],
       },
       {
@@ -965,16 +965,16 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/sweetgrass/08-brochure.jpg", alt: "SweetGrass cannabis brochure", span: "half" },
-          { src: "/case-study/sweetgrass/09-jar.jpg", alt: "SweetGrass cannabis jar packaging", span: "half" },
-          { src: "/case-study/sweetgrass/10-bags.jpg", alt: "SweetGrass retail packaging system" },
+          { src: "/case-study/sweetgrass/08-brochure.webp", alt: "SweetGrass cannabis brochure", span: "half" },
+          { src: "/case-study/sweetgrass/09-jar.webp", alt: "SweetGrass cannabis jar packaging", span: "half" },
+          { src: "/case-study/sweetgrass/10-bags.webp", alt: "SweetGrass retail packaging system" },
         ],
       },
     ],
     testimonial: {
       quote: '"Arek is a magic visionary with sharp attention to detail."',
       logo: { src: "/client-logos/sweetgrass-logo-black.svg", alt: "SweetGrass", scale: 60 },
-      avatar: { src: "/case-study/sweetgrass/jane-de-abreu.jpg", alt: "Jane de Abreu" },
+      avatar: { src: "/case-study/sweetgrass/jane-de-abreu.webp", alt: "Jane de Abreu" },
       name: "Jane de Abreu",
       position: "Founder",
       companyName: "SweetGrass",
@@ -982,7 +982,7 @@ export const caseStudies: CaseStudy[] = [
     nextProject: {
       title: "Periti Digital",
       subheading: "A precise identity for a pan-European HubSpot consultancy built for clarity",
-      image: { src: "/portfolio/identities/periti-bento.jpg", alt: "Periti Digital brand identity" },
+      image: { src: "/portfolio/identities/periti-bento.webp", alt: "Periti Digital brand identity" },
       url: "/work/periti",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     },
@@ -1007,7 +1007,7 @@ export const caseStudies: CaseStudy[] = [
       label: "Brand guidelines",
       href: "https://indd.adobe.com/view/f088380d-7ba9-47b9-b4bb-5a881e492c73?startpage=1&allowFullscreen=true",
     },
-    preview: { src: "/portfolio/identities/periti-bento.jpg", alt: "Periti Digital brand identity" },
+    preview: { src: "/portfolio/identities/periti-bento.webp", alt: "Periti Digital brand identity" },
     hero: {
       src: "/case-study/periti/hero-logo.json",
       alt: "Animated Periti Digital logo",
@@ -1015,9 +1015,9 @@ export const caseStudies: CaseStudy[] = [
       backgroundColor: "#000000",
     },
     leadGallery: [
-      { src: "/case-study/periti/01-cards.jpg", alt: "Periti Digital business cards" },
-      { src: "/case-study/periti/02-macbook.jpg", alt: "Periti Digital brand on a laptop" },
-      { src: "/case-study/periti/03-mug.jpg", alt: "Periti Digital branded mug" },
+      { src: "/case-study/periti/01-cards.webp", alt: "Periti Digital business cards" },
+      { src: "/case-study/periti/02-macbook.webp", alt: "Periti Digital brand on a laptop" },
+      { src: "/case-study/periti/03-mug.webp", alt: "Periti Digital branded mug" },
     ],
     content: [
       {
@@ -1029,10 +1029,10 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/periti/04-letter.jpg", alt: "Periti Digital letterhead", span: "half" },
-          { src: "/case-study/periti/05-website.jpg", alt: "Periti Digital website design" },
-          { src: "/case-study/periti/06-hoodie.jpg", alt: "Periti Digital branded hoodie", span: "half" },
-          { src: "/case-study/periti/07-social.jpg", alt: "Periti Digital social media system", span: "half" },
+          { src: "/case-study/periti/04-letter.webp", alt: "Periti Digital letterhead", span: "half" },
+          { src: "/case-study/periti/05-website.webp", alt: "Periti Digital website design" },
+          { src: "/case-study/periti/06-hoodie.webp", alt: "Periti Digital branded hoodie", span: "half" },
+          { src: "/case-study/periti/07-social.webp", alt: "Periti Digital social media system", span: "half" },
         ],
       },
       {
@@ -1044,16 +1044,16 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/periti/08-stationery.jpg", alt: "Periti Digital stationery system" },
-          { src: "/case-study/periti/09-flyer.jpg", alt: "Periti Digital promotional flyer", span: "half" },
-          { src: "/case-study/periti/10-signature.jpg", alt: "Periti Digital email signature", span: "half" },
+          { src: "/case-study/periti/08-stationery.webp", alt: "Periti Digital stationery system" },
+          { src: "/case-study/periti/09-flyer.webp", alt: "Periti Digital promotional flyer", span: "half" },
+          { src: "/case-study/periti/10-signature.webp", alt: "Periti Digital email signature", span: "half" },
         ],
       },
     ],
     nextProject: {
       title: "Medihuanna",
       subheading: "A trusted identity for medicinal cannabis education built around clarity",
-      image: { src: "/portfolio/identities/medihuanna-bento.jpg", alt: "Medihuanna brand identity" },
+      image: { src: "/portfolio/identities/medihuanna-bento.webp", alt: "Medihuanna brand identity" },
       url: "/work/medihuanna",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     },
@@ -1078,7 +1078,7 @@ export const caseStudies: CaseStudy[] = [
       label: "Brand guidelines",
       href: "https://indd.adobe.com/view/9907a87c-29c2-4164-92ee-dac1551442c3?startpage=1&allowFullscreen=true",
     },
-    preview: { src: "/portfolio/identities/medihuanna-bento.jpg", alt: "Medihuanna brand identity" },
+    preview: { src: "/portfolio/identities/medihuanna-bento.webp", alt: "Medihuanna brand identity" },
     hero: {
       src: "/case-study/medihuanna/hero-logo.json",
       alt: "Animated Medihuanna logo",
@@ -1087,7 +1087,7 @@ export const caseStudies: CaseStudy[] = [
     },
     leadGallery: [
       { src: "/case-study/medihuanna/01-logos.png", alt: "Medihuanna logo system" },
-      { src: "/case-study/medihuanna/02-cards.jpg", alt: "Medihuanna business cards" },
+      { src: "/case-study/medihuanna/02-cards.webp", alt: "Medihuanna business cards" },
       {
         src: "/case-study/medihuanna/03-product.mp4",
         alt: "Medihuanna product identity in motion",
@@ -1104,7 +1104,7 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/medihuanna/04-document.jpg", alt: "Medihuanna educational document", span: "half" },
+          { src: "/case-study/medihuanna/04-document.webp", alt: "Medihuanna educational document", span: "half" },
           {
             src: "/case-study/medihuanna/05-social.json",
             alt: "Medihuanna social identity animation",
@@ -1112,7 +1112,7 @@ export const caseStudies: CaseStudy[] = [
             span: "half",
             aspectRatio: "2 / 3",
           },
-          { src: "/case-study/medihuanna/06-stationery.jpg", alt: "Medihuanna stationery system" },
+          { src: "/case-study/medihuanna/06-stationery.webp", alt: "Medihuanna stationery system" },
         ],
       },
       {
@@ -1124,10 +1124,10 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/medihuanna/07-bag.jpg", alt: "Medihuanna branded bag", span: "half" },
-          { src: "/case-study/medihuanna/08-billboard.jpg", alt: "Medihuanna billboard campaign", span: "half" },
-          { src: "/case-study/medihuanna/09-signage.jpg", alt: "Medihuanna environmental signage" },
-          { src: "/case-study/medihuanna/10-logo-before.png", alt: "Medihuanna logo before redesign", span: "half" },
+          { src: "/case-study/medihuanna/07-bag.webp", alt: "Medihuanna branded bag", span: "half" },
+          { src: "/case-study/medihuanna/08-billboard.webp", alt: "Medihuanna billboard campaign", span: "half" },
+          { src: "/case-study/medihuanna/09-signage.webp", alt: "Medihuanna environmental signage" },
+          { src: "/case-study/medihuanna/10-logo-before.webp", alt: "Medihuanna logo before redesign", span: "half" },
           { src: "/case-study/medihuanna/11-logo-after.png", alt: "Medihuanna logo after redesign", span: "half" },
         ],
       },
@@ -1136,7 +1136,7 @@ export const caseStudies: CaseStudy[] = [
       quote:
         '"After several failures of using Fiverr and 99designs to handle our rebranding project, we finally found Arek and Ebaq Design who nailed it at first. There was no time wasted, Arek was very organized and methodical about his approach from the start."',
       logo: { src: "/client-logos/medihuanna-wordmark-black.svg", alt: "Medihuanna", scale: 90 },
-      avatar: { src: "/case-study/medihuanna/pavel-bulkiewicz.jpeg", alt: "Pavel Bulkiewicz" },
+      avatar: { src: "/case-study/medihuanna/pavel-bulkiewicz.webp", alt: "Pavel Bulkiewicz" },
       name: "Pavel Bulkiewicz",
       position: "Founder",
       companyName: "Medihuanna",
@@ -1144,7 +1144,7 @@ export const caseStudies: CaseStudy[] = [
     nextProject: {
       title: "NextDim AI",
       subheading: "A futuristic brand identity for AI-powered healthcare, beyond the clinical",
-      image: { src: "/portfolio/identities/nexdim-bento.jpg", alt: "NextDim AI brand identity" },
+      image: { src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim AI brand identity" },
       url: "/work/next-dimension",
       tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     },

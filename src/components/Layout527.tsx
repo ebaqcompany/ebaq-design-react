@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import clsx from "clsx";
+import { VideoSources } from "./Media";
 
 type ImageProps = {
   src: string;
@@ -28,9 +29,11 @@ export const Layout527 = (props: Layout527Props) => {
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
+  // Only the hovered preview plays (and downloads); the panel is hidden below lg, so nothing loads on phones.
   useEffect(() => {
+    videoRefs.current.forEach((video, index) => index !== hoveredIndex && video?.pause());
     const video = videoRefs.current[hoveredIndex];
-    if (video) {
+    if (video && video.offsetParent !== null) {
       video.currentTime = 0;
       video.play().catch(() => {});
     }
@@ -56,12 +59,13 @@ export const Layout527 = (props: Layout527Props) => {
                       "w-full h-auto transition-opacity duration-300",
                       hoveredIndex === index ? "opacity-100 relative" : "pointer-events-none opacity-0 absolute inset-0",
                     )}
-                    src={link.image.src}
-                    autoPlay
                     loop
                     muted
                     playsInline
-                  />
+                    preload="none"
+                  >
+                    <VideoSources src={link.image.src} />
+                  </video>
                 ) : (
                   <img
                     key={index}
@@ -71,6 +75,8 @@ export const Layout527 = (props: Layout527Props) => {
                     )}
                     src={link.image.src}
                     alt={link.image.alt}
+                    loading="lazy"
+                    decoding="async"
                   />
                 );
               })}
@@ -130,7 +136,7 @@ export const Layout527Defaults: Props = {
       url: "#",
       heading: "Collateral",
       image: {
-        src: "/case-study/aero-stationery.png",
+        src: "/case-study/aero-stationery.webp",
         alt: "Aero collateral",
       },
     },
@@ -178,7 +184,7 @@ export const Layout527Defaults: Props = {
       url: "#",
       heading: "+ More",
       image: {
-        src: "/case-study/aero-more.gif",
+        src: "/case-study/aero-more.webp",
         alt: "Aero more",
       },
     },

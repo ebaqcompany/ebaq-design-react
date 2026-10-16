@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useMediaQuery } from "@relume_io/relume-ui";
+import { useMediaQuery } from "./ui";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 type ImageProps = {
@@ -64,7 +64,7 @@ export const Layout488 = (props: Layout488Props) => {
           className="relative order-first flex w-full min-w-16 max-w-[24rem] items-center justify-center md:order-none"
           style={{ scale: imageScale }}
         >
-          <img
+          <img loading="lazy" decoding="async"
             src={image.src}
             alt={image.alt}
             className="aspect-square size-full rounded-full object-cover"
@@ -92,7 +92,7 @@ export const Layout488 = (props: Layout488Props) => {
 export const Layout488Defaults: Props = {
   leftHeading: "Start your",
   image: {
-    src: "/arek-pic-pro.jpg",
+    src: "/arek-pic-pro.webp",
     alt: "Arek",
   },
   rightHeading: "project now",

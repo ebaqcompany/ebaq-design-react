@@ -8,6 +8,7 @@ import { Cta17 } from './Cta17'
 import { StrategyGuideContents } from './StrategyGuideContents'
 import { CreativeSuiteContents, CreativeSuiteFeatureSequence, CreativeSuiteProof } from './CreativeSuiteSections'
 import { LegacyProductIncluded } from './LegacyProductIncluded'
+import { buildBreadcrumbSchema, buildProductSchema, serializeJsonLd } from '../content/structuredData'
 
 const legacyIncludedContentsSlugs = ['naming-guide', 'guidelines-kit', 'storytelling-guide', 'brand-archetypes']
 
@@ -23,7 +24,7 @@ function StorySection({ product }: { product: ShopProduct }) {
           </div>
           <div className="mx-auto grid max-w-6xl gap-12 xl:grid-cols-[0.8fr_1.2fr] xl:items-start xl:gap-20">
             <div className="flex flex-col items-center text-center">
-              <img src={product.story.profileImage} alt="Arek Dvornechuck" className="size-32 object-contain" />
+              <img loading="lazy" decoding="async" src={product.story.profileImage} alt="Arek Dvornechuck" className="size-32 object-contain" />
               <div className="mt-8 max-w-lg space-y-5 text-lg leading-relaxed text-neutral-700">
                 {product.story.body.split('\n\n').map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>
@@ -56,7 +57,7 @@ function StorySection({ product }: { product: ShopProduct }) {
       <div className="container mx-auto max-w-4xl text-center">
         <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">{product.story.eyebrow}</p>
         <h2>{product.story.heading}</h2>
-        {product.story.profileImage && <img src={product.story.profileImage} alt="Arek Dvornechuck" className="mx-auto mt-8 size-28 object-contain" />}
+        {product.story.profileImage && <img loading="lazy" decoding="async" src={product.story.profileImage} alt="Arek Dvornechuck" className="mx-auto mt-8 size-28 object-contain" />}
         <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-neutral-700">{product.story.body}</p>
         <p className="mt-6 font-semibold">{product.story.byline}</p>
       </div>
@@ -102,7 +103,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
 
   return (
     <div className="relative bg-white text-black">
-      <Helmet><title>{seoTitle}</title><meta name="description" content={seoDescription} /><link rel="canonical" href={canonicalUrl} />{product.seo && <meta property="og:title" content={product.seo.ogTitle} />}{product.seo && <meta property="og:description" content={product.seo.ogDescription} />}{product.seo && <meta property="og:image" content={product.seo.image} />}{product.seo && <meta name="twitter:title" content={product.seo.ogTitle} />}{product.seo && <meta name="twitter:description" content={product.seo.ogDescription} />}{product.seo && <meta name="twitter:image" content={product.seo.image} />}</Helmet>
+      <Helmet><title>{seoTitle}</title><meta name="description" content={seoDescription} /><link rel="canonical" href={canonicalUrl} />{product.seo && <meta property="og:title" content={product.seo.ogTitle} />}{product.seo && <meta property="og:description" content={product.seo.ogDescription} />}{product.seo && <meta property="og:image" content={product.seo.image} />}{product.seo && <meta name="twitter:title" content={product.seo.ogTitle} />}{product.seo && <meta name="twitter:description" content={product.seo.ogDescription} />}{product.seo && <meta name="twitter:image" content={product.seo.image} />}<script type="application/ld+json">{serializeJsonLd(buildProductSchema(product, 'https://www.ebaqdesign.com'))}</script><script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Shop', path: '/shop' }, { name: product.title, path: `/shop/${product.slug}` }], 'https://www.ebaqdesign.com'))}</script></Helmet>
       <Navbar16 />
       <main>
         <header className="px-[5%] py-12 md:py-16 lg:py-20">
@@ -116,7 +117,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
                 <a href={product.checkoutUrl} className="button-primary mt-7 inline-flex min-h-14 items-center justify-center px-8 font-semibold">Buy now</a>
                 <p className="mt-5 max-w-md text-sm leading-relaxed text-neutral-500">{product.note}</p>
               </div>
-              <div className="overflow-hidden bg-neutral-100 xl:order-first"><img src={product.image} alt={product.title} className={product.heroMediaContain ? 'h-auto w-full object-contain' : 'aspect-[4/3] size-full object-cover'} /></div>
+              <div className="overflow-hidden bg-neutral-100 xl:order-first"><img loading="eager" fetchPriority="high" src={product.image} alt={product.title} className={product.heroMediaContain ? 'h-auto w-full object-contain' : 'aspect-[4/3] size-full object-cover'} /></div>
             </div>
           </div>
         </header>
@@ -150,7 +151,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
         {!product.streamlinedContent && product.slug !== 'creative-suite' && !product.hideBaseFeature && <section className="px-[5%] py-16 md:py-24 lg:py-28">
           <div className={product.slug === 'strategy-guide' || usesLegacyRestorationLayout ? 'container grid items-center gap-10 xl:grid-cols-2 xl:gap-20' : 'container grid items-center gap-10 lg:grid-cols-2 lg:gap-20'}>
             <div className={product.slug === 'strategy-guide' ? 'xl:order-2' : undefined}><p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">Built for real projects</p><h2>{product.featureHeading}</h2><p className="mt-6 text-lg leading-relaxed text-neutral-600">{product.featureDescription}</p><ul className="mt-7 space-y-3">{product.featureBullets.map((bullet) => <li key={bullet} className="flex gap-3"><span className="text-brand-primary">●</span><span>{bullet}</span></li>)}</ul></div>
-            <img src={product.featureImage ?? product.gallery[0]} alt="" className={product.slug === 'strategy-guide' || usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />
+            <img loading="lazy" decoding="async" src={product.featureImage ?? product.gallery[0]} alt="" className={product.slug === 'strategy-guide' || usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />
           </div>
         </section>}
 
@@ -163,9 +164,9 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
                 <ul className="mt-7 space-y-3">{section.bullets.map((bullet) => <li key={bullet} className="flex gap-3"><span className="text-brand-primary">●</span><span>{bullet}</span></li>)}</ul>
               </div>
               <div className={`relative ${index % 2 ? (product.slug === 'strategy-guide' ? 'xl:order-1' : 'lg:order-1') : ''}`}>
-                <img src={section.image} alt="" className={product.slug === 'strategy-guide' || usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />
+                <img loading="lazy" decoding="async" src={section.image} alt="" className={product.slug === 'strategy-guide' || usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />
                 {product.slug === 'strategy-guide' && section.title === 'Worksheets in various formats' && (
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/images/site/product-landing-page/replace-logo-strategy-worksheets-trimmed-zoomed-optimized.gif"
                     alt="Preview of replacing the logo in the Strategy Worksheets"
                     className="mt-4 h-auto w-32 object-contain sm:w-40 xl:absolute xl:-left-6 xl:top-16 xl:mt-0 xl:w-52"
@@ -179,7 +180,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
         {product.slug === 'creative-suite' && <CreativeSuiteFeatureSequence product={product} />}
 
         {!product.streamlinedContent && product.slug === 'strategy-guide' ? <StrategyGuideContents /> : product.slug === 'creative-suite' ? <CreativeSuiteContents /> : legacyIncludedContentsSlugs.includes(product.slug) ? <LegacyProductIncluded slug={product.slug} /> : !product.streamlinedContent && <section className="px-[5%] py-16 md:py-24 lg:py-28">
-          <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">What’s included</p><h2>{product.includedHeading}</h2><p className="mt-6 text-lg leading-relaxed text-neutral-600">{product.includedDescription}</p></div><div className="grid items-start gap-6 md:grid-cols-3">{product.gallery.map((image, index) => <img key={image} src={image} alt={`${product.title} preview ${index + 1}`} className={usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />)}</div></div>
+          <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">What’s included</p><h2>{product.includedHeading}</h2><p className="mt-6 text-lg leading-relaxed text-neutral-600">{product.includedDescription}</p></div><div className="grid items-start gap-6 md:grid-cols-3">{product.gallery.map((image, index) => <img loading="lazy" decoding="async" key={image} src={image} alt={`${product.title} preview ${index + 1}`} className={usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />)}</div></div>
         </section>}
 
         {!product.streamlinedContent && product.storyAfterIncluded && (product.slug === 'creative-suite' ? <CreativeSuiteProof product={product} /> : <StorySection product={product} />)}
@@ -202,7 +203,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
                   {product.audience.cards.map((card) => (
                     <article key={card.title} className="flex flex-col items-center bg-white p-6 text-center md:p-8">
                       <h3 className="heading-h5">{card.title}</h3>
-                      <img src={card.image} alt="" className="mt-6 h-auto w-full max-w-md object-contain" />
+                      <img loading="lazy" decoding="async" src={card.image} alt="" className="mt-6 h-auto w-full max-w-md object-contain" />
                       <p className="mt-4 max-w-md text-lg leading-relaxed">{card.description}</p>
                     </article>
                   ))}

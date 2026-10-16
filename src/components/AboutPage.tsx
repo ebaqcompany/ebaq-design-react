@@ -11,8 +11,8 @@ import { Layout350Preview } from "./Layout350Preview";
 
 export const AboutPage = () => <div className="relative bg-white">
   <Helmet>
-    <title>About Arek Dvornechuck | Ebaq Design</title>
-    <meta name="description" content="Arek Dvornechuck is a senior brand designer in Brooklyn, NYC, previously at Chermayeff & Geismar & Haviv. Brand identity in one week, guaranteed, for $3,000 flat." />
+    <title>Arek Dvornechuck | Senior Freelance Graphic Designer, NYC</title>
+    <meta name="description" content="Arek Dvornechuck is a senior freelance graphic designer in Brooklyn, NYC, previously at Chermayeff & Geismar & Haviv: branding, logos, websites, and motion." />
     <link rel="canonical" href="https://www.ebaqdesign.com/about" />
     <meta property="og:url" content="https://www.ebaqdesign.com/about" />
     <script type="application/ld+json">{serializeJsonLd({
@@ -26,7 +26,7 @@ export const AboutPage = () => <div className="relative bg-white">
         "@id": `${siteUrl}/#founder`,
         name: founder.name,
         jobTitle: founder.jobTitle,
-        description: `Senior brand designer in ${studio.location} with ${founder.experience} of experience, including work at ${founder.formerStudio.name} (${founder.formerStudio.year}). ${pricing.summary} ${pricing.guarantee}`,
+        description: `${founder.jobTitle} in ${studio.location} with ${founder.experience} of experience, including work at ${founder.formerStudio.name} (${founder.formerStudio.year}). ${pricing.summary} ${pricing.guarantee}`,
         image: `${siteUrl}${founder.image}`,
         worksFor: { "@type": "ProfessionalService", "@id": `${siteUrl}/#organization`, name: studio.name },
         alumniOf: { "@type": "Organization", name: founder.formerStudio.name, url: founder.formerStudio.url },

@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@relume_io/relume-ui";
-import type { ButtonProps } from "@relume_io/relume-ui";
+import { Button } from "./ui";
+import type { ButtonProps } from "./ui";
 import { useRef } from "react";
 import { RxChevronRight } from "react-icons/rx";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";

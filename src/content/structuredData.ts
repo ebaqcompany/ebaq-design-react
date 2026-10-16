@@ -1,6 +1,9 @@
 // Dependency-free on purpose: scripts/generate-route-shells.mjs transpiles and imports this file directly.
 export type FaqPair = { question: string; answer: string };
 
+// Must match founder.jobTitle in siteFacts.ts (this file can't import it; see the note above).
+const founderJobTitle = "Senior Freelance Graphic Designer";
+
 export type SchemaPost = {
   url: string;
   title: string;
@@ -111,7 +114,7 @@ export const buildBlogPostingSchema = (post: SchemaPost, siteUrl: string) => {
     ...(description ? { description } : {}),
     ...(image ? { image: [toAbsoluteUrl(image, siteUrl)] } : {}),
     ...(published ? { datePublished: published, dateModified: published } : {}),
-    author: byFounder ? { "@type": "Person", "@id": `${siteUrl}/#founder`, name: "Arek Dvornechuck", url: `${siteUrl}/about`, jobTitle: "Senior Brand Designer" } : organization,
+    author: byFounder ? { "@type": "Person", "@id": `${siteUrl}/#founder`, name: "Arek Dvornechuck", url: `${siteUrl}/about`, jobTitle: founderJobTitle } : organization,
     publisher: { ...organization, logo: { "@type": "ImageObject", url: `${siteUrl}/ebaqdesign-logo.svg` } },
     ...(post.category ? { articleSection: post.category } : {}),
     ...(keywords ? { keywords } : {}),
@@ -182,11 +185,111 @@ export const buildCaseStudySchema = (
     ...(study.seo?.keywords?.length ? { keywords: study.seo.keywords.join(", ") } : {}),
     dateCreated: study.year,
     creator: organization,
-    author: { "@type": "Person", "@id": `${siteUrl}/#founder`, name: "Arek Dvornechuck", url: `${siteUrl}/about`, jobTitle: "Senior Brand Designer" },
+    author: { "@type": "Person", "@id": `${siteUrl}/#founder`, name: "Arek Dvornechuck", url: `${siteUrl}/about`, jobTitle: founderJobTitle },
     publisher: { ...organization, logo: { "@type": "ImageObject", url: `${siteUrl}/ebaqdesign-logo.svg` } },
     audience: { "@type": "Audience", audienceType: `${study.industry} companies` },
     isPartOf: { "@type": "CollectionPage", "@id": `${siteUrl}/work`, name: "Ebaq Design portfolio" },
     inLanguage: "en-US",
+  };
+};
+
+export type SchemaEpisode = {
+  url: string;
+  title: string;
+  description?: string;
+  date?: string;
+  episodeNumber?: number;
+  guest?: string;
+  image?: { src?: string };
+  seo?: { title?: string; description?: string; image?: string };
+  platforms?: Record<string, string | undefined>;
+};
+
+export const podcastSeries = (siteUrl: string) => ({
+  "@type": "PodcastSeries",
+  "@id": `${siteUrl}/podcast#series`,
+  name: "On Branding Podcast",
+  url: `${siteUrl}/podcast`,
+  author: { "@type": "Person", "@id": `${siteUrl}/#founder`, name: "Arek Dvornechuck" },
+});
+
+// One On Branding episode: the host, the guest, and the same episode on Apple, Spotify and YouTube.
+export const buildPodcastEpisodeSchema = (episode: SchemaEpisode, siteUrl: string) => {
+  const canonical = `${siteUrl}${episode.url}`;
+  const image = episode.seo?.image || episode.image?.src;
+  const published = toSchemaDate(episode.date?.replace(/^\w{3} (\w{3} \d{1,2} \d{4}).*$/, "$1"));
+  const { audio, ...platforms } = episode.platforms || {};
+  // Google Podcasts shut down in 2024, so links to it are dropped.
+  const listenOn = Object.values(platforms).filter((url): url is string => typeof url === "string" && /^https?:\/\//.test(url) && !url.includes("podcasts.google.com"));
+  return {
+    "@context": "https://schema.org",
+    "@type": "PodcastEpisode",
+    "@id": `${canonical}#episode`,
+    url: canonical,
+    name: episode.seo?.title || episode.title,
+    description: episode.seo?.description || episode.description,
+    ...(episode.episodeNumber ? { episodeNumber: episode.episodeNumber } : {}),
+    ...(published ? { datePublished: published } : {}),
+    ...(image ? { image: toAbsoluteUrl(image, siteUrl) } : {}),
+    partOfSeries: podcastSeries(siteUrl),
+    author: { "@type": "Person", "@id": `${siteUrl}/#founder`, name: "Arek Dvornechuck", url: `${siteUrl}/about`, jobTitle: founderJobTitle },
+    ...(episode.guest ? { contributor: { "@type": "Person", name: episode.guest } } : {}),
+    ...(listenOn.length ? { sameAs: listenOn } : {}),
+    ...(audio && /^https?:\/\//.test(audio) ? { associatedMedia: { "@type": "AudioObject", contentUrl: audio } } : {}),
+    inLanguage: "en-US",
+  };
+};
+
+// An index page (blog, work, podcast) as a CollectionPage listing its items in order.
+export const buildCollectionSchema = (
+  page: { path: string; name: string; description: string; about?: Record<string, unknown> },
+  items: { name: string; path: string }[],
+  siteUrl: string,
+) => ({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${siteUrl}${page.path}#collection`,
+  url: `${siteUrl}${page.path}`,
+  name: page.name,
+  description: page.description,
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
+  ...(page.about ? { about: page.about } : {}),
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.name, url: `${siteUrl}${item.path}` })),
+  },
+  inLanguage: "en-US",
+});
+
+// A digital product from the shop: its price as an offer, sold by the studio.
+export const buildProductSchema = (
+  product: { slug: string; title: string; description: string; price: string; image: string; seo?: { description?: string; image?: string } },
+  siteUrl: string,
+) => {
+  const url = `${siteUrl}/shop/${product.slug}`;
+  const price = product.price.replace(/[^0-9.]/g, "");
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${url}#product`,
+    name: product.title,
+    description: product.seo?.description || product.description,
+    image: toAbsoluteUrl(product.seo?.image || product.image, siteUrl),
+    url,
+    brand: { "@type": "Brand", name: "Ebaq Design" },
+    category: "Digital download",
+    ...(price ? {
+      offers: {
+        "@type": "Offer",
+        url,
+        price,
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        seller: { "@id": `${siteUrl}/#organization` },
+      },
+    } : {}),
   };
 };
 
@@ -232,7 +335,7 @@ export const buildSiteGraph = (facts: Facts, faqs: FaqPair[], dateModified: stri
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
         url: `${siteUrl}/`,
-        name: "Branding Agency NYC | Logo, Identity & Web Design | Ebaq Design",
+        name: "Freelance Graphic Designer NYC | Branding & Web | Ebaq Design",
         description: `${pricing.guarantee} ${pricing.summary}`,
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": organizationId },
@@ -306,7 +409,14 @@ export const buildSiteGraph = (facts: Facts, faqs: FaqPair[], dateModified: stri
         "@id": founderId,
         name: founder.name,
         jobTitle: founder.jobTitle,
-        description: `Senior brand designer in ${studio.location} with ${founder.experience} of experience, including work at ${founder.formerStudio.name} (${founder.formerStudio.year}).`,
+        description: `${founder.jobTitle} in ${studio.location} with ${founder.experience} of experience, specializing in ${founder.knowsAbout.slice(1, 8).join(", ").toLowerCase()}. Previously at ${founder.formerStudio.name} (${founder.formerStudio.year}).`,
+        hasOccupation: {
+          "@type": "Occupation",
+          name: "Graphic Designer",
+          occupationalCategory: "27-1024.00 Graphic Designers",
+          occupationLocation: { "@type": "City", name: "New York City" },
+          skills: founder.knowsAbout.join(", "),
+        },
         image: `${siteUrl}${founder.image}`,
         url: `${siteUrl}/about`,
         worksFor: { "@id": organizationId },

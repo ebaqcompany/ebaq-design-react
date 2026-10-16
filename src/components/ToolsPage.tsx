@@ -21,7 +21,7 @@ const tools = [
     name: 'Tagliner.app',
     description: 'Free Brand Tagline Generator',
     url: 'https://tagliner.app/',
-    image: '/images/site/tools-page/tagliner-thumb.png',
+    image: '/images/site/tools-page/tagliner-thumb.webp',
   },
   {
     name: 'BrandStrategist.ai',
@@ -66,7 +66,7 @@ export function ToolsPage() {
   return (
     <div className="relative bg-white text-black">
       <Helmet>
-        <title>Free Branding Tools | Name Generator, AI Consultant & More | Ebaqdesign</title>
+        <title>Free Branding Tools: Name Generator & AI Consultant | Ebaq Design</title>
         <meta name="description" content="Accelerate your branding with free online tools. AI brand consultant, name generator, slogan creator, and more to streamline your brand development process." />
         <link rel="canonical" href="https://www.ebaqdesign.com/tools" />
       </Helmet>

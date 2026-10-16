@@ -33,7 +33,7 @@ export const PainPointsSection = ({ heading, points }: { heading: string; points
             >
               {point.title}
             </h3>
-            <p className="text-black/50 text-base md:text-lg leading-relaxed">
+            <p className="text-black/60 text-base md:text-lg leading-relaxed">
               {point.body}
             </p>
           </div>
@@ -63,7 +63,7 @@ export const DeliverablesSection = ({ heading, description, items }: { heading: 
         >
           {heading}
         </h2>
-        <p className="text-black/50 text-base md:text-lg leading-relaxed">
+        <p className="text-black/60 text-base md:text-lg leading-relaxed">
           {description}
         </p>
       </div>
@@ -93,11 +93,11 @@ export type IndustryTestimonialProps = {
   compact?: boolean;
 };
 
-const textLink = "text-xs text-black/40 hover:text-black transition-colors whitespace-nowrap";
+const textLink = "inline-block py-1 text-xs text-black/60 hover:text-black transition-colors whitespace-nowrap";
 
 export const IndustryTestimonial = ({ quote, name, role, avatar, personUrl, logo, websiteUrl, caseStudyUrl, compact }: IndustryTestimonialProps) => {
   const portrait = (
-    <img
+    <img loading="lazy" decoding="async"
       src={avatar}
       alt={name}
       className="size-11 rounded-full object-cover flex-shrink-0 hover:opacity-80 transition-opacity"
@@ -135,10 +135,10 @@ export const IndustryTestimonial = ({ quote, name, role, avatar, personUrl, logo
                 rel="noopener noreferrer"
                 className="hover:opacity-70 transition-opacity"
               >
-                <img src={logo.src} alt={logo.alt} className="h-5 w-auto" />
+                <img loading="lazy" decoding="async" src={logo.src} alt={logo.alt} className="h-5 w-auto" />
               </a>
             ) : (
-              <img src={logo.src} alt={logo.alt} className="h-5 w-auto" />
+              <img loading="lazy" decoding="async" src={logo.src} alt={logo.alt} className="h-5 w-auto" />
             )}
             {websiteUrl && (
               <a

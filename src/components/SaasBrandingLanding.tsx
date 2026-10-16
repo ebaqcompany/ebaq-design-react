@@ -22,29 +22,29 @@ const elRow1 = [
   { type: "lottie" as const, src: "/portfolio/logos/ElevateLogoBGTop.json", alt: "Animated Elevate logo", bgColor: "#000000", fit: "cover" as const },
   { type: "image" as const, src: `${EL}/01-logos.png`, alt: "Elevate logo system" },
   { type: "video" as const, src: `${EL}/04-merchandise.mp4`, alt: "Elevate merchandise in motion" },
-  { type: "image" as const, src: `${EL}/02-icon-set.png`, alt: "Elevate icon system" },
+  { type: "image" as const, src: `${EL}/02-icon-set.webp`, alt: "Elevate icon system" },
 ];
 
 const elRow2 = [
-  { type: "image" as const, src: `${EL}/05-business-cards.jpg`, alt: "Elevate business cards" },
+  { type: "image" as const, src: `${EL}/05-business-cards.webp`, alt: "Elevate business cards" },
   { type: "video" as const, src: `${EL}/09-office.mp4`, alt: "Elevate office branding in motion" },
-  { type: "image" as const, src: `${EL}/06-collateral.jpg`, alt: "Elevate branded collateral" },
-  { type: "image" as const, src: `${EL}/08-id-badge.jpg`, alt: "Elevate team ID badge" },
+  { type: "image" as const, src: `${EL}/06-collateral.webp`, alt: "Elevate branded collateral" },
+  { type: "image" as const, src: `${EL}/08-id-badge.webp`, alt: "Elevate team ID badge" },
 ];
 
 const elRow3 = [
-  { type: "image" as const, src: `${EL}/07-envelope.jpg`, alt: "Elevate branded envelope" },
+  { type: "image" as const, src: `${EL}/07-envelope.webp`, alt: "Elevate branded envelope" },
   { type: "lottie" as const, src: `${EL}/hero-logo.json`, alt: "Elevate logo animation", bgColor: "#000000" },
-  { type: "image" as const, src: `${EL}/02-icon-set.png`, alt: "Elevate product icons" },
+  { type: "image" as const, src: `${EL}/02-icon-set.webp`, alt: "Elevate product icons" },
   { type: "image" as const, src: `${EL}/01-logos.png`, alt: "Elevate logo variations" },
 ];
 
 const elPreview = [
   { label: "Logo Design", image: { src: `${EL}/01-logos.png`, alt: "Elevate logo system" } },
-  { label: "Icon System", image: { src: `${EL}/02-icon-set.png`, alt: "Elevate icon system" } },
-  { label: "Business Cards", image: { src: `${EL}/05-business-cards.jpg`, alt: "Elevate business cards" } },
-  { label: "Collateral", image: { src: `${EL}/06-collateral.jpg`, alt: "Elevate branded collateral" } },
-  { label: "ID Badge", image: { src: `${EL}/08-id-badge.jpg`, alt: "Elevate team ID badge" } },
+  { label: "Icon System", image: { src: `${EL}/02-icon-set.webp`, alt: "Elevate icon system" } },
+  { label: "Business Cards", image: { src: `${EL}/05-business-cards.webp`, alt: "Elevate business cards" } },
+  { label: "Collateral", image: { src: `${EL}/06-collateral.webp`, alt: "Elevate branded collateral" } },
+  { label: "ID Badge", image: { src: `${EL}/08-id-badge.webp`, alt: "Elevate team ID badge" } },
   { label: "Merchandise", image: { src: `${EL}/04-merchandise.mp4`, alt: "Elevate merchandise in motion" } },
   { label: "Office", image: { src: `${EL}/09-office.mp4`, alt: "Elevate office branding in motion" } },
 ];
@@ -108,7 +108,7 @@ const saasFaqs = [
   },
   {
     question: "Who will I work with?",
-    answer: `Arek Dvornechuck, a senior brand designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.`,
+    answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.`,
   },
 ];
 
@@ -196,7 +196,7 @@ export const SaasBrandingLanding = () => (
         quote="Arek did an outstanding job on our full brand redesign. From understanding our vision, to crafting the direction, to executing with speed, he nailed it from the beginning. We absolutely love all of it. What stood out most was how quickly he understood exactly what we were looking for."
         name="Karim Zitouni"
         role="Co-Founder, Elevate"
-        avatar="/testimonials/karim-zitouni.jpg"
+        avatar="/testimonials/karim-zitouni.webp"
         logo={{ src: "/client-logos/elevate-wordmark.svg", alt: "Elevate" }}
         websiteUrl="https://elevateab.com/"
         caseStudyUrl="/work/elevate"

@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@relume_io/relume-ui";
-import type { ButtonProps } from "@relume_io/relume-ui";
+import { Button } from "./ui";
+import type { ButtonProps } from "./ui";
 import { useEffect, useState, useRef } from "react";
 import clsx from "clsx";
 import { TextLink } from "./TextLink";
@@ -73,7 +73,7 @@ export const Layout348 = (props: Layout348Props) => {
         <div className="relative grid gap-x-12 py-16 sm:gap-y-12 md:grid-cols-2 md:py-0 lg:gap-x-20">
           <div className="sticky top-0 hidden h-screen md:flex md:flex-col md:items-center md:justify-center">
             {images.map((image, index) => (
-              <img
+              <img loading="lazy" decoding="async"
                 key={index}
                 src={image.src}
                 className={clsx("absolute w-full", {
@@ -101,7 +101,7 @@ export const Layout348 = (props: Layout348Props) => {
                     <TextLink href="#">{content.buttons[1].title}</TextLink>
                   </div>
                   <div className="mt-10 block w-full md:hidden">
-                    <img src={content.image.src} className="w-full" alt={content.image.alt} />
+                    <img loading="lazy" decoding="async" src={content.image.src} className="w-full" alt={content.image.alt} />
                   </div>
                   {/* White background for sections 0, 2 */}
                   <div

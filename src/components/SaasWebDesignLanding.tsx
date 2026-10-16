@@ -14,31 +14,31 @@ const pageUrl = "https://www.ebaqdesign.com/saas-web-design";
 // Header rows — Elevate (SaaS) and Ventur (AI app) case studies
 const row1 = [
   { type: "lottie" as const, src: "/case-study/elevate/hero-logo.json", bgColor: "#000000" },
-  { type: "image" as const, src: "/case-study/elevate/03-website.jpg", alt: "Elevate SaaS website design" },
-  { type: "image" as const, src: "/case-study/elevate/02-icon-set.png", alt: "Elevate product icon system" },
-  { type: "image" as const, src: "/case-study/elevate/01-logos.png", alt: "Elevate logo system" },
+  { type: "image" as const, src: "/case-study/elevate/03-website.webp", alt: "Elevate SaaS website design" },
+  { type: "image" as const, src: "/case-study/elevate/02-icon-set.webp", alt: "Elevate product icon system" },
+  { type: "image" as const, src: "/case-study/elevate/01-logos.webp", alt: "Elevate logo system" },
 ];
 
 const row2 = [
-  { type: "image" as const, src: "/case-study/ventur/06-website.jpg", alt: "Ventur AI travel app website" },
-  { type: "image" as const, src: "/case-study/ventur/04-app.jpg", alt: "Ventur mobile app" },
+  { type: "image" as const, src: "/case-study/ventur/06-website.webp", alt: "Ventur AI travel app website" },
+  { type: "image" as const, src: "/case-study/ventur/04-app.webp", alt: "Ventur mobile app" },
   { type: "lottie" as const, src: "/case-study/ventur/hero-logo.json", bgColor: "#9047ff" },
-  { type: "image" as const, src: "/case-study/ventur/07-mobile.jpg", alt: "Ventur mobile brand experience" },
+  { type: "image" as const, src: "/case-study/ventur/07-mobile.webp", alt: "Ventur mobile brand experience" },
 ];
 
 const row3 = [
   { type: "video" as const, src: "/case-study/ventur/02-social.mp4", alt: "Ventur social launch assets" },
-  { type: "image" as const, src: "/case-study/elevate/05-business-cards.jpg", alt: "Elevate business cards" },
+  { type: "image" as const, src: "/case-study/elevate/05-business-cards.webp", alt: "Elevate business cards" },
   { type: "video" as const, src: "/case-study/elevate/04-merchandise.mp4", alt: "Elevate merchandise" },
-  { type: "image" as const, src: "/case-study/ventur/03-billboard.jpg", alt: "Ventur billboard campaign" },
+  { type: "image" as const, src: "/case-study/ventur/03-billboard.webp", alt: "Ventur billboard campaign" },
 ];
 
 const workLinks = [
-  { url: "/work/elevate", heading: "Elevate — SaaS", image: { src: "/case-study/elevate/03-website.jpg", alt: "Elevate website" } },
-  { url: "https://elevateab.com/", heading: "Elevate live site", image: { src: "/portfolio/websites/elevate-web.jpg", alt: "Elevate live website" } },
-  { url: "/work/ventur", heading: "Ventur — AI app", image: { src: "/case-study/ventur/06-website.jpg", alt: "Ventur website" } },
-  { url: "https://www.venturtravel.com/", heading: "Ventur live site", image: { src: "/portfolio/websites/ventur-web.jpg", alt: "Ventur live website" } },
-  { url: "/work", heading: "+ All work", image: { src: "/portfolio/identities/elevate-bento.jpg", alt: "Selected work" } },
+  { url: "/work/elevate", heading: "Elevate — SaaS", image: { src: "/case-study/elevate/03-website.webp", alt: "Elevate website" } },
+  { url: "https://elevateab.com/", heading: "Elevate live site", image: { src: "/portfolio/websites/elevate-web.webp", alt: "Elevate live website" } },
+  { url: "/work/ventur", heading: "Ventur — AI app", image: { src: "/case-study/ventur/06-website.webp", alt: "Ventur website" } },
+  { url: "https://www.venturtravel.com/", heading: "Ventur live site", image: { src: "/portfolio/websites/ventur-web.webp", alt: "Ventur live website" } },
+  { url: "/work", heading: "+ All work", image: { src: "/portfolio/identities/elevate-bento.webp", alt: "Selected work" } },
 ];
 
 const painPoints = [
@@ -106,7 +106,7 @@ const PainPointsSection = () => (
         {painPoints.map((point) => (
           <div key={point.title} className="border-t border-black/10 pt-6">
             <h3 className="text-xl md:text-2xl mb-3 tracking-[-0.02em]" style={{ fontFamily: heading.fontFamily }}>{point.title}</h3>
-            <p className="text-black/50 text-base md:text-lg leading-relaxed">{point.body}</p>
+            <p className="text-black/60 text-base md:text-lg leading-relaxed">{point.body}</p>
           </div>
         ))}
       </div>
@@ -123,7 +123,7 @@ const DeliverablesSection = () => (
           <h2 className="text-5xl md:text-6xl lg:text-7xl tracking-[-0.04em] mb-6" style={heading}>
             Everything you need to launch
           </h2>
-          <p className="text-black/50 text-base md:text-lg leading-relaxed">
+          <p className="text-black/60 text-base md:text-lg leading-relaxed">
             One designer from messaging to the live site, scoped to your stage and launch date.
           </p>
         </div>
@@ -150,14 +150,14 @@ const SaasTestimonial = () => (
         &ldquo;He was creative, came back with ideas that felt modern and genuinely good, and kept things moving fast without cutting corners on quality.&rdquo;
       </blockquote>
       <div className="flex items-center justify-center gap-4">
-        <img src="/testimonials/karim-zitouni.jpg" alt="Karim Zitouni" className="size-11 rounded-full object-cover flex-shrink-0" />
+        <img loading="lazy" decoding="async" src="/testimonials/karim-zitouni.webp" alt="Karim Zitouni" className="size-11 rounded-full object-cover flex-shrink-0" />
         <div className="text-left">
           <p className="font-semibold text-sm leading-tight">Karim Zitouni</p>
           <p className="text-sm text-black/50">Co-Founder, Elevate</p>
         </div>
         <div className="h-8 w-px bg-black/20 mx-1" />
         <a href="https://elevateab.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-          <img src="/client-logos/elevate-wordmark.svg" alt="Elevate" className="h-5 w-auto" />
+          <img loading="lazy" decoding="async" src="/client-logos/elevate-wordmark.svg" alt="Elevate" className="h-5 w-auto" />
         </a>
       </div>
     </div>
@@ -173,7 +173,7 @@ const FaqSection = () => (
         {faqs.map((faq) => (
           <div key={faq.question} className="border-t border-black/10 pt-6">
             <h3 className="text-xl md:text-2xl mb-3 tracking-[-0.02em]" style={{ fontFamily: heading.fontFamily }}>{faq.question}</h3>
-            <p className="text-black/50 text-base md:text-lg leading-relaxed">{faq.answer}</p>
+            <p className="text-black/60 text-base md:text-lg leading-relaxed">{faq.answer}</p>
           </div>
         ))}
       </div>

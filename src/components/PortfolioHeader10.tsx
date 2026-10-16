@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import Lottie, { type LottieRefCurrentProps } from "lottie-react";
-import { VideoSources } from "./Gallery1";
+import type { LottieRefCurrentProps } from "lottie-react";
+import { LottiePlayer as Lottie } from "./LottiePlayer";
+import { VideoSources } from "./Media";
 
 type ImageProps = {
   src: string;
@@ -72,7 +73,6 @@ const HeaderMedia = ({ image }: { image: ImageProps }) => {
     return (
       <div className="absolute inset-0" style={{ backgroundColor: image.backgroundColor }}>
         <video
-          src={image.src.endsWith(".webm") ? undefined : image.src}
           aria-label={image.alt}
           className="size-full object-contain"
           autoPlay
@@ -86,7 +86,7 @@ const HeaderMedia = ({ image }: { image: ImageProps }) => {
     );
   }
 
-  return <img src={image.src} alt={image.alt} className="absolute size-full object-cover" />;
+  return <img loading="eager" fetchPriority="high" src={image.src} alt={image.alt} className="absolute size-full object-cover" />;
 };
 
 export const PortfolioHeader10 = (props: PortfolioHeader10Props) => {

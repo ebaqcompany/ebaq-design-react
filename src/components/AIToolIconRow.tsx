@@ -10,6 +10,6 @@ export const aiToolIcons = [
 
 export const AIToolIconRow = () => (
   <div className="flex flex-wrap items-center gap-2" role="list" aria-label="AI tools I use">
-    {aiToolIcons.map((tool) => <span key={tool.label} role="listitem" aria-label={tool.label} title={tool.label} className="inline-flex size-5 items-center justify-center">{"src" in tool ? <img src={tool.src} alt="" className="size-5 object-contain" /> : tool.icon}</span>)}
+    {aiToolIcons.map((tool) => <span key={tool.label} role="listitem" aria-label={tool.label} title={tool.label} className="inline-flex size-5 items-center justify-center">{"src" in tool ? <img loading="lazy" decoding="async" src={tool.src} alt="" className="size-5 object-contain" /> : tool.icon}</span>)}
   </div>
 );

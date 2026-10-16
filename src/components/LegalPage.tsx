@@ -23,7 +23,7 @@ function LegalPage({ title, updated, description, sections }: { title: string; u
   return (
     <div className="relative bg-white">
       <Helmet>
-        <title>{title} | Ebaqdesign</title>
+        <title>{title} | Ebaq Design</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={`https://www.ebaqdesign.com${path}`} />
       </Helmet>

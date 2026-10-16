@@ -5,6 +5,9 @@ import { Blog2 } from "./Blog2";
 import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 import { preloadKeys, readPreloaded } from "../content/preload";
+import { buildBreadcrumbSchema, buildCollectionSchema, serializeJsonLd } from "../content/structuredData";
+
+const siteUrl = "https://www.ebaqdesign.com";
 
 export const BlogPage = () => {
   const [posts, setPosts] = useState<BlogPostSummary[]>(() => readPreloaded<BlogPostSummary[]>(preloadKeys.blogIndex) ?? []);
@@ -28,7 +31,12 @@ export const BlogPage = () => {
 
   return (
     <div className="relative bg-white">
-      <Helmet><title>Blog — Branding, strategy and design insights | Ebaq Design</title><meta name="description" content="Brand strategy, identity, logo design, web design, and creative business insights from Ebaq Design." /></Helmet>
+      <Helmet>
+        <title>Blog — Branding, strategy and design insights | Ebaq Design</title>
+        <meta name="description" content="Brand strategy, identity, logo design, web design, and creative business insights from Ebaq Design." />
+        <script type="application/ld+json">{serializeJsonLd(buildCollectionSchema({ path: "/blog", name: "Ebaq Design blog", description: "Articles on brand strategy, brand identity, logo design, typography, and web design by Arek Dvornechuck, a senior freelance graphic designer in New York." }, posts.map((post) => ({ name: post.title, path: post.url })), siteUrl))}</script>
+        <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }], siteUrl))}</script>
+      </Helmet>
       <Navbar16 />
       <main><Blog2 blogPosts={posts} /></main>
       <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />

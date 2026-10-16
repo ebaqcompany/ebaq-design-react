@@ -1,4 +1,4 @@
-import { Button, Input } from "@relume_io/relume-ui";
+import { Button, Input } from "./ui";
 import { useMemo, useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import type { PodcastEpisodeSummary } from "../content/podcast";

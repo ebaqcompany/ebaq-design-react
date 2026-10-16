@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import { Button } from "@relume_io/relume-ui";
+import { Button } from "./ui";
 import { Banner12 } from "./Banner12";
 
 type ImageProps = {
@@ -49,7 +49,7 @@ export const NotificationBar = (props: NotificationBarProps) => {
       <div className="container relative mx-auto flex flex-col justify-start p-3 md:flex-row md:items-center md:px-4 md:py-2 xl:grid xl:grid-cols-[minmax(0,0.5fr)_minmax(0,1fr)] xl:gap-x-20 xl:px-0 xl:py-0">
         <div className="mb-3 mr-7 flex flex-1 items-center pr-10 md:mb-0 md:mr-8 md:pr-0 xl:mr-0 xl:pl-6">
           <a href={logo.url} className="shrink-0">
-            <img src={logo.src} alt={logo.alt} className="notification-bar-logo mr-4 size-8" />
+            <img loading="eager" src={logo.src} alt={logo.alt} className="notification-bar-logo mr-4 size-8" />
           </a>
           <p className="text-xl font-semibold leading-tight md:text-[1.5625rem] md:leading-none">{heading}</p>
         </div>

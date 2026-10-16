@@ -1,4 +1,4 @@
-import { Button, Input } from "@relume_io/relume-ui";
+import { Button, Input } from "./ui";
 import { useMemo, useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import type { BlogPostSummary } from "../content/blog";
@@ -75,13 +75,18 @@ export const Blog2 = (props: Blog2Props) => {
       <div id="blog-results" className="scroll-mt-20 bg-brand-light px-[5%] py-16 md:scroll-mt-24 md:py-24 lg:py-28">
         <div className="container flex flex-col justify-start">
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 md:gap-y-16 lg:grid-cols-3">
-            {visiblePosts.map((post) => (
+            {visiblePosts.map((post, index) => (
               <article key={post.slug} className="flex size-full flex-col items-start justify-start">
                 <a href={post.url} className="mb-6 aspect-video w-full overflow-hidden bg-background-secondary">
+                  {/* The first row is on screen at load (and the first cover is the largest paint), so it isn't lazy. */}
                   <img
                     src={post.image.src}
+                    srcSet={post.image.thumbnail ? `${post.image.thumbnail} 768w, ${post.image.src} 1600w` : undefined}
+                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
                     alt={post.image.alt ?? post.title}
-                    loading="lazy"
+                    loading={index < 3 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : undefined}
+                    decoding="async"
                     onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }}
                     className="size-full object-cover transition-transform duration-500 hover:scale-[1.02]"
                   />

@@ -10,6 +10,9 @@ import { NotificationBar } from "./NotificationBar";
 import { PodcastEpisodeHeader } from "./PodcastEpisodeHeader";
 import { NotFoundPage } from "./NotFoundPage";
 import { preloadKeys, readPreloaded } from "../content/preload";
+import { buildBreadcrumbSchema, buildPodcastEpisodeSchema, serializeJsonLd } from "../content/structuredData";
+
+const siteUrl = "https://www.ebaqdesign.com";
 
 export const PodcastEpisodePage = () => {
   const { slug = "" } = useParams();
@@ -36,5 +39,5 @@ export const PodcastEpisodePage = () => {
   if (!episode) return <div className="min-h-screen bg-white"><Navbar16 /><main className="container px-[5%] py-28"><p>Loading episode…</p></main></div>;
   const canonicalUrl = `https://www.ebaqdesign.com${episode.url}`;
   const body = normalizeVideoEmbeds(`${episode.sidebar}${episode.body}`).replace(/\s+src=(['"])\1/gi, "").replace(/\s+srcset=(['"])\1/gi, "");
-  return <div className="relative bg-white"><Helmet><title>{episode.seo.title}</title><meta name="description" content={episode.seo.description} /><meta property="og:title" content={episode.seo.title} /><meta property="og:description" content={episode.seo.description} /><meta property="og:image" content={episode.seo.image} /><meta property="og:type" content="article" /><link rel="canonical" href={canonicalUrl} /><meta property="og:url" content={canonicalUrl} /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={episode.seo.title} /><meta name="twitter:description" content={episode.seo.description} /><meta name="twitter:image" content={episode.seo.image} /></Helmet><Navbar16 /><NotificationBar /><main><PodcastEpisodeHeader episode={episode} /><Content32 articleTitle={episode.title} articleUrl={canonicalUrl}><div dangerouslySetInnerHTML={{ __html: body }} /></Content32></main><Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} /></div>;
+  return <div className="relative bg-white"><Helmet><title>{episode.seo.title}</title><meta name="description" content={episode.seo.description} /><meta property="og:title" content={episode.seo.title} /><meta property="og:description" content={episode.seo.description} /><meta property="og:image" content={episode.seo.image} /><meta property="og:type" content="article" /><link rel="canonical" href={canonicalUrl} /><meta property="og:url" content={canonicalUrl} /><script type="application/ld+json">{serializeJsonLd(buildPodcastEpisodeSchema(episode, siteUrl))}</script><script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Podcast", path: "/podcast" }, { name: episode.title, path: episode.url }], siteUrl))}</script><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={episode.seo.title} /><meta name="twitter:description" content={episode.seo.description} /><meta name="twitter:image" content={episode.seo.image} /></Helmet><Navbar16 /><NotificationBar /><main><PodcastEpisodeHeader episode={episode} /><Content32 articleTitle={episode.title} articleUrl={canonicalUrl}><div dangerouslySetInnerHTML={{ __html: body }} /></Content32></main><Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} /></div>;
 };
