@@ -32,6 +32,9 @@ const CannabisBrandingLanding = page('./components/CannabisBrandingLanding.tsx',
 const ConsultancyBrandingLanding = page('./components/ConsultancyBrandingLanding.tsx', 'ConsultancyBrandingLanding')
 const SaasWebDesignLanding = page('./components/SaasWebDesignLanding.tsx', 'SaasWebDesignLanding')
 const AiStartupBrandingLanding = page('./components/AiStartupBrandingLanding.tsx', 'AiStartupBrandingLanding')
+const FramerDesignerLanding = page('./components/FramerDesignerLanding.tsx', 'FramerDesignerLanding')
+const WebflowDesignerLanding = page('./components/WebflowDesignerLanding.tsx', 'WebflowDesignerLanding')
+const MarketingAgencyBrandingLanding = page('./components/MarketingAgencyBrandingLanding.tsx', 'MarketingAgencyBrandingLanding')
 const CaseStudyPage = page('./components/CaseStudyPage.tsx', 'CaseStudyPage')
 const WorkPage = page('./components/WorkPage.tsx', 'WorkPage')
 const BlogPage = page('./components/BlogPage.tsx', 'BlogPage')
@@ -73,6 +76,9 @@ const routes: RouteEntry[] = [
   { path: '/consultancy-branding', page: ConsultancyBrandingLanding },
   { path: '/saas-web-design', page: SaasWebDesignLanding },
   { path: '/ai-startup-branding', page: AiStartupBrandingLanding },
+  { path: '/framer-designer', page: FramerDesignerLanding },
+  { path: '/webflow-designer', page: WebflowDesignerLanding },
+  { path: '/marketing-agency-branding', page: MarketingAgencyBrandingLanding },
   { path: '/work', page: WorkPage },
   { path: '/about', page: AboutPage },
   { path: '/contact', page: ContactPage },

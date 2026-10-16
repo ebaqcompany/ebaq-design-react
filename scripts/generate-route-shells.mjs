@@ -50,6 +50,7 @@ for (const [path, component] of Object.entries({
   '/about': 'AboutPage', '/contact': 'ContactPage', '/blog': 'BlogPage',
   '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage',
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
+  '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding',
   '/pricing': 'PricingPage',
   '/services': 'ServicesPage',
   '/services/brand-strategy': 'BrandStrategyPage',
@@ -205,7 +206,10 @@ Tools: ${tools.join(', ')}.
 - [Luxury branding](${siteUrl}/luxury-branding)
 - [Cannabis branding](${siteUrl}/cannabis-branding)
 - [Consultancy branding](${siteUrl}/consultancy-branding)
+- [Marketing agency branding](${siteUrl}/marketing-agency-branding)
 - [SaaS and startup website design](${siteUrl}/saas-web-design)
+- [Framer website design and development](${siteUrl}/framer-designer)
+- [Webflow website design and development](${siteUrl}/webflow-designer)
 - [Contact](${siteUrl}/contact)
 - [Blog: branding, logo design, and web design articles](${siteUrl}/blog)
 - [On Branding podcast: interviews with brand experts](${siteUrl}/podcast)

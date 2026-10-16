@@ -25,6 +25,8 @@ const saasBrandingCta: IndustryCta = { work: "elevate", heading: "Building a Saa
 const luxuryCta: IndustryCta = { work: "airport-executive", heading: "Building a premium brand?", description: "I design monograms, logos, and refined brand identities for luxury and premium brands. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See luxury branding", href: "/luxury-branding" } };
 const cannabisCta: IndustryCta = { work: "sweetgrass", heading: "Building a cannabis brand?", description: "I design logos, packaging, and websites for dispensaries and cannabis brands. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See cannabis branding", href: "/cannabis-branding" } };
 const aiStartupCta: IndustryCta = { work: "orbio", heading: "Building an AI startup?", description: "I design logos, brand identities, pitch decks, and websites for AI startups. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See AI startup branding", href: "/ai-startup-branding" } };
+const framerCta: IndustryCta = { work: "fox-berman", heading: "Want a custom Framer website?", description: "I design websites in Figma and build them in Framer, with motion and a CMS your team can edit. Design takes about a week at $3,000; the build adds one or two.", button: { title: "See Framer design", href: "/framer-designer" } };
+const webflowCta: IndustryCta = { work: "brevidee", heading: "Want a custom Webflow website?", description: "I design websites in Figma and build them in Webflow, with the CMS set up so your team can publish without a developer. Design takes about a week at $3,000; the build adds one or two.", button: { title: "See Webflow design", href: "/webflow-designer" } };
 const industryPosts: Record<string, IndustryCta> = {
   "luxury-car-logos": luxuryCta,
   "jewelry-logos": luxuryCta,
@@ -37,6 +39,9 @@ const industryPosts: Record<string, IndustryCta> = {
   "tech-startup-logos": saasBrandingCta,
   "ai-startups-logos": aiStartupCta,
   "ai-company-branding": aiStartupCta,
+  "wordpress-vs-webflow-vs-framer": webflowCta,
+  "webflow-templates-ecommerce": webflowCta,
+  "website-builders-design-portfolios": framerCta,
   "biotech-startup-branding": { work: "next-dimension", heading: "Building in health tech or biotech?", description: "I design brand identities and websites for AI healthcare and health tech companies. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See AI healthcare branding", href: "/ai-healthcare-branding" } },
 };
 const selectedWorkHighlights: Record<string, string> = { "next-dimension": "healthcare", "fox-berman": "law firm", elevate: "SaaS", aero: "clinical", brevidee: "video-editing", wingnut: "high-end interiors", ventur: "AI travel planner", "airport-executive": "London chauffeur", sweetgrass: "cannabis dispensary", periti: "HubSpot consultancy", medihuanna: "medicinal cannabis" };

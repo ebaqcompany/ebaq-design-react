@@ -43,6 +43,9 @@ const staticPaths = [
   '/consultancy-branding',
   '/saas-web-design',
   '/ai-startup-branding',
+  '/framer-designer',
+  '/webflow-designer',
+  '/marketing-agency-branding',
 ]
 
 // A post's date is moved forward whenever it is substantively updated (AGENTS.md), so it doubles as lastmod.
