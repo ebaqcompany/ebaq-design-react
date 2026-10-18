@@ -29,6 +29,7 @@ const industryPosts: Record<string, IndustryCta> = {
   "luxury-car-logos": luxuryCta,
   "jewelry-logos": luxuryCta,
   "fashion-logos": luxuryCta,
+  "luxury-real-estate": luxuryCta,
   "cannabis-branding": cannabisCta,
   "cannabis-branding-agencies": cannabisCta,
   "consultancy-branding": { work: "periti", heading: "Need a sharper consultancy brand?", description: "I design logos, positioning, pitch decks, and websites for consultancies and B2B firms. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See consultancy branding", href: "/consultancy-branding" } },
