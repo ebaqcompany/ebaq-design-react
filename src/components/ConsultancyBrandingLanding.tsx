@@ -4,7 +4,8 @@ import { IndustryLandingTemplate, type IndustryLandingConfig } from "./IndustryL
 
 // Draft (2026-10-14), pending Arek's review: consultancy branding around the Periti Digital case
 // study. Periti has no widescreen originals, so its 3:2 and 4:3 shots are cropped to 16:9 in
-// /images/site/consultancy-landing. Periti has no testimonial yet, so Wingnut Social's stands in.
+// /images/site/consultancy-landing. Periti has no testimonial yet, so Wingnut Social's stands in;
+// the Wingnut pitch deck sits in the preview strip so the quote has visible work behind it.
 const PT = "/case-study/periti";
 const CO = "/images/site/consultancy-landing";
 const pageUrl = `${siteUrl}/consultancy-branding`;
@@ -64,11 +65,12 @@ const config: IndustryLandingConfig = {
     ],
   },
   preview: {
-    eyebrow: "Periti Digital case study",
+    eyebrow: "Periti Digital and Wingnut Social case studies",
     anchor: "periti",
     items: [
       { label: "Business Cards", image: { src: `${CO}/business-cards.webp`, alt: "Periti Digital business cards" } },
       { label: "Stationery", image: { src: `${CO}/stationery.webp`, alt: "Periti Digital stationery" } },
+      { label: "Pitch Deck", image: { src: `${CO}/pitch-deck.webp`, alt: "Wingnut Social pitch deck" } },
       { label: "Website", image: { src: `${CO}/website.mp4`, alt: "Periti Digital website" } },
       { label: "Responsive Web", image: { src: `${CO}/website.webp`, alt: "Periti Digital website on tablet and phone" } },
       { label: "Brand in Use", image: { src: `${CO}/laptop.webp`, alt: "Periti Digital website on a laptop" } },
@@ -89,7 +91,7 @@ const config: IndustryLandingConfig = {
       { question: "How long does a consultancy rebrand take?", answer: "One week for the brand identity, guaranteed. The website follows in one to two more weeks, depending on the number of pages, and proposal templates or a pitch deck take another week. Everything is at the same weekly rate, agreed before work starts." },
       { question: "Have you branded a consultancy before?", answer: "Yes. Periti Digital is a HubSpot consultancy with teams across Dublin, Bray, Lisbon, and Munich. I designed its architectural mark, verbal positioning, visual system, website, stationery, social templates, and email signature. I've also branded Wingnut Social, a digital marketing agency for interior designers and home brands, including its logo, pitch deck, and social media system." },
       { question: "Do you help with positioning and messaging?", answer: "Yes. Positioning comes first, because a consultancy's brand is mostly what it says. Periti's identity included a verbal identity and clear positioning alongside the visual system." },
-      { question: "Do you design proposals and pitch decks?", answer: "Yes. I design proposal templates and pitch decks that match the brand, like the deck I designed for Wingnut Social, so every document a client receives looks like the same firm." },
+      { question: "Do you design proposals and pitch decks?", answer: "Yes. I design proposal templates and pitch decks that match the brand, like the Wingnut Social deck shown on this page, so every document a client receives looks like the same firm.", link: { label: "Read: consultancy branding", href: "/blog/consultancy-branding" } },
       { question: "Who will I work with?", answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.` },
     ],
   },
