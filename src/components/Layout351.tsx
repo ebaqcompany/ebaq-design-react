@@ -191,9 +191,11 @@ const FeatureCard = ({ index, featureCount, isActive, setIsActive, ...feature }:
           className="flex h-full flex-col px-6 pb-8 pt-4 md:px-10 md:pb-12 md:pt-12 lg:w-[var(--layout351-content-width)] lg:px-12 lg:pb-12 lg:pt-12"
           style={{ "--layout351-content-width": `min(40rem, calc(90vw - ${featureCount * 5}rem))` } as React.CSSProperties}
         >
-          <h4 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
+          {/* An h3 like the vertical label: below lg that label is hidden, and an h4 here
+              would skip a level after the section's h2. The classes set the size. */}
+          <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
             {feature.heading}
-          </h4>
+          </h3>
           <p className="md:text-md">{feature.description}</p>
           {feature.deliverables && feature.deliverables.length > 0 && (
             <ul className="mt-6 grid gap-x-6 border-t border-border-primary sm:grid-cols-2">
