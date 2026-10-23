@@ -75,6 +75,7 @@ export type CaseStudy = {
   deliverables?: string[];
   website?: { label: string; href: string };
   guidelines?: { label: string; href: string };
+  industryPage?: { label: string; href: string };
   preview: CaseStudyImage;
   hero: CaseStudyMedia;
   leadGallery: CaseStudyGalleryImage[];
@@ -112,6 +113,7 @@ const allCaseStudies: CaseStudy[] = [
       ],
     },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/savory" },
+    industryPage: { label: "Real estate branding", href: "/real-estate-branding" },
     preview: { src: "/case-study/savory/thumbnail.webp", alt: "SAVORY wordmark in cream on wax red, wax red on blue, charcoal on cream, and cream on charcoal" },
     hero: {
       src: "/case-study/savory/hero-logo.json",

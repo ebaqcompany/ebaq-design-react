@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import { useMediaQuery } from "./ui";
-import { LazyVideo } from "./Media";
+import { isVideoSrc, LazyVideo } from "./Media";
 import { Layout527Defaults } from "./Layout527";
 
 const portfolio22Labels = ["Logo Design", "Colors & Fonts", "Stationery", "Social", "UI Design", "Websites", "Ads"];
@@ -35,7 +35,7 @@ const ServiceMedia = ({ src, alt }: { src: string; alt?: string }) => {
 
   return (
     <div className="aspect-video w-full overflow-hidden">
-      {src.endsWith(".mp4") ? (
+      {isVideoSrc(src) ? (
       <LazyVideo
         key={src}
         src={src}

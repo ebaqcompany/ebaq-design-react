@@ -330,8 +330,8 @@
     {
       "repository": "scripts/savory-motion/package-latest.mjs",
       "package": "editable/savory-motion/package-latest.mjs",
-      "bytes": 12074,
-      "sha256": "ddb26b2b7be3617668df15fa6db8c0096292f3dc7a823e9f2e457db41469b6cf"
+      "bytes": 12103,
+      "sha256": "87b2cebbc622ce2488c5ac6fb35c0c3b82160e3a1847a08870833bc80059bed6"
     },
     {
       "repository": "scripts/savory-motion/release-validation.json",

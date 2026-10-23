@@ -24,6 +24,7 @@ const page = (module: string, exportName = 'default'): Page => {
 
 const Home = page('./App.tsx')
 const StartPage = page('./StartPage.tsx')
+const RealEstateBrandingLanding = page('./components/RealEstateBrandingLanding.tsx', 'RealEstateBrandingLanding')
 const LawFirmLanding = page('./components/LawFirmLanding.tsx', 'LawFirmLanding')
 const AiHealthcareLanding = page('./components/AiHealthcareLanding.tsx', 'AiHealthcareLanding')
 const SaasBrandingLanding = page('./components/SaasBrandingLanding.tsx', 'SaasBrandingLanding')
@@ -69,6 +70,7 @@ const routes: RouteEntry[] = [
   { path: '/', page: Home },
   { path: '/start', page: StartPage },
   { path: '/law-firm-branding', page: LawFirmLanding },
+  { path: '/real-estate-branding', page: RealEstateBrandingLanding },
   { path: '/ai-healthcare-branding', page: AiHealthcareLanding },
   { path: '/saas-branding', page: SaasBrandingLanding },
   { path: '/luxury-branding', page: LuxuryBrandingLanding },

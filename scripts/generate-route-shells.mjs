@@ -49,6 +49,7 @@ const preloads = new Map()
 for (const [path, component] of Object.entries({
   '/about': 'AboutPage', '/contact': 'ContactPage', '/blog': 'BlogPage',
   '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage',
+  '/real-estate-branding': 'RealEstateBrandingLanding',
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
   '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding',
   '/pricing': 'PricingPage',
@@ -63,7 +64,7 @@ for (const [path, component] of Object.entries({
   const source = await read(`../src/components/${component}.tsx`)
   const title = source.match(/<title>([^<{]+)<\/title>/)?.[1]?.replaceAll('&amp;', '&')
   const description = source.match(/<meta\s+name="description"\s+content="([^"]+)"/)?.[1]
-  metadata.set(path, { title, description })
+  metadata.set(path, { title, description, ...(path === '/real-estate-branding' ? { image: '/portfolio/identities/savory-bento.webp' } : {}) })
 }
 const work = await read('../src/components/WorkPage.tsx')
 metadata.set('/work', { title: work.match(/const pageTitle = "([^"]+)"/)?.[1], description: work.match(/const pageDescription =\s*"([^"]+)"/)?.[1] })
@@ -199,6 +200,7 @@ Tools: ${tools.join(', ')}.
 - [Pricing: $3,000 per week, brand identity in one week](${siteUrl}/pricing)
 - [Work: case studies](${siteUrl}/work)
 - [About Arek Dvornechuck, senior freelance graphic designer](${siteUrl}/about)
+- [Real estate branding for agents, teams and brokers](${siteUrl}/real-estate-branding)
 - [Law firm branding](${siteUrl}/law-firm-branding)
 - [AI startup branding](${siteUrl}/ai-startup-branding)
 - [AI healthcare branding](${siteUrl}/ai-healthcare-branding)
@@ -253,6 +255,9 @@ ${list(brandSprint.deliverables)}
 ## Who it's for
 
 ${list(industries)}
+
+- Real estate branding for agents, teams and brokerages: ${siteUrl}/real-estate-branding
+- Featured real estate project: Savory, a Brooklyn team at Compass: ${siteUrl}/work/savory
 
 ## The designer
 

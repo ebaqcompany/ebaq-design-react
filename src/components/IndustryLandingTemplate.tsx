@@ -18,11 +18,12 @@ export type IndustryLandingConfig = {
   breadcrumb: string;
   service: { name: string; types: string[]; description: string; audience: string };
   caseStudy: { slug: string; title: string };
-  hero: { heading: string; description: string; rows: MediaProps[][] };
+  hero: { heading: string; description: string; rows: MediaProps[][]; action?: { label: string; url: string } };
+  caseStudySummary?: { heading: string; description: string; decisions: PainPoint[] };
   painPoints: { heading: string; points: PainPoint[] };
-  deliverables: { heading: string; items: string[] };
+  deliverables: { heading: string; items: string[]; description?: string };
   // Keep preview media 16:9: the preview frame is aspect-video.
-  preview: { eyebrow: string; anchor: string; items: PreviewItem[] };
+  preview: { eyebrow: string; anchor: string; items: PreviewItem[]; heading?: string };
   testimonial?: IndustryTestimonialProps;
   faq: { heading: string; items: IndustryFaq[] };
   aboutHeading: string;
@@ -79,16 +80,35 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
         <Header78
           heading={hero.heading}
           description={hero.description}
+          subLink={hero.action}
           row1={row1}
           row2={row2}
           row3={row3}
           showRows={[...showRows]}
           mediaAspect="16/9"
         />
+        {config.caseStudySummary && (
+          <section className="bg-white px-[5%] py-16 md:py-24 lg:py-28">
+            <div className="container max-w-6xl">
+              <p className="mb-3 font-semibold text-brand-primary">Featured project</p>
+              <h2 className="mb-6 max-w-4xl">{config.caseStudySummary.heading}</h2>
+              <p className="max-w-3xl text-black/60 md:text-lg">{config.caseStudySummary.description}</p>
+              <div className="mt-10 grid gap-8 md:grid-cols-2">
+                {config.caseStudySummary.decisions.map(({ title, body }) => (
+                  <div key={title} className="border-t border-black/10 pt-6">
+                    <h3 className="mb-3 text-2xl">{title}</h3>
+                    <p className="text-black/60 md:text-lg">{body}</p>
+                  </div>
+                ))}
+              </div>
+              <a href={`/work/${config.caseStudy.slug}`} className="mt-8 inline-block rounded-full bg-black px-6 py-3 font-semibold text-white hover:bg-brand-primary">Read the full case study →</a>
+            </div>
+          </section>
+        )}
         <PainPointsSection heading={painPoints.heading} points={painPoints.points} />
-        <DeliverablesSection heading={deliverables.heading} description={deliverablesDescription} items={deliverables.items} />
+        <DeliverablesSection heading={deliverables.heading} description={deliverables.description ?? deliverablesDescription} items={deliverables.items} />
         <div id={preview.anchor}>
-          <Layout350Preview eyebrow={preview.eyebrow} heading="$3k goes a long way. All this plus much more" items={preview.items} />
+          <Layout350Preview eyebrow={preview.eyebrow} heading={preview.heading ?? "$3k goes a long way. All this plus much more"} items={preview.items} />
         </div>
         {testimonial && <IndustryTestimonial {...testimonial} />}
         <Faq4

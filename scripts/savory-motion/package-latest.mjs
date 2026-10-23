@@ -10,7 +10,7 @@ const destination=join(project,'PORTFOLIO/Latest-Case-Study');
 const compiled=ts.transpileModule(readFileSync(join(repo,'src/data/caseStudies.ts'),'utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
 const {caseStudies}=await import('data:text/javascript;base64,'+Buffer.from(compiled).toString('base64'));
 const cs=caseStudies.find(c=>c.slug==='savory');
-const snapshot={slug:cs.slug,client:cs.client,title:cs.title,summary:cs.summary,services:cs.services,deliverables:cs.deliverables,website:cs.website,guidelines:cs.guidelines,preview:cs.preview,hero:cs.hero,leadGallery:cs.leadGallery,content:cs.content};
+const snapshot={slug:cs.slug,client:cs.client,title:cs.title,summary:cs.summary,services:cs.services,deliverables:cs.deliverables,website:cs.website,guidelines:cs.guidelines,industryPage:cs.industryPage,preview:cs.preview,hero:cs.hero,leadGallery:cs.leadGallery,content:cs.content};
 const urls=new Set();
 function collect(v){if(typeof v==='string'&&v.startsWith('/case-study/savory/'))urls.add(v);else if(Array.isArray(v))v.forEach(collect);else if(v&&typeof v==='object')Object.values(v).forEach(collect);}
 collect(snapshot);

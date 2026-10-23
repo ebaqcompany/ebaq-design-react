@@ -36,6 +36,7 @@ const staticPaths = [
   '/privacy-policy',
   '/fulfillment-policy',
   '/law-firm-branding',
+  '/real-estate-branding',
   '/ai-healthcare-branding',
   '/saas-branding',
   '/luxury-branding',
