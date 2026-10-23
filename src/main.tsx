@@ -7,6 +7,9 @@ import './fonts.css'
 import './index.css'
 import { AppRoutes, preloadRoute } from './AppRoutes.tsx'
 import { PRELOAD_ELEMENT_ID, setPreloadedData } from './content/preload.ts'
+import { installConversionAttribution } from './conversionAttribution.ts'
+
+installConversionAttribution()
 
 const rootElement = document.getElementById('root')!
 const preload = document.getElementById(PRELOAD_ELEMENT_ID)

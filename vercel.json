@@ -78,8 +78,8 @@
     },
     {
       "source": "/start",
-      "destination": "https://cal.com/ebaqdesign/15min",
-      "statusCode": 301
+      "destination": "/api/booking-start",
+      "statusCode": 307
     },
     {
       "source": "/blog/brand-archetypes-guide",
