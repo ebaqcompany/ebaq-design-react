@@ -16,7 +16,7 @@ const config: IndustryLandingConfig = {
   },
   caseStudy: { slug: "savory", title: "Savory: Real Estate Branding Case Study" },
   hero: {
-    heading: "Real Estate Branding\nfor Agents & Teams",
+    heading: "Real Estate Branding",
     description: "A recognizable identity for your real estate team, brokerage or personal brand. Work directly with a senior designer on the logo, visual system and website your clients meet before they meet you.",
     action: { label: `Book a call · ${pricing.weekly} brand sprint`, url: "/start" },
     rows: [
@@ -31,6 +31,12 @@ const config: IndustryLandingConfig = {
         { type: "image", src: `${media}/23-pen.webp`, alt: "Savory branded pen in Wax Red with a warm off-white wordmark" },
         { type: "image", src: `${media}/25-website-design.jpg`, alt: "Savory website design with editorial typography, New York skyline and rooftop photography" },
         { type: "video", src: `${media}/17-type-specimen.webm`, alt: "Roxborough CF typography specimen for the Savory real estate identity" },
+      ],
+      [
+        { type: "image", src: `${media}/20-stamp.webp`, alt: "Savory brass stamp and wax seal with the circular team emblem" },
+        { type: "image", src: `${media}/02-cup.webp`, alt: "Savory branded coffee cup with a Sky Blue body and Wax Red lid" },
+        { type: "image", src: `${media}/03-tote.webp`, alt: "Savory Wax Red tote with the approved natural-print wordmark" },
+        { type: "video", src: `${media}/11-find-your-place.webm`, alt: "Savory Find your place logo and Brooklyn interiors in motion" },
       ],
     ],
   },
