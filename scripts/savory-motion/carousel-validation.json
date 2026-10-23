@@ -1,0 +1,87 @@
+{
+  "verifiedOn": "2026-10-23 America/New_York",
+  "browserVersion": "155.0.8059.85",
+  "originalHTMLAndAllFourPostsUnchanged": true,
+  "sourceWaxRed": [
+    123,
+    15,
+    30
+  ],
+  "browser": {
+    "currentTime": 4.151621,
+    "pixels": [
+      {
+        "x": 900,
+        "y": 270,
+        "rgb": [
+          123,
+          15,
+          30
+        ]
+      },
+      {
+        "x": 900,
+        "y": 300,
+        "rgb": [
+          123,
+          15,
+          30
+        ]
+      },
+      {
+        "x": 10,
+        "y": 10,
+        "rgb": [
+          219,
+          214,
+          201
+        ]
+      }
+    ],
+    "width": 1920,
+    "height": 1080,
+    "duration": 7.599
+  },
+  "ffmpegWaxRed": [
+    122,
+    15,
+    30
+  ],
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "vp9",
+        "width": 1920,
+        "height": 1080,
+        "color_range": "pc",
+        "color_space": "bt709",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "r_frame_rate": "60/1"
+      }
+    ],
+    "format": {
+      "duration": "7.599000",
+      "size": "5886051"
+    }
+  },
+  "caseStudyPlayback": {
+    "src": "http://localhost:5190/case-study/savory/19-social-carousel.webm",
+    "readyState": 4,
+    "currentTime": 0.254336,
+    "error": null
+  },
+  "limitations": [
+    "Safari display behavior unverified.",
+    "8-bit YUV decoding may introduce 1-2 RGB levels of rounding."
+  ],
+  "browserScreenshotWaxRed": [
+    123,
+    15,
+    30
+  ],
+  "frameCount": 456,
+  "build": "npm run build passed (TypeScript, client, SSR, route generation)"
+}

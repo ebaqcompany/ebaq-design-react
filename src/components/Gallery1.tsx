@@ -9,6 +9,8 @@ type ImageProps = {
   alt?: string;
   kind?: "image" | "video" | "lottie";
   span?: "full" | "half";
+  // Half-width tile that runs the height of the two tiles beside it (desktop only).
+  rowSpan?: 2;
   overlaySrc?: string;
   aspectRatio?: string;
 };
@@ -87,6 +89,11 @@ export const Gallery1 = (props: Gallery1Props) => {
               </div>
             ) : image.kind === "lottie" ? (
               <GalleryLottie src={image.src} alt={image.alt} aspectRatio={image.aspectRatio} />
+            ) : image.rowSpan === 2 ? (
+              // Absolute on desktop so the tall image fills the row height instead of setting it.
+              <div className="w-full overflow-hidden md:relative md:h-full">
+                <img loading="lazy" decoding="async" src={image.src} alt={image.alt} className="h-auto w-full md:absolute md:inset-0 md:h-full md:object-cover" />
+              </div>
             ) : (
               <div className="w-full overflow-hidden">
                 <img loading="lazy" decoding="async" src={image.src} alt={image.alt} className="h-auto w-full" />
@@ -94,7 +101,7 @@ export const Gallery1 = (props: Gallery1Props) => {
             );
 
             return (
-              <div key={`${image.src}-${image.url ?? ""}`} className={image.span === "half" ? "md:col-span-1" : "md:col-span-2"}>
+              <div key={`${image.src}-${image.url ?? ""}`} className={`${image.span === "half" ? "md:col-span-1" : "md:col-span-2"} ${image.rowSpan === 2 ? "md:row-span-2" : ""}`}>
                 {image.url ? <a href={image.url} className="block size-full">{media}</a> : media}
               </div>
             );

@@ -1,0 +1,83 @@
+{
+  "verifiedOn": "2026-10-23 America/New_York",
+  "placement": "First tile in homepage row 1",
+  "source": "/case-study/savory/hero-logo.json",
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "tile": {
+        "width": 416,
+        "height": 312
+      },
+      "svg": {
+        "width": 416,
+        "height": 312,
+        "viewBox": "0 0 1920 1080",
+        "preserveAspectRatio": "xMidYMid meet"
+      },
+      "background": "rgb(179, 195, 214)",
+      "paths": 33,
+      "animationMoves": true,
+      "visualCheck": "Carousel horizontal movement held at first tile in verification page only; production scrolling unchanged",
+      "bento": {
+        "src": "/portfolio/identities/savory-bento.webp",
+        "naturalWidth": 1667,
+        "naturalHeight": 1250,
+        "width": 414,
+        "height": 310,
+        "filter": "none"
+      },
+      "websitePreview": {
+        "src": "/portfolio/websites/savory-web.webp",
+        "naturalWidth": 1600,
+        "naturalHeight": 1200,
+        "width": 416,
+        "height": 312,
+        "objectFit": "cover",
+        "filter": "none"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": {
+        "width": 234,
+        "height": 175.5
+      },
+      "svg": {
+        "width": 234,
+        "height": 175.5,
+        "viewBox": "0 0 1920 1080",
+        "preserveAspectRatio": "xMidYMid meet"
+      },
+      "background": "rgb(179, 195, 214)",
+      "paths": 33,
+      "animationMoves": true,
+      "visualCheck": "Carousel horizontal movement held at first tile in verification page only; production scrolling unchanged",
+      "bento": {
+        "src": "/portfolio/identities/savory-bento.webp",
+        "naturalWidth": 1667,
+        "naturalHeight": 1250,
+        "width": 232,
+        "height": 173.5,
+        "filter": "none"
+      },
+      "websitePreview": {
+        "src": "/portfolio/websites/savory-web.webp",
+        "naturalWidth": 1600,
+        "naturalHeight": 1200,
+        "width": 234,
+        "height": 175.5,
+        "objectFit": "cover",
+        "filter": "none"
+      },
+      "pageErrors": []
+    }
+  ]
+}

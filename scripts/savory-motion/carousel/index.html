@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SAVORY · social carousel loop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  SAVORY social (Figma 94:1642) as a carousel, after the Aero social loop (ebaqdesign.com/case-study/aero/13-social):
+  four Instagram posts in one row, the centre slot is the focus (648 × 810, the others 540 × 675, 48 px gaps).
+  Each step the row slides one slot to the right on an ease-in-out cubic; the post arriving in the focus slot grows,
+  the one leaving shrinks, then a hold. Four steps bring back the Figma layout, so the loop is seamless.
+  Posts are the Figma exports (posts/*.png, 2.4× / 2×). ?render → window.seek(ms) + window.LOOP_MS for the exporter.
+-->
+<style>
+  html, body { margin: 0; height: 100%; background: #DCD6CA; overflow: hidden; }
+  #stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; overflow: hidden; background: #DCD6CA; transform-origin: 50% 50%; }
+  #stage img { position: absolute; left: 0; top: 0; display: block; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <img src="posts/post07-red.png" alt="">
+  <img src="posts/post08-blue.png" alt="">
+  <img src="posts/post-offwhite.png" alt="">
+  <img src="posts/post09-asphalt.png" alt="">
+</div>
+<script>
+(() => {
+  function bezier(x1, y1, x2, y2) {
+    const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx, cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+    const X = u => ((ax * u + bx) * u + cx) * u, Y = u => ((ay * u + by) * u + cy) * u, dX = u => (3 * ax * u + 2 * bx) * u + cx;
+    return x => { if (x <= 0) return 0; if (x >= 1) return 1; let u = x;
+      for (let k = 0; k < 8; k++) { const d = dX(u); if (Math.abs(d) < 1e-6) break; u -= (X(u) - x) / d; }
+      let lo = 0, hi = 1; for (let k = 0; k < 20 && Math.abs(X(u) - x) > 1e-6; k++) { if (X(u) < x) lo = u; else hi = u; u = (lo + hi) / 2; }
+      return Y(u); };
+  }
+  const ease = bezier(.65, 0, .35, 1);                                     // ease-in-out cubic (the posts' own curve)
+  const clamp = x => Math.min(1, Math.max(0, x));
+
+  // slots from the Figma row: s0 just off-screen left, s2 the focus, s4 just off-screen right
+  const SMALL = 540, FOCUS = 648, GAP = 48, CY = 540;
+  const width = s => (s === 2 ? FOCUS : SMALL);
+  const centre = [];
+  centre[2] = 958;                                                         // focus: x 634–1282, as in Figma
+  centre[1] = centre[2] - FOCUS / 2 - GAP - SMALL / 2;                     // 316
+  centre[0] = centre[1] - SMALL - GAP;                                     // −272
+  centre[3] = centre[2] + FOCUS / 2 + GAP + SMALL / 2;                     // 1600
+  centre[4] = centre[3] + SMALL + GAP;                                     // 2188
+
+  const HOLD = 1100, MOVE = 800, STEP = HOLD + MOVE, N = 4, L = N * STEP;  // 7.6 s loop
+  const posts = [...document.querySelectorAll("#stage img")];
+
+  function place(img, cx, w) {
+    const h = w * 1.25;
+    img.style.width = w + "px"; img.style.height = h + "px";
+    img.style.transform = `translate(${cx - w / 2}px, ${CY - h / 2}px)`;
+  }
+  function apply(t) {
+    t = ((t % L) + L) % L;
+    const n = Math.floor(t / STEP), p = ease(clamp((t - n * STEP - HOLD) / MOVE));   // hold, then slide one slot right
+    posts.forEach((img, j) => {
+      const a = (j + n) % N, b = a + 1;                                    // slot now → next (3 → 4 leaves right; it re-enters at 0, off-screen)
+      place(img, centre[a] + (centre[b] - centre[a]) * p, width(a) + (width(b) - width(a)) * p);
+    });
+  }
+
+  const fit = () => { document.getElementById("stage").style.transform = `translate(-50%, -50%) scale(${Math.min(innerWidth / 1920, innerHeight / 1080)})`; };
+  addEventListener("resize", fit); fit();
+  const q = new URLSearchParams(location.search), h = location.hash.match(/t=(\d+(?:\.\d+)?)/);
+  Promise.all(posts.map(i => i.decode().catch(() => {}))).then(() => {
+    if (q.has("render")) {
+      window.seek = t => new Promise(r => { apply(t); requestAnimationFrame(() => requestAnimationFrame(r)); });
+      window.LOOP_MS = L; apply(0); return;
+    }
+    if (h) { apply(+h[1]); return; }
+    const t0 = performance.now();
+    (function tick(now) { apply(now - t0); requestAnimationFrame(tick); })(t0);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "verifiedOn": "2026-10-23 America/New_York",
+  "results": [
+    {
+      "width": 1440,
+      "slug": "savory",
+      "brandGuidelinesHref": "https://guidelines.online/savory",
+      "brandGuidelinesVisible": true,
+      "liveWebsiteHref": null,
+      "liveWebsiteVisible": false
+    },
+    {
+      "width": 1440,
+      "slug": "next-dimension",
+      "brandGuidelinesHref": "https://guidelines.online/next-dim",
+      "brandGuidelinesVisible": true,
+      "liveWebsiteHref": "https://nextdim.io",
+      "liveWebsiteVisible": true
+    },
+    {
+      "width": 390,
+      "slug": "savory",
+      "brandGuidelinesHref": "https://guidelines.online/savory",
+      "brandGuidelinesVisible": true,
+      "liveWebsiteHref": null,
+      "liveWebsiteVisible": false
+    },
+    {
+      "width": 390,
+      "slug": "next-dimension",
+      "brandGuidelinesHref": "https://guidelines.online/next-dim",
+      "brandGuidelinesVisible": true,
+      "liveWebsiteHref": "https://nextdim.io",
+      "liveWebsiteVisible": true
+    }
+  ],
+  "destinations": [
+    {
+      "url": "https://guidelines.online/savory",
+      "httpStatus": 200,
+      "title": "Savory Brand Guidelines | Guidelines.online"
+    },
+    {
+      "url": "https://guidelines.online/next-dim",
+      "httpStatus": 200,
+      "title": "Next Dimension Brand Guidelines | Guidelines.online"
+    }
+  ]
+}

@@ -1,0 +1,504 @@
+{
+  "snapshotDate": "2026-10-23 America/New_York",
+  "websiteSource": "src/data/caseStudies.ts",
+  "websiteRoute": "/work/savory",
+  "projectPackage": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/PORTFOLIO/Latest-Case-Study",
+  "policy": "Only current Savory references, in current order. Legacy/rejected exports and stale MP4 alternates are excluded. Originals remain untouched.",
+  "media": [
+    {
+      "website": "/case-study/savory/thumbnail.webp",
+      "repository": "public/case-study/savory/thumbnail.webp",
+      "package": "media/case-study/savory/thumbnail.webp",
+      "bytes": 17672,
+      "sha256": "066607022232ea3a8717d9cb3a0dfd6402671d372c9a88067d90574a4ce8e5fb"
+    },
+    {
+      "website": "/case-study/savory/hero-logo.json",
+      "repository": "public/case-study/savory/hero-logo.json",
+      "package": "media/case-study/savory/hero-logo.json",
+      "bytes": 312610,
+      "sha256": "1e2a7def86f11e06c26f08be3ebd7aa8ee0d3c8d40b7dcb92365278ef2c083da"
+    },
+    {
+      "website": "/case-study/savory/hero-logo-mobile.json",
+      "repository": "public/case-study/savory/hero-logo-mobile.json",
+      "package": "media/case-study/savory/hero-logo-mobile.json",
+      "bytes": 312303,
+      "sha256": "6b7b25bd5a3a4362e6a78a7790e6ab95cd4af98434b51c6ca8e8739e7c15303d"
+    },
+    {
+      "website": "/case-study/savory/01-colorways.webp",
+      "repository": "public/case-study/savory/01-colorways.webp",
+      "package": "media/case-study/savory/01-colorways.webp",
+      "bytes": 45354,
+      "sha256": "587ee6c2a336371649032185bbfd30efbe16cc05528f23f24edc8f7cea448221"
+    },
+    {
+      "website": "/case-study/savory/06-business-card.webp",
+      "repository": "public/case-study/savory/06-business-card.webp",
+      "package": "media/case-study/savory/06-business-card.webp",
+      "bytes": 30338,
+      "sha256": "f6bdce79f1d30d82ba6793da9d06a33c643c61198835a5f57537c2daa58696e4"
+    },
+    {
+      "website": "/case-study/savory/18-colors.webm",
+      "repository": "public/case-study/savory/18-colors.webm",
+      "package": "media/case-study/savory/18-colors.webm",
+      "bytes": 1448892,
+      "sha256": "b207af29da67620a46daccd9a72ddf3da334f28fc78714706fdf0dce8a081a8d"
+    },
+    {
+      "website": "/case-study/savory/17-type-specimen.webm",
+      "repository": "public/case-study/savory/17-type-specimen.webm",
+      "package": "media/case-study/savory/17-type-specimen.webm",
+      "bytes": 1220850,
+      "sha256": "55d2486798ee1df27399bbe428f5817fe2e5f55fed6f1806a054ef862e55c34c"
+    },
+    {
+      "website": "/case-study/savory/11-find-your-place.webm",
+      "repository": "public/case-study/savory/11-find-your-place.webm",
+      "package": "media/case-study/savory/11-find-your-place.webm",
+      "bytes": 849307,
+      "sha256": "d3863f064fafd16f2a9fa18e64889c619076400e043326bf976bc5479a41edaf"
+    },
+    {
+      "website": "/case-study/savory/21-wall.jpg",
+      "repository": "public/case-study/savory/21-wall.jpg",
+      "package": "media/case-study/savory/21-wall.jpg",
+      "bytes": 1942676,
+      "sha256": "4cee73c46478f9814ee3a4aa1e339e73086aacf43c0110f03e75148eddd3061c"
+    },
+    {
+      "website": "/case-study/savory/13-tile-favicon.webp",
+      "repository": "public/case-study/savory/13-tile-favicon.webp",
+      "package": "media/case-study/savory/13-tile-favicon.webp",
+      "bytes": 24438,
+      "sha256": "509284701548886a6ae5ae087cac6d9f169d981b4cf0df69d705570ce9f0c3e0"
+    },
+    {
+      "website": "/case-study/savory/15-tile-signature.webp",
+      "repository": "public/case-study/savory/15-tile-signature.webp",
+      "package": "media/case-study/savory/15-tile-signature.webp",
+      "bytes": 131110,
+      "sha256": "2417eca502ffed8e7e450cbb50af5830ce2de6c4aaff7245eab44480bca41d9a"
+    },
+    {
+      "website": "/case-study/savory/14-tile-instagram.webp",
+      "repository": "public/case-study/savory/14-tile-instagram.webp",
+      "package": "media/case-study/savory/14-tile-instagram.webp",
+      "bytes": 73470,
+      "sha256": "b003c8458db52402b151eff77e7313f2ef38c928e5a8b553f450a711e188c2c0"
+    },
+    {
+      "website": "/case-study/savory/23-pen.webp",
+      "repository": "public/case-study/savory/23-pen.webp",
+      "package": "media/case-study/savory/23-pen.webp",
+      "bytes": 465594,
+      "sha256": "15c49929f430a91c16745f48d2b6e693f2c0c155e4f581b8cb4e50df70bacbcd"
+    },
+    {
+      "website": "/case-study/savory/09-linkedin.png",
+      "repository": "public/case-study/savory/09-linkedin.png",
+      "package": "media/case-study/savory/09-linkedin.png",
+      "bytes": 130101,
+      "sha256": "3aa3a9e195324192a35316f68755045b2c9eff6293be07f871bd13666f598d4b"
+    },
+    {
+      "website": "/case-study/savory/19-social-carousel.webm",
+      "repository": "public/case-study/savory/19-social-carousel.webm",
+      "package": "media/case-study/savory/19-social-carousel.webm",
+      "bytes": 5886051,
+      "sha256": "801d1249c1b5c440bced2463ffa91a06ee26574e98d5dd337d69f0e5077c0a54"
+    },
+    {
+      "website": "/case-study/savory/22-billboard-building.webp",
+      "repository": "public/case-study/savory/22-billboard-building.webp",
+      "package": "media/case-study/savory/22-billboard-building.webp",
+      "bytes": 11275122,
+      "sha256": "80f08e2a0b959f920f87a45e606ebff54c4e6ca33d45b7d2582d38ae03222ed4"
+    },
+    {
+      "website": "/case-study/savory/02-cup.webp",
+      "repository": "public/case-study/savory/02-cup.webp",
+      "package": "media/case-study/savory/02-cup.webp",
+      "bytes": 63356,
+      "sha256": "7bdb2c502ec66940a72503a0aec5a3a24629a0886b3eff219a2b4850b96f37c2"
+    },
+    {
+      "website": "/case-study/savory/03-tote.webp",
+      "repository": "public/case-study/savory/03-tote.webp",
+      "package": "media/case-study/savory/03-tote.webp",
+      "bytes": 1603502,
+      "sha256": "fcacfe5a312e8e4c5c1ae49ded42b05941a5cca0e1cc7023038c196826c7d9a6"
+    },
+    {
+      "website": "/case-study/savory/25-website-design.jpg",
+      "repository": "public/case-study/savory/25-website-design.jpg",
+      "package": "media/case-study/savory/25-website-design.jpg",
+      "bytes": 2191058,
+      "sha256": "f73d40e3f971b096ce1bead6333d94e50237d6b79c4a9dcc85655b735afa43e8"
+    },
+    {
+      "website": "/case-study/savory/20-stamp.webp",
+      "repository": "public/case-study/savory/20-stamp.webp",
+      "package": "media/case-study/savory/20-stamp.webp",
+      "bytes": 121878,
+      "sha256": "932ae57576060fc1f133cd5ba20d2f52413804eed7d37c34a547cc1e7b6a90df"
+    }
+  ],
+  "editable": [
+    {
+      "repository": "scripts/savory-motion/README.md",
+      "package": "editable/savory-motion/README.md",
+      "bytes": 6021,
+      "sha256": "82b12f07ea51a9566284c1d11b57339a5636d4a6d9757d4fb50e98a2183c23d3"
+    },
+    {
+      "repository": "scripts/savory-motion/carousel/index.html",
+      "package": "editable/savory-motion/carousel/index.html",
+      "bytes": 4335,
+      "sha256": "062e5de6411bce6df12177ad8b4e750b29f1fb67f7ae45159782ececadb05651"
+    },
+    {
+      "repository": "scripts/savory-motion/carousel/posts/post-offwhite.png",
+      "package": "editable/savory-motion/carousel/posts/post-offwhite.png",
+      "bytes": 72293,
+      "sha256": "4b1d1cbed4fdbb13dfbaa3b9f78d4093b500f3e7c6dba21c4fe72ff6788fb74e"
+    },
+    {
+      "repository": "scripts/savory-motion/carousel/posts/post07-red.png",
+      "package": "editable/savory-motion/carousel/posts/post07-red.png",
+      "bytes": 1012522,
+      "sha256": "26cd5f34b1b0d8ccf17b692a65cb68f1fe72527efcecea243aba5e21288d8f11"
+    },
+    {
+      "repository": "scripts/savory-motion/carousel/posts/post08-blue.png",
+      "package": "editable/savory-motion/carousel/posts/post08-blue.png",
+      "bytes": 1365724,
+      "sha256": "5328b37cb9e077f03bf0758c83517b6a3376f800cdcd18b3afd71e20b6b95aba"
+    },
+    {
+      "repository": "scripts/savory-motion/carousel/posts/post09-asphalt.png",
+      "package": "editable/savory-motion/carousel/posts/post09-asphalt.png",
+      "bytes": 1188232,
+      "sha256": "436d7f02fe2df9d80a3d582fb01144580c59a62489c5f95e9d16c6fa58dc7309"
+    },
+    {
+      "repository": "scripts/savory-motion/carousel-validation.json",
+      "package": "editable/savory-motion/carousel-validation.json",
+      "bytes": 1628,
+      "sha256": "73153291bdf93a8e84e4d826d073e809ff1fc6c6f07cecf9838b20dd2f9a2fe4"
+    },
+    {
+      "repository": "scripts/savory-motion/colors-columns.html",
+      "package": "editable/savory-motion/colors-columns.html",
+      "bytes": 7007,
+      "sha256": "9e89148590d1650c4a6768b840ed198cdf3ce473c284f139e40a74ee6c407d03"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/_tools/render.py",
+      "package": "editable/savory-motion/find-your-place/_tools/render.py",
+      "bytes": 2812,
+      "sha256": "4563aa51eb3792829ee5aa8f635d7d61562f81cc24dc6e4dcdc50ca6349aa290"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/fonts/PPEditorialOld-Italic.otf",
+      "package": "editable/savory-motion/find-your-place/assets/fonts/PPEditorialOld-Italic.otf",
+      "bytes": 138936,
+      "sha256": "f0e65a65feaa6e35185e39ca32f94c89d7097f35644e15bf7781df0ba2e6dfb4"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/brownstone-exterior.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/brownstone-exterior.jpg",
+      "bytes": 174957,
+      "sha256": "2413d73f031f61f327e819700bb9d7d5d0d942ab7a4f909c45a6e8746a302401"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/doorway.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/doorway.jpg",
+      "bytes": 62825,
+      "sha256": "6e08a7768dfbce1950f4f6df9cd54e96b35d0745c81faff851db6aeae68acaa2"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/green-study.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/green-study.jpg",
+      "bytes": 179438,
+      "sha256": "f85751b48ab8eb378af5bda49f809a5ce37ad81c8c6f691e0aabe46abfd7c2b1"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/kitchen-island.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/kitchen-island.jpg",
+      "bytes": 75633,
+      "sha256": "c54c2f4f547dea656fe8868eee73b56579cd81d3bcd7b738b95d7b82d7968f9b"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/kitchen.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/kitchen.jpg",
+      "bytes": 149236,
+      "sha256": "a430ec10010264a78bc2d429531c7ad98c4858a41ddda3ad9108f3fab64c70ab"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/living.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/living.jpg",
+      "bytes": 185894,
+      "sha256": "6839c5df36682b468c0300f569782ec824c5a15702d62374ba84c4fa50b8e03a"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/photo-104.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/photo-104.jpg",
+      "bytes": 50672,
+      "sha256": "56904edc25f109a21e06aee0c21718589dc3913251ed772bd54cec48b89744a1"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/photo-110.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/photo-110.jpg",
+      "bytes": 49496,
+      "sha256": "30f1dd69c262afec1da21481531b620e7125689aae5592632e359af11e443c24"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/photo-167.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/photo-167.jpg",
+      "bytes": 18688,
+      "sha256": "dbd8e72f932fe4e353c05d836f84a0841cdf95d665d27ec4286a1c483dac8925"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/photo-168.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/photo-168.jpg",
+      "bytes": 56022,
+      "sha256": "139c01571e848c5f35389e4123689a88d8ada55ed6fbe80d97b41eeebb8551e0"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/photo-175.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/photo-175.jpg",
+      "bytes": 85444,
+      "sha256": "d1166c81e8e0d47f7dff6b697ec5c6f5ea50f294ac39adda11013a2e59493783"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/photo-97.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/photo-97.jpg",
+      "bytes": 70691,
+      "sha256": "f36fdd302e36e2e31bbf527af569f2e8c4c0da6cce7b2e17ccd7b0338bbcbd17"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/assets/photos/wood-stair-hall.jpg",
+      "package": "editable/savory-motion/find-your-place/assets/photos/wood-stair-hall.jpg",
+      "bytes": 223426,
+      "sha256": "56348a021148addc9b4e0903fd258c087619b07b2133df2a7c0e1a8bc109cee0"
+    },
+    {
+      "repository": "scripts/savory-motion/find-your-place/index.html",
+      "package": "editable/savory-motion/find-your-place/index.html",
+      "bytes": 16380,
+      "sha256": "6fa6421a3b6452f600d60247a00558d6f24965f53e3fd00c078f6bef1bec15ce"
+    },
+    {
+      "repository": "scripts/savory-motion/fonts/Manrope-Medium.ttf",
+      "package": "editable/savory-motion/fonts/Manrope-Medium.ttf",
+      "bytes": 97528,
+      "sha256": "1715471991b23490c5017879f091589849249db55491e2320e54ccda249e68b9"
+    },
+    {
+      "repository": "scripts/savory-motion/fonts/Manrope-SemiBold.ttf",
+      "package": "editable/savory-motion/fonts/Manrope-SemiBold.ttf",
+      "bytes": 97572,
+      "sha256": "a983e8a298665b31b187bf08c1268569a2a175966034cd8e553fa47c81cd519a"
+    },
+    {
+      "repository": "scripts/savory-motion/fonts/RoxboroughCF-Regular.ttf",
+      "package": "editable/savory-motion/fonts/RoxboroughCF-Regular.ttf",
+      "bytes": 97352,
+      "sha256": "b5cb53296fbb8314d7d4538212eed04d92621855e6a2ed0159051989ac5b8bf8"
+    },
+    {
+      "repository": "scripts/savory-motion/guidelines-link-validation.json",
+      "package": "editable/savory-motion/guidelines-link-validation.json",
+      "bytes": 1351,
+      "sha256": "35260d3d19dd6b2108eb9e4f6c7b46bfa2e708927d26655da745a7173d589671"
+    },
+    {
+      "repository": "scripts/savory-motion/homepage-preview/README.md",
+      "package": "editable/savory-motion/homepage-preview/README.md",
+      "bytes": 2125,
+      "sha256": "97af9e8939851d3a366af306e4803b65a9aec7fc2f6296217fc16cb1a0f1fc56"
+    },
+    {
+      "repository": "scripts/savory-motion/homepage-validation.json",
+      "package": "editable/savory-motion/homepage-validation.json",
+      "bytes": 2207,
+      "sha256": "a85b2ecb66fa609a3b3d7f0fd4a55f1045eb94a1eaf4bf9e43ac624f83c748c6"
+    },
+    {
+      "repository": "scripts/savory-motion/package-latest.mjs",
+      "package": "editable/savory-motion/package-latest.mjs",
+      "bytes": 12074,
+      "sha256": "ddb26b2b7be3617668df15fa6db8c0096292f3dc7a823e9f2e457db41469b6cf"
+    },
+    {
+      "repository": "scripts/savory-motion/release-validation.json",
+      "package": "editable/savory-motion/release-validation.json",
+      "bytes": 1345,
+      "sha256": "7bc61f28aab9d097664d9ee2c5b63068a40fff257c00095e2900ca3aadc94e86"
+    },
+    {
+      "repository": "scripts/savory-motion/render.mjs",
+      "package": "editable/savory-motion/render.mjs",
+      "bytes": 6632,
+      "sha256": "ea89de6a2bd2740bdc489fde7c03ba45776e38ed749a244f4d0373bf6337e057"
+    },
+    {
+      "repository": "scripts/savory-motion/specimen/glyphs.js",
+      "package": "editable/savory-motion/specimen/glyphs.js",
+      "bytes": 13697,
+      "sha256": "7d2ee2e8b3831e560e225b8b2ce202e3b7aef7e33ffcf333dc611b4216fa010c"
+    },
+    {
+      "repository": "scripts/savory-motion/specimen.html",
+      "package": "editable/savory-motion/specimen.html",
+      "bytes": 7432,
+      "sha256": "95548e5bbc43ec8612a734929ac54edd9f0fa6d5af2fd469fef672cb93cf35ed"
+    },
+    {
+      "repository": "scripts/savory-motion/trusted-strip-validation.json",
+      "package": "editable/savory-motion/trusted-strip-validation.json",
+      "bytes": 1537,
+      "sha256": "73be59de8ae51531b401579f02e9d8c7d8d30e09eeb782cd610701b0d8fd15b6"
+    },
+    {
+      "repository": "scripts/savory-motion/validation.json",
+      "package": "editable/savory-motion/validation.json",
+      "bytes": 4388,
+      "sha256": "b29120e28312b792797023653ff0bd82d01f200072db92c61ce65dcf2343e89d"
+    },
+    {
+      "repository": "scripts/savory-motion/website-design/371-3626-2x-reference.png",
+      "package": "editable/savory-motion/website-design/371-3626-2x-reference.png",
+      "bytes": 2822926,
+      "sha256": "4f7ce306181c1383b8592740dd63064cfa8944c01f36f53c42bb10f774883d71"
+    },
+    {
+      "repository": "scripts/savory-motion/website-design/README.md",
+      "package": "editable/savory-motion/website-design/README.md",
+      "bytes": 1815,
+      "sha256": "2eeb0fa0f19e6f549b2c8ea5e93a1f831350c20b071227428d2e0b3f95228a95"
+    },
+    {
+      "repository": "scripts/savory-motion/website-design/validation.json",
+      "package": "editable/savory-motion/website-design/validation.json",
+      "bytes": 2678,
+      "sha256": "315c839379b7645b09c2c3947713a15eea9ee2fec540a9dfdb92ed0b84ca21a7"
+    }
+  ],
+  "externalEditable": [
+    {
+      "projectRelative": "../../MOCKUPS/03-savory-tote-NATURAL-PRINT-LIFT-EDITABLE.psd",
+      "absolute": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/MOCKUPS/03-savory-tote-NATURAL-PRINT-LIFT-EDITABLE.psd",
+      "bytes": 28835246,
+      "sha256": "d7071301189a9a6ebc5b62b63545dff87aa39a8fe3fd60e6ea7b7bfb300fe121",
+      "copied": false
+    },
+    {
+      "projectRelative": "../../MOCKUPS/22-savory-billboard-SKY-OFFWHITE-EDITABLE.psd",
+      "absolute": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/MOCKUPS/22-savory-billboard-SKY-OFFWHITE-EDITABLE.psd",
+      "bytes": 187351666,
+      "sha256": "6476dc516516bbdca3a3b05c627bdd294bab9b38c7c3fac6adf5e16a6ee999e0",
+      "copied": false
+    },
+    {
+      "projectRelative": "../../MOCKUPS/23-savory-pen-WAXRED-OFFWHITE-EDITABLE.psd",
+      "absolute": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/MOCKUPS/23-savory-pen-WAXRED-OFFWHITE-EDITABLE.psd",
+      "bytes": 11138742,
+      "sha256": "f2f7a1e4380a524e57988508034725679286dae705e1daa769a92c674dc39dc0",
+      "copied": false
+    },
+    {
+      "projectRelative": "../../MOCKUPS/24-savory-laptop-EDITABLE.psd",
+      "absolute": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/MOCKUPS/24-savory-laptop-EDITABLE.psd",
+      "bytes": 141652146,
+      "sha256": "5c187255fde0736bd568f4714ad61ca8b5d18ba19193fa3dba10746e198e431b",
+      "copied": false
+    }
+  ],
+  "homepageMedia": [
+    {
+      "website": "/portfolio/websites/savory-web.webp",
+      "repository": "public/portfolio/websites/savory-web.webp",
+      "package": "homepage-preview/portfolio/websites/savory-web.webp",
+      "projectOriginal": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/PORTFOLIO/SAVORY web.jpg",
+      "nativeDimensions": [
+        1600,
+        1200
+      ],
+      "encoding": "Lossless WebP; decoded RGB matches original JPG exactly",
+      "sha256": "8736808baca385bd2921b4147b7e8ee24807b093486ac6eec12a20d5fecf82e5",
+      "bytes": 619604,
+      "placement": "First tile in homepage third row; first row retains approved Savory Lottie",
+      "originalPackage": "homepage-preview/originals/SAVORY web.jpg",
+      "originalSHA256": "f004f949e7f37b3601f5e07ade916c6116931ba04b115f0e5dd11173bca8844f"
+    },
+    {
+      "website": "/portfolio/identities/savory-bento.webp",
+      "repository": "public/portfolio/identities/savory-bento.webp",
+      "package": "homepage-preview/portfolio/identities/savory-bento.webp",
+      "projectOriginal": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/PORTFOLIO/SAVORY bento.jpg",
+      "nativeDimensions": [
+        1667,
+        1250
+      ],
+      "encoding": "Lossless WebP; decoded RGB matches newest original JPG exactly",
+      "sha256": "d9d361e0679e8616cca7f565a85382cf04aefc66e9a61644f6a74d08e4b8f197",
+      "bytes": 933256,
+      "placement": "First tile in homepage second row; newest smaller-logo user design",
+      "originalPackage": "homepage-preview/originals/SAVORY bento.jpg",
+      "originalSHA256": "2a819e8878b7a6ae56c1ee4b6f6b0dda8301ea9b0e3d4ff2c3c0977265e24235"
+    },
+    {
+      "website": "/client-logos/savory-wordmark.svg",
+      "repository": "public/client-logos/savory-wordmark.svg",
+      "package": "homepage-preview/client-logos/savory-wordmark.svg",
+      "projectOriginal": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/PORTFOLIO/SAVORY logo.svg",
+      "nativeDimensions": [
+        583,
+        109
+      ],
+      "encoding": "Original monochrome SVG; byte-identical to user source",
+      "sha256": "09eaf4a72dd20ee30651b7d229381244b6861be9811427587b2d2fca7e3b5f2e",
+      "bytes": 6220,
+      "placement": "Trusted by ambitious teams client-logo strip, immediately after Elevate; scale 72",
+      "originalPackage": "homepage-preview/originals/SAVORY logo.svg",
+      "originalSHA256": "09eaf4a72dd20ee30651b7d229381244b6861be9811427587b2d2fca7e3b5f2e"
+    }
+  ],
+  "homepagePlacements": [
+    {
+      "row": 1,
+      "website": "/case-study/savory/hero-logo.json",
+      "package": "media/case-study/savory/hero-logo.json",
+      "background": "#B3C3D6"
+    },
+    {
+      "row": 2,
+      "website": "/portfolio/identities/savory-bento.webp",
+      "package": "homepage-preview/portfolio/identities/savory-bento.webp"
+    },
+    {
+      "row": 3,
+      "website": "/portfolio/websites/savory-web.webp",
+      "package": "homepage-preview/portfolio/websites/savory-web.webp"
+    }
+  ],
+  "trustedLogoStrip": {
+    "website": "/client-logos/savory-wordmark.svg",
+    "package": "homepage-preview/client-logos/savory-wordmark.svg",
+    "scale": 72,
+    "immediatelyAfter": "Elevate",
+    "medihuannaChange": "Removed existing -10px offset, moving only Medihuanna down exactly 10px"
+  },
+  "preservedApprovedMockups": [
+    {
+      "projectRelative": "../Approved-Mockups-Not-In-Current-Case-Study/24-laptop-website.webp",
+      "repository": "public/case-study/savory/24-laptop-website.webp",
+      "sha256": "8bfeb240e70ee62fc5bbde3342c273740b3ced01873af7e628aa68dfac9374b4",
+      "status": "Approved; hidden from current case study by user request"
+    }
+  ]
+}

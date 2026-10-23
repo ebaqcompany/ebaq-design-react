@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SAVORY · Roxborough CF specimen loop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  SAVORY primary font (Figma 329:85) in the Next Dim reveal grammar (NEXT DIM/ASSETS/generated/
+  generate-nextdim-text-only-outlined-lottie.mjs): the title and metadata rise from below through fixed clip windows; the AaBbCc specimen retains its left-to-right glyph reveal,
+  0.04 s apart, on ease-in-out (.42, 0, .58, 1). The key / value lines rise line by line. After the hold the title and metadata exit upwards, while AaBbCc
+  slides out to the right through its original windows, so the loop starts and ends on the empty Wax Red frame.
+  "Roxborough CF" and AaBbCc are the real Roxborough CF Regular outlines from the hidden Figma backups (329:86, 329:88),
+  split per glyph by _tools/split_glyphs.py; the Figma frame shows a Playfair Display stand-in as live text.
+  ?render → window.seek(ms) + window.LOOP_MS for render.mjs. #t=1234 holds a frame, #still the settled slide.
+-->
+<style>
+  @font-face { font-family: "Manrope"; src: url(fonts/Manrope-Medium.ttf); font-weight: 500; }
+  html, body { margin: 0; height: 100%; background: #7B0F1E; overflow: hidden; }
+  #stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; overflow: hidden; background: #7B0F1E;
+           color: #F2EDEA; transform-origin: 50% 50%; }
+  .win { position: absolute; overflow: hidden; }
+  .win > * { position: absolute; left: 0; top: 0; will-change: transform; }
+  .win svg { display: block; overflow: visible; }
+  .line { font: 500 18px/normal Manrope; letter-spacing: .72px; text-transform: uppercase; white-space: nowrap; }
+  .key { color: rgba(242, 237, 234, .6); }
+  .val { line-height: 27px; }
+</style>
+</head>
+<body>
+<main id="stage" aria-label="Roxborough CF type specimen"></main>
+<script src="specimen/glyphs.js"></script>
+<script>
+(() => {
+  const stage = document.getElementById("stage"), NS = "http://www.w3.org/2000/svg", INK = "#F2EDEA";
+  const items = [];                                    // { el, travel, axis, enter, dur } — specimen uses x; supporting text rises on y
+
+  // one clip window per glyph, the glyph path drawn in frame coordinates (Figma backup frames 329:86, 329:88)
+  function glyphRow({ glyphs, h }, fx, fy, size, y0, y1, start, step, dur, axis = "x") {
+    const pad = Math.max(4, size * 0.035), extra = size * 0.08;
+    glyphs.forEach((g, i) => {
+      const x0 = g.box[0] - pad, w = g.box[2] - g.box[0] + 2 * pad, top = y0 - pad, hh = y1 - y0 + 2 * pad;
+      const win = document.createElement("div"); win.className = "win";
+      Object.assign(win.style, { left: fx + x0 + "px", top: fy + top + "px", width: w + "px", height: hh + "px" });
+      const svg = document.createElementNS(NS, "svg");
+      svg.setAttribute("width", w); svg.setAttribute("height", hh); svg.setAttribute("viewBox", `${x0} ${top} ${w} ${hh}`);
+      const p = document.createElementNS(NS, "path"); p.setAttribute("d", g.d); p.setAttribute("fill", INK);
+      svg.appendChild(p); win.appendChild(svg); stage.appendChild(win);
+      items.push({ el: svg, travel: (axis === "y" ? hh : w) + extra, axis, enter: start + i * step, dur });
+    });
+  }
+  const G = window.GLYPHS;
+  glyphRow(G.title, 38, 21.6, 64, 0, G.title.h, 300, 40, 620, "y");                       // Title / Roxborough CF
+  const sy0 = Math.min(...G.specimen.glyphs.map(g => g.box[1])), sy1 = Math.max(...G.specimen.glyphs.map(g => g.box[3]));
+  glyphRow(G.specimen, 38.25168, 525.89832, 547, sy0, sy1, 900, 70, 820);            // Specimen / AaBbCc
+
+  // key / value lines (Figma 329:90–97: Manrope Medium 18, 0.72 px tracking, caps; keys at 60 %), one window per line
+  const ROWS = [
+    [44, "Style", ["Serif · Display"]],
+    [112, "Weight", ["Regular"]],
+    [180, "Use", ["Wordmark, headlines, signage"]],
+    [248, "About", ["A high-contrast display serif by Connary Fagen.", "Sharp wedge serifs, round capitals and a bold,",
+                    "confident R give SAVORY its presence. Set in caps", "for the wordmark and headlines; PP Editorial",
+                    "Old carries the text."]],
+  ];
+  const lines = [];
+  ROWS.forEach(([top, key, vals], r) => {
+    const at = 520 + r * 110;
+    lines.push({ x: 1098, y: top, text: key, cls: "key", enter: at });
+    vals.forEach((v, j) => lines.push({ x: 1328, y: top + j * 27, text: v, cls: "val", enter: at + 40 + j * 60 }));
+  });
+  lines.forEach(l => {
+    const win = document.createElement("div"); win.className = "win";
+    const span = document.createElement("span"); span.className = `line ${l.cls}`; span.textContent = l.text;
+    win.appendChild(span); stage.appendChild(win);
+    Object.assign(win.style, { left: l.x + "px", top: l.y + "px" });
+    items.push({ el: span, win, travel: 0, axis: "y", enter: l.enter, dur: 620 });
+  });
+
+  const EXIT = 6200, L = 8100;                          // hold, then exit through the same masks in reading order
+  const first = Math.min(...items.map(it => it.enter));
+
+  const fit = () => { stage.style.transform = `translate(-50%, -50%) scale(${Math.min(innerWidth / 1920, innerHeight / 1080)})`; };
+  addEventListener("resize", fit); fit();
+
+  function bezier(x1, y1, x2, y2) {                    // CSS cubic-bezier as a function
+    const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx, cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+    const X = u => ((ax * u + bx) * u + cx) * u, Y = u => ((ay * u + by) * u + cy) * u, dX = u => (3 * ax * u + 2 * bx) * u + cx;
+    return x => { if (x <= 0) return 0; if (x >= 1) return 1; let u = x;
+      for (let k = 0; k < 8; k++) { const d = dX(u); if (Math.abs(d) < 1e-6) break; u -= (X(u) - x) / d; }
+      let lo = 0, hi = 1; for (let k = 0; k < 20 && Math.abs(X(u) - x) > 1e-6; k++) { if (X(u) < x) lo = u; else hi = u; u = (lo + hi) / 2; }
+      return Y(u); };
+  }
+  const ease = bezier(.42, 0, .58, 1), clamp = x => Math.min(1, Math.max(0, x));
+
+  function apply(t, settled) {
+    t = ((t % L) + L) % L;
+    for (const it of items) {
+      let offset = 0;
+      if (!settled) {
+        const pin = ease(clamp((t - it.enter) / it.dur)), pout = ease(clamp((t - (it.enter - first + EXIT)) / it.dur));
+        offset = (it.axis === "y" ? 1 : -1) * it.travel * (1 - pin - pout);
+      }
+      it.el.style.transform = `translate${it.axis === "y" ? "Y" : "X"}(${offset.toFixed(2)}px)`;
+    }
+  }
+
+  const q = new URLSearchParams(location.search), h = location.hash.match(/t=(\d+(?:\.\d+)?)/);
+  document.fonts.ready.then(() => {
+    for (const it of items) if (it.win) {            // size line windows to their text, then set the travel
+      const w = it.el.offsetWidth + 4, hh = it.el.offsetHeight;
+      Object.assign(it.win.style, { width: w + "px", height: hh + "px" });
+      it.travel = hh + 4;
+    }
+    if (q.has("render")) {                            // frame-stepped export (render.mjs)
+      window.seek = t => new Promise(r => { apply(t); requestAnimationFrame(() => requestAnimationFrame(r)); });
+      window.LOOP_MS = L; apply(0); return;
+    }
+    if (location.hash === "#still" || matchMedia("(prefers-reduced-motion: reduce)").matches) { apply(0, true); return; }
+    if (h) { apply(+h[1]); return; }
+    const t0 = performance.now();
+    (function tick(now) { apply(now - t0); requestAnimationFrame(tick); })(t0);
+  });
+})();
+</script>
+</body>
+</html>

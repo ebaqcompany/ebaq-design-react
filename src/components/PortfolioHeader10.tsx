@@ -2,12 +2,15 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { LottieRefCurrentProps } from "lottie-react";
 import { LottiePlayer as Lottie } from "./LottiePlayer";
 import { VideoSources } from "./Media";
+import { useMediaQuery } from "./ui";
 
 type ImageProps = {
   src: string;
   alt?: string;
   kind?: "image" | "video" | "lottie";
   backgroundColor?: string;
+  // Lottie only: a phone version with the logo filling more of the frame.
+  mobileSrc?: string;
 };
 
 type Tag = {
@@ -34,15 +37,17 @@ export type PortfolioHeader10Props = React.ComponentPropsWithoutRef<"section"> &
 const HeaderMedia = ({ image }: { image: ImageProps }) => {
   const [animationData, setAnimationData] = useState<object | null>(null);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  const lottieSrc = isMobile && image.mobileSrc ? image.mobileSrc : image.src;
 
   useEffect(() => {
     if (image.kind !== "lottie") return;
 
-    fetch(image.src)
+    fetch(lottieSrc)
       .then((response) => response.json())
       .then(setAnimationData)
       .catch((error) => console.error("Failed to load portfolio header Lottie:", error));
-  }, [image.kind, image.src]);
+  }, [image.kind, lottieSrc]);
 
   if (image.kind === "lottie") {
     const replayAnimation = () => lottieRef.current?.goToAndPlay(0, true);

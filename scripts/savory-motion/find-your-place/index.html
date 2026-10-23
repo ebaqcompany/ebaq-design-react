@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find Your Place — Motion R3</title>
+<style>
+  @font-face {
+    font-family: "PP Editorial Old";
+    src: url("assets/fonts/PPEditorialOld-Italic.otf") format("opentype");
+    font-weight: 400; font-style: italic;
+  }
+  /* colorways = Figma 90:1298 "SAVORY — Static colorways" (R3, Oct 21); pick with ?cw=… */
+  :root { --bg: #b3c3d6; --ink: #7b0f1e; }
+  html, body { margin: 0; height: 100%; background: #0e0f11; overflow: hidden; }
+  body { display: grid; place-items: center; }
+
+  #stage {
+    position: relative; width: 1920px; height: 1080px; flex: none;
+    background: var(--bg); overflow: hidden;
+    transform-origin: center center;
+  }
+  .abs { position: absolute; }
+
+  /* ---------- wordmark (Figma 124:90: bold Roxborough, shifted O) ---------- */
+  .clip { position: absolute; overflow: hidden; }
+  .clip > img { position: absolute; display: block; }
+  .ocol { position: absolute; left: 0; top: 0; width: 107.652px; will-change: transform; color: var(--ink); }
+  .ocol svg { position: absolute; left: 0; width: 107.652px; height: 104.078px; display: block; overflow: visible; }
+
+  /* faint chain (Figma 124:91, 11%) */
+  #chain { position: absolute; left: 378.645px; top: 0; width: 107.652px; height: 1080px; opacity: .11; }
+
+  #tagline {
+    position: absolute; left: 890.352px; top: 466px; margin: 0;
+    font-family: "PP Editorial Old", serif; font-style: italic; font-weight: 400;
+    font-size: 124px; line-height: 1.2; color: var(--ink); white-space: nowrap;
+    font-feature-settings: "ss01" 1, "dnom" 1, "dlig" 1;
+  }
+
+  /* ---------- photos ---------- */
+  .ph { position: absolute; left: 0; top: 0; overflow: hidden; will-change: transform; background: #2a2622; }
+  .ph img { position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover; display: block; will-change: transform; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- faint O chain, behind everything -->
+  <div id="chain"><div class="ocol" id="chainCol"></div></div>
+
+  <!-- SAVORY wordmark: static S A V R Y (bold) + the O window -->
+  <svg id="savry" class="abs" style="left:108px;top:486.318px;width:582.35px;height:108.365px;color:var(--ink)" viewBox="0 0 965.414 179.646" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M340.356 7.34668C333.405 7.97867 328.112 9.40135 324.478 11.6133C321.002 13.6673 319.263 17.143 319.263 22.041C319.263 25.517 320.29 29.783 322.344 34.8389L371.64 158.316L424.729 34.8389C426.94 29.7831 428.046 25.3592 428.046 21.5674C428.046 17.3014 426.545 14.2202 423.543 12.3242C420.699 10.2702 416.433 8.61068 410.745 7.34668V6.39941H454.354V7.34668C448.982 8.92668 444.557 11.534 441.081 15.168C437.763 18.802 434.05 25.4382 429.942 35.0762L374.247 164.241L351.969 179.646L352.68 174.669L292.245 24.6484C290.665 20.6984 288.769 17.0641 286.557 13.7461C284.503 10.4282 282.528 7.97939 280.632 6.39941H340.356V7.34668Z" fill="currentColor"/>
+<path d="M65.1748 3.08105C88.5588 3.08105 107.756 10.2704 122.766 24.6484L101.673 58.0654C101.989 55.2214 102.147 53.088 102.147 51.666C102.147 42.66 99.9347 34.7598 95.5107 27.9658C91.0868 21.1719 85.2406 16.0365 77.9727 12.5605C70.7048 8.9267 62.8836 7.11035 54.5098 7.11035C43.9239 7.11039 36.1821 9.87532 31.2842 15.4053C26.3863 20.9352 23.9366 28.1239 23.9365 36.9717C23.9365 45.5037 26.0699 52.4561 30.3359 57.8281C34.6019 63.0421 40.0535 67.1504 46.6895 70.1523C53.4833 72.9962 61.8569 75.5244 71.8105 77.7363C107.677 85.9523 125.61 102.068 125.61 126.084C125.61 135.248 123.161 143.622 118.263 151.206C113.365 158.632 106.097 164.557 96.459 168.981C86.8211 173.405 75.2872 175.617 61.8574 175.617C48.7434 175.617 36.8926 173.563 26.3066 169.455C15.7208 165.347 6.95194 159.975 0 153.339L20.6191 120.396C20.4612 121.66 20.3818 123.556 20.3818 126.084C20.3818 135.248 22.7522 143.306 27.4922 150.258C32.3902 157.052 38.7895 162.266 46.6895 165.9C54.7473 169.534 63.2793 171.351 72.2852 171.351C84.6089 171.351 93.4571 168.033 98.8291 161.397C104.201 154.762 106.887 146.861 106.887 137.697C106.887 130.113 105.07 124.03 101.436 119.448C97.8016 114.708 92.8248 111.074 86.5049 108.546C80.1849 105.86 71.5738 103.253 60.6719 100.725C40.132 95.8266 25.6748 88.7165 17.3008 79.3945C8.92701 70.0726 4.74023 59.8028 4.74023 48.585C4.74024 39.4211 7.18908 31.4424 12.0869 24.6484C16.9849 17.6964 23.9374 12.4026 32.9434 8.76855C42.1072 4.9767 52.8511 3.08107 65.1748 3.08105Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M230.493 0C230.493 1.106 230.809 2.68623 231.441 4.74023C232.073 6.79427 233.496 10.5863 235.708 16.1162L285.715 142.438C288.717 150.021 291.245 155.788 293.299 159.738C295.511 163.53 297.802 166.295 300.172 168.033C302.542 169.771 305.544 170.877 309.178 171.351V172.299H242.581V171.351C249.375 170.877 254.509 169.534 257.985 167.322C261.619 165.11 263.437 161.634 263.437 156.894C263.436 153.26 262.409 148.915 260.355 143.859L255.615 132.009H162.948L157.734 143.859C155.523 148.915 154.417 153.339 154.417 157.131C154.417 161.397 155.839 164.557 158.683 166.611C161.685 168.507 166.03 170.087 171.718 171.351V172.299H128.109V171.351C133.481 169.771 137.827 167.164 141.145 163.53C144.621 159.896 148.413 153.26 152.521 143.622L205.135 22.2783L204.66 17.0645L208.452 14.457L230.493 0ZM164.607 127.743H253.957L211.06 20.6191L164.607 127.743Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M716.764 6.39941C736.356 6.39941 751.682 10.1121 762.742 17.5381C773.802 24.9641 779.332 35.787 779.332 50.0068C779.332 62.3308 775.145 73.0753 766.771 82.2393C758.397 91.403 746.942 97.7232 732.406 101.199L761.794 141.015C768.114 149.705 773.723 156.104 778.621 160.212C783.677 164.162 789.839 167.954 797.106 171.588V172.299H754.21V168.271L707.995 104.28H675.763V158.79C675.763 162.74 677.343 165.663 680.503 167.559C683.663 169.297 688.087 170.482 693.775 171.114V172.299H633.577V171.114C639.265 170.482 643.689 169.297 646.849 167.559C650.009 165.663 651.589 162.74 651.589 158.79V19.9082C651.589 15.9582 650.009 13.114 646.849 11.376C643.689 9.48006 639.265 8.21598 633.577 7.58398V6.39941H716.764ZM675.763 94.7998C688.087 98.2758 700.49 100.014 712.972 100.014C723.242 100.014 731.379 98.829 737.383 96.459C743.545 94.089 748.127 89.9808 751.129 84.1348C754.131 78.1308 755.632 69.6781 755.632 58.7764C755.632 44.3984 752.077 32.7845 744.967 23.9365C737.857 15.0888 724.19 10.665 703.966 10.665H675.763V94.7998Z" fill="currentColor"/>
+<path d="M842.885 27.9658L884.597 96.2217L923.228 35.3135C927.336 28.9935 929.39 23.6996 929.39 19.4336C929.39 15.7999 927.81 13.1139 924.65 11.376C921.49 9.63797 916.829 8.29468 910.667 7.34668V6.39941H965.414V7.34668C957.988 8.92666 951.747 11.3764 946.691 14.6943C941.793 18.0123 936.658 23.8584 931.286 32.2324L887.441 100.725V158.79C887.441 162.74 889.1 165.663 892.418 167.559C895.894 169.297 901.029 170.482 907.823 171.114V172.299H842.885V171.114C849.679 170.482 854.735 169.297 858.053 167.559C861.529 165.663 863.267 162.74 863.267 158.79V105.465L815.156 27.9658C807.73 15.9579 799.356 9.08473 790.034 7.34668V6.39941H830.087L842.885 27.9658Z" fill="currentColor"/>
+</svg>
+  <div class="clip" id="oClip" style="left:378.645px;top:490.117px;width:107.652px;height:100.133px">
+    <div class="ocol" id="mainCol"></div></div>
+
+  <p id="tagline">Find your place</p>
+
+  <div id="photos"></div>
+</div>
+
+<script>
+/* =========================================================
+   SAVORY — "Find your place" · fake-scroll parallax loop
+   Everything is a pure function of time t → renderAt(t),
+   so the browser preview and the MP4 frames are identical.
+   ========================================================= */
+const W = 1920, H = 1080;
+// Bold wordmark geometry (Figma 115:283 draft at 237 px, scaled to 582.35 px wide)
+const K = 582.35 / 965.414;
+const P = 191.9053 * K;             // O pitch = O height + gap (≈115.76)
+const O_TOP = 490.117;              // O window top (abs) = cap height line
+const O_REST = 58.79 * K - P;       // rest: lower O top sits 58.79 (×K) into the window → the Figma split-O
+const O_D = "M89.349 172.536C72.759 172.536 57.67 169.06 44.082 162.108C30.494 154.998 19.75 144.965 11.85 132.009C3.95 118.895 0 103.648 0 86.268C0 68.888 3.95 53.72 11.85 40.764C19.75 27.65 30.494 17.617 44.082 10.665C57.67 3.555 72.759 0 89.349 0C105.781 0 120.791 3.555 134.379 10.665C147.967 17.617 158.711 27.65 166.611 40.764C174.511 53.72 178.461 68.888 178.461 86.268C178.461 103.648 174.511 118.895 166.611 132.009C158.711 144.965 147.967 154.998 134.379 162.108C120.791 169.06 105.781 172.536 89.349 172.536ZM98.829 168.27C109.573 168.27 118.974 165.426 127.032 159.738C135.248 154.05 141.568 146.071 145.992 135.801C150.574 125.373 152.865 113.523 152.865 100.251C152.865 84.293 149.626 68.967 143.148 54.273C136.828 39.421 128.059 27.413 116.841 18.249C105.781 8.927 93.378 4.266 79.632 4.266C68.888 4.266 59.408 7.11 51.192 12.798C43.134 18.486 36.814 26.465 32.232 36.735C27.808 47.005 25.596 58.776 25.596 72.048C25.596 88.006 28.756 103.411 35.076 118.263C41.554 133.115 50.323 145.202 61.383 154.524C72.601 163.688 85.083 168.27 98.829 168.27Z";
+
+/* ---- timeline: three "mouse-wheel" flicks per loop ----
+   Each flick moves the chain by a whole number of O's, so every
+   rest frame shows the exact Figma split-O.  */
+const LOOP = 10;                    // seconds
+const FLICKS = [                    // start (s), distance (O's), duration (s) — equal flicks, evenly spaced
+  { t: 0.5,   n: 3, d: 1.9 },
+  { t: 3.833, n: 3, d: 1.9 },
+  { t: 7.167, n: 3, d: 1.9 },
+];
+const D = FLICKS.reduce((a, f) => a + f.n, 0) * P;   // scroll per loop
+
+// cubic-bezier easing (CSS-compatible). Quick wheel kick, long inertial glide.
+function bezier(x1, y1, x2, y2) {
+  const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx;
+  const cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+  const sx = u => ((ax * u + bx) * u + cx) * u;
+  const sy = u => ((ay * u + by) * u + cy) * u;
+  const dx = u => (3 * ax * u + 2 * bx) * u + cx;
+  return x => {
+    if (x <= 0) return 0; if (x >= 1) return 1;
+    let u = x;
+    for (let i = 0; i < 8; i++) { const e = sx(u) - x, d = dx(u); if (Math.abs(e) < 1e-6 || !d) break; u -= e / d; }
+    let lo = 0, hi = 1; // bisection fallback
+    if (Math.abs(sx(u) - x) > 1e-5) { u = x; for (let i = 0; i < 40; i++) { sx(u) < x ? lo = u : hi = u; u = (lo + hi) / 2; } }
+    return sy(u);
+  };
+}
+const ease = bezier(0.3, 0.0, 0.0, 1.0);
+
+// scroll position (px), monotonically increasing; s(t+LOOP) = s(t) + D
+function scrollAt(t) {
+  const k = Math.floor(t / LOOP), lt = t - k * LOOP;
+  let s = k * D;
+  for (const f of FLICKS) s += f.n * P * ease((lt - f.t) / f.d);
+  return s;
+}
+
+/* ---- photos in LANES ----
+   Each lane is a column with its own parallax speed (× scroll). Lanes never share
+   x-space, and photos inside a lane all move together, so no two photos can ever
+   overlap; they only pass over the tagline. Figma originals (104:166) keep their
+   exact x/y at t=0; added photos sit in the free gaps of the lane's loop track. */
+const LANES = [
+  { v: 1.75, photos: [            // x 826–1003
+    { src: "photo-104",      x:  886.2, y:  157.7, w: 147.7, h: 196.9 },
+    { src: "photo-168",      x:  825.7, y:  747.9, w: 177.0, h: 247.9 },
+  ]},
+  { v: 1.20, photos: [            // x 1078–1218
+    { src: "green-study",    x: 1078.0, y: 1144,   w: 140.0, h: 186.0 },
+  ]},
+  { v: 1.35, photos: [            // x 1268–1421
+    { src: "photo-97",       x: 1272.2, y:   91.1, w: 148.4, h: 222.5 },
+    { src: "photo-167",      x: 1267.6, y:  614.9, w: 153.0, h: 229.1 },
+  ]},
+  { v: 2.00, photos: [            // x 1462–1594
+    { src: "kitchen-island", x: 1466.0, y: 1718,   w: 128.0, h: 192.0 },
+  ]},
+  { v: 1.55, photos: [            // x 1631–1816
+    { src: "photo-110",      x: 1630.9, y:  313.7, w: 168.0, h: 228.4 },
+    { src: "photo-175",      x: 1645.3, y:  756.4, w: 170.8, h: 239.3 },
+  ]},
+];
+const DRIFT = 12;                   // px/s ambient float (× speed) so photos never fully freeze
+const MIN_GAP = 120;                // min vertical air between photos in a lane
+
+const stage = document.getElementById("stage");
+const photosEl = document.getElementById("photos");
+const svgO = top => `<svg viewBox="0 0 178.461 172.536" style="top:${top}px"><path fill="currentColor" d="${O_D}"/></svg>`;
+
+// O columns: draw a run of O's, then translate the run modulo P
+function buildCol(el, from, to) { let h = ""; for (let k = from; k <= to; k++) h += svgO(k * P); el.innerHTML = h; }
+const mainCol = document.getElementById("mainCol"), chainCol = document.getElementById("chainCol");
+buildCol(mainCol, -2, 2);
+buildCol(chainCol, -6, 6);
+
+const PHOTOS = [];
+const xr = l => [Math.min(...l.photos.map(p => p.x)), Math.max(...l.photos.map(p => p.x + p.w))];
+LANES.sort((a, b) => a.v - b.v)     // slower lanes underneath
+  .forEach((lane, li, all) => {
+    const travel = lane.v * (D + DRIFT * LOOP);
+    const hmax = Math.max(...lane.photos.map(p => p.h));
+    const k = Math.max(1, Math.floor(travel / (H + hmax + MIN_GAP)));
+    lane.track = travel / k;        // wraps a whole number of times per loop → seamless
+    // sanity: spacing inside the lane (incl. wrap) and no x-overlap with other lanes
+    const ps = [...lane.photos].sort((a, b) => a.y - b.y);
+    ps.forEach((p, i) => {
+      const n = ps[(i + 1) % ps.length], ny = n.y + (i + 1 === ps.length ? lane.track : 0);
+      if (ps.length > 1 && ny - (p.y + p.h) < MIN_GAP) console.warn("lane gap too small", p.src, n.src, ny - (p.y + p.h));
+    });
+    if (lane.track < H + hmax) console.warn("lane track too short", lane.v);
+    for (const o of all) if (o !== lane) { const [a0, a1] = xr(lane), [b0, b1] = xr(o); if (a0 < b1 && b0 < a1) console.warn("lanes overlap in x", lane.v, o.v); }
+    for (const p of lane.photos) {
+      p.v = lane.v; p.track = lane.track;
+      p.el = document.createElement("div");
+      p.el.className = "ph";
+      p.el.style.width = p.w + "px"; p.el.style.height = p.h + "px";
+      p.el.innerHTML = `<img src="assets/photos/${p.src}.jpg" alt="">`;
+      p.img = p.el.firstChild;
+      photosEl.appendChild(p.el);
+      PHOTOS.push(p);
+    }
+  });
+
+const mod = (a, n) => ((a % n) + n) % n;
+
+function renderAt(t) {
+  const s = scrollAt(t);
+  // chain + O counter: scroll down at 1×
+  const o = mod(s, P);
+  mainCol.style.transform = `translateY(${(O_REST + o).toFixed(3)}px)`;
+  chainCol.style.transform = `translateY(${(O_TOP + O_REST + o).toFixed(3)}px)`;
+  // photos: parallax at their own speed, flowing top → bottom
+  for (const p of PHOTOS) {
+    const off = p.v * s + p.v * DRIFT * t;
+    const y = mod(p.y + p.h + off, p.track) - p.h;
+    p.el.style.transform = `translate3d(${p.x}px, ${y.toFixed(3)}px, 0)`;
+    // inner parallax: image drifts slightly inside its frame
+    const c = (y + p.h / 2 - H / 2) / H;               // -0.5 … 0.5 across the frame
+    p.img.style.transform = `translate3d(0, ${(-c * p.h * 0.12).toFixed(3)}px, 0)`;
+  }
+}
+window.renderAt = renderAt;
+window.LOOP = LOOP;
+
+// fit stage to window for preview
+// (absolute + translate keeps the 1920 stage centred even when the window is narrower than it)
+function fit() {
+  const k = Math.min(innerWidth / W, innerHeight / H);
+  Object.assign(stage.style, { position: "absolute", left: "50%", top: "50%", transform: `translate(-50%, -50%) scale(${k})` });
+}
+const params = new URLSearchParams(location.search);
+const COLORWAYS = {                 // Figma 90:1298 — background / ink (wordmark, O chain, tagline)
+  "waxred-on-blue":    { bg: "#B3C3D6", ink: "#7B0F1E" },
+  "cream-on-waxred":   { bg: "#7B0F1E", ink: "#F2EDEA" },
+  "charcoal-on-cream": { bg: "#DCD6CA", ink: "#292C2E" },
+  "cream-on-charcoal": { bg: "#292C2E", ink: "#F2EDEA" },
+};
+const cw = COLORWAYS[params.get("cw")] || COLORWAYS["waxred-on-blue"];
+stage.style.setProperty("--bg", cw.bg); stage.style.setProperty("--ink", cw.ink);
+window.COLORWAYS = Object.keys(COLORWAYS);
+if (params.has("render")) {
+  document.body.style.display = "block"; stage.style.transform = "none";
+  renderAt(0);
+} else {
+  addEventListener("resize", fit); fit();
+  const t0 = performance.now();
+  (function loop(now) { renderAt((now - t0) / 1000); requestAnimationFrame(loop); })(t0);
+}
+</script>
+</body>
+</html>

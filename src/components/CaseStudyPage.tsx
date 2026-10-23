@@ -123,6 +123,7 @@ export const CaseStudyPage = () => {
             alt: study.hero.alt,
             kind: study.hero.kind ?? "image",
             backgroundColor: study.hero.backgroundColor,
+            mobileSrc: study.hero.mobileSrc,
           }}
         />
 

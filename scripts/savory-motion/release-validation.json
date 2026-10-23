@@ -1,0 +1,50 @@
+{
+  "base": "http://127.0.0.1:5192",
+  "results": [
+    {
+      "width": 1440,
+      "savoryName": true,
+      "cleanImage": [
+        3840,
+        2160
+      ],
+      "sparkAbsentFromListingAndRecommendations": true,
+      "sparkNotFound": true,
+      "homepageThreeRows": true,
+      "trustedStripOrder": [
+        "Elevate",
+        "Savory",
+        "Next Dim AI"
+      ],
+      "medihuannaOffset": 0,
+      "guidelinesLinks": true
+    },
+    {
+      "width": 390,
+      "savoryName": true,
+      "cleanImage": [
+        3840,
+        2160
+      ],
+      "sparkAbsentFromListingAndRecommendations": true,
+      "sparkNotFound": true,
+      "homepageThreeRows": true,
+      "trustedStripOrder": [
+        "Elevate",
+        "Savory",
+        "Next Dim AI"
+      ],
+      "medihuannaOffset": 0,
+      "guidelinesLinks": true
+    }
+  ],
+  "verifiedOn": "2026-10-23 America/New_York",
+  "build": "Full production build passed from a release-only copy of staged files, excluding unrelated dirty files and untracked assets.",
+  "scope": {
+    "savoryDisplayName": "Savory",
+    "spark": "Preserved as a local unpublished draft and excluded entirely from release source/assets",
+    "unreviewedBlogDrafts": "Excluded",
+    "unrelatedAirportExecutiveChanges": "Excluded",
+    "histories": "Merged local main and origin/main, preserving both"
+  }
+}

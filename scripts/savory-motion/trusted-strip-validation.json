@@ -1,0 +1,55 @@
+{
+  "verifiedOn": "2026-10-23 America/New_York",
+  "source": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/PORTFOLIO/SAVORY logo.svg",
+  "website": "/client-logos/savory-wordmark.svg",
+  "sourceSVGUnmodified": true,
+  "sha256": "09eaf4a72dd20ee30651b7d229381244b6861be9811427587b2d2fca7e3b5f2e",
+  "results": [
+    {
+      "viewportWidth": 1440,
+      "firstThreeLogos": [
+        "Elevate",
+        "The Savory Team",
+        "Next Dim AI"
+      ],
+      "savory": {
+        "alt": "The Savory Team",
+        "src": "/client-logos/savory-wordmark.svg",
+        "width": 123.171875,
+        "height": 23.03125,
+        "transform": "none",
+        "className": "client-logo client-logo--72",
+        "relativeCenterY": 0
+      },
+      "medihuanna": {
+        "previousOffset": -10,
+        "currentOffset": 0,
+        "movedDown": 10
+      },
+      "allOtherLogoClassesTransformsAndVerticalOffsetsUnchanged": true
+    },
+    {
+      "viewportWidth": 390,
+      "firstThreeLogos": [
+        "Elevate",
+        "The Savory Team",
+        "Next Dim AI"
+      ],
+      "savory": {
+        "alt": "The Savory Team",
+        "src": "/client-logos/savory-wordmark.svg",
+        "width": 107.796875,
+        "height": 20.15625,
+        "transform": "none",
+        "className": "client-logo client-logo--72",
+        "relativeCenterY": -0.0078125
+      },
+      "medihuanna": {
+        "previousOffset": -10,
+        "currentOffset": 0,
+        "movedDown": 10
+      },
+      "allOtherLogoClassesTransformsAndVerticalOffsetsUnchanged": true
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "verifiedOn": "2026-10-23 America/New_York",
+  "currentSource": "/Users/ebaq/Dropbox/PROJECTS/SAVORY/PORTFOLIO/SAVORY Web Clean.jpg",
+  "sourceModifiedAt": "2026-10-23T11:19:06.121Z",
+  "sourceBytes": 2191058,
+  "sha256": "f73d40e3f971b096ce1bead6333d94e50237d6b79c4a9dcc85655b735afa43e8",
+  "website": "/case-study/savory/25-website-design.jpg",
+  "sourceWebsiteAndHTTPBytesIdentical": true,
+  "nativeImageCopiedWithoutResizingOrRecompression": true,
+  "true2xExport": true,
+  "currentFigmaCompositionMatches": true,
+  "referenceMeanAbsoluteRGBDifference": [
+    0.783324893904321,
+    0.42909758391203706,
+    0.8469169560185185
+  ],
+  "couchHiddenFromCaseStudy": true,
+  "couchOriginalWebPAndPSDPreserved": true,
+  "actualAdjacentImages": [
+    "/case-study/savory/03-tote.webp",
+    "/case-study/savory/25-website-design.jpg",
+    "/case-study/savory/20-stamp.webp"
+  ],
+  "imageInfo": {
+    "naturalWidth": 3840,
+    "naturalHeight": 2160,
+    "renderedWidth": 1280,
+    "renderedHeight": 720,
+    "srcset": "",
+    "filter": "none",
+    "transform": "none",
+    "objectFit": "fill",
+    "imageRendering": "auto",
+    "ancestors": [
+      {
+        "tag": "IMG",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "DIV",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "DIV",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "DIV",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "DIV",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "SECTION",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "MAIN",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "DIV",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "DIV",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "BODY",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      },
+      {
+        "tag": "HTML",
+        "filter": "none",
+        "transform": "none",
+        "zoom": "1",
+        "opacity": "1"
+      }
+    ]
+  }
+}

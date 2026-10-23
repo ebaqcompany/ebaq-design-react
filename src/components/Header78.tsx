@@ -334,6 +334,7 @@ export const Header78Defaults: Props = {
 
   // Row 1: Logo Animations
   row1: [
+    { type: "lottie", src: "/case-study/savory/hero-logo.json", alt: "Savory", bgColor: "#B3C3D6" },
     { type: "video", src: "/portfolio/logos/orbio-logo.webm", alt: "Orbio", bgColor: "#0B0B0C" },
     { type: "lottie", src: "/portfolio/logos/ElevateLogoBGTop.json", alt: "Elevate", bgColor: "#000000", fit: "cover" },
     { type: "lottie", src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json", alt: "NextDim", bgColor: "#181735" },
@@ -353,6 +354,7 @@ export const Header78Defaults: Props = {
 
   // Row 2: Identity/Bento Shots
   row2: [
+    { type: "image", src: "/portfolio/identities/savory-bento.webp", alt: "Savory Identity" },
     { type: "image", src: "/portfolio/identities/orbio-bento.webp", alt: "Orbio Identity" },
     { type: "image", src: "/portfolio/identities/elevate-bento.webp", alt: "Elevate Identity" },
     { type: "image", src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim Identity" },
@@ -371,6 +373,7 @@ export const Header78Defaults: Props = {
 
   // Row 3: Website Shots
   row3: [
+    { type: "image", src: "/portfolio/websites/savory-web.webp", alt: "Savory Website" },
     { type: "image", src: "/portfolio/websites/orbio-web.webp", alt: "Orbio Website" },
     { type: "image", src: "/portfolio/websites/elevate-web.webp", alt: "Elevate Website" },
     { type: "image", src: "/portfolio/websites/nextdim-web-portfolio.webp", alt: "NextDim Website" },

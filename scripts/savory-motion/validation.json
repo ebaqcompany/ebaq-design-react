@@ -1,0 +1,218 @@
+{
+  "browser": "155.0.8059.85",
+  "sourceWaxRed": [
+    123,
+    15,
+    30
+  ],
+  "motion": {
+    "specimenUnchangedAtMs": [
+      0,
+      700,
+      1000,
+      1300,
+      1800,
+      3000,
+      6600,
+      7100,
+      8000
+    ],
+    "supportingText": "All title glyphs and metadata lines move only on Y, start below mask, settle at zero, exit above mask; all masks overflow:hidden.",
+    "counts": {
+      "title": 12,
+      "specimen": 6
+    }
+  },
+  "videos": [
+    {
+      "name": "17-type-specimen.webm",
+      "rgb": [
+        {
+          "point": [
+            900,
+            300
+          ],
+          "expected": [
+            123,
+            15,
+            30
+          ],
+          "actual": [
+            123,
+            15,
+            30
+          ]
+        }
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 8.1,
+      "played": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1920,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "r_frame_rate": "60/1"
+          }
+        ],
+        "format": {
+          "duration": "8.100000",
+          "size": "1220850"
+        }
+      },
+      "ffmpegWaxRed": [
+        122,
+        15,
+        30
+      ]
+    },
+    {
+      "name": "18-colors.webm",
+      "rgb": [
+        {
+          "point": [
+            192,
+            400
+          ],
+          "expected": [
+            242,
+            237,
+            234
+          ],
+          "actual": [
+            241,
+            238,
+            232
+          ]
+        },
+        {
+          "point": [
+            500,
+            400
+          ],
+          "expected": [
+            123,
+            15,
+            30
+          ],
+          "actual": [
+            123,
+            15,
+            30
+          ]
+        },
+        {
+          "point": [
+            960,
+            400
+          ],
+          "expected": [
+            41,
+            44,
+            46
+          ],
+          "actual": [
+            40,
+            44,
+            45
+          ]
+        },
+        {
+          "point": [
+            1344,
+            400
+          ],
+          "expected": [
+            220,
+            214,
+            202
+          ],
+          "actual": [
+            219,
+            214,
+            201
+          ]
+        },
+        {
+          "point": [
+            1728,
+            400
+          ],
+          "expected": [
+            179,
+            195,
+            214
+          ],
+          "actual": [
+            179,
+            195,
+            213
+          ]
+        }
+      ],
+      "width": 1920,
+      "height": 1080,
+      "duration": 13.3,
+      "played": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1920,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "r_frame_rate": "60/1"
+          }
+        ],
+        "format": {
+          "duration": "13.300000",
+          "size": "1448892"
+        }
+      },
+      "ffmpegWaxRed": [
+        122,
+        15,
+        30
+      ]
+    }
+  ],
+  "paletteSourceUnchanged": true,
+  "caseStudyPlayback": [
+    {
+      "src": "http://localhost:5190/case-study/savory/18-colors.webm",
+      "readyState": 4,
+      "currentTime": 0.443038,
+      "width": 1920,
+      "error": null
+    },
+    {
+      "src": "http://localhost:5190/case-study/savory/17-type-specimen.webm",
+      "readyState": 4,
+      "currentTime": 0.697501,
+      "width": 1920,
+      "error": null
+    }
+  ],
+  "verifiedOn": "2026-10-23 America/New_York",
+  "build": "npm run build passed (TypeScript, client, SSR, route generation)",
+  "limitations": [
+    "Chrome 155 verified; Safari display behavior not tested.",
+    "Original untagged WebMs decoded close to target in this Chrome; reported orange appearance not reproduced here.",
+    "8-bit YUV encoding can round other palette channels by up to 2."
+  ]
+}

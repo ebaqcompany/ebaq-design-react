@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SAVORY · colours loop (columns)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  SAVORY colors — columns (Figma 330:85) as the ORBIO palette accordion (ORBIO/web/palette), same choreography:
+  five equal columns → each colour in turn widens to 880 px on cubic-bezier(.77,0,.175,1) over 900 ms, 2.2 s apart, while
+  the others compress to bands → back to five equal columns exactly at the loop point. Values fade out in a band and back
+  in 380 ms after their column opens; the table spreads with its column (key left, value right).
+  Names are live Roxborough CF Regular (the Figma frame shows a Playfair Display stand-in) in the Figma name box:
+  90 px, -1.8 px tracking, 120 px line, rotated 90°, top 30, right edge 26 px in.
+  ?render → window.seek(ms) + window.LOOP_MS for _tools/export_loop.mjs. #t=1234 holds a frame.
+-->
+<style>
+  @font-face { font-family: "Roxborough CF"; src: url(fonts/RoxboroughCF-Regular.ttf); font-weight: 400; }
+  @font-face { font-family: "Manrope"; src: url(fonts/Manrope-Medium.ttf); font-weight: 500; }
+  @font-face { font-family: "Manrope"; src: url(fonts/Manrope-SemiBold.ttf); font-weight: 600; }
+  html, body { margin: 0; height: 100%; background: #292C2E; overflow: hidden; }
+  #stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; display: flex; overflow: hidden; transform-origin: 50% 50%; }
+  .sw { position: relative; flex: none; width: 384px; height: 1080px; overflow: hidden; background: var(--bg); color: var(--fg);
+        box-shadow: 6px 0 0 var(--bg); }   /* paints under the next column, so a sub-pixel edge can never show a gap */
+  .name { position: absolute; top: 30px; left: calc(100% - 26px); margin: 0; transform-origin: 0 0; transform: rotate(90deg);
+          font: 400 90px/120px "Roxborough CF"; letter-spacing: -1.8px; white-space: nowrap; }
+  .vals { position: absolute; left: 28px; right: 28px; bottom: 40px; min-width: 328px; margin: 0; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; box-sizing: border-box; height: 44px;
+         border-top: 1px solid var(--rule); white-space: nowrap; }
+  .row dt { font: 600 12px/normal Manrope; letter-spacing: 1.92px; text-transform: uppercase; }
+  .row dd { margin: 0; font: 500 18px/normal Manrope; }
+</style>
+</head>
+<body>
+<main id="stage" aria-label="The Savory Team color palette"></main>
+<script>
+(() => {
+  // name, hex, RGB, CMYK, HSL, Pantone, type colour, rule colour (the values on Figma 330:85)
+  const C = [
+    ["Off-white", "#F2EDEA", "242 / 237 / 234", "0 / 2 / 3 / 5",    "23 / 24 / 93",  "Pantone 9285 C", "#7B0F1E", "rgba(123,15,30,.28)"],
+    ["Wax Red",   "#7B0F1E", "123 / 15 / 30",   "0 / 88 / 76 / 52", "352 / 78 / 27", "Pantone 1815 C", "#F2EDEA", "rgba(242,237,234,.28)"],
+    ["Asphalt",   "#292C2E", "41 / 44 / 46",    "11 / 4 / 0 / 82",  "204 / 6 / 17",  "Pantone 426 C",  "#F2EDEA", "rgba(242,237,234,.28)"],
+    ["Cream",     "#DCD6CA", "220 / 214 / 202", "0 / 3 / 8 / 14",   "40 / 20 / 83",  "Pantone 7527 C", "#292C2E", "rgba(41,44,46,.28)"],
+    ["Sky Blue",  "#B3C3D6", "179 / 195 / 214", "16 / 9 / 0 / 16",  "213 / 30 / 77", "Pantone 537 C",  "#7B0F1E", "rgba(123,15,30,.28)"],
+  ];
+  const stage = document.getElementById("stage");
+  const cols = C.map(([name, hex, rgb, cmyk, hsl, pms, fg, rule]) => {
+    const s = document.createElement("section"); s.className = "sw";
+    s.style.setProperty("--bg", hex); s.style.setProperty("--fg", fg); s.style.setProperty("--rule", rule);
+    s.setAttribute("aria-label", `${name} ${hex}`);
+    const rows = [["HEX", hex], ["RGB", rgb], ["CMYK", cmyk], ["HSL", hsl], ["Pantone", pms]];
+    s.innerHTML = `<p class="name">${name}</p><dl class="vals">${rows.map(([k, v]) => `<div class="row"><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
+    stage.appendChild(s); return s;
+  });
+  const fit = () => { stage.style.transform = `translate(-50%, -50%) scale(${Math.min(innerWidth / 1920, innerHeight / 1080)})`; };
+  addEventListener("resize", fit); fit();
+
+  // ── one deterministic timeline (ORBIO/web/palette): every width and opacity is a function of t ──
+  const EQUAL = 1920 / C.length, FOCUS = 880, BAND = (1920 - FOCUS) / (C.length - 1), DUR = 900, STEP = 2200, START = 1400;
+  // [time, widened colour] (-1 = equal columns); the move back to equal lands exactly on the loop point
+  const W = C.map((_, i) => [START + i * STEP, i]);
+  W.push([START + C.length * STEP, -1]);
+  const L = W[W.length - 1][0] + DUR;
+  function bezier(x1, y1, x2, y2) {                                          // CSS cubic-bezier as a function
+    const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx, cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+    const X = u => ((ax * u + bx) * u + cx) * u, Y = u => ((ay * u + by) * u + cy) * u, dX = u => (3 * ax * u + 2 * bx) * u + cx;
+    return x => { if (x <= 0) return 0; if (x >= 1) return 1; let u = x;
+      for (let k = 0; k < 8; k++) { const d = dX(u); if (Math.abs(d) < 1e-6) break; u -= (X(u) - x) / d; }
+      let lo = 0, hi = 1; for (let k = 0; k < 20 && Math.abs(X(u) - x) > 1e-6; k++) { if (X(u) < x) lo = u; else hi = u; u = (lo + hi) / 2; }
+      return Y(u); };
+  }
+  const ease = bezier(.77, 0, .175, 1), fadeIn = bezier(.23, 1, .32, 1);
+  const clamp = x => Math.min(1, Math.max(0, x)), target = (f, i) => f < 0 ? EQUAL : i === f ? FOCUS : BAND;
+  const vals = cols.map(c => c.querySelector(".vals"));
+  function apply(t) {
+    t = ((t % L) + L) % L;
+    let k = -1; for (let n = 0; n < W.length; n++) if (W[n][0] <= t) k = n;
+    const cur = k < 0 ? [W[W.length - 1][0] - L, W[W.length - 1][1]] : W[k];
+    const prev = W[(k < 0 ? W.length - 2 : k - 1 + W.length) % W.length], p = ease(clamp((t - cur[0]) / DUR));
+    cols.forEach((c, i) => {
+      const a = target(prev[1], i), b = target(cur[1], i);
+      c.style.width = a + (b - a) * p + "px";
+      const was = a < 300, is = b < 300;                                      // values: out over 160 ms, back in 380 ms after widening
+      vals[i].style.opacity = was === is ? (is ? 0 : 1) : is ? 1 - clamp((t - cur[0]) / 160) : fadeIn(clamp((t - cur[0] - 380) / 360));
+    });
+  }
+
+  const q = new URLSearchParams(location.search), h = location.hash.match(/t=(\d+(?:\.\d+)?)/);
+  document.fonts.ready.then(() => {
+    if (q.has("render")) {                                                   // frame-stepped export (_tools/export_loop.mjs)
+      window.seek = t => new Promise(r => { apply(t); requestAnimationFrame(() => requestAnimationFrame(r)); });
+      window.LOOP_MS = L; apply(0); return;
+    }
+    if (h) { apply(+h[1]); return; }
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) { apply(0); return; }   // settled state: equal columns
+    const t0 = performance.now();
+    (function tick(now) { apply(now - t0); requestAnimationFrame(tick); })(t0);
+  });
+})();
+</script>
+</body>
+</html>

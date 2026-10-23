@@ -7,6 +7,8 @@ export type CaseStudyMedia = {
   backgroundColor?: string;
   span?: "full" | "half";
   fit?: "cover" | "contain";
+  // Lottie heroes: a phone version with the logo filling more of the frame.
+  mobileSrc?: string;
 };
 
 type CaseStudyImage = {
@@ -19,6 +21,8 @@ export type CaseStudyGalleryImage = CaseStudyImage & {
   url?: string;
   kind?: "image" | "video" | "lottie";
   span?: "full" | "half";
+  // Half-width tile that runs the height of the two tiles beside it (desktop only).
+  rowSpan?: 2;
   overlaySrc?: string;
   aspectRatio?: string;
 };
@@ -59,6 +63,7 @@ export type CaseStudyNextProject = {
 };
 
 export type CaseStudy = {
+  published?: boolean;
   slug: string;
   client: string;
   title: string;
@@ -81,7 +86,123 @@ export type CaseStudy = {
   seo?: { title?: string; description?: string; keywords?: string[] };
 };
 
-export const caseStudies: CaseStudy[] = [
+const allCaseStudies: CaseStudy[] = [
+  {
+    slug: "savory",
+    client: "Savory",
+    title: "An editorial identity for a Brooklyn real estate team",
+    summary:
+      "The Savory Team is a Brooklyn real estate team at Compass. After six months of design explorations that never felt right, they came to us for a fresh start. We created a premium identity built around a distinctive wordmark, with a wax seal, refined typography, and a warm color palette.",
+    services: ["Visual identity", "Logo design", "Motion", "Brand guidelines"],
+    industry: "Real estate",
+    year: "2026",
+    deliverables: ["Rebrand", "Logo design", "Logo lockups", "Logo animation", "Color palette", "Typography", "Business cards", "Wax seal stamp", "Brand guidelines", "Instagram templates", "LinkedIn banner", "HTML email signature", "Favicon", "Merchandise"],
+    seo: {
+      title: "Savory: Real Estate Branding Case Study | Ebaq Design",
+      description:
+        "Real estate rebrand case study for The Savory Team, a Brooklyn team at Compass: a new SAVORY wordmark with a split O, a wax-seal stamp, favicon and slogan lockups, logo animation, a Wax Red palette, and editorial typography.",
+      keywords: [
+        "real estate branding",
+        "real estate logo design",
+        "luxury real estate brand identity",
+        "Brooklyn branding",
+        "wordmark design",
+        "logo animation",
+        "NYC real estate marketing",
+      ],
+    },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/savory" },
+    preview: { src: "/case-study/savory/thumbnail.webp", alt: "SAVORY wordmark in cream on wax red, wax red on blue, charcoal on cream, and cream on charcoal" },
+    hero: {
+      src: "/case-study/savory/hero-logo.json",
+      alt: "Animated SAVORY wordmark: wax red capitals roll up into place on baby blue and the O comes to rest on its split",
+      kind: "lottie",
+      backgroundColor: "#B3C3D6",
+      mobileSrc: "/case-study/savory/hero-logo-mobile.json",
+    },
+    leadGallery: [
+      { src: "/case-study/savory/01-colorways.webp", alt: "SAVORY wordmark in four colorways: cream on wax red, wax red on blue, charcoal on cream, and cream on charcoal" },
+      { src: "/case-study/savory/06-business-card.webp", alt: "Baby blue business card for Scott Savory with wax red capitals and an embossed SAVORY seal, over a wax red card back" },
+    ],
+    content: [
+      {
+        type: "header",
+        heading: "An editorial foundation",
+        description:
+          "Roxborough CF capitals give SAVORY its distinctive voice, paired with PP Editorial Old Italic. Wax Red anchors the palette, balanced by Off-white, Asphalt, Cream, and Sky Blue. Together, color and typography bring the same refined character to every touchpoint.",
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: "/case-study/savory/18-colors.webm",
+            alt: "The Savory Team palette in five columns, Off-white, Wax Red, Asphalt, Cream, and Sky Blue, each widening in turn to show its HEX, RGB, CMYK, HSL, and Pantone values",
+            kind: "video",
+          },
+          {
+            src: "/case-study/savory/17-type-specimen.webm",
+            alt: "Roxborough CF specimen on wax red: Roxborough CF and AaBbCc slide in letter by letter, with its style, weight, use, and a note on the typeface",
+            kind: "video",
+          },
+        ],
+      },
+      {
+        type: "header",
+        heading: "One letter out of place",
+        description:
+          "The split O gives a classic wordmark an unexpected rhythm. In motion, the letters roll into place before the O settles on its split. On its own, it suggests a figure with raised arms: the moment a client finds their place. The wordmark and circular seal carry that idea across digital details and physical objects.",
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: "/case-study/savory/11-find-your-place.webm",
+            alt: "SAVORY in wax red on baby blue beside the line Find your place, as a chain of Os scrolls through the split O and Brooklyn interiors drift past",
+            kind: "video",
+          },
+          { src: "/case-study/savory/21-wall.jpg", alt: "Circular SAVORY emblem embossed into a textured wall in warm sunlight" },
+          { src: "/case-study/savory/13-tile-favicon.webp", alt: "Browser tab for The Savory Team with the split O favicon in cream on wax red", span: "half" },
+          {
+            src: "/case-study/savory/15-tile-signature.webp",
+            alt: "Scott Savory's email signature in a mail window, with a portrait, the SAVORY wordmark in wax red, New York coordinates, and contact details",
+            span: "half",
+            rowSpan: 2,
+          },
+          { src: "/case-study/savory/14-tile-instagram.webp", alt: "Instagram profile for thesavoryteam with the split O avatar in cream on wax red and New York coordinates in the bio", span: "half" },
+          { src: "/case-study/savory/23-pen.webp", alt: "Wax red pen with a warm off-white SAVORY wordmark and metallic shading on a cream background" },
+        ],
+      },
+      {
+        type: "header",
+        heading: "A place in the everyday",
+        description:
+          "From a rooftop billboard to social posts, the identity pairs editorial typography with warm color and a clear message. New York coordinates connect the applications to the team’s home, while the wordmark and seal bring the system to cups, totes, and a wax stamp.",
+      },
+      {
+        type: "gallery",
+        images: [
+          { src: "/case-study/savory/09-linkedin.png", alt: "LinkedIn profile banner with THE SAVORY TEAM in cream on wax red and the line Expert agents invested in you in italic" },
+          {
+            src: "/case-study/savory/19-social-carousel.webm",
+            alt: "Four Instagram posts in wax red, sky blue, off-white, and asphalt sliding right in a row, each growing into focus in the centre: the split O over a screening room, Expert agents invested in you, A thoughtful approach to New York real estate, and New developments in Brooklyn",
+            kind: "video",
+          },
+          { src: "/case-study/savory/22-billboard-building.webp", alt: "SAVORY rooftop billboard featuring 487 Henry St. and the line A place to call yours above a white building" },
+          { src: "/case-study/savory/02-cup.webp", alt: "Baby blue coffee cup with a wax red lid and SAVORY stacked in wax red capitals", span: "half" },
+          { src: "/case-study/savory/03-tote.webp", alt: "Wax red tote bag with SAVORY stacked in light capitals and New York coordinates", span: "half" },
+          { src: "/case-study/savory/25-website-design.jpg", alt: "The Savory Team website design with Expert Agents, Invested in You in wax red over the New York skyline, beside a couple raising their arms on a rooftop terrace" },
+          { src: "/case-study/savory/20-stamp.webp", alt: "Brass wax seal stamp beside a wax red seal pressed with SAVORY stacked in a circle" },
+        ],
+      },
+    ],
+    nextProject: {
+      title: "Orbio",
+      subheading: "A Greco-Roman brand evolution for tokenized AI inference",
+      image: { src: "/case-study/orbio/thumbnail.webp", alt: "Orbio brand identity" },
+      url: "/work/orbio",
+      tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
+    },
+  },
   {
     slug: "orbio",
     client: "Orbio",
@@ -244,7 +365,7 @@ export const caseStudies: CaseStudy[] = [
       keywords: ["healthcare AI branding", "AI startup branding", "healthcare logo design", "medical AI website design", "logo animation"],
     },
     website: { label: "Visit live website", href: "https://nextdim.io" },
-    guidelines: { label: "Brand guidelines", href: "https://guidelines.online" },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/next-dim" },
     preview: { src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim AI brand identity" },
     hero: {
       src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json",
@@ -1142,13 +1263,17 @@ export const caseStudies: CaseStudy[] = [
       companyName: "Medihuanna",
     },
     nextProject: {
-      title: "NextDim AI",
-      subheading: "A futuristic brand identity for AI-powered healthcare, beyond the clinical",
-      image: { src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim AI brand identity" },
-      url: "/work/next-dimension",
-      tags: ["Brand strategy", "Visual identity", "Motion", "Web design"],
+      title: "Savory",
+      subheading: "An editorial identity for a Brooklyn real estate team",
+      image: { src: "/case-study/savory/thumbnail.webp", alt: "The Savory Team brand identity" },
+      url: "/work/savory",
+      tags: ["Visual identity", "Logo design", "Motion", "Brand guidelines"],
     },
   },
 ];
+
+// Public consumers share one filtered collection; unfinished drafts remain available locally.
+export const caseStudies = allCaseStudies.filter((study) => study.published !== false);
+export const draftCaseStudies = allCaseStudies.filter((study) => study.published === false);
 
 export const getCaseStudy = (slug: string) => caseStudies.find((study) => study.slug === slug);

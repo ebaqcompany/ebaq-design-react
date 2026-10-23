@@ -24,9 +24,10 @@ export const Logo3Defaults: Props = {
   heading: "Trusted by ambitious teams",
   logos: [
     { src: "/client-logos/elevate-wordmark.svg", alt: "Elevate", scale: 72, offset: "up-5" },
+    { src: "/client-logos/savory-wordmark.svg", alt: "Savory", scale: 72 },
     { src: "/client-logos/nextdim-wordmark.svg", alt: "Next Dim AI", scale: 90 },
     { src: "/client-logos/foxberman-wordmark.svg", alt: "FOX BERMAN", scale: 50 },
-    { src: "/client-logos/medihuanna-wordmark-black.svg", alt: "Medihuanna", scale: 80, offset: "up-10" },
+    { src: "/client-logos/medihuanna-wordmark-black.svg", alt: "Medihuanna", scale: 80 },
     { src: "/client-logos/ventur-wordmark.svg", alt: "Ventur", scale: 81 },
     { src: "/client-logos/aero-health-logo.svg", alt: "Aero Health", scale: 72 },
     { src: "/client-logos/airport-executive-logo.svg", alt: "Airport Executive", scale: 95 },
