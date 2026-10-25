@@ -2,7 +2,7 @@ export const founderDecisionContent = {
   summary:
     "A plain-language content source for the future Relume section. It is not currently rendered on the website.",
   tagline: "Before you book",
-  heading: "Senior design partner for startups",
+  heading: "Branding Expert for startups",
   description:
     "The basics are intentionally easy to compare: clear investment, direct senior-level work, and a simple path to talk through fit before anything starts.",
   facts: [
@@ -14,9 +14,9 @@ export const founderDecisionContent = {
     },
     {
       label: "Focused process",
-      heading: "Work directly with a senior designer",
+      heading: "Work directly with a Branding Expert",
       value:
-        "You work directly with Arek, a senior designer with over 20 years of brand identity experience. Brand strategy and identity are completed in a focused sprint, with website design or development available as a follow-on scope.",
+        "You work directly with Arek, a Branding Expert with over 20 years of brand identity experience. Brand strategy and identity are completed in a focused sprint, with website design or development available as a follow-on scope.",
     },
     {
       label: "Simple next step",

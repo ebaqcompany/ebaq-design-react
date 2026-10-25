@@ -127,7 +127,7 @@ export const serviceFaqs = [
   {
     title: "Who actually does the work?",
     answer:
-      "Arek does, directly. You work with one senior designer from the first call through delivery, with no account layer and no hand-off to a junior team.",
+      "Arek does, directly. You work with one Branding Expert from the first call through delivery, with no account layer and no hand-off to a junior team.",
   },
 ];
 
@@ -149,7 +149,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     overview: [
       "Strategy is the part of branding nobody sees and everything depends on. Before any design, we work out who the brand is for, what it stands against in its category, and the one idea it should own.",
       "You get the thinking in plain language: an audit of where the brand stands today, a look at how competitors present themselves, audience profiles, a positioning statement, and the tagline and messaging the design is built around.",
-      "It is the same groundwork I did on identities for AI startups, a law firm, and consultancies across Europe, done directly by me as a senior freelance designer in New York rather than handed to a junior strategist.",
+      "It is the same groundwork I did on identities for AI startups, a law firm, and consultancies across Europe, done directly by me as a Branding Expert in New York rather than handed to a junior strategist.",
     ],
     tools: ["Brand audit", "Competitive analysis", "Positioning workshop", "Figma"],
     timeline: "Strategy opens every branding project. It runs at the start of the one-week Brand Sprint, so the logo and identity are designed against agreed positioning, all within the flat $3,000 weekly rate.",
@@ -170,7 +170,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     ],
   },
   "logo-design": {
-    title: "Custom logo design by a senior freelance designer",
+    title: "Custom logo design by a Branding Expert",
     overview: [
       "A good logo is simple enough to remember, distinct in its category, and legible from an app icon to a billboard. I design every mark myself, starting with pencil sketches before anything moves into Adobe Illustrator.",
       "You see several logo concepts, each with the thinking behind it, then we refine the strongest into a complete, responsive set: a primary logo, a compact mark, and versions for light and dark backgrounds, plus a logo animation.",

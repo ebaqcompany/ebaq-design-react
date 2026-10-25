@@ -54,8 +54,8 @@ export const Header107 = (props: Header107Props) => {
 };
 
 export const Header107Defaults: Props = {
-  title: "Senior freelance graphic designer in NY",
-  description: `I’m Arek Dvornechuck, a senior freelance graphic designer and art director based in Brooklyn, New York, with ${founder.experience} of experience, including identity work at ${founder.formerStudio.name}. I lead every engagement myself, from strategy through brand identity, websites, and motion, for companies worldwide.`,
+  title: "Branding Expert in NY",
+  description: `I’m Arek Dvornechuck, a Branding Expert and art director based in Brooklyn, New York, with ${founder.experience} of experience, including identity work at ${founder.formerStudio.name}. I lead every engagement myself, from strategy through brand identity, websites, and motion, for companies worldwide.`,
   images: [
     { src: "/images/about-candidates/arek-studio-portrait-dsc00067.webp", alt: "Arek Dvornechuck in his design studio" },
     { src: "/images/about-candidates/arek-logo-modernism-dsc00068.webp", alt: "Arek Dvornechuck holding the Logo Modernism design book in his studio" },

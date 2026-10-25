@@ -11,8 +11,8 @@ import { Layout350Preview } from "./Layout350Preview";
 
 export const AboutPage = () => <div className="relative bg-white">
   <Helmet>
-    <title>Arek Dvornechuck | Senior Freelance Graphic Designer, NYC</title>
-    <meta name="description" content="Arek Dvornechuck is a senior freelance graphic designer in Brooklyn, NYC, previously at Chermayeff & Geismar & Haviv: branding, logos, websites, and motion." />
+    <title>Arek Dvornechuck | Branding Expert, NYC</title>
+    <meta name="description" content="Arek Dvornechuck is a Branding Expert in Brooklyn, NYC, previously at Chermayeff & Geismar & Haviv: branding, logos, websites, and motion." />
     <link rel="canonical" href="https://www.ebaqdesign.com/about" />
     <meta property="og:url" content="https://www.ebaqdesign.com/about" />
     <script type="application/ld+json">{serializeJsonLd({

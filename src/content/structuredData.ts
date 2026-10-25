@@ -2,7 +2,7 @@
 export type FaqPair = { question: string; answer: string };
 
 // Must match founder.jobTitle in siteFacts.ts (this file can't import it; see the note above).
-const founderJobTitle = "Senior Freelance Graphic Designer";
+const founderJobTitle = "Branding Expert";
 
 export type SchemaPost = {
   url: string;
@@ -335,7 +335,7 @@ export const buildSiteGraph = (facts: Facts, faqs: FaqPair[], dateModified: stri
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
         url: `${siteUrl}/`,
-        name: "Freelance Graphic Designer NYC | Branding & Web | Ebaq Design",
+        name: "Branding Expert NYC | Branding & Web | Ebaq Design",
         description: `${pricing.guarantee} ${pricing.summary}`,
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": organizationId },

@@ -199,7 +199,7 @@ Tools: ${tools.join(', ')}.
 - [Services](${siteUrl}/services)
 - [Pricing: $3,000 per week, brand identity in one week](${siteUrl}/pricing)
 - [Work: case studies](${siteUrl}/work)
-- [About Arek Dvornechuck, senior freelance graphic designer](${siteUrl}/about)
+- [About Arek Dvornechuck, Branding Expert](${siteUrl}/about)
 - [Real estate branding for agents, teams and brokers](${siteUrl}/real-estate-branding)
 - [Law firm branding](${siteUrl}/law-firm-branding)
 - [AI startup branding](${siteUrl}/ai-startup-branding)

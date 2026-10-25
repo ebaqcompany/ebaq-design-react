@@ -20,27 +20,27 @@ function App() {
   return (
     <div className="relative">
       <Helmet>
-        <title>Freelance Graphic Designer NYC | Branding & Web | Ebaq Design</title>
+        <title>Branding Expert NYC | Branding & Web | Ebaq Design</title>
         <meta
       name="description"
-      content="Arek Dvornechuck, senior freelance graphic designer in New York: branding, logo design, brand strategy, Framer and Webflow websites, and motion. $3,000/week."
+      content="Arek Dvornechuck, Branding Expert in New York: branding, logo design, brand strategy, Framer and Webflow websites, and motion. $3,000/week."
     />
         <link rel="canonical" href="https://www.ebaqdesign.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Ebaq Design" />
         <meta property="og:url" content="https://www.ebaqdesign.com/" />
-        <meta property="og:title" content="Freelance Graphic Designer NYC | Branding & Web | Ebaq Design" />
+        <meta property="og:title" content="Branding Expert NYC | Branding & Web | Ebaq Design" />
         <meta
       property="og:description"
-      content="Senior freelance graphic designer in Brooklyn, New York. Brand identity in one week, guaranteed, for $3,000 flat; websites (Framer, Webflow), motion, and decks at the same weekly rate."
+      content="Branding Expert in Brooklyn, New York. Brand identity in one week, guaranteed, for $3,000 flat; websites (Framer, Webflow), motion, and decks at the same weekly rate."
     />
         <meta property="og:image" content="https://www.ebaqdesign.com/social-x-cover-brand-grid.png" />
-        <meta property="og:image:alt" content="Ebaq Design: senior freelance graphic designer in New York" />
+        <meta property="og:image:alt" content="Ebaq Design: Branding Expert in New York" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Freelance Graphic Designer NYC | Branding & Web | Ebaq Design" />
+        <meta name="twitter:title" content="Branding Expert NYC | Branding & Web | Ebaq Design" />
         <meta
       name="twitter:description"
-      content="Senior freelance graphic designer in NYC. Brand identity in one week, guaranteed, for $3,000 flat."
+      content="Branding Expert in NYC. Brand identity in one week, guaranteed, for $3,000 flat."
     />
         <meta name="twitter:image" content="https://www.ebaqdesign.com/social-x-cover-brand-grid.png" />
       </Helmet>

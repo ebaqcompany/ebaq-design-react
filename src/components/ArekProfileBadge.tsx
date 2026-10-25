@@ -43,13 +43,13 @@ export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHr
     <div className="flex min-w-0 flex-col">
       <div className="flex flex-col gap-0">
         <p className={variant === "author" ? "heading-h7 whitespace-nowrap" : "whitespace-nowrap"}>Arek Dvornechuck</p>
-        {variant === "author" && <p className="heading-h7 whitespace-nowrap text-brand-primary">Senior Graphic Designer</p>}
+        {variant === "author" && <p className="heading-h7 whitespace-nowrap text-brand-primary">Branding Expert</p>}
       </div>
       {variant === "author" ? <>
         <div className="mt-1 flex items-center gap-1 text-black" aria-label="Arek Dvornechuck on social media">
           {socialLinks.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noreferrer" aria-label={link.label} className="heading-link -m-1 inline-flex p-1 text-black">{link.icon}</a>)}
         </div>
-      </> : <div className="flex shrink-0 items-center gap-1" role="group" aria-label="Tools I use as a senior designer">
+      </> : <div className="flex shrink-0 items-center gap-1" role="group" aria-label="Tools I use as a Branding Expert">
         {arekToolIcons.map(([src, alt, className]) => <img loading="lazy" decoding="async" key={src} src={src} alt={alt} className={`size-4 rounded-[20%] object-cover ${className ?? ""}`.trim()} />)}
       </div>}
     </div>

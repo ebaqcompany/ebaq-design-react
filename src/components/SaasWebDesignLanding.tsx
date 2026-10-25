@@ -55,7 +55,7 @@ const painPoints = [
     body: "Built in Framer, Webflow, or React so your team can update pages, launch features, and test messaging without waiting on a developer.",
   },
   {
-    title: "Senior designer, no hand-offs",
+    title: "Branding Expert, no hand-offs",
     body: "You work directly with Arek, with over 20 years of experience, from positioning and copy through the live build.",
   },
 ];
@@ -187,7 +187,7 @@ export const SaasWebDesignLanding = () => (
       <title>SaaS Website Design for Startups | Ebaq Design</title>
       <meta
         name="description"
-        content="SaaS and startup website design by a senior designer. Positioning, copy, Figma design, and a fast Framer, Webflow, or React build that turns visitors into demos and signups."
+        content="SaaS and startup website design by a Branding Expert. Positioning, copy, Figma design, and a fast Framer, Webflow, or React build that turns visitors into demos and signups."
       />
       <meta
         name="keywords"

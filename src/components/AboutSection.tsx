@@ -27,7 +27,7 @@ export const AboutSection = ({ heading = "I help ambitious companies look like c
               Traditional agencies charge <strong>$25k&ndash;$100k+</strong> and take months to deliver, with account managers and junior designers between you and the work.
             </p>
             <p className="mt-4 md:text-md">
-              At Ebaq Design, you work <strong>directly with me</strong>, a senior designer in Brooklyn, NYC, with over 20 years of experience. Your brand identity is done in <strong>one week, guaranteed</strong>, for $3,000 flat.
+              At Ebaq Design, you work <strong>directly with me</strong>, a Branding Expert in Brooklyn, NYC, with over 20 years of experience. Your brand identity is done in <strong>one week, guaranteed</strong>, for $3,000 flat.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-8">
               <AvailableButton nav keepLabel />
@@ -43,7 +43,7 @@ export const AboutSection = ({ heading = "I help ambitious companies look like c
         <div className="mb-12 max-w-3xl md:mb-16">
           <p className="mb-3 font-semibold text-brand-primary md:mb-4">What I offer</p>
           <h2 id="about-services-heading" className="mb-5 md:mb-6">Everything your brand needs</h2>
-          <p className="md:text-md">One senior designer for strategy, identity, web, and motion, all at the same flat $3,000 per week.</p>
+          <p className="md:text-md">One Branding Expert for strategy, identity, web, and motion, all at the same flat $3,000 per week.</p>
         </div>
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12">
           {Layout423Defaults.features.map((service) => (

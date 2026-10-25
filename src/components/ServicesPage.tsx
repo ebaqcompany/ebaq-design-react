@@ -17,12 +17,12 @@ export const ServicesPage = () => (
   <div className="relative bg-white">
     <Helmet>
       <title>Graphic Design Services NYC: Branding, Logo & Web | Ebaq Design</title>
-      <meta name="description" content="Senior freelance graphic designer in NYC: brand strategy, logo design, brand identity, web design, Framer and Webflow development, and motion. $3,000/week." />
+      <meta name="description" content="Branding Expert in NYC: brand strategy, logo design, brand identity, web design, Framer and Webflow development, and motion. $3,000/week." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="Graphic Design Services NYC: Branding, Logo & Web | Ebaq Design" />
-      <meta property="og:description" content="Senior freelance graphic designer in NYC: brand strategy, logo design, brand identity, web design, Framer and Webflow development, and motion. $3,000/week." />
+      <meta property="og:description" content="Branding Expert in NYC: brand strategy, logo design, brand identity, web design, Framer and Webflow development, and motion. $3,000/week." />
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -75,7 +75,7 @@ export const ServicesPage = () => (
       <Layout351
         id="what-i-offer"
         tagline="What I offer"
-        heading="Six services, one senior designer"
+        heading="Six services, one Branding Expert"
         description="Strategy, identity, web, and motion are offered together because they reinforce each other. Take the whole system or just the part you need."
         features={serviceFeatures}
       />

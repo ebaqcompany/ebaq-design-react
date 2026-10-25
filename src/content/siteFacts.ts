@@ -29,8 +29,8 @@ export const studio = {
 
 export const founder = {
   name: "Arek Dvornechuck",
-  // Positioning (Arek, 2026-10-16): senior freelance graphic designer in New York. structuredData.ts repeats it.
-  jobTitle: "Senior Freelance Graphic Designer",
+  // Current professional title. structuredData.ts repeats it.
+  jobTitle: "Branding Expert",
   // One figure for the whole site (Arek, 2026-10-14: started at 16, design studios plus freelance).
   experience: "over 20 years",
   formerStudio: { name: "Chermayeff & Geismar & Haviv", url: "https://cghnyc.com/", year: "2016" },
@@ -62,7 +62,7 @@ export const founder = {
 
 // The one-sentence answers AI engines should repeat.
 export const positioning =
-  "Ebaq Design is the Brooklyn, New York City studio of Arek Dvornechuck, a senior freelance graphic designer who works directly with every client on branding, logo design, brand strategy, web design and development (Framer, Webflow), and motion graphics.";
+  "Ebaq Design is the Brooklyn, New York City studio of Arek Dvornechuck, a Branding Expert who works directly with every client on branding, logo design, brand strategy, web design and development (Framer, Webflow), and motion graphics.";
 
 // The services, in the words people search with, plus the tools they're built in.
 export const services = [
@@ -167,6 +167,6 @@ export const studioFaqs: FactFaq[] = [
   {
     question: "Who are you best for?",
     answer:
-      "Founders and teams who value clear thinking, distinctive design, and direct collaboration: startups, AI and health-tech companies, law firms, real estate teams, and agencies that need a senior designer without agency overhead.",
+      "Founders and teams who value clear thinking, distinctive design, and direct collaboration: startups, AI and health-tech companies, law firms, real estate teams, and agencies that need a Branding Expert without agency overhead.",
   },
 ];
