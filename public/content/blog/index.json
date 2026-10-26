@@ -1,5 +1,20 @@
 [
   {
+    "slug": "startup-branding-agencies",
+    "url": "/blog/startup-branding-agencies",
+    "title": "Top 10 Branding Agencies for Startups in 2026",
+    "description": "10 branding agencies for startups, from Bolder and The Branx to Pentagram, with locations, prices, timelines, past work and contact details.",
+    "category": "Brand Strategy",
+    "categorySlug": "brand-strategy",
+    "readTime": "10 min read",
+    "date": "Oct 26, 2026",
+    "image": {
+      "src": "/images/blog/startup-branding-agencies/startup-branding-agencies-nyc.jpg",
+      "alt": "Top 10 Branding Agencies for Startups in 2026",
+      "thumbnail": "/images/blog/startup-branding-agencies/startup-branding-agencies-nyc-768w.webp"
+    }
+  },
+  {
     "slug": "branding-agencies-one-week",
     "url": "/blog/branding-agencies-one-week",
     "title": "13 Branding Agencies That Deliver in One Week (or Two)",
@@ -3107,21 +3122,6 @@
     "image": {
       "src": "/images/blog/worst-rebrands/worst-brands.webp",
       "alt": "7 Worst Rebrands: Logos Gone Wrong in 2026"
-    }
-  },
-  {
-    "slug": "startup-branding-agencies",
-    "url": "/blog/startup-branding-agencies",
-    "title": "Top 10 Branding Agencies for Startups",
-    "description": "Discover the top startup branding agencies in 2026. Find experts to build your startup's brand identity.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "May 13, 2025",
-    "image": {
-      "src": "/images/blog/startup-branding-agencies/startup-branding-agencies-nyc.jpg",
-      "alt": "Top 10 Startup Branding Agencies in 2026",
-      "thumbnail": "/images/blog/startup-branding-agencies/startup-branding-agencies-nyc-768w.webp"
     }
   }
 ]
