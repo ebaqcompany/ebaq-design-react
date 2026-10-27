@@ -432,6 +432,11 @@
 /*
  * Shared heading scale from the approved Figma type system.
  */
+/* Keep the reset weaker than spacing utilities such as mb-4 on heading classes. */
+:where(h1, h2, h3, h4, h5, h6, .heading-h1, .heading-h2, .heading-h3, .heading-h4, .heading-h5, .heading-h6, .heading-h7) {
+  margin: 0;
+}
+
 :is(h1, h2, h3, h4, h5, h6, .heading-h1, .heading-h2, .heading-h3, .heading-h4, .heading-h5, .heading-h6, .heading-h7) {
   line-height: 0.9 !important;
 }
@@ -447,7 +452,6 @@ h6,
 .heading-h5,
 .heading-h6,
 .heading-h7 {
-  margin: 0;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
   line-height: 1;
@@ -654,6 +658,28 @@ a:has(> :is(h1, h2, h3, h4, h5, h6)):is(:hover, :focus-visible),
 }
 
 /* Global button styles */
+#service-hero .inline-logo-symbol {
+  border-radius: 0 !important;
+}
+
+#service-hero .hero-work-button {
+  border: 0;
+  background-color: #eee;
+}
+
+#service-hero .hero-work-button:is(:hover, :focus-visible) {
+  background-color: var(--color-brand-primary);
+}
+
+#service-hero .logo-annotated-heading .layout484-highlight-path {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 0.06em;
+}
+
+@media (max-width: 767px) {
+  #service-hero .logo-annotated-heading { line-height: 1.15 !important; }
+}
+
 button:not([role="tab"]):not(.portfolio-header-replay):not(.portfolio22-service):not(.gallery-lottie),
 button[role="tab"]:not(.service-text-tab),
 a.button-primary,

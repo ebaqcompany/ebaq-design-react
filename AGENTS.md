@@ -11,6 +11,12 @@
 - In a cloud session (Claude Code on the web, not the local worktree above), never skip GitHub as the middle step: after verifying a change, commit and push it to the session's branch so Vercel builds a preview from GitHub. Never leave finished cloud work only in the container.
 - Push to `main` only when the user approves it.
 
+## UI components and design
+
+- Before designing or implementing UI, use the Relume MCP at `https://relume-library-mcp.relume.io/mcp` to find appropriate React components. Start with properly designed library components rather than inventing layouts.
+- Adapt selected components to the site's existing typography, spacing, colors, buttons, and responsive conventions. Preserve user-selected images and their original aspect ratios when requested.
+- If the Relume MCP is inaccessible, report the specific blocker and do not claim library use or substitute an invented layout without the user's direction.
+
 ## Article editing standards
 
 - Preserve the original article's substantive length and structure when updating an existing article. Use the prior published version as the completeness baseline; do not replace it with a shorter summary unless the user explicitly asks for a rewrite at a shorter length.

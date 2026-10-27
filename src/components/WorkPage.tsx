@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useEffect } from "react";
+import { workProjects } from "../data/workProjects";
 import { caseStudies } from "../data/caseStudies";
 import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
@@ -69,19 +70,7 @@ export const WorkPage = () => {
         tagline="Work"
         heading="Selected work"
         description="Brand identities and digital experiences built to make ambitious businesses clearer, more distinctive, and easier to trust."
-        projects={caseStudies.map((study) => ({
-          title: study.client,
-          description: study.title,
-          image: study.preview,
-          images: [
-            ...study.leadGallery,
-            ...study.content.flatMap((block) => (block.type === "gallery" ? block.images : [])),
-          ].filter(
-            (image) => image.kind !== "video" && image.kind !== "lottie",
-          ),
-          lottie: study.hero.kind === "lottie" ? study.hero : undefined,
-          url: `/work/${study.slug}`,
-        }))}
+        projects={workProjects}
       />
     </main>
     <Cta17 />

@@ -1,20 +1,25 @@
+import { Fragment, type ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navbar16 } from "./Navbar16";
 import { Header107 } from "./Header107";
+import { Header104 } from "./Header104";
+import { Portfolio16 } from "./Portfolio16";
+import { workProjects } from "../data/workProjects";
 import { Layout351 } from "./Layout351";
+import { Layout6 } from "./Layout6";
 import { Timeline10 } from "./Timeline10";
 import { Testimonial32 } from "./Testimonial32";
 import { Faq4 } from "./Faq4";
 import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
 import { BiCheck } from "react-icons/bi";
-import { processSteps, serviceDetails, serviceFaqs, serviceFeatures, serviceBySlug, type Service, type ServiceSlug } from "../data/services";
+import { processSteps, serviceDetails, serviceFaqs, serviceFeatures, serviceBySlug, type Service, type ServiceFaq, type ServiceSlug } from "../data/services";
 import { caseStudies } from "../data/caseStudies";
 import { pricing, siteUrl, studio } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 
 // This service's own questions, then the ones that apply to every service.
-const faqsFor = (service: Service) => [
+const faqsFor = (service: Service): ServiceFaq[] => [
   ...serviceDetails[service.slug].faqs,
   ...serviceFaqs.filter((faq) => faq.title === "Who actually does the work?" || faq.title === "Do you work with clients outside New York?"),
 ];
@@ -65,7 +70,17 @@ const serviceSchemas = (service: Service) => {
 // the tools, and the case studies that show it.
 const ServiceOverview = ({ service }: { service: Service }) => {
   const detail = serviceDetails[service.slug];
-  const work = detail.work.map((slug) => caseStudies.find((study) => study.slug === slug)).filter((study) => study !== undefined);
+  if (service.slug === "logo-design") return (
+    <Layout6
+      heading="A new logo, or a sharper version of what works"
+      description="Work directly with me to refine your existing logo or develop a new identity. We explore concepts, shape the strongest direction, and make sure the final design works across your brand’s everyday applications."
+      subHeadings={[
+        { title: "Refine your logo", description: "Keep the idea people recognize while improving the drawing, spacing, colors and typography." },
+        { title: "Start fresh", description: "Explore distinctive concepts, then develop your chosen direction into a practical, responsive logo system." },
+      ]}
+      image={{ src: "/images/services/671bbffc078e4c31361372af_arek_design_portrait.jpg", alt: "Arek Dvornechuck reviewing logo designs at his studio desk", width: 1200, height: 1500 }}
+    />
+  );
   return (
     <section id="overview" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
@@ -90,25 +105,33 @@ const ServiceOverview = ({ service }: { service: Service }) => {
             <p className="md:text-md">{detail.tools.join(" · ")}</p>
           </div>
         </div>
-        {work.length > 0 && (
-          <div className="mt-16 md:mt-24">
-            <h3 className="heading-h5 mb-6 md:mb-8">{service.heading} in the work</h3>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {work.map((study) => (
-                <a key={study.slug} href={`/work/${study.slug}`} className="group block">
-                  <div className="mb-4 aspect-video overflow-hidden bg-background-secondary">
-                    <img loading="lazy" decoding="async" src={study.preview.src} alt={study.preview.alt} className="size-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
-                  </div>
-                  <p className="heading-h6 mb-1">{study.client}</p>
-                  <p className="text-sm">{study.title}</p>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
+        <SelectedServiceWork service={service} />
       </div>
     </section>
   );
+};
+
+const SelectedServiceWork = ({ service, separate = false }: { service: Service; separate?: boolean }) => {
+  const work = serviceDetails[service.slug].work.map((slug) => caseStudies.find((study) => study.slug === slug)).filter((study) => study !== undefined);
+  if (!work.length) return null;
+  if (separate) return <Portfolio16 id="selected-work" className="bg-white text-black" tagline="Work" heading="Selected work" description="Brand identities and digital experiences built to make ambitious businesses clearer, more distinctive, and easier to trust." projects={workProjects} embedded previewFit="contain" />;
+  const content = (
+    <>
+      <h3 className="heading-h5 mb-6 md:mb-8">Selected {service.heading.toLowerCase()} work</h3>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {work.map((study) => (
+          <a key={study.slug} href={`/work/${study.slug}`} className="group block">
+            <div className="mb-4">
+              <img loading="lazy" decoding="async" src={study.preview.src} alt={study.preview.alt} className="h-auto w-full" />
+            </div>
+            <p className="heading-h6 mb-1">{study.client}</p>
+            <p className="text-sm">{study.title}</p>
+          </a>
+        ))}
+      </div>
+    </>
+  );
+  return <div className="mt-16 md:mt-24">{content}</div>;
 };
 
 type Props = {
@@ -116,11 +139,12 @@ type Props = {
   // Hero copy is passed in so each detail page keeps its own literal strings.
   heading: string;
   description: string;
+  afterOverview?: ReactNode;
 };
 
 // Shared body for the six /services/* pages. Each page file owns its own
 // <Helmet> so the route-shell generator can scrape a literal title there.
-export const ServiceDetailLayout = ({ slug, heading, description }: Props) => {
+export const ServiceDetailLayout = ({ slug, heading, description, afterOverview }: Props) => {
   const service = serviceBySlug(slug);
 
   return (
@@ -132,15 +156,18 @@ export const ServiceDetailLayout = ({ slug, heading, description }: Props) => {
       </Helmet>
       <Navbar16 />
       <main>
-      <Header107
+      {slug === "logo-design" ? <Header104 description={description} /> : <Header107
         id="service-hero"
         title={heading}
         description={description}
         images={[]}
         showToolIcons={false}
         className="pb-8 md:pb-12 lg:pb-16"
-      />
+      />}
       <ServiceOverview service={service} />
+      {slug === "logo-design" && <SelectedServiceWork service={service} separate />}
+      {slug !== "logo-design" && <>
+      {afterOverview}
       <Layout351
         id="what-i-offer"
         tagline="What I offer"
@@ -153,6 +180,7 @@ export const ServiceDetailLayout = ({ slug, heading, description }: Props) => {
         )}
         initialActive={service.index}
       />
+      </>}
       <Timeline10
         tagline="How it works"
         taglineClassName="text-brand-primary"
@@ -165,7 +193,10 @@ export const ServiceDetailLayout = ({ slug, heading, description }: Props) => {
         tagline="FAQs"
         heading="Questions about working together"
         description="What most founders ask before starting a branding project."
-        questions={faqsFor(service).map((faq) => ({ title: faq.title, answer: <p>{faq.answer}</p> }))}
+        questions={faqsFor(service).map(({ title, answer, links }) => ({
+          title,
+          answer: <p>{answer}{links && <> See {links.map((link, index) => <Fragment key={link.href}>{index > 0 && (index === links.length - 1 ? " and " : ", ")}<a href={link.href}>{link.label}</a></Fragment>)}.</>}</p>,
+        }))}
       />
       <Cta17 />
       </main>

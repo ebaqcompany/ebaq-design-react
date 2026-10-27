@@ -18,6 +18,8 @@ export type Portfolio16ProjectProps = {
   url: string;
   highlightDescriptionPhrase?: string;
   priority?: boolean;
+  previewFit?: "cover" | "contain";
+  embedded?: boolean;
 };
 
 type Props = {
@@ -25,27 +27,30 @@ type Props = {
   heading: string;
   description: string;
   projects: Portfolio16ProjectProps[];
+  embedded?: boolean;
+  previewFit?: "cover" | "contain";
 };
 
 export type Portfolio16Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Portfolio16 = (props: Portfolio16Props) => {
-  const { tagline, heading, description, projects, className, ...sectionProps } = {
+  const { tagline, heading, description, projects, className, embedded = false, previewFit = "cover", ...sectionProps } = {
     ...Portfolio16Defaults,
     ...props,
   };
+  const Heading = embedded ? "h2" : "h1";
 
   return (
     <section {...sectionProps} className={`px-[5%] py-16 md:py-24 lg:py-28 ${className ?? ""}`}>
       <div className="container">
         <header className="mb-12 max-w-lg md:mb-18 lg:mb-20">
           <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
-          <h1 className="mb-5 md:mb-6">{heading}</h1>
+          <Heading className="mb-5 md:mb-6">{heading}</Heading>
           <p className="md:text-md">{description}</p>
         </header>
         <div>
           {projects.map((project, index) => (
-            <Portfolio16Project key={project.url} {...project} reverse={index % 2 === 1} priority={index === 0} />
+            <Portfolio16Project key={project.url} {...project} reverse={index % 2 === 1} priority={index === 0} previewFit={previewFit} embedded={embedded} />
           ))}
         </div>
       </div>
@@ -53,7 +58,9 @@ export const Portfolio16 = (props: Portfolio16Props) => {
   );
 };
 
-export const Portfolio16Project = ({ title, description, image, images, lottie, url, reverse, highlightDescriptionPhrase, priority }: Portfolio16ProjectProps & { reverse: boolean }) => {
+export const Portfolio16Project = ({ title, description, image, images, lottie, url, reverse, highlightDescriptionPhrase, priority, previewFit = "cover", embedded = false }: Portfolio16ProjectProps & { reverse: boolean }) => {
+  const Title = embedded ? "h3" : "h2";
+  const Description = embedded ? "h4" : "h3";
   const button: ButtonProps = {
     title: "View case study",
     variant: "link",
@@ -69,13 +76,14 @@ export const Portfolio16Project = ({ title, description, image, images, lottie, 
         lottie={lottie}
         url={url}
         priority={priority}
+        fit={previewFit}
         className={`aspect-video w-full ${reverse ? "md:order-2" : "md:order-1"}`}
       />
       <div className={reverse ? "md:order-1 md:pl-[10%]" : "md:order-2 md:pr-[10%]"}>
-        <h2 className="heading-h3 mb-3 md:mb-4">
+        <Title className="heading-h3 mb-3 md:mb-4">
           <a href={url}>{title}</a>
-        </h2>
-        <h3 className="heading-h5 mb-4 md:mb-5">{highlightDescriptionPhrase && description.includes(highlightDescriptionPhrase) ? <>{description.split(highlightDescriptionPhrase)[0]}<span className="relative inline-block mx-[0.08em]">{highlightDescriptionPhrase}<HomepageMarkerCircle /></span>{description.split(highlightDescriptionPhrase).slice(1).join(highlightDescriptionPhrase)}</> : description}</h3>
+        </Title>
+        <Description className="heading-h5 mb-4 md:mb-5">{highlightDescriptionPhrase && description.includes(highlightDescriptionPhrase) ? <>{description.split(highlightDescriptionPhrase)[0]}<span className="relative inline-block mx-[0.08em]">{highlightDescriptionPhrase}<HomepageMarkerCircle /></span>{description.split(highlightDescriptionPhrase).slice(1).join(highlightDescriptionPhrase)}</> : description}</Description>
         <Button {...button} asChild className="mt-6 md:mt-8 underline underline-offset-4 hover:text-brand-primary focus-visible:text-brand-primary">
           <a href={url}>{button.title}</a>
         </Button>

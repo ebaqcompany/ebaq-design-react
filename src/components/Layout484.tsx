@@ -14,6 +14,15 @@ type Props = {
 
 export const HomepageMarkerCircle = () => <svg aria-hidden="true" className="pointer-events-none absolute -inset-x-[0.42em] -inset-y-[0.18em] h-[calc(100%+0.36em)] w-[calc(100%+0.84em)] overflow-visible" viewBox="0 0 100 45" preserveAspectRatio="none"><path d="M 7 24 C 8 12, 24 4, 45 3 C 68 2, 91 8, 96 20 C 101 32, 83 41, 61 43 C 38 45, 15 41, 8 32" className="layout484-highlight-path" fill="none" stroke="#00AEEF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>;
 
+export const HomepageMarkerUnderline = ({ style }: { style?: MotionStyle }) => <svg aria-hidden="true" className="pointer-events-none absolute -inset-x-[0.04em] bottom-[-0.08em] h-[0.22em] w-[calc(100%+0.08em)] overflow-visible" viewBox="0 0 100 20" preserveAspectRatio="none">
+                      <motion.path className="layout484-highlight-path" d="M 2 10 C 24 4, 43 16, 64 9 C 77 5, 88 13, 98 8" fill="none" stroke="#00AEEF" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" style={style} />
+                    </svg>;
+
+export const HomepageMarkerExclamation = ({ style, className = "pointer-events-none absolute left-[calc(100%+0.08em)] top-[calc(-0.18em-5px)] h-[1.4em] w-[0.5em] rotate-6 overflow-visible" }: { style?: MotionStyle; className?: string }) => <svg aria-hidden="true" className={className} viewBox="0 0 24 50" preserveAspectRatio="none">
+                      <motion.path className="layout484-highlight-path" d="M 4 3 C 9 2, 15 3, 20 5 L 14 35 C 12 37, 10 37, 8 34 Z" fill="none" stroke="#00AEEF" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" style={style} />
+                      <motion.path className="layout484-highlight-path" d="M 7 44 C 8 40, 15 40, 17 44 C 18 48, 9 49, 7 44 Z" fill="none" stroke="#00AEEF" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" style={style} />
+                    </svg>;
+
 export type Layout484Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Layout484 = (props: Layout484Props) => {
@@ -86,9 +95,7 @@ export const Layout484 = (props: Layout484Props) => {
                     </svg>
                   )}
                   {shouldUnderlineBranding && (
-                    <svg aria-hidden="true" className="pointer-events-none absolute -inset-x-[0.04em] bottom-[-0.08em] h-[0.22em] w-[calc(100%+0.08em)] overflow-visible" viewBox="0 0 100 20" preserveAspectRatio="none">
-                      <motion.path className="layout484-highlight-path" d="M 2 10 C 24 4, 43 16, 64 9 C 77 5, 88 13, 98 8" fill="none" stroke="#00AEEF" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
-                    </svg>
+                    <HomepageMarkerUnderline style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
                   )}
                   {shouldZigzag && (
                     <svg aria-hidden="true" className="pointer-events-none absolute -inset-x-[0.04em] bottom-[-0.1em] h-[0.24em] w-[calc(100%+0.08em)] overflow-visible" viewBox="0 0 100 20" preserveAspectRatio="none">
@@ -117,10 +124,7 @@ export const Layout484 = (props: Layout484Props) => {
                     </svg>
                   )}
                   {shouldExclaim && (
-                    <svg aria-hidden="true" className="pointer-events-none absolute left-[calc(100%+0.08em)] top-[calc(-0.18em-5px)] h-[1.4em] w-[0.5em] rotate-6 overflow-visible" viewBox="0 0 24 50" preserveAspectRatio="none">
-                      <motion.path className="layout484-highlight-path" d="M 4 3 C 9 2, 15 3, 20 5 L 14 35 C 12 37, 10 37, 8 34 Z" fill="none" stroke="#00AEEF" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
-                      <motion.path className="layout484-highlight-path" d="M 7 44 C 8 40, 15 40, 17 44 C 18 48, 9 49, 7 44 Z" fill="none" stroke="#00AEEF" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
-                    </svg>
+                    <HomepageMarkerExclamation style={{ opacity: highlightOpacity, pathLength: highlightProgress } as MotionStyle} />
                   )}
                 </motion.span>
                 {index < tokens.length - 1 && nextToken !== "\n" && " "}

@@ -134,13 +134,16 @@ export const serviceFaqs = [
 // What makes each /services/* page its own page: the overview, tools, timeline, related case studies,
 // and the questions specific to that service (they also feed the page's FAQPage schema). Facts here
 // must match src/content/siteFacts.ts: one-week Brand Sprint, $3,000 per week, tools Arek uses.
+// links end the visible answer with "See …", as on the industry landing pages; the FAQPage schema keeps the plain answer.
+export type ServiceFaq = { title: string; answer: string; links?: { label: string; href: string }[] };
+
 export type ServiceDetail = {
   title: string;
   overview: string[];
   tools: string[];
   timeline: string;
   work: string[];
-  faqs: { title: string; answer: string }[];
+  faqs: ServiceFaq[];
 };
 
 export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
@@ -170,31 +173,40 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     ],
   },
   "logo-design": {
-    title: "Custom logo design by a Branding Expert",
+    title: "A new logo or a sharper existing one",
     overview: [
-      "A good logo is simple enough to remember, distinct in its category, and legible from an app icon to a billboard. I design every mark myself, starting with pencil sketches before anything moves into Adobe Illustrator.",
-      "You see several logo concepts, each with the thinking behind it, then we refine the strongest into a complete, responsive set: a primary logo, a compact mark, and versions for light and dark backgrounds, plus a logo animation.",
-      "The work below includes a monogram for an AI travel startup, an aviation-inspired mark for a London chauffeur service, and a growth symbol for a Shopify testing app.",
+      "If the idea behind your existing logo still fits, I can refine its drawing, spacing and proportions, then bring the colors and typography into one consistent identity.",
+      "If the mark no longer represents the business, I develop several new concepts and explain the thinking behind each before refining the selected direction.",
+      "You work directly with me, Arek Dvornechuck, a senior designer and Branding Expert based in Brooklyn, New York City, from the first conversation through the final files.",
     ],
     tools: ["Pencil and paper", "Adobe Illustrator", "Figma", "Adobe After Effects"],
-    timeline: "Logo design is part of the one-week Brand Sprint: concepts, revisions, final files, and the logo animation, delivered within one week for a flat $3,000.",
-    work: ["ventur", "airport-executive", "elevate"],
+    timeline: "A scoped identity refresh or rebrand is delivered in one week, guaranteed, for $3,000 total. The Brand Sprint includes the logo, logo animation, color palette, typography, guidelines and launch assets, with revisions included. We agree the scope at kickoff; additional website or rollout work is planned separately.",
+    work: ["airport-executive", "elevate", "periti"],
     faqs: [
       {
-        title: "How much does a custom logo cost?",
-        answer: "$3,000 as part of the one-week Brand Sprint, which also includes a color palette, typography, brand guidelines, a logo animation, and launch assets. There is no hourly billing and revisions are included.",
+        title: "Can you improve my existing logo without starting over?",
+        answer: "Yes. We identify what is worth preserving, then agree which parts need attention: letterforms, spacing, proportions, colors, typography or the way the identity is applied. A refresh can retain the core idea; replacing the whole mark is not automatic.",
       },
       {
-        title: "How many logo concepts will I see?",
-        answer: "Several distinct concepts, each explained against your positioning. The strongest direction is then refined with your feedback until it is final.",
+        title: "Does the $3,000 include colors and typography?",
+        answer: "$3,000 is the total for the scoped one-week Brand Sprint, not just a logo file. It includes logo concepts or refinements, final logo files, logo animation, a color palette, typography, brand guidelines, business card design, social profile images and launch posts, and an email signature. Revisions and editable source files are included.",
+        links: [{ label: "See the complete pricing and scope", href: "/pricing" }],
+      },
+      {
+        title: "When does the one-week timeline start?",
+        answer: "We confirm availability and agree the scope, start date and feedback schedule before starting. The scoped identity is delivered within one week, guaranteed. Website design, development and larger rollout work require separately agreed weeks at $3,000 per week, with the total fixed before work starts.",
+      },
+      {
+        title: "What should I send before a logo refresh?",
+        answer: "Send your current logo files, website, existing guidelines and examples of where the identity needs to work. Explain what must stay recognizable, what is not working, who approves the design and your launch priorities. If you only have a PNG or cannot find the original files, flag that when we discuss the scope.",
       },
       {
         title: "What logo files do I get?",
-        answer: "Final logo files in SVG, PNG, and PDF for print and screen, in full color and one-color versions for light and dark backgrounds, plus the logo animation.",
+        answer: "Final logo files in SVG, PNG and PDF for print and screen, with agreed responsive and color variations, plus the logo animation and editable source files. The guidelines document the palette, typography and usage rules so your team and suppliers can use the identity consistently.",
       },
       {
-        title: "Can you redesign an existing logo?",
-        answer: "Yes. A rebrand runs the same way as a new identity: audit what is worth keeping, then design forward from it, delivered in one week.",
+        title: "Are premium font licenses and website work included?",
+        answer: "We identify any third-party font or asset licensing costs and responsibilities before choosing them. Website design and development, print production and larger rollout projects are separate from the identity sprint. Additional design weeks cost $3,000 each, with the scope and total agreed before work starts.",
       },
     ],
   },
