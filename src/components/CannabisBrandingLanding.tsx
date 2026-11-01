@@ -22,7 +22,7 @@ const config: IndustryLandingConfig = {
   caseStudy: { slug: "sweetgrass", title: "SweetGrass: Cannabis Branding & Packaging Case Study" },
   hero: {
     heading: "Branding and Web\nfor Cannabis Brands",
-    description: "A premium cannabis brand that stands out on the shelf,\nfrom the logo and packaging to the dispensary website.",
+    description: "A premium cannabis brand that wins the shelf and clears your state's rules,\nfrom the logo and compliant packaging to the dispensary website.",
     rows: [
       [
         { type: "lottie", src: `${SG}/hero-logo.json`, alt: "Animated SweetGrass logo", bgColor: "#434343" },
@@ -47,9 +47,9 @@ const config: IndustryLandingConfig = {
   painPoints: {
     heading: "Cannabis buyers judge the brand first",
     points: [
-      { title: "Win the shelf", body: "Customers choose in seconds between near-identical products. Distinctive packaging and a confident wordmark make yours the one they pick up." },
+      { title: "Win the shelf", body: "Customers choose in seconds between near-identical products, and you can't advertise your way out of it. The pack, the signage, and the website do the work a campaign would do in any other category." },
       { title: "Premium, not stoner", body: "Leaf icons and neon green look dated. A refined identity speaks to the wellness and premium customers you actually want." },
-      { title: "Packaging does the advertising", body: "Cannabis brands can't advertise like everyone else, so packaging, signage, and the website carry more of the work." },
+      { title: "Compliance writes the brief", body: "Warnings, symbols, batch numbers, and a QR code claim the panel before the brand gets any. I block out the regulated area at real size first, then design into what's left." },
       { title: "One week. Done", body: "No 6-month agency engagements. No junior designers. You work directly with Arek—over 20 years of experience, delivered in a focused sprint." },
     ],
   },
@@ -60,6 +60,7 @@ const config: IndustryLandingConfig = {
       "Logo animation",
       "Color palette, typography, and patterns",
       "Packaging design",
+      "Compliant label layout — warnings, symbols, batch panel",
       "Brand guidelines",
       "Business cards and stationery",
       "Shopping bags and merchandise",
@@ -98,6 +99,7 @@ const config: IndustryLandingConfig = {
       { question: "How long does a cannabis rebrand take?", answer: "One week for the brand identity, guaranteed. Packaging and the website follow at the same weekly rate; a website usually takes one to two more weeks, depending on the number of pages." },
       { question: "Have you branded cannabis companies before?", answer: "Yes. SweetGrass is a premium cannabis dispensary in Mississippi: I designed its Art Deco-inspired wordmark, custom typography, seamless patterns, packaging, brochure, billboards, and website. I also redesigned the logo and identity for Medihuanna, an accredited medicinal cannabis education provider in Sydney." },
       { question: "Do you design cannabis packaging?", answer: "Yes. For SweetGrass I designed a packaging system across jars, droppers, and retail bags, built from the same patterns, colors, and typography as the rest of the brand." },
+      { question: "Do you handle cannabis packaging compliance?", answer: "I design around it. Your state decides the warning text, the symbol, its minimum size, and what has to sit on the primary panel, so I block that regulated area out at real size before any brand element goes down, then design into the space that's left. You or your lawyer confirm the final text against your state's current rules — I make sure the design never fights them.", link: { label: "Read: cannabis branding", href: "/blog/cannabis-branding" } },
       { question: "Can a cannabis brand look premium?", answer: "Yes, and it should. SweetGrass skips the usual leaf-and-neon clichés for an Art Deco-inspired wordmark, bespoke typography, and refined patterns that feel closer to a boutique than a head shop." },
       { question: "Who will I work with?", answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.` },
     ],
@@ -109,12 +111,12 @@ export const CannabisBrandingLanding = () => (
   <>
     <Helmet>
       <title>Cannabis Branding &amp; Packaging Design | Ebaq Design</title>
-      <meta name="description" content="Cannabis branding for dispensaries and brands: logo, packaging, logo animation, brand guidelines, and a website. Brand identity in one week, $3,000 flat." />
+      <meta name="description" content="Cannabis branding for dispensaries and brands: logo, compliant packaging, logo animation, brand guidelines, and a website. Brand identity in one week, $3,000 flat." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="Cannabis Branding & Packaging Design | Ebaq Design" />
-      <meta property="og:description" content="Cannabis branding for dispensaries and brands: logo, packaging, logo animation, brand guidelines, and a website. Brand identity in one week, $3,000 flat." />
+      <meta property="og:description" content="Cannabis branding for dispensaries and brands: logo, compliant packaging, logo animation, brand guidelines, and a website. Brand identity in one week, $3,000 flat." />
       <meta property="og:image" content={`${siteUrl}${CN}/shopping-bags.webp`} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Cannabis Branding & Packaging Design | Ebaq Design" />
