@@ -8,6 +8,8 @@ import { Cta17 } from "./Cta17";
 import { Timeline10 } from "./Timeline10";
 import { Header107 } from "./Header107";
 import { Layout350Preview } from "./Layout350Preview";
+import { Gallery10 } from "./Gallery10";
+import { Gallery15 } from "./Gallery15";
 
 export const AboutPage = () => <div className="relative bg-white">
   <Helmet>
@@ -42,6 +44,8 @@ export const AboutPage = () => <div className="relative bg-white">
 
     <Layout350Preview />
     <Timeline10 taglineClassName="text-brand-primary" />
+    <Gallery10 />
+    <Gallery15 />
 
     <Testimonial32 />
     <Cta17 heading="Need a senior creative partner?" description="Tell me what you’re launching, changing, or trying to make clearer. I’ll recommend the most effective way to move it forward." />
