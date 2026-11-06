@@ -10,6 +10,7 @@ import { Header107 } from "./Header107";
 import { Layout350Preview } from "./Layout350Preview";
 import { Gallery10 } from "./Gallery10";
 import { Gallery15 } from "./Gallery15";
+import { AboutTools } from "./AboutTools";
 
 export const AboutPage = () => <div className="relative bg-white">
   <Helmet>
@@ -43,6 +44,7 @@ export const AboutPage = () => <div className="relative bg-white">
     <Header107 />
 
     <Layout350Preview />
+    <AboutTools />
     <Timeline10 taglineClassName="text-brand-primary" />
     <Gallery10 />
     <Gallery15 />
