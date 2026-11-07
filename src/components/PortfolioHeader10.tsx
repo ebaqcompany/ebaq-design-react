@@ -11,6 +11,8 @@ type ImageProps = {
   backgroundColor?: string;
   // Lottie only: a phone version with the logo filling more of the frame.
   mobileSrc?: string;
+  // Lottie only: enlarge the animation on desktop (e.g. 1.2 = 120%).
+  desktopScale?: number;
 };
 
 type Tag = {
@@ -37,7 +39,8 @@ export type PortfolioHeader10Props = React.ComponentPropsWithoutRef<"section"> &
 const HeaderMedia = ({ image }: { image: ImageProps }) => {
   const [animationData, setAnimationData] = useState<object | null>(null);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
-  const isMobile = useMediaQuery("(max-width: 767px)");
+  // Phones and portrait tablets get the mobileSrc version with the logo filling the width.
+  const isMobile = useMediaQuery("(max-width: 767px), (max-width: 1279px) and (orientation: portrait)");
   const lottieSrc = isMobile && image.mobileSrc ? image.mobileSrc : image.src;
 
   useEffect(() => {
@@ -55,7 +58,7 @@ const HeaderMedia = ({ image }: { image: ImageProps }) => {
     return (
       <button
         type="button"
-        className="portfolio-header-replay absolute inset-0 flex size-full cursor-pointer items-center justify-center rounded-none px-[5%]"
+        className="portfolio-header-replay absolute inset-0 flex overflow-hidden size-full cursor-pointer items-center justify-center rounded-none px-[5%]"
         style={{ backgroundColor: image.backgroundColor }}
         onClick={replayAnimation}
         aria-label={`Replay ${image.alt ?? "logo animation"}`}
@@ -67,6 +70,7 @@ const HeaderMedia = ({ image }: { image: ImageProps }) => {
             autoplay
             loop={false}
             className="container mx-auto size-full"
+            style={!isMobile && image.desktopScale ? { transform: `scale(${image.desktopScale})` } : undefined}
             rendererSettings={{ preserveAspectRatio: "xMidYMid meet" }}
           />
         )}

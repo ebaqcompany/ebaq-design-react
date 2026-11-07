@@ -1,12 +1,13 @@
 import { arekToolIcons } from "./ArekProfileBadge";
 import { founder } from "../content/siteFacts";
 
-type ImageProps = { src: string; alt: string };
+type ImageProps = { src: string; alt: string; width?: number; height?: number };
 type Props = {
   title: string;
   description: string;
   // Pass an empty array for a text-only hero; the grid needs three portraits.
   images: ImageProps[];
+  heroImage?: ImageProps;
   // The icon row describes Arek himself, so it belongs to the About hero only.
   showToolIcons?: boolean;
 };
@@ -14,7 +15,7 @@ type Props = {
 export type Header107Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Header107 = (props: Header107Props) => {
-  const { title, description, images, showToolIcons = true, className, ...sectionProps } = { ...Header107Defaults, ...props };
+  const { title, description, images, heroImage, showToolIcons = true, className, ...sectionProps } = { ...Header107Defaults, ...props };
 
   return (
     <section
@@ -23,6 +24,7 @@ export const Header107 = (props: Header107Props) => {
       {...sectionProps}
     >
       <div className="container">
+        <div className={heroImage ? "grid items-center gap-10 md:gap-12 lg:grid-cols-2 lg:gap-20" : ""}>
         <div className="w-full max-w-lg">
           <h1 className="mb-5 md:mb-6">{title}</h1>
           <p className="md:text-md">{description}</p>
@@ -31,6 +33,8 @@ export const Header107 = (props: Header107Props) => {
               {arekToolIcons.map(([src, alt, iconClassName]) => <img loading="lazy" decoding="async" key={src} src={src} alt={alt} className={`size-5 rounded-[20%] object-cover ${iconClassName ?? ""}`.trim()} />)}
             </div>
           )}
+        </div>
+        {heroImage && <img {...heroImage} loading="eager" fetchPriority="high" className="h-auto w-full" />}
         </div>
 
         {images.length >= 3 && (

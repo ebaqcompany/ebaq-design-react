@@ -29,7 +29,7 @@ const staticPaths = [
   '/services',
   '/services/brand-strategy',
   '/services/logo-design',
-  '/services/identity-systems',
+  '/services/brand-design',
   '/services/web-design',
   '/services/web-development',
   '/services/motion-graphics',

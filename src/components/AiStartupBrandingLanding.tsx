@@ -86,11 +86,11 @@ const config: IndustryLandingConfig = {
   faq: {
     heading: "Questions AI founders ask",
     items: [
-      { question: "How much does AI startup branding cost?", answer: "$3,000 per week, flat. A new brand identity or rebrand (logo, logo animation, colors, typography, and brand guidelines) is delivered in one week, guaranteed, for $3,000 total. A pitch deck or motion adds a week, and the website one to two more, at the same rate." },
+      { question: "How much does AI startup branding cost?", answer: "$3,000 per week, flat. A new brand identity or rebrand (logo, logo animation, colors, typography, and brand guidelines) is delivered in one week, guaranteed, for $3,000 total. A pitch deck or motion adds a week, and the website two to three more, at the same rate." },
       { question: "Have you branded AI startups before?", answer: "Yes. Orbio tokenizes AI inference, and I designed its Greco-Roman orb identity, motion, and website. NextDimension AI automates medical practices with AI agents; I redesigned its identity and website. Ventur is an AI travel planner built around a V monogram drawn as a flowing route." },
       { question: "How do you keep an AI brand from looking generic?", answer: "By starting from what the company actually does instead of the category's visual clichés. Orbio's identity borrows from Greco-Roman coinage rather than neural-network graphics, and NextDim's moves beyond the clinical healthcare look.", link: { label: "Read: AI company branding", href: "/blog/ai-company-branding" } },
-      { question: "Can you design our pitch deck and website too?", answer: "Yes. The pitch deck is usually one extra week, and the website is designed in Figma and built in Framer, Webflow, or Next.js in one to two more weeks, depending on the page count." },
-      { question: "How fast can we launch?", answer: "The brand identity is delivered in one week, guaranteed. Most AI startups launch a full brand, deck, and website in three to five weeks, with the total agreed before work starts." },
+      { question: "Can you design our pitch deck and website too?", answer: "Yes. The pitch deck is usually one extra week, and the website is designed in Figma in one week, then built in Framer, Webflow, or Next.js in one or two more weeks, depending on the page count." },
+      { question: "How fast can we launch?", answer: "The brand identity is delivered in one week, guaranteed. Most AI startups launch a full brand, deck, and website in four to five weeks, with the total agreed before work starts." },
       { question: "Who will I work with?", answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.` },
     ],
   },

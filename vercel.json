@@ -2,6 +2,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/services/identity-systems",
+      "destination": "/services/brand-design",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/best-cannabis-dispensary-logos",
+      "destination": "/blog/cannabis-branding",
+      "statusCode": 301
+    },
+    {
       "source": "/old-home",
       "destination": "/",
       "statusCode": 301
@@ -613,7 +623,7 @@
     },
     {
       "source": "/jawad-brand-strategy",
-      "destination": "https://www.dropbox.com/s/r5rk21sruaoqmpg/Jawad Water Enhancer — Brand Strategy.pdf?dl=0",
+      "destination": "https://www.dropbox.com/s/r5rk21sruaoqmpg/Jawad Water Enhancer \u2014 Brand Strategy.pdf?dl=0",
       "statusCode": 301
     },
     {

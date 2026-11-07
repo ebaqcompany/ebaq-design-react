@@ -17,19 +17,19 @@ export const ServicesPage = () => (
   <div className="relative bg-white">
     <Helmet>
       <title>Graphic Design Services NYC: Branding, Logo & Web | Ebaq Design</title>
-      <meta name="description" content="Branding Expert in NYC: brand strategy, logo design, brand identity, web design, Framer and Webflow development, and motion. $3,000/week." />
+      <meta name="description" content="Branding Expert in NYC: brand strategy, logo design, brand design, web design, Framer and Webflow development, and motion. $3,000/week." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="Graphic Design Services NYC: Branding, Logo & Web | Ebaq Design" />
-      <meta property="og:description" content="Branding Expert in NYC: brand strategy, logo design, brand identity, web design, Framer and Webflow development, and motion. $3,000/week." />
+      <meta property="og:description" content="Branding Expert in NYC: brand strategy, logo design, brand design, web design, Framer and Webflow development, and motion. $3,000/week." />
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           "@id": "https://www.ebaqdesign.com/#organization",
           name: "Ebaq Design",
-          description: `Branding services in Brooklyn, New York City: brand strategy, logo design, identity systems, web design, development, and motion graphics. ${pricing.summary} ${pricing.guarantee}`,
+          description: `Branding services in Brooklyn, New York City: brand strategy, logo design, brand design, web design, development, and motion graphics. ${pricing.summary} ${pricing.guarantee}`,
           url: pageUrl,
           areaServed: "Worldwide",
           priceRange: `${pricing.weekly} per week`,
@@ -64,7 +64,7 @@ export const ServicesPage = () => (
       <Header107
         id="services-hero"
         title="Branding services"
-        description="Based in the heart of NYC, I craft distinctive brand identities for businesses near and far — from strategy and logo design through identity systems, websites, and motion."
+        description="Based in the heart of NYC, I craft distinctive brand identities for businesses near and far — from strategy and logo design through brand identity, websites, and motion."
         images={[]}
         showToolIcons={false}
         className="pb-8 md:pb-12 lg:pb-16"

@@ -56,7 +56,7 @@ for (const [path, component] of Object.entries({
   '/services': 'ServicesPage',
   '/services/brand-strategy': 'BrandStrategyPage',
   '/services/logo-design': 'LogoDesignPage',
-  '/services/identity-systems': 'IdentitySystemsPage',
+  '/services/brand-design': 'IdentitySystemsPage',
   '/services/web-design': 'WebDesignPage',
   '/services/web-development': 'WebDevelopmentPage',
   '/services/motion-graphics': 'MotionGraphicsPage',
@@ -92,12 +92,12 @@ for (const product of shopProducts) metadata.set(`/shop/${product.slug}`, { titl
 
 const serializeData = (value) => JSON.stringify(value).replace(/</g, '\\u003c')
 
-// The prerendered text paints before any JavaScript runs, in these three faces. Preloading them lets the
+// The prerendered text paints before any JavaScript runs, in these four faces. Preloading them lets the
 // first paint use them, instead of a fallback font that reflows the page when they arrive.
 const fontPreloads = (await readdir(new URL('assets/', outputDir)))
-  .filter((file) => /^(?:roboto-latin-(?:400|600)|roboto-condensed-latin-600)-normal-[\w-]+\.woff2$/.test(file))
+  .filter((file) => /^(?:roboto-latin-(?:400|500|600)|roboto-condensed-latin-600)-normal-[\w-]+\.woff2$/.test(file))
   .map((file) => `<link rel="preload" href="/assets/${file}" as="font" type="font/woff2" crossorigin />`)
-if (fontPreloads.length !== 3) throw new Error(`Expected 3 font files to preload, found ${fontPreloads.length}`)
+if (fontPreloads.length !== 4) throw new Error(`Expected 4 font files to preload, found ${fontPreloads.length}`)
 const prerenderStats = { rendered: 0, failed: [] }
 
 // Render the route with React so the static HTML carries the page's real content.

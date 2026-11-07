@@ -7,8 +7,10 @@ export type CaseStudyMedia = {
   backgroundColor?: string;
   span?: "full" | "half";
   fit?: "cover" | "contain";
-  // Lottie heroes: a phone version with the logo filling more of the frame.
+  // Lottie heroes: a phone and portrait-tablet version with the logo filling more of the frame.
   mobileSrc?: string;
+  // Lottie heroes: enlarge the animation on desktop (e.g. 1.2 = 120%).
+  desktopScale?: number;
 };
 
 type CaseStudyImage = {
@@ -1006,6 +1008,10 @@ const allCaseStudies: CaseStudy[] = [
             alt: "Airport Executive escalator campaign in motion",
             kind: "video",
           },
+          { src: "/case-study/airport-executive/12-logo-before.png", alt: "Airport Executive logo before redesign", span: "half" },
+          { src: "/case-study/airport-executive/13-logo-after.webp", alt: "Airport Executive logo after redesign", span: "half" },
+          { src: "/case-study/airport-executive/14-sketches.webp", alt: "Airport Executive monogram sketches on grid paper", span: "half" },
+          { src: "/case-study/airport-executive/15-sketch-final.webp", alt: "Arek Dvornechuck drawing the final Airport Executive monogram by hand", span: "half" },
         ],
       },
     ],
@@ -1277,4 +1283,6 @@ const allCaseStudies: CaseStudy[] = [
 export const caseStudies = allCaseStudies.filter((study) => study.published !== false);
 export const draftCaseStudies = allCaseStudies.filter((study) => study.published === false);
 
-export const getCaseStudy = (slug: string) => caseStudies.find((study) => study.slug === slug);
+// Drafts stay out of the build but are listed and viewable on the dev server.
+export const previewCaseStudies = import.meta.env?.DEV ? allCaseStudies : caseStudies;
+export const getCaseStudy = (slug: string) => previewCaseStudies.find((study) => study.slug === slug);

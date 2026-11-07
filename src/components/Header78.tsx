@@ -48,7 +48,7 @@ const loadLottie = (src: string) => {
 
 // Tiles only fetch and start their animation once they scroll near the screen, and pause off screen:
 // the three rows hold 45 logo animations, and running them all at once kept the main thread busy.
-const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY = 0 }: { src: string; bgColor?: string; fit?: "contain" | "cover"; scale?: number; offsetY?: number }) => {
+export const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY = 0 }: { src: string; bgColor?: string; fit?: "contain" | "cover"; scale?: number; offsetY?: number }) => {
   const [animationData, setAnimationData] = useState<object | null>(null);
   const { ref, near, inView } = useNearViewport<HTMLDivElement>("100px");
   const lottieRef = useRef<LottieRefCurrentProps>(null);
@@ -323,6 +323,21 @@ export const Header78 = (props: Header78Props) => {
         {visibleRows.includes(2) && <DraggableRow items={row2} direction="right" showBorder mediaAspect={mediaAspect} />}
         {visibleRows.includes(3) && <DraggableRow items={row3} direction="left" initialOffset={208} mediaAspect={mediaAspect} />}
       </div>
+    </section>
+  );
+};
+
+// Reuse each homepage row's actual assets, lazy media, and drag behavior.
+export const ServiceShowcaseRow = ({ row, additionalBrandWork = false }: { row: 1 | 2 | 3; additionalBrandWork?: boolean }) => {
+  const brandWork = Header78Defaults.row2.filter((item) => !item.src.includes("lyntics"));
+  const brandRows = [brandWork.slice(0, 5), brandWork.slice(5, 10), brandWork.slice(10)];
+  return (
+    <section id={`service-showcase-${row}`} aria-label={row === 1 ? "Selected logo animations" : row === 2 ? "Selected brand identities" : "Selected website designs"} className="flex flex-col gap-4 overflow-hidden bg-white pb-16 md:pb-24 lg:pb-28">
+      {additionalBrandWork ? brandRows.map((items, index) => (
+        <div key={index} data-brand-identity-row={index + 1}>
+          <DraggableRow items={items} direction={index === 1 ? "left" : "right"} initialOffset={index === 1 ? 208 : 0} showBorder />
+        </div>
+      )) : <DraggableRow items={row === 1 ? Header78Defaults.row1 : row === 2 ? Header78Defaults.row2 : Header78Defaults.row3} direction={row === 2 ? "right" : "left"} showBorder={row === 2} initialOffset={row === 3 ? 208 : 0} />}
     </section>
   );
 };

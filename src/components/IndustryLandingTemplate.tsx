@@ -29,7 +29,7 @@ export type IndustryLandingConfig = {
   aboutHeading: string;
 };
 
-const deliverablesDescription = "One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows in one to two more weeks at the same rate, depending on the page count.";
+const deliverablesDescription = "One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows: a week of design in Figma, then one or two weeks of development at the same rate, depending on the page count.";
 
 const buildSchemas = ({ path, breadcrumb, service, caseStudy, faq }: IndustryLandingConfig) => {
   const pageUrl = `${siteUrl}${path}`;

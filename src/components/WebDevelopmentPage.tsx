@@ -6,13 +6,13 @@ const pageUrl = "https://www.ebaqdesign.com/services/web-development";
 export const WebDevelopmentPage = () => (
   <>
     <Helmet>
-      <title>Framer & Webflow Developer, NYC | Ebaq Design</title>
-      <meta name="description" content="Framer, Webflow, and Next.js development in NYC: responsive builds, CMS setup, integrations, and launch support. One or two weeks at $3,000 per week." />
+      <title>Web Development: Framer, Webflow & Next.js | Ebaq Design</title>
+      <meta name="description" content="Web development in Framer, Webflow, and Next.js: responsive builds, CMS setup, integrations, and launch support. One or two weeks at $3,000 per week." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
-      <meta property="og:title" content="Framer & Webflow Developer, NYC | Ebaq Design" />
-      <meta property="og:description" content="Framer, Webflow, and Next.js development in NYC: responsive builds, CMS setup, integrations, and launch support. One or two weeks at $3,000 per week." />
+      <meta property="og:title" content="Web Development: Framer, Webflow & Next.js | Ebaq Design" />
+      <meta property="og:description" content="Web development in Framer, Webflow, and Next.js: responsive builds, CMS setup, integrations, and launch support. One or two weeks at $3,000 per week." />
     </Helmet>
     <ServiceDetailLayout
       slug="web-development"

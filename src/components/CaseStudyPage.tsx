@@ -124,6 +124,7 @@ export const CaseStudyPage = () => {
             kind: study.hero.kind ?? "image",
             backgroundColor: study.hero.backgroundColor,
             mobileSrc: study.hero.mobileSrc,
+            desktopScale: study.hero.desktopScale,
           }}
         />
 

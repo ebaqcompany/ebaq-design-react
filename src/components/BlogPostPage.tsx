@@ -257,7 +257,7 @@ export const BlogPostPage = () => {
       <main>
         <BlogPostHeader4 category={post.category} heading={post.title} image={post.image} youtubeEmbed={youtubeEmbed} postDetails={[{ title: "Published on", description: post.date }]} />
         <Content32 articleTitle={post.title} articleUrl={canonicalUrl}>
-          {!hasInlineImages && <figure className="mb-8 w-full"><img loading="lazy" decoding="async" src={post.image.src} alt={post.image.alt || post.title} className="h-auto w-full" /></figure>}
+          {!hasInlineImages && post.image.src && <figure className="mb-8 w-full"><img loading="lazy" decoding="async" src={post.image.src} alt={post.image.alt || post.title} className="h-auto w-full" /></figure>}
           {post.faq && post.faq.length > 0 && !post.logoRoster && <section aria-label="Common questions" className="mt-12 pt-8">
             {post.faq.map((item) => <div key={item.question} className="mt-6"><h3>{item.question}</h3><p>{item.answer}</p></div>)}
           </section>}

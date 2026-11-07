@@ -680,6 +680,20 @@ a:has(> :is(h1, h2, h3, h4, h5, h6)):is(:hover, :focus-visible),
   #service-hero .logo-annotated-heading { line-height: 1.15 !important; }
 }
 
+.hourglass-icon {
+  animation: hourglass-turn 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: center;
+}
+
+@keyframes hourglass-turn {
+  0%, 70% { transform: rotate(0deg); }
+  100% { transform: rotate(180deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hourglass-icon { animation: none; }
+}
+
 button:not([role="tab"]):not(.portfolio-header-replay):not(.portfolio22-service):not(.gallery-lottie),
 button[role="tab"]:not(.service-text-tab),
 a.button-primary,
@@ -1207,4 +1221,18 @@ footer a:not([class*="button"]):is(:hover, :focus-visible) {
 .contact-submit:disabled {
   background-color: #a3a3a3 !important;
   color: #525252 !important;
+}
+
+/* Hide only the Brand Design timeline's native scrollbar; retain native swipe,
+   trackpad scrolling, focus, and keyboard navigation without reserving a gutter. */
+#brand-design-process [data-timeline-viewport] {
+  scrollbar-width: none;
+  scrollbar-gutter: auto;
+  -ms-overflow-style: none;
+}
+
+#brand-design-process [data-timeline-viewport]::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }

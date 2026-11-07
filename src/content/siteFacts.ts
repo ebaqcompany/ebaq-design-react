@@ -66,7 +66,7 @@ export const positioning =
 
 // The services, in the words people search with, plus the tools they're built in.
 export const services = [
-  { name: "Branding and brand identity design", path: "/services/identity-systems" },
+  { name: "Branding and brand identity design", path: "/services/brand-design" },
   { name: "Logo design", path: "/services/logo-design" },
   { name: "Brand strategy", path: "/services/brand-strategy" },
   { name: "Web design", path: "/services/web-design" },

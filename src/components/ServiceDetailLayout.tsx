@@ -2,11 +2,17 @@ import { Fragment, type ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navbar16 } from "./Navbar16";
 import { Header107 } from "./Header107";
+import { HomepageMarkerCircle } from "./Layout484";
+import { WebsiteComparison } from "./WebsiteComparison";
+import { LogoComparison } from "./LogoComparison";
 import { Header104 } from "./Header104";
+import { ServiceShowcaseRow } from "./Header78";
 import { Portfolio16 } from "./Portfolio16";
 import { workProjects } from "../data/workProjects";
+import { BrandDesignOverview } from "./BrandDesignOverview";
 import { Layout351 } from "./Layout351";
 import { Layout6 } from "./Layout6";
+import { Timeline18 } from "./Timeline18";
 import { Timeline10 } from "./Timeline10";
 import { Testimonial32 } from "./Testimonial32";
 import { Faq4 } from "./Faq4";
@@ -83,7 +89,7 @@ const ServiceOverview = ({ service }: { service: Service }) => {
     />
   );
   return (
-    <section id="overview" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="overview" className={`px-[5%] py-16 md:py-24 lg:py-28 ${service.slug === "brand-design" ? "bg-black text-white" : ""}`}>
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
           <div>
@@ -106,7 +112,7 @@ const ServiceOverview = ({ service }: { service: Service }) => {
             <p className="md:text-md">{detail.tools.join(" · ")}</p>
           </div>
         </div>
-        <SelectedServiceWork service={service} />
+        {service.slug !== "brand-design" && <SelectedServiceWork service={service} />}
       </div>
     </section>
   );
@@ -141,12 +147,15 @@ type Props = {
   heading: string;
   description: string;
   afterOverview?: ReactNode;
+  heroImage?: { src: string; alt: string; width?: number; height?: number };
 };
 
 // Shared body for the six /services/* pages. Each page file owns its own
 // <Helmet> so the route-shell generator can scrape a literal title there.
-export const ServiceDetailLayout = ({ slug, heading, description, afterOverview }: Props) => {
+export const ServiceDetailLayout = ({ slug, heading, description, afterOverview, heroImage }: Props) => {
   const service = serviceBySlug(slug);
+  const ProcessTimeline = slug === "brand-design" ? Timeline18 : Timeline10;
+  const showcaseRow = slug === "logo-design" ? 1 : slug === "brand-design" ? 2 : slug === "web-design" ? 3 : undefined;
 
   return (
     <div className="relative bg-white">
@@ -157,19 +166,37 @@ export const ServiceDetailLayout = ({ slug, heading, description, afterOverview 
       </Helmet>
       <Navbar16 />
       <main>
-      {slug === "logo-design" ? <Header104 description={description} /> : <Header107
+      {showcaseRow ? <>
+        <Header104
+          description={description}
+          showcaseId={`service-showcase-${showcaseRow}`}
+          {...(slug === "brand-design" ? {
+            headlineLabel: "Brand design for your next chapter",
+            headline: <><span className="block">Brand design</span>{" "}<span className="block">for your next <span className="relative mx-[0.08em] inline-block">chapter<HomepageMarkerCircle /></span></span></>,
+            ctaLabel: "Discuss your brand",
+          } : slug === "web-design" ? {
+            headlineLabel: "Web design that inspires action",
+            headline: <><span className="block">Web design</span>{" "}<span className="block">that inspires <span className="relative mx-[0.08em] inline-block">action<HomepageMarkerCircle /></span></span></>,
+            ctaLabel: "Discuss your website",
+          } : {})}
+        />
+        <ServiceShowcaseRow row={showcaseRow} additionalBrandWork={slug === "brand-design"} />
+      </> : <Header107
         id="service-hero"
         title={heading}
         description={description}
         images={[]}
+        heroImage={heroImage}
         showToolIcons={false}
         className="pb-8 md:pb-12 lg:pb-16"
       />}
-      <ServiceOverview service={service} />
+      {slug === "logo-design" && <LogoComparison />}
+      {slug === "web-design" && <WebsiteComparison />}
+      {slug === "brand-design" ? <BrandDesignOverview /> : <ServiceOverview service={service} />}
       {slug === "logo-design" && <SelectedServiceWork service={service} separate />}
       {slug !== "logo-design" && <>
       {afterOverview}
-      <Layout351
+      {slug !== "brand-design" && <Layout351
         id="what-i-offer"
         tagline="What I offer"
         heading="Six services, one senior designer"
@@ -180,9 +207,9 @@ export const ServiceDetailLayout = ({ slug, heading, description, afterOverview 
           index === service.index ? { ...feature, url: "/start", linkLabel: "Book a call" } : feature,
         )}
         initialActive={service.index}
-      />
+      />}
       </>}
-      <Timeline10
+      <ProcessTimeline
         tagline="How it works"
         taglineClassName="text-brand-primary"
         heading="An overview of my branding process"

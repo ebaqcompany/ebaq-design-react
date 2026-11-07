@@ -18,6 +18,7 @@ export const BrandStrategyPage = () => (
       slug="brand-strategy"
       heading="Brand strategy that settles the hard questions first"
       description="Before a logo is worth drawing, the brand needs a position it can defend. Strategy covers the audit, the competition, the audience, and the language the brand uses to compete."
+      heroImage={{ src: "/images/services/arek-researching2-p-1080.jpg", alt: "Arek Dvornechuck reviewing brand strategy research at his studio table", width: 1080, height: 1080 }}
     />
   </>
 );

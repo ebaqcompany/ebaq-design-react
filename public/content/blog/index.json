@@ -1,20 +1,5 @@
 [
   {
-    "slug": "startup-branding-agencies",
-    "url": "/blog/startup-branding-agencies",
-    "title": "Top 10 Branding Agencies for Startups in 2026",
-    "description": "10 branding agencies for startups, from Bolder and The Branx to Pentagram, with locations, prices, timelines, past work and contact details.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "10 min read",
-    "date": "Oct 26, 2026",
-    "image": {
-      "src": "/images/blog/startup-branding-agencies/cover-collage.webp",
-      "alt": "Top 10 Branding Agencies for Startups in 2026",
-      "thumbnail": "/images/blog/startup-branding-agencies/cover-collage-768w.webp"
-    }
-  },
-  {
     "slug": "branding-agencies-one-week",
     "url": "/blog/branding-agencies-one-week",
     "title": "13 Branding Agencies That Deliver in One Week (or Two)",
@@ -765,19 +750,6 @@
     }
   },
   {
-    "slug": "best-cannabis-dispensary-logos",
-    "url": "/blog/best-cannabis-dispensary-logos",
-    "title": "Best Cannabis Dispensary Logos in 2026",
-    "description": "Explore the best cannabis dispensary logos in 2026. See how top brands design memorable marijuana identities.",
-    "category": "Branding",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "",
-      "alt": "Best Cannabis Dispensary Logos in 2026"
-    }
-  },
-  {
     "slug": "best-logos",
     "url": "/blog/best-logos",
     "title": "The Best Logos Are Simple in 2026: It's All in the Idea",
@@ -940,12 +912,12 @@
   {
     "slug": "brand-guidelines",
     "url": "/blog/brand-guidelines",
-    "title": "19 Best Examples of Brand Guidelines in 2026",
-    "description": "Explore 19 brand guidelines examples for 2026. See how top companies document their visual identity.",
+    "title": "31 Brand Guidelines Examples: Famous Brands & My Client Work",
+    "description": "Explore brand guidelines from famous brands and my own client projects, with visual examples, digital portals and practical lessons for your business.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "readTime": "26 min read",
+    "date": "Nov 7, 2026",
     "image": {
       "src": "/images/blog/brand-guidelines/best-examples-of-brand-guidelines-2-1.webp",
       "alt": "19 Best Examples of Brand Guidelines in 2026"
@@ -1393,7 +1365,7 @@
     "category": "Branding",
     "categorySlug": "branding",
     "readTime": "15 min read",
-    "date": "Oct 18, 2026",
+    "date": "Nov 7, 2026",
     "image": {
       "src": "/images/blog/cannabis-branding/best-dispensary-logos.webp",
       "alt": "Cannabis branding guide: dispensary and product brand identity, packaging and shelf design",
@@ -1948,8 +1920,8 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "",
-      "alt": "50 Most Iconic Logos in 2026: A Designer's Review"
+      "src": "/images/blog/iconic-logos/cover-replacement.webp",
+      "alt": "Recognizable brand symbols including Nike, Deutsche Bank, Mastercard, Target and Audi on a white background"
     }
   },
   {
@@ -2517,8 +2489,8 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "",
-      "alt": "40 Best Minimalist Logos for Design Inspiration in 2026"
+      "src": "/images/blog/minimalist-logos/cover-replacement.webp",
+      "alt": "White Nike swoosh visibly applied to a red and black running shoe"
     }
   },
   {
@@ -2589,8 +2561,8 @@
     "readTime": "5 min read",
     "date": "Jan 27, 2026",
     "image": {
-      "src": "",
-      "alt": "The Art of Negative Space in Logo Design: A Guide for 2026"
+      "src": "/images/blog/negative-space-logo-design/cover-replacement.webp",
+      "alt": "FedEx, Toblerone and New Bedford Whaling Museum logos with hidden shapes and real branded applications"
     }
   },
   {
@@ -3122,6 +3094,21 @@
     "image": {
       "src": "/images/blog/worst-rebrands/worst-brands.webp",
       "alt": "7 Worst Rebrands: Logos Gone Wrong in 2026"
+    }
+  },
+  {
+    "slug": "startup-branding-agencies",
+    "url": "/blog/startup-branding-agencies",
+    "title": "Top 10 Branding Agencies for Startups in 2026",
+    "description": "10 branding agencies for startups, from Bolder and The Branx to Pentagram, with locations, prices, timelines, past work and contact details.",
+    "category": "Brand Strategy",
+    "categorySlug": "brand-strategy",
+    "readTime": "10 min read",
+    "date": "Oct 26, 2026",
+    "image": {
+      "src": "/images/blog/startup-branding-agencies/cover-collage.webp",
+      "alt": "Top 10 Branding Agencies for Startups in 2026",
+      "thumbnail": "/images/blog/startup-branding-agencies/cover-collage-768w.webp"
     }
   }
 ]

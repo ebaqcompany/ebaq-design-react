@@ -1,7 +1,7 @@
-import { caseStudies } from "./caseStudies";
+import { previewCaseStudies } from "./caseStudies";
 
 // Shared portfolio roster and preview assets used by /work and service-page embeds.
-export const workProjects = caseStudies.map((study) => ({
+export const workProjects = previewCaseStudies.map((study) => ({
   title: study.client,
   description: study.title,
   image: study.preview,

@@ -87,11 +87,11 @@ const pageUrl = `${siteUrl}/ai-healthcare-branding`;
 const healthcareFaqs = [
   {
     question: "How much does branding cost for an AI healthcare company?",
-    answer: `${pricing.weekly} per week, flat. A new brand identity or rebrand (logo, logo animation, colors, typography, and brand guidelines) is delivered in one week, guaranteed, for ${pricing.weekly} total. The website adds one to two more weeks, and a pitch deck or motion work another week, all at the same rate and agreed before work starts.`,
+    answer: `${pricing.weekly} per week, flat. A new brand identity or rebrand (logo, logo animation, colors, typography, and brand guidelines) is delivered in one week, guaranteed, for ${pricing.weekly} total. The website adds two to three more weeks, and a pitch deck or motion work another week, all at the same rate and agreed before work starts.`,
   },
   {
     question: "How long does a healthcare AI rebrand take?",
-    answer: "One week for the brand identity, guaranteed. The website follows in one to two more weeks, depending on the number of pages. There are no months-long agency timelines.",
+    answer: "One week for the brand identity, guaranteed. The website follows in two to three more weeks: a week of design in Figma, then one or two weeks of development, depending on the number of pages. There are no months-long agency timelines.",
   },
   {
     question: "Have you branded an AI healthcare company before?",
@@ -176,7 +176,7 @@ export const AiHealthcareLanding = () => (
       <PainPointsSection heading="In healthcare, the brand is the first proof" points={painPoints} />
       <DeliverablesSection
         heading="Everything an AI health company needs to launch"
-        description="One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows in one to two more weeks at the same rate, depending on the page count."
+        description="One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows: a week of design in Figma, then one or two weeks of development at the same rate, depending on the page count."
         items={deliverables}
       />
       <div id="next-dim">

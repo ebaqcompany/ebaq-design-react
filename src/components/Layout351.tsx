@@ -68,7 +68,7 @@ export const Layout351 = (props: Layout351Props) => {
           <h2 className="mb-5 md:mb-6">{heading}</h2>
           <p className="md:text-md">{description}</p>
         </div>
-        <div className="flex w-full flex-col overflow-hidden border-b border-l border-r border-border-primary lg:h-[90vh] lg:flex-row lg:border-r-0 lg:border-t">
+        <div className="flex w-full flex-col overflow-hidden border-b border-l border-r border-border-primary lg:flex-row lg:border-r-0 lg:border-t">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
@@ -109,12 +109,12 @@ const FeatureVideo = ({ image, isActive }: { image: ImageProps; isActive: boolea
   }, [isActive]);
 
   return (
-    <div ref={frameRef} className="size-full bg-black/5">
+    <div ref={frameRef} className="min-h-px w-full bg-black/5">
       {isActive && inView && (
         <video
           key={image.src}
           aria-label={image.alt}
-          className="size-full object-cover"
+          className="h-auto w-full"
           autoPlay={!reduceMotion}
           loop
           muted
@@ -129,7 +129,7 @@ const FeatureVideo = ({ image, isActive }: { image: ImageProps; isActive: boolea
 
 const FeatureMedia = ({ image, isActive }: { image: ImageProps; isActive: boolean }) => {
   if (image.src.endsWith(".mp4")) return <FeatureVideo image={image} isActive={isActive} />;
-  return <img src={image.src} alt={image.alt} loading="lazy" className="size-full object-cover" />;
+  return <img src={image.src} alt={image.alt} loading="lazy" className="h-auto w-full" />;
 };
 
 const FeatureCard = ({ index, featureCount, isActive, setIsActive, ...feature }: FeatureWithState) => {
@@ -145,7 +145,7 @@ const FeatureCard = ({ index, featureCount, isActive, setIsActive, ...feature }:
 
   return (
     <motion.div
-      className="flex flex-col justify-start overflow-hidden lg:h-[90vh] lg:min-w-20 lg:flex-row lg:border-r lg:border-border-primary"
+      className="flex flex-col justify-start overflow-hidden lg:min-w-20 lg:flex-row lg:border-r lg:border-border-primary"
       initial={false}
       animate={{
         width: isMobile ? "100%" : isActive ? "100%" : "5rem",
@@ -160,7 +160,7 @@ const FeatureCard = ({ index, featureCount, isActive, setIsActive, ...feature }:
         aria-controls={panelId}
         onClick={setIsActive}
         onKeyDown={handleKeyDown}
-        className="relative flex h-16 w-full min-w-full cursor-pointer items-center justify-center border-t border-border-primary py-8 md:h-20 lg:h-[90vh] lg:w-20 lg:min-w-20 lg:flex-col lg:justify-between lg:border-none"
+        className="relative flex h-16 w-full min-w-full cursor-pointer items-center justify-center border-t border-border-primary py-8 md:h-20 lg:h-auto lg:self-stretch lg:w-20 lg:min-w-20 lg:flex-col lg:justify-between lg:border-none"
       >
         <p className={`absolute left-6 whitespace-nowrap text-xl font-bold md:left-10 md:text-2xl lg:relative lg:left-0 ${isActive ? "text-brand-primary" : ""}`}>
           {feature.columnText}
@@ -211,9 +211,8 @@ const FeatureCard = ({ index, featureCount, isActive, setIsActive, ...feature }:
               {feature.linkLabel ?? "Learn more"}<RxChevronRight aria-hidden="true" className="size-5" />
             </a>
           )}
-          {/* On desktop the media fills whatever height the copy leaves, so the
-              card never overflows its 90vh frame. */}
-          <div className="rt-8 mt-8 h-80 md:mt-10 md:h-[25rem] lg:mt-8 lg:h-auto lg:min-h-0 lg:flex-1">
+          {/* Media keeps its intrinsic ratio; the open panel grows to fit it. */}
+          <div className="mt-8 w-full md:mt-10 lg:mt-8">
             <FeatureMedia image={feature.image} isActive={isActive} />
           </div>
         </div>

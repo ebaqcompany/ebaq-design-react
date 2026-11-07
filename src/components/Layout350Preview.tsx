@@ -5,7 +5,7 @@ import { isVideoSrc, LazyVideo } from "./Media";
 import { Layout527Defaults } from "./Layout527";
 
 const portfolio22Labels = ["Logo Design", "Colors & Fonts", "Stationery", "Social", "UI Design", "Websites", "Ads"];
-const portfolio22Services = [
+export const portfolio22Services = [
   ...Layout527Defaults.hoverLinks.slice(0, 7).map((item, index) => ({
     ...item,
     label: portfolio22Labels[index],
@@ -24,6 +24,8 @@ const portfolio22Services = [
 export type PreviewItem = { label: string; image: { src: string; alt?: string } };
 
 type Layout350PreviewProps = {
+  id?: string;
+  idPrefix?: string;
   eyebrow?: string;
   heading?: string;
   // Landing pages pass their own case-study media. Keep it 16:9: the preview frame is aspect-video.
@@ -52,7 +54,8 @@ const ServiceMedia = ({ src, alt }: { src: string; alt?: string }) => {
   );
 };
 
-export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everything your brand needs", items = portfolio22Services }: Layout350PreviewProps) => {
+export const Layout350Preview = ({ id, idPrefix = "portfolio22-service", eyebrow = "What I offer", heading = "Everything your brand needs", items = portfolio22Services }: Layout350PreviewProps) => {
+  const headingId = idPrefix === "portfolio22-service" ? "layout350-preview-heading" : `${idPrefix}-heading`;
   const [activeIndex, setActiveIndex] = useState(0);
   const [isInteracting, setIsInteracting] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -65,11 +68,11 @@ export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everythi
   };
 
   return (
-    <section className="overflow-hidden bg-black px-[5%] py-16 text-white md:py-24 lg:py-28" aria-labelledby="layout350-preview-heading">
+    <section id={id} className="overflow-hidden bg-black px-[5%] py-16 text-white md:py-24 lg:py-28" aria-labelledby={headingId}>
       <div className="container">
         <div className="mb-12 max-w-4xl md:mb-16 lg:mb-20">
           <p className="mb-3 font-semibold text-brand-primary md:mb-4">{eyebrow}</p>
-          <h2 id="layout350-preview-heading">{heading}</h2>
+          <h2 id={headingId}>{heading}</h2>
         </div>
 
         <div className="grid items-start gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:gap-12">
@@ -92,10 +95,10 @@ export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everythi
               return (
                 <div key={item.label}>
                   <button
-                    id={`portfolio22-service-trigger-${index}`}
+                    id={`${idPrefix}-trigger-${index}`}
                     type="button"
                     aria-expanded={isMobile ? isExpanded : undefined}
-                    aria-controls={isMobile ? `portfolio22-service-panel-${index}` : undefined}
+                    aria-controls={isMobile ? `${idPrefix}-panel-${index}` : undefined}
                     aria-label={isMobile ? `${isExpanded ? "Hide" : "Show"} ${item.label} preview` : `Preview ${item.label}`}
                     onMouseEnter={() => {
                       if (!isMobile) {
@@ -125,9 +128,9 @@ export const Layout350Preview = ({ eyebrow = "What I offer", heading = "Everythi
                   </button>
                   {isExpanded && (
                     <div
-                      id={`portfolio22-service-panel-${index}`}
+                      id={`${idPrefix}-panel-${index}`}
                       role="region"
-                      aria-labelledby={`portfolio22-service-trigger-${index}`}
+                      aria-labelledby={`${idPrefix}-trigger-${index}`}
                       className="mt-5 md:hidden"
                     >
                       <ServiceMedia src={item.image.src} alt={item.image.alt} />

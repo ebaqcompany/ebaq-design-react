@@ -46,7 +46,7 @@ export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHr
         {variant === "author" && <p className="heading-h7 whitespace-nowrap text-brand-primary">Branding Expert</p>}
       </div>
       {variant === "author" ? <>
-        <div className="mt-1 flex items-center gap-1 text-black" aria-label="Arek Dvornechuck on social media">
+        <div className="mt-1 flex items-center gap-2 text-black" aria-label="Arek Dvornechuck on social media">
           {socialLinks.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noreferrer" aria-label={link.label} className="heading-link -m-1 inline-flex p-1 text-black">{link.icon}</a>)}
         </div>
       </> : <div className="flex shrink-0 items-center gap-1" role="group" aria-label="Tools I use as a Branding Expert">

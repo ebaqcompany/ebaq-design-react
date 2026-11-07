@@ -92,7 +92,7 @@ const saasFaqs = [
   },
   {
     question: "How long does a SaaS rebrand take?",
-    answer: "One week for the brand identity, guaranteed. The website follows in one to two more weeks, depending on the number of pages, and a pitch deck or launch graphics take another week. Everything is at the same weekly rate, agreed before work starts.",
+    answer: "One week for the brand identity, guaranteed. The website follows in two to three more weeks: a week of design in Figma, then one or two weeks of development, depending on the number of pages. A pitch deck or launch graphics take another week. Everything is at the same weekly rate, agreed before work starts.",
   },
   {
     question: "Have you branded a SaaS company before?",
@@ -185,7 +185,7 @@ export const SaasBrandingLanding = () => (
       <PainPointsSection heading="Your brand is part of the product" points={painPoints} />
       <DeliverablesSection
         heading="Everything a SaaS startup needs to launch"
-        description="One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows in one to two more weeks at the same rate, depending on the page count."
+        description="One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows: a week of design in Figma, then one or two weeks of development at the same rate, depending on the page count."
         items={deliverables}
       />
       <div id="elevate">

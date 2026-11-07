@@ -89,11 +89,11 @@ const pageUrl = `${siteUrl}/law-firm-branding`;
 const lawFirmFaqs = [
   {
     question: "How much does law firm branding cost?",
-    answer: `${pricing.weekly} per week, flat. A new law firm brand identity or rebrand (logo, logo animation, colors, typography, brand guidelines, business cards, letterhead, email signature, and LinkedIn and Instagram graphics) is delivered in one week, guaranteed, for ${pricing.weekly} total. A website adds one to two more weeks at the same rate, agreed before work starts.`,
+    answer: `${pricing.weekly} per week, flat. A new law firm brand identity or rebrand (logo, logo animation, colors, typography, brand guidelines, business cards, letterhead, email signature, and LinkedIn and Instagram graphics) is delivered in one week, guaranteed, for ${pricing.weekly} total. A website adds two to three more weeks at the same rate, agreed before work starts.`,
   },
   {
     question: "How long does a law firm rebrand take?",
-    answer: "One week for the brand identity, guaranteed. The website follows in one to two more weeks, depending on the number of pages. There are no months-long agency timelines.",
+    answer: "One week for the brand identity, guaranteed. The website follows in two to three more weeks: a week of design in Figma, then one or two weeks of development, depending on the number of pages. There are no months-long agency timelines.",
   },
   {
     question: "Have you branded a law firm before?",
@@ -215,7 +215,7 @@ export const LawFirmLanding = () => (
       <PainPointsSection heading="Your brand is your strongest argument" points={painPoints} />
       <DeliverablesSection
         heading="Everything a law firm needs to look the part"
-        description="One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows in one to two more weeks at the same rate, depending on the page count."
+        description="One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows: a week of design in Figma, then one or two weeks of development at the same rate, depending on the page count."
         items={deliverables}
       />
       <div id="fox-berman">

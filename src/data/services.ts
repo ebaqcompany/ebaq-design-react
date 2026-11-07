@@ -7,7 +7,7 @@ import { pricing } from "../content/siteFacts";
 const slugs = [
   "brand-strategy",
   "logo-design",
-  "identity-systems",
+  "brand-design",
   "web-design",
   "web-development",
   "motion-graphics",
@@ -45,7 +45,7 @@ export const serviceBySlug = (slug: ServiceSlug): Service => {
 const serviceMedia: Record<ServiceSlug, { src: string; alt: string }> = {
   "brand-strategy": { src: "/case-study/wingnut/10-deck.webp", alt: "Wingnut positioning deck: Screw the guesswork, we know what works" },
   "logo-design": { src: "/case-study/elevate/01-logos.webp", alt: "Elevate logo system" },
-  "identity-systems": { src: "/case-study/fox-berman/12-booklet.webp", alt: "Fox Berman brand book" },
+  "brand-design": { src: "/case-study/fox-berman/12-booklet.webp", alt: "Fox Berman brand book" },
   "web-design": { src: "/case-study/aero/05-website.webp", alt: "Aero website design" },
   "web-development": { src: "/case-study/periti/02-macbook.webp", alt: "Periti website live on a laptop" },
   "motion-graphics": { src: "/case-study/fox-berman/02-colors.mp4", alt: "Fox Berman brand colors in motion" },
@@ -210,7 +210,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       },
     ],
   },
-  "identity-systems": {
+  "brand-design": {
     title: "Brand identity design: the system around the logo",
     overview: [
       "A logo alone does not make a brand recognizable. The identity system does: color, typography, layouts, icons, and imagery rules that make every touchpoint look like it came from the same company.",
@@ -274,6 +274,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       {
         title: "Should my website be built in Framer or Webflow?",
         answer: "Framer for marketing sites with lots of motion that a small team updates often; Webflow for larger sites built around a CMS. If the site needs custom functionality, Next.js. The choice is made on the kickoff call, based on how your team will use the site.",
+        links: [{ label: "Framer websites", href: "/framer-designer" }, { label: "Webflow websites", href: "/webflow-designer" }],
       },
       {
         title: "Will I be able to edit the website myself?",
