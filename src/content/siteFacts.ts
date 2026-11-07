@@ -85,8 +85,10 @@ export const pricing = {
     "A flat $3,000 per week for any design work: branding, logo animation, motion graphics, pitch decks, web design, or web development.",
   guarantee:
     "A new brand identity or rebrand (the Brand Sprint) is delivered in one week, guaranteed, for $3,000 total.",
+  payment: "Once we agree on scope and timing, I send the agreement and invoice. Payment for the booked engagement is due upfront, before work begins.",
+  bookingIntro: "Engagements start at $3,000, paid upfront. Use this call to discuss your business, scope, timing, and fit.",
   fixedTotal:
-    "Bigger projects add weeks at the same flat rate. The number of weeks is agreed on the kickoff call, so the total price is fixed before work starts. Revisions are included and there is no hourly billing.",
+    "Bigger projects add weeks at the same flat rate. The number of weeks is agreed on the kickoff call, so the total price is fixed before work starts. Revisions within the agreed scope are included and there is no hourly billing. The weekly rate is fixed; the $10,000 monthly option applies when a month is booked upfront.",
 };
 
 export const brandSprint = {
@@ -96,7 +98,7 @@ export const brandSprint = {
   description: "A complete brand identity or rebrand, delivered in one week for a flat $3,000.",
   deliverables: [
     "Several logo concepts",
-    "Revisions included",
+    "Revisions within the agreed scope",
     "Final logo files (SVG, PNG, and PDF for print and screen)",
     "Logo animation",
     "Color palette",
@@ -135,26 +137,42 @@ export const pricingFaqs: FactFaq[] = [
   {
     question: "Is the $3,000 per week or per project?",
     answer:
-      "The rate is a flat $3,000 per week for any kind of design work. A new brand identity or rebrand takes one week, so it costs $3,000 in total. If you also need motion graphics, a pitch deck, or a website, each extra week is the same $3,000. We agree the number of weeks on the kickoff call, so your total is fixed before work starts.",
+      "The weekly rate is $3,000. A scoped Brand Sprint takes one week and costs $3,000 total. Website, extended motion, and other work are scoped separately. You can book additional weeks at $3,000 each or a month upfront for $10,000. We agree on the scope, schedule, and total before work starts.",
   },
   {
     question: "Is the one-week timeline guaranteed?",
     answer:
-      "Yes. A new brand identity or rebrand is delivered within one week, guaranteed. We lock the scope on the kickoff call, which is what makes the guarantee possible.",
+      "Yes. The agreed Brand Sprint identity deliverables are completed in one week, guaranteed. Before booking, we confirm the scope, start date, and feedback schedule. The guarantee covers that agreed work, rather than an entire business launch or additional website work.",
   },
   {
     question: "What do I get in the one-week Brand Sprint?",
     answer:
-      "Several logo concepts, revisions, the final logo files, a logo animation, a color palette, typography, and brand guidelines, plus mockups you can launch with: business cards, social media profile images and posts, and an email signature.",
+      "You work directly with me on logo concepts and final logo variations, a color palette, typography, brand guidelines, logo animation, and agreed launch assets: business card design, social profile images and launch posts, and an email signature. Revisions within the agreed scope and editable source files are included. We confirm the deliverables before starting.",
   },
   {
     question: "What if I need more than branding?",
     answer:
-      "Add weeks at the same flat rate. Motion graphics, animated social posts, or a pitch deck usually take one more week. Website design in Figma is another week, and development in Framer, Webflow, or Next.js takes one or two more, depending on the page count. Ongoing work is $10,000 per month.",
+      "Add weeks at the same flat rate. Motion graphics, animated social posts, or a pitch deck usually take one more week. Website design in Figma is another week, and development in Framer, Webflow, or Next.js takes one or two more, depending on the page count. A month booked upfront is $10,000, with its scope and priorities agreed before starting.",
   },
   {
     question: "Are revisions included?",
-    answer: "Yes. Revisions are included in the flat weekly fee. There is no hourly billing and no surprise invoice.",
+    answer: "Yes. Revisions within the agreed scope are included in the flat fee. If you request a new direction or additional work outside that scope, we agree on the extra work and cost before proceeding.",
+  },
+  {
+    question: "What if I don't like the first concepts?",
+    answer: "We'll talk through what isn't working and refine the concepts from there. Revisions within the agreed scope are included. If you request a new direction outside that scope, we'll agree on any additional work and cost before proceeding.",
+  },
+  {
+    question: "Are your rates negotiable?",
+    answer: "My weekly rate is fixed at $3,000. I don't negotiate the rate, but I'll help you identify the right scope and priorities before you commit. A month booked upfront is $10,000.",
+  },
+  {
+    question: "When do I pay?",
+    answer: pricing.payment,
+  },
+  {
+    question: "What happens on the introductory call?",
+    answer: "We'll discuss your business, what you need, and when you need it. I'll answer your questions, confirm availability, and help determine whether we're a good fit. If we decide to work together, we'll confirm the scope, start date, and next steps. Engagements start at $3,000, paid upfront.",
   },
 ];
 

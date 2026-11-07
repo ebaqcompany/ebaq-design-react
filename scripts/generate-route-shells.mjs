@@ -155,7 +155,7 @@ for (const path of paths) {
 await writeFile(new URL('404.html', outputDir), render('/404', { title: 'Page not found | Ebaq Design', description: 'The page you requested could not be found.' }).replace('content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"', 'content="noindex,follow"'))
 
 // Homepage: the site graph from siteFacts replaces the placeholder, then the page is prerendered like the rest.
-const homeFaqs = [...facts.pricingFaqs.slice(0, 4), ...facts.studioFaqs]
+const homeFaqs = [...facts.pricingFaqs, ...facts.studioFaqs]
 const siteGraph = buildSiteGraph(facts, homeFaqs, new Date().toISOString().slice(0, 10))
 const home = prerender('/')
 await writeFile(new URL('index.html', outputDir), indexHtml
@@ -184,7 +184,9 @@ Tools: ${tools.join(', ')}.
 - ${pricing.summary}
 - ${pricing.guarantee}
 - ${pricing.fixedTotal}
-- Ongoing work: ${pricing.monthly} per month.
+- Monthly engagement: ${pricing.monthly}, booked upfront.
+- ${pricing.payment}
+- ${pricing.bookingIntro}
 
 ## Contact
 
@@ -237,6 +239,10 @@ const llmsFull = `# ${studio.name}: full reference for AI assistants
 ## Pricing and guarantee
 
 ${pricing.summary} ${pricing.guarantee} ${pricing.fixedTotal}
+
+${pricing.payment}
+
+${pricing.bookingIntro}
 
 ${weekTable}
 

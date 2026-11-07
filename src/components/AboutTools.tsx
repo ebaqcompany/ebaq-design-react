@@ -12,7 +12,7 @@ export const AboutTools = () => {
         <div className="flex flex-col overflow-hidden rounded-2xl bg-[#f5f5f5] pt-8 md:pt-10">
           <div className="px-6 md:px-8 lg:px-10">
             <p className="mb-3 font-semibold text-brand-primary">My toolkit</p>
-            <h2 id="about-tools-heading" className="heading-h3 mb-4">The tools behind the work.</h2>
+            <h2 id="about-tools-heading" className="heading-h3 mb-4">Tools I use</h2>
             <p>For brand identities, websites, and everything in motion.</p>
           </div>
           <ul className="sr-only">{arekToolIcons.map(([, name]) => <li key={name}>{name}</li>)}</ul>

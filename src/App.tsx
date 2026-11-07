@@ -13,6 +13,7 @@ import {
   Cta17,
   Footer15,
 } from "./components";
+import { Comparison } from "./components/Comparison";
 import { useTracking } from "./hooks/useTracking";
 
 function App() {
@@ -68,6 +69,18 @@ function App() {
 
           {/* Pricing Section */}
           <Pricing8 />
+
+      <Comparison
+        heading={"Agency-level work,\nwithout the agency invoice"}
+        rows={[
+          { left: "$3,000 per week, flat", right: "$25k–$100k+ per project" },
+          { left: "Brand identity in 1 week, guaranteed", right: "3–9 months or more" },
+          { left: "Total agreed before work starts", right: "Estimates that grow" },
+          { left: "Revisions within agreed scope", right: "Change orders" },
+          { left: "One senior designer, start to finish", right: "Account managers and juniors" },
+        ]}
+      />
+
 
           {/* Testimonials Section */}
           <Testimonial32 />

@@ -1,3 +1,4 @@
+import { pricing } from "../content/siteFacts";
 import type { ButtonProps } from "./ui";
 import { BiCheck } from "react-icons/bi";
 import { AvailableButton } from "./AvailableButton";
@@ -15,6 +16,7 @@ export const Pricing8 = (props: Pricing8Props) => {
           <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
           <h2 className="text-balance">{heading}</h2>
           {description && <p className="mt-5 md:mt-6 md:text-md">{description}</p>}
+          <p className="mt-4 text-sm">{pricing.payment}</p>
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {pricingPlans.map((plan, index) => <PricingPlan key={index} plan={plan} />)}
@@ -46,9 +48,9 @@ const PricingPlan = ({ plan }: { plan: PricingPlan }) => (
 export const Pricing8Defaults: Props = {
   tagline: "Pricing",
   heading: "One flat weekly rate. Guaranteed deliverables.",
-  description: "Your brand identity is delivered in one week, guaranteed, for $3,000 total. Need a website, motion, or a pitch deck too? Each extra week is the same flat rate, agreed before we start.",
+  description: "Work directly with me on a complete brand identity for $3,000 total: logo concepts and variations, colors, typography, guidelines, logo animation, and agreed launch assets. Scope is confirmed before starting, with revisions within that scope included.",
   pricingPlans: [
-    { planName: "Weekly", planDescription: "", monthlyPrice: "$3,000", yearlyPrice: "$10,000", period: "/week", alternateLabel: "Brand identity or rebrand delivered in one week, guaranteed.", availability: "2 spots available", features: ["Custom Logo Design", "Logo Animation", "Color Palette", "Typography", "Custom visuals (icons, etc.)", "Brand Guidelines", "Hero design", "Social Media Graphics", "Revisions included"], button: { title: "Book a Call" } },
-    { planName: "Monthly", planDescription: "", monthlyPrice: "$10,000", yearlyPrice: "$3,000", period: "/month", alternateLabel: "Save $2,000 when you commit upfront", availability: "1 spot available", features: ["Everything as in weekly", "Brand Strategy", "Messaging", "Pitch Decks", "Figma Web Design", "Framer/Webflow Dev.", "Motion Graphics", "Web Development", "Revisions included"], button: { title: "Book a Call" } },
+    { planName: "Weekly", planDescription: "", monthlyPrice: "$3,000", yearlyPrice: "$10,000", period: "/week", alternateLabel: "Brand identity or rebrand delivered in one week, guaranteed.", availability: "2 spots available", features: ["Custom Logo Design", "Logo Animation", "Color Palette", "Typography", "Custom visuals (icons, etc.)", "Brand Guidelines", "Hero design", "Social Media Graphics", "Revisions within agreed scope"], button: { title: "Book a Call" } },
+    { planName: "Monthly", planDescription: "", monthlyPrice: "$10,000", yearlyPrice: "$3,000", period: "/month", alternateLabel: "Save $2,000 when you book a month upfront", availability: "1 spot available", features: ["Everything as in weekly", "Brand Strategy", "Messaging", "Pitch Decks", "Figma Web Design", "Framer/Webflow Dev.", "Motion Graphics", "Web Development", "Revisions within agreed scope"], button: { title: "Book a Call" } },
   ],
 };

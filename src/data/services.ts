@@ -78,7 +78,7 @@ export const processSteps = [
     heading: "02",
     title: "Discovery & strategy",
     description:
-      "Audit where the brand stands today, study the competition, and agree on positioning and messaging. Design decisions get much easier once this is settled.",
+      "We confirm scope, timing, and payment before work begins. Then we review the business, audience, and competition, and agree on the direction.",
     buttons: [],
   },
   {
@@ -92,7 +92,7 @@ export const processSteps = [
     heading: "04",
     title: "Feedback & revisions",
     description:
-      "You review the work in structured rounds. Feedback is consolidated so revisions stay focused and the direction keeps moving forward.",
+      "We talk through what is working and what needs attention, then refine the chosen direction together. Revisions within the agreed scope are included; additional work and costs are agreed before proceeding.",
     buttons: [],
   },
   {

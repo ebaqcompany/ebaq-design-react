@@ -11,9 +11,7 @@ import { AIToolIconRow } from "./AIToolIconRow";
 import { arekToolIcons } from "./ArekProfileBadge";
 import { founder, pricingFaqs, studioFaqs, type FactFaq } from "../content/siteFacts";
 
-// Closed answers are only mounted when opened, so the prerendered HTML force-mounts
-// them (hidden) to keep every answer readable by crawlers that don't run JavaScript.
-const isServer = typeof window === "undefined";
+// Keep answers in the HTML on the server and client; closed panels are hidden visually.
 const factQuestion = ({ question, answer }: FactFaq): Question => ({ title: question, answer });
 
 type Question = {
@@ -74,8 +72,11 @@ export const Faq4 = (props: Faq4Props) => {
             <h2 className="whitespace-pre-line text-balance">{heading}</h2>
           </div>
         </div>
-        <Accordion type="single" collapsible value={openItem} onValueChange={setOpenItem} className="mx-auto grid w-full max-w-md grid-cols-1 items-start gap-3 md:gap-4">
-          {questions.map((question, index) => {
+        <Accordion type="single" collapsible value={openItem} onValueChange={setOpenItem} className="mx-auto grid w-full max-w-xl grid-cols-1 items-start gap-3 md:grid-cols-2 md:gap-8">
+          {[questions.slice(0, Math.ceil(questions.length / 2)), questions.slice(Math.ceil(questions.length / 2))].map((column, columnIndex) => (
+          <div key={columnIndex} className="grid gap-3 md:gap-4">
+          {column.map((question, questionIndex) => {
+            const index = columnIndex * Math.ceil(questions.length / 2) + questionIndex;
             const itemValue = `item-${index}`;
             const isOpen = openItem === itemValue;
             return (
@@ -94,10 +95,12 @@ export const Faq4 = (props: Faq4Props) => {
               >
                 {question.title}
               </AccordionTrigger>
-              <AccordionContent forceMount={isServer || undefined} className="pb-4 text-sm leading-relaxed md:pb-6 md:text-base">{question.answer}</AccordionContent>
+              <AccordionContent forceMount hidden={!isOpen} className="pb-4 text-sm leading-relaxed md:pb-6 md:text-base">{question.answer}</AccordionContent>
             </AccordionItem>
             );
           })}
+          </div>
+          ))}
         </Accordion>
       </div>
     </section>
@@ -109,7 +112,7 @@ export const Faq4Defaults: Props = {
   heading: "What clients often ask",
   description: "A few practical details about working together.",
   questions: [
-    ...pricingFaqs.slice(0, 4).map(factQuestion),
+    ...pricingFaqs.map(factQuestion),
     {
       title: "How fast can you start?",
       answer: <div className="flex flex-col items-start gap-3"><p>Availability depends on the current schedule. Book a call and I’ll confirm the earliest realistic start date after learning what you need.</p><div className="flex flex-wrap gap-2" aria-label="Current availability"><span role="status" aria-label="1 monthly spot available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>1 monthly spot available</span><span role="status" aria-label="2 weekly spots available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>2 weekly spots available</span></div></div>,

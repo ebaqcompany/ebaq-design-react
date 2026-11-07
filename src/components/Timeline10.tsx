@@ -103,9 +103,10 @@ export const Timeline10Defaults: Props = {
   description: "Start with a conversation. I’ll help define the right engagement, then stay directly involved through the work and delivery.",
   buttons: [],
   timelineItems: [
-    { heading: "01", title: "Book a call", description: "Start with a short conversation so we can confirm availability, fit, and whether the project is ready to move forward.", buttons: [] },
-    { heading: "02", title: "Discuss the project", description: "We discuss the business context, goals, timing, existing materials, decision-makers, and what needs to become clearer or more effective.", buttons: [] },
-    { heading: "03", title: "Define the direction", description: "I recommend the appropriate scope and confirm the direction before the creative work begins.", buttons: [] },
-    { heading: "04", title: "Create and deliver", description: "I lead the work through clear review points, focused feedback, final delivery, and practical next steps.", buttons: [] },
+    { heading: "01", title: "Talk about your project", description: "We discuss your business, what you need, and your timing. I answer your questions and confirm availability so we can decide whether we're a good fit.", buttons: [] },
+    { heading: "02", title: "Agree on scope and timing", description: "We confirm the deliverables, start date, feedback schedule, and total. I send the agreement and invoice, with payment due upfront before work starts.", buttons: [] },
+    { heading: "03", title: "Explore the concepts", description: "You work directly with me. I develop the creative directions and show you the thinking behind the work.", buttons: [] },
+    { heading: "04", title: "Refine together", description: "We talk through your feedback and refine the chosen direction. Revisions within our agreed scope are included; additional work is agreed before it starts.", buttons: [] },
+    { heading: "05", title: "Receive your finished work", description: "I deliver the agreed files and source assets, with guidance on using them. A scoped Brand Sprint is delivered in one week; website and extended motion work have separately agreed schedules.", buttons: [] },
   ],
 };

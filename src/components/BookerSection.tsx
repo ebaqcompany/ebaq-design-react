@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
+import { pricing } from "../content/siteFacts";
 import { useNearViewport } from "./Media";
 import { useMediaQuery } from "./ui";
 
@@ -57,6 +58,7 @@ export const BookerSection = ({ pinLogoToViewport = false, sticky = true }: Book
           <span className="block text-brand-primary">Book a call</span>
           <span className="block text-white">A free 15-minute introduction</span>
         </h2>
+        <p className="mx-auto mb-8 max-w-lg text-center text-white md:mb-10">{pricing.bookingIntro}</p>
         {/* Desktop - inline embed */}
         <div className="relative hidden h-[760px] md:block">
           {showEmbed && (

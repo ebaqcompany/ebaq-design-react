@@ -97,7 +97,7 @@ const BrandSprintIncluded = () => (
         ))}
       </div>
       <p className="mt-12 border-t border-black/10 pt-6 md:mt-16 md:text-md">
-        <strong>Revisions included</strong> throughout the week, and you keep every source file.
+        <strong>Revisions within the agreed scope</strong> are included, and you keep every source file.
       </p>
     </div>
   </section>
@@ -110,7 +110,7 @@ const PricingHero = () => (
       <div>
         <p className="mb-3 font-semibold text-brand-primary md:mb-4">Pricing</p>
         <h1 className="mb-5 whitespace-pre-line md:mb-6">{"Know your investment\nup front."}</h1>
-        <p className="md:text-md">One flat weekly rate, a guaranteed deliverable every week, and a total we agree on before any work starts. No hourly billing, no change orders, no surprise invoices.</p>
+        <p className="md:text-md">One flat weekly rate, a guaranteed deliverable every week, and a total we agree on before any work starts. No hourly billing. Additional work is agreed before it starts.</p>
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-8">
           <AvailableButton nav keepLabel />
           <a href="#brand-sprint" className="font-semibold">What's included &rarr;</a>
@@ -160,7 +160,7 @@ export const PricingPage = () => (
           { left: "$3,000 per week, flat", right: "$25k–$100k+ per project" },
           { left: "Brand identity in 1 week, guaranteed", right: "3–9 months or more" },
           { left: "Total agreed before work starts", right: "Estimates that grow" },
-          { left: "Revisions included", right: "Change orders" },
+          { left: "Revisions within agreed scope", right: "Change orders" },
           { left: "One senior designer, start to finish", right: "Account managers and juniors" },
         ]}
       />

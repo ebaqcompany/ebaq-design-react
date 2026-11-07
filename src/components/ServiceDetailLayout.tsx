@@ -15,12 +15,13 @@ import { Footer15 } from "./Footer15";
 import { BiCheck } from "react-icons/bi";
 import { processSteps, serviceDetails, serviceFaqs, serviceFeatures, serviceBySlug, type Service, type ServiceFaq, type ServiceSlug } from "../data/services";
 import { caseStudies } from "../data/caseStudies";
-import { pricing, siteUrl, studio } from "../content/siteFacts";
+import { pricing, pricingFaqs, siteUrl, studio } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 
 // This service's own questions, then the ones that apply to every service.
 const faqsFor = (service: Service): ServiceFaq[] => [
   ...serviceDetails[service.slug].faqs,
+  ...pricingFaqs.filter(({ question }) => ["What if I don't like the first concepts?", "Are your rates negotiable?", "When do I pay?", "What happens on the introductory call?"].includes(question)).map(({ question, answer }) => ({ title: question, answer })),
   ...serviceFaqs.filter((faq) => faq.title === "Who actually does the work?" || faq.title === "Do you work with clients outside New York?"),
 ];
 
