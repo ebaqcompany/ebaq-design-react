@@ -1,15 +1,14 @@
 import { Helmet } from "react-helmet-async";
 import { pricing, studio } from "../content/siteFacts";
 import { Navbar16 } from "./Navbar16";
-import { Header107 } from "./Header107";
 import { Logo3 } from "./Logo3";
-import { Layout351 } from "./Layout351";
+import { ServicesGrid } from "./ServicesGrid";
 import { Timeline10 } from "./Timeline10";
 import { Testimonial32 } from "./Testimonial32";
 import { Faq4 } from "./Faq4";
 import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
-import { processSteps, serviceFaqs, serviceFeatures, services } from "../data/services";
+import { processSteps, serviceFaqs, services } from "../data/services";
 
 const pageUrl = "https://www.ebaqdesign.com/services";
 
@@ -61,24 +60,9 @@ export const ServicesPage = () => (
     <Navbar16 />
 
     <main>
-      <Header107
-        id="services-hero"
-        title="Branding services"
-        description="Based in the heart of NYC, I craft distinctive brand identities for businesses near and far — from strategy and logo design through brand identity, websites, and motion."
-        images={[]}
-        showToolIcons={false}
-        className="pb-8 md:pb-12 lg:pb-16"
-      />
+      <ServicesGrid />
 
       <Logo3 />
-
-      <Layout351
-        id="what-i-offer"
-        tagline="What I offer"
-        heading="Six services, one Branding Expert"
-        description="Strategy, identity, web, and motion are offered together because they reinforce each other. Take the whole system or just the part you need."
-        features={serviceFeatures}
-      />
 
       <Timeline10
         tagline="How it works"

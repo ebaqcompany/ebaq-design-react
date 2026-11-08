@@ -1,7 +1,7 @@
 import type { ShopProduct } from '../data/shopProducts'
 import { creativeSuiteContents } from '../data/creativeSuiteContents'
 
-const eyebrowClass = 'mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary'
+const eyebrowClass = 'mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary'
 
 export function CreativeSuiteFeatureSequence({ product }: { product: ShopProduct }) {
   const features = [

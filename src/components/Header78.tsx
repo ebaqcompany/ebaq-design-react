@@ -6,6 +6,7 @@ import { useRef, useEffect, useCallback, useState } from "react";
 import type { LottieRefCurrentProps } from "lottie-react";
 import { LottiePlayer } from "./LottiePlayer";
 import { ArekProfileBadge } from "./ArekProfileBadge";
+import { useReducedMotion } from "framer-motion";
 
 export type MediaProps = {
   type: "image" | "lottie" | "video";
@@ -49,6 +50,7 @@ const loadLottie = (src: string) => {
 // Tiles only fetch and start their animation once they scroll near the screen, and pause off screen:
 // the three rows hold 45 logo animations, and running them all at once kept the main thread busy.
 export const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY = 0 }: { src: string; bgColor?: string; fit?: "contain" | "cover"; scale?: number; offsetY?: number }) => {
+  const reduceMotion = useReducedMotion();
   const [animationData, setAnimationData] = useState<object | null>(null);
   const { ref, near, inView } = useNearViewport<HTMLDivElement>("100px");
   const lottieRef = useRef<LottieRefCurrentProps>(null);
@@ -65,9 +67,9 @@ export const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY =
   }, [near, src]);
 
   useEffect(() => {
-    if (inView) lottieRef.current?.play();
+    if (inView && !reduceMotion) lottieRef.current?.play();
     else lottieRef.current?.pause();
-  }, [inView, animationData]);
+  }, [inView, animationData, reduceMotion]);
 
   const backgroundColor = bgColor || "#171717";
   const preserveAspectRatio = fit === "cover" ? "xMidYMid slice" : "xMidYMid meet";
@@ -79,7 +81,7 @@ export const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY =
           lottieRef={lottieRef}
           animationData={animationData}
           loop
-          autoplay={inView}
+          autoplay={inView && !reduceMotion}
           rendererSettings={{ preserveAspectRatio }}
           className="size-full"
           style={{ transform: `translateY(${offsetY}px) scale(${scale})`, transformOrigin: "center" }}
@@ -90,6 +92,7 @@ export const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY =
 };
 
 const MediaItem = ({ item }: { item: MediaProps }) => {
+  const reduceMotion = useReducedMotion();
   if (item.type === "lottie") {
     return <LottieItem src={item.src} bgColor={item.bgColor} fit={item.fit} scale={item.scale} offsetY={item.offsetY} />;
   }
@@ -100,7 +103,8 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
         src={item.src}
         frameClassName="absolute inset-0 size-full"
         frameStyle={{ backgroundColor: item.bgColor }}
-        className="size-full object-cover"
+        className={`size-full ${item.fit === "contain" ? "object-contain" : "object-cover"}`}
+        autoPlay={!reduceMotion}
         preload="none"
         aria-hidden="true"
         draggable={false}
@@ -134,7 +138,8 @@ const tileClasses = {
   "16/9": "w-[80vw] sm:w-[24rem] md:w-[34rem] aspect-video",
 };
 
-const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder = false, mediaAspect = "4/3" }: DraggableRowProps) => {
+export const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder = false, mediaAspect = "4/3" }: DraggableRowProps) => {
+  const reduceMotion = useReducedMotion();
   const directionMultiplier = direction === "left" ? 1 : -1;
   const rowRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef(-initialOffset);
@@ -181,6 +186,7 @@ const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder
   }, [animate]);
 
   useEffect(() => {
+    if (reduceMotion) return;
     let previousScrollY = window.scrollY;
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -190,7 +196,7 @@ const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [directionMultiplier]);
+  }, [directionMultiplier, reduceMotion]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     isDraggingRef.current = true;
@@ -308,7 +314,7 @@ export const Header78 = (props: Header78Props) => {
                 <span className="absolute inset-0 rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" />
                 <span className="relative block size-2 rounded-full bg-brand-primary" />
               </span>
-              <p className="mb-3 font-semibold text-brand-primary md:mb-4">Available for work</p>
+              <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Available for work</p>
             </div>
             <h1 className="whitespace-pre-line">{heading}</h1>
           </div>

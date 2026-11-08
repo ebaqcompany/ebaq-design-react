@@ -53,7 +53,7 @@ export const Gallery15 = (props: Gallery15Props) => {
     <section className="overflow-hidden bg-brand-light px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="gallery15-heading" {...sectionProps}>
       <div className="container">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">{tagline}</p>
           <h2 id="gallery15-heading" className="mb-5 md:mb-6">{heading}</h2>
           <p className="md:text-md">{description}</p>
         </div>

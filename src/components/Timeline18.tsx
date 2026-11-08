@@ -6,9 +6,9 @@ import { brandProcessPhotos } from "../data/brandProcessPhotos";
 // full-width track. Pin only when the complete track content fits vertically;
 // narrow/short screens and reduced motion retain a native horizontal scroller.
 type TimelineItem = { heading: string; title: string; description: string; buttons: ButtonProps[] };
-type Props = { tagline: string; taglineClassName?: string; heading: string; description: string; timelineItems: TimelineItem[] };
+type Props = { showImages?: boolean; tagline: string; taglineClassName?: string; heading: string; description: string; timelineItems: TimelineItem[] };
 
-export const Timeline18 = ({ tagline, taglineClassName = "text-brand-primary", heading, description, timelineItems }: Props) => {
+export const Timeline18 = ({ showImages = true, tagline, taglineClassName = "text-brand-primary", heading, description, timelineItems }: Props) => {
   const runwayRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -77,30 +77,41 @@ export const Timeline18 = ({ tagline, taglineClassName = "text-brand-primary", h
 
   return (
     <section id="brand-design-process" aria-labelledby="brand-design-process-heading" className="bg-brand-light pt-16 md:pt-24 lg:pt-28">
+      {showImages && <>
       <div className="px-[5%]">
         <header className="container mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
-          <p className={`mb-3 font-semibold md:mb-4 ${taglineClassName}`}>{tagline}</p>
+          <p className={`mb-3 font-mono font-normal uppercase tracking-wide text-sm md:mb-4 text-brand-primary ${taglineClassName}`}>{tagline}</p>
           <h2 id="brand-design-process-heading" className="mb-5 md:mb-6">{heading}</h2>
           <p className="md:text-md">{description}</p>
         </header>
       </div>
+      </>}
       <div ref={runwayRef} data-timeline-runway style={{ height: runwayHeight }}>
         <div ref={stageRef} data-timeline-stage data-pinned={pinned} className={`flex flex-col justify-center bg-brand-light py-8 md:py-12 ${pinned ? "sticky top-0 min-h-[100svh]" : ""}`}>
           <div ref={contentRef}>
+            {!showImages && <>
+      <div className="px-[5%]">
+        <header className="container mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
+          <p className={`mb-3 font-mono font-normal uppercase tracking-wide text-sm md:mb-4 text-brand-primary ${taglineClassName}`}>{tagline}</p>
+          <h2 id="brand-design-process-heading" className="mb-5 md:mb-6">{heading}</h2>
+          <p className="md:text-md">{description}</p>
+        </header>
+      </div>
+            </>}
             <div ref={viewportRef} data-timeline-viewport tabIndex={0} role="region" aria-label="Brand design process steps. Use left and right arrow keys to browse." onKeyDown={onKeyDown} className={`w-full ${pinned ? "overflow-x-hidden" : "overflow-x-auto snap-x snap-mandatory"} overscroll-x-contain focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-black`}>
               <ol ref={trackRef} className="m-0 flex w-max min-w-full list-none py-4">
                 {timelineItems.map((item, index) => (
                   <li key={item.heading} className="w-screen shrink-0 snap-start md:w-[50vw] xl:w-[33.333333vw]">
-                    <div data-timeline-photo className="mx-auto mb-8 aspect-[4/3] w-3/5 max-w-[22rem] overflow-hidden">
+                    {showImages && <div data-timeline-photo className="mx-auto mb-8 aspect-[4/3] w-3/5 max-w-[22rem] overflow-hidden">
                       <img src={brandProcessPhotos[index].src} alt={brandProcessPhotos[index].alt} width={brandProcessPhotos[index].width} height={brandProcessPhotos[index].height} loading="lazy" decoding="async" style={{ objectPosition: brandProcessPhotos[index].objectPosition }} className="block size-full rounded-lg object-cover" />
-                    </div>
+                    </div>}
                     <div data-timeline-marker aria-hidden="true" className="mb-6 flex w-full items-center">
                       <div className="h-[3px] w-full bg-brand-primary" />
                       <div className="z-10 size-4 flex-none rounded-full bg-brand-primary shadow-[0_0_0_8px_var(--color-brand-light)]" />
                       <div className="h-[3px] w-full bg-brand-primary" />
                     </div>
                     <div className="px-6 text-center md:px-8 lg:px-12">
-                      <p className="mb-3 font-semibold text-brand-primary">{item.heading}</p>
+                      <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">{item.heading}</p>
                       <h3 className="heading-h5 mb-4">{item.title}</h3>
                       <p>{item.description}</p>
                       {item.buttons.length > 0 && <div className="mt-6 flex flex-wrap justify-center gap-4">{item.buttons.map((button, buttonIndex) => <Button key={buttonIndex} {...button}>{button.title}</Button>)}</div>}

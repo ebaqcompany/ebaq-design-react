@@ -93,12 +93,11 @@ const faqs = [
 ];
 
 const heading = { fontFamily: "'Roboto Condensed', sans-serif", fontWeight: 600, lineHeight: 1.05 };
-const label = { fontFamily: "'Roboto', sans-serif" };
 
 const PainPointsSection = () => (
   <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
     <div className="container max-w-6xl">
-      <p className="mb-3 font-semibold text-brand-primary md:mb-4" style={label}>Why it matters</p>
+      <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Why it matters</p>
       <h2 className="mb-12 text-5xl md:text-7xl lg:text-8xl tracking-[-0.04em] max-w-3xl" style={heading}>
         A website that sells the product
       </h2>
@@ -115,11 +114,11 @@ const PainPointsSection = () => (
 );
 
 const DeliverablesSection = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-surface-muted">
     <div className="container max-w-6xl">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4" style={label}>What you get</p>
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">What you get</p>
           <h2 className="text-5xl md:text-6xl lg:text-7xl tracking-[-0.04em] mb-6" style={heading}>
             Everything you need to launch
           </h2>
@@ -140,8 +139,10 @@ const DeliverablesSection = () => (
   </section>
 );
 
+const label = { fontFamily: "'Roboto', sans-serif" };
+
 const SaasTestimonial = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-surface-muted">
     <div className="mx-auto max-w-2xl text-center">
       <div className="flex justify-center gap-1 mb-6">
         {[...Array(5)].map((_, i) => <BiSolidStar key={i} className="size-5 text-yellow-400" />)}
@@ -167,7 +168,7 @@ const SaasTestimonial = () => (
 const FaqSection = () => (
   <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
     <div className="container max-w-4xl">
-      <p className="mb-3 font-semibold text-brand-primary md:mb-4" style={label}>FAQ</p>
+      <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">FAQ</p>
       <h2 className="mb-12 text-5xl md:text-6xl tracking-[-0.04em]" style={heading}>SaaS website questions</h2>
       <div className="grid gap-8">
         {faqs.map((faq) => (

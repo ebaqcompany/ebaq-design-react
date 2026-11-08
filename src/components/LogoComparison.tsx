@@ -28,7 +28,7 @@ export const LogoComparison = () => {
     <section id="logo-comparisons" aria-labelledby="logo-comparisons-heading" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container max-w-xl">
         <header className="mx-auto mb-10 max-w-lg text-center md:mb-12">
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4">Before &amp; after</p>
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Before &amp; after</p>
           <h2 id="logo-comparisons-heading" className="mb-5 md:mb-6">Logo redesigns, before and after</h2>
           <p className="md:text-md">Explore real logo redesigns from my archive. Browse the clients, then drag the divider to compare the original with the redesign.</p>
         </header>

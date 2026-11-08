@@ -30,7 +30,7 @@ function LegalPage({ title, updated, description, sections }: { title: string; u
       <Navbar16 />
       <main className="px-[5%] py-16 md:py-24 lg:py-28">
         <article className="container max-w-lg">
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4">Legal</p>
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Legal</p>
           <h1>{title}</h1>
           <p className="mt-5 text-sm text-black/60 md:mt-6">Last updated {updated}</p>
           <div className="mt-12 space-y-10 md:mt-16 md:space-y-12">

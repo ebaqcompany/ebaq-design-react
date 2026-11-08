@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/services/:path+",
+      "destination": "/services",
+      "statusCode": 307
+    },
+    {
       "source": "/services/identity-systems",
       "destination": "/services/brand-design",
       "statusCode": 301

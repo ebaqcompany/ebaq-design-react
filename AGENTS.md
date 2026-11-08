@@ -17,6 +17,23 @@
 - Adapt selected components to the site's existing typography, spacing, colors, buttons, and responsive conventions. Preserve user-selected images and their original aspect ratios when requested.
 - If the Relume MCP is inaccessible, report the specific blocker and do not claim library use or substitute an invented layout without the user's direction.
 
+- Reuse the existing site design system and Relume utility classes; do not invent one-off button, typography, color, or spacing styles when an established pattern exists.
+- Use the shared button classes for their surface: black buttons turn blue on white, black buttons turn white on blue, and inverted buttons remain readable on black. Keep links styled as buttons free of text underlines.
+- Verify foreground/background contrast after every light/dark adaptation, including secondary paragraphs, inactive tabs, and hover/focus states. Text on black sections must remain visibly light; white cards retain dark text.
+- Keep segmented pricing tabs separate from global call-to-action button styling.
+
+- Rounded cards with subtle borders are the default for interactive UI, including pricing, deliverables, and FAQs. Keep the vector selection motif archived in `LegacyVectorCard` for a future placement decision; do not reintroduce it without direction.
+- FAQ layouts share `FaqAccordion` for arrow icons, click/keyboard behavior (no hover expansion), and retained answer HTML. Keep layout differences in the surrounding section, not separate accordion behavior.
+
+- Surface pairing: shared homepage pricing uses `bg-surface-muted`; homepage FAQs retain `bg-brand-light` with primary-blue card borders at 30% opacity. Neutral surfaces use the existing black-at-20% card border.
+
+- FAQ question typography uses normal letter spacing at all sizes. Do not apply negative headline tracking to accordion questions.
+
+- Never add `!important`, Tailwind `!` modifiers, inline style overrides, or new custom classes to bypass the design system. Inspect existing classes first; reuse an appropriate class or deliberately update its owning shared definition. Do not patch individual instances with competing font-size, tracking, weight, or line-height utilities.
+- Homepage and service FAQ questions must both use `heading-h7`. Set its letter spacing in the global definition, not with local tracking utilities. Check responsive layouts when changing shared typography.
+
+- Booking buttons say only “Book a call,” vertically centered. Do not show numbered spots or availability counters in buttons, badges, or FAQ copy.
+
 ## Article editing standards
 
 - Preserve the original article's substantive length and structure when updating an existing article. Use the prior published version as the completeness baseline; do not replace it with a shorter summary unless the user explicitly asks for a rewrite at a shorter length.

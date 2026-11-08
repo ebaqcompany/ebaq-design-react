@@ -1,12 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  useMediaQuery,
-} from "./ui";
-import { useEffect, useRef, useState } from "react";
-import { RxChevronDown } from "react-icons/rx";
+import { FaqAccordion } from "./FaqAccordion";
 import { AIToolIconRow } from "./AIToolIconRow";
 import { arekToolIcons } from "./ArekProfileBadge";
 import { founder, pricingFaqs, studioFaqs, type FactFaq } from "../content/siteFacts";
@@ -29,9 +21,6 @@ type Props = {
 export type Faq4Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Faq4 = (props: Faq4Props) => {
-  const [openItem, setOpenItem] = useState("");
-  const hoverTimer = useRef<number | null>(null);
-  const opensOnHover = useMediaQuery("(min-width: 768px) and (hover: hover) and (pointer: fine)");
   const { tagline, heading, questions } = {
     ...Faq4Defaults,
     ...props,
@@ -39,69 +28,16 @@ export const Faq4 = (props: Faq4Props) => {
   // Content props configure the section; only real HTML attributes belong on the element.
   const sectionProps = Object.fromEntries(Object.entries(props).filter(([key]) => !(key in Faq4Defaults)));
 
-  const clearHoverTimer = () => {
-    if (hoverTimer.current !== null) window.clearTimeout(hoverTimer.current);
-    hoverTimer.current = null;
-  };
-
-  useEffect(() => clearHoverTimer, []);
-
-  const openOnHover = (itemValue: string, isOpen: boolean) => {
-    clearHoverTimer();
-    if (!opensOnHover || isOpen) return;
-    hoverTimer.current = window.setTimeout(() => {
-      setOpenItem(itemValue);
-      hoverTimer.current = null;
-    }, 120);
-  };
-
-  const toggleFromKeyboard = (event: React.KeyboardEvent<HTMLButtonElement>, itemValue: string) => {
-    if (event.key !== "Enter" && event.key !== " ") return;
-    event.preventDefault();
-    event.stopPropagation();
-    clearHoverTimer();
-    setOpenItem((item) => item === itemValue ? "" : itemValue);
-  };
-
   return (
     <section {...sectionProps} id="faq" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto w-full max-w-lg text-center">
-            <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
+            <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">{tagline}</p>
             <h2 className="whitespace-pre-line text-balance">{heading}</h2>
           </div>
         </div>
-        <Accordion type="single" collapsible value={openItem} onValueChange={setOpenItem} className="mx-auto grid w-full max-w-xl grid-cols-1 items-start gap-3 md:grid-cols-2 md:gap-8">
-          {[questions.slice(0, Math.ceil(questions.length / 2)), questions.slice(Math.ceil(questions.length / 2))].map((column, columnIndex) => (
-          <div key={columnIndex} className="grid gap-3 md:gap-4">
-          {column.map((question, questionIndex) => {
-            const index = columnIndex * Math.ceil(questions.length / 2) + questionIndex;
-            const itemValue = `item-${index}`;
-            const isOpen = openItem === itemValue;
-            return (
-            <AccordionItem key={index} value={itemValue} onMouseEnter={() => openOnHover(itemValue, isOpen)} onMouseLeave={clearHoverTimer} className="vector-card first:border-t bg-white px-4 md:px-6">
-              <div className="vector-card-handles" aria-hidden="true">
-                <span className="vector-card-handle vector-card-handle-top-left" />
-                <span className="vector-card-handle vector-card-handle-top-right" />
-                <span className="vector-card-handle vector-card-handle-bottom-right" />
-                <span className="vector-card-handle vector-card-handle-bottom-left" />
-              </div>
-              <AccordionTrigger
-                icon={<RxChevronDown className="size-6 shrink-0 md:size-8" />}
-                onPointerDown={clearHoverTimer}
-                onKeyDown={(event) => toggleFromKeyboard(event, itemValue)}
-                className="gap-4 py-4 text-left font-heading text-base leading-[1.2] tracking-normal md:py-5 md:text-md"
-              >
-                {question.title}
-              </AccordionTrigger>
-              <AccordionContent forceMount hidden={!isOpen} className="pb-4 text-sm leading-relaxed md:pb-6 md:text-base">{question.answer}</AccordionContent>
-            </AccordionItem>
-            );
-          })}
-          </div>
-          ))}
-        </Accordion>
+        <FaqAccordion questions={questions} columns={2} blueSurface />
       </div>
     </section>
   );
@@ -115,7 +51,7 @@ export const Faq4Defaults: Props = {
     ...pricingFaqs.map(factQuestion),
     {
       title: "How fast can you start?",
-      answer: <div className="flex flex-col items-start gap-3"><p>Availability depends on the current schedule. Book a call and I’ll confirm the earliest realistic start date after learning what you need.</p><div className="flex flex-wrap gap-2" aria-label="Current availability"><span role="status" aria-label="1 monthly spot available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>1 monthly spot available</span><span role="status" aria-label="2 weekly spots available" className="inline-flex items-center gap-2 rounded-full bg-background-secondary px-3 py-1.5 text-sm font-semibold"><span className="relative flex size-2" aria-hidden="true"><span className="absolute inline-flex size-full rounded-full bg-brand-primary opacity-75 motion-safe:animate-ping" /><span className="relative inline-flex size-2 rounded-full bg-brand-primary" /></span>2 weekly spots available</span></div></div>,
+      answer: <p>Book a call to discuss your project and confirm a start date.</p>,
     },
     ...studioFaqs.map(factQuestion),
     {

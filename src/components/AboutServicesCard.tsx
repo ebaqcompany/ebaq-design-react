@@ -5,9 +5,9 @@ const serviceRows = [
 ];
 
 export const AboutServicesCard = () => (
-  <div className="flex flex-col overflow-hidden rounded-2xl bg-[#f5f5f5] pt-8 md:pt-10">
+  <div className="flex flex-col overflow-hidden rounded-2xl bg-surface-muted pt-8 md:pt-10">
     <div className="px-6 md:px-8 lg:px-10">
-      <p className="mb-3 font-semibold text-brand-primary">My services</p>
+      <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">My services</p>
       <h2 className="heading-h3 mb-4">Services I offer</h2>
       <p>From brand strategy to websites and motion.</p>
     </div>

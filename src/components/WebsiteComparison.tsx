@@ -14,7 +14,7 @@ export const WebsiteComparison = () => {
     <section id="website-comparison" aria-labelledby="website-comparison-heading" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container max-w-xl">
         <header className="mx-auto mb-10 max-w-lg text-center md:mb-12">
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4">Before &amp; after</p>
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Before &amp; after</p>
           <h2 id="website-comparison-heading">Elevate’s website, reimagined</h2>
         </header>
         <figure className="mx-auto max-w-[40rem]">

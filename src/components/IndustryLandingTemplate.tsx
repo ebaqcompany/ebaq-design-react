@@ -90,7 +90,7 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
         {config.caseStudySummary && (
           <section className="bg-white px-[5%] py-16 md:py-24 lg:py-28">
             <div className="container max-w-6xl">
-              <p className="mb-3 font-semibold text-brand-primary">Featured project</p>
+              <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">Featured project</p>
               <h2 className="mb-6 max-w-4xl">{config.caseStudySummary.heading}</h2>
               <p className="max-w-3xl text-black/60 md:text-lg">{config.caseStudySummary.description}</p>
               <div className="mt-10 grid gap-8 md:grid-cols-2">

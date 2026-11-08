@@ -71,7 +71,7 @@ export const Layout350Preview = ({ id, idPrefix = "portfolio22-service", eyebrow
     <section id={id} className="overflow-hidden bg-black px-[5%] py-16 text-white md:py-24 lg:py-28" aria-labelledby={headingId}>
       <div className="container">
         <div className="mb-12 max-w-4xl md:mb-16 lg:mb-20">
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4">{eyebrow}</p>
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">{eyebrow}</p>
           <h2 id={headingId}>{heading}</h2>
         </div>
 

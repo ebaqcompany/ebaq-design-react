@@ -21,7 +21,7 @@ export const Layout412 = ({ tagline, heading, description, subHeadings, footer, 
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-y-12 md:grid-cols-2 md:gap-0">
           <div className="md:mr-12 lg:mr-20">
-            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+            <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm md:mb-4 text-brand-primary">{tagline}</p>
             <h2 className="mb-5 md:mb-6">{heading}</h2>
             <div className="mb-6 md:mb-8">
               {description.map((paragraph) => <p key={paragraph} className="mb-4 md:text-md">{paragraph}</p>)}

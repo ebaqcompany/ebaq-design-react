@@ -14,7 +14,7 @@ export const Testimonial32 = (props: Props) => {
   return (
     <section {...props} id="testimonials" className="testimonial-section overflow-hidden px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
-        <div className="mb-12 w-full max-w-lg md:mb-18 lg:mb-20"><p className="mb-3 font-semibold text-brand-primary md:mb-4">Testimonials</p><h2 className="mb-5 md:mb-6">{heading}</h2>{description && <p className="md:text-md">{description}</p>}</div>
+        <div className="mb-12 w-full max-w-lg md:mb-18 lg:mb-20"><p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Testimonials</p><h2 className="mb-5 md:mb-6">{heading}</h2>{description && <p className="md:text-md">{description}</p>}</div>
         <Carousel opts={{ loop: true, align: "start" }} className="overflow-hidden">
           <div className="relative pb-12 md:pb-16">
             <CarouselContent className="ml-0 items-stretch">{testimonials.map((testimonial, index) => <CarouselItem key={index} className="self-stretch pl-0 md:basis-full lg:basis-1/3 lg:pr-16"><TestimonialCard testimonial={testimonial} /></CarouselItem>)}</CarouselContent>
@@ -31,7 +31,7 @@ export const Testimonial32 = (props: Props) => {
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className="mx-auto flex h-full max-w-lg flex-col justify-start">
-    <blockquote title={testimonial.quote} className="line-clamp-5 font-heading text-md font-medium leading-[1.4] tracking-[-0.02em] md:text-xl">{testimonial.quote}</blockquote>
+    <blockquote title={testimonial.quote} className="testimonial-quote line-clamp-5">{testimonial.quote}</blockquote>
     <div className="mt-6 flex w-full flex-col md:mt-8 md:gap-4">
       <div className="mb-4 md:mb-0"><img loading="lazy" decoding="async" src={testimonial.avatar.src} alt={testimonial.avatar.alt ?? ""} className="size-14 min-h-14 min-w-14 rounded-full object-cover" /></div>
       <div className="mb-3 md:mb-0"><p className="font-semibold">{testimonial.name}</p><p>{testimonial.position}</p></div>
@@ -41,7 +41,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   </div>
 );
 
-export const Testimonial32Defaults: { heading: string; description: string; testimonials: Testimonial[] } = { heading: "What my clients say", description: "", testimonials: [
+export const Testimonial32Defaults: { heading: string; description: string; testimonials: Testimonial[] } = { heading: "What my clients say", description: "", testimonials: ([
   { quote: '"Arek worked with us on the complete redesign of the NextDimension AI visual identity and website. He was thoughtful, responsive, and patient throughout the process, from exploring the logo direction to refining the website’s content, design, and functionality. What stood out most was his ability to clearly explain and defend his creative vision while still listening to our feedback. We are both convinced by the final direction and very happy with the result."', logo: { src: "/client-logos/nextdim-wordmark.svg", alt: "NextDimension AI", scale: 90 }, avatar: { src: "/testimonials/lakshita-chhikara.webp", alt: "Lakshita Chhikara" }, name: "Lakshita Chhikara", position: "Co-Founder, NextDimension AI" },
   { quote: '"Arek did an outstanding job on our full brand redesign. From understanding our vision, to crafting the direction, to executing with speed, he nailed it from the beginning. We absolutely love all of it. What stood out most was how quickly he understood exactly what we were looking for. He was creative, came back with ideas that felt modern and genuinely good, and landed on something that fit our brand perfectly. He made himself available throughout the process and kept things moving fast without cutting corners on quality. Working with him was easy from start to finish. I’d recommend him to anyone looking for a designer who gets it and delivers. Thanks, Arek."', logo: { src: "/client-logos/elevate-wordmark.svg", alt: "Elevate", scale: 80 }, avatar: { src: "/testimonials/karim-zitouni.webp", alt: "Karim Zitouni" }, name: "Karim Zitouni", position: "Co-Founder, Elevate" },
   { quote: '"Working with Arek was an awesome experience. He is so creative and fast and talented in so many tech areas. He has great ideas and gave honest feedback to my ideas. Final website was incredible. Very impressive. I will be using him for everything going forward."', logo: { src: "/client-logos/brand-makers-logo-black.svg", alt: "Brand Makers", className: "testimonial-logo--brand-makers" }, avatar: { src: "/testimonials/james-greaves.webp", alt: "James Greaves" }, name: "James Greaves", position: "CEO, Brand Makers" },
@@ -53,4 +53,4 @@ export const Testimonial32Defaults: { heading: string; description: string; test
   { quote: '"Arek is a branding expert with extensive experience in graphic design, logos, and web design. We have collaborated with him on several rebranding projects. I highly recommend him."', logo: { src: "/client-logos/airport-executive-logo.svg", alt: "Airport Executive" }, avatar: { src: "/images/site/testimonial32/1732141495505.webp", alt: "Chris Nixon" }, name: "Chris Nixon", position: "Founder, Airport Executive" },
   { quote: '"Excellent work! Fast, reliable and look and feel matched beyond our expectations."', logo: { src: "/client-logos/foxberman-wordmark.svg", alt: "FOX BERMAN", scale: 50 }, avatar: { src: "/testimonials/lucas.webp", alt: "Lucas Berman" }, name: "Lucas Berman", position: "Partner, FOX BERMAN" },
   { quote: '"Arek is a magic visionary with sharp attention to detail."', logo: { src: "/client-logos/sweetgrass-logo-black.svg", alt: "SweetGrass", className: "testimonial-logo--sweetgrass" }, avatar: { src: "/images/site/testimonial32/jane.webp", alt: "Jane de Abreu" }, name: "Jane de Abreu", position: "Founder, SweetGrass" },
-] };
+] satisfies Testimonial[]).sort((a, b) => a.quote.length - b.quote.length) };

@@ -63,7 +63,7 @@ export const Layout351 = (props: Layout351Props) => {
     <section className={`px-[5%] py-16 md:py-24 lg:py-28 ${className ?? ""}`.trim()} {...sectionProps}>
       <div className="container">
         <div className="rb-12 mb-12 w-full max-w-lg md:mb-18 lg:mb-20">
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">{tagline}</p>
           {/* An h2 rather than Relume's h1: the page hero already owns the h1. */}
           <h2 className="mb-5 md:mb-6">{heading}</h2>
           <p className="md:text-md">{description}</p>

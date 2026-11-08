@@ -9,9 +9,9 @@ export const AboutTools = () => {
   return (
     <section id="about-tools" aria-labelledby="about-tools-heading" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container grid gap-6 md:grid-cols-2 md:gap-8">
-        <div className="flex flex-col overflow-hidden rounded-2xl bg-[#f5f5f5] pt-8 md:pt-10">
+        <div className="flex flex-col overflow-hidden rounded-2xl bg-surface-muted pt-8 md:pt-10">
           <div className="px-6 md:px-8 lg:px-10">
-            <p className="mb-3 font-semibold text-brand-primary">My toolkit</p>
+            <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">My toolkit</p>
             <h2 id="about-tools-heading" className="heading-h3 mb-4">Tools I use</h2>
             <p>For brand identities, websites, and everything in motion.</p>
           </div>

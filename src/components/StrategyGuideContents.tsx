@@ -5,7 +5,7 @@ export function StrategyGuideContents() {
     <section className="bg-black px-[5%] py-16 text-white md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-16 max-w-3xl md:mb-24">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">In this guide</p>
+          <p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">In this guide</p>
           <h2>What’s Included</h2>
         </div>
         <div className="grid gap-24 md:gap-28">

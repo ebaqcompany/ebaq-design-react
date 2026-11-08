@@ -14,7 +14,7 @@ const LogoRefinement = () => (
   <section id="logo-refinement" aria-labelledby="logo-refinement-heading" className="scroll-mt-24 bg-brand-light px-[5%] py-16 md:py-24">
     <div className="container">
       <div className="mb-10 max-w-lg md:mb-16">
-        <p className="mb-3 font-semibold">Already have a logo?</p>
+        <p className="mb-3 font-mono text-sm font-normal uppercase tracking-wide text-brand-primary">Already have a logo?</p>
         <h2 id="logo-refinement-heading" className="mb-6">Keep the idea. Refine the logo.</h2>
         <p className="md:text-md">A strong idea can survive a refresh. These real examples show how I improve an existing identity through specific changes to the mark, typography and visual balance.</p>
       </div>

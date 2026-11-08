@@ -73,14 +73,14 @@ const BrandSprintIncluded = () => (
   <section id="brand-sprint" className="bg-white px-[5%] py-16 md:py-24 lg:py-28">
     <div className="container">
       <div className="mb-12 max-w-3xl md:mb-16">
-        <p className="mb-3 font-semibold text-brand-primary md:mb-4">Week 1</p>
+        <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Week 1</p>
         <h2 className="mb-5 md:mb-6">What's in the Brand Sprint</h2>
         <p className="md:text-md">A complete brand identity or rebrand in one week. We lock the scope on the kickoff call, so the week is guaranteed and you get every piece below.</p>
       </div>
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-14">
         {sprintDeliverables.map(({ title, body, media, alt }) => (
           <div key={title}>
-            <div className="aspect-video overflow-hidden rounded-lg bg-[#f5f5f5]">
+            <div className="aspect-video overflow-hidden rounded-lg bg-surface-muted">
               {media.endsWith(".json") ? (
                 <div role="img" aria-label={alt} className="size-full bg-black">
                   <LottieTile src={media} />
@@ -108,7 +108,7 @@ const PricingHero = () => (
   <section id="pricing-hero" className="bg-white px-[5%] py-16 md:py-24 lg:py-28">
     <div className="container grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
       <div>
-        <p className="mb-3 font-semibold text-brand-primary md:mb-4">Pricing</p>
+        <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Pricing</p>
         <h1 className="mb-5 whitespace-pre-line md:mb-6">{"Know your investment\nup front."}</h1>
         <p className="md:text-md">One flat weekly rate, a guaranteed deliverable every week, and a total we agree on before any work starts. No hourly billing. Additional work is agreed before it starts.</p>
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-8">

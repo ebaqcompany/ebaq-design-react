@@ -9,7 +9,7 @@ export const PainPointsSection = ({ heading, points }: { heading: string; points
   <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
     <div className="container max-w-6xl">
       <p
-        className="mb-3 font-semibold text-brand-primary md:mb-4"
+        className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4"
         style={{ fontFamily: "'Roboto', sans-serif" }}
       >
         Why it matters
@@ -44,11 +44,11 @@ export const PainPointsSection = ({ heading, points }: { heading: string; points
 );
 
 export const DeliverablesSection = ({ heading, description, items }: { heading: string; description: string; items: string[] }) => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-surface-muted">
     <div className="container max-w-6xl">
       <div className="mb-10 max-w-3xl md:mb-14">
         <p
-          className="mb-3 font-semibold text-brand-primary md:mb-4"
+          className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4"
           style={{ fontFamily: "'Roboto', sans-serif" }}
         >
           What you get
@@ -104,7 +104,7 @@ export const IndustryTestimonial = ({ quote, name, role, avatar, personUrl, logo
     />
   );
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-[#f5f5f5]">
+    <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-surface-muted">
       <div className={compact ? "mx-auto max-w-3xl text-center" : "mx-auto max-w-lg text-center"}>
         <div className="flex justify-center gap-1 mb-6">
           {[...Array(5)].map((_, i) => (

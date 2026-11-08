@@ -1,31 +1,32 @@
 import { Fragment, type ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navbar16 } from "./Navbar16";
-import { Header107 } from "./Header107";
-import { HomepageMarkerCircle } from "./Layout484";
+import { ServiceHero } from "./ServiceHero";
 import { WebsiteComparison } from "./WebsiteComparison";
 import { LogoComparison } from "./LogoComparison";
-import { Header104 } from "./Header104";
-import { ServiceShowcaseRow } from "./Header78";
+import { ServicePortfolioRows, serviceHighlightHeadings } from "./ServicePortfolioRows";
+import { Layout424 } from "./Layout424";
+import { ServiceDeliverables } from "./ServiceDeliverables";
 import { Portfolio16 } from "./Portfolio16";
 import { workProjects } from "../data/workProjects";
-import { BrandDesignOverview } from "./BrandDesignOverview";
 import { Layout351 } from "./Layout351";
 import { Layout6 } from "./Layout6";
-import { Timeline18 } from "./Timeline18";
-import { Timeline10 } from "./Timeline10";
+import { ServiceProcess } from "./ServiceProcess";
+import { ServicePricing } from "./ServicePricing";
+import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
 import { Testimonial32 } from "./Testimonial32";
+import { ServiceFaq, brandDesignQuestions } from "./ServiceFaq";
 import { Faq4 } from "./Faq4";
 import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
 import { BiCheck } from "react-icons/bi";
-import { processSteps, serviceDetails, serviceFaqs, serviceFeatures, serviceBySlug, type Service, type ServiceFaq, type ServiceSlug } from "../data/services";
+import { serviceDetails, serviceFaqs, serviceFeatures, serviceBySlug, type Service, type ServiceSlug } from "../data/services";
 import { caseStudies } from "../data/caseStudies";
 import { pricing, pricingFaqs, siteUrl, studio } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 
 // This service's own questions, then the ones that apply to every service.
-const faqsFor = (service: Service): ServiceFaq[] => [
+const faqsFor = (service: Service): import("../data/services").ServiceFaq[] => service.slug === "brand-design" ? brandDesignQuestions : [
   ...serviceDetails[service.slug].faqs,
   ...pricingFaqs.filter(({ question }) => ["What if I don't like the first concepts?", "Are your rates negotiable?", "When do I pay?", "What happens on the introductory call?"].includes(question)).map(({ question, answer }) => ({ title: question, answer })),
   ...serviceFaqs.filter((faq) => faq.title === "Who actually does the work?" || faq.title === "Do you work with clients outside New York?"),
@@ -93,7 +94,7 @@ const ServiceOverview = ({ service }: { service: Service }) => {
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold md:mb-4">{service.heading}</p>
+            <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm md:mb-4 text-brand-primary">{service.heading}</p>
             <h2 className="mb-5 md:mb-6">{detail.title}</h2>
             {detail.overview.map((paragraph) => (
               <p key={paragraph} className="mb-4 md:text-md">{paragraph}</p>
@@ -152,10 +153,8 @@ type Props = {
 
 // Shared body for the six /services/* pages. Each page file owns its own
 // <Helmet> so the route-shell generator can scrape a literal title there.
-export const ServiceDetailLayout = ({ slug, heading, description, afterOverview, heroImage }: Props) => {
+export const ServiceDetailLayout = ({ slug, heading, description, afterOverview }: Props) => {
   const service = serviceBySlug(slug);
-  const ProcessTimeline = slug === "brand-design" ? Timeline18 : Timeline10;
-  const showcaseRow = slug === "logo-design" ? 1 : slug === "brand-design" ? 2 : slug === "web-design" ? 3 : undefined;
 
   return (
     <div className="relative bg-white">
@@ -166,33 +165,12 @@ export const ServiceDetailLayout = ({ slug, heading, description, afterOverview,
       </Helmet>
       <Navbar16 />
       <main>
-      {showcaseRow ? <>
-        <Header104
-          description={description}
-          showcaseId={`service-showcase-${showcaseRow}`}
-          {...(slug === "brand-design" ? {
-            headlineLabel: "Brand design for your next chapter",
-            headline: <><span className="block">Brand design</span>{" "}<span className="block">for your next <span className="relative mx-[0.08em] inline-block">chapter<HomepageMarkerCircle /></span></span></>,
-            ctaLabel: "Discuss your brand",
-          } : slug === "web-design" ? {
-            headlineLabel: "Web design that inspires action",
-            headline: <><span className="block">Web design</span>{" "}<span className="block">that inspires <span className="relative mx-[0.08em] inline-block">action<HomepageMarkerCircle /></span></span></>,
-            ctaLabel: "Discuss your website",
-          } : {})}
-        />
-        <ServiceShowcaseRow row={showcaseRow} additionalBrandWork={slug === "brand-design"} />
-      </> : <Header107
-        id="service-hero"
-        title={heading}
-        description={description}
-        images={[]}
-        heroImage={heroImage}
-        showToolIcons={false}
-        className="pb-8 md:pb-12 lg:pb-16"
-      />}
-      {slug === "logo-design" && <LogoComparison />}
-      {slug === "web-design" && <WebsiteComparison />}
-      {slug === "brand-design" ? <BrandDesignOverview /> : <ServiceOverview service={service} />}
+      <ServiceHero service={service} heading={slug === "brand-design" ? "Brand design for your next chapter" : slug === "web-design" ? "Web design that inspires action" : heading} description={description} />
+      <ServicePortfolioRows slug={slug} />
+      <Layout424 tagline={service.heading} headings={serviceHighlightHeadings[slug]} />
+      <ServiceDeliverables slug={slug} />
+      <ServiceProcess slug={slug} />
+      {slug !== "brand-design" && <ServiceOverview service={service} />}
       {slug === "logo-design" && <SelectedServiceWork service={service} separate />}
       {slug !== "logo-design" && <>
       {afterOverview}
@@ -209,15 +187,9 @@ export const ServiceDetailLayout = ({ slug, heading, description, afterOverview,
         initialActive={service.index}
       />}
       </>}
-      <ProcessTimeline
-        tagline="How it works"
-        taglineClassName="text-brand-primary"
-        heading="An overview of my branding process"
-        description="Every project follows the same five steps, so you always know what happens next and what's expected of you at each stage."
-        timelineItems={processSteps}
-      />
-      <Testimonial32 />
-      <Faq4
+      <ServicePricing slug={slug} />
+      {slug === "brand-design" ? <ServiceTestimonialOptions /> : <Testimonial32 />}
+      {slug === "brand-design" ? <ServiceFaq /> : <Faq4
         tagline="FAQs"
         heading="Questions about working together"
         description="What most founders ask before starting a branding project."
@@ -225,8 +197,10 @@ export const ServiceDetailLayout = ({ slug, heading, description, afterOverview,
           title,
           answer: <p>{answer}{links && <> See {links.map((link, index) => <Fragment key={link.href}>{index > 0 && (index === links.length - 1 ? " and " : ", ")}<a href={link.href}>{link.label}</a></Fragment>)}.</>}</p>,
         }))}
-      />
+      />}
       <Cta17 />
+      {slug === "logo-design" && <LogoComparison />}
+      {slug === "web-design" && <WebsiteComparison />}
       </main>
       <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
     </div>

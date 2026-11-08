@@ -19,7 +19,7 @@ function StorySection({ product }: { product: ShopProduct }) {
       <section className="px-[5%] py-16 md:py-24 lg:py-28">
         <div className="container">
           <div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">{product.story.eyebrow}</p>
+            <p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">{product.story.eyebrow}</p>
             <h2>{product.story.heading}</h2>
           </div>
           <div className="mx-auto grid max-w-6xl gap-12 xl:grid-cols-[0.8fr_1.2fr] xl:items-start xl:gap-20">
@@ -55,7 +55,7 @@ function StorySection({ product }: { product: ShopProduct }) {
   return (
     <section className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container mx-auto max-w-4xl text-center">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">{product.story.eyebrow}</p>
+        <p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">{product.story.eyebrow}</p>
         <h2>{product.story.heading}</h2>
         {product.story.profileImage && <img loading="lazy" decoding="async" src={product.story.profileImage} alt="Arek Dvornechuck" className="mx-auto mt-8 size-28 object-contain" />}
         <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-neutral-700">{product.story.body}</p>
@@ -110,7 +110,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
           <div className="container">
             <div className="grid items-center gap-10 xl:grid-cols-[1.15fr_0.85fr] xl:gap-20">
               <div className="flex flex-col items-center text-center xl:order-last">
-                <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">{product.eyebrow}</p>
+                <p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">{product.eyebrow}</p>
                 <h1>{product.heroHeading ?? product.title}</h1>
                 <p className="mx-auto mt-6 max-w-md text-lg leading-relaxed text-neutral-600">{product.description}</p>
                 <div className="mt-7 flex items-baseline gap-3"><span className="text-3xl font-semibold text-brand-primary">{product.price}</span>{product.oldPrice && <del className="text-3xl font-semibold text-black">{product.oldPrice}</del>}</div>
@@ -134,7 +134,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
         ) : (
           <section className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
             <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-              <div><p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">{product.problemEyebrow}</p><h2>{product.problemHeading}</h2></div>
+              <div><p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">{product.problemEyebrow}</p><h2>{product.problemHeading}</h2></div>
               <ul className={product.slug === 'creative-suite' || usesLegacyRestorationLayout ? 'grid gap-5' : 'grid gap-0 border-t border-black/20'}>
                 {product.benefits.map((benefit, index) => <li key={benefit} className={product.slug === 'creative-suite' || usesLegacyRestorationLayout ? 'grid grid-cols-[2.5rem_1fr] gap-3 py-2 text-lg' : 'grid grid-cols-[2.5rem_1fr] gap-3 border-b border-black/20 py-5 text-lg'}><span className="font-semibold text-brand-primary">0{index + 1}</span><span>{benefit}</span></li>)}
               </ul>
@@ -145,12 +145,12 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
         {!product.streamlinedContent && !product.storyAfterIncluded && <StorySection product={product} />}
 
         {!product.streamlinedContent && product.slug !== 'creative-suite' && <section className="bg-black px-[5%] py-16 text-white md:py-24 lg:py-28">
-          <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">How it works</p><h2>Set yourself up for success</h2></div><div className="grid gap-8 md:grid-cols-3">{product.steps.map((step, index) => <div key={step} className="border-t border-white/30 pt-6"><span className="text-4xl font-semibold text-brand-primary">{index + 1}.</span><p className="mt-5 text-lg leading-relaxed text-white/75">{step}</p></div>)}</div></div>
+          <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">How it works</p><h2>Set yourself up for success</h2></div><div className="grid gap-8 md:grid-cols-3">{product.steps.map((step, index) => <div key={step} className="border-t border-white/30 pt-6"><span className="text-4xl font-semibold text-brand-primary">{index + 1}.</span><p className="mt-5 text-lg leading-relaxed text-white/75">{step}</p></div>)}</div></div>
         </section>}
 
         {!product.streamlinedContent && product.slug !== 'creative-suite' && !product.hideBaseFeature && <section className="px-[5%] py-16 md:py-24 lg:py-28">
           <div className={product.slug === 'strategy-guide' || usesLegacyRestorationLayout ? 'container grid items-center gap-10 xl:grid-cols-2 xl:gap-20' : 'container grid items-center gap-10 lg:grid-cols-2 lg:gap-20'}>
-            <div className={product.slug === 'strategy-guide' ? 'xl:order-2' : undefined}><p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">Built for real projects</p><h2>{product.featureHeading}</h2><p className="mt-6 text-lg leading-relaxed text-neutral-600">{product.featureDescription}</p><ul className="mt-7 space-y-3">{product.featureBullets.map((bullet) => <li key={bullet} className="flex gap-3"><span className="text-brand-primary">●</span><span>{bullet}</span></li>)}</ul></div>
+            <div className={product.slug === 'strategy-guide' ? 'xl:order-2' : undefined}><p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">Built for real projects</p><h2>{product.featureHeading}</h2><p className="mt-6 text-lg leading-relaxed text-neutral-600">{product.featureDescription}</p><ul className="mt-7 space-y-3">{product.featureBullets.map((bullet) => <li key={bullet} className="flex gap-3"><span className="text-brand-primary">●</span><span>{bullet}</span></li>)}</ul></div>
             <img loading="lazy" decoding="async" src={product.featureImage ?? product.gallery[0]} alt="" className={product.slug === 'strategy-guide' || usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />
           </div>
         </section>}
@@ -180,7 +180,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
         {product.slug === 'creative-suite' && <CreativeSuiteFeatureSequence product={product} />}
 
         {!product.streamlinedContent && product.slug === 'strategy-guide' ? <StrategyGuideContents /> : product.slug === 'creative-suite' ? <CreativeSuiteContents /> : legacyIncludedContentsSlugs.includes(product.slug) ? <LegacyProductIncluded slug={product.slug} /> : !product.streamlinedContent && <section className="px-[5%] py-16 md:py-24 lg:py-28">
-          <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">What’s included</p><h2>{product.includedHeading}</h2><p className="mt-6 text-lg leading-relaxed text-neutral-600">{product.includedDescription}</p></div><div className="grid items-start gap-6 md:grid-cols-3">{product.gallery.map((image, index) => <img loading="lazy" decoding="async" key={image} src={image} alt={`${product.title} preview ${index + 1}`} className={usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />)}</div></div>
+          <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">What’s included</p><h2>{product.includedHeading}</h2><p className="mt-6 text-lg leading-relaxed text-neutral-600">{product.includedDescription}</p></div><div className="grid items-start gap-6 md:grid-cols-3">{product.gallery.map((image, index) => <img loading="lazy" decoding="async" key={image} src={image} alt={`${product.title} preview ${index + 1}`} className={usesLegacyRestorationLayout ? 'h-auto w-full bg-neutral-100 object-contain' : 'aspect-[4/3] size-full bg-neutral-100 object-cover'} />)}</div></div>
         </section>}
 
         {!product.streamlinedContent && product.storyAfterIncluded && (product.slug === 'creative-suite' ? <CreativeSuiteProof product={product} /> : <StorySection product={product} />)}
@@ -188,7 +188,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
         {product.audience && (
           <section className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
             <div className="container">
-              <div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">{product.audience.eyebrow}</p><h2>{product.audience.heading}</h2></div>
+              <div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">{product.audience.eyebrow}</p><h2>{product.audience.heading}</h2></div>
               {product.audience.items ? (
                 <ul className="grid gap-x-10 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
                   {product.audience.items.map((item) => (
@@ -217,7 +217,7 @@ function ProductLandingPage({ product }: { product: ShopProduct }) {
 
         {product.testimonials && (
           <section className="px-[5%] py-16 md:py-24 lg:py-28">
-            <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">Testimonials</p><h2>What people say</h2><p className="mt-6 text-lg text-neutral-600">Still not convinced?—Don’t take my word for it! Check out some of the emails and social media messages I get from people who enjoyed this course.</p></div><div className="columns-2 gap-4 md:columns-3 lg:columns-4">{product.testimonials.map((image, index) => <img key={image} src={image} alt={`Customer testimonial ${index + 1}`} loading="lazy" className="mb-4 w-full break-inside-avoid" />)}</div></div>
+            <div className="container"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">Testimonials</p><h2>What people say</h2><p className="mt-6 text-lg text-neutral-600">Still not convinced?—Don’t take my word for it! Check out some of the emails and social media messages I get from people who enjoyed this course.</p></div><div className="columns-2 gap-4 md:columns-3 lg:columns-4">{product.testimonials.map((image, index) => <img key={image} src={image} alt={`Customer testimonial ${index + 1}`} loading="lazy" className="mb-4 w-full break-inside-avoid" />)}</div></div>
           </section>
         )}
 

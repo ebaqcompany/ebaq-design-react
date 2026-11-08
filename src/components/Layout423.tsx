@@ -1,6 +1,3 @@
-import { useRef, useState, type KeyboardEvent } from "react";
-import { RxChevronRight } from "react-icons/rx";
-
 type Feature = {
   tagline: string;
   url: string;
@@ -8,6 +5,7 @@ type Feature = {
   description: string;
   deliverables: string[];
   linkLabel: string;
+  image?: { src: string; alt: string; position?: string };
 };
 
 type Props = React.ComponentPropsWithoutRef<"section"> & {
@@ -18,80 +16,43 @@ type Props = React.ComponentPropsWithoutRef<"section"> & {
   variant?: "light" | "dark";
 };
 
+const servicePhotos = [
+  { src: "/images/blog/brand-strategy/brand-strategy-workshop-ebaqdesign.webp", alt: "Arek leading an in-person brand strategy workshop at a whiteboard", position: "center" },
+  { src: "/images/about/process/671bbf0fa0c63450dddc855e_arek_design_square.jpg", alt: "Arek reviewing printed logo concepts in his studio", position: "center" },
+  { src: "/images/about/process/671bbf0fa0c63450dddc855e_arek_design_square.jpg", alt: "Arek developing brand design concepts in his studio", position: "center" },
+  { src: "/images/about/process/65c3f16cfc26eeb7887a41f0_Arek_web_design.jpg", alt: "Arek working on website design at his workstation", position: "65% center" },
+  { src: "/images/about/process/arek-studio-desk-setup.webp", alt: "Arek at his workstation with website and brand work on screen", position: "center 35%" },
+  { src: "", alt: "Photo of Arek working on motion graphics to be selected", position: "center" },
+];
+
+// Adapted from Relume Layout 423's image-backed service cards, in two rows of three.
+// Descriptions reveal on hover/focus; touch devices retain the readable fallback.
 export const Layout423 = (props: Props) => {
   const { tagline, heading, description, features, variant = "light", className = "", ...sectionProps } = { ...Layout423Defaults, ...props };
-  const [activeFeature, setActiveFeature] = useState(0);
-  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const feature = features[activeFeature] ?? features[0];
-  const isDark = variant === "dark";
-
-  const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
-    let nextIndex: number | null = null;
-    if (event.key === "ArrowDown" || event.key === "ArrowRight") nextIndex = (index + 1) % features.length;
-    if (event.key === "ArrowUp" || event.key === "ArrowLeft") nextIndex = (index - 1 + features.length) % features.length;
-    if (event.key === "Home") nextIndex = 0;
-    if (event.key === "End") nextIndex = features.length - 1;
-    if (nextIndex === null) return;
-    event.preventDefault();
-    setActiveFeature(nextIndex);
-    tabRefs.current[nextIndex]?.focus();
-  };
-
   return (
-    <section {...sectionProps} className={`${isDark ? "bg-black text-white" : "bg-white text-black"} px-[5%] py-16 md:py-24 lg:py-28 ${className}`.trim()}>
+    <section {...sectionProps} className={`${variant === "dark" ? "bg-black text-white" : "bg-white text-black"} px-[5%] py-16 md:py-24 lg:py-28 ${className}`.trim()}>
       <div className="container">
-        <div className="mb-12 w-full max-w-lg md:mb-16 lg:mb-20">
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4">{tagline}</p>
+        <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">{tagline}</p>
           <h2 className="mb-5 md:mb-6">{heading}</h2>
-          <p className={isDark ? "text-white/70 md:text-md" : "text-black/70 md:text-md"}>{description}</p>
+          <p className="md:text-md">{description}</p>
         </div>
-
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(18rem,1fr)] lg:gap-16">
-          <div
-            id={`service-panel-${activeFeature}`}
-            role="tabpanel"
-            aria-labelledby={`service-tab-${activeFeature}`}
-            tabIndex={0}
-            className={`flex min-h-[30rem] flex-col justify-between border-y py-8 md:min-h-[34rem] md:py-10 lg:min-h-[38rem] ${isDark ? "border-white/30" : "border-black/30"}`}
-          >
-            <p className="heading-h2 text-brand-primary">{feature.tagline}</p>
-            <div className="mt-12 max-w-2xl">
-              <h3>{feature.heading}</h3>
-              <p className={`mt-5 md:mt-6 md:text-md ${isDark ? "text-white/75" : "text-black/75"}`}>{feature.description}</p>
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {feature.deliverables.map((item) => (
-                  <li key={item} className={`border px-3 py-2 text-sm font-semibold ${isDark ? "border-white/40" : "border-black/40"}`}>{item}</li>
-                ))}
-              </ul>
-              <a href={feature.url} className="heading-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-primary">
-                {feature.linkLabel}<RxChevronRight aria-hidden="true" className="size-5" />
-              </a>
-            </div>
-          </div>
-
-          <div role="tablist" aria-label="Services" aria-orientation="vertical" className={`flex flex-col border-t ${isDark ? "border-white/30" : "border-black/30"}`}>
-            {features.map((item, index) => {
-              const isActive = index === activeFeature;
-              return (
-                <button
-                  key={item.heading}
-                  ref={(element) => { tabRefs.current[index] = element; }}
-                  id={`service-tab-${index}`}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  aria-controls={`service-panel-${index}`}
-                  tabIndex={isActive ? 0 : -1}
-                  onClick={() => setActiveFeature(index)}
-                  onKeyDown={(event) => handleTabKeyDown(event, index)}
-                  className={`service-text-tab flex items-baseline gap-4 rounded-none border-b border-l-2 py-4 pl-4 pr-1 text-left transition-colors md:py-5 ${isDark ? "border-b-white/30" : "border-b-black/30"} ${isActive ? "border-l-brand-primary text-brand-primary" : `border-l-transparent ${isDark ? "text-white/60 hover:text-white focus-visible:text-white" : "text-black/60 hover:text-black focus-visible:text-black"}`}`}
-                >
-                  <span className="heading-h5 flex-1">{item.heading}</span>
-                  <span className="font-semibold" aria-hidden="true">{item.tagline}</span>
-                </button>
-              );
-            })}
-          </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+          {features.map((feature: Feature, index) => {
+            const image = feature.image ?? servicePhotos[index % servicePhotos.length];
+            return (
+              <article key={feature.heading} data-service-card={feature.heading} tabIndex={0} className="service-photo-card group relative isolate flex min-h-[30rem] flex-col justify-end overflow-hidden bg-black text-white outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-primary md:min-h-[32rem]">
+                {image.src ? <img src={image.src} alt={image.alt} loading="lazy" decoding="async" className="absolute inset-0 -z-20 size-full object-cover transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03] motion-reduce:transition-none" style={{ objectPosition: image.position ?? "center" }} /> : <div role="img" aria-label={image.alt} className="absolute inset-0 -z-20 bg-neutral-800 p-6 text-sm text-white/60 md:p-8">Photo placeholder</div>}
+                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/55 to-black/10" />
+                <div className="p-6 md:p-8">
+                  <h3 className="heading-h4">{feature.heading}</h3>
+                  <div className="service-card-description">
+                    <div className="overflow-hidden"><p className="pt-5 text-base leading-relaxed text-white/90 md:pt-6">{feature.description}</p></div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

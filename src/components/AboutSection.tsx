@@ -18,7 +18,7 @@ export const AboutSection = ({ heading = "I help ambitious companies look like c
       <div className="container">
         <div className="grid grid-cols-1 items-start gap-x-12 gap-y-8 md:grid-cols-2 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold text-brand-primary md:mb-4">Hello 👋 I&rsquo;m Arek</p>
+            <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Hello 👋 I&rsquo;m Arek</p>
             <h2 className="max-w-xl text-balance">{heading}</h2>
           </div>
           <div className="md:mt-12">
@@ -38,17 +38,17 @@ export const AboutSection = ({ heading = "I help ambitious companies look like c
       </div>
     </section>
 
-    <section className="bg-[#f5f5f5] px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="about-services-heading">
+    <section className="bg-surface-muted px-[5%] py-16 md:py-24 lg:py-28" aria-labelledby="about-services-heading">
       <div className="container">
         <div className="mb-12 max-w-3xl md:mb-16">
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4">What I offer</p>
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">What I offer</p>
           <h2 id="about-services-heading" className="mb-5 md:mb-6">Everything your brand needs</h2>
           <p className="md:text-md">One Branding Expert for strategy, identity, web, and motion, all at the same flat $3,000 per week.</p>
         </div>
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12">
           {Layout423Defaults.features.map((service) => (
             <div key={service.heading} className="border-t border-black/10 pt-6">
-              <p className="mb-3 text-sm font-semibold text-brand-primary">{service.tagline}</p>
+              <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">{service.tagline}</p>
               <h3 className="mb-3 text-xl md:text-2xl">{service.heading}</h3>
               <p className="mb-5 text-black/60">{service.description}</p>
               <ul className="flex flex-wrap gap-2" aria-label={`${service.heading} deliverables`}>

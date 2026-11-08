@@ -84,7 +84,7 @@ export const Layout351Preview = () => {
     <section className="overflow-hidden bg-white px-[5%] py-16 text-black md:py-24 lg:py-28" aria-labelledby="layout351-preview-heading">
       <div className="container">
         <div className="mb-12 max-w-4xl md:mb-16 lg:mb-20">
-          <p className="mb-3 font-semibold text-brand-primary md:mb-4">What I offer</p>
+          <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">What I offer</p>
           <h2 id="layout351-preview-heading">10k goes a long way. All this plus much more.</h2>
         </div>
 

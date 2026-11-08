@@ -12,7 +12,12 @@
 
 :root {
   --color-brand-primary: #00afec;
+  --color-brand-primary-rgb: 0 175 236;
   --color-brand-light: #dff6ff;
+  --color-surface-muted: #f5f5f5;
+  --brand-grid-cell: 24px;
+  --brand-grid-line: rgba(255, 255, 255, 0.5);
+  --brand-grid-line-width: 1px;
 }
 
 .bg-brand-light {
@@ -21,10 +26,37 @@
 
 .bg-brand-grid {
   background-color: var(--color-brand-primary);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: linear-gradient(var(--brand-grid-line) var(--brand-grid-line-width), transparent var(--brand-grid-line-width)), linear-gradient(90deg, var(--brand-grid-line) var(--brand-grid-line-width), transparent var(--brand-grid-line-width));
+  background-size: var(--brand-grid-cell) var(--brand-grid-cell);
   background-position: -16px -11px;
   background-attachment: scroll;
+}
+
+/* Cards reuse the homepage grid's 1px lines and shared cell size. */
+.service-card {
+  --service-card-surface: var(--color-surface-muted);
+  background-color: var(--service-card-surface);
+}
+.service-card:is(:hover, :focus-within) {
+  --service-card-surface: #fff;
+}
+.service-artwork.bg-brand-grid {
+  background-position: 50% 100%;
+}
+.service-pixel-edge {
+  left: 50%;
+  right: auto;
+  width: calc(var(--brand-grid-cell) * 81);
+  transform: translateX(-50%);
+  height: calc(var(--brand-grid-cell) * 2);
+  overflow: visible;
+}
+.service-pixel-edge {
+  fill: var(--service-card-surface);
+  transition: fill 200ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-pixel-edge { transition: none; }
 }
 
 .bg-brand-primary {
@@ -282,7 +314,7 @@
 }
 
 .available-button--pricing .available-button-label {
-  line-height: 1.15;
+  line-height: normal;
 }
 
 .available-button--nav:is(:hover, :focus-visible) .available-button-mark,
@@ -437,10 +469,6 @@
   margin: 0;
 }
 
-:is(h1, h2, h3, h4, h5, h6, .heading-h1, .heading-h2, .heading-h3, .heading-h4, .heading-h5, .heading-h6, .heading-h7) {
-  line-height: 0.9 !important;
-}
-
 h1,
 h2,
 h3,
@@ -454,7 +482,7 @@ h6,
 .heading-h7 {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
-  line-height: 1;
+  line-height: 0.9;
 }
 
 h1,
@@ -475,6 +503,19 @@ h6,
 .heading-h6,
 .heading-h7 {
   letter-spacing: -0.01em;
+}
+
+/* Shared testimonial quote typography, used by homepage and service layouts. */
+.testimonial-quote {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5625rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 767px) {
+  .testimonial-quote { font-size: 1.125rem; }
 }
 
 /* Preserve the approved 404 phrase treatment while its class controls size. */
@@ -530,18 +571,20 @@ h4,
   font-size: 40px;
 }
 
-h5,
-.heading-h5 {
-  font-size: 30px;
+:is(h5, .heading-h5) {
+  font-size: 1.875rem;
+  line-height: 1.2;
 }
 
-h6,
-.heading-h6 {
+:is(h6, .heading-h6) {
   font-size: 25px;
+  line-height: 1.2;
+  letter-spacing: normal;
 }
 
 .heading-h7 {
   font-size: 20px;
+  letter-spacing: normal;
 }
 
 @media (max-width: 767px) {
@@ -552,7 +595,7 @@ h6,
   h4,
   .heading-h4 { font-size: 24px; }
   h5,
-  .heading-h5 { font-size: 20px; }
+  .heading-h5 { font-size: 1.25rem; }
   h6,
   .heading-h6 { font-size: 18px; }
   .heading-h7 { font-size: 16px; }
@@ -695,7 +738,7 @@ a:has(> :is(h1, h2, h3, h4, h5, h6)):is(:hover, :focus-visible),
 }
 
 button:not([role="tab"]):not(.portfolio-header-replay):not(.portfolio22-service):not(.gallery-lottie),
-button[role="tab"]:not(.service-text-tab),
+button[role="tab"]:not(.service-text-tab):not(.pricing-period-tab):not(.testimonial-client-tab),
 a.button-primary,
 a.button-secondary,
 a.button-inverted,
@@ -705,7 +748,7 @@ a.button-inverted--dark-surface {
 }
 
 button:not([role="tab"])[class*="bg-background-alternative"],
-button[role="tab"][data-state="active"],
+button[role="tab"][data-state="active"]:not(.pricing-period-tab):not(.testimonial-client-tab),
 a.button-primary {
   background-color: #000 !important;
   border-width: 0 !important;
@@ -713,7 +756,7 @@ a.button-primary {
 }
 
 button:not([role="tab"])[class*="bg-background-primary"],
-button[role="tab"][data-state="inactive"],
+button[role="tab"][data-state="inactive"]:not(.pricing-period-tab):not(.testimonial-client-tab),
 a.button-secondary {
   background-color: #000 !important;
   border-width: 0 !important;
@@ -722,7 +765,7 @@ a.button-secondary {
 
 button:not([role="tab"])[class*="bg-background-alternative"]:is(:hover, :focus-visible),
 button:not([role="tab"])[class*="bg-background-primary"]:is(:hover, :focus-visible),
-button[role="tab"]:is(:hover, :focus-visible),
+button[role="tab"]:not(.pricing-period-tab):not(.testimonial-client-tab):is(:hover, :focus-visible),
 a.button-primary:is(:hover, :focus-visible),
 a.button-secondary:is(:hover, :focus-visible) {
   background-color: #00afec !important;
@@ -1235,4 +1278,26 @@ footer a:not([class*="button"]):is(:hover, :focus-visible) {
   display: none;
   width: 0;
   height: 0;
+}
+
+/* Relume 423: reveal copy on hover or keyboard focus, with a touch fallback. */
+.service-card-description {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 300ms ease-out, opacity 300ms ease-out, transform 300ms ease-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .service-photo-card .service-card-description {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .service-photo-card:is(:hover, :focus-within) .service-card-description {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-card-description { transition: none; }
 }

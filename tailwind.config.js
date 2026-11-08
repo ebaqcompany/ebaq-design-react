@@ -8,6 +8,12 @@ module.exports = {
   presets: [require("@relume_io/relume-tailwind")],
   theme: {
     extend: {
+      colors: {
+        "surface-muted": "var(--color-surface-muted)",
+      },
+      borderColor: {
+        "brand-primary": "rgb(var(--color-brand-primary-rgb) / <alpha-value>)",
+      },
       fontSize: {
         "10xl": ["5.5rem", { lineHeight: "1" }],
         handwriting: ["1.75rem", { lineHeight: "2.25rem" }],
@@ -20,6 +26,7 @@ module.exports = {
         "archive-search-compact": "21rem",
       },
       fontFamily: {
+        mono: ['"Roboto Mono"', 'monospace'],
         sans: ['"Roboto"', 'sans-serif'],
         heading: ['"Roboto Condensed"', 'sans-serif'],
         handwriting: ['"Caveat"', 'sans-serif'],

@@ -8,7 +8,7 @@ export function LegacyProductIncluded({ slug }: { slug: string }) {
     <section className="bg-black px-[5%] py-16 text-white md:py-24 lg:py-28">
       <div className="container">
         <div className="mx-auto mb-16 max-w-2xl text-center md:mb-24">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-primary">In this {slug === 'guidelines-kit' ? 'kit' : slug === 'brand-archetypes' ? 'course' : 'guide'}</p>
+          <p className="mb-4 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">In this {slug === 'guidelines-kit' ? 'kit' : slug === 'brand-archetypes' ? 'course' : 'guide'}</p>
           <h2>What's Included</h2>
         </div>
         <div className="grid gap-20 md:gap-28">
