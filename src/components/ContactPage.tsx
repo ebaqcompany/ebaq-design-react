@@ -1,7 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { bookingUrl, pricing, siteUrl, studio } from "../content/siteFacts";
 import { serializeJsonLd } from "../content/structuredData";
-import { Contact5 } from "./Contact5";
+import { ContactForm } from "./ContactForm";
+import { ContactDetails } from "./ContactDetails";
 import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 
@@ -31,7 +32,8 @@ export const ContactPage = () => <div className="relative bg-white">
   </Helmet>
   <Navbar16 />
   <main className="min-h-[70vh]">
-    <Contact5 />
+    <ContactForm />
+    <ContactDetails />
   </main>
   <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
 </div>;

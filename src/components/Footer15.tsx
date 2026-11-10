@@ -134,7 +134,7 @@ export const Footer15 = (props: Footer15Props) => {
               <span className="footer-brandmark block size-12" />
             </a>
           </div>
-          <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12 lg:grid-cols-[1fr_2fr] lg:gap-y-4">
+          <div className="grid grid-cols-1 gap-x-[8vw] gap-y-12 md:gap-y-16 lg:grid-cols-[0.75fr_1fr] lg:gap-y-4">
             <div>
             <div className="rb-6 mb-6 md:mb-8">
               <div>
@@ -170,7 +170,7 @@ export const Footer15 = (props: Footer15Props) => {
               ))}
             </div>
             </div>
-            <div className="grid grid-cols-1 items-start gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-[repeat(4,max-content)] md:justify-between md:gap-x-8 md:gap-y-4">
+            <div className="grid grid-cols-1 items-start gap-y-10 sm:grid-cols-3 sm:gap-x-6 md:gap-x-8 md:gap-y-4">
               {columnLinks.map((column, index) => (
                 <ul key={index}>
                   {column.links.map((link, linkIndex) => (
@@ -242,12 +242,6 @@ export const Footer15Defaults: Props = {
         { title: "Podcast", url: "/podcast" },
         { title: "Tools", url: "/tools" },
         { title: "Shop", url: "/shop" },
-      ],
-    },
-    {
-      links: [
-        { title: "Privacy Policy", url: "/privacy-policy" },
-        { title: "Fulfillment Policy", url: "/fulfillment-policy" },
         { title: "Contact", url: "/contact" },
       ],
     },

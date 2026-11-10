@@ -49,15 +49,15 @@ export const Navbar16 = (props: Navbar16Props) => {
     };
   }, [open]);
   const links = props.navLinks ?? [
-    { label: "About", href: "/about" },
     { label: "Work", href: "/work" },
+    { label: "About", href: "/about" },
     { label: "Pricing", href: "/pricing" },
+    { label: "Contact", href: "/contact" },
     { label: "Blog", href: "/blog" },
     { label: "Podcast", href: "/podcast" },
     { label: "Shop", href: "/shop" },
-    { label: "Contact", href: "/contact" },
   ];
-  const desktopLinks = links.filter(link => ["/about", "/work", "/pricing"].includes(link.href));
+  const desktopLinks = links.filter(link => ["/work", "/about", "/pricing", "/contact"].includes(link.href));
   return <section {...props} className="relative z-[999] w-full px-[5%]"><div className="container relative z-10 mx-auto flex min-h-16 w-full items-center justify-between md:min-h-18 md:grid md:grid-cols-[1fr_auto_1fr]"><a href="/" className="inline-flex w-fit justify-self-start"><img loading="eager" src={open ? "/ebaqdesign-logo-bold-light.svg" : "/ebaqdesign-logo-bold.svg"} width={567} height={156} alt="Ebaq Design" className="h-10 w-auto" /></a><nav aria-label="Primary navigation" className="hidden items-center gap-8 md:flex">{desktopLinks.map(link => <a key={link.href} href={link.href} className="text-base font-semibold transition-colors hover:text-brand-primary">{link.label}</a>)}</nav><div className="flex items-center justify-end gap-2 lg:gap-4"><AvailableButton nav inverse={open} />{<button type="button" aria-label="Toggle menu" aria-expanded={open} aria-controls="primary-menu" className="flex size-12 items-center justify-center md:hidden" onClick={() => setOpen(v => !v)}><span aria-hidden="true" className="relative block h-5 w-6"><motion.span className={`absolute left-0 top-px block h-0.5 w-6 origin-center ${open ? "bg-white" : "bg-black"}`} animate={{ y: open ? 8 : 0, rotate: open ? 45 : 0 }} transition={{ duration: 0.2, ease: "easeInOut" }} /><motion.span className={`absolute left-0 top-1/2 block h-0.5 w-6 -translate-y-1/2 ${open ? "bg-white" : "bg-black"}`} animate={{ opacity: open ? 0 : 1 }} transition={{ duration: 0.15, ease: "easeInOut" }} /><motion.span className={`absolute bottom-px left-0 block h-0.5 w-6 origin-center ${open ? "bg-white" : "bg-black"}`} animate={{ y: open ? -8 : 0, rotate: open ? -45 : 0 }} transition={{ duration: 0.2, ease: "easeInOut" }} /></span></button>}</div></div><AnimatePresence>{open && <motion.div id="primary-menu" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2, ease: "easeInOut" }} className="fixed inset-0 overflow-hidden bg-black md:hidden" onClick={() => setOpen(false)}><div className="container mx-auto flex h-full flex-col items-center justify-center gap-y-4 py-4 text-center md:py-0">{links.map(link => <a key={link.href} href={link.href} onClick={event => { event.stopPropagation(); setOpen(false); }} className="heading-link heading-nav inline-block py-2 text-2xl text-white hover:text-brand-primary md:text-10xl">{link.label}</a>)}</div></motion.div>}</AnimatePresence></section>;
 };
 

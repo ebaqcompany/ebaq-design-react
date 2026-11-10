@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "brand-primary": "rgb(var(--color-brand-primary-rgb) / <alpha-value>)",
         "surface-muted": "var(--color-surface-muted)",
       },
       borderColor: {
