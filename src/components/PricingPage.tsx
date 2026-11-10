@@ -1,8 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Navbar16 } from "./Navbar16";
 import { Pricing8 } from "./Pricing8";
-import { Timeline10 } from "./Timeline10";
-import { ServiceProcess } from "./ServiceProcess";
 import { Comparison } from "./Comparison";
 import { Faq4 } from "./Faq4";
 import { Cta17 } from "./Cta17";
@@ -62,8 +60,6 @@ export const PricingPage = () => (
     <Navbar16 />
     <main>
       <Pricing8 surface="white" headingLevel="h1" tagline="Pricing" heading="Priced weekly or monthly" description="Hire me for a flat weekly rate with guaranteed deliverables. Or choose a monthly plan for a bigger project and save $2,000." />
-      <Timeline10 />
-      <ServiceProcess />
       <Comparison
         heading={"Agency-level work,\nwithout the agency invoice"}
         rows={[
