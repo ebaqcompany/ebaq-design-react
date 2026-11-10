@@ -3,12 +3,10 @@ import { founder, pricing, siteUrl, studio } from "../content/siteFacts";
 import { serializeJsonLd } from "../content/structuredData";
 import { Navbar16 } from "./Navbar16";
 import { Footer15 } from "./Footer15";
-import { Testimonial32 } from "./Testimonial32";
+import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
 import { Cta17 } from "./Cta17";
 import { Header107 } from "./Header107";
 import { Layout350Preview } from "./Layout350Preview";
-import { Gallery15 } from "./Gallery15";
-import { WebsiteComparison } from "./WebsiteComparison";
 import { Timeline18 } from "./Timeline18";
 import { engagementProcessSteps } from "../data/services";
 import { AboutTools } from "./AboutTools";
@@ -51,10 +49,8 @@ export const AboutPage = () => <div className="relative bg-white">
     <Layout350Preview />
     <AboutTools />
     <Timeline18 tagline="How it works" heading="An overview of my branding process" description="Every project follows the same five steps, so you always know what happens next and what’s expected of you at each stage." timelineItems={engagementProcessSteps} />
-    <Gallery15 />
-    <WebsiteComparison />
 
-    <Testimonial32 />
+    <ServiceTestimonialOptions autoPlay />
     <Cta17 heading="Need a senior creative partner?" description="Tell me what you’re launching, changing, or trying to make clearer. I’ll recommend the most effective way to move it forward." />
   </main>
   <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />

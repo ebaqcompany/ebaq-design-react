@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { pricing, studio } from "../content/siteFacts";
 import { Navbar16 } from "./Navbar16";
 import { ServicesGrid } from "./ServicesGrid";
+import { Comparison } from "./Comparison";
 import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
 import { Faq4 } from "./Faq4";
 import { Cta17 } from "./Cta17";
@@ -59,6 +60,17 @@ export const ServicesPage = () => (
 
     <main>
       <ServicesGrid />
+
+      <Comparison
+        heading={"Agency-level work,\nwithout the agency invoice"}
+        rows={[
+          { left: "$3,000 per week, flat", right: "$25k–$100k+ per project" },
+          { left: "Brand identity in 1 week, guaranteed", right: "3–9 months or more" },
+          { left: "Total agreed before work starts", right: "Estimates that grow" },
+          { left: "Revisions within agreed scope", right: "Change orders" },
+          { left: "One senior designer, start to finish", right: "Account managers and juniors" },
+        ]}
+      />
 
       <ServiceTestimonialOptions autoPlay />
 
