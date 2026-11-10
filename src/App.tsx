@@ -3,7 +3,6 @@ import {
   Navbar16,
   Header78,
   Layout484,
-  Pricing8,
   Layout425,
   Layout350Preview,
   Banner12,
@@ -15,7 +14,6 @@ import {
 import { useTracking } from "./hooks/useTracking";
 
 import { ServiceTestimonialOptions } from "./components/ServiceTestimonialOptions";
-import { ServiceProcess } from "./components/ServiceProcess";
 
 function App() {
   useTracking();
@@ -70,11 +68,6 @@ function App() {
 
           {/* Testimonials Section */}
           <ServiceTestimonialOptions autoPlay />
-
-          {/* Pricing Section */}
-          <Pricing8 surface="dark" />
-
-          <ServiceProcess slug="brand-design" />
 
           {/* FAQ Section */}
           <Faq4 />
