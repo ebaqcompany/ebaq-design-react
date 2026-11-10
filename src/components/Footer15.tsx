@@ -170,7 +170,7 @@ export const Footer15 = (props: Footer15Props) => {
               ))}
             </div>
             </div>
-            <div className="grid grid-cols-1 items-start gap-y-10 sm:grid-cols-3 sm:gap-x-6 md:gap-x-8 md:gap-y-4">
+            <div className="grid grid-cols-3 items-start gap-x-3 gap-y-4 sm:gap-x-6 md:gap-x-8">
               {columnLinks.map((column, index) => (
                 <ul key={index}>
                   {column.links.map((link, linkIndex) => (
@@ -196,8 +196,8 @@ export const Footer15 = (props: Footer15Props) => {
           <FooterWordmark src={companyImage.src} alt={companyImage.alt ?? "Ebaq Design"} mode={wordmarkMode} />
         </div>
         <DraggableFooterGuide footerRef={footerRef} />
-        <div className="flex flex-col-reverse items-start justify-between py-6 text-sm md:flex-row md:items-center md:py-8">
-          <p className="mt-8 md:mt-0">{footerText}</p>
+        <div className="flex items-center justify-between gap-x-3 py-6 text-sm md:py-8">
+          <p>{footerText}</p>
           <p>{rightsText}</p>
         </div>
       </div>
