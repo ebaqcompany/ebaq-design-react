@@ -22,7 +22,7 @@ export const Comparison = (props: ComparisonProps) => {
   };
 
   return (
-    <section id="comparison" className="dark-section-ruler overflow-hidden bg-black px-[5%] py-16 text-white md:py-24 lg:py-28">
+    <section id="comparison" className="overflow-hidden bg-black px-[5%] py-16 text-white md:py-24 lg:py-28">
       <div className="container">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
           <h2 className="mb-5 md:mb-6 whitespace-pre-line" style={{ fontFamily: "'Roboto Condensed', sans-serif", fontWeight: 600 }}>{heading}</h2>
