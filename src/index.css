@@ -490,6 +490,11 @@ h2 {
   letter-spacing: -0.03em;
 }
 
+/* Size utilities must not replace the shared H1/H2 leading. */
+:root :is(h1, h2) {
+  line-height: 0.9;
+}
+
 h3,
 h4,
 .heading-h3,
@@ -717,10 +722,6 @@ a:has(> :is(h1, h2, h3, h4, h5, h6)):is(:hover, :focus-visible),
 #service-hero .logo-annotated-heading .layout484-highlight-path {
   vector-effect: non-scaling-stroke;
   stroke-width: 0.06em;
-}
-
-@media (max-width: 767px) {
-  #service-hero .logo-annotated-heading { line-height: 1.15 !important; }
 }
 
 .hourglass-icon {

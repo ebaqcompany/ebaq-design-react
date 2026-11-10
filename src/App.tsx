@@ -52,7 +52,7 @@ function App() {
             <Banner12 />
 
           {/* Hero Section */}
-          <Header78 heading={"Design a brand that\nfits your ambition"} />
+          <Header78 heading="Design a brand that fits your ambition" />
 
           {/* Client logos */}
           <Logo3 />
