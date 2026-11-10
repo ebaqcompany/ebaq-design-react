@@ -1,6 +1,16 @@
 const allowedServices = new Set(["Brand Strategy", "Logo Design", "Brand Design", "Web Design", "Web Development", "Motion Graphics", "Other"]);
 const field = (value, max) => typeof value === "string" && value.trim().length <= max ? value.trim() : "";
 
+function visitorSender(sender, firstName, lastName) {
+  // Keep the authenticated mailbox, replacing only its optional display name.
+  if (/[\x00-\x1f\x7f]/.test(sender)) return "";
+  const mailbox = (sender.match(/<([^<>]+)>\s*$/)?.[1] ?? sender).trim();
+  if (!/^[^\s<>@,;]+@[^\s<>@,;]+\.[^\s<>@,;]+$/.test(mailbox)) return "";
+  const name = `${firstName} ${lastName}`.replace(/[\x00-\x1f\x7f]/g, " ").replace(/\s+/g, " ").trim();
+  // A quoted display name preserves commas, quotes, and backslashes safely.
+  return `"${name.replace(/["\\]/g, '\\$&')}" <${mailbox}>`;
+}
+
 export default async function contact(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
   const data = req.body ?? {};
@@ -15,12 +25,14 @@ export default async function contact(req, res) {
   const apiKey = process.env.RESEND_API_KEY;
   const sender = process.env.RESEND_FROM_EMAIL;
   if (!apiKey || !sender) return res.status(503).json({ error: "Contact delivery is not configured" });
+  const from = visitorSender(sender, firstName, lastName);
+  if (!from) return res.status(503).json({ error: "Contact delivery is not configured" });
   try {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        from: sender,
+        from,
         to: ["arek@ebaqdesign.com"],
         reply_to: email,
         subject: "New project inquiry",
