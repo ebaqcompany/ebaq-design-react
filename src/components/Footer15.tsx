@@ -170,7 +170,7 @@ export const Footer15 = (props: Footer15Props) => {
               ))}
             </div>
             </div>
-            <div className="grid grid-cols-3 items-start gap-x-3 gap-y-4 sm:gap-x-6 md:gap-x-8">
+            <div className="grid grid-cols-[repeat(3,max-content)] items-start justify-between gap-x-3 gap-y-4">
               {columnLinks.map((column, index) => (
                 <ul key={index}>
                   {column.links.map((link, linkIndex) => (
