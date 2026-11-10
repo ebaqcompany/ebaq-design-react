@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+<title>Motion Graphics — triangle, square, and star at successive bounces</title><desc>A yellow triangle follows the dashed bounce path, morphs into a square at the first landing, then a star at the second. The star holds through the final bounce and scene reset; the timeline stays synchronized.</desc>
+<style>
+/* Ballistic flights: 1.20s, 1.07s, .54s; heights 110, 87.5, 22.
+   Each half-flight uses quadratic gravity, not a constant-speed path tween. */
+.ball-x { animation: ball-x 3.8s linear infinite; }
+.ball-y { animation: ball-y 3.8s linear infinite; }
+.playhead { animation: playhead 3.8s linear infinite; }
+.loop-visibility { animation: loop-visibility 3.8s linear infinite; }
+@keyframes ball-x {
+  0% { transform: translateX(0); }
+  31.5789% { transform: translateX(210px); }
+  59.7368% { transform: translateX(410px); }
+  73.9474%, 90% { transform: translateX(470px); }
+  90.01%, 100% { transform: translateX(0); }
+}
+@keyframes ball-y {
+  0% { transform: translateY(0); animation-timing-function:cubic-bezier(.333333,.666667,.666667,1); }
+  15.7895% { transform: translateY(-110px); animation-timing-function:cubic-bezier(.333333,0,.666667,.333333); }
+  31.5789% { transform: translateY(0); animation-timing-function:cubic-bezier(.333333,.666667,.666667,1); }
+  45.6579% { transform: translateY(-87.5px); animation-timing-function:cubic-bezier(.333333,0,.666667,.333333); }
+  59.7368% { transform: translateY(0); animation-timing-function:cubic-bezier(.333333,.666667,.666667,1); }
+  66.8421% { transform: translateY(-22px); animation-timing-function:cubic-bezier(.333333,0,.666667,.333333); }
+  73.9474%, 100% { transform: translateY(0); }
+}
+@keyframes playhead {
+  0% { transform:translateX(-186px); }
+  84%, 90% { transform:translateX(244px); }
+  90.01%, 100% { transform:translateX(-186px); }
+}
+@keyframes loop-visibility { 0%,100% {opacity:0} 4%,84% {opacity:1} 90% {opacity:0} }
+@media(prefers-reduced-motion:reduce) {
+  .ball-x,.ball-y,.playhead,.loop-visibility { animation:none; }
+  .ball-x { transform:translateX(115px); }
+  .ball-y { transform:translateY(-110px); }
+}
+
+/* Short damped window shake after the final landing, before loop fade/reset. */
+.window-shake {transform-origin:510px 450px;animation: window-settle 3.8s linear infinite}
+@keyframes window-settle {
+ 0%,75.5% {transform:translateX(0) rotate(0)}
+ 77% {transform:translateX(-12px) rotate(-1deg)}
+ 78.5% {transform:translateX(8.5px) rotate(.7deg)}
+ 80% {transform:translateX(-5px) rotate(-.4deg)}
+ 81.5% {transform:translateX(2.5px) rotate(.2deg)}
+ 83%,100% {transform:translateX(0) rotate(0)}
+}
+@media(prefers-reduced-motion:reduce){.window-shake{animation:none}}
+/* Morph starts exactly at the first and second landing; each settles in 120ms. */
+.bouncing-shape { animation: impact-shape 3.8s cubic-bezier(.2,0,0,1) infinite; }
+@keyframes impact-shape {
+ 0%,31.5789% { d:path("M270.000 523.000 L284.000 551.000 L298.000 579.000 L312.000 607.000 L284.000 607.000 L256.000 607.000 L228.000 607.000 L238.500 586.000 L249.000 565.000 L259.500 544.000 Z"); }
+ 34.7368%,59.7368% { d:path("M228.000 523.000 L270.000 523.000 L312.000 523.000 L312.000 551.000 L312.000 579.000 L312.000 607.000 L270.000 607.000 L228.000 607.000 L228.000 579.000 L228.000 551.000 Z"); }
+ 62.8947%,100% { d:path("M270.000 523.000 L281.168 549.629 L309.944 552.021 L288.070 570.871 L294.687 598.979 L270.000 584.000 L245.313 598.979 L251.930 570.871 L230.056 552.021 L258.832 549.629 Z"); }
+}
+@media(prefers-reduced-motion:reduce){.bouncing-shape{animation:none}}
+/* Positive angles rotate clockwise; pivot follows each shape's own center. */
+.shape-spin{animation:shape-clockwise 3.8s linear infinite;transform-origin:270px 579px}
+@keyframes shape-clockwise{
+ 0%{transform:rotate(0deg);transform-origin:270px 579px}
+ 31.5789%{transform:rotate(120deg);transform-origin:270px 579px}
+ 34.7368%{transform:rotate(140deg);transform-origin:270px 565px}
+ 59.7368%{transform:rotate(300deg);transform-origin:270px 565px}
+ 62.8947%{transform:rotate(314deg);transform-origin:270px 565px}
+ 73.9474%,90%{transform:rotate(360deg);transform-origin:270px 565px}
+ 90.01%,100%{transform:rotate(0deg);transform-origin:270px 579px}
+}
+@media(prefers-reduced-motion:reduce){.shape-spin{animation:none}}
+</style><g stroke="#000" stroke-width="5.651162790698" stroke-linecap="round" stroke-linejoin="round"><g id="animation-frame" class="window-shake"><rect x="180" y="230" width="660" height="440" rx="8" fill="#00AFEC" /><path d="M180 290h660M220 260h90" /><rect x="220" y="330" width="580" height="300" rx="4" fill="#fff" /><path d="M270 565Q375 345 480 565Q580 390 680 565Q710 521 740 565" stroke-dasharray="12 12" /><g class="loop-visibility" id="animated-ball"><g class="ball-x"><g class="ball-y"><g class="shape-spin"><path class="bouncing-shape" d="M270.000 523.000 L284.000 551.000 L298.000 579.000 L312.000 607.000 L284.000 607.000 L256.000 607.000 L228.000 607.000 L238.500 586.000 L249.000 565.000 L259.500 544.000 Z" fill="#FED440" /></g></g></g></g></g><g id="timeline"><rect x="290" y="710" width="610" height="130" rx="8" fill="#fff" /><path d="m330 745 45 30-45 30Z" fill="#00AFEC" /><path d="M420 775h430M460 755v40M550 755v40M640 755v40M730 755v40M820 755v40" /><g class="loop-visibility"><g class="playhead" id="animated-playhead"><path d="m606 730 18 22-18 22-18-22Z" fill="#FED440" /><path d="M606 774v44" /></g></g></g></g>
+</svg>

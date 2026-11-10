@@ -1303,3 +1303,15 @@ footer a:not([class*="button"]):is(:hover, :focus-visible) {
 @media (prefers-reduced-motion: reduce) {
   .service-card-description { transition: none; }
 }
+
+
+/* Approved service illustrations share one light grid surface and geometry. */
+.service-artwork.bg-brand-grid[data-tone="light"] {
+  background-color: #cceffc;
+  --brand-grid-line: rgb(var(--color-brand-primary-rgb) / 0.5);
+  --brand-grid-cell: 18px;
+  background-position: calc(50% - var(--brand-grid-line-width) / 2) calc(50% - var(--brand-grid-line-width) / 2);
+}
+.service-card[data-surface="white"] {
+  --service-card-surface: #fff;
+}

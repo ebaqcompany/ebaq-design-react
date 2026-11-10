@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1620" height="1080" viewBox="0 0 1620 1080" fill="none" data-illustration="logo-digitize">
+<title>Logo Design — triangle to star selected from the toolbar</title>
+<desc>The original sketch becomes a digital ABC logo. A cursor opens a bottom-anchored picker that opens upward, with square above triangle and star at the top, overlapping the artboard, skips the square, and selects the yellow star; the toolbar icon and artboard symbol change from triangle to star together.</desc>
+<defs><mask id="sketch-triangle-reveal" maskUnits="userSpaceOnUse" x="205" y="372" width="200" height="176"><path class="triangle-reveal" d="M215 537.942286 L305 382.057714 L395 537.942286 L215 537.942286" pathLength="1" stroke="white" stroke-width="12" stroke-dasharray="1" /></mask><clipPath id="upward-shape-picker-clip"><rect class="upward-picker-reveal" x="661" y="511" width="108" height="248"/></clipPath></defs>
+<style>
+[data-illustration="logo-digitize"] .triangle-reveal{animation:ld-reveal 6s linear infinite}
+[data-illustration="logo-digitize"] .sketch-dotted{animation:ld-dotted 6s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .sketch-solid{animation:ld-solid 6s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .pencil-position{animation:ld-pencil 6s linear infinite}
+[data-illustration="logo-digitize"] .pencil-visibility{animation:ld-pencil-show 6s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .transfer-dot{animation:ld-transfer 6s linear infinite}
+[data-illustration="logo-digitize"] .digital-result{animation:ld-result 6s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .digital-bump{animation:ld-bump 6s linear infinite}
+[data-illustration="logo-digitize"] .letter-a{animation:ld-a 6s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .letter-b{animation:ld-b 6s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .letter-c{animation:ld-c 6s steps(1,end) infinite}
+@keyframes ld-reveal{0%,4.166667%{stroke-dashoffset:1}27.5%,100%{stroke-dashoffset:0}}
+@keyframes ld-dotted{0%{opacity:1}27.5%,100%{opacity:0}}
+@keyframes ld-solid{0%{opacity:0}27.5%,100%{opacity:1}}
+@keyframes ld-pencil{0%,4.166667%{transform:translate(215px,537.942286px)}11.944444%{transform:translate(305px,382.057714px)}19.722222%{transform:translate(395px,537.942286px)}27.500000%,100%{transform:translate(215px,537.942286px)}}
+@keyframes ld-pencil-show{0%{opacity:1}29.166667%,100%{opacity:0}}
+/* Signal dot progress copied from brand-strategy.json, frames 14–56 at 60fps (0.7s).
+   Linear interpolation matches the source baked samples; corner crossings keep the elbow path exact. */
+@keyframes ld-transfer{0%,23.316667%{opacity:0;transform:translate(301.675320px,460px)}23.333333333%{opacity:1;transform:translate(301.675320430px,460.000000000px)}23.888888889%{opacity:1;transform:translate(301.864941153px,460.000000000px)}24.444444444%{opacity:1;transform:translate(303.206332195px,460.000000000px)}25.000000000%{opacity:1;transform:translate(306.837217893px,460.000000000px)}25.555555556%{opacity:1;transform:translate(313.902345578px,460.000000000px)}26.111111111%{opacity:1;transform:translate(325.560508556px,460.000000000px)}26.666666667%{opacity:1;transform:translate(342.956454156px,460.000000000px)}27.222222222%{opacity:1;transform:translate(367.220883728px,460.000000000px)}27.777777778%{opacity:1;transform:translate(399.519613569px,460.000000000px)}27.962888772%{opacity:1;transform:translate(413.337660215px,460.000000000px)}28.333333333%{opacity:1;transform:translate(413.337660215px,432.347292197px)}28.888888889%{opacity:1;transform:translate(413.337660215px,380.559765811px)}29.444444444%{opacity:1;transform:translate(413.337660215px,320.316559771px)}29.619481873%{opacity:1;transform:translate(413.337660215px,304.000000000px)}30.000000000%{opacity:1;transform:translate(448.808626830px,304.000000000px)}30.555555556%{opacity:1;transform:translate(490.279381279px,304.000000000px)}31.111111111%{opacity:1;transform:translate(522.578111121px,304.000000000px)}31.666666667%{opacity:1;transform:translate(546.842540692px,304.000000000px)}32.222222222%{opacity:1;transform:translate(564.238486293px,304.000000000px)}32.777777778%{opacity:1;transform:translate(575.896649271px,304.000000000px)}33.333333333%{opacity:1;transform:translate(582.961776955px,304.000000000px)}33.888888889%{opacity:1;transform:translate(586.592662654px,304.000000000px)}34.444444444%{opacity:1;transform:translate(587.934053695px,304.000000000px)}35.000000000%{opacity:1;transform:translate(588.123674419px,304.000000000px)}35.016667%,100%{opacity:0;transform:translate(588.123674419px,304px)}}
+@keyframes ld-result{0%{opacity:0}35%,100%{opacity:1}}
+@keyframes ld-bump{0%,35.000000%{transform:translate(0,0);animation-timing-function:cubic-bezier(.22,1,.36,1)}38.333333%{transform:translate(-15.069767px,-15.069767px);animation-timing-function:cubic-bezier(.65,0,.35,1)}46.111111%,100%{transform:translate(0,0)}}
+@keyframes ld-a{0%{opacity:0}45%,100%{opacity:1}}
+@keyframes ld-b{0%{opacity:0}48.333333%,100%{opacity:1}}
+@keyframes ld-c{0%{opacity:0}51.666667%,100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){[data-illustration="logo-digitize"] *{animation:none}[data-illustration="logo-digitize"] .sketch-dotted,[data-illustration="logo-digitize"] .pencil-visibility,[data-illustration="logo-digitize"] .transfer-dot{opacity:0}}
+
+.shape-triangle{animation:shape-triangle 6s steps(1,end) infinite}
+.shape-star{animation:shape-star 6s steps(1,end) infinite}
+.shape-picker{animation:shape-picker 6s steps(1,end) infinite}
+.shape-cursor{animation:shape-cursor 6s cubic-bezier(.65,0,.35,1) infinite}
+.shape-click{animation:shape-click 6s linear infinite}
+@keyframes shape-triangle{0%{opacity:1}68%,100%{opacity:0}}
+@keyframes shape-star{0%{opacity:0}68%,100%{opacity:1}}
+@keyframes shape-picker{0%,100%{opacity:0}57%{opacity:1}71%{opacity:0}}
+@keyframes shape-cursor{0%,52%{opacity:0;transform:translate(940px,650px)}54%{opacity:1;transform:translate(940px,650px)}56%,59%{opacity:1;transform:translate(715px,715px)}61%{opacity:1;transform:translate(715px,695px)}63%{opacity:1;transform:translate(715px,635px)}66%,72%{opacity:1;transform:translate(715px,555px)}80%,100%{opacity:0;transform:translate(970px,660px)}}
+@keyframes shape-click{0%,56%,59%,67%,70%,100%{transform:translateY(0)}57%,68%{transform:translateY(3px)}}
+@media(prefers-reduced-motion:reduce){[data-illustration="logo-digitize"] [class]{animation:none}.shape-star,.shape-picker,.shape-cursor{opacity:0}.shape-triangle{opacity:1}}
+
+/* Bottom edge stays at y=759 (including stroke); only the top edge rises. */
+.upward-picker-reveal{animation:upward-picker-reveal 6s cubic-bezier(.2,0,0,1) infinite}
+@keyframes upward-picker-reveal{0%,57%{y:671px;height:88px}60%,71%{y:511px;height:248px}71.01%,100%{y:671px;height:88px}}
+@media(prefers-reduced-motion:reduce){.upward-picker-reveal{animation:none}}
+</style>
+<g transform="translate(270 135)" stroke="#000" stroke-width="5.651162790698" stroke-linecap="round" stroke-linejoin="round">
+ <g id="portrait-sketch-paper" transform="translate(-153.32467957 0)"><rect x="155" y="265" width="300" height="390" rx="8" fill="#fff"/>
+ <path class="sketch-dotted" d="M215 537.942286 L305 382.057714 L395 537.942286 L215 537.942286" stroke-dasharray="5 10" mask="url(#sketch-triangle-reveal)"/>
+ <path class="sketch-solid" d="M215 537.942286 L305 382.057714 L395 537.942286 L215 537.942286"/></g>
+ <g id="digitization-arrow"><g id="strategy-style-connector" stroke-width="5.651162790698" stroke-linecap="butt" stroke-linejoin="miter"><path d="M301.675320 460H413.337660V304H573.852674"/><path d="M559.867674 287.687 588.123674 304 559.867674 320.313Z" fill="#000" stroke="none"/></g><circle class="transfer-dot" r="10" fill="#FED440" stroke="none"/></g>
+ <g id="raised-digital-stage" transform="translate(0 -126)"><g id="digital-panel"><rect id="digital-panel-background" x="620" y="280" width="390" height="300" rx="8" fill="#00AFEC" stroke="none"/>
+
+ <g class="digital-bump"><rect x="620" y="280" width="390" height="300" rx="8" fill="none"/>
+ <g class="digital-result"><g id="retained-large-logo" transform="translate(-81.5 -43) scale(1.1)" stroke-width="5.137420718816"><g transform="translate(10 -70)"><path class="shape-triangle" id="digital-symbol" d="M675 530.310889 L710 469.689111 L745 530.310889Z" fill="#fff"/><path class="shape-star" d="M710.000 470.000 L719.569 493.829 L745.189 495.566 L725.483 512.031 L731.748 536.934 L710.000 523.280 L688.252 536.934 L694.517 512.031 L674.811 495.566 L700.431 493.829Z" fill="#fff" opacity="0"/>
+
+ <g id="abc-wordmark" transform="translate(128.3 12.810889) scale(.9)" stroke-width="5.708245243129"><path class="letter-a" d="m717 575 23-60 23 60m-37-20h28"/>
+ <path class="letter-b" d="M785 575v-60h20c30 0 30 30 0 30h-20m20 0c30 0 30 30 0 30h-20"/>
+ <path class="letter-c" d="M891 523c-8-11-36-14-36 22s28 33 36 22"/></g></g></g></g></g></g>
+ <g id="horizontal-toolbar">
+  <rect x="665" y="675" width="300" height="80" rx="8" fill="#fff"/>
+  <path d="M765 675v80m100-80v80"/>
+  <path class="shape-triangle" id="toolbar-triangle" d="M693 734 715 696 737 734Z" fill="#FED440"/>
+  <path class="shape-star" d="M715.000 691.000 L721.207 706.457 L737.825 707.584 L725.043 718.263 L729.107 734.416 L715.000 725.560 L700.893 734.416 L704.957 718.263 L692.175 707.584 L708.793 706.457Z" fill="#FED440" opacity="0"/><path id="text-tool" d="M795 693h40m-20 0v44"/>
+  <path id="grid-tool" d="M905 693v44m20-44v44m-32-32h44m-44 20h44"/>
+ <g class="shape-picker" opacity="0" clip-path="url(#upward-shape-picker-clip)"><rect x="665" y="515" width="100" height="240" rx="8" fill="#fff"/><path d="M665 595h100m-100 80h100"/><path d="M693 734 715 696 737 734Z" fill="#FED440"/><rect x="695" y="615" width="40" height="40" fill="#FED440"/><path d="M715.000 531.000 L721.207 546.457 L737.825 547.584 L725.043 558.263 L729.107 574.416 L715.000 565.560 L700.893 574.416 L704.957 558.263 L692.175 547.584 L708.793 546.457Z" fill="#FED440"/></g>
+ <g class="shape-cursor" opacity="0"><g class="shape-click"><path d="M0 0 25 91 45 59 81 52Z" fill="#fff"/></g></g></g></g><g transform="translate(-153.32467957 0)"><g class="pencil-visibility"><g class="pencil-position"><g id="drawing-pencil"><path d="M0 0 12-42 103-133 133-103 42-12Z" fill="#00AFEC"/><path d="m12-42 30 30M88-118l30 30"/><path d="M0 0 5-17 17-5Z" fill="#000"/></g></g></g>
+</g></g></svg>

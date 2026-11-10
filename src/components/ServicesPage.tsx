@@ -1,14 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import { pricing, studio } from "../content/siteFacts";
 import { Navbar16 } from "./Navbar16";
-import { Logo3 } from "./Logo3";
 import { ServicesGrid } from "./ServicesGrid";
-import { Timeline10 } from "./Timeline10";
-import { Testimonial32 } from "./Testimonial32";
+import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
 import { Faq4 } from "./Faq4";
 import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
-import { processSteps, serviceFaqs, services } from "../data/services";
+import { serviceFaqs, services } from "../data/services";
 
 const pageUrl = "https://www.ebaqdesign.com/services";
 
@@ -62,17 +60,7 @@ export const ServicesPage = () => (
     <main>
       <ServicesGrid />
 
-      <Logo3 />
-
-      <Timeline10
-        tagline="How it works"
-        taglineClassName="text-brand-primary"
-        heading="An overview of my branding process"
-        description="Every project follows the same five steps, so you always know what happens next and what's expected of you at each stage."
-        timelineItems={processSteps}
-      />
-
-      <Testimonial32 />
+      <ServiceTestimonialOptions autoPlay />
 
       <Faq4
         tagline="FAQs"
