@@ -1,73 +1,39 @@
-# React + TypeScript + Vite
+# Ebaq Design website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React, TypeScript and Vite. Production is hosted on Vercel from GitHub.
 
-Currently, two official plugins are available:
+## MacBook and ChatGPT cloud development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+GitHub is the handoff between machines. Only committed, pushed work is available
+on the other machine. Your MacBook can be closed after its push completes.
 
-## React Compiler
+1. In ChatGPT's cloud environment settings, connect GitHub and select
+   `ebaqcompany/ebaq-design-react`. Grant repository write access to save cloud work.
+2. Use Node.js 22 (`nvm use` where nvm is installed) and run
+   `bash scripts/cloud/setup.sh`. This installs the exact lockfile dependencies.
+3. Start the site with `npm run dev -- --host 0.0.0.0` and open the environment's
+   forwarded port 5173. `/services` needs no credentials or external APIs locally.
+4. Before working on either machine, inspect `git status`, fetch origin, and
+   pull the intended branch with `git pull --ff-only`. Preserve any uncommitted
+   work before switching or pulling. Use a separate cloud branch for cloud edits.
+5. Run `npm run build` and relevant checks. Commit and push your branch to GitHub
+   to transfer work. A local cloud checkout alone is not a backup or handoff.
+6. Review the GitHub branch and Vercel preview, then approve merging to `main`.
+   When returning to your MacBook, fetch and check out that branch, or pull
+   `main` after merge. Do not reset away work made on either machine.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+A public GitHub repository provides read access only. ChatGPT still needs an
+authenticated GitHub connection with write access to push. Repository setup files
+cannot grant that permission. Vercel preview builds also depend on the connected
+Vercel project's Git integration and branch deployment settings.
 
-## Expanding the ESLint configuration
+## Commands
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `npm run dev` — local Vite server
+- `npm run build` — TypeScript, browser/server builds and route shells
+- `npm run lint` — repository ESLint checks
+- `node --test tests/*.test.mjs` — existing conversion tests
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+See [AGENTS.md](AGENTS.md) for repository workflow and design conventions.
+See [service animation exports](scripts/service-animations/README.md) for the
+reproducible baked animation pipeline.

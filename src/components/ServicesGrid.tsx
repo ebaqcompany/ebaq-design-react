@@ -10,14 +10,6 @@ const benefitHeadlines = [
   "Bring your brand to life",
 ];
 
-const artworkFiles = {
-  "logo-design": "logo-design-shape-picker-candidate",
-  "brand-design": "brand-design-color-picker-candidate",
-  "web-design": "web-design-animated",
-  "web-development": "web-development-code-resize-candidate",
-  "motion-graphics": "motion-graphics-animated",
-};
-
 // Relume Layout 235, using the approved animated service artwork.
 export const ServicesGrid = () => (
   <section id="services-geometric-comparison" data-services-option="geometric" className="bg-white px-[5%] py-16 md:py-24 lg:py-28">
@@ -32,7 +24,10 @@ export const ServicesGrid = () => (
           <article key={service.slug} id={`geometric-${service.slug}`} data-service={service.slug} data-surface="white" className="service-card relative flex flex-col overflow-hidden rounded-xl after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-black/20 after:content-['']">
             {service.slug === "brand-strategy" ? <JasperReferenceArtwork slug={service.slug} /> : (
               <div data-tone="light" data-art="vector" className="service-artwork bg-brand-grid relative aspect-[3/2] w-full overflow-hidden">
-                <img src={`/images/services/geometric-candidates/${artworkFiles[service.slug]}.svg`} alt={`${service.heading} illustration`} width={1080} height={1080} loading="lazy" decoding="async" className="absolute inset-0 block size-full object-contain" />
+                <picture>
+                  <source media="(prefers-reduced-motion: reduce)" srcSet={`/images/services/animations/${service.slug}-still.webp`} />
+                  <img src={`/images/services/animations/${service.slug}.webp`} alt={`${service.heading} illustration`} width={720} height={480} loading="lazy" decoding="async" className="absolute inset-0 block size-full object-contain" />
+                </picture>
               </div>
             )}
             <div className="flex grow flex-col p-6 md:p-8">
