@@ -750,6 +750,8 @@ a.button-inverted--dark-surface {
 button:not([role="tab"])[class*="bg-background-alternative"],
 button[role="tab"][data-state="active"]:not(.pricing-period-tab):not(.testimonial-client-tab),
 a.button-primary {
+  font-size: .875rem;
+  font-weight: 600;
   background-color: #000 !important;
   border-width: 0 !important;
   color: #fff !important;

@@ -154,6 +154,7 @@ export const buildCaseStudySchema = (
     summary: string;
     services: string[];
     industry: string;
+    portfolioIndustry: string;
     year: string;
     deliverables?: string[];
     website?: { href: string };
@@ -178,6 +179,7 @@ export const buildCaseStudySchema = (
     genre: "Brand identity case study",
     about: [
       { "@type": "Organization", name: study.client, ...(study.website?.href ? { url: study.website.href } : {}) },
+      { "@type": "Thing", name: study.portfolioIndustry },
       ...study.services.map((name) => ({ "@type": "Thing", name })),
     ],
     // The concrete work, so an answer engine can match "logo plus social graphics for a law firm" to this project.
@@ -243,7 +245,7 @@ export const buildPodcastEpisodeSchema = (episode: SchemaEpisode, siteUrl: strin
 // An index page (blog, work, podcast) as a CollectionPage listing its items in order.
 export const buildCollectionSchema = (
   page: { path: string; name: string; description: string; about?: Record<string, unknown> },
-  items: { name: string; path: string }[],
+  items: { name: string; path: string; topic?: string }[],
   siteUrl: string,
 ) => ({
   "@context": "https://schema.org",
@@ -258,7 +260,10 @@ export const buildCollectionSchema = (
   mainEntity: {
     "@type": "ItemList",
     numberOfItems: items.length,
-    itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.name, url: `${siteUrl}${item.path}` })),
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem", position: index + 1, name: item.name, url: `${siteUrl}${item.path}`,
+      ...(item.topic ? { item: { "@type": "CreativeWork", "@id": `${siteUrl}${item.path}#case-study`, url: `${siteUrl}${item.path}`, name: item.name, about: { "@type": "Thing", name: item.topic } } } : {}),
+    })),
   },
   inLanguage: "en-US",
 });

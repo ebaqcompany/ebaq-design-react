@@ -44,22 +44,47 @@ type LazyVideoProps = Omit<ComponentPropsWithoutRef<"video">, "src" | "children"
   // Classes for the placeholder box that holds the frame until the video mounts.
   frameClassName?: string;
   frameStyle?: React.CSSProperties;
+  eager?: boolean;
 };
 
 // A muted loop that is only created once it nears the screen, and paused while it is off screen.
 // Autoplay overrides preload="none", so a plain <video autoPlay> downloads the whole file on page load.
-export const LazyVideo = ({ src, frameClassName = "size-full", frameStyle, autoPlay = true, loop = true, muted = true, ...props }: LazyVideoProps) => {
+export const LazyVideo = ({ src, frameClassName = "size-full", frameStyle, autoPlay = true, loop = true, muted = true, eager = false, ...props }: LazyVideoProps) => {
   const { ref, near, inView } = useNearViewport<HTMLDivElement>();
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !autoPlay) return;
-    if (inView) void video.play().catch(() => {});
-    else video.pause();
-  }, [inView, near, autoPlay]);
+    let retryTimer: ReturnType<typeof setTimeout> | undefined;
+    let retries = 0;
+    let active = true;
+    const syncPlayback = () => {
+      if (!inView || document.hidden) {
+        video.pause();
+        return;
+      }
+      void video.play().then(() => { retries = 0; }).catch(() => {
+        if (active && !document.hidden && retries < 2 && retryTimer === undefined) {
+          retries += 1;
+          retryTimer = setTimeout(() => { retryTimer = undefined; syncPlayback(); }, 500);
+        }
+      });
+    };
+    syncPlayback();
+    video.addEventListener("canplay", syncPlayback);
+    document.addEventListener("visibilitychange", syncPlayback);
+    window.addEventListener("pageshow", syncPlayback);
+    return () => {
+      active = false;
+      if (retryTimer !== undefined) clearTimeout(retryTimer);
+      video.removeEventListener("canplay", syncPlayback);
+      document.removeEventListener("visibilitychange", syncPlayback);
+      window.removeEventListener("pageshow", syncPlayback);
+    };
+  }, [inView, near, autoPlay, src]);
   return (
     <div ref={ref} className={frameClassName} style={frameStyle}>
-      {near && (
+      {(eager || near) && (
         <video ref={videoRef} autoPlay={autoPlay} loop={loop} muted={muted} playsInline {...props}>
           <VideoSources src={src} />
         </video>

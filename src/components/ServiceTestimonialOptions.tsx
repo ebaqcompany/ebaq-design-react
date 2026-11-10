@@ -1,3 +1,4 @@
+import { useTestimonialAutoplay } from "../hooks/useTestimonialAutoplay";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui";
 import { clientLogoClass } from "../clientLogo";
 import { Testimonial32Defaults } from "./Testimonial32";
@@ -25,15 +26,18 @@ const SplitQuote = ({ client }: { client: Client }) => (
 
 // Selected Relume Testimonial 15 layout.
 // Reuses actual quotes verbatim; no star ratings are inferred from written feedback.
-export const ServiceTestimonialOptions = () => {
+export const ServiceTestimonialOptions = ({ autoPlay = false }: { autoPlay?: boolean }) => {
+  const { setApi, containerProps } = useTestimonialAutoplay(autoPlay);
   return <>
     <section id="testimonial-option-15" className="overflow-hidden bg-white px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <header className="mb-12 max-w-lg md:mb-18 lg:mb-20"><p className="mb-3 font-mono text-sm uppercase tracking-wide text-brand-primary md:mb-4">Testimonials</p><h2>What my clients say</h2></header>
-        <Carousel opts={{loop:true,align:"start"}} className="overflow-hidden">
+        <div {...containerProps}>
+        <Carousel setApi={setApi} opts={{loop:true,align:"start"}} className="overflow-hidden">
           <CarouselContent>{clients.map(client=><CarouselItem key={client.name}><SplitQuote client={client}/></CarouselItem>)}</CarouselContent>
           <div className="mt-8 flex items-center justify-between gap-6"><a href="https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Verified on LinkedIn</a><div className="flex gap-4"><CarouselPrevious className="testimonial-carousel-button static translate-y-0"/><CarouselNext className="testimonial-carousel-button static translate-y-0"/></div></div>
         </Carousel>
+        </div>
       </div>
     </section>
   </>;

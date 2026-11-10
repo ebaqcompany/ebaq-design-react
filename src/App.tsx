@@ -8,13 +8,14 @@ import {
   Layout350Preview,
   Banner12,
   Logo3,
-  Testimonial32,
   Faq4,
   Cta17,
   Footer15,
 } from "./components";
-import { Comparison } from "./components/Comparison";
 import { useTracking } from "./hooks/useTracking";
+
+import { ServiceTestimonialOptions } from "./components/ServiceTestimonialOptions";
+import { ServiceProcess } from "./components/ServiceProcess";
 
 function App() {
   useTracking();
@@ -53,7 +54,7 @@ function App() {
             <Banner12 />
 
           {/* Hero Section */}
-          <Header78 />
+          <Header78 heading={"Design a brand that\nfits your ambition"} />
 
           {/* Client logos */}
           <Logo3 />
@@ -67,23 +68,13 @@ function App() {
           {/* Strategy-to-launch capabilities */}
           <Layout350Preview />
 
-          {/* Pricing Section */}
-          <Pricing8 />
-
-      <Comparison
-        heading={"Agency-level work,\nwithout the agency invoice"}
-        rows={[
-          { left: "$3,000 per week, flat", right: "$25k–$100k+ per project" },
-          { left: "Brand identity in 1 week, guaranteed", right: "3–9 months or more" },
-          { left: "Total agreed before work starts", right: "Estimates that grow" },
-          { left: "Revisions within agreed scope", right: "Change orders" },
-          { left: "One senior designer, start to finish", right: "Account managers and juniors" },
-        ]}
-      />
-
-
           {/* Testimonials Section */}
-          <Testimonial32 />
+          <ServiceTestimonialOptions autoPlay />
+
+          {/* Pricing Section */}
+          <Pricing8 surface="dark" />
+
+          <ServiceProcess slug="brand-design" />
 
           {/* FAQ Section */}
           <Faq4 />
@@ -93,6 +84,7 @@ function App() {
 
           </main>
           <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
+
 
         </div>
 

@@ -32,7 +32,7 @@ type Layout350PreviewProps = {
   items?: PreviewItem[];
 };
 
-const ServiceMedia = ({ src, alt }: { src: string; alt?: string }) => {
+const ServiceMedia = ({ src, alt, initial = false }: { src: string; alt?: string; initial?: boolean }) => {
   const reduceMotion = useReducedMotion();
 
   return (
@@ -45,7 +45,9 @@ const ServiceMedia = ({ src, alt }: { src: string; alt?: string }) => {
         className="size-full object-contain"
         autoPlay={!reduceMotion}
         loop={!reduceMotion}
-        preload="metadata"
+        eager={initial}
+        poster={initial && src === "/case-study/AeroGridAll-4K-30fps.mp4" ? "/case-study/aero-logo-preview-poster.jpg" : undefined}
+        preload={initial ? "auto" : "metadata"}
       />
       ) : (
         <img key={src} src={src} alt={alt} loading="lazy" decoding="async" className="size-full object-contain" />
@@ -77,7 +79,7 @@ export const Layout350Preview = ({ id, idPrefix = "portfolio22-service", eyebrow
 
         <div className="grid items-start gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:gap-12">
           <div className="sticky top-24 hidden md:block">
-            <ServiceMedia src={activeItem.image.src} alt={activeItem.image.alt} />
+            <ServiceMedia src={activeItem.image.src} alt={activeItem.image.alt} initial={activeIndex === 0} />
           </div>
 
           <div
@@ -133,7 +135,7 @@ export const Layout350Preview = ({ id, idPrefix = "portfolio22-service", eyebrow
                       aria-labelledby={`${idPrefix}-trigger-${index}`}
                       className="mt-5 md:hidden"
                     >
-                      <ServiceMedia src={item.image.src} alt={item.image.alt} />
+                      <ServiceMedia src={item.image.src} alt={item.image.alt} initial={index === 0} />
                     </div>
                   )}
                 </div>

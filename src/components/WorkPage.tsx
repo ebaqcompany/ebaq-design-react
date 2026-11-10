@@ -5,7 +5,7 @@ import { caseStudies } from "../data/caseStudies";
 import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
-import { Portfolio16 } from "./Portfolio16";
+import { Portfolio23 } from "./Portfolio23";
 import { buildBreadcrumbSchema, buildCollectionSchema, serializeJsonLd } from "../content/structuredData";
 
 const siteUrl = "https://www.ebaqdesign.com";
@@ -61,14 +61,14 @@ export const WorkPage = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
-      <script type="application/ld+json">{serializeJsonLd(buildCollectionSchema({ path: "/work", name: "Ebaq Design portfolio", description: pageDescription }, caseStudies.map((study) => ({ name: `${study.client}: ${study.title}`, path: `/work/${study.slug}` })), siteUrl))}</script>
+      <script type="application/ld+json">{serializeJsonLd(buildCollectionSchema({ path: "/work", name: "Ebaq Design portfolio", description: pageDescription }, caseStudies.map((study) => ({ name: `${study.client}: ${study.title}`, path: `/work/${study.slug}`, topic: study.portfolioIndustry })), siteUrl))}</script>
       <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Work", path: "/work" }], siteUrl))}</script>
     </Helmet>
     <Navbar16 />
     <main>
-      <Portfolio16
+      <Portfolio23
         tagline="Work"
-        heading="Selected work"
+        heading="See some of my work"
         description="Brand identities and digital experiences built to make ambitious businesses clearer, more distinctive, and easier to trust."
         projects={workProjects}
       />

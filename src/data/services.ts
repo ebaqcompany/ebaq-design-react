@@ -104,6 +104,11 @@ export const processSteps = [
   },
 ];
 
+// Keep the engagement timeline's scope distinction consistent wherever it is shown.
+export const engagementProcessSteps = processSteps.map((step, index) => index === 4
+  ? { ...step, description: `${step.description} A scoped Brand Sprint is delivered in one week; website and extended motion work have separately agreed schedules.` }
+  : step);
+
 export const serviceFaqs = [
   {
     title: "What do branding services cost?",

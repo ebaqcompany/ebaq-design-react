@@ -72,6 +72,7 @@ export type CaseStudy = {
   summary: string;
   services: string[];
   industry: string;
+  portfolioIndustry: string;
   year: string;
   // What was actually designed, for structured data and llms-full.txt (the services tags stay broad).
   deliverables?: string[];
@@ -93,11 +94,12 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "savory",
     client: "Savory",
-    title: "An editorial identity for a Brooklyn real estate team",
+    title: "A sophisticated identity for a real estate team in Brooklyn",
     summary:
       "The Savory Team is a Brooklyn real estate team at Compass. After six months of design explorations that never felt right, they came to us for a fresh start. We created a premium identity built around a distinctive wordmark, with a wax seal, refined typography, and a warm color palette.",
     services: ["Visual identity", "Logo design", "Motion", "Brand guidelines"],
     industry: "Real estate",
+    portfolioIndustry: "Real estate",
     year: "2026",
     deliverables: ["Rebrand", "Logo design", "Logo lockups", "Logo animation", "Color palette", "Typography", "Business cards", "Wax seal stamp", "Brand guidelines", "Instagram templates", "LinkedIn banner", "HTML email signature", "Favicon", "Merchandise"],
     seo: {
@@ -214,6 +216,7 @@ const allCaseStudies: CaseStudy[] = [
       "Orbio is an AI startup that tokenizes AI inference: every CREDIT is $1 of AI usage, earned by $ORBIO stakers, traded below list price, and spent through one API key across every major model. In a one-week AI startup branding sprint, we evolved the identity rather than replacing it, keeping the 3D marble orb and building one system around it: an all-caps serif wordmark, a marble-and-brass palette with a single orange accent, a three-face type system, and social templates designed to move.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "AI infrastructure",
+    portfolioIndustry: "AI startup",
     year: "2026",
     deliverables: ["Brand evolution", "Logo design in 3D and flat versions", "Logo animation", "Brand architecture for three products", "Color palette", "Type system", "Website design", "Instagram posts", "Billboard design", "Merchandise design"],
     seo: {
@@ -355,11 +358,12 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "next-dimension",
     client: "NextDim AI",
-    title: "A futuristic brand identity for AI-powered healthcare, beyond the clinical",
+    title: "A futuristic brand for a healthcare AI startup",
     summary:
       "NextDimension helps medical practices automate operations with AI agents. We created a new identity and digital system that moves the brand beyond the typical healthcare look—combining a subtle space theme with reeded glass, expressive motion, and a modern interactive website.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Healthcare AI",
+    portfolioIndustry: "Healthcare startup",
     year: "2026",
     deliverables: ["Brand strategy", "Logo design", "Logo animation", "Typography", "Color palette", "Brand guidelines on guidelines.online", "Website design with an interactive shader", "Presentation folders and business cards", "Animated billboard", "Merchandise design"],
     seo: {
@@ -446,11 +450,12 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "fox-berman",
     client: "Fox Berman",
-    title: "A modern brand identity for a boutique law firm with Caribbean character",
+    title: "A modern identity for a boutique law firm with Caribbean character",
     summary:
       "Fox Berman is a boutique law firm based in Sint Maarten, Dutch Caribbean, specializing in business and international law. We created a modern identity that balances legal authority with the island’s vibrant character through a bold custom wordmark, precise inktraps, and a vivid orange palette.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Legal services",
+    portfolioIndustry: "Law firm",
     year: "2025",
     deliverables: ["Logo design (custom wordmark)", "Logo animation", "Color palette", "Brand guidelines on guidelines.online", "Business cards", "Letterhead and presentation folder", "Printed booklet", "Email signature", "Website design", "Social media graphics for Instagram and LinkedIn", "Wall and pylon signage", "Favicon"],
     seo: {
@@ -539,11 +544,12 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "elevate",
     client: "Elevate",
-    title: "A progressive SaaS identity for a Shopify testing platform built around growth",
+    title: "A progressive SaaS identity for a Shopify testing platform",
     summary:
       "Elevate is a Shopify-native A/B testing platform that helps store owners improve performance through faster, smarter experimentation. We created an abstract growth mark and bespoke wordmark that balance technical precision with confidence and momentum, giving the brand a clear and ownable presence in the Shopify ecosystem.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Ecommerce technology",
+    portfolioIndustry: "Shopify SaaS",
     year: "2026",
     deliverables: ["Logo design", "Logo animation", "Icon system", "Brand guidelines on guidelines.online", "Website design", "Business cards and collateral", "Team ID badge", "Merchandise design", "Office branding"],
     seo: {
@@ -623,11 +629,12 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "aero",
     client: "Aero",
-    title: "A clinical identity for breath-analysis technology built around precision",
+    title: "A clinical identity for a breath analysis technology startup",
     summary:
       "Aero is a breath-analysis company delivering precise, non-invasive health insights through advanced sensor technology. We created a clean, clinical identity that pairs a custom lowercase wordmark with a lab-grade green palette, balancing scientific precision with clarity, trust, and approachability.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Health technology",
+    portfolioIndustry: "Tech startup",
     year: "2026",
     deliverables: ["Logo design", "Logo animation", "Color system", "Typography", "Stationery", "Website design", "Mobile and wearable app design", "Environmental signage", "Billboard campaign", "Event branding", "Social media content in motion"],
     seo: {
@@ -725,6 +732,7 @@ const allCaseStudies: CaseStudy[] = [
       "Brevidee is a video-editing SaaS that helps schools create short, engaging promotional videos. We designed a playful but minimal identity around a teacher-with-camera symbol integrated directly into the wordmark, giving the platform an instantly recognizable presence across product, social, print, and digital touchpoints.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Education technology",
+    portfolioIndustry: "Video SaaS",
     year: "2025",
     deliverables: ["Logo design", "Logo animation", "App icon", "Teacher mobile app design", "Website design", "Social media design", "Business cards", "Educational booklet and flyers", "Event banner", "Merchandise design"],
     seo: {
@@ -803,6 +811,7 @@ const allCaseStudies: CaseStudy[] = [
       "Wingnut Social is a digital marketing agency for interior designers and home brands. We elevated the identity for its high-end audience with a simplified wingnut symbol, a clean sans-serif wordmark, a refined color palette, and a flexible graphic system that positions the agency as a category expert.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Digital marketing",
+    portfolioIndustry: "Marketing agency",
     year: "2025",
     deliverables: ["Logo design", "Logo animation", "Pitch deck", "Social media system", "Website design for desktop and mobile", "Business cards", "Employee badge", "Merchandise design", "Office branding"],
     seo: {
@@ -885,6 +894,7 @@ const allCaseStudies: CaseStudy[] = [
       "Ventur is an AI-powered travel planning app that helps people spend less and travel more. We created a bold identity around a distinctive V monogram drawn as a flowing path, supported by a clean wordmark, a vibrant palette, and a flexible line motif that makes smart travel feel effortless.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Travel technology",
+    portfolioIndustry: "Travel agency",
     year: "2025",
     deliverables: ["Logo design (V monogram)", "Logo animation", "Social media graphics in motion", "Mobile app design", "Website design", "Billboard campaign", "Merchandise design"],
     seo: {
@@ -950,11 +960,12 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "airport-executive",
     client: "Airport Executive",
-    title: "A sophisticated identity for a London chauffeur service built around discreet travel",
+    title: "A premium identity for a London chauffeur service",
     summary:
       "Airport Executive is a premium London chauffeur service with more than 25 years of experience. Under new ownership, we elevated the brand with a refined aviation-inspired monogram, elegant typography, a minimalist visual system, and a sophisticated website built to support its global ambition.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Luxury transportation",
+    portfolioIndustry: "Chauffeur service",
     year: "2025",
     deliverables: ["Rebrand", "Monogram and logo design", "Logo animation", "Business cards", "Branded publication", "Campaign banners", "Chauffeur badge", "App icon", "Website design", "Environmental signage"],
     seo: {
@@ -1035,11 +1046,12 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "sweetgrass",
     client: "SweetGrass",
-    title: "A refined identity for a Southern cannabis dispensary rooted in luxury",
+    title: "An Art Deco-inspired identity for a cannabis dispensary",
     summary:
       "SweetGrass is a premium cannabis dispensary in Mississippi that blends Southern roots with a refined modern aesthetic. We created an Art Deco-inspired wordmark, bespoke typography, seamless patterns, luxurious packaging, and a complete digital experience that distinguishes the brand in the emerging Southern cannabis market.",
     services: ["Brand strategy", "Visual identity", "Packaging", "Web design"],
     industry: "Cannabis retail",
+    portfolioIndustry: "Cannabis dispensary",
     year: "2025",
     deliverables: ["Logo design (Art Deco wordmark)", "Logo animation", "Custom typography and patterns", "Packaging design", "Brand guidelines", "Business cards", "Brochure", "Billboard and outdoor advertising", "Website design"],
     seo: {
@@ -1118,11 +1130,12 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "periti",
     client: "Periti Digital",
-    title: "A precise identity for a pan-European HubSpot consultancy built for clarity",
+    title: "A professional identity for a pan-European HubSpot consultancy",
     summary:
       "Periti Digital is a HubSpot consultancy with teams across Dublin, Bray, Lisbon, and Munich. We created a confident identity around a bold architectural mark, clear verbal positioning, and a structured visual system that communicates precision, professionalism, and trust across borders.",
     services: ["Brand strategy", "Visual identity", "Verbal identity", "Web design"],
     industry: "Digital consultancy",
+    portfolioIndustry: "Marketing consultancy",
     year: "2025",
     deliverables: ["Logo design", "Logo animation", "Verbal identity and positioning", "Brand guidelines", "Business cards, letterhead, and stationery", "Email signature", "Website design", "Social media system", "Promotional flyer"],
     seo: {
@@ -1189,11 +1202,12 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "medihuanna",
     client: "Medihuanna",
-    title: "A trusted identity for medicinal cannabis education built around clarity",
+    title: "A clean visual identity for a cannabis education platform",
     summary:
       "Medihuanna is an accredited medicinal cannabis education provider in Sydney, Australia, offering trusted resources to healthcare professionals. We created a clean identity around a distinctive minimalist mark, modular patterns, and accessible digital and print applications that communicate expertise without unnecessary complexity.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Medical education",
+    portfolioIndustry: "Cannabis education",
     year: "2025",
     deliverables: ["Logo redesign", "Logo animation", "Social media animation", "Brand guidelines", "Business cards and stationery", "Educational documents", "Billboard campaign", "Environmental signage"],
     seo: {

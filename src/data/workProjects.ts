@@ -4,6 +4,7 @@ import { previewCaseStudies } from "./caseStudies";
 export const workProjects = previewCaseStudies.map((study) => ({
   title: study.client,
   description: study.title,
+  industry: study.portfolioIndustry,
   image: study.preview,
   images: [
     ...study.leadGallery,

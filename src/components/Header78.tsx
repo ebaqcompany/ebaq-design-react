@@ -350,7 +350,7 @@ export const ServiceShowcaseRow = ({ row, additionalBrandWork = false }: { row: 
 
 export const Header78Defaults: Props = {
   heading: "Good design\nis good business",
-  description: "Hello 👋 Arek here, a senior freelance graphic designer based in Brooklyn, NY, working with clients worldwide. I specialize in branding, logo design, websites, and motion.",
+  description: "Hello 👋 Arek here, a senior freelance design partner based in Brooklyn, NY, working with clients worldwide. I specialize in branding, logo design, websites, and motion.",
   buttons: [{ title: "See Pricing" }, { title: "View Work", variant: "secondary" }],
 
   // Row 1: Logo Animations

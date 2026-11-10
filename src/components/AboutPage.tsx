@@ -5,11 +5,12 @@ import { Navbar16 } from "./Navbar16";
 import { Footer15 } from "./Footer15";
 import { Testimonial32 } from "./Testimonial32";
 import { Cta17 } from "./Cta17";
-import { Timeline10 } from "./Timeline10";
 import { Header107 } from "./Header107";
 import { Layout350Preview } from "./Layout350Preview";
-import { Gallery10 } from "./Gallery10";
 import { Gallery15 } from "./Gallery15";
+import { WebsiteComparison } from "./WebsiteComparison";
+import { Timeline18 } from "./Timeline18";
+import { engagementProcessSteps } from "../data/services";
 import { AboutTools } from "./AboutTools";
 
 export const AboutPage = () => <div className="relative bg-white">
@@ -41,13 +42,17 @@ export const AboutPage = () => <div className="relative bg-white">
   </Helmet>
   <Navbar16 />
   <main>
-    <Header107 />
+    <Header107 centered showToolIcons={false} title="Your senior design partner" description="Hey, I’m Arek Dvornechuck, a senior art director based in Brooklyn, New York, with over 20 years of experience. I handle strategy, identity, websites, and motion graphics." images={[
+      { src: "/images/about/process/arek-studio-desk-setup.webp", alt: "Arek Dvornechuck at his studio desk", width: 1200, height: 1600 },
+      { src: "/images/about/process/client-session-lobby.webp", alt: "Arek sketching logo directions during a client session", width: 576, height: 1024 },
+      { src: "/images/about/process/hand-drawing-logo-construction.webp", alt: "Drawing a geometric logo by hand", width: 1200, height: 1600 },
+    ]} />
 
     <Layout350Preview />
     <AboutTools />
-    <Timeline10 taglineClassName="text-brand-primary" />
-    <Gallery10 />
+    <Timeline18 tagline="How it works" heading="An overview of my branding process" description="Every project follows the same five steps, so you always know what happens next and what’s expected of you at each stage." timelineItems={engagementProcessSteps} />
     <Gallery15 />
+    <WebsiteComparison />
 
     <Testimonial32 />
     <Cta17 heading="Need a senior creative partner?" description="Tell me what you’re launching, changing, or trying to make clearer. I’ll recommend the most effective way to move it forward." />

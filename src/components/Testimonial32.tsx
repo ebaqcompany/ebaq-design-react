@@ -1,4 +1,5 @@
 import React from "react";
+import { useTestimonialAutoplay } from "../hooks/useTestimonialAutoplay";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui";
 import { clientLogoClass, type ClientLogoScale } from "../clientLogo";
 import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
@@ -11,11 +12,14 @@ export const TestimonialCarouselArrow = ({ direction, onClick, label }: { direct
 
 export const Testimonial32 = (props: Props) => {
   const { heading, description, testimonials } = { ...Testimonial32Defaults, ...props };
+  const { setApi, containerProps } = useTestimonialAutoplay();
+
   return (
     <section {...props} id="testimonials" className="testimonial-section overflow-hidden px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 w-full max-w-lg md:mb-18 lg:mb-20"><p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Testimonials</p><h2 className="mb-5 md:mb-6">{heading}</h2>{description && <p className="md:text-md">{description}</p>}</div>
-        <Carousel opts={{ loop: true, align: "start" }} className="overflow-hidden">
+        <div {...containerProps}>
+        <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} className="overflow-hidden">
           <div className="relative pb-12 md:pb-16">
             <CarouselContent className="ml-0 items-stretch">{testimonials.map((testimonial, index) => <CarouselItem key={index} className="self-stretch pl-0 md:basis-full lg:basis-1/3 lg:pr-16"><TestimonialCard testimonial={testimonial} /></CarouselItem>)}</CarouselContent>
             <div className="mt-8 flex items-center justify-between md:mt-12">
@@ -24,6 +28,7 @@ export const Testimonial32 = (props: Props) => {
             </div>
           </div>
         </Carousel>
+        </div>
       </div>
     </section>
   );

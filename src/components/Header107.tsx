@@ -10,12 +10,13 @@ type Props = {
   heroImage?: ImageProps;
   // The icon row describes Arek himself, so it belongs to the About hero only.
   showToolIcons?: boolean;
+  centered?: boolean;
 };
 
 export type Header107Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Header107 = (props: Header107Props) => {
-  const { title, description, images, heroImage, showToolIcons = true, className, ...sectionProps } = { ...Header107Defaults, ...props };
+  const { title, description, images, heroImage, showToolIcons = true, centered = false, className, ...sectionProps } = { ...Header107Defaults, ...props };
 
   return (
     <section
@@ -25,11 +26,12 @@ export const Header107 = (props: Header107Props) => {
     >
       <div className="container">
         <div className={heroImage ? "grid items-center gap-10 md:gap-12 lg:grid-cols-2 lg:gap-20" : ""}>
-        <div className="w-full max-w-lg">
+        <div className={centered ? "mx-auto w-full max-w-xl text-center" : "w-full max-w-lg"}>
+          {centered && <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">About</p>}
           <h1 className="mb-5 md:mb-6">{title}</h1>
-          <p className="md:text-md">{description}</p>
+          <p className={centered ? "mx-auto max-w-md md:text-md" : "md:text-md"}>{description}</p>
           {showToolIcons && (
-            <div className="mt-5 flex flex-wrap items-center gap-2 md:mt-6" role="group" aria-label="Software tools used by Arek Dvornechuck">
+            <div className={centered ? "mt-6 flex flex-wrap items-center justify-center gap-2 md:mt-8" : "mt-5 flex flex-wrap items-center gap-2 md:mt-6"} role="group" aria-label="Software tools used by Arek Dvornechuck">
               {arekToolIcons.map(([src, alt, iconClassName]) => <img loading="lazy" decoding="async" key={src} src={src} alt={alt} className={`size-5 rounded-[20%] object-cover ${iconClassName ?? ""}`.trim()} />)}
             </div>
           )}

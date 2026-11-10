@@ -18,9 +18,9 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "border border-border-primary bg-background-alternative text-text-alternative",
-        secondary: "border border-border-primary text-text-primary bg-background-primary",
-        "secondary-alt": "border border-border-alternative text-text-alternative",
+        primary: "border border-border-primary bg-background-alternative text-text-alternative text-sm font-semibold",
+        secondary: "border border-border-primary text-text-primary bg-background-primary text-sm font-semibold",
+        "secondary-alt": "border border-border-alternative text-text-alternative text-sm font-semibold",
         tertiary: "text-text-primary",
         link: "border-0 text-text-primary gap-2",
         "link-alt": "border-0 text-text-alternative gap-2",

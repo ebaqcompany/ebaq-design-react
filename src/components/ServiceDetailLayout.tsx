@@ -7,6 +7,7 @@ import { LogoComparison } from "./LogoComparison";
 import { ServicePortfolioRows, serviceHighlightHeadings } from "./ServicePortfolioRows";
 import { Layout424 } from "./Layout424";
 import { ServiceDeliverables } from "./ServiceDeliverables";
+import { BrandSprintIncluded } from "./BrandSprintIncluded";
 import { Portfolio16 } from "./Portfolio16";
 import { workProjects } from "../data/workProjects";
 import { Layout351 } from "./Layout351";
@@ -169,6 +170,7 @@ export const ServiceDetailLayout = ({ slug, heading, description, afterOverview 
       <ServicePortfolioRows slug={slug} />
       <Layout424 tagline={service.heading} headings={serviceHighlightHeadings[slug]} />
       <ServiceDeliverables slug={slug} />
+      {slug === "logo-design" && <BrandSprintIncluded />}
       <ServiceProcess slug={slug} />
       {slug !== "brand-design" && <ServiceOverview service={service} />}
       {slug === "logo-design" && <SelectedServiceWork service={service} separate />}
