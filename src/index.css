@@ -11,6 +11,16 @@
 }
 
 :root {
+  /* Fluid rem-based type: mobile at 20rem, desktop at 80rem. */
+  --type-h1: clamp(3rem, 2.541667rem + 2.291667vw, 4.375rem);
+  --type-h2: clamp(2.5rem, 2.083333rem + 2.083333vw, 3.75rem);
+  --type-h3: clamp(2.125rem, 1.791667rem + 1.666667vw, 3.125rem);
+  --type-h4: clamp(1.875rem, 1.666667rem + 1.041667vw, 2.5rem);
+  --type-h5: clamp(1.625rem, 1.541667rem + 0.416667vw, 1.875rem);
+  --type-h6: clamp(1.375rem, 1.3125rem + 0.3125vw, 1.5625rem);
+  --type-h7: clamp(1.125rem, 1.083333rem + 0.208333vw, 1.25rem);
+  --type-medium: clamp(1rem, 0.958333rem + 0.208333vw, 1.125rem);
+  --type-large: clamp(1.125rem, 1.083333rem + 0.208333vw, 1.25rem);
   --color-brand-primary: #00afec;
   --color-brand-primary-rgb: 0 175 236;
   --color-brand-light: #dff6ff;
@@ -462,7 +472,7 @@
 }
 
 /*
- * Shared heading scale from the approved Figma type system.
+ * Shared fluid heading scale, retaining the site's desktop type hierarchy.
  */
 /* Keep the reset weaker than spacing utilities such as mb-4 on heading classes. */
 :where(h1, h2, h3, h4, h5, h6, .heading-h1, .heading-h2, .heading-h3, .heading-h4, .heading-h5, .heading-h6, .heading-h7) {
@@ -484,7 +494,10 @@ h6,
 .heading-h7 {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
-  line-height: 0.9;
+}
+
+:is(h1, h2, h3, h4, h5, h6, .heading-h1, .heading-h2, .heading-h3, .heading-h4, .heading-h5, .heading-h6, .heading-h7) {
+  line-height: 1;
 }
 
 h1,
@@ -512,14 +525,11 @@ h6,
 /* Shared testimonial quote typography, used by homepage and service layouts. */
 .testimonial-quote {
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 1.5625rem;
+  font-size: clamp(1.125rem, 0.979167rem + 0.729167vw, 1.5625rem);
   font-style: italic;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.01em;
-}
-@media (max-width: 767px) {
-  .testimonial-quote { font-size: 1.125rem; }
 }
 
 /* Preserve the approved 404 phrase treatment while its class controls size. */
@@ -558,73 +568,61 @@ h1.heading-h3 {
 }
 
 h1,
-.heading-h1 {
-  font-size: 70px;
+.heading-h1,
+.blog-rich-text h1 {
+  font-size: var(--type-h1);
 }
 
 h2,
-.heading-h2 {
-  font-size: 60px;
+.heading-h2,
+.blog-rich-text h2 {
+  font-size: var(--type-h2);
 }
 
 h3,
-.heading-h3 {
-  font-size: 50px;
+.heading-h3,
+.blog-rich-text h3 {
+  font-size: var(--type-h3);
 }
 
 h4,
-.heading-h4 {
-  font-size: 40px;
+.heading-h4,
+.blog-rich-text h4 {
+  font-size: var(--type-h4);
 }
 
-:is(h5, .heading-h5) {
-  font-size: 1.875rem;
-  line-height: 1.2;
+:is(h5, .heading-h5),
+.blog-rich-text h5 {
+  font-size: var(--type-h5);
 }
 
-:is(h6, .heading-h6) {
-  font-size: 25px;
-  line-height: 1.2;
+:is(h6, .heading-h6),
+.blog-rich-text h6 {
+  font-size: var(--type-h6);
   letter-spacing: normal;
 }
 
 .heading-h7 {
-  font-size: 20px;
+  font-size: var(--type-h7);
   letter-spacing: normal;
-}
-
-@media (max-width: 767px) {
-  h1,
-  .heading-h1 { font-size: 48px; }
-  h2,
-  .heading-h2 { font-size: 36px; }
-  h3,
-  .heading-h3 { font-size: 32px; }
-  h4,
-  .heading-h4 { font-size: 24px; }
-  h5,
-  .heading-h5 { font-size: 1.25rem; }
-  h6,
-  .heading-h6 { font-size: 18px; }
-  .heading-h7 { font-size: 16px; }
 }
 
 .pricing-price {
   color: #000;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 80px;
+  font-size: clamp(2.5rem, 1.666667rem + 4.166667vw, 5rem);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1;
 }
 
 .pricing-price-period {
-  font-size: 40px;
+  font-size: clamp(1.5rem, 1.166667rem + 1.666667vw, 2.5rem);
 }
 
 .pricing-amount {
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 4.5rem;
+  font-size: clamp(3.5rem, 3.166667rem + 1.666667vw, 4.5rem);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1;
@@ -636,15 +634,8 @@ h4,
 }
 
 .pricing-amount-period {
-  font-size: 2.25rem;
+  font-size: clamp(1.75rem, 1.583333rem + 0.833333vw, 2.25rem);
   line-height: 1;
-}
-
-@media (max-width: 767px) {
-  .pricing-price { font-size: 40px; }
-  .pricing-price-period { font-size: 24px; }
-  .pricing-amount { font-size: 3.5rem; }
-  .pricing-amount-period { font-size: 1.75rem; }
 }
 
 /* Smooth scrolling */
@@ -741,7 +732,7 @@ a:has(> :is(h1, h2, h3, h4, h5, h6)):is(:hover, :focus-visible),
   .hourglass-icon { animation: none; }
 }
 
-button:not([role="tab"]):not(.portfolio-header-replay):not(.portfolio22-service):not(.gallery-lottie),
+button:not([role="tab"]):not(.portfolio-header-replay):not(.portfolio22-service):not(.gallery-lottie):not(.youtube-facade),
 button[role="tab"]:not(.service-text-tab):not(.pricing-period-tab):not(.testimonial-client-tab),
 a.button-primary,
 a.button-secondary,
@@ -784,6 +775,11 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   color: inherit !important;
 }
 
+
+.blog-rich-text {
+  font-size: var(--type-medium);
+  line-height: 1.5;
+}
 
 .blog-rich-text img,
 .blog-rich-text video,
@@ -933,7 +929,7 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   aspect-ratio: 16 / 9;
   padding: 0;
   border: 0;
-  border-radius: 0 !important;
+  border-radius: 0;
   overflow: hidden;
   background: #000;
   cursor: pointer;
@@ -1016,7 +1012,7 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   margin-block: 0.75rem;
   padding-left: 1.5rem;
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  font-size: inherit;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -1025,7 +1021,7 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   margin-block: 0.25rem;
   padding-left: 0.25rem;
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  font-size: inherit;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -1077,11 +1073,11 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   padding: 0 0 0 20px;
   color: var(--color-brand-primary);
   font-family: 'Caveat', sans-serif;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -0.01em;
-  line-height: 32px;
+  line-height: 1.142857;
 }
 
 @media (min-width: 992px) {
@@ -1160,7 +1156,7 @@ footer a:not([class*="button"]):is(:hover, :focus-visible) {
   margin: 0;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
-  line-height: 0.9;
+  line-height: 1;
   letter-spacing: -0.03em;
 }
 

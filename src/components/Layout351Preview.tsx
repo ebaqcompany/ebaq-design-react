@@ -134,7 +134,7 @@ export const Layout351Preview = () => {
                 >
                   <div className="grid gap-8 px-6 pb-8 pt-4 md:px-10 md:pb-12 md:pt-8 lg:grid-cols-[minmax(16rem,1fr)_minmax(0,2fr)] lg:items-start lg:gap-12 lg:px-12 lg:pb-16 lg:pt-12">
                     <div>
-                    <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">{copy.heading}</h3>
+                    <h3 className="mb-5 font-bold md:mb-6">{copy.heading}</h3>
                     <p className="text-black/60 md:text-md">{copy.description}</p>
                     </div>
                     <div className="aspect-video overflow-hidden bg-black">

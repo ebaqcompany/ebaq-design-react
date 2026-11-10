@@ -15,11 +15,10 @@ export const PainPointsSection = ({ heading, points }: { heading: string; points
         Why it matters
       </p>
       <h2
-        className="mb-12 text-5xl md:text-7xl lg:text-8xl tracking-[-0.04em] max-w-3xl"
+        className="mb-12 tracking-[-0.04em] max-w-3xl"
         style={{
           fontFamily: "'Roboto Condensed', sans-serif",
           fontWeight: 600,
-          lineHeight: 1.05,
         }}
       >
         {heading}
@@ -28,7 +27,7 @@ export const PainPointsSection = ({ heading, points }: { heading: string; points
         {points.map((point, i) => (
           <div key={i} className="border-t border-black/10 pt-6">
             <h3
-              className="text-xl md:text-2xl mb-3 tracking-[-0.02em]"
+              className="mb-3 tracking-[-0.02em] heading-h6"
               style={{ fontFamily: "'Roboto Condensed', sans-serif" }}
             >
               {point.title}
@@ -54,11 +53,10 @@ export const DeliverablesSection = ({ heading, description, items }: { heading: 
           What you get
         </p>
         <h2
-          className="text-5xl md:text-6xl lg:text-7xl tracking-[-0.04em] mb-6"
+          className="tracking-[-0.04em] mb-6"
           style={{
             fontFamily: "'Roboto Condensed', sans-serif",
             fontWeight: 600,
-            lineHeight: 1.05,
           }}
         >
           {heading}

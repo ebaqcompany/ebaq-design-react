@@ -46,7 +46,7 @@ export const BrandSprintIncluded = () => (
                 <img src={media} alt={alt} loading="lazy" className="size-full object-cover" />
               )}
             </div>
-            <h3 className="mt-5 mb-2 text-xl md:text-2xl">{title}</h3>
+            <h3 className="mt-5 mb-2 heading-h6">{title}</h3>
             <p className="text-black/60">{body}</p>
           </div>
         ))}

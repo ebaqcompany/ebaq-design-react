@@ -55,7 +55,7 @@ export const Layout488 = (props: Layout488Props) => {
     <section id="relume" className="relative h-[200vh]" ref={sectionRef}>
       <div className="sticky top-0 grid h-svh grid-cols-[60%] content-center items-center justify-center justify-items-center gap-4 overflow-hidden px-[5%] md:grid-cols-[40%_max-content_40%] md:gap-8 lg:h-screen">
         <motion.h2
-          className="relative z-10 hidden justify-self-end whitespace-nowrap text-[4rem] md:flex lg:text-[6rem]"
+          className="relative z-10 hidden justify-self-end whitespace-nowrap md:flex heading-h3"
           style={{ x: leftHeadingX }}
         >
           {leftHeading}
@@ -75,12 +75,12 @@ export const Layout488 = (props: Layout488Props) => {
           />
         </motion.div>
         <motion.h2
-          className="relative z-10 hidden justify-self-start whitespace-nowrap text-[4rem] md:flex lg:text-[6rem]"
+          className="relative z-10 hidden justify-self-start whitespace-nowrap md:flex heading-h3"
           style={{ x: rightHeadingX }}
         >
           {rightHeading}
         </motion.h2>
-        <motion.h2 className="relative z-10 mt-10 flex justify-self-center whitespace-nowrap text-3xl leading-[1.2] sm:text-8xl md:hidden">
+        <motion.h2 className="relative z-10 mt-10 flex justify-self-center whitespace-nowrap md:hidden heading-h3">
           {mobileHeading}
         </motion.h2>
       </div>

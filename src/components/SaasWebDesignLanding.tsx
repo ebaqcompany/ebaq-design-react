@@ -92,19 +92,19 @@ const faqs = [
   },
 ];
 
-const heading = { fontFamily: "'Roboto Condensed', sans-serif", fontWeight: 600, lineHeight: 1.05 };
+const heading = { fontFamily: "'Roboto Condensed', sans-serif", fontWeight: 600 };
 
 const PainPointsSection = () => (
   <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
     <div className="container max-w-6xl">
       <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Why it matters</p>
-      <h2 className="mb-12 text-5xl md:text-7xl lg:text-8xl tracking-[-0.04em] max-w-3xl" style={heading}>
+      <h2 className="mb-12 tracking-[-0.04em] max-w-3xl" style={heading}>
         A website that sells the product
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         {painPoints.map((point) => (
           <div key={point.title} className="border-t border-black/10 pt-6">
-            <h3 className="text-xl md:text-2xl mb-3 tracking-[-0.02em]" style={{ fontFamily: heading.fontFamily }}>{point.title}</h3>
+            <h3 className="mb-3 tracking-[-0.02em] heading-h6" style={{ fontFamily: heading.fontFamily }}>{point.title}</h3>
             <p className="text-black/60 text-base md:text-lg leading-relaxed">{point.body}</p>
           </div>
         ))}
@@ -119,7 +119,7 @@ const DeliverablesSection = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
           <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">What you get</p>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl tracking-[-0.04em] mb-6" style={heading}>
+          <h2 className="tracking-[-0.04em] mb-6" style={heading}>
             Everything you need to launch
           </h2>
           <p className="text-black/60 text-base md:text-lg leading-relaxed">
@@ -169,11 +169,11 @@ const FaqSection = () => (
   <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
     <div className="container max-w-4xl">
       <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">FAQ</p>
-      <h2 className="mb-12 text-5xl md:text-6xl tracking-[-0.04em]" style={heading}>SaaS website questions</h2>
+      <h2 className="mb-12 tracking-[-0.04em]" style={heading}>SaaS website questions</h2>
       <div className="grid gap-8">
         {faqs.map((faq) => (
           <div key={faq.question} className="border-t border-black/10 pt-6">
-            <h3 className="text-xl md:text-2xl mb-3 tracking-[-0.02em]" style={{ fontFamily: heading.fontFamily }}>{faq.question}</h3>
+            <h3 className="mb-3 tracking-[-0.02em] heading-h6" style={{ fontFamily: heading.fontFamily }}>{faq.question}</h3>
             <p className="text-black/60 text-base md:text-lg leading-relaxed">{faq.answer}</p>
           </div>
         ))}

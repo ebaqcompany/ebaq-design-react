@@ -42,7 +42,7 @@ export const Layout527 = (props: Layout527Props) => {
   return (
     <section id="deliverables" className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
       <div className="container">
-        <h2 className="mb-12 text-4xl md:text-5xl lg:text-6xl md:mb-16">
+        <h2 className="mb-12 md:mb-16">
           $3k goes a long way. All this plus much more
         </h2>
         <div className="relative block lg:grid lg:grid-cols-4 lg:items-start lg:gap-8">
@@ -95,7 +95,7 @@ export const Layout527 = (props: Layout527Props) => {
               >
                 <h4
                   className={clsx(
-                    "text-lg transition-colors duration-300 md:text-xl md:leading-[1.3] lg:text-2xl tracking-[0.01em]",
+                    "heading-h6 transition-colors duration-300 tracking-[0.01em]",
                     {
                       "lg:text-black/20": hoveredIndex !== index && hoveredIndex !== null,
                       "lg:text-black": hoveredIndex === index || hoveredIndex === null,

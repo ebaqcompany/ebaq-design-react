@@ -49,7 +49,7 @@ export const AboutSection = ({ heading = "I help ambitious companies look like c
           {Layout423Defaults.features.map((service) => (
             <div key={service.heading} className="border-t border-black/10 pt-6">
               <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary">{service.tagline}</p>
-              <h3 className="mb-3 text-xl md:text-2xl">{service.heading}</h3>
+              <h3 className="mb-3 heading-h6">{service.heading}</h3>
               <p className="mb-5 text-black/60">{service.description}</p>
               <ul className="flex flex-wrap gap-2" aria-label={`${service.heading} deliverables`}>
                 {service.deliverables.map((item) => (

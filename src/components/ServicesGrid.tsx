@@ -32,7 +32,7 @@ export const ServicesGrid = () => (
             )}
             <div className="flex grow flex-col p-6 md:p-8">
               <p className="mb-3 font-mono text-sm font-normal uppercase tracking-wide text-brand-primary">{service.heading}</p>
-              <h2 className="mb-3 text-2xl font-bold md:mb-4 md:text-3xl">{benefitHeadlines[index]}</h2>
+              <h2 className="mb-3 font-bold md:mb-4 heading-h5">{benefitHeadlines[index]}</h2>
               <p>{service.description}</p>
             </div>
           </article>

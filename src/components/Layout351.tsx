@@ -165,7 +165,7 @@ const FeatureCard = ({ index, featureCount, isActive, setIsActive, ...feature }:
         <p className={`absolute left-6 whitespace-nowrap text-xl font-bold md:left-10 md:text-2xl lg:relative lg:left-0 ${isActive ? "text-brand-primary" : ""}`}>
           {feature.columnText}
         </p>
-        <h3 className="hidden [writing-mode:vertical-rl] lg:mx-auto lg:block lg:rotate-180 lg:text-2xl lg:font-bold">
+        <h3 className="hidden [writing-mode:vertical-rl] lg:mx-auto lg:block lg:rotate-180 lg:font-bold heading-h5">
           {feature.verticalText}
         </h3>
         <p className="text-xl font-bold md:text-2xl lg:hidden">{feature.horizontalText}</p>
@@ -193,7 +193,7 @@ const FeatureCard = ({ index, featureCount, isActive, setIsActive, ...feature }:
         >
           {/* An h3 like the vertical label: below lg that label is hidden, and an h4 here
               would skip a level after the section's h2. The classes set the size. */}
-          <h3 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
+          <h3 className="mb-5 font-bold md:mb-6 heading-h5">
             {feature.heading}
           </h3>
           <p className="md:text-md">{feature.description}</p>

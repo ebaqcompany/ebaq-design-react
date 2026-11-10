@@ -68,7 +68,7 @@ export const Content32 = ({ articleTitle, children }: Content32Props) => {
               <Banner12 className="w-full" scrollDriven />
             </div>
           </aside>
-          <div ref={articleRef} className="blog-rich-text prose max-w-none md:prose-md lg:prose-lg">{children}</div>
+          <div ref={articleRef} className="blog-rich-text prose max-w-none">{children}</div>
         </div>
       </div>
     </section>

@@ -60,7 +60,7 @@ export const ServiceDeliverables = ({ slug }: { slug: ServiceSlug }) => (
             </div>
             <div className="grow p-6 md:p-8">
             <p className="mb-3 font-mono text-sm font-normal uppercase tracking-wide text-brand-primary">{group.title}</p>
-            <h3 className="mb-3 text-2xl font-bold md:mb-4 md:text-3xl">{benefitTitles[slug][index]}</h3>
+            <h3 className="mb-3 font-bold md:mb-4 heading-h5">{benefitTitles[slug][index]}</h3>
             <p className="mb-5">{group.description}</p>
             <ul className="list-disc space-y-2 pl-5">{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
             </div>

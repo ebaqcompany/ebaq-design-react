@@ -96,7 +96,7 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
               <div className="mt-10 grid gap-8 md:grid-cols-2">
                 {config.caseStudySummary.decisions.map(({ title, body }) => (
                   <div key={title} className="border-t border-black/10 pt-6">
-                    <h3 className="mb-3 text-2xl">{title}</h3>
+                    <h3 className="mb-3 heading-h6">{title}</h3>
                     <p className="text-black/60 md:text-lg">{body}</p>
                   </div>
                 ))}

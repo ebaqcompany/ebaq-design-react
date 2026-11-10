@@ -18,7 +18,7 @@
   .about-tools-row { animation: none; }
 
 }
-.about-services-label { display: flex; align-items: center; justify-content: center; flex: none; height: 40px; padding-inline: 18px; border-radius: 999px; background: white; color: black; font-size: 15px; font-weight: 500; white-space: nowrap; }
+.about-services-label { display: flex; align-items: center; justify-content: center; flex: none; height: 40px; padding-inline: 18px; border-radius: 999px; background: white; color: black; font-size: 0.9375rem; font-weight: 500; white-space: nowrap; }
 .about-services-visual .about-tools-row { animation-duration: 60s; }
 .about-services-visual .about-tools-row:nth-child(2) { animation-duration: 66s; }
 

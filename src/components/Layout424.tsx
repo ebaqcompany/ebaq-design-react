@@ -23,7 +23,7 @@ export const Layout424 = ({ tagline = "Brand Design", headings = ["More than a l
               <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">{tagline}</p>
               <h2 className="sr-only">{headings.join(". ")}</h2>
               <div aria-hidden="true" className="relative h-[1.3em] overflow-hidden" style={{ fontSize: "clamp(1.5rem, 5.5vw, 6rem)" }}>
-                {headings.map((heading, index) => <motion.h2 key={heading} data-layout424-heading className="absolute inset-0 flex items-center justify-center whitespace-nowrap font-bold" style={{ ...transforms[index], fontSize: "inherit", lineHeight: 1.2 }}>{heading}</motion.h2>)}
+                {headings.map((heading, index) => <motion.h2 key={heading} data-layout424-heading className="absolute inset-0 flex items-center justify-center whitespace-nowrap font-bold" style={{ ...transforms[index], fontSize: "inherit" }}>{heading}</motion.h2>)}
               </div>
             </div>
           </div>}

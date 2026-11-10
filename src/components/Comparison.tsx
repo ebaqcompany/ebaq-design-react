@@ -32,10 +32,10 @@ export const Comparison = (props: ComparisonProps) => {
           {/* Headers */}
           <div className="grid grid-cols-2 gap-8">
             <div className="border-b border-white/20 pb-4">
-              <h3 className="text-lg md:text-xl lg:text-2xl tracking-normal">{leftTitle}</h3>
+              <h3 className="tracking-normal heading-h6">{leftTitle}</h3>
             </div>
             <div className="border-b border-white/20 pb-4">
-              <h3 className="text-lg text-white/40 md:text-xl lg:text-2xl tracking-normal">{rightTitle}</h3>
+              <h3 className="text-white/40 tracking-normal heading-h6">{rightTitle}</h3>
             </div>
           </div>
 
