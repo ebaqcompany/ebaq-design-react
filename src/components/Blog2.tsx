@@ -96,7 +96,7 @@ export const Blog2 = (props: Blog2Props) => {
                   <p className="text-sm">Published on {post.date}</p>
                 </div>
                 <div className="flex w-full grow flex-col items-start justify-start">
-                  <a className="heading-link mb-2" href={post.url}><h2 className="heading-h5">{post.title}</h2></a>
+                  <a className="heading-link mb-2" href={post.url}><h2>{post.title}</h2></a>
                 </div>
               </article>
             ))}
