@@ -16,7 +16,7 @@ export const Pricing8 = (props: Pricing8Props) => {
           <Heading className="text-balance">{heading}</Heading>
           {description && <p className="mt-5 md:mt-6 md:text-md">{description}</p>}
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,20rem),1fr))] gap-8">
           {pricingPlans.map((plan, index) => <PricingPlan key={index} plan={plan} lightBlue={surface === "white"} />)}
         </div>
       </div>

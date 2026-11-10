@@ -34,7 +34,7 @@ module.exports = {
         regular: ["1rem", { lineHeight: "1.5" }],
         small: ["0.875rem", { lineHeight: "1.5" }],
         tiny: ["0.75rem", { lineHeight: "1.5" }],
-        "10xl": ["clamp(3rem, 2.166667rem + 4.166667vw, 5.5rem)", { lineHeight: "1" }],
+        "10xl": ["clamp(2.75rem, 1.833333rem + 4.583333vw, 5.5rem)", { lineHeight: "1" }],
         handwriting: ["1.75rem", { lineHeight: "2.25rem" }],
       },
       lineHeight: {

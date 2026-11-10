@@ -498,6 +498,11 @@ h6,
 
 :is(h1, h2, h3, h4, h5, h6, .heading-h1, .heading-h2, .heading-h3, .heading-h4, .heading-h5, .heading-h6, .heading-h7) {
   line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+:where(p, li) {
+  overflow-wrap: anywhere;
 }
 
 h1,
@@ -622,7 +627,8 @@ h4,
 
 .pricing-amount {
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: clamp(3.5rem, 3.166667rem + 1.666667vw, 4.5rem);
+  /* Retain the normal scale while fitting narrow cards with enlarged root text. */
+  font-size: clamp(min(3.5rem, 15vw), 3.166667rem + 1.666667vw, min(4.5rem, 20vw));
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1;

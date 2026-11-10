@@ -42,8 +42,8 @@ export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHr
     {portraitHref ? <Link to={portraitHref} aria-label="About Arek Dvornechuck" className="shrink-0"><img loading="eager" src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 rounded-full object-cover" /></Link> : <img loading="eager" src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 shrink-0 rounded-full object-cover" />}
     <div className="flex min-w-0 flex-col">
       <div className="flex flex-col gap-0">
-        <p className={variant === "author" ? "heading-h7 whitespace-nowrap" : "whitespace-nowrap"}>Arek Dvornechuck</p>
-        {variant === "author" && <p className="heading-h7 whitespace-nowrap text-brand-primary">Branding Expert</p>}
+        <p className={variant === "author" ? "heading-h7" : undefined}>Arek Dvornechuck</p>
+        {variant === "author" && <p className="heading-h7 text-brand-primary">Branding Expert</p>}
       </div>
       {variant === "author" ? <>
         <div className="mt-1 flex items-center gap-2 text-black" aria-label="Arek Dvornechuck on social media">
