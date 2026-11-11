@@ -1,13 +1,15 @@
 import type { MediaProps } from "../components/Header78";
 
-// Existing client motion only: each entry is a distinct animation, not a second
+// Selected client motion: each entry is a distinct animation, not a second
 // encoding of the same clip.
 // VideoSources supplies the adjacent MP4 fallback for these WebM assets.
 export const serviceMotionMedia: MediaProps[] = [
   {
-    type: "video",
-    src: "/case-study/nathalie-sadler/09-social-carousel.webm",
-    alt: "Nathalie Sadler social posts sliding across light gray with a gold NS monogram, Are you ready headline, TEDx writing, and red stage photography",
+    type: "lottie",
+    src: "/case-study/nathalie-sadler/hero-logo.json",
+    alt: "Nathalie Sadler logo reveal: the NS monogram draws itself before the name unfolds",
+    bgColor: "#0B0B0B",
+    fit: "contain",
   },
   {
     type: "video",
@@ -35,9 +37,11 @@ export const serviceMotionMedia: MediaProps[] = [
     alt: "Orbio social wall with moving columns of marble sculptures, Renaissance paintings, and AI headlines",
   },
   {
-    type: "video",
-    src: "/case-study/orbio/hero-orb.webm",
-    alt: "Orbio marble orb rotating beside the serif wordmark on black",
+    type: "lottie",
+    src: "/case-study/airport-executive/hero-logo.json",
+    alt: "Airport Executive logo animation",
+    bgColor: "#000000",
+    fit: "contain",
   },
   {
     type: "video",

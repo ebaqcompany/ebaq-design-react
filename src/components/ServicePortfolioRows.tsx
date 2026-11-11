@@ -24,7 +24,7 @@ export const ServicePortfolioRows = ({ slug }: { slug: ServiceSlug }) => {
       { type: "image" as const, src: "/case-study/periti/02-macbook.webp", alt: "Periti website on a MacBook", fit: "cover" as const },
       { type: "video" as const, src: "/case-study/medihuanna/03-product.webm", alt: "Medihuanna product video", fit: "cover" as const },
     ]
-    : slug === "motion-graphics" ? serviceMotionMedia.map((item) => ({ ...item, fit: "cover" as const }))
+    : slug === "motion-graphics" ? serviceMotionMedia.map((item) => ({ ...item, fit: item.fit ?? "cover" as const }))
     : Array.from({ length: 12 }, () => placeholder);
   const count = Math.ceil(items.length / 3);
   const rows = slug === "brand-strategy" ? brandStrategyPortfolioRows : [items.slice(0, count), items.slice(count, count * 2), items.slice(count * 2)];
