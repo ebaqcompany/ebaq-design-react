@@ -75,6 +75,12 @@ export const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY =
 
   const backgroundColor = bgColor || "#171717";
   const preserveAspectRatio = fit === "cover" ? "xMidYMid slice" : "xMidYMid meet";
+  // Zoom the SVG coordinate system so paths render at the card's actual size,
+  // rather than magnifying a composited layer with a CSS scale transform.
+  const composition = animationData as { w?: number; h?: number } | null;
+  const viewBoxSize = scale !== 1 && composition?.w && composition?.h
+    ? `${(composition.w - composition.w / scale) / 2} ${(composition.h - composition.h / scale) / 2} ${composition.w / scale} ${composition.h / scale}`
+    : undefined;
 
   return (
     <div ref={ref} className="absolute inset-0 size-full flex items-center justify-center" style={{ backgroundColor }}>
@@ -84,9 +90,9 @@ export const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY =
           animationData={animationData}
           loop
           autoplay={inView && !reduceMotion}
-          rendererSettings={{ preserveAspectRatio }}
+          rendererSettings={{ preserveAspectRatio, viewBoxSize }}
           className="size-full"
-          style={{ transform: `translateY(${offsetY}px) scale(${scale})`, transformOrigin: "center" }}
+          style={{ transform: `translateY(${offsetY}px)`, transformOrigin: "center" }}
         />
       )}
     </div>

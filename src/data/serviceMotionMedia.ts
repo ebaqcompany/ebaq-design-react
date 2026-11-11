@@ -10,6 +10,14 @@ export const serviceMotionMedia: MediaProps[] = [
     alt: "Nathalie Sadler logo reveal: the NS monogram draws itself before the name unfolds",
     bgColor: "#0B0B0B",
     fit: "contain",
+    scale: 1.8,
+  },
+  {
+    type: "lottie",
+    src: "/case-study/brevidee/hero-logo.json",
+    alt: "Brevidee logo animation",
+    bgColor: "#f8e6e8",
+    fit: "contain",
   },
   {
     type: "video",
@@ -25,11 +33,6 @@ export const serviceMotionMedia: MediaProps[] = [
     type: "video",
     src: "/case-study/fox-berman/08-social.webm",
     alt: "Fox Berman social posts combining the law firm's wordmark, orange accents, and photography",
-  },
-  {
-    type: "video",
-    src: "/case-study/savory/19-social-carousel.webm",
-    alt: "Savory real estate social posts sliding through wax red, sky blue, cream, and asphalt layouts",
   },
   {
     type: "video",
@@ -57,11 +60,6 @@ export const serviceMotionMedia: MediaProps[] = [
     type: "video",
     src: "/portfolio/motion/aero-billboards.webm",
     alt: "Three green Aero posters with animated line icons: Precise breath analysis, Insights at your fingertips, and Know how your body works",
-  },
-  {
-    type: "video",
-    src: "/case-study/aero/13-social.webm",
-    alt: "Aero health social posts combining mint graphics, photography, and brand typography",
   },
   {
     type: "video",
