@@ -24,7 +24,7 @@ export const ServicePortfolioRows = ({ slug }: { slug: ServiceSlug }) => {
       { type: "image" as const, src: "/case-study/periti/02-macbook.webp", alt: "Periti website on a MacBook", fit: "cover" as const },
       { type: "video" as const, src: "/case-study/medihuanna/03-product.webm", alt: "Medihuanna product video", fit: "cover" as const },
     ]
-    : slug === "motion-graphics" ? serviceMotionMedia.map((item) => ({ ...item, fit: "contain" as const, bgColor: "#000" }))
+    : slug === "motion-graphics" ? serviceMotionMedia.map((item) => ({ ...item, fit: "cover" as const }))
     : Array.from({ length: 12 }, () => placeholder);
   const count = Math.ceil(items.length / 3);
   const rows = slug === "brand-strategy" ? brandStrategyPortfolioRows : [items.slice(0, count), items.slice(count, count * 2), items.slice(count * 2)];
@@ -32,7 +32,7 @@ export const ServicePortfolioRows = ({ slug }: { slug: ServiceSlug }) => {
     <section id="service-portfolio" aria-label="Selected service work" className="flex flex-col gap-4 overflow-hidden bg-white pb-16 md:pb-24 lg:pb-28">
       {rows.map((row, index) => (
         <div key={index} data-service-portfolio-row={index + 1} role={slug === "brand-strategy" ? "group" : undefined} aria-label={slug === "brand-strategy" ? brandStrategyPortfolioLabels[index] : undefined}>
-          <DraggableRow items={row} direction={index === 1 ? "right" : "left"} initialOffset={index === 1 ? 208 : 0} showBorder mediaAspect={slug === "motion-graphics" || (slug === "brand-strategy" && index === 0) ? "16/9" : "4/3"} />
+          <DraggableRow items={row} direction={index === 1 ? "right" : "left"} initialOffset={index === 1 ? 208 : 0} showBorder={slug !== "motion-graphics"} mediaAspect={slug === "motion-graphics" || (slug === "brand-strategy" && index === 0) ? "16/9" : "4/3"} />
         </div>
       ))}
     </section>

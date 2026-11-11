@@ -36,21 +36,6 @@ export const serviceMotionMedia: MediaProps[] = [
   },
   {
     type: "video",
-    src: "/case-study/fox-berman/02-colors.webm",
-    alt: "Fox Berman color and typography system animating through orange, dark gray, and light gray",
-  },
-  {
-    type: "video",
-    src: "/case-study/savory/18-colors.webm",
-    alt: "Savory color palette expanding into columns with color specifications",
-  },
-  {
-    type: "video",
-    src: "/case-study/savory/17-type-specimen.webm",
-    alt: "Savory Roxborough CF typography specimen with letters appearing on a wax-red background",
-  },
-  {
-    type: "video",
     src: "/case-study/orbio/hero-orb.webm",
     alt: "Orbio marble orb rotating beside the serif wordmark on black",
   },
@@ -63,11 +48,6 @@ export const serviceMotionMedia: MediaProps[] = [
     type: "video",
     src: "/case-study/orbio/12-card-where-meets.webm",
     alt: "Orbio painted cards pairing Where and Meets headlines around Renaissance artwork",
-  },
-  {
-    type: "video",
-    src: "/case-study/orbio/25-type-trio.webm",
-    alt: "Orbio Arizona Flare, Geist, and Geist Mono type specimens appearing in sequence",
   },
   {
     type: "video",
@@ -86,22 +66,7 @@ export const serviceMotionMedia: MediaProps[] = [
   },
   {
     type: "video",
-    src: "/case-study/ventur/02-social.webm",
-    alt: "Ventur travel social cards with purple fields, orange paths, and destination photography",
-  },
-  {
-    type: "video",
     src: "/case-study/airport-executive/11-escalator.webm",
     alt: "Airport escalator beside three black and gold Airport Executive digital ads in motion",
-  },
-  {
-    type: "video",
-    src: "/case-study/next-dimension/showreel.mp4",
-    alt: "NextDimension AI brand showreel including the Deep Space and Violet Dream color system",
-  },
-  {
-    type: "video",
-    src: "/case-study/medihuanna/03-product.webm",
-    alt: "Medihuanna medical-cannabis education website presented on a laptop",
   },
 ];
