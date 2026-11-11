@@ -47,7 +47,7 @@ const ProjectCard = ({ project, priority }: { project: Project; priority: boolea
         </div>
       </div>
       <div>
-        <RotatingProjectPreview image={project.image} images={project.images} lottie={project.lottie} url={project.url} priority={priority} fit="contain" className="aspect-video w-full" />
+        <RotatingProjectPreview image={project.image} images={project.images} lottie={project.lottie} url={project.url} priority={priority} fit="contain" lottieFit="cover" className="aspect-video w-full" />
       </div>
     </motion.article>
   );

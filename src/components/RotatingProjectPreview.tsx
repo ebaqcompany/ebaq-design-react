@@ -20,6 +20,7 @@ type RotatingProjectPreviewProps = {
   // The first card on a page is on screen at load (often the largest paint), so it isn't lazy.
   priority?: boolean;
   fit?: "cover" | "contain";
+  lottieFit?: "cover" | "contain";
 };
 
 const StaticLastFrameLottie = ({
@@ -85,6 +86,7 @@ export const RotatingProjectPreview = ({
   useRouterLink = false,
   priority = false,
   fit = "cover",
+  lottieFit = fit,
 }: RotatingProjectPreviewProps) => {
   const previewImages = images.length > 0 ? images : [image];
   const [imageIndex, setImageIndex] = useState(0);
@@ -117,7 +119,7 @@ export const RotatingProjectPreview = ({
   // At rest, show the project's own preview image; the gallery only rotates on hover.
   const shownImage = isHovering ? currentImage : image;
   const content = !isHovering && lottie ? (
-    <StaticLastFrameLottie {...lottie} fallback={currentImage} priority={priority} fit={fit} />
+    <StaticLastFrameLottie {...lottie} fallback={currentImage} priority={priority} fit={lottieFit} />
   ) : (
     <img loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" src={shownImage.src} className={`size-full ${fit === "contain" ? "object-contain" : "object-cover"} object-center ${imageClassName ?? ""}`.trim()} alt={shownImage.alt} />
   );
