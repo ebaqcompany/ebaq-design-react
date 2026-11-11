@@ -93,11 +93,11 @@ export type CaseStudy = {
 const allCaseStudies: CaseStudy[] = [
   {
     slug: "nathalie-sadler",
-    published: false,
+    published: true,
     client: "Nathalie Sadler",
     title: "An editorial personal brand for a TEDx speaking coach",
     summary:
-      "Nathalie Sadler is a speaking director. She looks at the whole picture of a speaker, from message to voice to presence, and brings more of them into the room. Her personal brand needed the same poise: something quiet enough to sit behind her clients, and distinctive enough to be remembered. We built it around an NS monogram whose two halves turn into each other, a wordmark with ligatures, a narrow serif, and a palette of black, white, and gold.",
+      "Nathalie Sadler is a speaking director. She looks at the whole picture of a speaker, from message to voice to presence, and brings more of them into the room. Her personal brand needed the same poise: something quiet enough to sit behind her clients, and distinctive enough to be remembered. We built it around a rotational NS monogram, a wordmark with ligatures, an editorial serif, and a palette of black, white, and gold with red as an accent.",
     services: ["Personal branding", "Logo design", "Visual identity", "Web design"],
     industry: "Speaker coaching",
     portfolioIndustry: "Personal branding",
@@ -136,7 +136,7 @@ const allCaseStudies: CaseStudy[] = [
         type: "header",
         heading: "A monogram that reads both ways",
         description:
-          "The N and S share their strokes. The top half reads NS, the bottom half is the same pair turned 180°, and the S's lower tail sweeps into the hairline stem of the N. Turn the mark upside down and it still reads, which suits a brand about how people come across from every angle.",
+          "The top half brings the N and S together; the bottom half repeats the pair at 180°. Turn the mark upside down and it retains its form, giving Nathalie a distinctive signature that works across the brand.",
       },
       {
         type: "gallery",
@@ -150,7 +150,7 @@ const allCaseStudies: CaseStudy[] = [
         type: "header",
         heading: "A wordmark with its own ligatures",
         description:
-          "The name is set in serif capitals with ligatures where the letters allow it: the T and H share a bar, and the L and I join. The type stays calm and editorial, so the monogram carries the flourish.",
+          "The name is set in serif capitals with ligatures that bring the letters together. The type stays calm and editorial, so the monogram carries the flourish.",
       },
       {
         type: "gallery",
@@ -174,9 +174,12 @@ const allCaseStudies: CaseStudy[] = [
             kind: "video",
           },
           { src: "/case-study/nathalie-sadler/07-mockup.webp", alt: "Nathalie Sadler website TEDx speaker coaching page with the headline You've got the Red Dot, a Talk it through button, and a microphone on a red round carpet on a dark stage" },
-          { src: "/case-study/nathalie-sadler/06-instagram.webp", alt: "Two Nathalie Sadler cards on light grey: a black card with the gold NS monogram at the top, the stacked name in white and the line From first rehearsal to final applause, and a second black card filled edge to edge with an oversized NS monogram in bright TEDx red" },
+          { src: "/case-study/nathalie-sadler/06-instagram-updated.png", alt: "Two Nathalie Sadler cards on light grey: a black card with the gold NS monogram at the top, the stacked name in white and the line From first rehearsal to final applause, and a second black card filled edge to edge with an oversized NS monogram in dark grey" },
           { src: "/case-study/nathalie-sadler/12-business-card.webp", alt: "Two Nathalie Sadler business cards on black: the textured off-white front with a blind-embossed NS monogram, NATHALIE SADLER in large black serif capitals along the bottom and the phone number and nathaliesadler.com across the top, and the charcoal back with the NS monogram in polished raised gold" },
           { src: "/case-study/nathalie-sadler/12-linkedin-banner.webp", alt: "Nathalie Sadler LinkedIn profile mockup: a black banner with NATHALIE SADLER in white serif capitals over a collage of stage photos, a red spotlight, a speaker in the wings, hands writing notes and an applauding audience, with nathaliesadler.com below, above a round portrait of Nathalie and a Follow button" },
+          { src: "/case-study/nathalie-sadler/event-badge-plain-red.png", alt: "Event badge worn on a plain red lanyard against a light grey background", span: "half" },
+          { src: "/case-study/nathalie-sadler/gold-monogram-tote.jpg", alt: "Black tote bag with an oversized gold Nathalie Sadler monogram", span: "half" },
+          { src: "/case-study/nathalie-sadler/subway-posters-five-ramp.jpg", alt: "Five black and white Nathalie Sadler posters displayed in a subway station" },
           {
             src: "/case-study/nathalie-sadler/11-event-billboard.webm",
             alt: "Event billboard mockup in a dark hall with the audience in silhouette: the wide stage screen scrolls This is your moment to shine around a gold figure, then settles on NATHALIE, the gold NS monogram and SADLER",

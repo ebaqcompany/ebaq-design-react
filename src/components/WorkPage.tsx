@@ -13,6 +13,11 @@ const siteUrl = "https://www.ebaqdesign.com";
 const pageTitle = "Portfolio: Branding, Logo & Web Design Case Studies | Ebaq Design";
 const pageDescription =
   "Branding, logo design, and website case studies by Arek Dvornechuck, a senior freelance graphic designer in NYC, for AI, health tech, law, and consumer brands.";
+const workPageProjects = workProjects.map((project) =>
+  project.url === "/work/nathalie-sadler"
+    ? { ...project, image: project.images[0] ?? project.image, lottie: undefined }
+    : project,
+);
 
 export const WorkPage = () => {
   useEffect(() => {
@@ -70,7 +75,7 @@ export const WorkPage = () => {
         tagline="Work"
         heading="See some of my work"
         description="Brand identities and digital experiences built to make ambitious businesses clearer, more distinctive, and easier to trust."
-        projects={workProjects}
+        projects={workPageProjects}
       />
     </main>
     <Cta17 />

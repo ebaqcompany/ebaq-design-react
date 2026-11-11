@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { LottieRefCurrentProps } from "lottie-react";
 import { LottiePlayer as Lottie } from "./LottiePlayer";
 import { LazyVideo } from "./Media";
+import { NathalieSlide } from "./NathalieSlide";
 
 type ImageProps = {
   url?: string;
@@ -77,7 +78,9 @@ export const Gallery1 = (props: Gallery1Props) => {
         )}
         <div className="grid auto-cols-fr grid-cols-1 gap-8 md:grid-cols-2">
           {images.map((image) => {
-            const media = image.kind === "video" ? (
+            const media = image.src === "/case-study/nathalie-sadler/05-typeface.webp" || image.src === "/case-study/nathalie-sadler/08-colors.webp" ? (
+              <NathalieSlide src={image.src} alt={image.alt} palette={image.src.endsWith("08-colors.webp")} />
+            ) : image.kind === "video" ? (
               <div
                 className={`relative w-full overflow-hidden ${image.aspectRatio ? "" : "aspect-video"}`}
                 style={image.aspectRatio ? { aspectRatio: image.aspectRatio } : undefined}
