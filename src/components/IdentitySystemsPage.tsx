@@ -6,12 +6,12 @@ const pageUrl = "https://www.ebaqdesign.com/services/brand-design";
 export const IdentitySystemsPage = () => (
   <>
     <Helmet>
-      <title>Brand Design Design & Guidelines, NYC | Ebaq Design</title>
+      <title>Brand Design & Guidelines, NYC | Ebaq Design</title>
       <meta name="description" content="Brand design in NYC: color, typography, guidelines on guidelines.online, icons, decks, and social graphics. One-week Brand Sprint, $3,000 flat." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
-      <meta property="og:title" content="Brand Design Design & Guidelines, NYC | Ebaq Design" />
+      <meta property="og:title" content="Brand Design & Guidelines, NYC | Ebaq Design" />
       <meta property="og:description" content="Brand design in NYC: color, typography, guidelines on guidelines.online, icons, decks, and social graphics. One-week Brand Sprint, $3,000 flat." />
     </Helmet>
     <ServiceDetailLayout

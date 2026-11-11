@@ -7,17 +7,17 @@ export const WebDevelopmentPage = () => (
   <>
     <Helmet>
       <title>Web Development: Framer, Webflow & Next.js | Ebaq Design</title>
-      <meta name="description" content="Web development in Framer, Webflow, and Next.js: responsive builds, CMS setup, integrations, and launch support. One or two weeks at $3,000 per week." />
+      <meta name="description" content="Web development in Framer, Webflow, and Next.js: responsive builds, CMS setup, integrations, and launch support. $3,000/week or $10,000/month, with scope agreed upfront." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="Web Development: Framer, Webflow & Next.js | Ebaq Design" />
-      <meta property="og:description" content="Web development in Framer, Webflow, and Next.js: responsive builds, CMS setup, integrations, and launch support. One or two weeks at $3,000 per week." />
+      <meta property="og:description" content="Web development in Framer, Webflow, and Next.js: responsive builds, CMS setup, integrations, and launch support. $3,000/week or $10,000/month, with scope agreed upfront." />
     </Helmet>
     <ServiceDetailLayout
       slug="web-development"
       heading="Web development that ships what was designed"
-      description="The approved design built into a responsive, maintainable site in Framer or Webflow, with the CMS set up so your team can keep publishing after launch."
+      description="Turn your approved designs into a responsive website in Framer, Webflow, or custom Next.js, with the features, editing setup, and launch support agreed before we begin."
     />
   </>
 );

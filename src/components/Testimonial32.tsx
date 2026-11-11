@@ -5,6 +5,21 @@ import { clientLogoClass, type ClientLogoScale } from "../clientLogo";
 import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
 
 type Testimonial = { quote: string; logo?: { src: string; alt?: string; scale?: ClientLogoScale; className?: string }; logoText?: string; avatar: { src: string; alt?: string }; name: string; position: string };
+const testimonialCaseStudies: Record<string, string> = {
+  "Lakshita Chhikara": "next-dimension", "Karim Zitouni": "elevate",
+  "Pavel Bulkiewicz": "medihuanna", "Darla Powell": "wingnut",
+  "Alan Rudt": "brevidee", "Chris Nixon": "airport-executive",
+  "Lucas Berman": "fox-berman", "Jane de Abreu": "sweetgrass",
+};
+
+export const TestimonialPosition = ({ name, position }: { name: string; position: string }) => {
+  const slug = testimonialCaseStudies[name];
+  if (!slug) return <p className="leading-tight text-brand-primary">{position}</p>;
+  const comma = position.lastIndexOf(", ");
+  const prefix = comma < 0 ? "" : position.slice(0, comma + 2);
+  const company = comma < 0 ? position : position.slice(comma + 2);
+  return <p className="leading-tight text-brand-primary">{prefix}<a href={`/work/${slug}`} className="underline underline-offset-4">{company}</a></p>;
+};
 type Props = React.ComponentPropsWithoutRef<"section"> & { heading?: string; description?: string; testimonials?: Testimonial[] };
 export type Testimonial9Props = Props;
 
@@ -39,7 +54,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
     <blockquote title={testimonial.quote} className="testimonial-quote line-clamp-5">{testimonial.quote}</blockquote>
     <div className="mt-6 flex w-full flex-col md:mt-8 md:gap-4">
       <div className="mb-4 md:mb-0"><img loading="lazy" decoding="async" src={testimonial.avatar.src} alt={testimonial.avatar.alt ?? ""} className="size-14 min-h-14 min-w-14 rounded-full object-cover" /></div>
-      <div className="mb-3 md:mb-0"><p className="font-semibold">{testimonial.name}</p><p>{testimonial.position}</p></div>
+      <div className="mb-3 md:mb-0"><p className="font-semibold leading-tight">{testimonial.name}</p><TestimonialPosition name={testimonial.name} position={testimonial.position} /></div>
       {testimonial.logo && <div><img loading="lazy" decoding="async" src={testimonial.logo.src} alt={testimonial.logo.alt ?? ""} className={`${clientLogoClass(testimonial.logo.scale)} ${testimonial.logo.className ?? ""}`.trim()} /></div>}
       {!testimonial.logo && testimonial.logoText && <p className="font-heading text-2xl font-semibold uppercase leading-none">{testimonial.logoText}</p>}
     </div>

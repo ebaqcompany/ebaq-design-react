@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" role="img" aria-labelledby="title">
+  <title id="title">A code window showing a large pair of angle brackets and a slash</title>
+  <g id="window" stroke="#000" stroke-width="6">
+    <rect x="200" y="260" width="680" height="480" fill="#000"/>
+    <rect x="200" y="260" width="680" height="60" fill="#00AFEC"/>
+    <g fill="#fff" stroke-width="4">
+      <circle cx="240" cy="290" r="9"/>
+      <circle cx="272" cy="290" r="9"/>
+      <circle cx="304" cy="290" r="9"/>
+    </g>
+  </g>
+  <g id="code-symbol" stroke-width="24">
+    <path d="M450 450L370 530L450 610M630 450L710 530L630 610" stroke="#fff"/>
+    <path d="M580 430L500 630" stroke="#00AFEC"/>
+  </g>
+  <g id="dots-blue" fill="#00AFEC">
+    <circle cx="960" cy="400" r="14"/>
+    <circle cx="280" cy="840" r="14"/>
+  </g>
+  <g id="dots-black" fill="#000">
+    <circle cx="120" cy="320" r="8"/>
+    <circle cx="720" cy="160" r="8"/>
+  </g>
+</svg>

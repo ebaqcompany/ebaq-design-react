@@ -4,43 +4,43 @@ import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring } f
 import type { ServiceSlug } from "../data/services";
 
 const brandSteps = [
-  { heading: "01", title: "Let’s talk about your brand", description: "I learn about your business, goals, and audience. We agree on scope and direction." },
-  { heading: "02", title: "See your identity take shape", description: "I present concepts, and we refine the chosen direction together." },
-  { heading: "03", title: "Put your new brand to work", description: "You receive the agreed files and guidelines, ready to use." },
+  { heading: "01", title: "Book a free call", description: "Tell me about your business, goals, and audience. We’ll discuss what you need and agree on the next steps." },
+  { heading: "02", title: "Build your identity", description: "I develop your visual identity, share the work with you, and refine the chosen direction together." },
+  { heading: "03", title: "Launch your brand", description: "Put your new identity to work with the files and guidelines you need to show up consistently." },
 ];
 
 const processCopy: Record<ServiceSlug, typeof brandSteps> = {
   "brand-design": brandSteps,
   "brand-strategy": [
-    { heading: "01", title: "Let’s understand your business", description: "We discuss your goals, audience, and competitive landscape to define the questions your strategy needs to answer." },
-    { heading: "02", title: "Find your brand’s direction", description: "I develop positioning and messaging, then we work through the recommendations together." },
-    { heading: "03", title: "Build on a clear strategy", description: "You receive the agreed strategy and messaging in a practical reference for your brand decisions." },
+    { heading: "01", title: "Book a free call", description: "Tell me about your business and the decisions you need to make. We agree on the workshop, scope, and feedback schedule." },
+    { heading: "02", title: "Define your direction", description: "We work through your audience, purpose, and positioning in a workshop. I develop the messaging and visual direction for us to review." },
+    { heading: "03", title: "Put strategy to work", description: "You receive the agreed strategy brief, messaging, and mood boards to guide your identity and communications." },
   ],
   "logo-design": [
-    { heading: "01", title: "Let’s talk about your logo", description: "I learn about your business and where your logo needs to work. We agree on scope and creative direction." },
-    { heading: "02", title: "See your logo take shape", description: "I present concepts, explain the ideas, and refine the chosen direction with your feedback." },
-    { heading: "03", title: "Put your new logo to work", description: "You receive the agreed logo variations, final files, and usage guidance." },
+    { heading: "01", title: "Book a free call", description: "Show me your existing logo or tell me what you need. We agree on the scope, start date, and feedback schedule for your one-week sprint." },
+    { heading: "02", title: "Create or refine your logo", description: "I explore new concepts or refine your existing mark, then develop the chosen direction with your feedback, colors, and fonts." },
+    { heading: "03", title: "Put your new logo to work", description: "You receive your logo variations, core colors and fonts, editable files, and a simple usage guide." },
   ],
   "web-design": [
     { heading: "01", title: "Let’s plan your website", description: "We discuss your audience, content, and goals, then agree on the pages and experience you need." },
-    { heading: "02", title: "See your website take shape", description: "I develop the structure and visual designs, then we refine the desktop and mobile layouts together." },
-    { heading: "03", title: "Move into development", description: "You receive the agreed Figma designs, components, and handoff notes for the build." },
+    { heading: "02", title: "Design your website", description: "I shape the structure and responsive layouts in Figma. We review and refine the design, then I build it if development is part of your scope." },
+    { heading: "03", title: "Launch your website", description: "For design-only projects, you receive the organized Figma files. For a build, we test the agreed pages, forms, and features before launch and handover." },
   ],
   "web-development": [
-    { heading: "01", title: "Let’s plan the build", description: "We review your approved designs, content, and technical needs, then agree on scope and the right platform." },
-    { heading: "02", title: "See your website come to life", description: "I build the responsive pages and agreed integrations. We review the working site and refine the details." },
-    { heading: "03", title: "Launch with confidence", description: "We complete the agreed checks, launch your website, and walk through how to keep it updated." },
+    { heading: "01", title: "Book a free call", description: "We review your approved designs, content, and technical needs, then agree on scope and the right platform." },
+    { heading: "02", title: "Build your website", description: "I build the responsive pages and agreed integrations. We review the working site and refine the details." },
+    { heading: "03", title: "Launch your website", description: "We complete the agreed checks, launch your website, and walk through how to keep it updated." },
   ],
   "motion-graphics": [
-    { heading: "01", title: "Let’s define the movement", description: "We discuss your brand, channels, and goals, then agree on the animation scope and direction." },
-    { heading: "02", title: "See your brand in motion", description: "I develop keyframes and animation, then we refine the movement and timing together." },
-    { heading: "03", title: "Share your brand in motion", description: "You receive the agreed exports, prepared for the websites, presentations, or social channels you need." },
+    { heading: "01", title: "Book a free call", description: "We discuss your brand, channels, and goals, then agree on assets, animation length, formats, and timing." },
+    { heading: "02", title: "Create the animation", description: "I develop keyframes and animation, then we refine the movement and timing together." },
+    { heading: "03", title: "Put motion to work", description: "You receive the agreed exports, prepared for the websites, presentations, or social channels you need." },
   ],
 };
 
 // Relume Layout 485: sticky rolling number beside vertically scrolling steps.
 export const ServiceProcess = ({ slug = "brand-design" }: { slug?: ServiceSlug }) => {
-  const steps = processCopy[slug];
+  const steps = processCopy[slug].map((step, index) => index === 0 && slug !== "logo-design" && slug !== "brand-strategy" && slug !== "web-development" && slug !== "motion-graphics" ? brandSteps[0] : step);
   const cards = useRef<(HTMLDivElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const reduced = useReducedMotion();

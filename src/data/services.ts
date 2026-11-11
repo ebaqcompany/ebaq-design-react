@@ -20,6 +20,7 @@ export type Service = {
   index: number;
   number: string;
   heading: string;
+  cardTitle: string;
   description: string;
   deliverables: string[];
   url: string;
@@ -30,6 +31,7 @@ export const services: Service[] = Layout423Defaults.features.map((feature, inde
   index,
   number: feature.tagline,
   heading: feature.heading,
+  cardTitle: ["Define your positioning", "Design an iconic logo", "Create a design system", "Create a beautiful website", "Launch a website that works", "Bring your brand to life"][index],
   description: feature.description,
   deliverables: feature.deliverables,
   url: `/services/${slugs[index]}`,
@@ -160,21 +162,15 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       "It is the same groundwork I did on identities for AI startups, a law firm, and consultancies across Europe, done directly by me as a Branding Expert in New York rather than handed to a junior strategist.",
     ],
     tools: ["Brand audit", "Competitive analysis", "Positioning workshop", "Figma"],
-    timeline: "Strategy opens every branding project. It runs at the start of the one-week Brand Sprint, so the logo and identity are designed against agreed positioning, all within the flat $3,000 weekly rate.",
+    timeline: "A focused brand strategy sprint costs $3,000 for one week. We agree on the workshop, strategy brief, messaging, visual direction, and feedback schedule before booking. Payment is due upfront.",
     work: ["wingnut", "periti", "spark"],
     faqs: [
-      {
-        title: "What does brand strategy include?",
-        answer: "A brand audit, a competitive analysis, audience and customer profiles, a positioning statement, and the tagline and core messaging. It ends with decisions the design can be measured against, not a deck that sits in a drawer.",
-      },
-      {
-        title: "Do I need brand strategy before a logo?",
-        answer: "Yes, even a short version. A logo is only good or bad relative to what the brand needs to say and who it competes with. Settling positioning first is what lets a branding project move fast without going in circles.",
-      },
-      {
-        title: "Is strategy priced separately?",
-        answer: "No. It is part of the work and covered by the same flat $3,000 per week. A new brand identity, strategy included, takes one week, guaranteed.",
-      },
+      { title: "What’s included?", answer: "A brand and competitor review, a positioning workshop, and an agreed strategy brief covering your audience, positioning, messaging, and visual direction. We confirm the deliverables before booking." },
+      { title: "Strategy before design?", answer: "A clear audience and positioning give design a useful starting point. If you already have a strategy, we review it and focus on any gaps before moving into design." },
+      { title: "How much and how long?", answer: "A focused strategy sprint costs $3,000 for one week, paid upfront. We agree on scope and feedback timing before booking. Broader work adds weeks at the same rate." },
+      { title: "Who joins the workshop?", answer: "You and the key people who make decisions about your brand. We agree on participants and preparation before the session." },
+      { title: "Is logo design included?", answer: "This scope focuses on strategy and visual direction. Logo and brand identity design can follow as separately agreed work." },
+      { title: "What about revisions?", answer: "We review the recommendations together and refine them within the agreed scope. Additional work is agreed before proceeding." },
     ],
   },
   "logo-design": {
@@ -185,34 +181,14 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       "You work directly with me, Arek Dvornechuck, a senior designer and Branding Expert based in Brooklyn, New York City, from the first conversation through the final files.",
     ],
     tools: ["Pencil and paper", "Adobe Illustrator", "Figma", "Adobe After Effects"],
-    timeline: "A scoped identity refresh or rebrand is delivered in one week, guaranteed, for $3,000 total. The Brand Sprint includes the logo, logo animation, color palette, typography, guidelines and launch assets, with revisions included. We agree the scope at kickoff; additional website or rollout work is planned separately.",
+    timeline: "A focused one-week logo sprint costs $3,000. Create a new logo or refine an existing one, with core colors, typography, final files, and simple usage guidance. Scope and feedback timing are agreed before booking.",
     work: ["airport-executive", "elevate", "periti"],
     faqs: [
-      {
-        title: "Can you improve my existing logo without starting over?",
-        answer: "Yes. We identify what is worth preserving, then agree which parts need attention: letterforms, spacing, proportions, colors, typography or the way the identity is applied. A refresh can retain the core idea; replacing the whole mark is not automatic.",
-      },
-      {
-        title: "Does the $3,000 include colors and typography?",
-        answer: "$3,000 is the total for the scoped one-week Brand Sprint, not just a logo file. It includes logo concepts or refinements, final logo files, logo animation, a color palette, typography, brand guidelines, business card design, social profile images and launch posts, and an email signature. Revisions and editable source files are included.",
-        links: [{ label: "See the complete pricing and scope", href: "/pricing" }],
-      },
-      {
-        title: "When does the one-week timeline start?",
-        answer: "We confirm availability and agree the scope, start date and feedback schedule before starting. The scoped identity is delivered within one week, guaranteed. Website design, development and larger rollout work require separately agreed weeks at $3,000 per week, with the total fixed before work starts.",
-      },
-      {
-        title: "What should I send before a logo refresh?",
-        answer: "Send your current logo files, website, existing guidelines and examples of where the identity needs to work. Explain what must stay recognizable, what is not working, who approves the design and your launch priorities. If you only have a PNG or cannot find the original files, flag that when we discuss the scope.",
-      },
-      {
-        title: "What logo files do I get?",
-        answer: "Final logo files in SVG, PNG and PDF for print and screen, with agreed responsive and color variations, plus the logo animation and editable source files. The guidelines document the palette, typography and usage rules so your team and suppliers can use the identity consistently.",
-      },
-      {
-        title: "Are premium font licenses and website work included?",
-        answer: "We identify any third-party font or asset licensing costs and responsibilities before choosing them. Website design and development, print production and larger rollout projects are separate from the identity sprint. Additional design weeks cost $3,000 each, with the scope and total agreed before work starts.",
-      },
+      { title: "Can you refine my logo?", answer: "Yes. We can improve your existing mark or create a new one, depending on what your business needs." },
+      { title: "What’s included?", answer: "Your logo, key variations, core colors, a font pairing, editable files, and a simple usage guide. We confirm the scope before booking." },
+      { title: "How much and how long?", answer: "A focused one-week sprint costs $3,000, paid upfront. We agree on the start date and feedback schedule before work begins." },
+      { title: "What about revisions?", answer: "We refine the chosen direction together. Revisions within the agreed scope are included." },
+      { title: "Logo or brand design?", answer: "Choose Logo Design for a new or refined logo and core identity fundamentals. Brand Design covers a broader visual identity and rollout." },
     ],
   },
   "brand-design": {
@@ -241,79 +217,62 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     ],
   },
   "web-design": {
-    title: "Website design in Figma, built around the brand",
+    title: "Website design & development",
     overview: [
-      "A website is where most people meet the brand for the first time, so it has to explain the business fast and guide visitors to the next step. I design the structure, the messaging hierarchy, and every key page in Figma.",
-      "The process moves from wireframes to full responsive designs for desktop, tablet, and mobile, with the brand's type, color, and motion carried through, so the site feels like part of the identity instead of a template.",
-      "The work below includes websites for an AI healthcare company, a Shopify testing app, and an ed-tech platform for schools.",
+      "A clear website brings your brand, content, and visitor experience together. I design responsive layouts in Figma, with design-only and design-and-development engagements available.",
+      "Builds use Framer, Webflow, or custom Next.js hosted on platforms such as Vercel. We choose the approach around your content, functionality, and editing needs.",
     ],
-    tools: ["Figma", "Framer", "Webflow", "Adobe Illustrator"],
-    timeline: "Website design in Figma takes about one week at $3,000. Development in Framer, Webflow, or Next.js usually adds one or two weeks, depending on the page count.",
+    tools: ["Figma", "Framer", "Webflow", "Next.js", "Vercel"],
+    timeline: "One week is $3,000; a month booked upfront is $10,000. A week can cover roughly 3–5 pages designed in Figma OR design and development of a simple landing page. A month can cover a more complex multi-page website. These are scope examples, not guarantees; pages, features, content, and timing are agreed before booking.",
     work: ["next-dimension", "elevate", "brevidee"],
     faqs: [
-      {
-        title: "Do you design websites in Figma?",
-        answer: "Yes. Every page is designed in Figma first, from wireframes to responsive desktop and mobile layouts, so you can review the whole site before anything is built.",
-      },
-      {
-        title: "How long does a website take?",
-        answer: "Design takes about one week. Development in Framer, Webflow, or Next.js takes one or two more, depending on how many pages and integrations the site needs. You know the number of weeks, and the total, before work starts.",
-      },
-      {
-        title: "Can you design a website for an existing brand?",
-        answer: "Yes. If the brand is in good shape, the website builds on it. If it needs work first, the one-week Brand Sprint comes before the website.",
-      },
+      { title: "Design only or a complete website?", answer: "Both are available. I can deliver responsive designs and an organized Figma handoff, or design and develop your website. We agree on which deliverables are included before booking." },
+      { title: "What can we do in one week?", answer: "For example, roughly 3–5 pages designed in Figma OR design and development of a simple landing page. These are alternatives, not a combined package or a guarantee. Complexity, ready-to-use content, and prompt feedback determine what fits." },
+      { title: "What can we do in a month?", answer: "A month can cover a more complex multi-page website, with custom graphics, animation, interactive elements, CMS collections, integrations, forms, and image optimization as appropriate. We prioritize and agree on the scope; a monthly booking does not include every possible feature." },
+      { title: "How much does it cost?", answer: "A week costs $3,000. A month is $10,000 when booked upfront. We confirm the deliverables, schedule, and total before work begins. Platform subscriptions, hosting, and any paid third-party tools are discussed separately." },
+      { title: "Which tools do you use?", answer: "I design in Figma and develop in Framer or Webflow. For custom requirements, I also build Next.js websites hosted on platforms such as Vercel. We choose the platform around your features and how your team wants to manage content." },
+      { title: "Can you use my existing brand?", answer: "Yes. We can work with your current logo, colors, fonts, and content. If the identity needs updating, we agree on that work separately before starting the website." },
+      { title: "Can I update the website myself?", answer: "Framer and Webflow support visual editing and CMS updates. For Next.js, we can scope a CMS for the content you need to manage. The editing setup and handover are agreed as part of the project." },
+      { title: "How do revisions and payment work?", answer: "We review the work together and refine it within the agreed scope. Additional pages or features are agreed before proceeding. After we confirm scope and timing, I send an agreement and invoice; payment for the booked engagement is due upfront." },
     ],
   },
   "web-development": {
-    title: "Framer and Webflow development, launch included",
+    title: "Web development in Framer, Webflow & Next.js",
     overview: [
-      "The approved design is built as a fast, responsive site you can edit yourself. Most marketing sites are built in Framer or Webflow; a custom product or content-heavy site can be built in Next.js.",
-      "Development covers the responsive build, interactions and animation, CMS setup for blogs and case studies, forms and integrations, SEO basics like titles, descriptions, and redirects, and support through launch.",
-      "Framer suits marketing sites with rich motion that a small team edits often. Webflow suits larger CMS-driven sites. Next.js suits anything that needs custom functionality. I recommend one on the kickoff call.",
+      "Turn your approved design into a responsive website in Framer, Webflow, or custom Next.js. We choose the platform around your features, content, and editing needs.",
+      "The build can include reusable pages, animation, CMS collections, forms, and integrations. We agree on the priorities, launch checks, and handover before booking.",
     ],
-    tools: ["Framer", "Webflow", "Next.js", "Figma"],
-    timeline: "Development usually takes one or two weeks at $3,000 per week, depending on the page count, after the one-week design phase. Ongoing updates are available on the $10,000 monthly plan.",
+    tools: ["Framer", "Webflow", "Next.js", "Figma", "Vercel"],
+    timeline: "A focused week costs $3,000; a month booked upfront is $10,000. A week can cover a simple landing-page build from approved designs and ready-to-use content. Larger multi-page builds, CMS work, and integrations may need a month or longer. Deliverables and timing are agreed before booking; neither period includes every possible feature.",
     work: ["fox-berman", "periti", "ventur"],
     faqs: [
-      {
-        title: "Should my website be built in Framer or Webflow?",
-        answer: "Framer for marketing sites with lots of motion that a small team updates often; Webflow for larger sites built around a CMS. If the site needs custom functionality, Next.js. The choice is made on the kickoff call, based on how your team will use the site.",
-        links: [{ label: "Framer websites", href: "/framer-designer" }, { label: "Webflow websites", href: "/webflow-designer" }],
-      },
-      {
-        title: "Will I be able to edit the website myself?",
-        answer: "Yes. Framer and Webflow sites are handed over with the CMS set up and a walkthrough, so your team can update pages, posts, and case studies without a developer.",
-      },
-      {
-        title: "Do you handle launch and SEO setup?",
-        answer: "Yes. Launch support covers domain connection, page titles and descriptions, redirects from an old site, and a final check across devices.",
-      },
+      { title: "Design or development?", answer: "Development turns an approved design into a working website. If you also need structure, messaging, or Figma designs, we can scope web design before the build. We agree on both phases separately." },
+      { title: "Which platform do you use?", answer: "I build in Framer, Webflow, or custom Next.js. We choose around your content, integrations, interactions, and how your team wants to manage the site." },
+      { title: "What fits in one week?", answer: "A simple landing-page build from approved designs and ready-to-use content is one example. Responsive implementation, an agreed form or embed, and launch checks can be scoped around it. Complexity and feedback determine what fits; this is not a guaranteed package." },
+      { title: "What about a larger build?", answer: "A monthly engagement allows broader work such as a multi-page website, reusable templates, CMS collections, content migration, animation, forms, and integrations. We agree on priorities and timing before booking; not every feature fits into one month." },
+      { title: "How much does it cost?", answer: "A week costs $3,000. A month is $10,000 when booked upfront. We confirm the deliverables, schedule, and total before starting. Platform subscriptions, hosting, and paid third-party tools are discussed separately." },
+      { title: "Can I update the site myself?", answer: "Framer and Webflow support visual editing and CMS updates. For Next.js, we can scope a CMS for the content your team needs to manage. We agree on the editing setup and handover before the build." },
+      { title: "What happens at launch?", answer: "We check the agreed pages, responsive layouts, forms, and integrations, then handle the agreed domain setup, metadata, redirects, and handover. Ongoing maintenance or new features can be booked separately." },
+      { title: "How do revisions and payment work?", answer: "We review the working site and refine it within the agreed scope. Additional pages or features are agreed before proceeding. Once scope and timing are confirmed, I send an agreement and invoice; payment for the booked engagement is due upfront." },
     ],
   },
   "motion-graphics": {
-    title: "Motion graphics and logo animation",
+    title: "Motion graphics and animation",
     overview: [
-      "Motion makes a brand feel alive and helps it stand out in feeds and on websites. I design logo animations, brand transitions, animated social posts, and website motion that follow the identity's own rules.",
-      "Animations are delivered in the formats each channel needs: video for social and presentations, and lightweight Lottie files for websites and apps, so motion stays sharp without slowing the page down.",
-      "Every Brand Sprint already includes a logo animation; extended motion systems are built on top of it.",
+      "Bring your existing brand to life with logo animation, animated social content, website graphics, and icons, selected around your priorities.",
+      "For broader projects, we can scope promotional videos, basic explainers, longer animations, or brand-launch content. We agree on the assets, duration, complexity, and formats before booking.",
     ],
     tools: ["Adobe After Effects", "Lottie", "Rive", "Jitter"],
-    timeline: "A logo animation is included in the one-week Brand Sprint. Motion graphics, animated social posts, and website animation usually take one more week at the same $3,000 rate.",
+    timeline: "A focused week costs $3,000; a month booked upfront is $10,000. Deliverables and timing depend on the agreed animation scope.",
     work: ["orbio", "aero", "fox-berman"],
     faqs: [
-      {
-        title: "What is a logo animation used for?",
-        answer: "Website intros and loaders, social media profile videos and posts, presentation openers, and video end cards. It makes the logo recognizable in places where a static mark gets scrolled past.",
-      },
-      {
-        title: "Which file formats do you deliver?",
-        answer: "Video files for social media and presentations, and Lottie files for websites and apps, which stay sharp at any size and load quickly.",
-      },
-      {
-        title: "Is motion included in the Brand Sprint?",
-        answer: "The logo animation is. A fuller motion system, including transitions, animated social templates, and website animation, is usually one more week at the same flat rate.",
-      },
+      { title: "What fits in one week?", answer: "A focused week can cover a selection such as logo animation, animated social or Instagram content, website feature-card graphics, illustrations, or icons. We agree on priorities, quantity, and complexity before booking; the week does not include every example." },
+      { title: "What can we do in a month?", answer: "A month allows more extensive work such as promotional videos for a brand, service, or product, basic explainers, longer animations, motion graphics, or brand-launch content. We agree on a selection and schedule; some projects may need longer." },
+      { title: "How much does it cost?", answer: "A focused week costs $3,000. A month is $10,000 when booked upfront. We confirm deliverables, timing, and the total before starting." },
+      { title: "What do you need from me?", answer: "Share your brand files, intended channels, and references. For videos, we also agree on the script, imagery, audio, and who supplies each asset before work begins." },
+      { title: "Which files do I receive?", answer: "You receive the agreed video formats, sizes, and versions. Lottie can be scoped for suitable website animations. We confirm compatibility and any editable source files before booking." },
+      { title: "How do revisions work?", answer: "We review the direction and keyframes before refining the animation. Revisions within the agreed scope are included; extra assets or changes in direction are agreed before proceeding." },
+      { title: "When do I pay?", answer: "Once scope and timing are confirmed, I send the agreement and invoice. Payment for the booked engagement is due upfront, before work begins." },
     ],
   },
 };

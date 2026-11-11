@@ -7,12 +7,12 @@ export const WebDesignPage = () => (
   <>
     <Helmet>
       <title>Website Designer NYC: Figma, Framer & Webflow | Ebaq Design</title>
-      <meta name="description" content="Website design by a senior freelance designer in New York: wireframes, responsive Figma layouts, and messaging, built in Framer or Webflow. $3,000/week." />
+      <meta name="description" content="Website design by a senior freelance designer in New York: responsive Figma designs and development in Framer, Webflow, or Next.js. $3,000/week or $10,000/month." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="Website Designer NYC: Figma, Framer & Webflow | Ebaq Design" />
-      <meta property="og:description" content="Website design by a senior freelance designer in New York: wireframes, responsive Figma layouts, and messaging, built in Framer or Webflow. $3,000/week." />
+      <meta property="og:description" content="Website design by a senior freelance designer in New York: responsive Figma designs and development in Framer, Webflow, or Next.js. $3,000/week or $10,000/month." />
     </Helmet>
     <ServiceDetailLayout
       slug="web-design"

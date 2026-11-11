@@ -12,8 +12,10 @@ export type MediaProps = {
   type: "image" | "lottie" | "video";
   src: string;
   alt?: string;
+  poster?: string;
   bgColor?: string;
   fit?: "contain" | "cover";
+  position?: "top" | "center";
   scale?: number;
   offsetY?: number;
 };
@@ -101,9 +103,10 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
     return (
       <LazyVideo
         src={item.src}
+        poster={item.poster}
         frameClassName="absolute inset-0 size-full"
         frameStyle={{ backgroundColor: item.bgColor }}
-        className={`size-full ${item.fit === "contain" ? "object-contain" : "object-cover"}`}
+        className={`size-full ${item.fit === "contain" ? "object-contain" : "object-cover"} ${item.position === "top" ? "object-top" : "object-center"}`}
         autoPlay={!reduceMotion}
         preload="none"
         aria-hidden="true"
@@ -114,7 +117,7 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
 
   return (
     <img
-      className="absolute inset-0 size-full object-cover"
+      className={`absolute inset-0 size-full ${item.fit === "contain" ? "object-contain" : "object-cover"} ${item.position === "top" ? "object-top" : "object-center"}`}
       src={item.src}
       alt={item.alt}
       loading="lazy"

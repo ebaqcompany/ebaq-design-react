@@ -1,7 +1,7 @@
 import { useTestimonialAutoplay } from "../hooks/useTestimonialAutoplay";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui";
 import { clientLogoClass } from "../clientLogo";
-import { Testimonial32Defaults } from "./Testimonial32";
+import { Testimonial32Defaults, TestimonialPosition } from "./Testimonial32";
 
 // Work imagery is matched by client identity, never by carousel position.
 // Clients without a verified project visual keep a text-and-attribution layout.
@@ -26,7 +26,7 @@ const Attribution = ({ client }: { client: Client }) => (
   <div className="mt-6 flex w-full flex-wrap items-center gap-x-16 gap-y-6 md:mt-8">
     <div className="flex items-center gap-4">
       <img src={client.avatar.src} alt={client.avatar.alt} loading="lazy" className="size-14 shrink-0 rounded-full object-cover" />
-      <div><p className="font-semibold">{client.name}</p><p>{client.position}</p></div>
+      <div><p className="font-semibold leading-tight">{client.name}</p><TestimonialPosition name={client.name} position={client.position} /></div>
     </div>
     {client.logo && <img src={client.logo.src} alt={client.logo.alt} loading="lazy" className={`${clientLogoClass(client.logo.scale)} ${client.logo.className ?? ""}`.trim()} />}
   </div>

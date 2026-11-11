@@ -1,3 +1,4 @@
+import { ServicePixelEdge } from "./ServicePixelEdge";
 import type { ServiceSlug } from "../data/services";
 
 const imageDescriptions: Record<ServiceSlug, string> = {
@@ -9,25 +10,35 @@ const imageDescriptions: Record<ServiceSlug, string> = {
   "motion-graphics": "Arek working at his studio workstation",
 };
 
-// Whole-cell steps share the homepage grid token and stay centered with it.
-const steps = [1, 2, 1, 0, 1, 1, 2, 0, 1, 2, 1, 1, 0, 2, 1, 0, 1, 2, 2, 1, 0, 1, 2, 1, 0, 2, 1];
-const pixelSteps = [...steps, ...steps, ...steps];
-// One continuous silhouette avoids antialiased seams between adjacent blocks.
-const edgePath = pixelSteps.reduce((path, height, column) => {
-  const top = 2 - height;
-  return `${path}${column === 0 ? `M0 ${top}` : ` V${top}`} H${column + 1}`;
-}, "") + ` V3 H0 Z`;
+const illustrationDescriptions: Record<ServiceSlug, string> = {
+  "brand-strategy": "Planning direction with a map",
+  "logo-design": "Designer drawing an original mark on a tablet",
+  "brand-design": "Artist developing a visual identity with color and composition",
+  "web-design": "Creative work displayed on a website monitor",
+  "web-development": "Working with a laptop and a data dashboard",
+  "motion-graphics": "Creative expression through music and movement",
+};
 
-export const ServiceArtwork = ({ slug, eager = false, className = "" }: { slug: ServiceSlug; eager?: boolean; className?: string }) => (
-  <div className={`service-artwork bg-brand-grid relative aspect-square w-full overflow-hidden ${className}`}>
-    <img
-      src={`/images/services/cutouts/${slug}.png`}
-      alt={imageDescriptions[slug]}
-      width={1080} height={1080} loading={eager ? "eager" : "lazy"} decoding="async"
-      className="absolute inset-0 block size-full object-contain"
-    />
-    <svg aria-hidden="true" viewBox="0 0 81 2" preserveAspectRatio="none" className="service-pixel-edge pointer-events-none absolute bottom-0">
-      <path d={edgePath} />
-    </svg>
-  </div>
-);
+const vectorDescriptions: Record<ServiceSlug, string> = {
+  "brand-strategy": "A positioning map with one brand standing apart from a cluster of competitors",
+  "logo-design": "A logo mark drawn over circular construction guides",
+  "brand-design": "Three stacked brand cards in black, blue, and white, the front one carrying the logo",
+  "web-design": "A browser window with a headline, an image, and a cursor on the main button",
+  "web-development": "A code window showing a large pair of angle brackets and a slash",
+  "motion-graphics": "A ball bouncing along a dashed motion path",
+};
+
+export const ServiceArtwork = ({ slug, eager = false, illustrated = false, vector = false, pixelEdge = true, className = "" }: { slug: ServiceSlug; eager?: boolean; illustrated?: boolean; vector?: boolean; pixelEdge?: boolean; className?: string }) => {
+  const vectorDescription = vector ? vectorDescriptions[slug] : undefined;
+  return (
+    <div data-tone={illustrated || vectorDescription ? "light" : undefined} data-art={vectorDescription ? "vector" : undefined} className={`service-artwork bg-brand-grid relative aspect-square w-full overflow-hidden ${className}`}>
+      <img
+        src={vectorDescription ? `/images/services/vector/${slug}.svg` : illustrated ? `/images/services/illustrations/${slug}.svg` : `/images/services/cutouts/${slug}.png`}
+        alt={vectorDescription ?? (illustrated ? illustrationDescriptions[slug] : imageDescriptions[slug])}
+        width={1080} height={1080} loading={eager ? "eager" : "lazy"} decoding="async"
+        className={illustrated && !vectorDescription ? "absolute inset-[5%] block size-[90%] object-contain" : "absolute inset-0 block size-full object-contain"}
+      />
+      {pixelEdge && <ServicePixelEdge />}
+    </div>
+  );
+};

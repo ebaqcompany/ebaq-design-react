@@ -3110,5 +3110,20 @@
       "alt": "Top 10 Branding Agencies for Startups in 2026",
       "thumbnail": "/images/blog/startup-branding-agencies/cover-collage-768w.webp"
     }
+  },
+  {
+    "slug": "why-ai-startups-look-the-same",
+    "url": "/blog/why-ai-startups-look-the-same",
+    "title": "Why Every AI Startup Looks the Same (And How to Break the Uniform)",
+    "description": "Why AI startups all look the same — and how to break the category uniform by branding for your outcome world, not the model stack.",
+    "category": "Branding",
+    "categorySlug": "branding",
+    "readTime": "6 min read",
+    "date": "Sep 21, 2026",
+    "image": {
+      "src": "/images/blog/why-ai-startups-look-the-same/cover-ai-uniform-break.webp",
+      "alt": "Grid of near-identical dark AI startup landing cards with one warm cream card breaking the pattern",
+      "thumbnail": "/images/blog/why-ai-startups-look-the-same/cover-ai-uniform-break-768w.webp"
+    }
   }
 ]

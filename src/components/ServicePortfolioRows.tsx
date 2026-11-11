@@ -1,26 +1,40 @@
 import { DraggableRow, Header78Defaults, type MediaProps } from "./Header78";
+import { brandStrategyPortfolioRows, brandStrategyPortfolioLabels } from "../data/brandStrategyPortfolio";
 import type { ServiceSlug } from "../data/services";
 import { serviceMotionMedia } from "../data/serviceMotionMedia";
 
 const placeholder: MediaProps = { type: "image", src: "/images/placeholders/relume-image.svg", alt: "Portfolio image placeholder to replace" };
 
 export const ServicePortfolioRows = ({ slug }: { slug: ServiceSlug }) => {
-  const isPlaceholder = slug === "brand-strategy" || slug === "web-development";
   const items = slug === "logo-design" ? Header78Defaults.row1
     : slug === "brand-design" ? Header78Defaults.row2.filter((item) => !item.src.includes("lyntics"))
     : slug === "web-design" ? Header78Defaults.row3
+    : slug === "web-development" ? [
+      { type: "image" as const, src: "/case-study/savory/25-website-design.jpg", alt: "The Savory Team website design with New York skyline and rooftop terrace photography", fit: "cover" as const },
+      { type: "image" as const, src: "/case-study/spark/07-website.webp", alt: "Spark website design", fit: "cover" as const },
+      { type: "video" as const, src: "/case-study/orbio/04-heroes.webm", alt: "Orbio website hero designs", fit: "cover" as const },
+      { type: "image" as const, src: "/case-study/next-dimension/old-site/04-website.webp", alt: "NextDimension website design", fit: "cover" as const },
+      { type: "image" as const, src: "/case-study/aero/05-website.webp", alt: "Aero website design", fit: "cover" as const },
+      { type: "image" as const, src: "/case-study/elevate/03-website.webp", alt: "Elevate website design", position: "top" as const, fit: "cover" as const },
+      { type: "image" as const, src: "/case-study/brevidee/10-website.webp", alt: "Brevidee website design", fit: "cover" as const },
+      { type: "image" as const, src: "/case-study/wingnut/03-website.webp", alt: "Wingnut website design", fit: "cover" as const },
+      { type: "image" as const, src: "/case-study/ventur/06-website.webp", alt: "Ventur website design", fit: "cover" as const },
+      { type: "image" as const, src: "/case-study/airport-executive/07-website.webp", alt: "Airport Executive website design", fit: "cover" as const },
+      { type: "video" as const, src: "/case-study/sweetgrass/02-product.webm", alt: "Sweetgrass product video", fit: "cover" as const },
+      { type: "image" as const, src: "/case-study/periti/02-macbook.webp", alt: "Periti website on a MacBook", fit: "cover" as const },
+      { type: "video" as const, src: "/case-study/medihuanna/03-product.webm", alt: "Medihuanna product video", fit: "cover" as const },
+    ]
     : slug === "motion-graphics" ? serviceMotionMedia.map((item) => ({ ...item, fit: "contain" as const, bgColor: "#000" }))
     : Array.from({ length: 12 }, () => placeholder);
   const count = Math.ceil(items.length / 3);
-  const rows = [items.slice(0, count), items.slice(count, count * 2), items.slice(count * 2)];
+  const rows = slug === "brand-strategy" ? brandStrategyPortfolioRows : [items.slice(0, count), items.slice(count, count * 2), items.slice(count * 2)];
   return (
-    <section id="service-portfolio" aria-label={isPlaceholder ? "Portfolio placeholders" : "Selected service work"} className="flex flex-col gap-4 overflow-hidden bg-white pb-16 md:pb-24 lg:pb-28">
+    <section id="service-portfolio" aria-label="Selected service work" className="flex flex-col gap-4 overflow-hidden bg-white pb-16 md:pb-24 lg:pb-28">
       {rows.map((row, index) => (
-        <div key={index} data-service-portfolio-row={index + 1}>
-          <DraggableRow items={row} direction={index === 1 ? "right" : "left"} initialOffset={index === 1 ? 208 : 0} showBorder mediaAspect={slug === "motion-graphics" ? "16/9" : "4/3"} />
+        <div key={index} data-service-portfolio-row={index + 1} role={slug === "brand-strategy" ? "group" : undefined} aria-label={slug === "brand-strategy" ? brandStrategyPortfolioLabels[index] : undefined}>
+          <DraggableRow items={row} direction={index === 1 ? "right" : "left"} initialOffset={index === 1 ? 208 : 0} showBorder mediaAspect={slug === "motion-graphics" || (slug === "brand-strategy" && index === 0) ? "16/9" : "4/3"} />
         </div>
       ))}
-      {isPlaceholder && <p className="mt-4 px-[5%] text-center text-sm text-black/60">Work examples to be selected.</p>}
     </section>
   );
 };

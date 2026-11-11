@@ -1,0 +1,507 @@
+[
+  {
+    "name": "Savory",
+    "source": "https://guidelines.online/savory.md",
+    "colors": [
+      "#7B0F1E",
+      "#F2EDEA",
+      "#292C2E",
+      "#DCD6CA",
+      "#B3C3D6"
+    ],
+    "fontFaces": [
+      {
+        "family": "Roxborough CF",
+        "url": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/user-assets/xCARgq4YIvRKgbr1pIZzpmcfJKw1/d2f36273-0127-4871-86f2-362a05086a66",
+        "style": "normal"
+      },
+      {
+        "family": "PPEditorialOld",
+        "url": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/user-assets/xCARgq4YIvRKgbr1pIZzpmcfJKw1/b764ac37-adea-4a7e-9990-e92d998d4d0e",
+        "style": "italic"
+      },
+      {
+        "family": "PPNeueCorp-ExtendedMedium",
+        "url": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/user-assets/xCARgq4YIvRKgbr1pIZzpmcfJKw1/51f13788-b25e-4f42-80fd-04c79f4d4bd9",
+        "style": "normal"
+      }
+    ],
+    "logoSets": [
+      {
+        "label": "Savory logo",
+        "variants": [
+          {
+            "background": "#7B0F1E",
+            "src": "https://guidelines.online/savory/logos/savory-logo-inverted.svg"
+          },
+          {
+            "background": "#B3C3D6",
+            "src": "https://guidelines.online/savory/logos/savory-logo-wax.svg"
+          },
+          {
+            "background": "#F2EDEA",
+            "src": "https://guidelines.online/savory/logos/savory-logo-full.svg"
+          },
+          {
+            "background": "#292C2E",
+            "src": "https://guidelines.online/savory/logos/savory-logo-inverted.svg"
+          }
+        ]
+      },
+      {
+        "label": "Savory stamp square",
+        "variants": [
+          {
+            "background": "#7B0F1E",
+            "src": "https://guidelines.online/savory/logos/savory-stamp-square-inverted.svg"
+          },
+          {
+            "background": "#B3C3D6",
+            "src": "https://guidelines.online/savory/logos/savory-stamp-square-wax.svg"
+          },
+          {
+            "background": "#F2EDEA",
+            "src": "https://guidelines.online/savory/logos/savory-stamp-square-full.svg"
+          },
+          {
+            "background": "#292C2E",
+            "src": "https://guidelines.online/savory/logos/savory-stamp-square-inverted.svg"
+          }
+        ]
+      },
+      {
+        "label": "Savory favicon",
+        "variants": [
+          {
+            "background": "#7B0F1E",
+            "src": "https://guidelines.online/savory/logos/savory-favicon-inverted.svg"
+          },
+          {
+            "background": "#B3C3D6",
+            "src": "https://guidelines.online/savory/logos/savory-favicon-wax.svg"
+          },
+          {
+            "background": "#F2EDEA",
+            "src": "https://guidelines.online/savory/logos/savory-favicon-full.svg"
+          },
+          {
+            "background": "#292C2E",
+            "src": "https://guidelines.online/savory/logos/savory-favicon-inverted.svg"
+          }
+        ]
+      },
+      {
+        "label": "Savory logo team",
+        "variants": [
+          {
+            "background": "#7B0F1E",
+            "src": "https://guidelines.online/savory/logos/savory-logo-team-inverted.svg"
+          },
+          {
+            "background": "#B3C3D6",
+            "src": "https://guidelines.online/savory/logos/savory-logo-team-wax.svg"
+          },
+          {
+            "background": "#F2EDEA",
+            "src": "https://guidelines.online/savory/logos/savory-logo-team-full.svg"
+          },
+          {
+            "background": "#292C2E",
+            "src": "https://guidelines.online/savory/logos/savory-logo-team-inverted.svg"
+          }
+        ]
+      },
+      {
+        "label": "Savory logo team tagline",
+        "variants": [
+          {
+            "background": "#7B0F1E",
+            "src": "https://guidelines.online/savory/logos/savory-logo-team-tagline-inverted.svg"
+          },
+          {
+            "background": "#B3C3D6",
+            "src": "https://guidelines.online/savory/logos/savory-logo-team-tagline-wax.svg"
+          },
+          {
+            "background": "#F2EDEA",
+            "src": "https://guidelines.online/savory/logos/savory-logo-team-tagline-full.svg"
+          },
+          {
+            "background": "#292C2E",
+            "src": "https://guidelines.online/savory/logos/savory-logo-team-tagline-inverted.svg"
+          }
+        ]
+      }
+    ],
+    "applicationImages": [
+      {
+        "label": "Biz Cards",
+        "src": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/user-assets/xCARgq4YIvRKgbr1pIZzpmcfJKw1/9728382e-6e6f-4829-8c2a-21f838bcd035"
+      },
+      {
+        "label": "Social Media",
+        "src": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/user-assets/xCARgq4YIvRKgbr1pIZzpmcfJKw1/15243fb2-4d56-4aa8-b461-418d74258364"
+      },
+      {
+        "label": "Parallax",
+        "src": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/user-assets/xCARgq4YIvRKgbr1pIZzpmcfJKw1/6083f9fa-bbe4-4f4f-aec2-d01620229d56"
+      }
+    ]
+  },
+  {
+    "name": "Wingnut",
+    "source": "https://guidelines.online/wingnut.md",
+    "colors": [
+      "#E04F31",
+      "#1F2936",
+      "#E1E0DA",
+      "#77AEB1",
+      "#3D4A56"
+    ],
+    "fontFaces": [
+      {
+        "family": "PPFormula",
+        "url": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1750291566120/fonts/font1/0_500_normal.otf",
+        "style": "normal"
+      },
+      {
+        "family": "Georgia",
+        "url": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1750291566120/fonts/family_1/0_400_normal.ttf",
+        "style": "normal"
+      }
+    ],
+    "logoSets": [
+      {
+        "label": "Primary Logo",
+        "variants": [
+          {
+            "background": "#E1E0DA",
+            "src": "https://guidelines.online/wingnut/logos/primary-logo-full-color.svg"
+          },
+          {
+            "background": "#1F2936",
+            "src": "https://guidelines.online/wingnut/logos/primary-logo-inverted.svg"
+          },
+          {
+            "background": "#E04F31",
+            "src": "https://guidelines.online/wingnut/logos/primary-logo-full-color.svg"
+          },
+          {
+            "background": "#77AEB1",
+            "src": "https://guidelines.online/wingnut/logos/primary-logo-full-color.svg"
+          }
+        ]
+      },
+      {
+        "label": "Logo Horizontal",
+        "variants": [
+          {
+            "background": "#E1E0DA",
+            "src": "https://guidelines.online/wingnut/logos/logo-horizontal-full-color.svg"
+          },
+          {
+            "background": "#1F2936",
+            "src": "https://guidelines.online/wingnut/logos/logo-horizontal-inverted.svg"
+          },
+          {
+            "background": "#E04F31",
+            "src": "https://guidelines.online/wingnut/logos/logo-horizontal-full-color.svg"
+          },
+          {
+            "background": "#77AEB1",
+            "src": "https://guidelines.online/wingnut/logos/logo-horizontal-full-color.svg"
+          }
+        ]
+      },
+      {
+        "label": "Logo Vertical",
+        "variants": [
+          {
+            "background": "#E1E0DA",
+            "src": "https://guidelines.online/wingnut/logos/logo-vertical-full-color.svg"
+          },
+          {
+            "background": "#1F2936",
+            "src": "https://guidelines.online/wingnut/logos/logo-vertical-inverted.svg"
+          },
+          {
+            "background": "#E04F31",
+            "src": "https://guidelines.online/wingnut/logos/logo-vertical-full-color.svg"
+          },
+          {
+            "background": "#77AEB1",
+            "src": "https://guidelines.online/wingnut/logos/logo-vertical-full-color.svg"
+          }
+        ]
+      },
+      {
+        "label": "Logo Badge",
+        "variants": [
+          {
+            "background": "#E1E0DA",
+            "src": "https://guidelines.online/wingnut/logos/logo-badge-full-color.svg"
+          },
+          {
+            "background": "#1F2936",
+            "src": "https://guidelines.online/wingnut/logos/logo-badge-inverted.svg"
+          },
+          {
+            "background": "#E04F31",
+            "src": "https://guidelines.online/wingnut/logos/logo-badge-full-color.svg"
+          },
+          {
+            "background": "#77AEB1",
+            "src": "https://guidelines.online/wingnut/logos/logo-badge-full-color.svg"
+          }
+        ]
+      },
+      {
+        "label": "Logo Mark",
+        "variants": [
+          {
+            "background": "#E1E0DA",
+            "src": "https://guidelines.online/wingnut/logos/logo-mark-full-color.svg"
+          },
+          {
+            "background": "#1F2936",
+            "src": "https://guidelines.online/wingnut/logos/logo-mark-inverted.svg"
+          },
+          {
+            "background": "#E04F31",
+            "src": "https://guidelines.online/wingnut/logos/logo-mark-full-color.svg"
+          },
+          {
+            "background": "#77AEB1",
+            "src": "https://guidelines.online/wingnut/logos/logo-mark-full-color.svg"
+          }
+        ]
+      }
+    ],
+    "applicationImages": [
+      {
+        "label": "Motion Graphics",
+        "src": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1750291566120/examples/example-1750291589179-0.jpeg"
+      },
+      {
+        "label": "Pitch Deck",
+        "src": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1750291566120/examples/example-1750291589180-1.jpeg"
+      },
+      {
+        "label": "Podcast Cover",
+        "src": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1750291566120/examples/example-1750291589181-2.jpeg"
+      }
+    ]
+  },
+  {
+    "name": "Aero Health",
+    "source": "https://guidelines.online/aero.md",
+    "colors": [
+      "#63F3C0",
+      "#2E2E2E",
+      "#036043",
+      "#F0F0F0"
+    ],
+    "fontFaces": [
+      {
+        "family": "Gilroy",
+        "url": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1769877640858/fonts/font1/0_400_normal.ttf",
+        "style": "normal"
+      },
+      {
+        "family": "Gilroy",
+        "url": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1769877640858/fonts/font2/0_400_normal.ttf",
+        "style": "normal"
+      }
+    ],
+    "logoSets": [
+      {
+        "label": "Logo primary",
+        "variants": [
+          {
+            "background": "#F0F0F0",
+            "src": "https://guidelines.online/aero/logos/logo-primary-full-color.svg"
+          },
+          {
+            "background": "#2E2E2E",
+            "src": "https://guidelines.online/aero/logos/logo-primary-inverted.svg"
+          },
+          {
+            "background": "#000000",
+            "src": "https://guidelines.online/aero/logos/logo-primary-white.svg"
+          },
+          {
+            "background": "#FFFFFF",
+            "src": "https://guidelines.online/aero/logos/logo-primary-black.svg"
+          },
+          {
+            "background": "#63F3C0",
+            "src": "https://guidelines.online/aero/logos/logo-primary-dark-green.svg"
+          },
+          {
+            "background": "#036043",
+            "src": "https://guidelines.online/aero/logos/logo-primary-light-green.svg"
+          }
+        ]
+      },
+      {
+        "label": "Aero health",
+        "variants": [
+          {
+            "background": "#F0F0F0",
+            "src": "https://guidelines.online/aero/logos/aero-health-full-color.svg"
+          },
+          {
+            "background": "#2E2E2E",
+            "src": "https://guidelines.online/aero/logos/aero-health-inverted.svg"
+          },
+          {
+            "background": "#000000",
+            "src": "https://guidelines.online/aero/logos/aero-health-white.svg"
+          },
+          {
+            "background": "#FFFFFF",
+            "src": "https://guidelines.online/aero/logos/aero-health-black.svg"
+          },
+          {
+            "background": "#63F3C0",
+            "src": "https://guidelines.online/aero/logos/aero-health-dark-green.svg"
+          },
+          {
+            "background": "#036043",
+            "src": "https://guidelines.online/aero/logos/aero-health-light-green.svg"
+          }
+        ]
+      },
+      {
+        "label": "Aero iq",
+        "variants": [
+          {
+            "background": "#F0F0F0",
+            "src": "https://guidelines.online/aero/logos/aero-iq-full-color.svg"
+          },
+          {
+            "background": "#2E2E2E",
+            "src": "https://guidelines.online/aero/logos/aero-iq-inverted.svg"
+          },
+          {
+            "background": "#000000",
+            "src": "https://guidelines.online/aero/logos/aero-iq-white.svg"
+          },
+          {
+            "background": "#FFFFFF",
+            "src": "https://guidelines.online/aero/logos/aero-iq-black.svg"
+          },
+          {
+            "background": "#63F3C0",
+            "src": "https://guidelines.online/aero/logos/aero-iq-dark-green.svg"
+          },
+          {
+            "background": "#036043",
+            "src": "https://guidelines.online/aero/logos/aero-iq-light-green.svg"
+          }
+        ]
+      },
+      {
+        "label": "Aero slogan",
+        "variants": [
+          {
+            "background": "#F0F0F0",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-full-color.svg"
+          },
+          {
+            "background": "#2E2E2E",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-inverted.svg"
+          },
+          {
+            "background": "#000000",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-white.svg"
+          },
+          {
+            "background": "#FFFFFF",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-black.svg"
+          },
+          {
+            "background": "#63F3C0",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-dark-green.svg"
+          },
+          {
+            "background": "#036043",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-light-green.svg"
+          }
+        ]
+      },
+      {
+        "label": "Aero slogan vertical",
+        "variants": [
+          {
+            "background": "#F0F0F0",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-vertical-full-color.svg"
+          },
+          {
+            "background": "#2E2E2E",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-vertical-inverted.svg"
+          },
+          {
+            "background": "#000000",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-vertical-white.svg"
+          },
+          {
+            "background": "#FFFFFF",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-vertical-black.svg"
+          },
+          {
+            "background": "#63F3C0",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-vertical-dark-green.svg"
+          },
+          {
+            "background": "#036043",
+            "src": "https://guidelines.online/aero/logos/aero-slogan-vertical-light-green.svg"
+          }
+        ]
+      },
+      {
+        "label": "Aero mark",
+        "variants": [
+          {
+            "background": "#F0F0F0",
+            "src": "https://guidelines.online/aero/logos/aero-mark-full-color.svg"
+          },
+          {
+            "background": "#2E2E2E",
+            "src": "https://guidelines.online/aero/logos/aero-mark-inverted.svg"
+          },
+          {
+            "background": "#000000",
+            "src": "https://guidelines.online/aero/logos/aero-mark-white.svg"
+          },
+          {
+            "background": "#FFFFFF",
+            "src": "https://guidelines.online/aero/logos/aero-mark-black.svg"
+          },
+          {
+            "background": "#63F3C0",
+            "src": "https://guidelines.online/aero/logos/aero-mark-dark-green.svg"
+          },
+          {
+            "background": "#036043",
+            "src": "https://guidelines.online/aero/logos/aero-mark-light-green.svg"
+          }
+        ]
+      }
+    ],
+    "applicationImages": [
+      {
+        "label": "aero social",
+        "src": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1769877640858/examples/example-1769894632173-0.jpeg"
+      },
+      {
+        "label": "aero cap",
+        "src": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1769877640858/examples/example-1769894644148-0.jpeg"
+      },
+      {
+        "label": "aero billboards",
+        "src": "https://storage.googleapis.com/logostyle-guide.firebasestorage.app/style-guides/guide_1769877640858/examples/example-1769894652492-0.jpeg"
+      }
+    ]
+  }
+]

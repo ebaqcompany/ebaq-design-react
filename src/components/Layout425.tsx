@@ -12,14 +12,6 @@ type Props = React.ComponentPropsWithoutRef<"section"> & {
   caseStudyUrl?: string;
 };
 
-const imageClasses = {
-  one: "absolute -left-16 bottom-[80%] w-full max-w-[9rem] sm:-left-8 sm:max-w-[15rem] md:bottom-3/4 md:left-[20%] lg:max-w-xs",
-  two: "absolute -left-8 top-[72%] w-full max-w-[9rem] sm:-left-24 sm:top-[60%] sm:max-w-[15rem] md:left-auto md:top-[65%] lg:max-w-xs",
-  three: "absolute top-[75%] w-full max-w-[9rem] sm:top-[65%] sm:max-w-[15rem] md:-right-[80%] md:top-[80%] lg:max-w-xs",
-  four: "absolute -right-8 bottom-[78%] w-full max-w-[9rem] sm:-right-24 sm:bottom-[72%] sm:max-w-[15rem] md:bottom-[70%] md:right-0 lg:max-w-xs",
-  five: "absolute -right-16 bottom-[22%] flex w-full max-w-[9rem] items-center sm:-right-12 sm:bottom-[18%] sm:max-w-[15rem] md:bottom-[4%] md:right-[10%] lg:bottom-[2%] lg:max-w-xs",
-};
-
 const toImage = ({ src, alt, kind }: CaseStudyBrandSprintGallery["logo"]): ImageProps => ({
   src,
   alt,
@@ -101,11 +93,11 @@ const useResponsiveTransform = ({ scrollYProgress, isMobile, isTablet }: Transfo
 export const useLayoutTransforms = (scrollYProgress: MotionValue<number>, isMobile: boolean, isTablet: boolean) => {
   const params = { scrollYProgress, isMobile, isTablet };
   return {
-    imageOne: { x: useResponsiveTransform(params, ["120%", "0%"], ["90%", "0%"], ["120%", "0%"]), y: useResponsiveTransform(params, ["60vh", "0%"], ["90%", "0%"], ["100%", "0%"] ) },
-    imageTwo: { x: useResponsiveTransform(params, ["100%", "0%"], ["120%", "0%"], ["120%", "0%"]), y: useResponsiveTransform(params, ["-60vh", "0%"], ["-80%", "0%"], ["-90%", "0%"] ) },
-    imageThree: { x: useResponsiveTransform(params, ["0%", "0%"], ["20%", "0%"], ["20%", "0%"]), y: useResponsiveTransform(params, ["-80vh", "0%"], ["-180%", "0%"], ["-170%", "0%"] ) },
-    imageFour: { x: useResponsiveTransform(params, ["-100%", "0%"], ["-110%", "0%"], ["-110%", "0%"]), y: useResponsiveTransform(params, ["60vh", "0%"], ["90%", "0%"], ["90%", "0%"] ) },
-    imageFive: { x: useResponsiveTransform(params, ["-110%", "0%"], ["-100%", "0%"], ["-100%", "0%"]), y: useResponsiveTransform(params, ["-60vh", "0%"], ["-90%", "0%"], ["-90%", "0%"] ) },
+    imageOne: { x: useResponsiveTransform(params, ["-3vw", "-75vw"], ["-3vw", "-55vw"], ["-3vw", "-45vw"]), y: useResponsiveTransform(params, ["-2vh", "-35vh"], ["-2vh", "-35vh"], ["-2vh", "-35vh"]) },
+    imageTwo: { x: useResponsiveTransform(params, ["3vw", "75vw"], ["3vw", "55vw"], ["3vw", "45vw"]), y: useResponsiveTransform(params, ["-2vh", "-35vh"], ["-2vh", "-35vh"], ["-2vh", "-35vh"]) },
+    imageThree: { x: useResponsiveTransform(params, ["0vw", "0vw"], ["0vw", "0vw"], ["0vw", "0vw"]), y: useResponsiveTransform(params, ["-3vh", "-65vh"], ["-3vh", "-65vh"], ["-3vh", "-65vh"]) },
+    imageFour: { x: useResponsiveTransform(params, ["-2vw", "-75vw"], ["-2vw", "-55vw"], ["-2vw", "-45vw"]), y: useResponsiveTransform(params, ["2vh", "35vh"], ["2vh", "35vh"], ["2vh", "35vh"]) },
+    imageFive: { x: useResponsiveTransform(params, ["2vw", "75vw"], ["2vw", "55vw"], ["2vw", "45vw"]), y: useResponsiveTransform(params, ["2vh", "35vh"], ["2vh", "35vh"], ["2vh", "35vh"]) },
   };
 };
 
@@ -154,10 +146,13 @@ export const Layout425 = (props: Props) => {
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });
   const transforms = useLayoutTransforms(scrollYProgress, isMobile, isTablet);
   return <section ref={sectionRef} id="brand-sprint" className="bg-brand-grid relative h-[300vh] md:pb-[12%] lg:pb-[15%]">
-    <div className="bg-brand-grid sticky top-0 z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden md:overflow-visible">
-      <div className="absolute bottom-0 left-0 right-0 top-0 z-20 flex h-full w-full items-center justify-center md:right-auto md:ml-[5%] md:w-[30%] md:justify-start"><motion.div className={imageClasses.one} style={transforms.imageOne}><Media image={images[0]} /></motion.div><motion.div className={imageClasses.two} style={transforms.imageTwo}><Media image={images[1]} /></motion.div><motion.div className={imageClasses.three} style={transforms.imageThree}><Media image={images[2]} /></motion.div></div>
-      <div className="absolute bottom-0 right-0 top-0 z-20 flex h-full w-full items-center justify-center md:mx-[5%] md:w-[30%] md:justify-end"><motion.div className={imageClasses.four} style={transforms.imageFour}><Media image={images[3]} /></motion.div>{fifthImage && <motion.div className={imageClasses.five} style={transforms.imageFive}><Media image={fifthImage} /></motion.div>}</div>
-      <div className="relative z-10 -mt-[20%] w-full md:mt-0"><div className="px-[5%] py-16 text-center md:py-24 lg:py-28"><div className="container mx-auto flex w-full max-w-lg flex-col items-center"><h2 className="mb-5 w-full text-center uppercase md:mb-6 text-10xl">{heading.split("\n").map((line) => <span key={line} className="block text-center">{line}</span>)}</h2>{description && <p className="mx-auto max-w-sm text-center font-semibold md:text-md">{description}</p>}<div className="mt-6 md:mt-8"><a className="button-inverted button-inverted--brand-surface" href={caseStudyUrl}>See case study</a></div></div></div></div>
+    <div className="bg-brand-grid sticky top-0 z-10 flex h-[100svh] flex-col items-center justify-center overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden" aria-hidden="true">
+        {[images[0], images[1], images[2], images[3], fifthImage].map((image, index) => image && <div key={index} className="absolute left-1/2 top-1/2 w-[55vw] max-w-[15rem] -translate-x-1/2 -translate-y-1/2 md:w-[35vw] lg:w-[30vw] lg:max-w-xs">
+          <motion.div style={[transforms.imageOne, transforms.imageTwo, transforms.imageThree, transforms.imageFour, transforms.imageFive][index]}><Media image={image} /></motion.div>
+        </div>)}
+      </div>
+      <div className="relative z-10 w-full"><div className="px-[5%] py-16 text-center md:py-24 lg:py-28"><div className="container mx-auto flex w-full max-w-lg flex-col items-center"><h2 className="mb-5 w-full text-center uppercase md:mb-6 text-10xl">{heading.split("\n").map((line) => <span key={line} className="block text-center">{line}</span>)}</h2>{description && <p className="mx-auto max-w-sm text-center font-semibold md:text-md">{description}</p>}<div className="mt-6 md:mt-8"><a className="button-inverted button-inverted--brand-surface" href={caseStudyUrl}>See case study</a></div></div></div></div>
     </div><div className="absolute inset-0 -z-10 mt-[100vh]" />
   </section>;
 };

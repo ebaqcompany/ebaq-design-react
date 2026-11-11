@@ -1,0 +1,7 @@
+# Local Jasper animation reference
+
+Public source page: https://www.jasper.ai/ . Strategy uses jasper-platform-experts.json; Web Design uses jasper-platform-agents.json. Exact source URLs and transformations are in sources.json. The unchanged source JSONs are preserved with -source suffix.
+
+These are actual Lottie vector animations, 430×201, 60fps, 300 frames (5 seconds), with no external image/font assets. Adapted files replace Jasper blue [0.004,0.565,1] with Ebaq #00AFEC, including animated color keyframes. Decorative layers named Dot dot* are hidden per the user's no-random-dots direction. Functional signal animation and original motion/timing, pitch-black outlines, white fills, and purposeful yellow (#FED440) accents remain. No substitute motion was authored. All navy [0,0.024,0.239] stroke/fill color values are mapped to pure black. Both sections use 3:2 outer landscape slots with fixed square 18px CSS grid cells. The Lotties retain their native 430:201 canvas centered vertically, providing breathing room. Custom square SVGs use contain without cropping or distortion. All original orange [0.98,0.251,0.157] values, including animated color keyframes and hidden decoration, are replaced with #FED440.
+
+Source runtime: lottie-web 5.12.2 light SVG renderer; local project uses its existing lottie-web 5.13.0. Loop only when intersection >=10% and document visible; reduced motion holds frame zero. Local comparison only. No license or redistribution permission is asserted by this inspection.

@@ -15,13 +15,10 @@ type Props = {
 export type Cta17Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Cta17 = (props: Cta17Props) => {
-  const { heading, description, buttons, price, oldPrice } = {
-    ...Cta17Defaults,
-    ...props,
-  };
+  const { heading = Cta17Defaults.heading, description = Cta17Defaults.description, buttons = Cta17Defaults.buttons, price = Cta17Defaults.price, oldPrice = Cta17Defaults.oldPrice, ...sectionProps } = props;
 
   return (
-    <section {...props} id="contact" className="bg-brand-grid relative overflow-hidden px-[5%] py-16 md:py-24 lg:py-28">
+    <section {...sectionProps} id="contact" className="bg-brand-grid relative overflow-hidden px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container relative z-10">
         <div className="grid grid-rows-1 items-start gap-y-5 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20 lg:gap-y-16">
           <h2 className="text-black">{heading}</h2>

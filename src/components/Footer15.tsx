@@ -175,7 +175,7 @@ export const Footer15 = (props: Footer15Props) => {
                 <ul key={index}>
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex} className="py-2 text-sm font-semibold">
-                      {link.url.startsWith("/services/") ? <span>{link.title}</span> : <Link
+                      {<Link
                         to={link.url}
                         onClick={() => {
                           document.documentElement.scrollTop = 0;

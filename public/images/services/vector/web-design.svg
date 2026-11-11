@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" role="img" aria-labelledby="title">
+  <title id="title">A browser window with a headline, an image, and a cursor on the main button</title>
+  <g id="browser" stroke="#000" stroke-width="6">
+    <rect x="200" y="260" width="680" height="480" fill="#fff"/>
+    <rect x="200" y="260" width="680" height="60" fill="#00AFEC"/>
+    <g fill="#fff" stroke-width="4">
+      <circle cx="240" cy="290" r="9"/>
+      <circle cx="272" cy="290" r="9"/>
+      <circle cx="304" cy="290" r="9"/>
+    </g>
+    <path id="headline" d="M260 420H520M260 476H440" stroke-width="24"/>
+    <rect id="button" x="260" y="560" width="200" height="72" fill="#00AFEC"/>
+    <rect id="image" x="600" y="400" width="220" height="280" fill="#00AFEC"/>
+    <path d="M630 680A80 80 0 0 1 790 680Z" fill="#fff"/>
+  </g>
+  <path id="cursor" d="M410 600V695L435 673L452 712L472 704L455 664H488Z" fill="#fff" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+  <g id="dots-blue" fill="#00AFEC">
+    <circle cx="120" cy="560" r="14"/>
+    <circle cx="800" cy="160" r="14"/>
+  </g>
+  <g id="dots-black" fill="#000">
+    <circle cx="280" cy="160" r="8"/>
+    <circle cx="960" cy="840" r="8"/>
+  </g>
+</svg>

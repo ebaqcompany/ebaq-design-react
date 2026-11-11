@@ -38,8 +38,21 @@
   background-color: var(--color-brand-primary);
   background-image: linear-gradient(var(--brand-grid-line) var(--brand-grid-line-width), transparent var(--brand-grid-line-width)), linear-gradient(90deg, var(--brand-grid-line) var(--brand-grid-line-width), transparent var(--brand-grid-line-width));
   background-size: var(--brand-grid-cell) var(--brand-grid-cell);
-  background-position: -16px -11px;
+  /* Half a stroke keeps the visible line centers symmetric at both edges. */
+  background-position: calc(50% - var(--brand-grid-line-width) / 2) calc(50% - var(--brand-grid-line-width) / 2);
   background-attachment: scroll;
+}
+
+/* Invert colors only; inherit the shared grid geometry unchanged. */
+.bg-brand-grid[data-tone="light"] {
+  background-color: #cceffc;
+  --brand-grid-line: rgb(var(--color-brand-primary-rgb) / 0.5);
+}
+
+/* Light illustration grids retain the approved 18px cell independently of photos. */
+.bg-brand-grid[data-tone="light"],
+#what-you-get[data-service="brand-design"] {
+  --brand-grid-cell: 18px;
 }
 
 /* Cards reuse the homepage grid's 1px lines and shared cell size. */
@@ -50,8 +63,8 @@
 .service-card:is(:hover, :focus-within) {
   --service-card-surface: #fff;
 }
-.service-artwork.bg-brand-grid {
-  background-position: 50% 100%;
+.service-card[data-surface="white"] {
+  --service-card-surface: #fff;
 }
 .service-pixel-edge {
   left: 50%;
@@ -1172,10 +1185,6 @@ footer a:not([class*="button"]):is(:hover, :focus-visible) {
   max-width: 100%;
   overflow: hidden;
   color: #000;
-}
-
-.services-marquee.bg-brand-grid {
-  background-position: -16px -16px;
 }
 
 .notification-services-panel {
