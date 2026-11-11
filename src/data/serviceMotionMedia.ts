@@ -51,13 +51,8 @@ export const serviceMotionMedia: MediaProps[] = [
   },
   {
     type: "video",
-    src: "/case-study/aero/08-billboards.webm",
+    src: "/portfolio/motion/aero-billboards.webm",
     alt: "Three green Aero posters with animated line icons: Precise breath analysis, Insights at your fingertips, and Know how your body works",
-  },
-  {
-    type: "video",
-    src: "/case-study/aero/04-type-color.webm",
-    alt: "Aero mint-green color palette and typography system in motion",
   },
   {
     type: "video",
