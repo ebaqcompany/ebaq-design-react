@@ -2,7 +2,7 @@ import { Layout423Defaults } from "./Layout423";
 
 // Relume Layout 635 and Layout 235 adapted for the AI startup landing page.
 export const AiLandingAbout = ({ heading }: { heading: string }) =>
-  <section className="bg-brand-primary px-[5%] py-16 md:py-24 lg:py-28">
+  <section className="bg-brand-grid px-[5%] py-16 md:py-24 lg:py-28">
     <div className="container">
       <div data-surface="white" className="service-card grid overflow-hidden rounded-xl md:grid-cols-2">
         <img src="/images/about/process/arek-studio-desk-setup.webp" alt="Arek Dvornechuck at his studio desk" className="size-full max-h-[32rem] object-cover object-center" />
