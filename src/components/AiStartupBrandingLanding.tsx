@@ -17,7 +17,7 @@ const config: IndustryLandingConfig = {
   },
   caseStudy: { slug: "orbio", title: "Orbio: AI Startup Branding Case Study" },
   hero: {
-    heading: "Branding for\nAI Startups",
+    heading: "Branding & Web\nfor AI Startups",
     description: "A distinctive identity and clear website for your AI startup,\nfrom the logo and brand system to the pitch deck and launch.",
     rows: [
       [

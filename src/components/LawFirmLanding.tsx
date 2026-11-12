@@ -48,7 +48,7 @@ const config: IndustryLandingConfig = {
   },
   caseStudy: { slug: "fox-berman", title: "Fox Berman: Law Firm Branding Case Study" },
   hero: {
-    heading: "Branding and Web\nfor Law Firms",
+    heading: "Branding & Web\nfor Law Firms",
     description: "A considered identity and clear website for your law firm, from the logo and stationery to the digital experience clients encounter.",
     rows: [foxRow1, foxRow2, foxRow3],
   },

@@ -23,7 +23,7 @@ const config: IndustryLandingConfig = {
   },
   caseStudy: { slug: "savory", title: "Savory: Real Estate Branding Case Study" },
   hero: {
-    heading: "Real Estate Branding",
+    heading: "Branding & Web\nfor Real Estate",
     description: "A recognizable identity for your real estate team, brokerage or personal brand. Work directly with a senior designer on the logo, visual system and website your clients meet before they meet you.",
     rows: [
       [
