@@ -28,6 +28,7 @@ const RealEstateBrandingLanding = page('./components/RealEstateBrandingLanding.t
 const LawFirmLanding = page('./components/LawFirmLanding.tsx', 'LawFirmLanding')
 const AiHealthcareLanding = page('./components/AiHealthcareLanding.tsx', 'AiHealthcareLanding')
 const SaasBrandingLanding = page('./components/SaasBrandingLanding.tsx', 'SaasBrandingLanding')
+const PersonalBrandingLanding = page('./components/PersonalBrandingLanding.tsx', 'PersonalBrandingLanding')
 const LuxuryBrandingLanding = page('./components/LuxuryBrandingLanding.tsx', 'LuxuryBrandingLanding')
 const CannabisBrandingLanding = page('./components/CannabisBrandingLanding.tsx', 'CannabisBrandingLanding')
 const ConsultancyBrandingLanding = page('./components/ConsultancyBrandingLanding.tsx', 'ConsultancyBrandingLanding')
@@ -74,6 +75,7 @@ const routes: RouteEntry[] = [
   { path: '/ai-healthcare-branding', page: AiHealthcareLanding },
   { path: '/saas-branding', page: SaasBrandingLanding },
   { path: '/luxury-branding', page: LuxuryBrandingLanding },
+  { path: '/personal-branding', page: PersonalBrandingLanding },
   { path: '/cannabis-branding', page: CannabisBrandingLanding },
   { path: '/consultancy-branding', page: ConsultancyBrandingLanding },
   { path: '/saas-web-design', page: SaasWebDesignLanding },

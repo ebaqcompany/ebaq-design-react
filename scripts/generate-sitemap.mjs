@@ -40,6 +40,7 @@ const staticPaths = [
   '/ai-healthcare-branding',
   '/saas-branding',
   '/luxury-branding',
+  '/personal-branding',
   '/cannabis-branding',
   '/consultancy-branding',
   '/saas-web-design',
