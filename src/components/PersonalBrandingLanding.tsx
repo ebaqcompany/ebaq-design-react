@@ -12,7 +12,7 @@ const config: IndustryLandingConfig = {
   caseStudy: { slug: "nathalie-sadler", title: "Nathalie Sadler: Personal Branding Case Study" },
   hero: {
     heading: "Branding & Web\nfor Personal Brands",
-    description: "A considered identity and website that express your work, your perspective, and the people you want to reach.",
+    description: "An identity and website shaped around your work and audience, whether you’re a coach, consultant, founder, or independent professional.",
     rows: [
       [
         { type: "image", src: `${NS}/00-logo-black.webp`, alt: "Nathalie Sadler wordmark and monogram", fit: "contain", bgColor: "#0B0B0B" },
@@ -33,7 +33,7 @@ const config: IndustryLandingConfig = {
   },
   painPoints: { heading: "A personal brand built around your work", points: [
     { title: "Make your work clear", body: "A clear identity and website help people understand what you do and who you help." },
-    { title: "Express your perspective", body: "Your expertise, personality, and audience guide the visual direction, rather than a generic personal-brand template." },
+    { title: "Express your perspective", body: "Your expertise, personality, and audience guide the visual direction, whether your brand calls for an editorial luxury look or a different style altogether." },
     { title: "Connect every touchpoint", body: "A coherent system gives your website, presentations, social profiles, and materials a shared foundation." },
     { title: "Work directly together", body: "Work with Arek, a senior designer with over 20 years of experience, in a focused one-week identity sprint." },
   ] },
@@ -43,7 +43,7 @@ const config: IndustryLandingConfig = {
     { heading: "02", title: "Build your identity", description: "I develop a visual direction for your personal brand, share the work with you, and refine the chosen direction with your feedback." },
     { heading: "03", title: "Put your brand to work", description: "Receive the agreed identity files and guidelines. Website, presentation, or additional content can follow in separately scoped weeks." },
   ],
-  preview: { eyebrow: "Nathalie Sadler case study", anchor: "nathalie-sadler", heading: "An editorial identity for a speaking director", items: [
+  preview: { eyebrow: "Nathalie Sadler case study", anchor: "nathalie-sadler", heading: "An editorial luxury identity for a speaking coach", items: [
     { label: "Logo", image: { src: `${NS}/00-logo-black.webp`, alt: "Nathalie Sadler monogram and wordmark" } },
     { label: "Monogram", image: { src: `${NS}/10-monogram-construction.webp`, alt: "Nathalie Sadler monogram construction" } },
     { label: "Typography", image: { src: `${NS}/05-typeface.webp`, alt: "Nathalie Sadler typography system" } },
@@ -56,7 +56,7 @@ const config: IndustryLandingConfig = {
   faq: { heading: "Questions about personal branding", items: [
     { question: "How much does personal branding cost?", answer: "$3,000 per week, flat. A scoped brand identity or rebrand is delivered in one week for $3,000, guaranteed. Additional work is scoped separately at the same weekly rate, or a month booked upfront is $10,000. Scope, timing, and total are agreed before booking, and payment is upfront." },
     { question: "What does the identity include?", answer: "The agreed Brand Sprint includes logo concepts and final variations, colors, typography, guidelines, logo animation, and agreed launch assets. Revisions within scope and editable source files are included. We confirm deliverables before starting." },
-    { question: "Have you designed a personal brand before?", answer: "Yes. For speaking director Nathalie Sadler, I designed an NS monogram, wordmark, typography, colors, logo animation, social graphics, and website design.", link: { label: "the Nathalie Sadler case study", href: "/work/nathalie-sadler" } },
+    { question: "Have you designed a personal brand before?", answer: "Yes. For speaking director and coach Nathalie Sadler, I designed a luxury personal identity with an NS monogram, wordmark, typography, colors, logo animation, social graphics, and website design. Your brand’s style is shaped around your own work and audience.", link: { label: "the Nathalie Sadler case study", href: "/work/nathalie-sadler" } },
     { question: "Can you design my website too?", answer: "Yes. Website design and development are scoped separately. Design in Figma generally takes one week, followed by one or two weeks of development in Framer, Webflow, or Next.js, depending on the agreed scope and page count." },
     { question: "How long does it take?", answer: "The agreed identity is delivered in one week, guaranteed. A website or additional materials take separately scoped time. We confirm the start date and feedback schedule before booking." },
     { question: "What if I need changes?", answer: "We review the work together and refine the chosen direction. Revisions within the agreed scope are included; any additional work is agreed before proceeding." },
