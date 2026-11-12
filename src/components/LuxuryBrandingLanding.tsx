@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { siteUrl, studio } from "../content/siteFacts";
 import { IndustryLandingTemplate, type IndustryLandingConfig } from "./IndustryLandingTemplate";
 
-// Draft (2026-10-14), pending Arek's review: luxury branding around the Airport Executive case study.
 // Widescreen crops of the 3:2 and 4:3 shots live in /images/site/luxury-landing.
 const AE = "/case-study/airport-executive";
 const LX = "/images/site/luxury-landing";
@@ -10,6 +9,13 @@ const pageUrl = `${siteUrl}/luxury-branding`;
 
 const config: IndustryLandingConfig = {
   path: "/luxury-branding",
+  brandDesignLayout: true,
+  processSteps: [
+    { heading: "01", title: "Book a free call", description: "Tell me about your business, audience, and goals. We’ll discuss your priorities, scope, and timing." },
+    { heading: "02", title: "Build your identity", description: "I develop a visual direction for your brand, share the work with you, and refine the chosen direction with your feedback." },
+    { heading: "03", title: "Put your brand to work", description: "Receive the agreed identity files and guidelines. Website, print, or campaign work can follow in separately scoped weeks." },
+  ],
+  bannerLines: ["Build a premium brand that reflects the care behind your business.", "Make every introduction feel unmistakably yours."],
   breadcrumb: "Luxury branding",
   service: {
     name: "Luxury branding and website design",
@@ -19,36 +25,33 @@ const config: IndustryLandingConfig = {
   },
   caseStudy: { slug: "airport-executive", title: "Airport Executive: Luxury Chauffeur Rebrand" },
   hero: {
-    heading: "Branding and Web\nfor Luxury Brands",
-    description: "A brand that feels premium at every touchpoint,\nfrom the monogram and typography to the website your clients book on.",
+    heading: "Branding & Web\nfor Luxury Brands",
+    description: "A considered identity and website for premium businesses, from the logo and typography to the touchpoints your clients encounter.",
     rows: [
       [
         { type: "lottie", src: `${AE}/hero-logo.json`, alt: "Animated Airport Executive logo", bgColor: "#000000" },
         { type: "image", src: `${AE}/01-logos.png`, alt: "Airport Executive monogram and logo system" },
         { type: "video", src: `${AE}/11-escalator.mp4`, alt: "Airport Executive escalator campaign" },
-        { type: "image", src: `${LX}/business-cards.webp`, alt: "Airport Executive business cards" },
       ],
       [
         { type: "image", src: `${LX}/campaign-banner.webp`, alt: "Airport Executive airport campaign banner" },
-        { type: "video", src: `${LX}/website.mp4`, alt: "Airport Executive website" },
-        { type: "image", src: `${AE}/10-signage.webp`, alt: "Airport Executive signage" },
+        { type: "image", src: `${AE}/10-signage.webp`, alt: "Airport Executive signage", fit: "contain", bgColor: "#000000" },
         { type: "image", src: `${LX}/publication.webp`, alt: "Airport Executive branded publication" },
       ],
       [
-        { type: "image", src: `${LX}/website.webp`, alt: "Airport Executive website on a laptop" },
-        { type: "lottie", src: "/portfolio/logos/airporteexecutive-logo.json", alt: "Airport Executive logo animation", bgColor: "#000000" },
-        { type: "image", src: `${AE}/10-signage.webp`, alt: "Airport Executive environmental signage" },
-        { type: "image", src: `${LX}/campaign-banner.webp`, alt: "Arrive in style, depart in comfort" },
+        { type: "image", src: `${LX}/business-cards.webp`, alt: "Airport Executive business cards" },
+        { type: "image", src: `${AE}/07-website.webp`, alt: "Airport Executive website design", fit: "cover" },
+        { type: "image", src: `${AE}/09-merchandise.webp`, alt: "Airport Executive branded vehicle" },
       ],
     ],
   },
   painPoints: {
     heading: "In luxury, every detail is the brand",
     points: [
-      { title: "Premium is a feeling", body: "Clients decide whether you're worth it before they read a word. Refined typography, restraint, and space signal quality instantly." },
-      { title: "Restraint beats decoration", body: "Gold foil and flourishes don't make a brand luxurious. A disciplined monogram, a confident wordmark, and a tight palette do." },
-      { title: "The same at every touchpoint", body: "From the business card to the booking page, signage, and uniforms, a luxury brand has to feel identical everywhere a client meets it." },
-      { title: "One week. Done", body: "No 6-month agency engagements. No junior designers. You work directly with Arek—over 20 years of experience, delivered in a focused sprint." },
+      { title: "Premium is a feeling", body: "A considered identity expresses the care and character behind your business, from the first introduction onward." },
+      { title: "Restraint beats decoration", body: "Typography, color, and imagery should serve your brand idea and audience, with every detail chosen deliberately." },
+      { title: "The same at every touchpoint", body: "From the business card to the booking page, signage, and uniforms, a connected visual system helps your brand feel coherent wherever clients encounter it." },
+      { title: "A focused sprint", body: "Work directly with Arek, a senior designer with over 20 years of experience, in a focused one-week identity sprint." },
     ],
   },
   deliverables: {
@@ -70,36 +73,28 @@ const config: IndustryLandingConfig = {
   },
   preview: {
     eyebrow: "Airport Executive case study",
+    heading: "An aviation-inspired identity for a premium chauffeur service",
     anchor: "airport-executive",
     items: [
       { label: "Monogram", image: { src: `${AE}/01-logos.png`, alt: "Airport Executive monogram and logo system" } },
       { label: "Business Cards", image: { src: `${LX}/business-cards.webp`, alt: "Airport Executive business cards" } },
       { label: "Campaign", image: { src: `${LX}/campaign-banner.webp`, alt: "Airport Executive airport campaign banner" } },
       { label: "Publication", image: { src: `${LX}/publication.webp`, alt: "Airport Executive branded publication" } },
-      { label: "Website", image: { src: `${LX}/website.mp4`, alt: "Airport Executive website" } },
+      { label: "Website", image: { src: `${AE}/07-website.webp`, alt: "Airport Executive website design" } },
       { label: "Signage", image: { src: `${AE}/10-signage.webp`, alt: "Airport Executive signage" } },
-      { label: "Escalator Ads", image: { src: `${AE}/11-escalator.mp4`, alt: "Airport Executive escalator campaign" } },
+      { label: "Ads", image: { src: `${AE}/11-escalator.mp4`, alt: "Airport Executive escalator campaign" } },
     ],
-  },
-  testimonial: {
-    compact: true,
-    quote: "Arek is a branding expert with extensive experience in graphic design, logos, and web design. We have collaborated with him on several rebranding projects. I highly recommend him.",
-    name: "Chris Nixon",
-    role: "Founder, Airport Executive",
-    avatar: `${AE}/chris-nixon.webp`,
-    logo: { src: "/client-logos/airport-executive-logo.svg", alt: "Airport Executive" },
-    websiteUrl: "https://www.airportexecutive.com/",
-    caseStudyUrl: "/work/airport-executive",
   },
   faq: {
     heading: "Questions luxury\nbrand owners ask",
     items: [
-      { question: "How much does luxury branding cost?", answer: "$3,000 per week, flat. A new luxury brand identity or rebrand (monogram, wordmark, logo animation, typography, colors, brand guidelines, and stationery) is delivered in one week, guaranteed, for $3,000 total. Branding agencies often charge $25,000 to $100,000 or more for the same scope." },
-      { question: "How long does a luxury rebrand take?", answer: "One week for the brand identity, guaranteed. The website follows in two to three more weeks: a week of design in Figma, then one or two weeks of development, depending on the number of pages. Print, signage, and campaign work can be added a week at a time, at the same rate." },
-      { question: "Have you branded luxury companies before?", answer: "Yes. Airport Executive is a premium London chauffeur service with more than 25 years of experience. Under new ownership, I rebranded it with an aviation-inspired monogram, elegant typography, a minimalist visual system, a new website, signage, and an airport campaign. I also designed SweetGrass, a luxury cannabis dispensary, around an Art Deco wordmark and premium packaging." },
-      { question: "Should a luxury brand use a monogram or a wordmark?", answer: "Usually both. A monogram works on small and tactile surfaces like business cards, uniforms, and app icons, while the wordmark carries the full name with authority. Airport Executive pairs an aviation-inspired monogram with an elegant wordmark." },
-      { question: "Do you design the website and print materials too?", answer: "Yes. I design the website in Figma and build it in Framer, Webflow, or Next.js, and I design business cards, publications, signage, and campaign graphics that match the brand." },
-      { question: "Who will I work with?", answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.` },
+      { question: "How much does luxury branding cost?", answer: "$3,000 per week, flat. A scoped brand identity or rebrand is delivered in one week for $3,000, guaranteed. Additional work is scoped separately at the same weekly rate, or a month booked upfront is $10,000. Scope, timing, and total are agreed before booking, and payment is upfront." },
+      { question: "What does the identity include?", answer: "The agreed Brand Sprint includes logo concepts and final variations, colors, typography, guidelines, logo animation, and agreed launch assets. Revisions within scope and editable source files are included. We confirm deliverables before starting." },
+      { question: "Have you designed a premium brand before?", answer: "Yes. Airport Executive is a premium London chauffeur service. Its rebrand included an aviation-inspired monogram, typography, logo animation, print, signage, campaign graphics, and website design." },
+      { question: "Do I need a monogram or a wordmark?", answer: "That depends on your name, audience, and applications. A monogram can work at small sizes while a wordmark carries the full name; we decide what suits your business." },
+      { question: "Can you design our website and print materials too?", answer: "Yes. Website design, development, and additional print or campaign work are scoped separately. Website design generally takes one week, followed by one or two weeks of development depending on the agreed scope and page count." },
+      { question: "What if I need changes?", answer: "We review the work together and refine the chosen direction. Revisions within the agreed scope are included; any additional work is agreed before proceeding." },
+      { question: "Who will I work with?", answer: `You work directly with Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience.` },
     ],
   },
   aboutHeading: "I help premium brands look the part.",
@@ -109,16 +104,16 @@ export const LuxuryBrandingLanding = () => (
   <>
     <Helmet>
       <title>Luxury Branding &amp; Website Design | Ebaq Design</title>
-      <meta name="description" content="Luxury branding for premium brands: monogram and logo design, elegant typography, logo animation, guidelines, and a refined website. One week, $3,000 flat." />
+      <meta name="description" content="Luxury branding for premium brands: monogram and logo design, elegant typography, logo animation, and guidelines. Brand identity in one week for $3,000; websites scoped separately." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="Luxury Branding & Website Design | Ebaq Design" />
-      <meta property="og:description" content="Luxury branding for premium brands: monogram and logo design, elegant typography, logo animation, guidelines, and a refined website. One week, $3,000 flat." />
+      <meta property="og:description" content="Luxury branding for premium brands: monogram and logo design, elegant typography, logo animation, and guidelines. Brand identity in one week for $3,000; websites scoped separately." />
       <meta property="og:image" content={`${siteUrl}${AE}/01-logos.png`} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Luxury Branding & Website Design | Ebaq Design" />
-      <meta name="twitter:description" content="Monogram, logo, typography, and a refined website for premium brands. One week, guaranteed, $3,000 flat." />
+      <meta name="twitter:description" content="Brand identity for premium brands in one week for $3,000; website work is scoped separately." />
     </Helmet>
     <IndustryLandingTemplate {...config} />
   </>
