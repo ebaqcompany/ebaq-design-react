@@ -4,10 +4,10 @@ import { AvailableButton } from "./AvailableButton";
 
 type PricingPlan = { planName: string; planDescription: string; originalPrice?: string; monthlyPrice: string; yearlyPrice: string; period: string; alternateLabel: string; features: string[]; button: ButtonProps };
 type Props = { tagline: string; heading: string; description: string; pricingPlans: PricingPlan[] };
-export type Pricing8Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props> & { surface?: "light" | "dark" | "white"; headingLevel?: "h1" | "h2" };
+export type Pricing8Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props> & { surface?: "light" | "dark" | "white"; headingLevel?: "h1" | "h2"; bookingHref?: string };
 
 export const Pricing8 = (props: Pricing8Props) => {
-  const { tagline, heading, description, pricingPlans, surface = "light", headingLevel: Heading = "h2", ...sectionProps } = { ...Pricing8Defaults, ...props };
+  const { tagline, heading, description, pricingPlans, surface = "light", headingLevel: Heading = "h2", bookingHref, ...sectionProps } = { ...Pricing8Defaults, ...props };
   return (
     <section {...sectionProps} id="pricing" className={`${surface === "dark" ? "bg-black text-white" : surface === "white" ? "bg-white" : "bg-surface-muted"} px-[5%] py-16 md:py-24 lg:py-28`}>
       <div className="container max-w-xl">
@@ -17,14 +17,14 @@ export const Pricing8 = (props: Pricing8Props) => {
           {description && <p className="mt-5 md:mt-6 md:text-md">{description}</p>}
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,20rem),1fr))] gap-8">
-          {pricingPlans.map((plan, index) => <PricingPlan key={index} plan={plan} lightBlue={surface === "white"} />)}
+          {pricingPlans.map((plan, index) => <PricingPlan key={index} plan={plan} lightBlue={surface === "white"} bookingHref={bookingHref} />)}
         </div>
       </div>
     </section>
   );
 };
 
-const PricingPlan = ({ plan, lightBlue }: { plan: PricingPlan; lightBlue: boolean }) => (
+const PricingPlan = ({ plan, lightBlue, bookingHref }: { plan: PricingPlan; lightBlue: boolean; bookingHref?: string }) => (
   <div className={`${lightBlue ? "bg-brand-light border-brand-primary/50" : "pricing-textured-surface border-black/20"} rounded-xl border text-black flex h-full flex-col justify-between px-6 py-8 md:p-8`}>
     <div>
       <h3 className={`mb-2 font-mono text-sm font-normal uppercase tracking-wide ${lightBlue ? "text-black" : "text-brand-primary"}`}>{plan.planName}</h3>
@@ -34,7 +34,7 @@ const PricingPlan = ({ plan, lightBlue }: { plan: PricingPlan; lightBlue: boolea
       <h5 className="heading-h6 mb-4 mt-6">{plan.period === "/week" ? "Example weekly scope" : "Example monthly scope"}</h5>
       <div className="mb-8 grid grid-cols-1 gap-y-4 py-2">{plan.features.map((feature, index) => <div key={index} className="flex self-start"><div className="mr-4 flex-none self-start"><BiCheck className="size-6 text-brand-primary" /></div><p>{feature}</p></div>)}</div>
     </div>
-    <AvailableButton pricing className="self-end" />
+    <AvailableButton pricing className="self-end" href={bookingHref} />
   </div>
 );
 

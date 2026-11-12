@@ -12,6 +12,7 @@ type Props = {
   className?: string;
   variant?: "tools" | "author";
   portraitHref?: string;
+  showSocial?: boolean;
 };
 
 export const arekToolIcons = [
@@ -37,7 +38,7 @@ const socialLinks = [
   { label: "Contra", url: "https://contra.com/ebaqdesign", icon: <ContraIcon className="size-4" /> },
 ] as const;
 
-export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHref }: Props) => {
+export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHref, showSocial = true }: Props) => {
   return <div className={`flex w-fit items-center gap-4 ${className}`.trim()}>
     {portraitHref ? <Link to={portraitHref} aria-label="About Arek Dvornechuck" className="shrink-0"><img loading="eager" src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 rounded-full object-cover" /></Link> : <img loading="eager" src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 shrink-0 rounded-full object-cover" />}
     <div className="flex min-w-0 flex-col">
@@ -45,7 +46,7 @@ export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHr
         <p className={variant === "author" ? "heading-h7" : undefined}>Arek Dvornechuck</p>
         {variant === "author" && <p className="heading-h7 text-brand-primary">Branding Expert</p>}
       </div>
-      {variant === "author" ? <>
+      {variant === "author" ? showSocial && <>
         <div className="mt-1 flex items-center gap-2 text-black" aria-label="Arek Dvornechuck on social media">
           {socialLinks.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noreferrer" aria-label={link.label} className="heading-link -m-1 inline-flex p-1 text-black">{link.icon}</a>)}
         </div>

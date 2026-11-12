@@ -1,18 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import { siteUrl, studio } from "../content/siteFacts";
-import { caseStudies } from "../data/caseStudies";
 import { IndustryLandingTemplate, type IndustryLandingConfig } from "./IndustryLandingTemplate";
 
-// Draft (2026-10-16), pending Arek's review: AI startup branding around the Orbio case study, with
-// Ventur and NextDim in the hero. NextDim is the AI client with a testimonial on file, so it stands in.
 const OR = "/case-study/orbio";
-const ND = "/case-study/next-dimension";
-const VT = "/case-study/ventur";
 const pageUrl = `${siteUrl}/ai-startup-branding`;
-const nextDim = caseStudies.find((study) => study.slug === "next-dimension")!.testimonial!;
 
 const config: IndustryLandingConfig = {
   path: "/ai-startup-branding",
+  brandDesignLayout: true,
   breadcrumb: "AI startup branding",
   service: {
     name: "AI startup branding and website design",
@@ -23,29 +18,32 @@ const config: IndustryLandingConfig = {
   caseStudy: { slug: "orbio", title: "Orbio: AI Startup Branding Case Study" },
   hero: {
     heading: "Branding for\nAI Startups",
-    description: "A brand that explains the product fast and doesn't look like every other AI company,\nfrom the logo and pitch deck to the website investors land on.",
+    description: "A distinctive identity and clear website for your AI startup,\nfrom the logo and brand system to the pitch deck and launch.",
     rows: [
       [
-        { type: "video", src: "/portfolio/logos/orbio-logo.mp4", alt: "Animated Orbio logo", bgColor: "#0B0B0C" },
-        { type: "image", src: `${OR}/01-flat-orb-sky.webp`, alt: "Orbio orb symbol in the sky" },
-        { type: "image", src: `${ND}/logos.webp`, alt: "NextDim AI logo system" },
-        { type: "lottie", src: `${VT}/hero-logo.json`, alt: "Animated Ventur logo", bgColor: "#9047ff" },
+        { type: "video", src: `${OR}/hero-orb.mp4`, alt: "Animated Orbio logo", bgColor: "#0B0B0C" },
+        { type: "video", src: `${OR}/04-heroes-hero-wide.mp4`, alt: "Orbio website hero designs", fit: "contain" },
+        { type: "video", src: `${OR}/05-banner.mp4`, alt: "Orbio banner with animated CREDIT coins" },
       ],
       [
-        { type: "image", src: `${OR}/02-brand-architecture.webp`, alt: "Orbio brand architecture" },
-        { type: "image", src: `${VT}/09-shirt.webp`, alt: "Ventur branded shirt" },
-        { type: "video", src: `${OR}/16-social-wall.mp4`, alt: "Orbio social media posts in motion" },
-        { type: "image", src: `${ND}/billboard.webp`, alt: "NextDim AI billboard" },
+        { type: "video", src: `${OR}/11-card-carousel.mp4`, alt: "Orbio animated card carousel" },
+        { type: "video", src: `${OR}/12-card-where-meets.mp4`, alt: "Orbio animated Where meets cards" },
+        { type: "video", src: `${OR}/16-social-wall.mp4`, alt: "Orbio social posts in motion" },
+      ],
+      [
+        { type: "image", src: `${OR}/26-tee-horae.webp`, alt: "Orbio T-shirt design" },
+        { type: "video", src: `${OR}/03-colors.mp4`, alt: "Orbio color palette in motion" },
+        { type: "video", src: `${OR}/25-type-trio.mp4`, alt: "Orbio typefaces in motion" },
       ],
     ],
   },
   painPoints: {
     heading: "Your AI startup shouldn’t look like the rest",
     points: [
-      { title: "Escape the AI uniform", body: "Purple gradients, glowing orbs, and the same sans-serif make most AI brands interchangeable. A distinctive mark is how people remember yours." },
-      { title: "Explain the product fast", body: "AI products are hard to describe. Positioning and a clear website turn what the model does into a reason to book a demo." },
-      { title: "Look ready to raise", body: "Investors see a hundred decks a month. A coherent identity, deck, and site make an early team look like a company worth backing." },
-      { title: "One week. Done", body: "No 6-month agency engagements. No junior designers. You work directly with Arek—over 20 years of experience, delivered in a focused sprint." },
+      { title: "Escape the AI uniform", body: "A distinctive identity starts with what makes your product and audience different, then carries that idea across every touchpoint." },
+      { title: "Explain the product fast", body: "Complex products need clear language. Positioning and a thoughtful website help the right people understand what you offer." },
+      { title: "Look ready to raise", body: "A coherent identity, deck, and website give your team a consistent way to present its ambition to investors and customers." },
+      { title: "A focused sprint", body: "Work directly with Arek, a senior designer with over 20 years of experience, in a focused one-week identity sprint." },
     ],
   },
   deliverables: {
@@ -65,36 +63,32 @@ const config: IndustryLandingConfig = {
   },
   preview: {
     eyebrow: "Orbio case study",
+    heading: "An identity built around Orbio’s marble orb",
     anchor: "orbio",
     items: [
       { label: "Logo", image: { src: `${OR}/01-logos.webp`, alt: "Orbio logo lockups" } },
       { label: "Architecture", image: { src: `${OR}/02-brand-architecture.webp`, alt: "Orbio brand architecture" } },
+      { label: "Colors", image: { src: `${OR}/03-colors.mp4`, alt: "Orbio color palette in motion" } },
       { label: "Typography", image: { src: `${OR}/24-type-scale.webp`, alt: "Orbio type scale" } },
+      { label: "Website", image: { src: `${OR}/04-heroes.mp4`, alt: "Orbio website hero designs" } },
       { label: "Banner", image: { src: `${OR}/05-banner.mp4`, alt: "Orbio banner in motion" } },
       { label: "Social", image: { src: `${OR}/16-social-wall.mp4`, alt: "Orbio social media posts" } },
+      { label: "Merchandise", image: { src: `${OR}/26-tee-horae.webp`, alt: "Orbio T-shirt design" } },
     ],
-  },
-  testimonial: {
-    // Quoted from the NextDim case study, word for word.
-    quote: nextDim.quote.replace(/^"|"$/g, ""),
-    name: nextDim.name,
-    role: `${nextDim.position}, ${nextDim.companyName}`,
-    avatar: nextDim.avatar.src,
-    logo: { src: nextDim.logo.src, alt: nextDim.logo.alt ?? nextDim.companyName },
-    caseStudyUrl: "/work/next-dimension",
   },
   faq: {
     heading: "Questions AI founders ask",
     items: [
-      { question: "How much does AI startup branding cost?", answer: "$3,000 per week, flat. A new brand identity or rebrand (logo, logo animation, colors, typography, and brand guidelines) is delivered in one week, guaranteed, for $3,000 total. A pitch deck or motion adds a week, and the website two to three more, at the same rate." },
-      { question: "Have you branded AI startups before?", answer: "Yes. Orbio tokenizes AI inference, and I designed its Greco-Roman orb identity, motion, and website. NextDimension AI automates medical practices with AI agents; I redesigned its identity and website. Ventur is an AI travel planner built around a V monogram drawn as a flowing route." },
-      { question: "How do you keep an AI brand from looking generic?", answer: "By starting from what the company actually does instead of the category's visual clichés. Orbio's identity borrows from Greco-Roman coinage rather than neural-network graphics, and NextDim's moves beyond the clinical healthcare look.", link: { label: "Read: AI company branding", href: "/blog/ai-company-branding" } },
-      { question: "Can you design our pitch deck and website too?", answer: "Yes. The pitch deck is usually one extra week, and the website is designed in Figma in one week, then built in Framer, Webflow, or Next.js in one or two more weeks, depending on the page count." },
-      { question: "How fast can we launch?", answer: "The brand identity is delivered in one week, guaranteed. Most AI startups launch a full brand, deck, and website in four to five weeks, with the total agreed before work starts." },
+      { question: "How much does AI startup branding cost?", answer: "$3,000 per week, flat. A new brand identity or rebrand (logo, logo animation, colors, typography, and brand guidelines) is delivered in one week, guaranteed, for $3,000 total. Additional work is scoped separately at the same weekly rate, or you can book a month upfront for $10,000. We agree on scope, timing, and total before booking, and payment is upfront." },
+      { question: "Have you branded AI startups before?", answer: "Yes. For Orbio, an AI inference startup, I evolved its existing marble orb into a brand system with a serif wordmark, color and typography, motion, social templates, and website designs." },
+      { question: "How do you keep an AI brand from looking generic?", answer: "I start with what your product does, who it serves, and how you want to be perceived. Those decisions guide the visual direction, rather than copying a category trend." },
+      { question: "Can you design our pitch deck and website too?", answer: "Yes. The pitch deck is usually one extra week, and the website is designed in Figma in one week, then built in Framer, Webflow, or Next.js in one or two more weeks, depending on the page count and agreed scope." },
+      { question: "How fast can we launch?", answer: "The agreed brand identity is delivered in one week, guaranteed. A brand, deck, and website can take four to five weeks depending on scope. We confirm the start date and feedback schedule before booking." },
+      { question: "What if I need changes?", answer: "We review the work together and refine the chosen direction. Revisions within the agreed scope are included; any additional work is agreed before proceeding." },
       { question: "Who will I work with?", answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.` },
     ],
   },
-  aboutHeading: "I help AI startups look like the company they’re becoming.",
+  aboutHeading: "I help AI startups stand out.",
 };
 
 export const AiStartupBrandingLanding = () => (

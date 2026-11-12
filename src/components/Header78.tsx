@@ -36,6 +36,7 @@ type Props = {
   tagline?: string;
   subLink?: SubLinkProps;
   showScrollArrow?: boolean;
+  showSocial?: boolean;
   // Tile ratio for the media rows; use "16/9" when the media is widescreen.
   mediaAspect?: "4/3" | "16/9";
 };
@@ -307,7 +308,7 @@ export const DraggableRow = ({ items, direction = "left", initialOffset = 0, sho
 };
 
 export const Header78 = (props: Header78Props) => {
-  const { heading, description, row1, row2, row3, showRows, subLink, showScrollArrow, mediaAspect } = {
+  const { heading, description, row1, row2, row3, showRows, subLink, showScrollArrow, mediaAspect, showSocial } = {
     ...Header78Defaults,
     ...props,
   };
@@ -327,7 +328,7 @@ export const Header78 = (props: Header78Props) => {
             </div>
             <h1 className="whitespace-pre-line">{heading}</h1>
           </div>
-          {description && <div className="mx-[7.5%] self-end md:mt-56"><ArekProfileBadge variant="author" className="mb-6" /><p className="md:text-md">{description}</p></div>}
+          {description && <div className="mx-[7.5%] self-end md:mt-56"><ArekProfileBadge variant="author" className="mb-6" showSocial={showSocial} /><p className="md:text-md">{description}</p></div>}
           {subLink && <a href={subLink.url} className="w-fit text-sm font-semibold uppercase tracking-widest hover:opacity-70">{subLink.label}</a>}
           {showScrollArrow && <div className="animate-bounce"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg></div>}
         </div>

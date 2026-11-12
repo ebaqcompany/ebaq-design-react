@@ -10,9 +10,11 @@ const Cal = lazy(() => import("@calcom/embed-react"));
 type BookerSectionProps = {
   pinLogoToViewport?: boolean;
   sticky?: boolean;
+  showDescription?: boolean;
+  anchorOnMarker?: boolean;
 };
 
-export const BookerSection = ({ pinLogoToViewport = false, sticky = true }: BookerSectionProps) => {
+export const BookerSection = ({ pinLogoToViewport = false, sticky = true, showDescription = true, anchorOnMarker = false }: BookerSectionProps) => {
   // The section is sticky, so it reports as on screen from the start; a marker in the normal flow just
   // above it tracks how close the visitor actually is to the end of the page.
   const { ref, near } = useNearViewport<HTMLDivElement>("800px");
@@ -37,8 +39,8 @@ export const BookerSection = ({ pinLogoToViewport = false, sticky = true }: Book
 
   return (
     <>
-    <div ref={ref} aria-hidden="true" />
-    <section id="book" className={`relative px-[5%] pt-24 md:pt-32 lg:pt-40 pb-16 bg-black ${sticky ? "sticky bottom-0" : ""} z-0 overflow-hidden min-h-svh md:min-h-0`}>
+    <div ref={ref} id={anchorOnMarker ? "book" : undefined} aria-hidden="true" />
+    <section id={anchorOnMarker ? "booking-calendar" : "book"} className={`relative px-[5%] pt-24 md:pt-32 lg:pt-40 pb-16 bg-black ${sticky ? "sticky bottom-0" : ""} z-0 overflow-hidden min-h-svh md:min-h-0`}>
       {/* Big Logo in Background - stuck to bottom */}
       <div
         className={`${pinLogoToViewport ? "fixed" : "absolute"} bottom-0 left-0 right-0 flex justify-center pointer-events-none`}
@@ -58,7 +60,7 @@ export const BookerSection = ({ pinLogoToViewport = false, sticky = true }: Book
           <span className="block text-brand-primary">Book a call</span>
           <span className="block text-white">A free 15-minute introduction</span>
         </h2>
-        <p className="mx-auto mb-8 max-w-lg text-center text-white md:mb-10">{pricing.bookingIntro}</p>
+        {showDescription && <p className="mx-auto mb-8 max-w-lg text-center text-white md:mb-10">{pricing.bookingIntro}</p>}
         {/* Desktop - inline embed */}
         <div className="relative hidden h-[760px] md:block">
           {showEmbed && (

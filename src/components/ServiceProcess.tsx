@@ -39,8 +39,8 @@ const processCopy: Record<ServiceSlug, typeof brandSteps> = {
 };
 
 // Relume Layout 485: sticky rolling number beside vertically scrolling steps.
-export const ServiceProcess = ({ slug = "brand-design" }: { slug?: ServiceSlug }) => {
-  const steps = processCopy[slug].map((step, index) => index === 0 && slug !== "logo-design" && slug !== "brand-strategy" && slug !== "web-development" && slug !== "motion-graphics" ? brandSteps[0] : step);
+export const ServiceProcess = ({ slug = "brand-design", customSteps }: { slug?: ServiceSlug; customSteps?: typeof brandSteps }) => {
+  const steps = customSteps ?? processCopy[slug].map((step, index) => index === 0 && slug !== "logo-design" && slug !== "brand-strategy" && slug !== "web-development" && slug !== "motion-graphics" ? brandSteps[0] : step);
   const cards = useRef<(HTMLDivElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const reduced = useReducedMotion();
