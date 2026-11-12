@@ -7,6 +7,13 @@ const pageUrl = `${siteUrl}/real-estate-branding`;
 
 const config: IndustryLandingConfig = {
   path: "/real-estate-branding",
+  brandDesignLayout: true,
+  processSteps: [
+    { heading: "01", title: "Book a free call", description: "Tell me about your team, market, audience, and goals. We’ll discuss your needs, brokerage requirements, scope, and timing." },
+    { heading: "02", title: "Build your identity", description: "I develop a visual direction for your real estate brand, share the work with you, and refine the chosen direction with your feedback." },
+    { heading: "03", title: "Put your brand to work", description: "Receive the agreed files and guidelines for your identity. Website or presentation work can follow in separately scoped weeks." },
+  ],
+  bannerLines: ["Give your real estate brand a distinctive identity.", "Make every introduction feel like the same team."],
   breadcrumb: "Real estate branding",
   service: {
     name: "Real estate branding for agents, teams and brokerages",
@@ -18,7 +25,6 @@ const config: IndustryLandingConfig = {
   hero: {
     heading: "Real Estate Branding",
     description: "A recognizable identity for your real estate team, brokerage or personal brand. Work directly with a senior designer on the logo, visual system and website your clients meet before they meet you.",
-    action: { label: `Book a call · ${pricing.weekly} brand sprint`, url: "/start" },
     rows: [
       [
         { type: "lottie", src: `${media}/hero-logo.json`, alt: "Savory wordmark with its split O rolling into place", bgColor: "#B3C3D6" },
@@ -38,14 +44,6 @@ const config: IndustryLandingConfig = {
         { type: "image", src: `${media}/03-tote.webp`, alt: "Savory Wax Red tote with the approved natural-print wordmark" },
         { type: "video", src: `${media}/11-find-your-place.webm`, alt: "Savory Find your place logo and Brooklyn interiors in motion" },
       ],
-    ],
-  },
-  caseStudySummary: {
-    heading: "Savory: a distinctive identity for a team at Compass",
-    description: "The Savory Team, a Brooklyn real estate team at Compass, came to Ebaq Design after six months of explorations that had not felt right. We created an editorial identity around a custom wordmark, a split O and a warm palette, then carried it across the team's everyday touchpoints.",
-    decisions: [
-      { title: "A recognizable detail, from wordmark to favicon", body: "Roxborough CF gives the name an editorial presence. The split O introduces a distinctive detail that can also work on its own as a small icon or wax seal, instead of relying on a generic roof or skyline symbol." },
-      { title: "One system for the whole team", body: "Wax Red, Off-white and Sky Blue connect the business cards, email signature, LinkedIn banner, Instagram graphics and website design. Shared type and color rules make those applications feel like one team." },
     ],
   },
   painPoints: {
@@ -88,17 +86,17 @@ const config: IndustryLandingConfig = {
   faq: {
     heading: "Real estate branding\nquestions, answered",
     items: [
-      { question: "What does real estate branding include?", answer: "Real estate branding gives an agent, team or brokerage a recognizable identity: a logo, typography, colors and usage rules, applied to the places clients encounter the business. The Brand Sprint includes final logo files, logo animation, guidelines, business cards, social launch assets and an email signature. Website work is scoped separately.", link: { label: "brand identity services", href: "/services/brand-design" } },
-      { question: "How much does real estate branding cost?", answer: `A new brand identity or rebrand costs ${pricing.weekly} total for a one-week Brand Sprint. Revisions and source files are included. Additional work is ${pricing.weekly} per week, with the number of weeks and total agreed before work starts.`, link: { label: "current pricing and what is included", href: "/pricing" } },
-      { question: "How long does a real estate rebrand take?", answer: "The brand identity is delivered in one week, guaranteed, once the scope is locked at kickoff. Website design is another week; development takes one or two additional weeks depending on the page count and requirements. Presentation templates, extra motion and rollout assets can add further agreed weeks." },
+      { question: "What does real estate branding include?", answer: "Real estate branding gives an agent, team or brokerage a recognizable identity: a logo, typography, colors and usage rules, applied to the places clients encounter the business. The Brand Sprint includes final logo files, logo animation, guidelines, business cards, social launch assets and an email signature. Website work is scoped separately." },
+      { question: "How much does real estate branding cost?", answer: `A new brand identity or rebrand costs ${pricing.weekly} total for a one-week Brand Sprint. Revisions and source files are included. Additional work is ${pricing.weekly} per week, or a month booked upfront is $10,000. Scope, timing and total are agreed before work starts.` },
+      { question: "How long does a real estate rebrand take?", answer: "The brand identity is delivered in one week, guaranteed, with scope, start date and feedback schedule agreed before booking. Website design is another week; development takes one or two additional weeks depending on the page count and requirements. Presentation templates, extra motion and rollout assets can add further agreed weeks." },
       { question: "Can a real estate team have its own identity within a brokerage?", answer: "A team identity can be designed around the brokerage's requirements. We review the naming, required brokerage identification, logo rules and approved assets you supply before developing the visual system. Savory was a project for The Savory Team at Compass, rather than a corporate rebrand for Compass." },
       { question: "Do you work with individual agents, teams and real estate brokers?", answer: "Yes. An individual agent may need a personal brand and a focused launch kit; a team or independent brokerage may need a broader system for several people and touchpoints. The first call establishes the audience, positioning, decision-maker and practical scope." },
-      { question: "Have you designed a real estate brand before?", answer: "Yes. Savory is a Brooklyn real estate team identity built around an editorial wordmark, a split O, a wax seal and a warm color palette. The case study shows the logo, animation, typography, cards, social graphics, email signature and website design.", link: { label: "the full Savory case study", href: "/work/savory" } },
-      { question: "Do you design real estate websites and listing presentations?", answer: "Yes. Website design and development, listing-presentation templates and additional marketing collateral can follow the identity in separately scoped weeks. Websites can be built in Framer, Webflow or Next.js. Listing feeds, CRM connections and third-party subscriptions are discussed before the scope is agreed.", link: { label: "website design services", href: "/services/web-design" } },
+      { question: "Have you designed a real estate brand before?", answer: "Yes. Savory is a Brooklyn real estate team identity built around an editorial wordmark, a split O, a wax seal and a warm color palette. The identity includes the logo, animation, typography, cards, social graphics, email signature and website design shown above." },
+      { question: "Do you design real estate websites and listing presentations?", answer: "Yes. Website design and development, listing-presentation templates and additional marketing collateral can follow the identity in separately scoped weeks. Websites can be built in Framer, Webflow or Next.js. Listing feeds, CRM connections and third-party subscriptions are discussed before the scope is agreed." },
       { question: "Who will I work with, and where are you based?", answer: `You work directly with Arek Dvornechuck, a senior freelance graphic designer with over 20 years of experience, based in ${studio.location}. The process runs remotely for clients in New York, across the US and internationally.` },
     ],
   },
-  aboutHeading: "A senior designer,\nworking directly with your team.",
+  aboutHeading: "Branding built around your team.",
 };
 
 export const RealEstateBrandingLanding = () => (

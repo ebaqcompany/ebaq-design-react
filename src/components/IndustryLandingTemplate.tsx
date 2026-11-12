@@ -36,6 +36,8 @@ export type IndustryLandingConfig = {
   faq: { heading: string; items: IndustryFaq[] };
   aboutHeading: string;
   brandDesignLayout?: boolean;
+  processSteps?: { heading: string; title: string; description: string }[];
+  bannerLines?: [string, string];
 };
 
 const deliverablesDescription = "One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows: a week of design in Figma, then one or two weeks of development at the same rate, depending on the page count.";
@@ -143,7 +145,7 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
           </section>
         ) : <PainPointsSection heading={painPoints.heading} points={painPoints.points} />}
         {!config.brandDesignLayout && <DeliverablesSection heading={deliverables.heading} description={deliverables.description ?? deliverablesDescription} items={deliverables.items} />}
-        {config.brandDesignLayout && <ServiceProcess slug="brand-design" customSteps={[
+        {config.brandDesignLayout && <ServiceProcess slug="brand-design" customSteps={config.processSteps ?? [
           { heading: "01", title: "Book a free call", description: "Tell me about your AI product, audience, and goals. We’ll discuss your needs and agree on scope, timing, and the next steps." },
           { heading: "02", title: "Build your identity", description: "I develop a visual direction for your startup, share the work with you, and refine the chosen direction with your feedback." },
           { heading: "03", title: "Put your brand to work", description: "Receive the agreed files and guidelines for your identity. If a deck or website is part of your scope, we plan the additional work and timing together." },
@@ -165,7 +167,7 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
           ]} />
         </>}
         {config.brandDesignLayout ? (
-          <ServiceFaq serviceName="AI startup branding" heading={faq.heading} showButton={false} questions={faq.items.map(({ question, answer, link }) => ({
+          <ServiceFaq serviceName={config.breadcrumb} heading={faq.heading} showButton={false} questions={faq.items.map(({ question, answer, link }) => ({
             title: question,
             answer: <p>{answer}{link && <> See <a href={link.href}>{link.label}</a>.</>}</p>,
           }))} />
@@ -175,7 +177,7 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
             answer: link ? <p>{answer} See <a href={link.href}>{link.label}</a>.</p> : answer,
           }))} />
         )}
-        {config.brandDesignLayout && <AiStartupBanner />}
+        {config.brandDesignLayout && <AiStartupBanner lines={config.bannerLines} />}
         {!config.brandDesignLayout && <AboutSection heading={aboutHeading} />}
       </div>
 
