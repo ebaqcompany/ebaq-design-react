@@ -343,7 +343,7 @@ const allCaseStudies: CaseStudy[] = [
       description: "Brand identity for Spark Studios, an AI-native marketing studio in the UAE: a negative-space wordmark, a three-division color system, motion, and digital design.",
       keywords: ["marketing agency branding", "AI agency brand identity", "brand strategy", "UAE branding", "wordmark design", "brand architecture", "motion branding"],
     },
-    preview: { src: "/case-study/spark/work-logo-figma-selected.webp", alt: "Spark Studios wordmark on a light background" },
+    preview: { src: "/case-study/spark/work-logo-figma-original.png", alt: "Spark Studios wordmark on a light background" },
     hero: {
       src: "/case-study/spark/hero-wordmark.webm",
       alt: "Spark wordmark animating on ivory as colored sparks land in the counter of the a",
