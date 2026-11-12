@@ -367,8 +367,9 @@ export const Header78Defaults: Props = {
   row1: [
     { type: "lottie", src: "/case-study/savory/hero-logo.json", alt: "Savory", bgColor: "#B3C3D6" },
     { type: "video", src: "/portfolio/logos/orbio-logo.webm", alt: "Orbio", bgColor: "#0B0B0C" },
-    { type: "lottie", src: "/portfolio/logos/ElevateLogoBGTop.json", alt: "Elevate", bgColor: "#000000", fit: "cover" },
     { type: "lottie", src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json", alt: "NextDim", bgColor: "#181735" },
+    { type: "video", src: "/case-study/spark/hero-wordmark.webm", alt: "Spark Studios logo animation", bgColor: "#F4F1EA" },
+    { type: "lottie", src: "/portfolio/logos/ElevateLogoBGTop.json", alt: "Elevate", bgColor: "#000000", fit: "cover" },
     { type: "lottie", src: "/portfolio/logos/aero-logo.json", alt: "Aero", bgColor: "#63f3c0" },
     { type: "lottie", src: "/portfolio/logos/airporteexecutive-logo.json", alt: "Airport Executive", bgColor: "#000000" },
     { type: "lottie", src: "/portfolio/logos/brevidee-logo.json", alt: "Brevidee", bgColor: "#FCE5E9" },
@@ -387,6 +388,7 @@ export const Header78Defaults: Props = {
   row2: [
     { type: "image", src: "/portfolio/identities/savory-bento.webp", alt: "Savory Identity" },
     { type: "image", src: "/portfolio/identities/orbio-bento.webp", alt: "Orbio Identity" },
+    { type: "image", src: "/portfolio/identities/spark-bento-figma.jpg", alt: "Spark Studios identity and merchandise" },
     { type: "image", src: "/portfolio/identities/elevate-bento.webp", alt: "Elevate Identity" },
     { type: "image", src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim Identity" },
     { type: "image", src: "/portfolio/identities/aero-bento.webp", alt: "Aero Identity" },
@@ -409,6 +411,7 @@ export const Header78Defaults: Props = {
     { type: "image", src: "/portfolio/websites/elevate-web.webp", alt: "Elevate Website" },
     { type: "image", src: "/portfolio/websites/nextdim-web-portfolio.webp", alt: "NextDim Website" },
     { type: "image", src: "/portfolio/websites/aero-web.webp", alt: "Aero Website" },
+    { type: "image", src: "/portfolio/websites/spark-website-figma-updated.jpg", alt: "Spark Studios website design" },
     { type: "video", src: "/portfolio/websites/airport-executive-web.mp4", alt: "Airport Executive Website" },
     { type: "video", src: "/portfolio/websites/brevidee-web.mp4", alt: "Brevidee Website" },
     { type: "video", src: "/portfolio/websites/fox-berman-web.mp4", alt: "Foxberman Website" },
