@@ -6,6 +6,10 @@ import { LazyVideo } from "./Media";
 type ImageProps = {
   url?: string;
   src: string;
+  srcSet?: string;
+  sizes?: string;
+  width?: number;
+  height?: number;
   alt?: string;
   kind?: "image" | "video" | "lottie";
   span?: "full" | "half";
@@ -96,7 +100,7 @@ export const Gallery1 = (props: Gallery1Props) => {
               </div>
             ) : (
               <div className="w-full overflow-hidden">
-                <img loading="lazy" decoding="async" src={image.src} alt={image.alt} className="h-auto w-full" />
+                <img loading="lazy" decoding="async" src={image.src} srcSet={image.srcSet} sizes={image.sizes} width={image.width} height={image.height} alt={image.alt} className="h-auto w-full" />
               </div>
             );
 

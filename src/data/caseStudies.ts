@@ -20,6 +20,10 @@ type CaseStudyImage = {
 };
 
 export type CaseStudyGalleryImage = CaseStudyImage & {
+  srcSet?: string;
+  sizes?: string;
+  width?: number;
+  height?: number;
   url?: string;
   kind?: "image" | "video" | "lottie";
   span?: "full" | "half";
@@ -89,6 +93,15 @@ export type CaseStudy = {
   // Search and AI-overview copy; falls back to "client — title" and the summary.
   seo?: { title?: string; description?: string; keywords?: string[] };
 };
+
+const sparkFrame = (name: string, alt: string): CaseStudyGalleryImage => ({
+  src: `/case-study/spark/figma-responsive/${name}-1920.webp`,
+  srcSet: [960, 1920, 3840].map((width) => `/case-study/spark/figma-responsive/${name}-${width}.webp ${width}w`).join(", "),
+  sizes: "(min-width: 1440px) 1280px, 90vw",
+  width: name === "colors" ? 1922 : 1920,
+  height: 1080,
+  alt,
+});
 
 const allCaseStudies: CaseStudy[] = [
   {
@@ -315,165 +328,97 @@ const allCaseStudies: CaseStudy[] = [
   },
   {
     slug: "spark",
-    published: false,
+    published: true,
     client: "Spark Studios",
-    title: "A luminous brand for an AI-native marketing studio in the UAE",
+    title: "A bold identity for an AI-native marketing studio",
     summary:
-      "Spark Studios is an AI-native marketing studio in the UAE that helps technology companies get seen. The strategy starts from one fact: people judge whether to trust a face in a tenth of a second, and a website gets half that. So we built the brand around the first impression, with one line: We bring sparks to light. The identity, Cybernoor, answers cyberpunk's dark future with the one this region is building in daylight: a wordmark with a spark in it, a black-and-ivory base with three electric accents, halftone light, and people at the centre.",
+      "Spark Studios is an AI-native marketing studio in the UAE. Its identity brings a spark of light into a bold wordmark and carries it across three divisions, digital experiences, and social content. A black-and-ivory foundation gives green, purple, and orange room to stand out.",
     services: ["Brand strategy", "Visual identity", "Motion", "Web design"],
     industry: "Marketing & communications",
     portfolioIndustry: "Marketing agency",
     year: "2026",
-    deliverables: ["Brand strategy and positioning", "Logo design", "Logo animation", "Brand architecture for three divisions", "Color palette", "Typography", "Icon set", "Website design", "Instagram posts", "LinkedIn banner and social profile"],
+    deliverables: ["Brand strategy and positioning", "Logo design", "Logo animation", "Brand architecture for three divisions", "Color palette", "Website design", "Instagram posts", "LinkedIn banner and social profile"],
     seo: {
       title: "Spark Studios: Marketing Agency Branding Case Study | Ebaq Design",
-      description:
-        "Branding case study for Spark Studios, an AI-native marketing agency in the UAE: brand strategy, a spark wordmark, a three-division color system, halftone graphics, dotted icons, motion, and website design.",
-      keywords: [
-        "marketing agency branding",
-        "AI agency brand identity",
-        "brand strategy",
-        "UAE branding",
-        "wordmark design",
-        "brand architecture",
-        "halftone graphics",
-        "motion branding",
-      ],
+      description: "Brand identity for Spark Studios, an AI-native marketing studio in the UAE: a negative-space wordmark, a three-division color system, motion, and digital design.",
+      keywords: ["marketing agency branding", "AI agency brand identity", "brand strategy", "UAE branding", "wordmark design", "brand architecture", "motion branding"],
     },
-    preview: { src: "/case-study/spark/thumbnail.webp", alt: "Spark Studios wordmark over a woman holding a lit sparkler" },
+    preview: { src: "/case-study/spark/work-logo-figma-selected.webp", alt: "Spark Studios wordmark on a light background" },
     hero: {
       src: "/case-study/spark/hero-wordmark.webm",
-      alt: "Spark wordmark animating on ivory as purple, green, and orange sparks land in the counter of the a",
+      alt: "Spark wordmark animating on ivory as colored sparks land in the counter of the a",
       kind: "video",
       backgroundColor: "#F4F1EA",
     },
     leadGallery: [
-      { src: "/case-study/spark/01-sparkler.webp", alt: "Spark Studios wordmark over a woman in an ivory suit holding a lit sparkler" },
-      { src: "/case-study/spark/01-logo-colors.webp", alt: "Spark wordmark and spark mark on orange, purple, green, and ivory tiles" },
+      sparkFrame("sparkler", "Spark Studios wordmark over a woman holding a sparkler"),
+      sparkFrame("logo-colors", "Spark wordmark in purple, green, and orange alongside the spark symbol"),
     ],
     content: [
       {
         type: "header",
-        heading: "Nothing big starts big",
-        description:
-          "The internet's first message was two letters long. Most breakthroughs stay small, not because the technology is weak, but because the world meets it too late, in the wrong words, through the wrong people. Spark exists for that first moment of being seen. In astronomy, first light is the first image a new telescope captures. For a brand, it is the first time the world sees it.",
-      },
-      {
-        type: "gallery",
-        images: [
-          {
-            src: "/case-study/spark/02-culture-technology.webp",
-            alt: "A human hand and a robotic hand reaching toward a spark above the line: We understand where culture, technology, and creativity are going next",
-          },
-        ],
-      },
-      {
-        type: "header",
-        heading: "High tech, high light",
-        description:
-          "Cyberpunk writes the future as a warning: high tech, low life, rain and rot. In the UAE the future is written as a plan, built in one lifetime and in plain view. We called the identity Cybernoor, from the Arabic for light. Technology seen in daylight, people at its centre, and light as its material.",
-      },
-      {
-        type: "gallery",
-        images: [
-          {
-            src: "/case-study/spark/03-prism-portrait.webp",
-            alt: "Portrait of a woman wrapped in purple, green, and orange light trails",
-            span: "half",
-          },
-          {
-            src: "/case-study/spark/03-prism-eye.webp",
-            alt: "Close-up of an eye seen through bands of purple and orange prismatic light",
-            span: "half",
-          },
-        ],
-      },
-      {
-        type: "header",
         heading: "A spark inside the name",
-        description:
-          "The wordmark is a wide, bold modern sans set tight at minus five percent. The counter of the a holds a four-point spark in negative space, drawn with 60 percent corner smoothing so it reads as light rather than a star. Studios sits underneath in spaced capitals, and the spark works alone as the mark.",
+        description: "The bold wordmark gives Spark a distinctive signature. A four-point spark sits in the negative space of the a, while the mark can also appear on its own.",
       },
       {
         type: "gallery",
         images: [
-          { src: "/case-study/spark/04-logo-anatomy.webp", alt: "Annotated Spark Studios logo: wide bold modern sans, spark in negative space, uppercase descriptor" },
-          { src: "/case-study/spark/04-logo-construction.webp", alt: "Spark wordmark construction showing minus five percent kerning and 60 percent corner smoothing on the spark" },
-          { src: "/case-study/spark/04-logo-black.webp", alt: "White Spark Studios logo on black" },
+          sparkFrame("construction", "Spark wordmark construction showing the negative-space spark and spacing"),
+          sparkFrame("architecture", "Spark Studios brand architecture and three division wordmarks"),
         ],
       },
       {
         type: "header",
-        heading: "One studio, three kinds of light",
-        description:
-          "Spark leads, and each division takes one accent: purple for Technology Comms, green for Artificial Intelligence, and orange for Events & Exhibitions. Black and ivory carry everything else, so the accents always read as light arriving.",
+        heading: "One studio, three divisions",
+        description: "The Spark identity connects Technology Communication, Artificial Intelligence, and Events & Exhibitions. Each division has its own accent: green, purple, and orange respectively.",
       },
       {
         type: "gallery",
         images: [
-          { src: "/case-study/spark/05-architecture.webp", alt: "Spark Studios brand architecture with Technology Communication, Artificial Intelligence, and Events & Exhibitions lockups" },
-          { src: "/case-study/spark/05-division-covers.webp", alt: "Three division covers in purple, green, and orange halftone dots around an ivory spark" },
-          { src: "/case-study/spark/05-division-sparks.webp", alt: "Three black division posters with glossy 3D sparks in green, purple, and orange" },
-          { src: "/case-study/spark/05-division-list.webp", alt: "Numbered division list in dotted numerals: Technology Comms, Artificial Intelligence, Events & Exhibitions" },
+          sparkFrame("cards", "Three Spark division cards featuring green, purple, and orange dimensional sparks"),
+          sparkFrame("menu", "Spark division menu with dotted numerals and colored arrows"),
         ],
       },
       {
         type: "header",
-        heading: "Made of dots",
-        description:
-          "Every graphic sits on one dot grid. Halftone fields fade light across covers and backgrounds, and the service icons, from Brand Governance to Brand Performance, are drawn on an 11 by 11 grid of uniform circles so they share the same texture.",
+        heading: "Color, type, and light",
+        description: "Black and off-white anchor the system, while the three accents add energy. ABC Diatype Extended Bold gives the identity its distinctive typographic voice, and photography brings a human dimension to the work.",
       },
       {
         type: "gallery",
         images: [
-          { src: "/case-study/spark/05-division-icons.webp", alt: "Five dotted service icons for Brand Governance, Strategy, Innovation, Marketing, and Performance" },
+          sparkFrame("colors", "Spark palette with purple, green, orange, off-white, and black"),
+          sparkFrame("typography", "ABC Diatype Extended Bold type specimen on black"),
+          { src: "/case-study/spark/03-prism-portrait.webp", alt: "Portrait of a woman wrapped in purple, green, and orange light trails", span: "half" },
+          { src: "/case-study/spark/03-prism-eye.webp", alt: "Close-up of an eye seen through bands of purple and orange prismatic light", span: "half" },
         ],
       },
       {
         type: "header",
-        heading: "Color and type",
-        description:
-          "Purple, Green, and Orange are the light. Off White and Black are the ground. ABC Diatype Extended sets everything, from Bold headlines to the spaced capitals under the wordmark.",
+        heading: "Spark in everyday life",
+        description: "The spark can carry the identity beyond the screen. These concept mockups explore the identity on a cap, tote bag, and matchbox.",
       },
       {
         type: "gallery",
         images: [
-          { src: "/case-study/spark/06-colors.webp", alt: "Spark color palette: Purple, Green, Orange, Off White, and Black with color values" },
-          { src: "/case-study/spark/06-type.webp", alt: "ABC Diatype Extended Bold specimen on ivory" },
-          { src: "/case-study/spark/06-type-black.webp", alt: "ABC Diatype Extended Bold specimen on black" },
+          { src: "/case-study/spark/cap-purple-wordmark-accepted.png", alt: "Concept mockup of a purple cap with a black embroidered Spark wordmark", span: "half" },
+          { src: "/case-study/spark/tote-mockup-halftone-review.png", alt: "Concept mockup of a black tote bag with green halftone dots and a white spark", span: "half" },
+          { src: "/case-study/spark/matchbox-mockup-orange-heads.png", alt: "Concept mockup of a black Spark matchbox with orange match heads" },
         ],
       },
       {
         type: "header",
-        heading: "First light, on screen",
-        description:
-          "The website opens on a person, not a product, with a soft gradient of the three accents behind them. The same rules carry to the browser tab, the LinkedIn banner, and the social grid.",
+        heading: "From the website to social",
+        description: "The identity moves from a compact browser icon to a full website and social profiles, using the wordmark, spark, and colors to connect each touchpoint.",
       },
       {
         type: "gallery",
         images: [
-          { src: "/case-study/spark/07-website.webp", alt: "Spark Studios website hero: The AI-Native Marketing Company beside a smiling woman in warm gradient light" },
-          { src: "/case-study/spark/07-website-purple.webp", alt: "Alternate Spark Studios website hero with a portrait on a purple gradient and the services menu open" },
-          { src: "/case-study/spark/07-browser.webp", alt: "Browser tab with the Spark favicon and sparkstudios.ae in the address bar", span: "half" },
-          { src: "/case-study/spark/07-social-profile.webp", alt: "Spark Studios social profile: The AI-Native Marketing Agency", span: "half" },
-          { src: "/case-study/spark/07-linkedin.webp", alt: "Spark Studios LinkedIn banner: Spark the next move" },
-          { src: "/case-study/spark/07-instagram-grid.webp", alt: "Row of Spark Studios Instagram posts with halftone imagery and dotted numerals" },
-          { src: "/case-study/spark/07-instagram.webp", alt: "Three Spark Studios Instagram posts: The future is here, 360 full service, and Events & Exhibitions" },
-        ],
-      },
-      {
-        type: "header",
-        heading: "The whole system",
-        description:
-          "Wordmark, spark, type, dots, and light, layered together: one studio, seen in the right light from the first glance.",
-      },
-      {
-        type: "gallery",
-        images: [
-          {
-            src: "/case-study/spark/08-system.webp",
-            alt: "Layered overview of the Spark identity: wordmark construction, Diatype specimens, dotted division tags, halftone imagery, and the website on a laptop",
-          },
+          sparkFrame("website", "Spark Studios website concept with a portrait and the headline The AI-Native Marketing Company"),
+          sparkFrame("favicon", "Spark favicon in a browser tab"),
+          sparkFrame("linkedin", "Spark Studios LinkedIn profile and banner"),
+          sparkFrame("instagram", "A row of Spark Studios social posts"),
+          sparkFrame("culture", "Spark presentation slide about culture, technology, and creativity"),
         ],
       },
     ],
