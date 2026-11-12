@@ -10,6 +10,7 @@ import { ServiceProcess } from "./ServiceProcess";
 import { BrandDesignSectionOptions } from "./BrandDesignSectionOptions";
 import { serviceBySlug } from "../data/services";
 import { AiLandingAbout, AiLandingServices } from "./AiLandingAbout";
+import { LandingFooter } from "./LandingFooter";
 import { Pricing8 } from "./Pricing8";
 import { Comparison } from "./Comparison";
 import { AiStartupBanner } from "./AiStartupBanner";
@@ -182,7 +183,7 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
       </div>
 
       <BookerSection showDescription={!config.brandDesignLayout} anchorOnMarker={config.brandDesignLayout} />
-      {config.brandDesignLayout && <footer className="relative z-10 bg-black px-[5%] py-6 text-white"><div className="container flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm"><a href="/privacy-policy" className="text-white hover:text-brand-primary">Privacy policy</a><a href="/fulfillment-policy" className="text-white hover:text-brand-primary">Fulfillment policy</a></div></footer>}
+      {config.brandDesignLayout && <LandingFooter />}
     </div>
   );
 };

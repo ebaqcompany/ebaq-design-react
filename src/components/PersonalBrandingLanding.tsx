@@ -22,7 +22,7 @@ const config: IndustryLandingConfig = {
       [
         { type: "image", src: `${NS}/07-mockup.webp`, alt: "Nathalie Sadler speaker coaching website design", fit: "contain", bgColor: "#0B0B0B" },
         { type: "image", src: `${NS}/12-business-card.webp`, alt: "Nathalie Sadler business card design", fit: "contain", bgColor: "#0B0B0B" },
-        { type: "video", src: `${NS}/09-social-carousel.mp4`, poster: `${NS}/06-instagram.webp`, alt: "Nathalie Sadler social posts in motion", fit: "contain", bgColor: "#eee" },
+        { type: "image", src: `${NS}/06-instagram-updated.png`, alt: "Nathalie Sadler print cards with a gold monogram and dark grey pattern" },
       ],
       [
         { type: "image", src: `${NS}/08-colors.webp`, alt: "Nathalie Sadler color palette", fit: "contain", bgColor: "#0B0B0B" },
@@ -48,9 +48,10 @@ const config: IndustryLandingConfig = {
     { label: "Monogram", image: { src: `${NS}/10-monogram-construction.webp`, alt: "Nathalie Sadler monogram construction" } },
     { label: "Typography", image: { src: `${NS}/05-typeface.webp`, alt: "Nathalie Sadler typography system" } },
     { label: "Colors", image: { src: `${NS}/08-colors.webp`, alt: "Nathalie Sadler color palette" } },
-    { label: "Website", image: { src: `${NS}/07-mockup.webp`, alt: "Nathalie Sadler website design" } },
-    { label: "Social", image: { src: `${NS}/06-instagram.webp`, alt: "Nathalie Sadler social posts" } },
+    { label: "Print", image: { src: `${NS}/06-instagram-updated.png`, alt: "Nathalie Sadler print cards with a gold monogram and dark grey pattern" } },
     { label: "Business Cards", image: { src: `${NS}/12-business-card.webp`, alt: "Nathalie Sadler business cards" } },
+    { label: "Website", image: { src: `${NS}/07-mockup.webp`, alt: "Nathalie Sadler website design" } },
+    { label: "Social", image: { src: `${NS}/09-social-carousel.webm`, poster: `${NS}/09-social-carousel-poster.webp`, alt: "Nathalie Sadler social posts in motion" } },
   ] },
   bannerLines: ["Build a personal brand that reflects the work you do.", "Make every introduction feel unmistakably yours."],
   faq: { heading: "Questions about personal branding", items: [
