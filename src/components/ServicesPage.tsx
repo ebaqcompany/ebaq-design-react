@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import { pricing, studio } from "../content/siteFacts";
+import { pricing, siteUrl, studio } from "../content/siteFacts";
+import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 import { Navbar16 } from "./Navbar16";
 import { ServicesGrid } from "./ServicesGrid";
 import { Comparison } from "./Comparison";
@@ -54,6 +55,7 @@ export const ServicesPage = () => (
           })),
         })}
       </script>
+      <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }], siteUrl))}</script>
     </Helmet>
 
     <Navbar16 />

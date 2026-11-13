@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { bookingUrl, pricing, siteUrl, studio } from "../content/siteFacts";
-import { serializeJsonLd } from "../content/structuredData";
+import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 import { ContactForm } from "./ContactForm";
 import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
 import { Logo3 } from "./Logo3";
@@ -30,6 +30,7 @@ export const ContactPage = () => <div className="relative bg-white">
         potentialAction: { "@type": "ReserveAction", name: "Book a 15-minute call", target: bookingUrl },
       },
     })}</script>
+    <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }], siteUrl))}</script>
   </Helmet>
   <Navbar16 />
   <main className="min-h-[70vh]">

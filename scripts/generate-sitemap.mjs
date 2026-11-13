@@ -14,6 +14,8 @@ const blog = JSON.parse(await readFile(new URL('../public/content/blog/index.jso
 const podcast = JSON.parse(await readFile(new URL('../public/content/podcast/index.json', import.meta.url), 'utf8'))
 const { caseStudies } = await loadTypeScriptModule('../src/data/caseStudies.ts')
 const { shopProducts } = await loadTypeScriptModule('../src/data/shopProducts.ts')
+const { comparisons } = await loadTypeScriptModule('../src/data/comparisons.ts')
+const { glossary } = await loadTypeScriptModule('../src/data/glossary.ts')
 
 // /start is a 301 to the booking page (vercel.json), so it stays out of the sitemap.
 const staticPaths = [
@@ -26,6 +28,12 @@ const staticPaths = [
   '/shop',
   '/tools',
   '/tools/branding-cost-calculator',
+  '/tools/website-cost-calculator',
+  '/tools/brand-grader',
+  '/tools/brand-archetype-quiz',
+  '/tools/tagline-generator',
+  '/tools/brand-name-generator',
+  '/tools/brand-templates',
   '/pricing',
   '/services',
   '/services/brand-strategy',
@@ -49,6 +57,9 @@ const staticPaths = [
   '/framer-designer',
   '/webflow-designer',
   '/marketing-agency-branding',
+  '/compare',
+  '/glossary',
+  '/industries',
 ]
 
 // A post's date is moved forward whenever it is substantively updated (AGENTS.md), so it doubles as lastmod.
@@ -67,6 +78,8 @@ for (const [collection, index] of [['blog', blog], ['podcast', podcast]]) {
 
 const paths = [
   ...staticPaths,
+  ...comparisons.map(({ slug }) => `/compare/${slug}`),
+  ...glossary.map(({ slug }) => `/glossary/${slug}`),
   ...caseStudies.map(({ slug }) => `/work/${slug}`),
   ...shopProducts.filter(({ published }) => published !== false).map(({ slug }) => `/shop/${slug}`),
   ...blog.map(({ slug }) => `/blog/${slug}`),

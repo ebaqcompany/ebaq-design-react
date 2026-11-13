@@ -3,6 +3,7 @@ import type { LottieRefCurrentProps } from "lottie-react";
 import { LottiePlayer as Lottie } from "./LottiePlayer";
 import { VideoSources } from "./Media";
 import { useMediaQuery } from "./ui";
+import { TextLink } from "./TextLink";
 
 type ImageProps = {
   src: string;
@@ -133,9 +134,9 @@ export const PortfolioHeader10 = (props: PortfolioHeader10Props) => {
               {links.length > 0 && (
                 <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 md:mt-8">
                   {links.map((link) => (
-                    <a key={link.href} href={link.href} {...(/^https?:/.test(link.href) ? { target: "_blank", rel: "noreferrer" } : {})} className="font-semibold">
+                    <TextLink key={link.href} href={link.href} {...(/^https?:/.test(link.href) ? { target: "_blank", rel: "noreferrer" } : {})}>
                       {link.label}
-                    </a>
+                    </TextLink>
                   ))}
                 </div>
               )}

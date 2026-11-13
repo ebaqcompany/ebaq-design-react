@@ -5,11 +5,14 @@ import {
   BiLogoLinkedinSquare,
   BiLogoYoutube,
 } from "react-icons/bi";
+import { LuPlus } from "react-icons/lu";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ContraIcon } from "./ContraIcon";
 import { services } from "../data/services";
+import { arekToolIcons } from "./ArekProfileBadge";
 import { FooterWordmark } from "./FooterWordmark";
+import { TextLink } from "./TextLink";
 
 type ImageProps = {
   url?: string;
@@ -28,6 +31,7 @@ type SocialMediaLinks = {
 };
 
 type ColumnLinks = {
+  title: string;
   links: Links[];
 };
 
@@ -108,6 +112,10 @@ const DraggableFooterGuide = ({ footerRef }: { footerRef: React.RefObject<HTMLEl
   );
 };
 
+// The best-known tools from the About page's set; the plus after them stands for the rest.
+const keyCertifications = ["Adobe Illustrator", "Adobe Photoshop", "Adobe After Effects", "Framer", "Webflow", "Rive"];
+const certifications = arekToolIcons.filter(([, name]) => keyCertifications.includes(name));
+
 export const Footer15 = (props: Footer15Props) => {
   const footerRef = useRef<HTMLElement>(null);
   const {
@@ -130,7 +138,7 @@ export const Footer15 = (props: Footer15Props) => {
       <div className="container">
         <div className="pb-10 md:pb-14 lg:pb-16">
           <div className="mb-8 md:mb-12">
-            <a href={logo.url} aria-label={logo.alt}>
+            <a href={logo.url} aria-label={logo.alt} className="block w-fit">
               <span className="footer-brandmark block size-12" />
             </a>
           </div>
@@ -138,11 +146,11 @@ export const Footer15 = (props: Footer15Props) => {
             <div>
             <div className="rb-6 mb-6 md:mb-8">
               <div>
-                <p className="mb-1 text-sm font-semibold">{address.label}</p>
+                <p className="mb-1 font-mono text-sm uppercase tracking-wide text-white/60">{address.label}</p>
                 <p className="mb-5 whitespace-pre-line text-sm md:mb-6">{address.value}</p>
               </div>
               <div className="flex flex-col gap-1">
-                <p className="text-sm font-semibold">{contact.label}</p>
+                <p className="font-mono text-sm uppercase tracking-wide text-white/60">{contact.label}</p>
                 <a
                   href={`tel:${contact.phone}`}
                   className="block w-fit text-sm"
@@ -155,24 +163,23 @@ export const Footer15 = (props: Footer15Props) => {
                 >
                   {contact.email}
                 </a>
+                <TextLink href="/start" className="w-fit text-sm text-white">Book a call</TextLink>
               </div>
             </div>
-            <div className="grid grid-flow-col grid-cols-[max-content] items-start justify-start gap-x-3">
-              {socialMediaLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  aria-label={`Visit ${new URL(link.url).hostname.replace("www.", "")}`}
-                  className="transition-colors duration-300 hover:text-brand-primary"
-                >
-                  {link.icon}
-                </a>
-              ))}
+            <div>
+              <p className="mb-2 font-mono text-sm uppercase tracking-wide text-white/60">Certified expert</p>
+              <ul className="flex flex-wrap items-center gap-3">
+                {certifications.map(([src, name, className]) => (
+                  <li key={name}><img loading="lazy" decoding="async" src={src} alt={name} title={name} width={24} height={24} className={`size-6 rounded-[20%] object-cover ${className ?? ""}`.trim()} /></li>
+                ))}
+                <li className="flex size-6 items-center justify-center text-white/50" title="And more"><LuPlus aria-hidden="true" className="size-5" /><span className="sr-only">and more</span></li>
+              </ul>
             </div>
             </div>
-            <div className="grid grid-cols-[repeat(3,max-content)] items-start justify-between gap-x-3 gap-y-4">
+            <div className="grid grid-cols-2 sm:grid-cols-[repeat(3,max-content)] items-start justify-between gap-x-3 gap-y-4">
               {columnLinks.map((column, index) => (
-                <ul key={index}>
+                <ul key={index} aria-label={column.title}>
+                  <li aria-hidden="true" className="pb-2 font-mono text-sm uppercase tracking-wide text-white/60">{column.title}</li>
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex} className="py-2 text-sm font-semibold">
                       {<Link
@@ -196,9 +203,20 @@ export const Footer15 = (props: Footer15Props) => {
           <FooterWordmark src={companyImage.src} alt={companyImage.alt ?? "Ebaq Design"} mode={wordmarkMode} />
         </div>
         <DraggableFooterGuide footerRef={footerRef} />
-        <div className="flex items-center justify-between gap-x-3 py-6 text-sm md:py-8">
-          <p>{footerText}</p>
-          <p>{rightsText}</p>
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-4 py-6 text-sm md:py-8">
+          <p>{footerText} – {rightsText}</p>
+          <div className="grid grid-flow-col grid-cols-[max-content] items-start justify-start gap-x-3">
+            {socialMediaLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                aria-label={`Visit ${new URL(link.url).hostname.replace("www.", "")}`}
+                className="transition-colors duration-300 hover:text-brand-primary"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
@@ -217,39 +235,46 @@ export const Footer15Defaults: Props = {
     alt: "Ebaq Design",
   },
   address: {
-    label: "Studio:",
+    label: "Address",
     value: "Ebaqdesign LLC\n495 Flatbush Ave\nBrooklyn, NY 11225",
   },
   contact: {
-    label: "Contact:",
+    label: "Contact",
     phone: "+1 (929) 245-9811",
     email: "arek@ebaqdesign.com",
   },
   columnLinks: [
     {
+      title: "Ebaq Design",
       links: [
-        { title: "About", url: "/about" },
         { title: "Work", url: "/work" },
+        { title: "About", url: "/about" },
+        { title: "Services", url: "/services" },
         { title: "Pricing", url: "/pricing" },
+        { title: "Contact", url: "/contact" },
       ],
     },
     {
+      title: "Services",
       links: services.map(service => ({ title: service.heading, url: service.url })),
     },
     {
+      title: "Resources",
       links: [
         { title: "Blog", url: "/blog" },
         { title: "Podcast", url: "/podcast" },
-        { title: "Tools", url: "/tools" },
+        { title: "Industries", url: "/industries" },
+        { title: "Glossary", url: "/glossary" },
+        { title: "Comparisons", url: "/compare" },
+        { title: "Free tools", url: "/tools" },
         { title: "Shop", url: "/shop" },
-        { title: "Contact", url: "/contact" },
       ],
     },
   ],
   socialMediaLinks: [
-    { url: "https://www.facebook.com/ebaqdesign", icon: <BiLogoFacebookCircle className="size-6" /> },
-    { url: "https://www.instagram.com/ebaqdesign/", icon: <BiLogoInstagram className="size-6" /> },
     { url: "https://x.com/ebaqdesign", icon: <FaXTwitter className="size-6 p-0.5" /> },
+    { url: "https://www.instagram.com/ebaqdesign/", icon: <BiLogoInstagram className="size-6" /> },
+    { url: "https://www.facebook.com/ebaqdesign", icon: <BiLogoFacebookCircle className="size-6" /> },
     { url: "https://www.linkedin.com/in/ebaqdesign/", icon: <BiLogoLinkedinSquare className="size-6" /> },
     { url: "https://www.youtube.com/@ebaqdesign", icon: <BiLogoYoutube className="size-6" /> },
     { url: "https://contra.com/ebaqdesign", icon: <ContraIcon className="size-5" /> },

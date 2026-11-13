@@ -3,6 +3,17 @@ import { Helmet } from 'react-helmet-async'
 import { Navbar16 } from './Navbar16'
 import { Footer15 } from './Footer15'
 import { shopProducts, shopTestimonials } from '../data/shopProducts'
+import { siteUrl } from '../content/siteFacts'
+import { buildBreadcrumbSchema, buildCollectionSchema, serializeJsonLd } from '../content/structuredData'
+
+const shopSchemas = [
+  buildCollectionSchema(
+    { path: '/shop', name: 'Branding Resources', description: 'Practical branding guides, courses and templates for creative professionals and business owners.' },
+    shopProducts.filter((product) => product.published !== false).map((product) => ({ name: product.title, path: `/shop/${product.slug}` })),
+    siteUrl,
+  ),
+  buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Shop', path: '/shop' }], siteUrl),
+]
 import { useEffect } from 'react'
 import { RotatingProjectPreview, type ProjectPreviewImage } from './RotatingProjectPreview'
 
@@ -32,7 +43,7 @@ export function ShopPage() {
 
   return (
     <div className="relative bg-white text-black">
-      <Helmet><title>Branding Resources | Ebaq Design</title><meta name="description" content="Practical branding guides, courses and templates for creative professionals and business owners." /><link rel="canonical" href="https://www.ebaqdesign.com/shop" /></Helmet>
+      <Helmet><title>Branding Resources | Ebaq Design</title><meta name="description" content="Practical branding guides, courses and templates for creative professionals and business owners." /><link rel="canonical" href="https://www.ebaqdesign.com/shop" />{shopSchemas.map((schema) => <script key={schema["@type"]} type="application/ld+json">{serializeJsonLd(schema)}</script>)}</Helmet>
       <Navbar16 />
       <main>
         <header className="px-[5%] pb-12 pt-16 text-center md:pb-16 md:pt-24 lg:pb-20 lg:pt-28">

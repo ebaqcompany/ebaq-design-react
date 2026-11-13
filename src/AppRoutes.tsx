@@ -48,6 +48,15 @@ const AboutPage = page('./components/AboutPage.tsx', 'AboutPage')
 const ContactPage = page('./components/ContactPage.tsx', 'ContactPage')
 const ToolsPage = page('./components/ToolsPage.tsx', 'ToolsPage')
 const BrandingCostCalculatorPage = page('./components/BrandingCostCalculatorPage.tsx', 'BrandingCostCalculatorPage')
+const WebsiteCostCalculatorPage = page('./components/WebsiteCostCalculatorPage.tsx', 'WebsiteCostCalculatorPage')
+const BrandGraderPage = page('./components/BrandGraderPage.tsx', 'BrandGraderPage')
+const BrandArchetypeQuizPage = page('./components/BrandArchetypeQuizPage.tsx', 'BrandArchetypeQuizPage')
+const TaglineGeneratorPage = page('./components/TaglineGeneratorPage.tsx', 'TaglineGeneratorPage')
+const BrandNameGeneratorPage = page('./components/BrandNameGeneratorPage.tsx', 'BrandNameGeneratorPage')
+const BrandTemplatesPage = page('./components/BrandTemplatesPage.tsx', 'BrandTemplatesPage')
+const GlossaryPage = page('./components/GlossaryPage.tsx', 'GlossaryPage')
+const GlossaryTermPage = page('./components/GlossaryTermPage.tsx', 'GlossaryTermPage')
+const IndustriesPage = page('./components/IndustriesPage.tsx', 'IndustriesPage')
 const PrivacyPolicyPage = page('./components/LegalPage.tsx', 'PrivacyPolicyPage')
 const FulfillmentPolicyPage = page('./components/LegalPage.tsx', 'FulfillmentPolicyPage')
 const NotFoundPage = page('./components/NotFoundPage.tsx', 'NotFoundPage')
@@ -59,6 +68,8 @@ const WebDesignPage = page('./components/WebDesignPage.tsx', 'WebDesignPage')
 const WebDevelopmentPage = page('./components/WebDevelopmentPage.tsx', 'WebDevelopmentPage')
 const MotionGraphicsPage = page('./components/MotionGraphicsPage.tsx', 'MotionGraphicsPage')
 const PricingPage = page('./components/PricingPage.tsx', 'PricingPage')
+const CompareIndexPage = page('./components/CompareIndexPage.tsx', 'CompareIndexPage')
+const ComparePage = page('./components/ComparePage.tsx', 'ComparePage')
 const product = (name: string) => page('./components/ProductLandingPage.tsx', name)
 
 const LegacyGearRedirect = () => {
@@ -84,11 +95,22 @@ const routes: RouteEntry[] = [
   { path: '/framer-designer', page: FramerDesignerLanding },
   { path: '/webflow-designer', page: WebflowDesignerLanding },
   { path: '/marketing-agency-branding', page: MarketingAgencyBrandingLanding },
+  { path: '/glossary', page: GlossaryPage },
+  { path: '/glossary/:slug', page: GlossaryTermPage },
+  { path: '/industries', page: IndustriesPage },
+  { path: '/compare', page: CompareIndexPage },
+  { path: '/compare/:slug', page: ComparePage },
   { path: '/work', page: WorkPage },
   { path: '/about', page: AboutPage },
   { path: '/contact', page: ContactPage },
   { path: '/tools', page: ToolsPage },
   { path: '/tools/branding-cost-calculator', page: BrandingCostCalculatorPage },
+  { path: '/tools/website-cost-calculator', page: WebsiteCostCalculatorPage },
+  { path: '/tools/brand-grader', page: BrandGraderPage },
+  { path: '/tools/brand-archetype-quiz', page: BrandArchetypeQuizPage },
+  { path: '/tools/tagline-generator', page: TaglineGeneratorPage },
+  { path: '/tools/brand-name-generator', page: BrandNameGeneratorPage },
+  { path: '/tools/brand-templates', page: BrandTemplatesPage },
   { path: '/pricing', page: PricingPage },
   { path: '/services', page: ServicesPage },
   { path: '/services/brand-strategy', page: BrandStrategyPage },

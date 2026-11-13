@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet-async'
 import { useEffect } from 'react'
 import { Footer15 } from './Footer15'
 import { Navbar16 } from './Navbar16'
+import { siteUrl } from '../content/siteFacts'
+import { buildBreadcrumbSchema, serializeJsonLd } from '../content/structuredData'
 
 type Section = { heading: string; paragraphs?: string[]; items?: string[] }
 
@@ -26,6 +28,8 @@ function LegalPage({ title, updated, description, sections }: { title: string; u
         <title>{title} | Ebaq Design</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={`https://www.ebaqdesign.com${path}`} />
+        <script type="application/ld+json">{serializeJsonLd({ "@context": "https://schema.org", "@type": "WebPage", "@id": `${siteUrl}${path}#webpage`, url: `${siteUrl}${path}`, name: title, description, isPartOf: { "@id": `${siteUrl}/#website` } })}</script>
+        <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: title, path }], siteUrl))}</script>
       </Helmet>
       <Navbar16 />
       <main className="px-[5%] py-16 md:py-24 lg:py-28">

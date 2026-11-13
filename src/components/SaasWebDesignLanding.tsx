@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import { pricing, studio } from "../content/siteFacts";
+import { pricing, siteUrl, studio } from "../content/siteFacts";
+import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 import { BiCheck, BiSolidStar } from "react-icons/bi";
 import {
   Navbar16,
@@ -231,6 +232,7 @@ export const SaasWebDesignLanding = () => (
           mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })),
         })}
       </script>
+      <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "SaaS Web Design", path: "/saas-web-design" }], siteUrl))}</script>
     </Helmet>
 
     <div className="relative z-10 bg-white">

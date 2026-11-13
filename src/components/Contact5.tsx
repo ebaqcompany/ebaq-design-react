@@ -11,9 +11,9 @@ const contactDetails = [
 ];
 
 const socialLinks = [
-  { href: "https://www.facebook.com/ebaqdesign", icon: BiLogoFacebookCircle, label: "Facebook" },
-  { href: "https://www.instagram.com/ebaqdesign/", icon: BiLogoInstagram, label: "Instagram" },
   { href: "https://x.com/ebaqdesign", icon: FaXTwitter, label: "X" },
+  { href: "https://www.instagram.com/ebaqdesign/", icon: BiLogoInstagram, label: "Instagram" },
+  { href: "https://www.facebook.com/ebaqdesign", icon: BiLogoFacebookCircle, label: "Facebook" },
   { href: "https://www.linkedin.com/in/ebaqdesign/", icon: BiLogoLinkedinSquare, label: "LinkedIn" },
   { href: "https://www.youtube.com/@ebaqdesign", icon: BiLogoYoutube, label: "YouTube" },
   { href: "https://contra.com/ebaqdesign", icon: ContraIcon, label: "Contra" },

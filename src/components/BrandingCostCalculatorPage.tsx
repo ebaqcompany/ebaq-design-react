@@ -7,6 +7,7 @@ import { Cta17 } from "./Cta17";
 import { Faq4 } from "./Faq4";
 import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
+import { ToolReading } from "./ToolReading";
 import { bookingUrl, pricing, siteUrl, type FactFaq } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 
@@ -101,18 +102,15 @@ export const BrandingCostCalculatorPage = () => {
       </Helmet>
       <Navbar16 />
       <main>
-        <header className="px-[5%] pb-12 pt-16 text-center md:pb-16 md:pt-24 lg:pb-20 lg:pt-28">
-          <div className="mx-auto max-w-3xl">
-            <p className="mb-3 font-mono text-sm font-normal uppercase tracking-wide text-brand-primary md:mb-4">Free tool</p>
-            <h1 className="text-balance">Branding cost calculator</h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
-              Pick what you need and see the price and timeline. Every figure is my published rate: a flat {pricing.weekly} per week, with the total fixed before work starts.
-            </p>
-          </div>
-        </header>
-
-        <section id="calculator" className="bg-surface-muted px-[5%] py-16 md:py-24 lg:py-28">
+        {/* Relume Header 1: title and intro on the left, the tool's result on the right, so the tool is in view on load. */}
+        <section id="calculator" className="bg-surface-muted px-[5%] py-12 md:py-16 lg:py-20">
           <div className="container grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:items-start lg:gap-x-20">
+            <div>
+            <header className="mb-10 md:mb-12">
+              <p className={"mb-3 font-mono text-sm uppercase tracking-wide text-brand-primary md:mb-4"}>Free tool</p>
+              <h1 className="heading-h2 mb-5 md:mb-6">Branding cost calculator</h1>
+              <p className="max-w-md md:text-md">Pick what you need and see the price and timeline. Every figure is my published rate: a flat {pricing.weekly} per week, with the total fixed before work starts.</p>
+            </header>
             <form className="grid gap-12" onSubmit={(event) => event.preventDefault()}>
               <fieldset className="grid gap-4">
                 <legend className="heading-h5 mb-6">1. Your brand</legend>
@@ -145,6 +143,7 @@ export const BrandingCostCalculatorPage = () => {
                 ))}
               </fieldset>
             </form>
+            </div>
 
             <div aria-live="polite" className="rounded-xl border border-black/20 bg-white p-6 text-black md:p-8 lg:sticky lg:top-28">
               <p className="mb-2 font-mono text-sm uppercase tracking-wide text-brand-primary">Your estimate</p>
@@ -185,6 +184,7 @@ export const BrandingCostCalculatorPage = () => {
             { left: "One senior designer, start to finish", right: "Account managers and juniors" },
           ]}
         />
+        <ToolReading links={[{ label: "Logo design cost", href: "/blog/logo-design-cost" }, { label: "Branding checklist", href: "/blog/branding-checklist" }, { label: "Brand grader", href: "/tools/brand-grader" }]} />
         <Faq4 tagline="FAQs" heading="Branding cost questions" questions={faqs.map(({ question, answer }) => ({ title: question, answer }))} />
         <Cta17 heading="Want an exact number?" description="Book a 15-minute call. You'll leave with a scope, a week count, and a fixed total." />
       </main>

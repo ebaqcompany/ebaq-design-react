@@ -131,6 +131,8 @@ const allCaseStudies: CaseStudy[] = [
         "logo animation",
       ],
     },
+    website: { label: "Visit live website", href: "https://nathaliesadler.com/" },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/nathalie-sadler" },
     preview: { src: "/case-study/nathalie-sadler/thumbnail.webp", alt: "Nathalie Sadler logo in white on black: NATHALIE and SADLER on either side of the NS monogram" },
     hero: {
       src: "/case-study/nathalie-sadler/hero-logo.json",
@@ -343,6 +345,7 @@ const allCaseStudies: CaseStudy[] = [
       description: "Brand identity for Spark Studios, an AI-native marketing studio in the UAE: a negative-space wordmark, a three-division color system, motion, and digital design.",
       keywords: ["marketing agency branding", "AI agency brand identity", "brand strategy", "UAE branding", "wordmark design", "brand architecture", "motion branding"],
     },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/spark" },
     preview: { src: "/case-study/spark/work-logo-figma-original.png", alt: "Spark Studios wordmark on a light background" },
     hero: {
       src: "/case-study/spark/hero-wordmark.webm",
@@ -456,6 +459,7 @@ const allCaseStudies: CaseStudy[] = [
         "social media templates",
       ],
     },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/orbio" },
     preview: { src: "/case-study/orbio/thumbnail.webp", alt: "Horizontal Orbio logo lockup: the 3D marble orb beside the ORBIO wordmark" },
     hero: {
       src: "/case-study/orbio/hero-orb.webm",
@@ -864,6 +868,7 @@ const allCaseStudies: CaseStudy[] = [
       description: "Health tech branding case study: a custom lowercase wordmark, logo animation, lab-grade color system, website, app, signage, and campaign design for Aero, a breath-analysis company.",
       keywords: ["health tech branding", "medical device branding", "healthcare logo design", "health app design", "logo animation"],
     },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/aero" },
     preview: { src: "/portfolio/identities/aero-bento.webp", alt: "Aero brand identity" },
     hero: {
       src: "/case-study/aero/hero-logo.json",
@@ -963,6 +968,7 @@ const allCaseStudies: CaseStudy[] = [
       keywords: ["edtech branding", "education SaaS logo", "school software branding", "app icon design", "logo animation"],
     },
     website: { label: "Visit live website", href: "https://www.brevidee.com/" },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/brevidee" },
     preview: { src: "/portfolio/identities/brevidee-bento.webp", alt: "Brevidee brand identity" },
     hero: {
       src: "/case-study/brevidee/hero-logo.json",
@@ -1041,6 +1047,7 @@ const allCaseStudies: CaseStudy[] = [
       description: "Agency branding case study: a refined logo, logo animation, pitch deck, social media system, and website for Wingnut Social, a digital marketing agency for interior designers and home brands.",
       keywords: ["marketing agency branding", "pitch deck design", "agency logo design", "social media design", "interior design marketing brand"],
     },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/wingnut" },
     preview: { src: "/portfolio/identities/wingnut-bento.webp", alt: "Wingnut brand identity" },
     hero: {
       src: "/case-study/wingnut/hero-logo.json",
@@ -1125,6 +1132,7 @@ const allCaseStudies: CaseStudy[] = [
       keywords: ["travel app branding", "AI app logo design", "monogram logo", "mobile app branding", "logo animation"],
     },
     website: { label: "Visit live website", href: "https://www.venturtravel.com/" },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/ventur" },
     preview: { src: "/portfolio/identities/ventur-bento.webp", alt: "Ventur brand identity" },
     hero: {
       src: "/case-study/ventur/hero-logo.json",
@@ -1196,6 +1204,7 @@ const allCaseStudies: CaseStudy[] = [
       keywords: ["luxury rebrand", "luxury brand identity", "monogram logo design", "chauffeur service branding", "premium website design"],
     },
     website: { label: "Visit live website", href: "https://www.airportexecutive.com/" },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/ae" },
     preview: { src: "/portfolio/identities/airport-executive-bento.webp", alt: "Airport Executive brand identity" },
     hero: {
       src: "/case-study/airport-executive/hero-logo.json",
@@ -1366,10 +1375,7 @@ const allCaseStudies: CaseStudy[] = [
       keywords: ["consultancy branding", "B2B brand identity", "professional services logo", "HubSpot partner branding", "B2B website design"],
     },
     website: { label: "Visit live website", href: "https://peritidigital.com/" },
-    guidelines: {
-      label: "Brand guidelines",
-      href: "https://indd.adobe.com/view/f088380d-7ba9-47b9-b4bb-5a881e492c73?startpage=1&allowFullscreen=true",
-    },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/periti" },
     preview: { src: "/portfolio/identities/periti-bento.webp", alt: "Periti Digital brand identity" },
     hero: {
       src: "/case-study/periti/hero-logo.json",
@@ -1438,10 +1444,7 @@ const allCaseStudies: CaseStudy[] = [
       keywords: ["rebrand case study", "logo redesign", "medical education branding", "healthcare brand identity", "logo animation"],
     },
     website: { label: "Visit live website", href: "https://www.medihuanna.com/" },
-    guidelines: {
-      label: "Brand guidelines",
-      href: "https://indd.adobe.com/view/9907a87c-29c2-4164-92ee-dac1551442c3?startpage=1&allowFullscreen=true",
-    },
+    guidelines: { label: "Brand guidelines", href: "https://guidelines.online/medihuanna" },
     preview: { src: "/portfolio/identities/medihuanna-bento.webp", alt: "Medihuanna brand identity" },
     hero: {
       src: "/case-study/medihuanna/hero-logo.json",

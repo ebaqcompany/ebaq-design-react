@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/blog/saas-website-design-cost",
+      "destination": "/tools/website-cost-calculator",
+      "statusCode": 302
+    },
+    {
       "source": "/services/identity-systems",
       "destination": "/services/brand-design",
       "statusCode": 301

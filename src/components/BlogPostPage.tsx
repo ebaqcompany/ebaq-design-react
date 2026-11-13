@@ -15,6 +15,8 @@ import { NotificationBar } from "./NotificationBar";
 import { NotFoundPage } from "./NotFoundPage";
 import { preloadKeys, readPreloaded } from "../content/preload";
 import { Portfolio16Project, type Portfolio16ProjectProps } from "./Portfolio16";
+import { TextLink } from "./TextLink";
+import { relatedTool } from "../data/relatedTools";
 
 const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const siteUrl = "https://www.ebaqdesign.com";
@@ -219,6 +221,7 @@ export const BlogPostPage = () => {
   if (!post) return <div className="min-h-screen bg-white"><Navbar16 /><main className="container px-[5%] py-28"><p>Loading article…</p></main></div>;
 
   const canonicalUrl = `https://www.ebaqdesign.com${post.url}`;
+  const tool = relatedTool(post.slug, post.category);
   const postImage = post.seo.image || post.image.src || "/ebaqdesign-logo-big.svg";
   const absolutePostImage = postImage.startsWith("/") ? `https://www.ebaqdesign.com${postImage}` : postImage;
   const research = post.logoResearch?.map((entry) => post.logoResearchOverrides?.[entry.number] || entry);
@@ -263,6 +266,14 @@ export const BlogPostPage = () => {
           </section>}
           {articleIntro && <div dangerouslySetInnerHTML={{ __html: articleIntro }} />}
           <div dangerouslySetInnerHTML={{ __html: articleBody }} />
+          {tool && (
+            <aside aria-label="Related tool" className="mt-12 rounded-xl border border-brand-primary/30 bg-white p-6 md:p-8">
+              <p className="mb-2 font-mono text-sm uppercase tracking-wide text-brand-primary">Free tool</p>
+              <p className="heading-h5 mb-3">{tool.heading}</p>
+              <p className="mb-5">{tool.body}</p>
+              <TextLink href={tool.href}>{tool.label}</TextLink>
+            </aside>
+          )}
           {post.faq && post.faq.length > 0 && post.logoRoster && <section aria-labelledby="faq" className="mt-12">
             <h2 id="faq">Frequently asked questions</h2>
             {post.faq.map((item) => <div key={item.question} className="mt-6"><h3>{item.question}</h3><p>{item.answer}</p></div>)}

@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { founder, pricing, siteUrl, studio } from "../content/siteFacts";
-import { serializeJsonLd } from "../content/structuredData";
+import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 import { Navbar16 } from "./Navbar16";
 import { Footer15 } from "./Footer15";
 import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
@@ -37,6 +37,7 @@ export const AboutPage = () => <div className="relative bg-white">
         sameAs: founder.sameAs,
       },
     })}</script>
+    <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }], siteUrl))}</script>
   </Helmet>
   <Navbar16 />
   <main>

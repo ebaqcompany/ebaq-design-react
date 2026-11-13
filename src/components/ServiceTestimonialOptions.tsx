@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
 import { useTestimonialAutoplay } from "../hooks/useTestimonialAutoplay";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui";
 import { clientLogoClass } from "../clientLogo";
 import { Testimonial32Defaults, TestimonialPosition } from "./Testimonial32";
+import { TextLink } from "./TextLink";
 
 // Work imagery is matched by client identity, never by carousel position.
 // Clients without a verified project visual keep a text-and-attribution layout.
@@ -21,7 +23,10 @@ const clients = [
   ...originals.filter(client => featuredNames.includes(client.name)),
   ...originals.filter(client => !featuredNames.includes(client.name)),
 ].map(client => ({ ...client, work: projectVisuals[client.name] }));
-type Client = typeof clients[number];
+// A page can add a line above the quote (for example the platform a site was built in) and a link under it.
+export type TestimonialClient = typeof clients[number] & { label?: ReactNode; link?: { label: string; href: string } };
+type Client = TestimonialClient;
+export const testimonialClients: TestimonialClient[] = clients;
 const Attribution = ({ client }: { client: Client }) => (
   <div className="mt-6 flex w-full flex-wrap items-center gap-x-16 gap-y-6 md:mt-8">
     <div className="flex items-center gap-4">
@@ -32,7 +37,12 @@ const Attribution = ({ client }: { client: Client }) => (
   </div>
 );
 const Quote = ({ client }: { client: Client }) => (
-  <div><blockquote className="testimonial-quote">{client.quote}</blockquote><Attribution client={client} /></div>
+  <div>
+    {client.label && <p className="mb-3 flex items-center gap-2 font-mono text-sm uppercase tracking-wide text-brand-primary md:mb-4">{client.label}</p>}
+    <blockquote className="testimonial-quote">{client.quote}</blockquote>
+    <Attribution client={client} />
+    {client.link && <div className="mt-6 md:mt-8"><TextLink href={client.link.href} {...(/^https?:/.test(client.link.href) ? { target: "_blank", rel: "noreferrer" } : {})}>{client.link.label}</TextLink></div>}
+  </div>
 );
 const SplitQuote = ({ client }: { client: Client }) => client.work ? (
   <div className="grid w-full grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-10 lg:gap-x-20">
@@ -45,19 +55,22 @@ const SplitQuote = ({ client }: { client: Client }) => client.work ? (
 
 // Selected Relume Testimonial 15 layout.
 // Reuses actual quotes verbatim; no star ratings are inferred from written feedback.
-export const ServiceTestimonialOptions = ({ autoPlay = false }: { autoPlay?: boolean }) => {
+type SliderProps = { clients?: TestimonialClient[]; eyebrow?: string; heading?: ReactNode; description?: string; autoPlay?: boolean; id?: string; className?: string };
+export const TestimonialSlider = ({ clients: shown = clients, eyebrow = "Testimonials", heading = "What my clients say", description, autoPlay = false, id, className = "bg-white" }: SliderProps) => {
   const { setApi, containerProps } = useTestimonialAutoplay(autoPlay);
-  return <>
-    <section id="testimonial-option-15" className="overflow-hidden bg-white px-[5%] py-16 md:py-24 lg:py-28">
+  return (
+    <section id={id} className={`overflow-hidden px-[5%] py-16 md:py-24 lg:py-28 ${className}`}>
       <div className="container">
-        <header className="mb-12 max-w-lg md:mb-18 lg:mb-20"><p className="mb-3 font-mono text-sm uppercase tracking-wide text-brand-primary md:mb-4">Testimonials</p><h2>What my clients say</h2></header>
+        <header className="mb-12 max-w-lg md:mb-18 lg:mb-20"><p className="mb-3 font-mono text-sm uppercase tracking-wide text-brand-primary md:mb-4">{eyebrow}</p><h2>{heading}</h2>{description && <p className="mt-5 md:mt-6 md:text-md">{description}</p>}</header>
         <div {...containerProps}>
         <Carousel setApi={setApi} opts={{loop:true,align:"start"}} className="overflow-hidden">
-          <CarouselContent className="items-stretch">{clients.map(client=><CarouselItem key={client.name} className="flex items-center justify-center" aria-label={`Testimonial from ${client.name}`}><SplitQuote client={client}/></CarouselItem>)}</CarouselContent>
+          <CarouselContent className="items-stretch">{shown.map(client=><CarouselItem key={client.name} className="flex items-center justify-center" aria-label={`Testimonial from ${client.name}`}><SplitQuote client={client}/></CarouselItem>)}</CarouselContent>
           <div className="mt-8 flex items-center justify-between gap-6"><a href="https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Verified on LinkedIn</a><div className="flex gap-4"><CarouselPrevious className="testimonial-carousel-button static translate-y-0"/><CarouselNext className="testimonial-carousel-button static translate-y-0"/></div></div>
         </Carousel>
         </div>
       </div>
     </section>
-  </>;
+  );
 };
+
+export const ServiceTestimonialOptions = ({ autoPlay = false }: { autoPlay?: boolean }) => <TestimonialSlider id="testimonial-option-15" autoPlay={autoPlay} />;
