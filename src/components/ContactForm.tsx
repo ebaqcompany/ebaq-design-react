@@ -2,8 +2,9 @@ import { useState, type FormEvent } from "react";
 import { Button, Input } from "./ui";
 import { bookingUrl } from "../content/siteFacts";
 import { services } from "../data/services";
+import { HiOutlineEnvelope, HiOutlineMapPin, HiOutlinePhone } from "react-icons/hi2";
 
-// Relume Contact 2: centered introduction and project inquiry form.
+// Relume Contact 6: contact details and project inquiry form.
 export const ContactForm = () => {
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
@@ -42,9 +43,15 @@ export const ContactForm = () => {
       setSending(false);
     }
   };
-  return <section className="px-[5%] py-16 md:py-24 lg:py-28"><div className="container max-w-md">
-    <div className="mx-auto mb-8 w-full max-w-lg text-center md:mb-10 lg:mb-12"><p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Contact</p><h1 className="mb-5 md:mb-6">Tell me about your project</h1><p className="md:text-md">Share a few details, then book a free 15-minute call.</p></div>
-    <form className="grid grid-cols-1 gap-6" onSubmit={submit}>
+  return <section className="px-[5%] py-16 md:py-24 lg:py-28"><div className="container grid grid-cols-1 items-start gap-y-12 md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
+    <div><p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Contact</p><h1 className="mb-5 md:mb-6">Tell me about your project</h1><p className="md:text-md">Share a few details, then book a free 15-minute call.</p>
+      <div className="mt-8 grid gap-4">
+        <div className="flex items-center gap-4"><HiOutlineEnvelope aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="mailto:arek@ebaqdesign.com">arek@ebaqdesign.com</a></div>
+        <div className="flex items-center gap-4"><HiOutlinePhone aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="tel:+19292459811">+1 (929) 245-9811</a></div>
+        <div className="flex items-center gap-4"><HiOutlineMapPin aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="https://maps.google.com/?q=495+Flatbush+Ave+Brooklyn+NY+11225" target="_blank" rel="noreferrer">495 Flatbush Ave, Brooklyn, NY 11225</a></div>
+      </div>
+    </div>
+    <form className="grid grid-cols-1 gap-6 md:pt-8" onSubmit={submit}>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2"><label className="grid w-full gap-2">First name<Input className="rounded-none border-0 border-b border-black/20 px-0 focus:border-black" name="firstName" autoComplete="given-name" required maxLength={100} /></label><label className="grid w-full gap-2">Last name<Input className="rounded-none border-0 border-b border-black/20 px-0 focus:border-black" name="lastName" autoComplete="family-name" required maxLength={100} /></label></div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2"><label className="grid w-full gap-2">Email<Input className="rounded-none border-0 border-b border-black/20 px-0 focus:border-black" type="email" name="email" autoComplete="email" required maxLength={254} /></label><label className="grid w-full gap-2">Phone number<Input className="rounded-none border-0 border-b border-black/20 px-0 focus:border-black" type="tel" name="phone" autoComplete="tel" maxLength={40} /></label></div>
       <fieldset className="grid w-full gap-4 py-3 md:py-4"><legend>What services do you need?</legend><div className="flex flex-wrap gap-3">{[...services.map(service => ({ id: service.slug, name: service.heading })), { id: "other", name: "Other" }].map(service => <label key={service.id}><input className="peer sr-only" type="checkbox" name="services" value={service.name} /><span className="inline-flex cursor-pointer items-center rounded-full border border-black/20 bg-white px-4 py-2 text-sm font-semibold text-black peer-checked:border-brand-primary peer-checked:bg-brand-primary peer-focus-visible:ring-2 peer-focus-visible:ring-brand-primary peer-focus-visible:ring-offset-2">{service.name}</span></label>)}</div></fieldset>

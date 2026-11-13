@@ -2,7 +2,8 @@ import { Helmet } from "react-helmet-async";
 import { bookingUrl, pricing, siteUrl, studio } from "../content/siteFacts";
 import { serializeJsonLd } from "../content/structuredData";
 import { ContactForm } from "./ContactForm";
-import { ContactDetails } from "./ContactDetails";
+import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
+import { Logo3 } from "./Logo3";
 import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 
@@ -33,7 +34,28 @@ export const ContactPage = () => <div className="relative bg-white">
   <Navbar16 />
   <main className="min-h-[70vh]">
     <ContactForm />
-    <ContactDetails />
+    <Logo3 />
+    <section className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container">
+        <div className="mb-12 max-w-lg md:mb-16">
+          <p className="mb-3 font-mono text-sm font-normal uppercase tracking-wide text-brand-primary md:mb-4">Why me</p>
+          <h2 className="mb-5 md:mb-6">Why choose Ebaq Design?</h2>
+          <p className="max-w-md md:text-md">Get a clear direction and thoughtful design for your brand or website, with the scope and schedule agreed before work begins.</p>
+        </div>
+        <div className="grid grid-cols-1 items-stretch gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-0 lg:gap-x-12">
+          {[
+            { label: "Direct collaboration", title: "Work directly with Arek", description: "Share your goals and feedback with the designer working on your project." },
+            { label: "Strategy and design", title: "Build on a clear direction", description: "Connect your brand’s positioning with a visual identity and website that work together." },
+            { label: "Clear scope", title: "Know what to expect", description: "Work is $3,000 per week, with deliverables, timing, and total agreed before booking." },
+          ].map((benefit) => <article key={benefit.label} data-surface="white" className="service-card relative flex flex-col overflow-hidden rounded-xl p-6 md:p-8 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-brand-primary/50 after:content-['']">
+            <p className="mb-3 font-mono text-sm font-normal uppercase tracking-wide text-brand-primary">{benefit.label}</p>
+            <h3 className="heading-h5 font-bold">{benefit.title}</h3>
+            <p className="mt-6 md:mt-8">{benefit.description}</p>
+          </article>)}
+        </div>
+      </div>
+    </section>
+    <ServiceTestimonialOptions autoPlay />
   </main>
   <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
 </div>;
