@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { useEffect } from 'react'
-import { RxExternalLink } from 'react-icons/rx'
+import { RxArrowRight, RxExternalLink } from 'react-icons/rx'
 import { Footer15 } from './Footer15'
 import { Navbar16 } from './Navbar16'
 
@@ -81,6 +81,17 @@ export function ToolsPage() {
             </p>
           </div>
         </header>
+
+        <section className="px-[5%] pb-12 md:pb-16 lg:pb-20">
+          <a href="/tools/branding-cost-calculator" className="container flex flex-col items-start gap-6 rounded-xl border border-brand-primary/50 bg-brand-light p-6 md:flex-row md:items-center md:justify-between md:p-8">
+            <span className="grid gap-2">
+              <span className="font-mono text-sm uppercase tracking-wide">Free tool</span>
+              <span className="heading-h4">Branding cost calculator</span>
+              <span className="max-w-xl text-black">Pick what you need and see a fixed price and timeline, next to typical agency ranges.</span>
+            </span>
+            <span className="inline-flex shrink-0 items-center gap-2 font-semibold">Estimate your project<RxArrowRight aria-hidden="true" /></span>
+          </a>
+        </section>
 
         <section className="px-[5%] pb-20 md:pb-28 lg:pb-32">
           <div className="container grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 md:gap-y-16 lg:grid-cols-3">

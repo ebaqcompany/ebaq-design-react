@@ -25,6 +25,7 @@ const staticPaths = [
   '/podcast',
   '/shop',
   '/tools',
+  '/tools/branding-cost-calculator',
   '/pricing',
   '/services',
   '/services/brand-strategy',

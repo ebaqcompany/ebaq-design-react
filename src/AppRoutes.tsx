@@ -47,6 +47,7 @@ const ShopPage = page('./components/ShopPage.tsx', 'ShopPage')
 const AboutPage = page('./components/AboutPage.tsx', 'AboutPage')
 const ContactPage = page('./components/ContactPage.tsx', 'ContactPage')
 const ToolsPage = page('./components/ToolsPage.tsx', 'ToolsPage')
+const BrandingCostCalculatorPage = page('./components/BrandingCostCalculatorPage.tsx', 'BrandingCostCalculatorPage')
 const PrivacyPolicyPage = page('./components/LegalPage.tsx', 'PrivacyPolicyPage')
 const FulfillmentPolicyPage = page('./components/LegalPage.tsx', 'FulfillmentPolicyPage')
 const NotFoundPage = page('./components/NotFoundPage.tsx', 'NotFoundPage')
@@ -87,6 +88,7 @@ const routes: RouteEntry[] = [
   { path: '/about', page: AboutPage },
   { path: '/contact', page: ContactPage },
   { path: '/tools', page: ToolsPage },
+  { path: '/tools/branding-cost-calculator', page: BrandingCostCalculatorPage },
   { path: '/pricing', page: PricingPage },
   { path: '/services', page: ServicesPage },
   { path: '/services/brand-strategy', page: BrandStrategyPage },
