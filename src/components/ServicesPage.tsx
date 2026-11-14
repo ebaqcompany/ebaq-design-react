@@ -3,7 +3,7 @@ import { pricing, siteUrl, studio } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 import { Navbar16 } from "./Navbar16";
 import { ServicesGrid } from "./ServicesGrid";
-import { ToolReading } from "./ToolReading";
+import { WhoIWorkWith } from "./WhoIWorkWith";
 import { Comparison } from "./Comparison";
 import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
 import { Faq4 } from "./Faq4";
@@ -63,7 +63,7 @@ export const ServicesPage = () => (
 
     <main>
       <ServicesGrid />
-      <ToolReading label="Who I work with" links={[{ label: "Industries I work with", href: "/industries" }, { label: "Clients in New York and worldwide", href: "/locations" }, { label: "Freelancer vs agency", href: "/compare/freelancer-vs-agency" }]} />
+      <WhoIWorkWith />
 
       <Comparison
         heading={"Agency-level work,\nwithout the agency invoice"}

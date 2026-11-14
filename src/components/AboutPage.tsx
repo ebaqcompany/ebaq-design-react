@@ -1,4 +1,4 @@
-import { ToolReading } from "./ToolReading";
+import { WhoIWorkWith } from "./WhoIWorkWith";
 import { Helmet } from "react-helmet-async";
 import { founder, pricing, siteUrl, studio } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
@@ -8,8 +8,6 @@ import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
 import { Cta17 } from "./Cta17";
 import { Header107 } from "./Header107";
 import { Layout350Preview } from "./Layout350Preview";
-import { Timeline18 } from "./Timeline18";
-import { engagementProcessSteps } from "../data/services";
 import { AboutTools } from "./AboutTools";
 
 export const AboutPage = () => <div className="relative bg-white">
@@ -50,8 +48,7 @@ export const AboutPage = () => <div className="relative bg-white">
 
     <Layout350Preview />
     <AboutTools />
-    <ToolReading label="Who I work with" links={[{ label: "Clients in New York and worldwide", href: "/locations" }, { label: "Industries I work with", href: "/industries" }, { label: "Freelancer vs agency", href: "/compare/freelancer-vs-agency" }]} />
-    <Timeline18 tagline="How it works" heading="An overview of my branding process" description="Every project follows the same five steps, so you always know what happens next and what’s expected of you at each stage." timelineItems={engagementProcessSteps} />
+    <WhoIWorkWith />
 
     <ServiceTestimonialOptions autoPlay />
     <Cta17 heading="Need a senior creative partner?" description="Tell me what you’re launching, changing, or trying to make clearer. I’ll recommend the most effective way to move it forward." />

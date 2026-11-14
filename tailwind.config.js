@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       colors: {
         "brand-primary": "rgb(var(--color-brand-primary-rgb) / <alpha-value>)",
+        "brand-yellow": "var(--color-brand-yellow)",
         "surface-muted": "var(--color-surface-muted)",
       },
       borderColor: {

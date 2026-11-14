@@ -1,4 +1,3 @@
-import { ToolReading } from "./ToolReading";
 import { Helmet } from "react-helmet-async";
 import { bookingUrl, pricing, siteUrl, studio } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
@@ -37,7 +36,6 @@ export const ContactPage = () => <div className="relative bg-white">
   <main className="min-h-[70vh]">
     <ContactForm />
     <Logo3 />
-    <ToolReading label="Who I work with" links={[{ label: "Clients in New York and worldwide", href: "/locations" }, { label: "Industries I work with", href: "/industries" }]} />
     <section className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 max-w-lg md:mb-16">

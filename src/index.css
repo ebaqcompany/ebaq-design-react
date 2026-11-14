@@ -24,6 +24,7 @@
   --color-brand-primary: #00afec;
   --color-brand-primary-rgb: 0 175 236;
   --color-brand-light: #dff6ff;
+  --color-brand-yellow: #fed440;
   --color-surface-muted: #f5f5f5;
   --brand-grid-cell: 24px;
   --brand-grid-line: rgba(255, 255, 255, 0.5);
@@ -1168,6 +1169,38 @@ footer a:not([class*="button"]):is(:hover, :focus-visible) {
 @keyframes marquee-right {
   from { transform: translate3d(-50%, 0, 0); }
   to { transform: translate3d(0, 0, 0); }
+}
+
+/* Banner 15 navigation pauses while readers interact and can be scrolled without motion. */
+.who-marquee {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.who-marquee::-webkit-scrollbar { display: none; }
+
+.who-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 48s linear infinite;
+}
+
+.who-marquee-track > .services-marquee-group {
+  min-width: 100vw;
+  justify-content: space-around;
+}
+
+.who-marquee:hover .who-marquee-track,
+.who-marquee:focus-within .who-marquee-track {
+  animation-play-state: paused;
+}
+
+.who-marquee:focus-within .who-marquee-track { animation: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .who-marquee-track { animation: none; }
+  .who-marquee-track > [aria-hidden="true"] { display: none; }
 }
 
 /* Marquee items look like h2s but aren't headings: repeated service names would bury each page's real outline. */
