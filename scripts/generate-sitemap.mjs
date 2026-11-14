@@ -61,6 +61,7 @@ const staticPaths = [
   '/compare',
   '/glossary',
   '/industries',
+  '/freelancer-vs-agency',
   '/locations',
 ]
 

@@ -53,7 +53,7 @@ for (const [path, component] of Object.entries({
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/personal-branding': 'PersonalBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
   '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding',
   '/pricing': 'PricingPage',
-  '/compare': 'CompareIndexPage', '/glossary': 'GlossaryPage', '/industries': 'IndustriesPage', '/locations': 'LocationsPage',
+  '/compare': 'CompareIndexPage', '/glossary': 'GlossaryPage', '/industries': 'IndustriesPage', '/freelancer-vs-agency': 'FreelancerVsAgencyPage', '/locations': 'LocationsPage',
   '/services': 'ServicesPage',
   '/services/brand-strategy': 'BrandStrategyPage',
   '/services/logo-design': 'LogoDesignPage',
@@ -237,6 +237,7 @@ Tools: ${tools.join(', ')}.
 - [Free branding tools](${siteUrl}/tools)
 - [Branding and web design glossary: ${glossary.length} terms in plain English](${siteUrl}/glossary)
 - [Branding and web design by industry](${siteUrl}/industries)
+- [Freelance designer vs agency: price, timeline, and who does the work](${siteUrl}/freelancer-vs-agency)
 - [Client locations: New York and worldwide](${siteUrl}/locations)
 - [Website platform comparisons](${siteUrl}/compare)
 - [Blog: branding, logo design, and web design articles](${siteUrl}/blog)

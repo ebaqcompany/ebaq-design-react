@@ -58,6 +58,7 @@ const BrandTemplatesPage = page('./components/BrandTemplatesPage.tsx', 'BrandTem
 const GlossaryPage = page('./components/GlossaryPage.tsx', 'GlossaryPage')
 const GlossaryTermPage = page('./components/GlossaryTermPage.tsx', 'GlossaryTermPage')
 const LocationsPage = page('./components/LocationsPage.tsx', 'LocationsPage')
+const FreelancerVsAgencyPage = page('./components/FreelancerVsAgencyPage.tsx', 'FreelancerVsAgencyPage')
 const IndustriesPage = page('./components/IndustriesPage.tsx', 'IndustriesPage')
 const PrivacyPolicyPage = page('./components/LegalPage.tsx', 'PrivacyPolicyPage')
 const FulfillmentPolicyPage = page('./components/LegalPage.tsx', 'FulfillmentPolicyPage')
@@ -100,6 +101,7 @@ const routes: RouteEntry[] = [
   { path: '/glossary', page: GlossaryPage },
   { path: '/glossary/:slug', page: GlossaryTermPage },
   { path: '/industries', page: IndustriesPage },
+  { path: '/freelancer-vs-agency', page: FreelancerVsAgencyPage },
   { path: '/locations', page: LocationsPage },
   { path: '/compare', page: CompareIndexPage },
   { path: '/compare/:slug', page: ComparePage },
