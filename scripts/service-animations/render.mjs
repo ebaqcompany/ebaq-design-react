@@ -23,10 +23,10 @@ const browser = await chromium.launch({
 try {
   for (const [slug, source, seconds] of sources) {
     const frames = await mkdtemp(join(tmpdir(), `service-${slug}-`));
-    const page = await browser.newPage({ viewport: { width: 720, height: 480 }, deviceScaleFactor: 1 });
+    const page = await browser.newPage({ viewport: { width: 1440, height: 960 }, deviceScaleFactor: 1 });
     try {
       const svg = await readFile(`public/images/services/geometric-candidates/${source}.svg`, 'utf8');
-      await page.setContent(`<style>html,body{margin:0;background:transparent}svg{display:block;width:720px;height:480px}</style>${svg}`);
+      await page.setContent(`<style>html,body{margin:0;background:transparent}svg{display:block;width:1440px;height:960px}</style>${svg}`);
       await page.evaluate(() => {
         window.animations = document.getAnimations();
         for (const animation of window.animations) animation.pause();
@@ -48,11 +48,12 @@ try {
         }, frame * 1000 / fps);
         await page.screenshot({ path: join(frames, `${String(frame).padStart(4, '0')}.png`), omitBackground: true });
       }
-      execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(fps), '-i', join(frames, '%04d.png'), '-c:v', 'libwebp_anim', '-quality', '85', '-loop', '0', '-an', `${output}/${slug}.webp`]);
+      const frameArgs = Array.from({ length: Math.round(seconds * fps) }, (_, frame) => ['-d', String(Math.round((frame + 1) * 1000 / fps) - Math.round(frame * 1000 / fps)), join(frames, `${String(frame).padStart(4, '0')}.png`)]).flat();
+      execFileSync('img2webp', ['-loop', '0', '-q', '85', ...frameArgs, '-o', `${output}/${slug}.webp`]);
       // Pick a clear representative frame, including the star for motion graphics.
       const posterFrame = Math.round((slug === 'motion-graphics' ? 2.5 : 1.5) * fps);
-      execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', join(frames, `${String(posterFrame).padStart(4, '0')}.png`), '-c:v', 'libwebp', '-quality', '90', `${output}/${slug}-still.webp`]);
-      console.log(`Rendered ${slug}: ${seconds}s, ${fps}fps, 720×480, transparent`);
+      execFileSync('cwebp', ['-quiet', '-q', '90', join(frames, `${String(posterFrame).padStart(4, '0')}.png`), '-o', `${output}/${slug}-still.webp`]);
+      console.log(`Rendered ${slug}: ${seconds}s, ${fps}fps, 1440×960, transparent`);
     } finally {
       await page.close();
       await rm(frames, { recursive: true, force: true });

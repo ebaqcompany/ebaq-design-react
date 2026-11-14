@@ -4,7 +4,7 @@ The five approved SVG animations remain editable sources in
 `public/images/services/geometric-candidates/`. Brand strategy already uses a
 fixed-canvas Lottie and stays unchanged.
 
-The Services grid displays transparent animated WebP exports at 720×480, 30fps.
+The Services grid displays transparent animated WebP exports at 1440×960, 30fps.
 Each export preserves the original SVG's `meet` fit inside the 3:2 card. All paths,
 window dimensions, cursor movements and shape morphs are rendered ahead of time
 in Chromium. The phone decodes finished image frames, so CSS SVG geometry support
@@ -17,7 +17,7 @@ also observes that preference. There is no video autoplay requirement.
 
 ## Regenerate after editing source artwork
 
-Install project dependencies and FFmpeg, then install Playwright Chromium:
+Install project dependencies and the WebP tools (`img2webp` and `cwebp`), then install Playwright Chromium:
 
 ```sh
 npm ci

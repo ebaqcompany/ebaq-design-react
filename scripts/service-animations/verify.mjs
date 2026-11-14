@@ -13,7 +13,7 @@ try {
     await page.goto(`${process.env.TEST_URL || 'http://localhost:5173'}/services`);
     await page.locator('[data-service="motion-graphics"]').scrollIntoViewIfNeeded();
     await page.waitForFunction(() => [...document.querySelectorAll('#services-geometric-comparison picture img')]
-      .every(image => image.complete && image.naturalWidth === 720));
+      .every(image => image.complete && image.naturalWidth === 1440));
     assert.equal(await page.locator('#services-geometric-comparison [data-service]').count(), 6);
     assert.equal(await page.locator('#services-geometric-comparison picture img').count(), 5);
     assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Page overflows horizontally');
