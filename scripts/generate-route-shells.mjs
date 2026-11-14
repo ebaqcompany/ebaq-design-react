@@ -48,12 +48,12 @@ const preloads = new Map()
 // Read existing static-page copy so generated titles stay aligned with React.
 for (const [path, component] of Object.entries({
   '/about': 'AboutPage', '/contact': 'ContactPage', '/blog': 'BlogPage',
-  '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage', '/tools/branding-cost-calculator': 'BrandingCostCalculatorPage', '/tools/website-cost-calculator': 'WebsiteCostCalculatorPage', '/tools/brand-grader': 'BrandGraderPage', '/tools/brand-archetype-quiz': 'BrandArchetypeQuizPage', '/tools/tagline-generator': 'TaglineGeneratorPage', '/tools/brand-name-generator': 'BrandNameGeneratorPage', '/tools/brand-templates': 'BrandTemplatesPage',
+  '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage', '/tools/branding-cost-calculator': 'BrandingCostCalculatorPage', '/tools/logo-design-cost-calculator': 'LogoDesignCostCalculatorPage', '/tools/website-cost-calculator': 'WebsiteCostCalculatorPage', '/tools/brand-grader': 'BrandGraderPage', '/tools/brand-archetype-quiz': 'BrandArchetypeQuizPage', '/tools/tagline-generator': 'TaglineGeneratorPage', '/tools/brand-name-generator': 'BrandNameGeneratorPage', '/tools/brand-templates': 'BrandTemplatesPage',
   '/real-estate-branding': 'RealEstateBrandingLanding',
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/personal-branding': 'PersonalBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
   '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding',
   '/pricing': 'PricingPage',
-  '/compare': 'CompareIndexPage', '/glossary': 'GlossaryPage', '/industries': 'IndustriesPage',
+  '/compare': 'CompareIndexPage', '/glossary': 'GlossaryPage', '/industries': 'IndustriesPage', '/locations': 'LocationsPage',
   '/services': 'ServicesPage',
   '/services/brand-strategy': 'BrandStrategyPage',
   '/services/logo-design': 'LogoDesignPage',
@@ -181,6 +181,7 @@ const freeTools = [
   ['Brand name generator: name ideas in six naming styles', '/tools/brand-name-generator'],
   ['Tagline generator: tagline ideas in five tagline types', '/tools/tagline-generator'],
   ['Branding cost calculator: fixed price and timeline for a brand project', '/tools/branding-cost-calculator'],
+  ['Logo design cost calculator: what a logo should cost, from AI tools to agencies', '/tools/logo-design-cost-calculator'],
   ['Website cost calculator: design and build price plus first-year platform cost on Framer, Webflow, or Next.js', '/tools/website-cost-calculator'],
   ['Brand voice template: free one-page PDF worksheet', '/tools/brand-templates'],
 ]
@@ -236,6 +237,7 @@ Tools: ${tools.join(', ')}.
 - [Free branding tools](${siteUrl}/tools)
 - [Branding and web design glossary: ${glossary.length} terms in plain English](${siteUrl}/glossary)
 - [Branding and web design by industry](${siteUrl}/industries)
+- [Client locations: New York and worldwide](${siteUrl}/locations)
 - [Website platform comparisons](${siteUrl}/compare)
 - [Blog: branding, logo design, and web design articles](${siteUrl}/blog)
 - [On Branding podcast: interviews with brand experts](${siteUrl}/podcast)

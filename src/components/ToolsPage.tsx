@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import type { IconType } from "react-icons";
-import { LuBookOpen, LuBot, LuCalculator, LuDrama, LuFileText, LuGauge, LuMonitor, LuQuote, LuType } from "react-icons/lu";
+import { LuBookA, LuBookOpen, LuBot, LuCalculator, LuDrama, LuFileText, LuGauge, LuMonitor, LuQuote, LuScale, LuType } from "react-icons/lu";
 import { SiAdobeillustrator, SiFigma } from "react-icons/si";
 import { siteUrl } from "../content/siteFacts";
 import { buildBreadcrumbSchema, buildCollectionSchema, serializeJsonLd } from "../content/structuredData";
@@ -79,12 +79,28 @@ const tools: Tool[] = [
     Icon: LuCalculator,
   },
   {
+    name: "Logo design cost calculator",
+    kind: "Calculator",
+    description: "Answer two questions and see what a logo should cost, from AI tools to agencies.",
+    link: "Price your logo",
+    href: "/tools/logo-design-cost-calculator",
+    Icon: LuCalculator,
+  },
+  {
     name: "Website cost calculator",
     kind: "Calculator",
     description: "Pick your site size and platform and see the price, the timeline, and the first year on Framer, Webflow, or Next.js.",
     link: "Price your website",
     href: "/tools/website-cost-calculator",
     Icon: LuMonitor,
+  },
+  {
+    name: "Platform comparisons",
+    kind: "Comparisons",
+    description: "Framer, Webflow, WordPress, and more compared side by side, with a short quiz to pick one.",
+    link: "Compare platforms",
+    href: "/compare",
+    Icon: LuScale,
   },
   {
     name: "Guidelines.online",
@@ -94,6 +110,14 @@ const tools: Tool[] = [
     href: "https://guidelines.online/",
     Icon: LuBookOpen,
     image: { src: "/tools/covers/guidelines-online.webp", alt: "Guidelines.online home page: Free brand guidelines generator" },
+  },
+  {
+    name: "Branding glossary",
+    kind: "Reference",
+    description: "Branding, logo, and web design terms in plain English, each with an example.",
+    link: "Browse the glossary",
+    href: "/glossary",
+    Icon: LuBookA,
   },
 ];
 

@@ -28,6 +28,7 @@ const staticPaths = [
   '/shop',
   '/tools',
   '/tools/branding-cost-calculator',
+  '/tools/logo-design-cost-calculator',
   '/tools/website-cost-calculator',
   '/tools/brand-grader',
   '/tools/brand-archetype-quiz',
@@ -60,6 +61,7 @@ const staticPaths = [
   '/compare',
   '/glossary',
   '/industries',
+  '/locations',
 ]
 
 // A post's date is moved forward whenever it is substantively updated (AGENTS.md), so it doubles as lastmod.
