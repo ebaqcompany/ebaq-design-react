@@ -101,7 +101,7 @@ const routes: RouteEntry[] = [
   { path: '/glossary', page: GlossaryPage },
   { path: '/glossary/:slug', page: GlossaryTermPage },
   { path: '/industries', page: IndustriesPage },
-  { path: '/freelancer-vs-agency', page: FreelancerVsAgencyPage },
+  { path: '/compare/freelancer-vs-agency', page: FreelancerVsAgencyPage },
   { path: '/locations', page: LocationsPage },
   { path: '/compare', page: CompareIndexPage },
   { path: '/compare/:slug', page: ComparePage },

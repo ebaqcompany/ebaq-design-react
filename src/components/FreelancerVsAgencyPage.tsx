@@ -12,11 +12,11 @@ import { ToolReading } from "./ToolReading";
 import { founder, pricing, siteUrl, type FactFaq } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 
-// The freelancer-vs-agency page at /freelancer-vs-agency: the case for hiring a senior designer
+// The freelancer-vs-agency page at /compare/freelancer-vs-agency, listed on the /compare hub: the case for hiring a senior designer
 // directly, with honest notes on when an agency is still the better choice. Prices are the published
 // ones in siteFacts and the site's agency comparison. Layout: the tool pages' split hero, the black
 // comparison table, three white cards, then the shared about, testimonial, FAQ, and CTA sections.
-const pageUrl = `${siteUrl}/freelancer-vs-agency`;
+const pageUrl = `${siteUrl}/compare/freelancer-vs-agency`;
 const pageDescription = "Freelance designer or branding agency? Compare price, timeline, and who does the work: a senior designer for $3,000 in one week, or an agency for $25k–$100k+ over months.";
 
 const fits = [
@@ -69,7 +69,7 @@ const schemas = [
     author: { "@id": `${siteUrl}/#founder` },
   },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
-  buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Freelancer vs Agency", path: "/freelancer-vs-agency" }], siteUrl),
+  buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Compare", path: "/compare" }, { name: "Freelancer vs Agency", path: "/compare/freelancer-vs-agency" }], siteUrl),
 ];
 
 const eyebrow = "mb-3 font-mono text-sm uppercase tracking-wide text-brand-primary md:mb-4";
@@ -157,7 +157,7 @@ export const FreelancerVsAgencyPage = () => (
 
       <AiLandingAbout heading="You work with me, start to finish" description="I’m Arek Dvornechuck, a senior brand designer in New York. I run the strategy, design the identity, animate the logo, and build the website myself. There is no account manager and no handoff to a junior." bookingHref="/start" />
       <TestimonialSlider className="bg-surface-muted" />
-      <ToolReading links={[{ label: "Branding cost calculator", href: "/tools/branding-cost-calculator" }, { label: "Logo design cost calculator", href: "/tools/logo-design-cost-calculator" }, { label: "Logo design cost guide", href: "/blog/logo-design-cost" }]} />
+      <ToolReading links={[{ label: "All comparisons", href: "/compare" }, { label: "Branding cost calculator", href: "/tools/branding-cost-calculator" }, { label: "Logo design cost calculator", href: "/tools/logo-design-cost-calculator" }]} />
       <Faq4 tagline="FAQs" heading="Freelancer or agency?" questions={faqs.map(({ question, answer }) => ({ title: question, answer }))} />
       <Cta17 heading="Find out in 15 minutes" description="Book a call. Tell me what you need and I’ll tell you honestly whether I’m the right hire or an agency is." />
     </main>

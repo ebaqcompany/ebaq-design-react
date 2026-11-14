@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/freelancer-vs-agency",
+      "destination": "/compare/freelancer-vs-agency",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/saas-website-design-cost",
       "destination": "/tools/website-cost-calculator",
       "statusCode": 302

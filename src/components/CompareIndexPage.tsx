@@ -9,6 +9,7 @@ import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 import { TextLink } from "./TextLink";
 import { Button } from "./ui";
+import { LuBuilding2 } from "react-icons/lu";
 
 // The comparison hub: the blog archive's header and filter buttons (Blog2) over a grid of the
 // site's white service cards, one per comparison in src/data/comparisons.ts.
@@ -18,7 +19,7 @@ const filterable = [...new Set(comparisons.flatMap(({ platforms: [first, second]
 const schemas = [
   buildCollectionSchema(
     { path: "/compare", name: "Website platform comparisons", description: compareIndex.description },
-    comparisons.map((comparison) => ({ name: comparisonName(comparison), path: `/compare/${comparison.slug}` })),
+    [{ name: "Freelancer vs agency", path: "/compare/freelancer-vs-agency" }, ...comparisons.map((comparison) => ({ name: comparisonName(comparison), path: `/compare/${comparison.slug}` }))],
     siteUrl,
   ),
   buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Compare", path: "/compare" }], siteUrl),
@@ -26,6 +27,8 @@ const schemas = [
 
 export const CompareIndexPage = () => {
   const [active, setActive] = useState<PlatformId | "">("");
+  // The freelancer-vs-agency page is not about a platform, so it shows only while no filter is on.
+  const count = (active ? 0 : 1) + comparisons.filter(({ platforms: [first, second] }) => !active || first === active || second === active).length;
   const visible = comparisons.filter(({ platforms: [first, second] }) => !active || first === active || second === active);
 
   return (
@@ -64,8 +67,20 @@ export const CompareIndexPage = () => {
 
         <section className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
           <div className="container">
-            <p className="mb-6 font-mono text-sm uppercase tracking-wide md:mb-8" aria-live="polite">{visible.length} {visible.length === 1 ? "comparison" : "comparisons"}</p>
+            <p className="mb-6 font-mono text-sm uppercase tracking-wide md:mb-8" aria-live="polite">{count} {count === 1 ? "comparison" : "comparisons"}</p>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {!active && (
+                <article data-surface="white" className="service-card relative flex flex-col rounded-xl p-6 md:p-8 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-brand-primary/30 after:content-['']">
+                  <div className="mb-6 flex items-center gap-4 md:mb-8" aria-hidden="true">
+                    <img src="/ebaq-mark-one-color.svg" alt="" className="size-8" />
+                    <span className="font-mono text-sm uppercase tracking-wide">vs</span>
+                    <LuBuilding2 className="size-8" />
+                  </div>
+                  <h2 className="heading-h5 mb-5 font-bold">Freelancer vs agency</h2>
+                  <p className="mb-6 md:mb-8">A senior freelancer costs $3,000 a week and does the work. An agency costs $25k–$100k+ and adds account managers and margin on top of the same design.</p>
+                  <div className="mt-auto"><TextLink href="/compare/freelancer-vs-agency">Freelancer vs agency</TextLink></div>
+                </article>
+              )}
               {visible.map((comparison) => (
                 <article key={comparison.slug} data-surface="white" className="service-card relative flex flex-col rounded-xl p-6 md:p-8 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-brand-primary/30 after:content-['']">
                   <div className="mb-6 md:mb-8"><PlatformPair platforms={comparison.platforms} className="size-8" /></div>
