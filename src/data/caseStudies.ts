@@ -663,12 +663,7 @@ const allCaseStudies: CaseStudy[] = [
           { src: "/case-study/next-dimension/old-site/08-bottle.webp", alt: "NextDimension branded bottle", span: "half" },
           { src: "/case-study/next-dimension/old-site/09-folders.webp", alt: "NextDimension presentation folders" },
           { src: "/case-study/next-dimension/old-site/10-cards.webp", alt: "NextDimension branded cards" },
-          {
-            src: "/case-study/next-dimension/old-site/11-billboard-loop.mp4",
-            alt: "NextDimension animated billboard",
-            kind: "video",
-            overlaySrc: "/case-study/next-dimension/old-site/11-billboard-overlay.webp",
-          },
+          { src: "/case-study/next-dimension/billboard-approved.webp", alt: "Next Dim billboard reading Take your clinic to the next dimension against a dark tiled wall" },
         ],
       },
     ],
