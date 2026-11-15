@@ -1,0 +1,58 @@
+{
+  "layout": "collage",
+  "title": "Brand Refresh",
+  "category": "Branding",
+  "seed": "brand-refresh-jmgc2",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "none",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "mono",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "dots": {},
+    "photo-10": {
+      "dx": -0.0002,
+      "dy": 0,
+      "hidden": true
+    },
+    "photo-6": {
+      "hidden": true
+    },
+    "photo-2": {
+      "hidden": true
+    },
+    "photo-11": {
+      "dx": 0.0002,
+      "dy": -0.0002,
+      "hidden": true
+    },
+    "photo-7": {
+      "hidden": true
+    },
+    "photo-3": {
+      "hidden": true
+    }
+  },
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/public/images/about/logofix/focal-before.webp@raw",
+    "/public/images/about/logofix/focal-after.webp@raw",
+    "/public/images/about/logofix/ami-before.webp@raw",
+    "/public/images/about/logofix/ami-after.webp@raw",
+    "/public/images/about/logofix/lyntics-before.webp@raw",
+    "/public/images/about/logofix/lyntics-after.webp@raw",
+    "/public/images/about/logofix/ae-before.webp@raw",
+    "/public/images/about/logofix/ae-after.webp@raw",
+    "/public/images/about/logofix/periti-before.webp@raw",
+    "/public/images/about/logofix/periti-after.webp@raw",
+    "/public/images/about/logofix/nextdim-before.webp@raw",
+    "/public/images/about/logofix/nextdim-after.webp@raw"
+  ]
+}

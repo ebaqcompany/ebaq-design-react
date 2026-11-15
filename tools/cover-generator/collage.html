@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Collage Cover Generator</title>
+<style>
+  @font-face { font-family: "Roboto Condensed"; font-weight: 600; src: url("/node_modules/@fontsource/roboto-condensed/files/roboto-condensed-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Roboto Mono"; font-weight: 500; src: url("/node_modules/@fontsource/roboto-mono/files/roboto-mono-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Roboto"; font-weight: 400; src: url("/node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2") format("woff2"); }
+  :root { --blue: #00afec; --line: rgba(0,0,0,.2); }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.4 "Roboto", system-ui, sans-serif; background: #f4f4f4; color: #000; }
+  .app { display: grid; grid-template-columns: 340px 1fr; min-height: 100vh; }
+  aside { background: #fff; border-right: 1px solid var(--line); padding: 20px; overflow-y: auto; max-height: 100vh; position: sticky; top: 0; }
+  h1 { font: 600 28px/1 "Roboto Condensed", sans-serif; margin: 0 0 4px; }
+  .sub { color: #555; margin: 0 0 14px; font-size: 13px; }
+  label { display: block; font: 500 11px "Roboto Mono", monospace; letter-spacing: .08em; text-transform: uppercase; margin: 14px 0 6px; color: #333; }
+  input[type=text], textarea, select { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; }
+  textarea { resize: vertical; min-height: 58px; }
+  .seg { display: flex; flex-wrap: wrap; gap: 4px; }
+  .seg button { flex: 1; padding: 7px 6px; border: 1px solid var(--line); background: #fff; border-radius: 6px; cursor: pointer; font: 500 11px "Roboto Mono", monospace; text-transform: uppercase; }
+  .seg button[aria-pressed=true] { background: #000; color: #fff; border-color: #000; }
+  .btn { display: inline-flex; justify-content: center; align-items: center; padding: 10px 14px; border-radius: 8px; border: 1px solid #000; background: #000; color: #fff; cursor: pointer; font: 600 15px "Roboto Condensed", sans-serif; }
+  .btn:hover { background: var(--blue); border-color: var(--blue); color: #000; }
+  .btn.ghost { background: #fff; color: #000; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .row .btn { flex: 1; }
+  .save { position: sticky; bottom: -20px; margin: 16px -20px -20px; padding: 14px 20px 18px; background: #fff; border-top: 1px solid var(--line); }
+  .save .btn { width: 100%; padding: 16px; font-size: 22px; }
+  .save .links { margin: 10px 0 0; font-size: 12px; text-align: center; color: #555; }
+  .save a { color: inherit; }
+  #status.error { color: #c8344b; }
+  .checks { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 13px; }
+  .checks label { all: unset; cursor: pointer; }
+  main { padding: 24px; display: grid; gap: 16px; align-content: start; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  canvas { width: 100%; height: auto; display: block; border-radius: 4px; cursor: grab; touch-action: none; }
+  .hint { font: 12px "Roboto Mono", monospace; color: #555; margin: 10px 0 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  pre { background: #111; color: #cceffc; padding: 12px; border-radius: 8px; font-size: 12px; overflow: auto; margin: 0; white-space: pre-wrap; word-break: break-word; }
+  @media (max-width: 900px) { .app { grid-template-columns: 1fr; } aside { position: static; max-height: none; } .pair { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <h1>Collage covers</h1>
+    <p class="sub">Pick a post, design its cover, save. One cover per article; saving overwrites it.</p>
+
+    <label for="post">Blog post</label>
+    <select id="post"><option value="">— pick a post —</option></select>
+    <p class="hint" id="status">Pick a post to load its cover, or start a new one.</p>
+
+    <label for="title">Cover title</label>
+    <input id="title" type="text" value="" />
+
+    <label>Blue shape</label><div class="seg" data-key="hero" data-options="auto,rect,bust,slab,circle,arrow,burst,none"></div>
+    <label>Ground</label><div class="seg" data-key="ground" data-options="auto,white,blue,black"></div>
+    <label>Photo treatment</label><div class="seg" data-key="imageMode" data-options="auto,grain,halftone,copy,mono,duotone,tint"></div>
+    <label>Secondary colours (full, then pale)</label><div class="seg" id="secondary"></div>
+    <label>Post-it colour</label><div class="seg" data-key="noteTone" data-options="almond,sand,lavender,rose,mint,white"></div>
+
+    <label for="logos">Logos (comma separated: Simple Icons names, file paths, or pasted image links)</label>
+    <textarea id="logos">figma, framer, webflow, /public/client-logos/savory-wordmark.svg</textarea>
+    <div class="row"><button class="btn ghost" type="button" data-add="logos">Add logo files</button></div>
+    <label for="images">Images (one per line; #x,y,w,h crops; @raw keeps it as is, @bottom pins a strip to the bottom, @blue makes a blue-grid shape)</label>
+    <textarea id="images"></textarea>
+    <div class="row"><button class="btn ghost" type="button" data-add="images">Add image files</button></div>
+    <input type="file" id="files" multiple accept="image/*" hidden />
+    <label for="shape">Silhouette PNG (becomes the blue-grid shape)</label>
+    <input id="shape" type="text" />
+    <label for="notes">Post-it notes (one per line)</label>
+    <textarea id="notes"></textarea>
+
+    <label for="seed">Seed</label>
+    <input id="seed" type="text" value="startup-branding-agencies" />
+    <div class="checks">
+      <label><input type="checkbox" id="decor" checked> Extras</label>
+      <label><input type="checkbox" id="mat"> Ruler mat</label>
+      <label><input type="checkbox" id="plain"> No grid</label>
+      <label><input type="checkbox" id="footer"> Footer</label>
+      <label><input type="checkbox" id="grain" checked> Grain</label>
+    </div>
+    <div class="row"><button class="btn" id="shuffle">Shuffle</button><button class="btn ghost" id="reset">Reset moves</button></div>
+    <div class="save"><button class="btn" id="save">Save cover</button><p class="links"><a href="#" id="dl">Download cover</a> · <a href="#" id="dlog">Download social image</a></p></div>
+  </aside>
+  <main>
+    <div class="card">
+      <canvas id="cover" width="1920" height="1080"></canvas>
+      <p class="hint" id="hint">Drag to move · scroll to resize · shift + scroll to rotate · [ and ] change depth · Delete hides the selected piece</p>
+    </div>
+    <div class="pair">
+      <div class="card"><canvas id="og" width="1200" height="630"></canvas></div>
+      <div class="card"><pre id="json"></pre><div class="row"><button class="btn ghost" id="copy">Copy spec</button></div></div>
+    </div>
+  </main>
+</div>
+<script type="module">
+import { renderCover, loadAssets } from './cover.js'
+const $ = (id) => document.getElementById(id)
+const state = { style: 'overlap', secondary: [], ground: 'auto', hero: 'auto', titleStyle: 'strips', titlePos: 'center', imageMode: 'auto', logoStyle: 'bare', noteTone: 'almond', tweaks: {} }
+let assets = {}, layout = [], selected = null, assetKey = '', savedCategory = ''
+
+for (const [name, hexv] of [['green', '#6CB181'], ['red', '#C8344B'], ['sand', '#E9B44A'], ['lavender', '#CCEFFC'], ['mint', '#D7E9E3'], ['rose', '#F9E0E9'], ['almond', '#F9EECE']]) {
+  const b = document.createElement('button'); b.type = 'button'; b.textContent = name; b.style.borderBottom = `6px solid ${hexv}`; b.setAttribute('aria-pressed', 'false')
+  b.onclick = () => { const on = !state.secondary.includes(name); state.secondary = on ? [...state.secondary, name] : state.secondary.filter((x) => x !== name); b.setAttribute('aria-pressed', String(on)); update() }
+  $('secondary').append(b)
+}
+document.querySelectorAll('.seg[data-key]').forEach((seg) => {
+  for (const v of seg.dataset.options.split(',')) {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = v; b.setAttribute('aria-pressed', String(state[seg.dataset.key] === v))
+    b.onclick = () => { state[seg.dataset.key] = v; seg.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); update() }
+    seg.append(b)
+  }
+})
+const list = (id, sep) => $(id).value.split(sep).map((s) => s.trim()).filter(Boolean)
+function spec() {
+  const s = { layout: 'collage', title: $('title').value.trim(), category: savedCategory, seed: $('seed').value.trim() || 'ebaq', ...state,
+    decor: $('decor').checked, mat: $('mat').checked, plain: $('plain').checked, footer: $('footer').checked, grain: $('grain').checked }
+  const logos = list('logos', ','), images = list('images', '\n'), notes = list('notes', '\n')
+  if (logos.length) s.logos = logos
+  if (images.length) s.images = images
+  if (notes.length) s.notes = notes
+  if ($('shape').value.trim()) s.shape = $('shape').value.trim()
+  if (!Object.keys(s.tweaks).length) delete s.tweaks
+  if (!s.secondary.length) delete s.secondary
+  if (!Object.keys(s.place ?? {}).length) delete s.place
+  return s
+}
+async function update() {
+  await localise('logos', ','); await localise('images', '\n'); await localise('shape', '\n')
+  const s = spec()
+  const key = JSON.stringify([s.logos, s.images, s.shape])
+  if (key !== assetKey) { assetKey = key; assets = await loadAssets({ logos: s.logos ?? [], images: s.images ?? [], shape: s.shape ?? null }) }
+  draw()
+}
+function draw() {
+  const s = spec()
+  layout = renderCover($('cover'), s, assets, { w: 1920, h: 1080 }).elements
+  renderCover($('og'), s, assets, { w: 1200, h: 630 })
+  const sel = layout.find((e) => e.id === selected)
+  if (sel) {
+    const c = $('cover').getContext('2d')
+    c.save(); c.translate(sel.cx, sel.cy); c.rotate(sel.rot); c.strokeStyle = '#00afec'; c.setLineDash([12, 8]); c.lineWidth = 3
+    c.strokeRect((-sel.w * sel.scale) / 2 - 8, (-sel.h * sel.scale) / 2 - 8, sel.w * sel.scale + 16, sel.h * sel.scale + 16); c.restore()
+  }
+  $('json').textContent = JSON.stringify(s, null, 1)
+  $('hint').textContent = selected ? `Selected: ${selected} · drag to move · double-click to vary · scroll to resize · shift + scroll to rotate · [ ] depth · Delete hides it` : 'Drag to move · double-click to vary · scroll to resize · shift + scroll to rotate · [ and ] change depth · Delete hides the selected piece'
+  try { localStorage.setItem('collage-cover', JSON.stringify({ s, shape: $('shape').value })) } catch {}
+}
+// ----- direct manipulation -----
+const cv = $('cover')
+const pos = (e) => { const b = cv.getBoundingClientRect(); return [((e.clientX - b.left) / b.width) * cv.width, ((e.clientY - b.top) / b.height) * cv.height] }
+function hit(x, y) {
+  for (let i = layout.length - 1; i >= 0; i--) {
+    const e = layout[i]; if (e.hidden) continue
+    const dx = x - e.cx, dy = y - e.cy, c = Math.cos(-e.rot), s = Math.sin(-e.rot)
+    if (Math.abs(dx * c - dy * s) <= (e.w * e.scale) / 2 && Math.abs(dx * s + dy * c) <= (e.h * e.scale) / 2) return e
+  }
+  return null
+}
+const tweak = (id) => (state.tweaks[id] ??= {})
+let drag = null
+cv.addEventListener('pointerdown', (e) => {
+  const [x, y] = pos(e); const el = hit(x, y)
+  selected = el?.id ?? null
+  if (el) { const t = tweak(el.id); drag = { id: el.id, x, y, dx: t.dx ?? 0, dy: t.dy ?? 0 }; cv.setPointerCapture(e.pointerId) }
+  draw()
+})
+cv.addEventListener('pointermove', (e) => {
+  if (!drag) return
+  const [x, y] = pos(e); const t = tweak(drag.id)
+  t.dx = +(drag.dx + (x - drag.x) / cv.height).toFixed(4); t.dy = +(drag.dy + (y - drag.y) / cv.height).toFixed(4)
+  draw()
+})
+cv.addEventListener('pointerup', () => { drag = null })
+// double-click re-rolls a piece: new rips, a new dot pattern, another scribble, the next circle colour
+cv.addEventListener('dblclick', (e) => { const el = hit(...pos(e)); if (!el) return; const t = tweak(el.id); t.v = (t.v ?? 0) + 1; selected = el.id; draw() })
+cv.addEventListener('wheel', (e) => {
+  if (!selected) return
+  e.preventDefault()
+  const t = tweak(selected), d = Math.sign(e.deltaY || e.deltaX)
+  if (e.shiftKey) t.rot = +((t.rot ?? 0) + d * 0.02).toFixed(3)
+  else t.scale = +Math.min(4, Math.max(0.2, (t.scale ?? 1) * (d > 0 ? 0.96 : 1.04))).toFixed(3)
+  draw()
+}, { passive: false })
+addEventListener('keydown', (e) => {
+  if (!selected || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return
+  const t = tweak(selected)
+  if (e.key === 'Delete' || e.key === 'Backspace') { t.hidden = true; selected = null }
+  else if (e.key === ']') t.z = (t.z ?? 5) + 1
+  else if (e.key === '[') t.z = (t.z ?? 5) - 1
+  else return
+  e.preventDefault(); draw()
+})
+// ----- loading a saved or pasted spec -----
+const defaults = { ...state }
+const slugTitle = (slug) => slug.split('-').filter(Boolean).map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+function applySpec(s, name) {
+  if (s && !s.layout && s[Object.keys(s)[0]]?.layout) { name = Object.keys(s)[0]; s = s[name] } // { "slug": spec } wrapper
+  if (!s || typeof s !== 'object') throw new Error('Not a cover spec')
+  $('title').value = s.title ?? slugTitle(name ?? ''); savedCategory = s.category ?? ''; $('seed').value = s.seed ?? name ?? 'ebaq'
+  $('logos').value = (s.logos ?? []).join(', '); $('images').value = (s.images ?? []).join('\n'); $('notes').value = (s.notes ?? []).join('\n'); $('shape').value = s.shape ?? ''
+  state.style = 'overlap'
+  for (const k of ['ground', 'hero', 'imageMode', 'logoStyle', 'noteTone']) state[k] = s[k] ?? defaults[k]
+  state.titleStyle = 'strips'; state.titlePos = 'center'
+  state.secondary = [...(s.secondary ?? [])]; state.tweaks = structuredClone(s.tweaks ?? {}); state.place = structuredClone(s.place ?? {})
+  $('decor').checked = s.decor ?? true; $('mat').checked = s.mat ?? false; $('plain').checked = s.plain ?? false; $('footer').checked = s.footer ?? false; $('grain').checked = s.grain ?? true
+  document.querySelectorAll('.seg[data-key] button').forEach((b) => b.setAttribute('aria-pressed', String(state[b.parentElement.dataset.key] === b.textContent)))
+  document.querySelectorAll('#secondary button').forEach((b) => b.setAttribute('aria-pressed', String(state.secondary.includes(b.textContent))))
+  selected = null; update()
+}
+// ----- controls -----
+let timer
+for (const id of ['title', 'logos', 'images', 'notes', 'seed', 'shape']) $(id).addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(update, 250) })
+for (const id of ['decor', 'mat', 'plain', 'footer', 'grain']) $(id).addEventListener('change', update)
+$('shuffle').onclick = () => { state.place = {}; $('seed').value = ($('post').value || $('seed').value.replace(/-[a-z0-9]{5}$/, '') || 'ebaq') + '-' + Math.random().toString(36).slice(2, 7); state.tweaks = {}; selected = null; update() }
+$('reset').onclick = () => { state.tweaks = {}; state.place = {}; selected = null; update() }
+$('copy').onclick = async () => { const { seed, ...rest } = spec(); await navigator.clipboard.writeText(JSON.stringify({ seed, ...rest })); $('copy').textContent = 'Copied'; setTimeout(() => ($('copy').textContent = 'Copy spec'), 1200) }
+const save = (canvas, name) => { const was = selected; selected = null; draw(); canvas.toBlob((b) => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name; a.click(); selected = was; draw() }, 'image/webp', 0.9) }
+$('dl').onclick = (e) => { e.preventDefault(); save($('cover'), ($('post').value || 'collage') + '-cover.webp') }
+$('dlog').onclick = (e) => { e.preventDefault(); save($('og'), ($('post').value || 'collage') + '-og.webp') }
+const status = (text, error = false) => { $('status').textContent = text; $('status').className = 'hint' + (error ? ' error' : '') }
+const api = async (path, data) => {
+  const r = await fetch(path, data ? { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) } : undefined)
+  const j = await r.json().catch(() => ({}))
+  if (!r.ok) throw new Error(j.error ?? 'Request failed')
+  return j
+}
+let posts = [], savedSlugs = new Set()
+const label = (p) => (savedSlugs.has(p.slug) ? '● ' : '') + p.title
+async function loadPost(slug) {
+  const p = posts.find((x) => x.slug === slug); if (!p) return
+  try { localStorage.setItem('cover-post', slug) } catch {}
+  try { applySpec(await api('/api/cover?slug=' + slug), slug); status('Saved cover loaded. Change anything, then Save cover to overwrite it.') }
+  catch { applySpec({ layout: 'collage', title: slugTitle(slug), seed: slug }, slug); status('No saved cover for this post yet. Design one and press Save cover.') }
+}
+try {
+  posts = await (await fetch('/public/content/blog/index.json')).json()
+  savedSlugs = new Set(await api('/api/covers').catch(() => []))
+  const when = (p) => Date.parse(p.date) || 0
+  posts.sort((a, b) => when(b) - when(a)) // newest first
+  for (const p of posts) { const o = document.createElement('option'); o.value = p.slug; o.textContent = label(p); $('post').append(o) }
+  $('post').onchange = () => loadPost($('post').value)
+} catch {}
+$('save').onclick = async () => {
+  const slug = $('post').value
+  if (!slug) return status('Pick a blog post first, so the cover has somewhere to go.', true)
+  selected = null; draw()
+  $('save').disabled = true; $('save').textContent = 'Saving…'
+  try {
+    await api('/api/save', { slug, spec: spec(), cover: $('cover').toDataURL('image/png'), og: $('og').toDataURL('image/png') })
+    savedSlugs.add(slug); const o = [...$('post').options].find((x) => x.value === slug); if (o) o.textContent = label(posts.find((x) => x.slug === slug))
+    status('Saved. The cover, thumbnail and social image are in the codebase and the article uses them. Commit and push to publish.')
+  } catch (e) { status('Not saved: ' + e.message, true) }
+  $('save').disabled = false; $('save').textContent = 'Save cover'
+}
+// pasted image links are downloaded into the post's asset folder and replaced by the local path
+async function localise(id, sep) {
+  const el = $(id), parts = el.value.split(sep)
+  let changed = false
+  for (let i = 0; i < parts.length; i++) {
+    const m = parts[i].trim().match(/^(https?:\/\/[^\s#@]+)(.*)$/); if (!m) continue
+    if (!$('post').value) { status('Pick a blog post first, then paste the link again.', true); return }
+    try { parts[i] = (await api('/api/asset', { slug: $('post').value, url: m[1] })).path + m[2]; changed = true; status('Saved ' + m[1].split('/').pop() + ' into this post\'s assets.') }
+    catch (e) { status('Could not fetch ' + m[1] + ': ' + e.message, true); return }
+  }
+  if (changed) el.value = parts.join(sep === ',' ? ', ' : sep)
+}
+let addTo = 'logos'
+document.querySelectorAll('[data-add]').forEach((b) => (b.onclick = () => { addTo = b.dataset.add; if (!$('post').value) return status('Pick a blog post first.', true); $('files').click() }))
+$('files').onchange = async () => {
+  for (const f of $('files').files) {
+    const data = await new Promise((res) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.readAsDataURL(f) })
+    try {
+      const { path } = await api('/api/asset', { slug: $('post').value, name: f.name, data })
+      const el = $(addTo); el.value = el.value.trim() ? el.value.trim() + (addTo === 'logos' ? ', ' : '\n') + path : path
+    } catch (e) { status('Could not add ' + f.name + ': ' + e.message, true) }
+  }
+  $('files').value = ''; update()
+}
+await document.fonts.load('600 40px "Roboto Condensed"'); await document.fonts.load('500 20px "Roboto Mono"')
+let last = ''; try { last = localStorage.getItem('cover-post') ?? '' } catch {}
+if (posts.some((p) => p.slug === last)) { $('post').value = last; await loadPost(last) } else update()
+</script>
+</body>
+</html>

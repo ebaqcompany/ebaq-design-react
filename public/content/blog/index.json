@@ -1031,10 +1031,11 @@
     "description": "See how a brand refresh improves an existing logo, colors and typography, with real before-and-after work, practical deliverables and a $3,000 one-week option.",
     "category": "Branding",
     "readTime": "9 min read",
-    "date": "Oct 28, 2026",
+    "date": "Nov 15, 2026",
     "image": {
-      "src": "/images/blog/brand-refresh/cover-replacement.webp",
-      "alt": "Focal Project Managers logo before and after refinement, preserving the blue structural wordmark"
+      "src": "/images/blog/brand-refresh/cover-collage.webp",
+      "alt": "Focal Project Managers logo before and after refinement, preserving the blue structural wordmark",
+      "thumbnail": "/images/blog/brand-refresh/cover-collage-768w.webp"
     }
   },
   {
@@ -1366,11 +1367,11 @@
     "category": "Branding",
     "categorySlug": "branding",
     "readTime": "15 min read",
-    "date": "Nov 7, 2026",
+    "date": "Nov 15, 2026",
     "image": {
-      "src": "/images/blog/cannabis-branding/best-dispensary-logos.webp",
+      "src": "/images/blog/cannabis-branding/cover-collage.webp",
       "alt": "Cannabis branding guide: dispensary and product brand identity, packaging and shelf design",
-      "thumbnail": "/images/blog/cannabis-branding/best-dispensary-logos-768w.webp"
+      "thumbnail": "/images/blog/cannabis-branding/cover-collage-768w.webp"
     }
   },
   {

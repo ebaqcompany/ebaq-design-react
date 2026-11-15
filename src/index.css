@@ -587,37 +587,41 @@ h1.heading-h3 {
 }
 
 h1,
-.heading-h1,
-.blog-rich-text h1 {
+.heading-h1 {
   font-size: var(--type-h1);
 }
 
 h2,
 .heading-h2,
-.blog-rich-text h2 {
+.blog-rich-text h1 {
   font-size: var(--type-h2);
 }
 
 h3,
 .heading-h3,
-.blog-rich-text h3 {
+.blog-rich-text h2 {
   font-size: var(--type-h3);
 }
 
 h4,
 .heading-h4,
-.blog-rich-text h4 {
+.blog-rich-text h3 {
   font-size: var(--type-h4);
 }
 
 :is(h5, .heading-h5),
-.blog-rich-text h5 {
+.blog-rich-text h4 {
   font-size: var(--type-h5);
 }
 
 :is(h6, .heading-h6),
-.blog-rich-text h6 {
+.blog-rich-text h5 {
   font-size: var(--type-h6);
+  letter-spacing: normal;
+}
+
+.blog-rich-text h6 {
+  font-size: var(--type-h7);
   letter-spacing: normal;
 }
 

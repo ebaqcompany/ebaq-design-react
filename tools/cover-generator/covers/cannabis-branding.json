@@ -1,0 +1,81 @@
+{
+  "layout": "collage",
+  "title": "Cannabis Branding",
+  "category": "Brand Strategy",
+  "seed": "cannabis-branding-u2fcp",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "none",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-noise": {
+      "dx": 0.1257,
+      "dy": 0.0486
+    },
+    "dots": {
+      "dx": -0.1024,
+      "dy": 0.2993
+    },
+    "sheet-paper": {
+      "dx": 0.1119,
+      "dy": -0.3498
+    },
+    "photo-9": {
+      "dx": 0.0809,
+      "dy": 0.1025,
+      "z": 6
+    },
+    "photo-5": {
+      "dx": -0.5458,
+      "dy": 0.7099
+    },
+    "scribble-0": {
+      "dx": 0.4112,
+      "dy": -0.238
+    },
+    "sheet-strip": {
+      "dx": -0.1671,
+      "dy": 0.1127,
+      "z": 6
+    },
+    "photo-8": {
+      "dx": -0.1121,
+      "dy": -0.0986
+    },
+    "photo-4": {
+      "dx": 0.1765,
+      "dy": -0.3218
+    },
+    "title": {
+      "dx": -0.0005,
+      "dy": -0.0002
+    },
+    "label": {
+      "dx": 0,
+      "dy": -0.0002
+    }
+  },
+  "decor": true,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/public/images/blog/cannabis-branding/8.webp@raw",
+    "/public/images/blog/cannabis-branding/9.webp@raw",
+    "/public/images/blog/cannabis-branding/10.webp@raw",
+    "/public/images/blog/cannabis-branding/11.webp@raw",
+    "/public/images/blog/cannabis-branding/13.webp@raw",
+    "/public/images/blog/cannabis-branding/14.webp@raw",
+    "/public/images/blog/cannabis-branding/15.webp@raw",
+    "/public/images/blog/cannabis-branding/16.webp@raw",
+    "/public/images/blog/cannabis-branding/19.webp@raw",
+    "/public/images/blog/cannabis-branding/18.webp@raw",
+    "/public/images/blog/cannabis-branding/20.webp@raw",
+    "/public/images/blog/cannabis-branding/21.webp@raw"
+  ]
+}
