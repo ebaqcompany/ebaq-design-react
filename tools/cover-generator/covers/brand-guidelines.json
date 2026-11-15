@@ -1,0 +1,242 @@
+{
+  "layout": "collage",
+  "title": "31 Brand Guidelines Examples",
+  "category": "Logo Design",
+  "seed": "brand-guidelines",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "none",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "mono",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-paper": {
+      "hidden": true
+    },
+    "sheet-strip": {
+      "hidden": true
+    },
+    "sheet-noise": {
+      "hidden": true
+    },
+    "sheet-colour": {
+      "hidden": true
+    },
+    "dots": {
+      "hidden": true
+    },
+    "scribble-0": {
+      "hidden": true
+    },
+    "circle": {
+      "hidden": true
+    },
+    "label": {
+      "hidden": true
+    },
+    "photo-5": {
+      "hidden": true
+    },
+    "photo-6": {
+      "dx": 0.2602,
+      "dy": -0.202
+    },
+    "photo-3": {
+      "dx": 0.0002,
+      "dy": -0.0002,
+      "hidden": true
+    },
+    "photo-7": {
+      "dx": -0.1857,
+      "dy": -0.0197,
+      "scale": 1.069
+    },
+    "photo-11": {
+      "dx": -0.0582,
+      "dy": -0.0641,
+      "scale": 0.683
+    },
+    "photo-14": {
+      "dx": -0.0172,
+      "dy": 0.0448,
+      "hidden": true
+    },
+    "photo-13": {
+      "dx": -0.0102,
+      "dy": -0.0379
+    },
+    "photo-9": {
+      "dx": 0.0162,
+      "dy": -0.3416
+    },
+    "photo-8": {
+      "dx": 0.2047,
+      "dy": -0.0654
+    },
+    "photo-12": {
+      "dx": -0.0357,
+      "dy": -0.0829
+    },
+    "photo-10": {
+      "dx": -0.1204,
+      "dy": 0.1813
+    },
+    "photo-15": {
+      "dx": -0.0269,
+      "dy": -0.0258
+    },
+    "photo-0": {
+      "dx": 0.0504,
+      "dy": 0.0015
+    },
+    "photo-1": {
+      "scale": 0.712,
+      "dx": 0.0836,
+      "dy": -0.0107
+    },
+    "photo-4": {
+      "dx": -0.0005,
+      "dy": -0.0071
+    },
+    "title": {}
+  },
+  "place": {
+    "photo-0": {
+      "x": 0.1,
+      "y": 0.16,
+      "w": 0.23,
+      "rot": -0.08,
+      "z": 2
+    },
+    "photo-1": {
+      "x": 0.35,
+      "y": 0.14,
+      "w": 0.22,
+      "rot": 0.05,
+      "z": 2.01
+    },
+    "photo-2": {
+      "x": 0.64,
+      "y": 0.14,
+      "w": 0.23,
+      "rot": -0.04,
+      "z": 2.02
+    },
+    "photo-3": {
+      "x": 0.9,
+      "y": 0.17,
+      "w": 0.23,
+      "rot": 0.08,
+      "z": 2.03
+    },
+    "photo-4": {
+      "x": 0.09,
+      "y": 0.43,
+      "w": 0.22,
+      "rot": 0.06,
+      "z": 2.04
+    },
+    "photo-5": {
+      "x": 0.29,
+      "y": 0.36,
+      "w": 0.21,
+      "rot": -0.06,
+      "z": 2.05
+    },
+    "photo-6": {
+      "x": 0.72,
+      "y": 0.37,
+      "w": 0.22,
+      "rot": 0.05,
+      "z": 2.06
+    },
+    "photo-7": {
+      "x": 0.91,
+      "y": 0.43,
+      "w": 0.22,
+      "rot": -0.06,
+      "z": 2.07
+    },
+    "photo-8": {
+      "x": 0.09,
+      "y": 0.7,
+      "w": 0.23,
+      "rot": -0.05,
+      "z": 2.08
+    },
+    "photo-9": {
+      "x": 0.3,
+      "y": 0.66,
+      "w": 0.22,
+      "rot": 0.06,
+      "z": 2.09
+    },
+    "photo-10": {
+      "x": 0.72,
+      "y": 0.67,
+      "w": 0.22,
+      "rot": -0.05,
+      "z": 2.1
+    },
+    "photo-11": {
+      "x": 0.91,
+      "y": 0.7,
+      "w": 0.22,
+      "rot": 0.05,
+      "z": 2.11
+    },
+    "photo-12": {
+      "x": 0.12,
+      "y": 0.92,
+      "w": 0.22,
+      "rot": 0.07,
+      "z": 2.12
+    },
+    "photo-13": {
+      "x": 0.36,
+      "y": 0.88,
+      "w": 0.23,
+      "rot": -0.05,
+      "z": 2.13
+    },
+    "photo-14": {
+      "x": 0.65,
+      "y": 0.88,
+      "w": 0.23,
+      "rot": 0.04,
+      "z": 2.14
+    },
+    "photo-15": {
+      "x": 0.89,
+      "y": 0.92,
+      "w": 0.22,
+      "rot": -0.06,
+      "z": 2.15
+    }
+  },
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/public/images/blog/brand-guidelines/openai.webp@raw",
+    "/public/images/blog/brand-guidelines/nasa-guidelines-preview.webp@raw",
+    "/public/images/blog/brand-guidelines/spotify-brand-guidelines-837f0990c168763a48c5d4ddf8571410-800.webp@raw",
+    "/public/images/blog/brand-guidelines/orbio-client-guidelines.webp@raw",
+    "/public/images/blog/brand-guidelines/mailchimp-guidelines-preview.webp@raw",
+    "/public/images/blog/brand-guidelines/next-dim-client-guidelines.webp@raw",
+    "/public/images/blog/brand-guidelines/savory-client-guidelines.webp@raw",
+    "/public/images/blog/brand-guidelines/microsoft-guidelines-preview.webp@raw",
+    "/public/images/blog/brand-guidelines/dropbox-brand-guidelines-5281c507b39c9cfc7e9df3d8780e2a42-800.webp@raw",
+    "/public/images/blog/brand-guidelines/asana-brand-guidelines-967430d26debd0c058494faf1e1d284e-800.webp@raw",
+    "/public/images/blog/brand-guidelines/mozilla-guidelines-preview.webp@raw",
+    "/public/images/blog/brand-guidelines/slack-guidelines-preview.webp@raw",
+    "/public/images/blog/brand-guidelines/netflix-brand-guidelines-b1ee39e826a7802b84b0b8eca9a1f022-800.webp@raw",
+    "/public/images/blog/brand-guidelines/foxberman-client-guidelines.webp@raw",
+    "/public/images/blog/brand-guidelines/elevate-ab-client-guidelines.webp@raw",
+    "/public/images/blog/brand-guidelines/starbucks-brand-guidelines-f1456a3ff460b04131180931f3891a15-800.webp@raw"
+  ]
+}
