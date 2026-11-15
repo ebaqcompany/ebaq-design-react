@@ -194,7 +194,7 @@ const allCaseStudies: CaseStudy[] = [
           { src: "/case-study/nathalie-sadler/12-linkedin-banner.webp", alt: "Nathalie Sadler LinkedIn profile mockup: a black banner with NATHALIE SADLER in white serif capitals over a collage of stage photos, a red spotlight, a speaker in the wings, hands writing notes and an applauding audience, with nathaliesadler.com below, above a round portrait of Nathalie and a Follow button" },
           { src: "/case-study/nathalie-sadler/event-badge-plain-red.png", alt: "Event badge worn on a plain red lanyard against a light grey background", span: "half" },
           { src: "/case-study/nathalie-sadler/gold-monogram-tote.jpg", alt: "Black tote bag with an oversized gold Nathalie Sadler monogram", span: "half" },
-          { src: "/case-study/nathalie-sadler/subway-posters-five-ramp.jpg", alt: "Five black and white Nathalie Sadler posters displayed in a subway station" },
+          { src: "/case-study/nathalie-sadler/subway-posters-real-artwork.webp", alt: "Five black and white Nathalie Sadler posters displayed in a subway station" },
           {
             src: "/case-study/nathalie-sadler/11-event-billboard.webm",
             alt: "Event billboard mockup in a dark hall with the audience in silhouette: the wide stage screen scrolls This is your moment to shine around a gold figure, then settles on NATHALIE, the gold NS monogram and SADLER",
