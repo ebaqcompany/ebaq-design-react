@@ -1,0 +1,33 @@
+{
+  "layout": "collage",
+  "title": "How to Redesign a Logo",
+  "category": "Logo Design",
+  "seed": "logo-redesign-utwh5",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "none",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-1": {
+      "dx": 0.0094,
+      "dy": -0.61
+    },
+    "photo-0": {
+      "dx": 0.0337,
+      "dy": -0.0261
+    }
+  },
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/public/images/about/logofix/medihuanna-before.webp@raw",
+    "/public/images/about/logofix/medihuanna-after.webp@raw"
+  ]
+}

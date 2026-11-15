@@ -1,0 +1,56 @@
+{
+  "layout": "collage",
+  "title": "One-Week Branding",
+  "category": "",
+  "seed": "branding-agencies-one-week-w2wh7",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "scribble-0": {
+      "dx": -0.9579,
+      "dy": 0.1832
+    },
+    "sheet-strip": {
+      "hidden": true
+    },
+    "hero": {
+      "dx": 0.2636,
+      "dy": 0.1362,
+      "scale": 0.657
+    },
+    "dots": {
+      "dx": -0.1012,
+      "dy": -0.0364
+    },
+    "sheet-paper": {
+      "dx": -0.0321,
+      "dy": 0.1886
+    },
+    "sheet-noise": {
+      "dx": -0.0457,
+      "dy": -0.249
+    },
+    "title": {
+      "dx": 0,
+      "dy": -0.0002
+    },
+    "photo-0": {
+      "dx": 0.5395,
+      "dy": -0.1267
+    }
+  },
+  "decor": true,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/public/images/blog/branding-agencies-one-week/cover-cyclist.webp"
+  ]
+}

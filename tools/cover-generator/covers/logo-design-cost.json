@@ -1,0 +1,71 @@
+{
+  "layout": "collage",
+  "title": "Logo Design Cost",
+  "category": "Logo Design",
+  "seed": "logo-cost-draft",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "none",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "mono",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "dots": {
+      "hidden": true
+    },
+    "photo-0": {
+      "scale": 1.12,
+      "dx": -0.0636,
+      "dy": -0.5944,
+      "z": 6,
+      "rot": -0.14
+    },
+    "photo-3": {
+      "dx": -0.0367,
+      "dy": -0.0464,
+      "hidden": true
+    },
+    "photo-1": {
+      "dx": 0.0627,
+      "dy": 0.0116,
+      "hidden": true
+    },
+    "sheet-noise": {
+      "dx": 0.5505,
+      "dy": -0.003,
+      "rot": 0.04
+    },
+    "title": {
+      "dx": -0.0256,
+      "dy": -0.0133
+    },
+    "photo-2": {
+      "dx": -0.0423,
+      "dy": 0.6315,
+      "rot": 0.08
+    },
+    "sheet-strip": {
+      "dx": -0.1371,
+      "dy": -0.2982,
+      "rot": -0.14
+    },
+    "sheet-paper": {
+      "dx": 0.0032,
+      "dy": 0.0485,
+      "rot": -0.06
+    }
+  },
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/public/images/blog/logo-design-cost/cover.webp@raw",
+    "/public/images/blog/logo-design-cost/logo-sketch-closeup.webp@raw",
+    "/public/images/blog/logo-design-cost/pricing.webp@raw",
+    "/public/images/blog/logo-design-cost/arek-workstation.webp@raw"
+  ]
+}
