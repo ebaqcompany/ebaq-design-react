@@ -81,16 +81,15 @@ export const CaseStudyPage = () => {
     };
   };
 
+  const seenProjectUrls = new Set([`/work/${study.slug}`]);
   const nextProjects = study.nextProject
-    ? [
-        study.nextProject,
-        ...caseStudies
-          .map((caseStudy) => caseStudy.nextProject)
-          .filter(
-            (project): project is NonNullable<typeof project> =>
-              project != null && project.url !== study.nextProject?.url && project.url !== `/work/${study.slug}`,
-          ),
-      ].map(addPreviewImages)
+    ? [study.nextProject, ...caseStudies.map((caseStudy) => caseStudy.nextProject)]
+        .filter((project): project is NonNullable<typeof project> => {
+          if (!project || seenProjectUrls.has(project.url)) return false;
+          seenProjectUrls.add(project.url);
+          return true;
+        })
+        .map(addPreviewImages)
     : [];
 
   return (
