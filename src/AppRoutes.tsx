@@ -70,6 +70,7 @@ const IdentitySystemsPage = page('./components/IdentitySystemsPage.tsx', 'Identi
 const WebDesignPage = page('./components/WebDesignPage.tsx', 'WebDesignPage')
 const WebDevelopmentPage = page('./components/WebDevelopmentPage.tsx', 'WebDevelopmentPage')
 const MotionGraphicsPage = page('./components/MotionGraphicsPage.tsx', 'MotionGraphicsPage')
+const BrandSprintPage = page('./components/BrandSprintPage.tsx', 'BrandSprintPage')
 const PricingPage = page('./components/PricingPage.tsx', 'PricingPage')
 const CompareIndexPage = page('./components/CompareIndexPage.tsx', 'CompareIndexPage')
 const ComparePage = page('./components/ComparePage.tsx', 'ComparePage')
@@ -118,6 +119,7 @@ const routes: RouteEntry[] = [
   { path: '/tools/brand-name-generator', page: BrandNameGeneratorPage },
   { path: '/tools/brand-templates', page: BrandTemplatesPage },
   { path: '/pricing', page: PricingPage },
+  { path: '/brand-sprint', page: BrandSprintPage },
   { path: '/services', page: ServicesPage },
   { path: '/services/brand-strategy', page: BrandStrategyPage },
   { path: '/services/logo-design', page: LogoDesignPage },

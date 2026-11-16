@@ -36,6 +36,7 @@ const staticPaths = [
   '/tools/brand-name-generator',
   '/tools/brand-templates',
   '/pricing',
+  '/brand-sprint',
   '/services',
   '/services/brand-strategy',
   '/services/logo-design',

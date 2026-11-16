@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { LottiePlayer as Lottie } from "./LottiePlayer";
 import { LazyVideo } from "./Media";
 
-// Week 1 shown, not listed: each deliverable with a real piece of client work (16:9 media only).
+// Week 1 shown, not listed: each deliverable with a real piece of client work (16:9 media only),
+// in the same bordered cards as the Services page (Relume Layout 235).
 const sprintDeliverables = [
-  { title: "Logo design", body: "Several concepts, refined into one distinctive mark.", media: "/case-study/next-dimension/logos.webp", alt: "NextDimension logo system" },
+  { title: "Logo design", body: "Several concepts, refined into one distinctive mark.", media: "/case-study/aero/01-logo-grid.mp4", alt: "Aero logo construction in motion" },
   { title: "Logo animation", body: "Your logo in motion, ready for the web, social, and video.", media: "/portfolio/logos/airporteexecutive-logo.json", alt: "Airport Executive logo animation" },
   { title: "Final logo files", body: "Every version in SVG, PNG, and PDF, for print and screen.", media: "/case-study/fox-berman/01-logos.webp", alt: "Fox Berman logo variations" },
   { title: "Color palette", body: "A primary palette and accents, with values for every medium.", media: "/case-study/orbio/03-colors.mp4", alt: "Orbio color palette" },
@@ -25,17 +26,17 @@ const LottieTile = ({ src }: { src: string }) => {
 };
 
 export const BrandSprintIncluded = () => (
-  <section id="brand-sprint" className="bg-white px-[5%] py-16 md:py-24 lg:py-28">
+  <section id="brand-sprint" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
     <div className="container">
       <div className="mb-12 max-w-3xl md:mb-16">
         <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Week 1</p>
         <h2 className="mb-5 md:mb-6">What's in the Brand Sprint</h2>
         <p className="md:text-md">A complete brand identity or rebrand in one week. We lock the scope on the kickoff call, so the week is guaranteed and you get every piece below.</p>
       </div>
-      <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-14">
+      <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
         {sprintDeliverables.map(({ title, body, media, alt }) => (
-          <div key={title}>
-            <div className="aspect-video overflow-hidden rounded-lg bg-surface-muted">
+          <article key={title} data-surface="white" className="service-card relative flex flex-col overflow-hidden rounded-xl after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-brand-primary/30 after:content-['']">
+            <div className="aspect-video overflow-hidden bg-surface-muted">
               {media.endsWith(".json") ? (
                 <div role="img" aria-label={alt} className="size-full bg-black">
                   <LottieTile src={media} />
@@ -46,12 +47,14 @@ export const BrandSprintIncluded = () => (
                 <img src={media} alt={alt} loading="lazy" className="size-full object-cover" />
               )}
             </div>
-            <h3 className="mt-5 mb-2 heading-h6">{title}</h3>
-            <p className="text-black/60">{body}</p>
-          </div>
+            <div className="flex grow flex-col p-6 md:p-8">
+              <h3 className="mb-3 heading-h5 md:mb-4">{title}</h3>
+              <p>{body}</p>
+            </div>
+          </article>
         ))}
       </div>
-      <p className="mt-12 border-t border-black/10 pt-6 md:mt-16 md:text-md">
+      <p className="mt-12 border-t border-brand-primary/30 pt-6 md:mt-16 md:text-md">
         <strong>Revisions within the agreed scope</strong> are included, and you keep every source file.
       </p>
     </div>

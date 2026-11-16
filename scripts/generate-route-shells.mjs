@@ -52,7 +52,7 @@ for (const [path, component] of Object.entries({
   '/real-estate-branding': 'RealEstateBrandingLanding',
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/personal-branding': 'PersonalBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
   '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding',
-  '/pricing': 'PricingPage',
+  '/pricing': 'PricingPage', '/brand-sprint': 'BrandSprintPage',
   '/compare': 'CompareIndexPage', '/glossary': 'GlossaryPage', '/industries': 'IndustriesPage', '/compare/freelancer-vs-agency': 'FreelancerVsAgencyPage', '/locations': 'LocationsPage',
   '/services': 'ServicesPage',
   '/services/brand-strategy': 'BrandStrategyPage',
@@ -219,6 +219,7 @@ Tools: ${tools.join(', ')}.
 - [Homepage](${siteUrl}/)
 - [Services](${siteUrl}/services)
 - [Pricing: $3,000 per week, brand identity in one week](${siteUrl}/pricing)
+- [Brand Sprint: a brand identity or rebrand in one week for $3,000](${siteUrl}/brand-sprint)
 - [Work: case studies](${siteUrl}/work)
 - [About Arek Dvornechuck, Branding Expert](${siteUrl}/about)
 - [Real estate branding for agents, teams and brokers](${siteUrl}/real-estate-branding)

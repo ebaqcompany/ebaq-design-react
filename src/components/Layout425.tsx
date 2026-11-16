@@ -10,6 +10,14 @@ type Props = React.ComponentPropsWithoutRef<"section"> & {
   description?: string;
   images?: ImageProps[];
   caseStudyUrl?: string;
+  // Page-hero options. The homepage uses none of them.
+  // reverse: the images start spread around the copy and come together on scroll.
+  reverse?: boolean;
+  // Small label above the heading.
+  tagline?: string;
+  headingLevel?: "h1" | "h2";
+  // Replaces the "See case study" link.
+  button?: { title: string; href: string };
 };
 
 const toImage = ({ src, alt, kind }: CaseStudyBrandSprintGallery["logo"]): ImageProps => ({
@@ -108,6 +116,7 @@ export const Layout425 = (props: Props) => {
   const [randomCaseStudy, setRandomCaseStudy] = useState(brandSprintFallback);
   const [fifthImage, setFifthImage] = useState<ImageProps | null>(null);
   const { heading, description } = { ...Layout425Defaults, ...props };
+  const { reverse = false, tagline, headingLevel: Heading = "h2", button, id = "brand-sprint" } = props;
   const images = props.images ?? randomCaseStudy.images;
   const caseStudyUrl = props.caseStudyUrl ?? randomCaseStudy.url;
   // Picking the project downloads its images to measure them, so wait until the section is close.
@@ -144,15 +153,16 @@ export const Layout425 = (props: Props) => {
   const isMobile = useMediaQuery("(max-width: 767px)");
   const isTablet = useMediaQuery("(max-width: 991px)");
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });
-  const transforms = useLayoutTransforms(scrollYProgress, isMobile, isTablet);
-  return <section ref={sectionRef} id="brand-sprint" className="bg-brand-grid relative h-[300vh] md:pb-[12%] lg:pb-[15%]">
+  const reversedProgress = useTransform(scrollYProgress, (value) => 1 - value);
+  const transforms = useLayoutTransforms(reverse ? reversedProgress : scrollYProgress, isMobile, isTablet);
+  return <section ref={sectionRef} id={id} className="bg-brand-grid relative h-[300vh] md:pb-[12%] lg:pb-[15%]">
     <div className="bg-brand-grid sticky top-0 z-10 flex h-[100svh] flex-col items-center justify-center overflow-hidden">
       <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden" aria-hidden="true">
         {[images[0], images[1], images[2], images[3], fifthImage].map((image, index) => image && <div key={index} className="absolute left-1/2 top-1/2 w-[55vw] max-w-[15rem] -translate-x-1/2 -translate-y-1/2 md:w-[35vw] lg:w-[30vw] lg:max-w-xs">
           <motion.div style={[transforms.imageOne, transforms.imageTwo, transforms.imageThree, transforms.imageFour, transforms.imageFive][index]}><Media image={image} /></motion.div>
         </div>)}
       </div>
-      <div className="relative z-10 w-full"><div className="px-[5%] py-16 text-center md:py-24 lg:py-28"><div className="container mx-auto flex w-full max-w-lg flex-col items-center"><h2 className="mb-5 w-full text-center uppercase md:mb-6 text-10xl">{heading.split("\n").map((line) => <span key={line} className="block text-center">{line}</span>)}</h2>{description && <p className="mx-auto max-w-sm text-center font-semibold md:text-md">{description}</p>}<div className="mt-6 md:mt-8"><a className="button-inverted button-inverted--brand-surface" href={caseStudyUrl}>See case study</a></div></div></div></div>
+      <div className="relative z-10 w-full"><div className="px-[5%] py-16 text-center md:py-24 lg:py-28"><div className="container mx-auto flex w-full max-w-lg flex-col items-center">{tagline && <p className="mb-3 font-mono text-sm font-normal uppercase tracking-wide text-black md:mb-4">{tagline}</p>}<Heading className="mb-5 w-full text-center uppercase md:mb-6 text-10xl">{heading.split("\n").map((line) => <span key={line} className="block text-center">{line}</span>)}</Heading>{description && <p className="mx-auto max-w-sm text-center font-semibold md:text-md">{description}</p>}<div className="mt-6 md:mt-8"><a className="button-inverted button-inverted--brand-surface" href={button?.href ?? caseStudyUrl}>{button?.title ?? "See case study"}</a></div></div></div></div>
     </div><div className="absolute inset-0 -z-10 mt-[100vh]" />
   </section>;
 };
