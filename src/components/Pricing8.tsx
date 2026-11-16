@@ -1,6 +1,7 @@
 import type { ButtonProps } from "./ui";
 import { BiCheck } from "react-icons/bi";
 import { AvailableButton } from "./AvailableButton";
+import { TextLink } from "./TextLink";
 
 type PricingPlan = { planName: string; planDescription: string; originalPrice?: string; monthlyPrice: string; yearlyPrice: string; period: string; alternateLabel: string; features: string[]; button: ButtonProps };
 type Props = { tagline: string; heading: string; description: string; pricingPlans: PricingPlan[] };
@@ -34,7 +35,10 @@ const PricingPlan = ({ plan, lightBlue, bookingHref }: { plan: PricingPlan; ligh
       <h5 className="heading-h6 mb-4 mt-6">{plan.period === "/week" ? "Example weekly scope" : "Example monthly scope"}</h5>
       <div className="mb-8 grid grid-cols-1 gap-y-4 py-2">{plan.features.map((feature, index) => <div key={index} className="flex self-start"><div className="mr-4 flex-none self-start"><BiCheck className="size-6 text-brand-primary" /></div><p>{feature}</p></div>)}</div>
     </div>
-    <AvailableButton pricing className="self-end" href={bookingHref} />
+    <div className="flex flex-wrap items-center justify-between gap-4">
+      {plan.period === "/week" && <TextLink href="/brand-sprint">Brand Sprints</TextLink>}
+      <AvailableButton pricing className="ml-auto" href={bookingHref} />
+    </div>
   </div>
 );
 

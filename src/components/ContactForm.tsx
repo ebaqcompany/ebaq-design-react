@@ -47,7 +47,7 @@ export const ContactForm = () => {
     <div><p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">Contact</p><h1 className="mb-5 md:mb-6">Tell me about your project</h1><p className="md:text-md">Share a few details, then book a free 15-minute call.</p>
       <div className="mt-8 grid gap-4">
         <div className="flex items-center gap-4"><HiOutlineEnvelope aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="mailto:arek@ebaqdesign.com">arek@ebaqdesign.com</a></div>
-        <div className="flex items-center gap-4"><HiOutlinePhone aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="tel:+19292459811">+1 (929) 245-9811</a></div>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2"><div className="flex items-center gap-4"><HiOutlinePhone aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="tel:+19292459811">+1 (929) 245-9811</a></div><div className="ml-10 flex items-center gap-2 sm:ml-0"><svg aria-hidden="true" width="36" height="25" viewBox="0 0 36 25" fill="none" className="shrink-0 text-brand-primary"><path d="M34 4C25 3 15 6 4 17M4 17l9-1M4 17l3-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg><p className="-rotate-3 font-handwriting text-xl leading-tight">Leave me a voicemail<br />and I’ll call you back!</p></div></div>
         <div className="flex items-center gap-4"><HiOutlineMapPin aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="https://maps.google.com/?q=495+Flatbush+Ave+Brooklyn+NY+11225" target="_blank" rel="noreferrer">495 Flatbush Ave, Brooklyn, NY 11225</a></div>
       </div>
     </div>

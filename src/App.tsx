@@ -61,7 +61,7 @@ function App() {
           <Layout484 />
 
           {/* Layout527 Section */}
-          <Layout425 />
+          <Layout425 tagline="Brand Sprint" button={{ title: "Explore Brand Sprints", href: "/brand-sprint" }} />
 
           {/* Strategy-to-launch capabilities */}
           <Layout350Preview />

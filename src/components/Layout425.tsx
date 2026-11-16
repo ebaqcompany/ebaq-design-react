@@ -34,65 +34,29 @@ const toOrderedImages = (gallery: CaseStudyBrandSprintGallery): ImageProps[] => 
 ];
 
 const brandSprintCaseStudies = caseStudies.flatMap((caseStudy) => {
-  if (!caseStudy.brandSprintGallery) return [];
-  const images = toOrderedImages(caseStudy.brandSprintGallery);
-  const additionalImages = [
+  const gallery = caseStudy.brandSprintGallery ? toOrderedImages(caseStudy.brandSprintGallery) : [];
+  const candidates = [
+    ...gallery,
     ...caseStudy.leadGallery,
     ...caseStudy.content.flatMap((block) => block.type === "gallery" ? block.images : []),
   ].filter((media, index, all) =>
-    media.kind !== "video"
-    && media.kind !== "lottie"
-    && !media.src.endsWith(".mp4")
-    && !media.src.endsWith(".json")
-    && !images.some((image) => image.src === media.src)
+    media.kind !== "video" && media.kind !== "lottie"
+    && !/\.(mp4|webm|json)$/i.test(media.src)
     && all.findIndex(({ src }) => src === media.src) === index
   );
-  return [{ images, additionalImages, url: `/work/${caseStudy.slug}` }];
+  if (candidates.length < 5) return [];
+  return [{ images: candidates.slice(0, 4).map(toImage), additionalImages: candidates.slice(4), url: `/work/${caseStudy.slug}` }];
 });
 
-const brandSprintFallback = brandSprintCaseStudies[0];
+const brandSprintFallback = brandSprintCaseStudies.find(({ url }) => url === "/work/aero") ?? brandSprintCaseStudies[0];
 
-const getImageRatio = (src: string) => new Promise<number | null>((resolve) => {
-  const image = new Image();
-  image.onload = () => resolve(image.naturalWidth / image.naturalHeight);
-  image.onerror = () => resolve(null);
-  image.src = src;
-});
-
-const getProportionateLandscapeImage = async (images: ImageProps[], candidates: CaseStudyBrandSprintGallery["logo"][], projectUrl: string) => {
-  const ratios = (await Promise.all(images.map(({ src }) => getImageRatio(src)))).filter((ratio): ratio is number => ratio !== null);
-  if (ratios.length === 0) return null;
-  const averageRatio = ratios.reduce((sum, ratio) => sum + ratio, 0) / ratios.length;
-  const storageKey = `brand-sprint-fifth:${projectUrl}`;
-  const storedSrc = window.sessionStorage.getItem(storageKey);
-  const startIndex = storedSrc ? Math.max(0, candidates.findIndex(({ src }) => src === storedSrc)) : Math.floor(Math.random() * candidates.length);
-
-  for (let offset = 0; offset < candidates.length; offset += 1) {
-    const candidate = candidates[(startIndex + offset) % candidates.length];
-    const ratio = await getImageRatio(candidate.src);
-    if (ratio && ratio > 1 && ratio >= averageRatio * 0.7 && ratio <= averageRatio * 1.3) {
-      window.sessionStorage.setItem(storageKey, candidate.src);
-      return toImage(candidate);
-    }
-  }
-  return null;
-};
-
-const isLandscapeImage = (src: string) => new Promise<boolean>((resolve) => {
-  const image = new Image();
-  image.onload = () => resolve(image.naturalWidth > image.naturalHeight);
-  image.onerror = () => resolve(false);
-  image.src = src;
-});
-
-const getRandomLandscapeCaseStudy = async () => {
-  const startIndex = Math.floor(Math.random() * brandSprintCaseStudies.length);
-  for (let offset = 0; offset < brandSprintCaseStudies.length; offset += 1) {
-    const project = brandSprintCaseStudies[(startIndex + offset) % brandSprintCaseStudies.length];
-    const landscapeChecks = await Promise.all(project.images.map(({ src }) => isLandscapeImage(src)));
-    if (landscapeChecks.every(Boolean)) return project;
-  }
-  return brandSprintFallback;
+const getRandomCaseStudy = () => {
+  const lastProject = window.sessionStorage.getItem("brand-sprint-last-project");
+  const choices = brandSprintCaseStudies.filter(({ url }) => url !== lastProject);
+  const pool = choices.length ? choices : brandSprintCaseStudies;
+  const project = pool[Math.floor(Math.random() * pool.length)];
+  window.sessionStorage.setItem("brand-sprint-last-project", project.url);
+  return project;
 };
 
 type TransformParams = { scrollYProgress: MotionValue<number>; isMobile: boolean; isTablet: boolean };
@@ -119,37 +83,13 @@ export const Layout425 = (props: Props) => {
   const { reverse = false, tagline, headingLevel: Heading = "h2", button, id = "brand-sprint" } = props;
   const images = props.images ?? randomCaseStudy.images;
   const caseStudyUrl = props.caseStudyUrl ?? randomCaseStudy.url;
-  // Picking the project downloads its images to measure them, so wait until the section is close.
-  const [isNear, setIsNear] = useState(false);
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      setIsNear(true);
-      observer.disconnect();
-    }, { rootMargin: "800px 0px" });
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
-  useEffect(() => {
-    if (props.images || !isNear) return;
-    let isActive = true;
-    getRandomLandscapeCaseStudy().then((nextCaseStudy) => {
-      if (isActive) setRandomCaseStudy(nextCaseStudy);
-    });
-    return () => { isActive = false; };
-  }, [props.images, isNear]);
-  useEffect(() => {
-    if (!isNear) return;
-    let isActive = true;
-    setFifthImage(null);
-    const additionalImages = props.images ? [] : randomCaseStudy.additionalImages;
-    getProportionateLandscapeImage(images, additionalImages, caseStudyUrl).then((nextImage) => {
-      if (isActive) setFifthImage(nextImage);
-    });
-    return () => { isActive = false; };
-  }, [caseStudyUrl, images, props.images, randomCaseStudy.additionalImages, isNear]);
+    if (props.images) return;
+    const project = getRandomCaseStudy();
+    setRandomCaseStudy(project);
+    const candidates = project.additionalImages;
+    setFifthImage(toImage(candidates[Math.floor(Math.random() * candidates.length)]));
+  }, [props.images]);
   const isMobile = useMediaQuery("(max-width: 767px)");
   const isTablet = useMediaQuery("(max-width: 991px)");
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });

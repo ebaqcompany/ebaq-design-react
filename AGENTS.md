@@ -13,9 +13,9 @@
 
 ## UI components and design
 
-- Before designing or implementing UI, use the Relume MCP at `https://relume-library-mcp.relume.io/mcp` to find appropriate React components. Start with properly designed library components rather than inventing layouts.
+- Before designing or implementing UI, consult the offline Relume library at `/Users/ebaq/Documents/github-repos/Relume-library-offline` and the `relume-offline` skill to find appropriate React components. Start with properly designed library components rather than inventing layouts.
 - Adapt selected components to the site's existing typography, spacing, colors, buttons, and responsive conventions. Preserve user-selected images and their original aspect ratios when requested.
-- If the Relume MCP is inaccessible, report the specific blocker and do not claim library use or substitute an invented layout without the user's direction.
+- If the offline library is inaccessible, report the specific blocker and do not claim library use or substitute an invented layout without the user's direction.
 
 - Reuse the existing site design system and Relume utility classes; do not invent one-off button, typography, color, or spacing styles when an established pattern exists.
 - Use the shared button classes for their surface: black buttons turn blue on white, black buttons turn white on blue, and inverted buttons remain readable on black. Keep links styled as buttons free of text underlines.
