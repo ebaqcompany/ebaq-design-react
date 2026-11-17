@@ -1,5 +1,62 @@
 [
   {
+    "slug": "black-friday",
+    "url": "/blog/black-friday",
+    "title": "Black Friday Deals for Designers 2026",
+    "description": "Compare verified Black Friday deals for creative software, design resources and AI tools, with dates and key terms.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "4 min read",
+    "date": "Nov 17, 2026",
+    "image": {
+      "src": "/images/blog/best-adobe-discounts/black-friday-2026-individual.jpeg",
+      "alt": "Black Friday Deals for Designers 2026"
+    }
+  },
+  {
+    "slug": "adobe-black-friday",
+    "url": "/blog/adobe-black-friday",
+    "title": "Adobe Black Friday Deals 2026: Creative Cloud & Firefly",
+    "description": "Compare Adobe Black Friday offers for individuals, students and teams, including prices, dates and renewal terms.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "4 min read",
+    "date": "Nov 17, 2026",
+    "image": {
+      "src": "/images/blog/best-adobe-discounts/black-friday-2026-individual.jpeg",
+      "alt": "Adobe Black Friday Deals 2026: Creative Cloud & Firefly"
+    }
+  },
+  {
+    "slug": "adobe-firefly",
+    "url": "/blog/adobe-firefly",
+    "title": "Adobe Firefly Image Model 2: A First Look at the 2023 Release",
+    "description": "Explore Adobe Firefly Model 2 features in 2026. See what's new in Adobe's AI image generation tool.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "5 min read",
+    "date": "Nov 17, 2026",
+    "image": {
+      "src": "/images/blog/adobe-firefly/adobe-firefly-th-f3071173aa8ef6cb94cb0d62cf032f7f.jpg",
+      "alt": "Adobe Firefly Model 2 in 2026: First Look & New Features"
+    }
+  },
+  {
+    "slug": "best-adobe-discounts",
+    "url": "/blog/best-adobe-discounts",
+    "title": "Adobe Creative Cloud Discounts & Black Friday Deals [2026]",
+    "description": "Compare Adobe Creative Cloud Black Friday offers for individuals, students, and teams, plus ways to save on Adobe plans.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "5 min read",
+    "date": "Nov 17, 2026",
+    "image": {
+      "src": "/images/blog/best-adobe-discounts/adobe-cover.webp",
+      "alt": "Adobe Creative Cloud Discounts & Black Friday Deals [2026]",
+      "thumbnail": "/images/blog/best-adobe-discounts/adobe-cover-768w.webp"
+    }
+  },
+  {
     "slug": "branding-agencies-one-week",
     "url": "/blog/branding-agencies-one-week",
     "title": "13 Branding Agencies That Deliver in One Week (or Two)",
@@ -442,21 +499,6 @@
     }
   },
   {
-    "slug": "best-adobe-discounts",
-    "url": "/blog/best-adobe-discounts",
-    "title": "Adobe Creative Cloud Discounts: Save Up to 60% [2026]",
-    "description": "Find the best Adobe CC deals in 2026. Student discounts, sales, bundles & promo codes to save on Photoshop, Illustrator & more.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 28, 2026",
-    "image": {
-      "src": "/images/blog/best-adobe-discounts/adobe-cover.webp",
-      "alt": "Adobe Creative Cloud Discounts: Save Up to 60% [2026]",
-      "thumbnail": "/images/blog/best-adobe-discounts/adobe-cover-768w.webp"
-    }
-  },
-  {
     "slug": "brand-architecture",
     "url": "/blog/brand-architecture",
     "title": "Brand Architecture Explained: 4 Types + Examples [2026]",
@@ -572,20 +614,6 @@
       "src": "/images/blog/abstract-logo-design/4.webp",
       "alt": "Best Examples of Abstract Logo Designs in 2026",
       "thumbnail": "/images/blog/abstract-logo-design/4-768w.webp"
-    }
-  },
-  {
-    "slug": "adobe-firefly",
-    "url": "/blog/adobe-firefly",
-    "title": "Adobe Firefly Model 2 in 2026: First Look & New Features",
-    "description": "Explore Adobe Firefly Model 2 features in 2026. See what's new in Adobe's AI image generation tool.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/adobe-firefly/adobe-firefly-th-f3071173aa8ef6cb94cb0d62cf032f7f.jpg",
-      "alt": "Adobe Firefly Model 2 in 2026: First Look & New Features"
     }
   },
   {

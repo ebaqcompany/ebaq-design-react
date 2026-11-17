@@ -138,7 +138,7 @@
     },
     {
       "source": "/go/adobepremiere",
-      "destination": "https://www.adobe.com/products/premiere.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fpremiere.html",
       "statusCode": 301
     },
     {
@@ -208,17 +208,17 @@
     },
     {
       "source": "/go/illustratorbeta",
-      "destination": "https://www.adobe.com/products/illustrator.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fillustrator%2Fgenerative-recolor.html",
       "statusCode": 301
     },
     {
       "source": "/go/photoshopbeta",
-      "destination": "https://www.adobe.com/products/photoshop.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fphotoshop%2Fgenerative-fill.html",
       "statusCode": 301
     },
     {
       "source": "/go/adobedreamweaver",
-      "destination": "https://www.adobe.com/products/dreamweaver.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fdreamweaver.html",
       "statusCode": 301
     },
     {
@@ -233,17 +233,17 @@
     },
     {
       "source": "/go/adobeanimate",
-      "destination": "https://www.adobe.com/products/animate.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fanimate.html",
       "statusCode": 301
     },
     {
       "source": "/go/adobecolor",
-      "destination": "https://color.adobe.com/create/color-wheel?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fcolor.adobe.com%2Fcreate%2Fcolor-wheel",
       "statusCode": 301
     },
     {
       "source": "/go/adobefonts",
-      "destination": "https://fonts.adobe.com/?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffonts.adobe.com%2F",
       "statusCode": 301
     },
     {
@@ -1253,7 +1253,7 @@
     },
     {
       "source": "/logopacker",
-      "destination": "https://exchange.adobe.com/apps/cc/106003/logo-packer?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fexchange.adobe.com%2Fapps%2Fcc%2F106003%2Flogo-packer",
       "statusCode": 301
     },
     {
@@ -1453,12 +1453,12 @@
     },
     {
       "source": "/go/adobelightroom",
-      "destination": "https://www.adobe.com/products/photoshop-lightroom.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fphotoshop-lightroom.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobe",
-      "destination": "https://www.adobe.com/?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fcreativecloud%2Fplans.html",
       "statusCode": 302
     },
     {
@@ -1468,7 +1468,7 @@
     },
     {
       "source": "/go/stock",
-      "destination": "https://stock.adobe.com/?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fstock.adobe.com%2Fplans",
       "statusCode": 302
     },
     {
@@ -1478,7 +1478,7 @@
     },
     {
       "source": "/go/firefly",
-      "destination": "https://www.adobe.com/products/firefly.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffirefly.adobe.com%2F",
       "statusCode": 302
     },
     {
@@ -1488,7 +1488,7 @@
     },
     {
       "source": "/go/acrobatpro",
-      "destination": "https://www.adobe.com/acrobat/online.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Facrobat-pro-cc.html",
       "statusCode": 302
     },
     {
@@ -1498,27 +1498,27 @@
     },
     {
       "source": "/go/aftereffects",
-      "destination": "https://www.adobe.com/products/aftereffects.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Faftereffects.html",
       "statusCode": 302
     },
     {
       "source": "/go/premierepro",
-      "destination": "https://www.adobe.com/products/premiere.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fpremiere.html",
       "statusCode": 302
     },
     {
       "source": "/go/indesign",
-      "destination": "https://www.adobe.com/products/indesign.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Findesign.html",
       "statusCode": 302
     },
     {
       "source": "/go/illustrator",
-      "destination": "https://www.adobe.com/products/illustrator.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fillustrator.html",
       "statusCode": 302
     },
     {
       "source": "/go/photoshop",
-      "destination": "https://www.adobe.com/products/photoshop.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fphotoshop.html",
       "statusCode": 302
     },
     {
@@ -1543,7 +1543,7 @@
     },
     {
       "source": "/go/adobepodcast",
-      "destination": "https://www.adobe.com/?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fpodcast.adobe.com%2Fenhance",
       "statusCode": 302
     },
     {
@@ -1698,82 +1698,82 @@
     },
     {
       "source": "/go/adobecc",
-      "destination": "https://www.adobe.com/creativecloud.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fcreativecloud%2Fplans.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobecc-photoshop",
-      "destination": "https://www.adobe.com/products/photoshop.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fphotoshop.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobecc-student",
-      "destination": "https://www.adobe.com/creativecloud/buy/students.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fcreativecloud%2Fplans.html%3Fplan%3Dedu",
       "statusCode": 302
     },
     {
       "source": "/go/adobecc-teams",
-      "destination": "https://www.adobe.com/creativecloud/business/teams.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fcreativecloud%2Fbusiness-plans.html%3Fplan%3Dteam",
       "statusCode": 302
     },
     {
       "source": "/go/adobeillustrator",
-      "destination": "https://www.adobe.com/products/illustrator.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fillustrator.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobeindesign",
-      "destination": "https://www.adobe.com/products/indesign.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Findesign.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobephotoshop",
-      "destination": "https://www.adobe.com/products/photoshop.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fphotoshop.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobexd",
-      "destination": "https://www.adobe.com/products/xd.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fxd.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobefirefly",
-      "destination": "https://www.adobe.com/products/firefly.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffirefly.adobe.com%2F",
       "statusCode": 302
     },
     {
       "source": "/go/adobepremierepro",
-      "destination": "https://www.adobe.com/products/premiere.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fpremiere.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobeexpress",
-      "destination": "https://www.adobe.com/express/?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fexpress%2F",
       "statusCode": 302
     },
     {
       "source": "/go/adobepremiererush",
-      "destination": "https://www.adobe.com/products/premiere-rush.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fpremiere-rush.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobeacrobat",
-      "destination": "https://www.adobe.com/acrobat.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Facrobat-pro-cc.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobeaftereffects",
-      "destination": "https://www.adobe.com/products/aftereffects.html?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Faftereffects.html",
       "statusCode": 302
     },
     {
       "source": "/go/adobespark",
-      "destination": "https://www.adobe.com/express/?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fexpress%2F",
       "statusCode": 302
     },
     {
       "source": "/go/adobestock",
-      "destination": "https://stock.adobe.com/?sdid=49F59KY6",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fstock.adobe.com%2Fplans",
       "statusCode": 302
     },
     {
@@ -1867,11 +1867,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/adobe-black-friday",
-      "destination": "/blog/best-adobe-discounts",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/adobe-software-list",
       "destination": "/blog/best-adobe-discounts",
       "statusCode": 301
@@ -1919,11 +1914,6 @@
     {
       "source": "/blog/best-logo-books",
       "destination": "/blog/graphic-design-books",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/black-friday",
-      "destination": "/blog/best-adobe-discounts",
       "statusCode": 301
     },
     {
@@ -2183,7 +2173,7 @@
     },
     {
       "source": "/gear/adobe-black-friday",
-      "destination": "/blog/best-adobe-discounts",
+      "destination": "/blog/adobe-black-friday",
       "statusCode": 301
     },
     {
@@ -2238,7 +2228,7 @@
     },
     {
       "source": "/gear/black-friday",
-      "destination": "/blog/best-adobe-discounts",
+      "destination": "/blog/black-friday",
       "statusCode": 301
     },
     {
@@ -2965,6 +2955,56 @@
       "source": "/thank-you",
       "destination": "/shop",
       "statusCode": 301
+    },
+    {
+      "source": "/go/adobe-font-abolition",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffonts.adobe.com%2Ffonts%2Fabolition",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe-font-halcom",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffonts.adobe.com%2Ffonts%2Fhalcom",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe-font-homemade-apple-pro",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffonts.adobe.com%2Ffonts%2Fhomemade-apple-pro",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe-font-permanent-marker-pro",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffonts.adobe.com%2Ffonts%2Fpermanent-marker-pro",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe-font-roboto",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffonts.adobe.com%2Ffonts%2Froboto",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe-font-rochester-pro",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffonts.adobe.com%2Ffonts%2Frochester-pro",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe-font-shift",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffonts.adobe.com%2Ffonts%2Fshift",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe-font-sweet-sans-pro",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Ffonts.adobe.com%2Ffonts%2Fsweet-sans-pro",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe-logo-maker",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fexpress%2Fcreate%2Flogo",
+      "statusCode": 302
+    },
+    {
+      "source": "/go/adobe-offers",
+      "destination": "https://adobe.prf.hn/click/camref:1100lrfJw/destination:https%3A%2F%2Fwww.adobe.com%2Fproducts%2Fspecial-offers.html",
+      "statusCode": 302
     }
   ],
   "rewrites": [
