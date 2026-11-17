@@ -88,7 +88,7 @@ export const Blog2 = (props: Blog2Props) => {
                     fetchPriority={index === 0 ? "high" : undefined}
                     decoding="async"
                     onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }}
-                    className="size-full object-cover transition-transform duration-500 hover:scale-[1.02]"
+                    className={`size-full ${post.image.fit === "contain" ? "object-contain" : "object-cover transition-transform duration-500 hover:scale-[1.02]"}${post.image.background === "black" ? " bg-black" : ""}`}
                   />
                 </a>
                 <div className="mb-4 flex w-full flex-wrap items-center justify-start gap-x-4 gap-y-2">

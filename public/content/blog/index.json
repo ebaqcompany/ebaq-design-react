@@ -24,7 +24,9 @@
     "date": "Nov 17, 2026",
     "image": {
       "src": "/images/blog/best-adobe-discounts/adobe-2026-clean.jpg",
-      "alt": "Adobe Black Friday Deals 2026: Creative Cloud & Firefly"
+      "alt": "Adobe Black Friday Deals 2026: Creative Cloud & Firefly",
+      "fit": "contain",
+      "background": "black"
     }
   },
   {
