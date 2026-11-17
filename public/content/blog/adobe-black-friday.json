@@ -9,14 +9,15 @@
   "date": "Nov 17, 2026",
   "readTime": "4 min read",
   "image": {
-    "src": "/images/blog/best-adobe-discounts/adobe-2026-offers-capture.png",
+    "src": "/images/blog/best-adobe-discounts/adobe-2026-clean.jpg",
     "alt": "Adobe Black Friday Deals 2026: Creative Cloud & Firefly",
-    "fit": "contain"
+    "fit": "contain",
+    "background": "black"
   },
   "seo": {
     "title": "Adobe Black Friday Deals 2026: Creative Cloud & Firefly",
     "description": "Compare Adobe Black Friday offers for individuals, students and teams, including prices, dates and renewal terms.",
-    "image": "/images/blog/best-adobe-discounts/adobe-2026-offers-capture.png"
+    "image": "/images/blog/best-adobe-discounts/adobe-2026-clean.jpg"
   },
   "tags": [
     "Black Friday",

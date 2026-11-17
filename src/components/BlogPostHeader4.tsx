@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type ImageProps = { src: string; alt?: string; fit?: "cover" | "contain" };
+type ImageProps = { src: string; alt?: string; fit?: "cover" | "contain"; background?: "black" };
 type PostDetails = { title: string; description: string };
 type Props = {
   category: string;
@@ -31,7 +31,7 @@ export const BlogPostHeader4 = (props: BlogPostHeader4Props) => {
             </div>
           </div>
           <div className={`blog-header-cover relative z-0 mx-auto mt-8 aspect-video w-full overflow-hidden bg-background-secondary xl:absolute xl:left-[37.2%] xl:top-[288px] xl:mt-0 xl:w-[41.7%]${youtubeEmbed ? " blog-header-cover-with-video" : ""}`} onPointerEnter={() => setShowVideo(true)} onFocus={() => setShowVideo(true)}>
-            <img loading="eager" fetchPriority="high" src={image.src || "/ebaqdesign-logo-big.svg"} onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }} className={`size-full ${image.fit === "contain" ? "object-contain" : "object-cover"}`} alt={image.alt ?? heading} />
+            <img loading="eager" fetchPriority="high" src={image.src || "/ebaqdesign-logo-big.svg"} onError={(event) => { event.currentTarget.src = "/ebaqdesign-logo-big.svg"; }} className={`size-full ${image.fit === "contain" ? "object-contain" : "object-cover"}${image.background === "black" ? " bg-black" : ""}`} alt={image.alt ?? heading} />
             {youtubeEmbed && showVideo && <iframe className="blog-header-video" src={youtubeEmbed.replace("www.youtube.com/embed/", "www.youtube-nocookie.com/embed/")} title={`${heading} video`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />}
           </div>
         </div>

@@ -2,6 +2,7 @@ export type BlogImage = {
   src: string;
   alt?: string;
   fit?: "cover" | "contain";
+  background?: "black";
   // A 768px-wide copy for cards and grids (scripts/make-blog-thumbnails.mjs); index entries only.
   thumbnail?: string;
 };
