@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useTestimonialAutoplay } from "../hooks/useTestimonialAutoplay";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui";
 import { pricing, siteUrl, type FactFaq } from "../content/siteFacts";
 import { buildBreadcrumbSchema, buildCollectionSchema, serializeJsonLd } from "../content/structuredData";
 import { caseStudies } from "../data/caseStudies";
@@ -14,6 +17,12 @@ import { TextLink } from "./TextLink";
 const pageUrl = `${siteUrl}/industries`;
 const description = "Branding and web design by industry: law firms, real estate, SaaS, AI startups, healthcare AI, luxury, cannabis, consultancies, and agencies, each with a case study.";
 
+// Use the baked portfolio image when a case study uses a different preview elsewhere.
+const industryBentoImages: Record<string, { src: string; alt: string }> = {
+  savory: { src: "/portfolio/identities/savory-bento.webp", alt: "Savory brand identity" },
+  orbio: { src: "/portfolio/identities/orbio-bento.webp", alt: "Orbio brand identity" },
+};
+
 // Each industry with a landing page, and the case study that proves it.
 const industries = [
   { name: "Law firms", summary: "Identity and website for firms that want to look established and stay approachable.", href: "/law-firm-branding", label: "Law firm branding", study: "fox-berman" },
@@ -28,7 +37,7 @@ const industries = [
   { name: "Personal brands", summary: "Monograms, wordmarks, and websites for speakers, coaches, and founders.", href: "/personal-branding", label: "Personal branding", study: "nathalie-sadler" },
 ].flatMap((industry) => {
   const study = caseStudies.find(({ slug }) => slug === industry.study);
-  return study ? [{ ...industry, client: study.client, image: study.preview }] : [];
+  return study ? [{ ...industry, client: study.client, image: industryBentoImages[industry.study] ?? study.preview }] : [];
 });
 
 // Client work in industries that do not have their own page yet.
@@ -52,7 +61,11 @@ const schemas = [
 
 const eyebrow = "mb-3 font-mono text-sm uppercase tracking-wide text-brand-primary md:mb-4";
 
-export const IndustriesPage = () => (
+export const IndustriesPage = () => {
+  const [autoPlay, setAutoPlay] = useState(true);
+  const { setApi, containerProps } = useTestimonialAutoplay(autoPlay);
+
+  return (
   <div className="relative bg-white text-black">
     <Helmet>
       <title>Branding & Web Design by Industry | Ebaq Design</title>
@@ -68,7 +81,7 @@ export const IndustriesPage = () => (
     </Helmet>
     <Navbar16 />
     <main>
-      <section className="bg-surface-muted px-[5%] py-12 md:py-16 lg:py-20">
+      <section className="bg-brand-light px-[5%] py-12 md:py-16 lg:py-20">
         <div className="container">
           <header className="mb-10 max-w-lg md:mb-12">
             <p className={eyebrow}>Industries</p>
@@ -78,7 +91,7 @@ export const IndustriesPage = () => (
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {industries.map(({ name, summary, href, label, study, client, image }) => (
               <article key={href} data-surface="white" className="service-card relative flex flex-col overflow-hidden rounded-xl after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-black/20 after:content-['']">
-                <img src={image.src} alt={image.alt ?? `${client} brand identity`} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover" />
+                <img src={image.src} alt={image.alt ?? `${client} brand identity`} loading="lazy" decoding="async" className="h-auto w-full" />
                 <div className="flex flex-1 flex-col p-6 md:p-8">
                   <h2 className="heading-h5 mb-3 font-bold">{name}</h2>
                   <p className="mb-6 md:mb-8">{summary}</p>
@@ -94,20 +107,45 @@ export const IndustriesPage = () => (
       </section>
 
       {more.length > 0 && (
-        <section className="px-[5%] py-16 md:py-24 lg:py-28">
-          <div className="container grid grid-cols-1 gap-y-8 lg:grid-cols-[20rem_1fr] lg:gap-x-16">
-            <div>
+        <section id="more-work" className="px-[5%] py-16 md:py-24 lg:py-28">
+          <div className="container">
+            <header className="mb-10 max-w-lg md:mb-12">
               <p className={eyebrow}>More work</p>
               <h2 className="heading-h3">Other industries I have designed for</h2>
+            </header>
+            <div {...containerProps}>
+              <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} className="overflow-hidden" aria-label="More case studies">
+                <CarouselContent className="items-stretch">
+              {more.map(({ slug, client, industry, preview }) => {
+                const sector = slug === "spark" ? "AI-Native Marketing" : industry;
+                const image = slug === "spark"
+                  ? { src: "/portfolio/identities/spark-bento-figma.jpg", alt: "Spark Studios brand identity and merchandise" }
+                  : preview;
+                return (
+                  <CarouselItem key={slug} className="flex md:basis-1/2 lg:basis-1/3" aria-label={`${client}, ${sector}`}>
+                  <article data-surface="white" className="service-card relative flex w-full flex-col overflow-hidden rounded-xl after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-black/20 after:content-['']">
+                    <a href={`/work/${slug}`}><img src={image.src} alt={image.alt ?? `${client} brand identity`} loading="lazy" decoding="async" className="h-auto w-full" /></a>
+                    <div className="flex flex-1 flex-col p-6 md:p-8">
+                      <h3 className="heading-h5 mb-3 font-bold">{sector}</h3>
+                      <p className="mb-6 text-sm text-black/60 md:mb-8">Case study: <a href={`/work/${slug}`} className="font-semibold text-black">{client}</a></p>
+                      <div className="mt-auto"><TextLink href={`/work/${slug}`}>View case study</TextLink></div>
+                    </div>
+                  </article>
+                  </CarouselItem>
+                );
+              })}
+                </CarouselContent>
+                <div className="mt-8 flex items-center justify-between gap-4 md:mt-12">
+                  <button type="button" className="text-sm font-semibold underline underline-offset-4" onClick={() => setAutoPlay((current) => !current)}>
+                    {autoPlay ? "Pause automatic scrolling" : "Resume automatic scrolling"}
+                  </button>
+                  <div className="flex items-center gap-2 md:gap-4">
+                    <CarouselPrevious aria-label="Previous case study" className="testimonial-carousel-button static right-0 top-0 size-12 -translate-y-0" />
+                    <CarouselNext aria-label="Next case study" className="testimonial-carousel-button static right-0 top-0 size-12 -translate-y-0" />
+                  </div>
+                </div>
+              </Carousel>
             </div>
-            <ul className="border-t border-black/20">
-              {more.map(({ slug, client, industry }) => (
-                <li key={slug} className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-black/20 py-4">
-                  <span className="heading-h7">{industry}</span>
-                  <TextLink href={`/work/${slug}`}>{client}</TextLink>
-                </li>
-              ))}
-            </ul>
           </div>
         </section>
       )}
@@ -118,3 +156,4 @@ export const IndustriesPage = () => (
     <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
   </div>
 );
+};

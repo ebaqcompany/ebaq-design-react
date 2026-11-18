@@ -133,7 +133,7 @@ const allCaseStudies: CaseStudy[] = [
     },
     website: { label: "Visit live website", href: "https://nathaliesadler.com/" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/nathalie-sadler" },
-    preview: { src: "/case-study/nathalie-sadler/thumbnail.webp", alt: "Nathalie Sadler logo in white on black: NATHALIE and SADLER on either side of the NS monogram" },
+    preview: { src: "/portfolio/identities/nathalie-sadler-bento.webp", alt: "Nathalie Sadler brand identity with logo, event badge and monogram tote" },
     hero: {
       src: "/case-study/nathalie-sadler/hero-logo.json",
       alt: "Animated Nathalie Sadler logo in white on black: the NS monogram draws itself, then NATHALIE and SADLER unfold to its left and right",

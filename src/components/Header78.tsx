@@ -386,6 +386,7 @@ export const Header78Defaults: Props = {
 
   // Row 2: Identity/Bento Shots
   row2: [
+    { type: "image", src: "/portfolio/identities/nathalie-sadler-bento.webp", alt: "Nathalie Sadler brand identity", fit: "contain" },
     { type: "image", src: "/portfolio/identities/savory-bento.webp", alt: "Savory Identity" },
     { type: "image", src: "/portfolio/identities/orbio-bento.webp", alt: "Orbio Identity" },
     { type: "image", src: "/portfolio/identities/spark-bento-figma.jpg", alt: "Spark Studios identity and merchandise" },

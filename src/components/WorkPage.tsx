@@ -15,7 +15,7 @@ const pageDescription =
   "Branding, logo design, and website case studies by Arek Dvornechuck, a senior freelance graphic designer in NYC, for AI, health tech, law, and consumer brands.";
 const workPageProjects = workProjects.map((project) =>
   project.url === "/work/nathalie-sadler"
-    ? { ...project, image: project.images[0] ?? project.image, lottie: undefined }
+    ? { ...project, lottie: undefined }
     : project,
 );
 
