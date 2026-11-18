@@ -1604,7 +1604,7 @@
     },
     {
       "source": "/go/godaddy",
-      "destination": "https://www.anrdoezrs.net/links/9176212/type/dlg/https://www.godaddy.com/websites/website-builder",
+      "destination": "https://www.anrdoezrs.net/links/9176212/type/dlg/https%3A%2F%2Fwww.godaddy.com%2Fwebsites%2Fwebsite-builder",
       "statusCode": 302
     },
     {
@@ -1634,7 +1634,7 @@
     },
     {
       "source": "/go/printful",
-      "destination": "https://www.printful.com/a/8969182:51d09eaf4c9d28c0480e6fb965224bf4",
+      "destination": "https://www.printful.com/a/8969182%3A51d09eaf4c9d28c0480e6fb965224bf4",
       "statusCode": 302
     },
     {
