@@ -1,6 +1,16 @@
 {
   "trailingSlash": false,
   "redirects": [
+    { "source": "/blog/100-style-guides", "destination": "/blog/style-guides", "statusCode": 301 },
+    { "source": "/blog/brand-architectures", "destination": "/blog/brand-architecture", "statusCode": 301 },
+    { "source": "/blog/negative-space-logos", "destination": "/blog/negative-space-logo-design", "statusCode": 301 },
+    { "source": "/blog/top-12-cryptocurrency-logos", "destination": "/blog/crypto-logos", "statusCode": 301 },
+    { "source": "/blog/logo-cost", "destination": "/blog/logo-design-cost", "statusCode": 301 },
+    {
+      "source": "/blog/branding-books",
+      "destination": "/blog/best-branding-books",
+      "statusCode": 301
+    },
     {
       "source": "/freelancer-vs-agency",
       "destination": "/compare/freelancer-vs-agency",
