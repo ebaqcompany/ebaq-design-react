@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { TestimonialCarouselArrow } from "./Testimonial32";
 import { getBlogPostUrl, type BlogPost } from "../content/blog";
 import { caseStudies } from "../data/caseStudies";
-import { normalizeVideoEmbeds } from "../content/richText";
+import { normalizeVideoEmbeds, unlinkRetiredBlogPosts } from "../content/richText";
 import { buildBlogPostingSchema, buildBreadcrumbSchema, buildFaqSchema, buildVideoSchema, resolveFaqPairs, serializeJsonLd } from "../content/structuredData";
 import { BlogPostHeader4 } from "./BlogPostHeader4";
 import { Content32 } from "./Content32";
@@ -42,7 +42,6 @@ const industryPosts: Record<string, IndustryCta> = {
   "ai-startups-logos": aiStartupCta,
   "ai-company-branding": aiStartupCta,
   "wordpress-vs-webflow-vs-framer": webflowCta,
-  "webflow-templates-ecommerce": webflowCta,
   "website-builders-design-portfolios": framerCta,
   "biotech-startup-branding": { work: "next-dimension", heading: "Building in health tech or biotech?", description: "I design brand identities and websites for AI healthcare and health tech companies. Your brand identity in one week, guaranteed, for $3,000.", button: { title: "See AI healthcare branding", href: "/ai-healthcare-branding" } },
 };
@@ -227,8 +226,8 @@ export const BlogPostPage = () => {
   const research = post.logoResearch?.map((entry) => post.logoResearchOverrides?.[entry.number] || entry);
   const redesignExamples = post.logoRedesignExamples?.length ? buildLogoRedesignExamples(post.logoRedesignExamples) : "";
   const baseBody = post.logoRoster ? buildLogoRosterBody(post.logoRoster, post.logoPageImages, post.logoTileImages, research, post.logoRosterConfig) : post.body || `<p>${post.description}</p>`;
-  const articleBody = normalizeVideoEmbeds(redesignExamples ? baseBody.replace(/<h2[^>]*>Conclusion<\/h2>/i, `${redesignExamples}<h2 id="conclusion">Conclusion</h2>`) : baseBody).replace(/\s+src=(['"])\1/gi, "").replace(/\s+srcset=(['"])\1/gi, "");
-  const articleIntro = post.intro ? normalizeVideoEmbeds(post.intro) : "";
+  const articleBody = unlinkRetiredBlogPosts(normalizeVideoEmbeds(redesignExamples ? baseBody.replace(/<h2[^>]*>Conclusion<\/h2>/i, `${redesignExamples}<h2 id="conclusion">Conclusion</h2>`) : baseBody)).replace(/\s+src=(['"])\1/gi, "").replace(/\s+srcset=(['"])\1/gi, "");
+  const articleIntro = post.intro ? unlinkRetiredBlogPosts(normalizeVideoEmbeds(post.intro)) : "";
   const hasInlineImages = /<img\b/i.test(articleBody);
   const youtubeEmbed = post.youtubeEmbed;
   const videoStructuredData = buildVideoSchema(post);

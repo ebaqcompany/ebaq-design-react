@@ -1867,11 +1867,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/adobe-alternatives",
-      "destination": "/blog/illustrator-alternatives",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/adobe-animate-free",
       "destination": "/blog/best-adobe-discounts",
       "statusCode": 301
@@ -1892,23 +1887,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/ai-branding-tools",
-      "destination": "/blog/ai-design-tools-brand-designers",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/ai-tools-black-friday",
       "destination": "/blog/best-adobe-discounts",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/ai-web-design",
-      "destination": "/blog/midjourney-web-design",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/best-ai-tools",
-      "destination": "/blog/ai-design-tools-brand-designers",
       "statusCode": 301
     },
     {
@@ -1922,18 +1902,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/best-logo-books",
-      "destination": "/blog/graphic-design-books",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/brand-design-process",
       "destination": "/blog/branding-process",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/brand-strategy-ai",
-      "destination": "/blog/ai-brand-strategy-tool",
       "statusCode": 301
     },
     {
@@ -1947,18 +1917,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/contra-fiverr-upwork",
-      "destination": "/blog/logo-design-clients",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/cryptocurrency-logos",
       "destination": "/blog/crypto-logos",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/dalle3-logo-design",
-      "destination": "/blog/midjourney-logo-design",
       "statusCode": 301
     },
     {
@@ -1967,18 +1927,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/email-marketing-tools-designers",
-      "destination": "/blog/ai-design-tools-brand-designers",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/framer-templates",
       "destination": "/blog/wordpress-vs-webflow-vs-framer",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/gifts-designers",
-      "destination": "/blog/graphic-design-books",
       "statusCode": 301
     },
     {
@@ -2057,18 +2007,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/nano-banana",
-      "destination": "/blog/ai-design-tools-brand-designers",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/negative-logo-design-old",
       "destination": "/blog/negative-space-logo-design",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/no-code-website",
-      "destination": "/blog/ai-site-builder",
       "statusCode": 301
     },
     {
@@ -2082,23 +2022,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/photo-stocks",
-      "destination": "/blog/midjourney-stock-photos",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/photoshop-alternatives",
-      "destination": "/blog/illustrator-alternatives",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/photoshop-free",
       "destination": "/blog/best-adobe-discounts",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/project-management-tools-designers",
-      "destination": "/blog/ai-design-tools-brand-designers",
       "statusCode": 301
     },
     {
@@ -2127,16 +2052,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/squarespace-templates-blog",
-      "destination": "/blog/website-builders-design-portfolios",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/squarespace-templates-portfolios",
-      "destination": "/blog/website-builders-design-portfolios",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/startup-brand-strategy",
       "destination": "/blog/brand-strategy-framework-startups",
       "statusCode": 301
@@ -2162,18 +2077,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/webflow-templates-portfolio",
-      "destination": "/blog/website-builders-design-portfolios",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/webflow-templates-startups",
       "destination": "/blog/wordpress-vs-webflow-vs-framer",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/adobe-alternatives",
-      "destination": "/blog/illustrator-alternatives",
       "statusCode": 301
     },
     {
@@ -2202,23 +2107,8 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/ai-branding-tools",
-      "destination": "/blog/ai-design-tools-brand-designers",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/ai-tools-black-friday",
       "destination": "/blog/best-adobe-discounts",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/ai-web-design",
-      "destination": "/blog/midjourney-web-design",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/best-ai-tools",
-      "destination": "/blog/ai-design-tools-brand-designers",
       "statusCode": 301
     },
     {
@@ -2232,11 +2122,6 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/best-logo-books",
-      "destination": "/blog/graphic-design-books",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/black-friday",
       "destination": "/blog/black-friday",
       "statusCode": 301
@@ -2244,11 +2129,6 @@
     {
       "source": "/gear/brand-design-process",
       "destination": "/blog/branding-process",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/brand-strategy-ai",
-      "destination": "/blog/ai-brand-strategy-tool",
       "statusCode": 301
     },
     {
@@ -2262,18 +2142,8 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/contra-fiverr-upwork",
-      "destination": "/blog/logo-design-clients",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/cryptocurrency-logos",
       "destination": "/blog/crypto-logos",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/dalle3-logo-design",
-      "destination": "/blog/midjourney-logo-design",
       "statusCode": 301
     },
     {
@@ -2282,18 +2152,8 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/email-marketing-tools-designers",
-      "destination": "/blog/ai-design-tools-brand-designers",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/framer-templates",
       "destination": "/blog/wordpress-vs-webflow-vs-framer",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/gifts-designers",
-      "destination": "/blog/graphic-design-books",
       "statusCode": 301
     },
     {
@@ -2367,28 +2227,13 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/marketing-frameworks",
-      "destination": "/blog/marketing-frameworks",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/naming-courses",
       "destination": "/blog/brand-naming",
       "statusCode": 301
     },
     {
-      "source": "/gear/nano-banana",
-      "destination": "/blog/ai-design-tools-brand-designers",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/negative-logo-design-old",
       "destination": "/blog/negative-space-logo-design",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/no-code-website",
-      "destination": "/blog/ai-site-builder",
       "statusCode": 301
     },
     {
@@ -2402,23 +2247,8 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/photo-stocks",
-      "destination": "/blog/midjourney-stock-photos",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/photoshop-alternatives",
-      "destination": "/blog/illustrator-alternatives",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/photoshop-free",
       "destination": "/blog/best-adobe-discounts",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/project-management-tools-designers",
-      "destination": "/blog/ai-design-tools-brand-designers",
       "statusCode": 301
     },
     {
@@ -2447,23 +2277,8 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/squarespace-templates-blog",
-      "destination": "/blog/website-builders-design-portfolios",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/squarespace-templates-portfolios",
-      "destination": "/blog/website-builders-design-portfolios",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/startup-brand-strategy",
       "destination": "/blog/brand-strategy-framework-startups",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/superhero-logos",
-      "destination": "/blog/superhero-logos",
       "statusCode": 301
     },
     {
@@ -2487,11 +2302,6 @@
       "statusCode": 301
     },
     {
-      "source": "/gear/webflow-templates-portfolio",
-      "destination": "/blog/website-builders-design-portfolios",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/webflow-templates-startups",
       "destination": "/blog/wordpress-vs-webflow-vs-framer",
       "statusCode": 301
@@ -2507,16 +2317,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/70s-fonts",
-      "destination": "/blog/best-cursive-fonts",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/70s-fonts",
-      "destination": "/blog/best-cursive-fonts",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/best-coffee-logos",
       "destination": "/blog/best-logos",
       "statusCode": 301
@@ -2527,13 +2327,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/brooklyn-branding",
-      "destination": "/blog/branding-agency-nyc",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/brooklyn-branding",
-      "destination": "/blog/branding-agency-nyc",
+      "destination": "/blog/brooklyn-branding",
       "statusCode": 301
     },
     {
@@ -2544,16 +2339,6 @@
     {
       "source": "/gear/computers-graphic-design",
       "destination": "/blog",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/free-graphic-design-software",
-      "destination": "/blog/illustrator-alternatives",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/free-graphic-design-software",
-      "destination": "/blog/illustrator-alternatives",
       "statusCode": 301
     },
     {
@@ -2587,13 +2372,8 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/healthcare-logos",
-      "destination": "/blog/best-logos",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/healthcare-logos",
-      "destination": "/blog/best-logos",
+      "destination": "/blog/healthcare-logos",
       "statusCode": 301
     },
     {
@@ -2604,16 +2384,6 @@
     {
       "source": "/gear/helvetica-alternatives",
       "destination": "/blog/modern-logo-fonts",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/indesign-alternatives",
-      "destination": "/blog/illustrator-alternatives",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/indesign-alternatives",
-      "destination": "/blog/illustrator-alternatives",
       "statusCode": 301
     },
     {
@@ -2637,16 +2407,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/newspaper-fonts",
-      "destination": "/blog/professional-fonts",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/newspaper-fonts",
-      "destination": "/blog/professional-fonts",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/number-fonts",
       "destination": "/blog/logo-fonts",
       "statusCode": 301
@@ -2654,16 +2414,6 @@
     {
       "source": "/gear/number-fonts",
       "destination": "/blog/logo-fonts",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/portfolio-templates-framer",
-      "destination": "/blog/website-builders-design-portfolios",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/portfolio-templates-framer",
-      "destination": "/blog/website-builders-design-portfolios",
       "statusCode": 301
     },
     {
@@ -2684,16 +2434,6 @@
     {
       "source": "/gear/square-fonts",
       "destination": "/blog/modern-logo-fonts",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/times-alternatives",
-      "destination": "/blog/elegant-logo-fonts",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/times-alternatives",
-      "destination": "/blog/elegant-logo-fonts",
       "statusCode": 301
     },
     {

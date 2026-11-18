@@ -1,3 +1,17 @@
+import retiredBlogSlugs from "./retiredBlogSlugs.json";
+
+const retiredBlogPaths = new Set(retiredBlogSlugs);
+
+// Keep the text of links to retired articles while avoiding dead links in retained content.
+export const unlinkRetiredBlogPosts = (html: string) => html.replace(/<a\b[^>]*>[\s\S]*?<\/a\s*>/gi, (anchor) => {
+  const href = anchor.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2];
+  if (!href) return anchor;
+  const match = href.match(/^(?:https?:\/\/(?:www\.)?ebaqdesign\.com)?\/blog\/([a-z0-9-]+)\/?(?:[?#].*)?$/i);
+  return match && retiredBlogPaths.has(match[1].toLowerCase())
+    ? anchor.replace(/^<a\b[^>]*>/i, "").replace(/<\/a\s*>$/i, "")
+    : anchor;
+});
+
 // A YouTube iframe loads about a megabyte of player code whether or not anyone presses play, so embeds
 // start as their thumbnail (saved locally by scripts/localize-youtube-thumbnails.mjs) and a play button;
 // main.tsx swaps in the real player on click.

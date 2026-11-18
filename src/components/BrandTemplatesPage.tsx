@@ -62,13 +62,6 @@ export const BrandTemplatesPage = () => (
               </article>
             ))}
           </div>
-          <div className="mt-8 flex flex-col items-start gap-6 rounded-xl bg-black p-6 text-white md:mt-12 md:flex-row md:items-center md:justify-between md:p-8">
-            <div>
-              <h2 className="heading-h5 mb-3 font-bold">Prefer Figma, Miro, or Canva?</h2>
-              <p className="max-w-md">My brand strategy template article lists the workshop template in nine formats, with a link to each.</p>
-            </div>
-            <TextLink href="/blog/brand-strategy-template" className="flex-none text-white">See all formats</TextLink>
-          </div>
         </div>
       </section>
       <Cta17 heading="Want to fill these in together?" description="Book a 15-minute call. Tell me about your brand and I’ll tell you how a strategy workshop would run." />

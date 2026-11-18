@@ -32,20 +32,6 @@
     }
   },
   {
-    "slug": "adobe-firefly",
-    "url": "/blog/adobe-firefly",
-    "title": "Adobe Firefly Image Model 2: A First Look at the 2023 Release",
-    "description": "Explore Adobe Firefly Model 2 features in 2026. See what's new in Adobe's AI image generation tool.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/adobe-firefly/adobe-firefly-th-f3071173aa8ef6cb94cb0d62cf032f7f.jpg",
-      "alt": "Adobe Firefly Model 2 in 2026: First Look & New Features"
-    }
-  },
-  {
     "slug": "best-adobe-discounts",
     "url": "/blog/best-adobe-discounts",
     "title": "Adobe Creative Cloud Discounts & Black Friday Deals [2026]",
@@ -106,64 +92,6 @@
     }
   },
   {
-    "slug": "superhero-logos",
-    "url": "/blog/superhero-logos",
-    "title": "9 Best Superhero Logos Explained in 2026",
-    "description": "Explore the best superhero logos in 2026. Discover the meaning behind iconic symbols from Batman to Superman.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/superhero-logos/superhero-logos-th.webp",
-      "alt": "Nine iconic superhero logos explained"
-    }
-  },
-  {
-    "slug": "adobe-fonts",
-    "url": "/blog/adobe-fonts",
-    "title": "20 Best Adobe Fonts for Designers in 2026",
-    "description": "Explore the best Adobe Fonts for designers in 2026. Find premium typefaces for branding and web design.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/adobe-fonts/4-5dbfac811d7ad1f5b3f9890fbf623102.webp",
-      "alt": "20 Best Adobe Fonts for Designers in 2026"
-    }
-  },
-  {
-    "slug": "best-cursive-fonts",
-    "url": "/blog/best-cursive-fonts",
-    "title": "10 Best Cursive Fonts for Logos & Branding in 2026",
-    "description": "Discover the best cursive fonts for logos in 2026. Find elegant script typefaces for branding projects.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/best-cursive-fonts/cursive-fonts-bg.webp",
-      "alt": "10 Best Cursive Fonts for Logos & Branding in 2026",
-      "thumbnail": "/images/blog/best-cursive-fonts/cursive-fonts-bg-768w.webp"
-    }
-  },
-  {
-    "slug": "luxury-fonts",
-    "url": "/blog/luxury-fonts",
-    "title": "10 Best Luxury Fonts for Graphic Design in 2026",
-    "description": "Discover the best luxury fonts in 2026. Elegant typefaces for high-end branding and design projects.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/luxury-fonts/luxury-font-for-graphic-design-bg.webp",
-      "alt": "10 Best Luxury Fonts for Graphic Design in 2026",
-      "thumbnail": "/images/blog/luxury-fonts/luxury-font-for-graphic-design-bg-768w.webp"
-    }
-  },
-  {
     "slug": "minimalist-fonts",
     "url": "/blog/minimalist-fonts",
     "title": "Top 10 Fonts For Minimalist Logo Design in 2026",
@@ -176,64 +104,6 @@
       "src": "/images/blog/minimalist-fonts/top-10-fonts-for-minimalist-logo-designbg.webp",
       "alt": "Top 10 Fonts For Minimalist Logo Design in 2026",
       "thumbnail": "/images/blog/minimalist-fonts/top-10-fonts-for-minimalist-logo-designbg-768w.webp"
-    }
-  },
-  {
-    "slug": "military-fonts",
-    "url": "/blog/military-fonts",
-    "title": "10 Best Military Fonts for Design & Branding in 2026",
-    "description": "Discover the best military fonts for design in 2026. Find bold typefaces for tactical and army projects.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/military-fonts/military-font-bg.webp",
-      "alt": "10 Best Military Fonts for Design & Branding in 2026",
-      "thumbnail": "/images/blog/military-fonts/military-font-bg-768w.webp"
-    }
-  },
-  {
-    "slug": "baseball-fonts",
-    "url": "/blog/baseball-fonts",
-    "title": "10 Best Baseball Fonts for Design & Branding in 2026",
-    "description": "Discover the best baseball fonts for design in 2026. Find sporty typefaces for athletic branding.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/baseball-fonts/baseball-fonts-bg-ff6057.jpg",
-      "alt": "10 Best Baseball Fonts for Design & Branding in 2026",
-      "thumbnail": "/images/blog/baseball-fonts/baseball-fonts-bg-ff6057-768w.webp"
-    }
-  },
-  {
-    "slug": "sf-pro-alternatives",
-    "url": "/blog/sf-pro-alternatives",
-    "title": "Top 9 Fonts Similar To SF Pro (Alternatives)",
-    "description": "Best alternatives to Apple's SF Pro (San Francisco) font used on iPhone and Mac. 9 similar typefaces for web, app, and print design projects.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "3 min read",
-    "date": "Feb 1, 2026",
-    "image": {
-      "src": "/images/blog/sf-pro-alternatives/cover.webp",
-      "alt": "Top 9 Fonts Similar To SF Pro (Alternatives)"
-    }
-  },
-  {
-    "slug": "50s-fonts",
-    "url": "/blog/50s-fonts",
-    "title": "9 Best 50s Fonts for Old-School Design",
-    "description": "Looking for the perfect font to add a touch of old-school flair to your design project? Check out our list of the 9 best 50s fonts, handpicked by design experts. From sleek and sophisticated to bold and daring, these fonts will help you capture the spirit of the 1950s and create a timeless, retro look.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "8 min read",
-    "date": "May 13, 2025",
-    "image": {
-      "src": "/images/blog/50s-fonts/cover.webp",
-      "alt": "9 Best 50s Fonts for Old-School Design"
     }
   },
   {
@@ -298,21 +168,6 @@
     }
   },
   {
-    "slug": "website-builders",
-    "url": "/blog/website-builders",
-    "title": "I Tested 10 AI Website Builders (July 2026)",
-    "description": "I tested 10 AI website builders on the same real client brief to see which tools can produce a useful, brand-consistent website.",
-    "category": "Web Design",
-    "categorySlug": "web-design",
-    "readTime": "5 min read",
-    "date": "Jul 24, 2026",
-    "image": {
-      "src": "/images/blog/ai-website-builders-cover.webp",
-      "alt": "I Tested 10 Best AI Website Builders (2026)",
-      "thumbnail": "/images/blog/ai-website-builders-cover-768w.webp"
-    }
-  },
-  {
     "slug": "wordpress-vs-webflow-vs-framer",
     "url": "/blog/wordpress-vs-webflow-vs-framer",
     "title": "WordPress vs Webflow vs Framer: Which Is Better? [2026 Guide]",
@@ -325,35 +180,6 @@
       "src": "/images/blog/wordpress-vs-webflow-vs-framer/wordpress-webflow-framer-main-image.webp",
       "alt": "WordPress vs Webflow vs Framer: Which Is Better?",
       "thumbnail": "/images/blog/wordpress-vs-webflow-vs-framer/wordpress-webflow-framer-main-image-768w.webp"
-    }
-  },
-  {
-    "slug": "best-ai-presentation-maker-2026",
-    "url": "/blog/best-ai-presentation-maker-2026",
-    "title": "Best AI Presentation Maker in 2026 (A Designer's Review)",
-    "description": "I tested 12 AI presentation makers as a designer. Honest review of Gamma, Moda, Alai, ChatGPT, Claude, and more. Find the right tool for your workflow.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Mar 24, 2026",
-    "image": {
-      "src": "/images/blog/best-ai-presentation-maker-2026/ai-pres-main.webp",
-      "alt": "12 Best AI Presentation Makers in 2026 — A Designer’s Review",
-      "thumbnail": "/images/blog/best-ai-presentation-maker-2026/ai-pres-main-768w.webp"
-    }
-  },
-  {
-    "slug": "ai-video-tools-brand-content",
-    "url": "/blog/ai-video-tools-brand-content",
-    "title": "Best AI Video Tools for Brand Content in 2026",
-    "description": "Discover the 7 best AI video tools for brand content in 2026. From HeyGen to KlingAI, create professional brand videos faster.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Feb 1, 2026",
-    "image": {
-      "src": "/images/blog/ai-video-tools-brand-content/create-trending-social-media-videos-in-minutes-1.webp",
-      "alt": "Best AI Video Tools for Brand Content in 2026"
     }
   },
   {
@@ -444,35 +270,6 @@
     }
   },
   {
-    "slug": "website-builders-design-portfolios",
-    "url": "/blog/website-builders-design-portfolios",
-    "title": "Best Website Builders for Design Portfolios in 2026",
-    "description": "Compare the 7 best website builders for design portfolios in 2026. From Webflow to Framer, find the right platform for your work.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Feb 1, 2026",
-    "image": {
-      "src": "/images/blog/website-builders-design-portfolios/webflow-website-macbook.webp",
-      "alt": "Best Website Builders for Design Portfolios in 2026",
-      "thumbnail": "/images/blog/website-builders-design-portfolios/webflow-website-macbook-768w.webp"
-    }
-  },
-  {
-    "slug": "ai-design-tools-brand-designers",
-    "url": "/blog/ai-design-tools-brand-designers",
-    "title": "Best AI Design Tools for Brand Designers in 2026",
-    "description": "Discover the 8 best AI design tools for brand designers in 2026. From Recraft AI to Adobe Firefly, find the right tools for your workflow.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 31, 2026",
-    "image": {
-      "src": "/images/shared/branding-gpt-macbook.webp",
-      "alt": "Best AI Design Tools for Brand Designers in 2026"
-    }
-  },
-  {
     "slug": "ai-startups-logos",
     "url": "/blog/ai-startups-logos",
     "title": "AI Startup Logos & Why They Look Alike",
@@ -546,21 +343,6 @@
     }
   },
   {
-    "slug": "elegant-logo-fonts",
-    "url": "/blog/elegant-logo-fonts",
-    "title": "20+ Elegant Logo Fonts for Luxury Brands [Free & Premium]",
-    "description": "Discover the best elegant serif fonts for luxury logos. Premium & free typefaces used by Chanel, Tiffany, Gucci & top fashion brands.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 28, 2026",
-    "image": {
-      "src": "/images/blog/elegant-logo-fonts/elegant-logo-fonts-bg-86319f58ae985246aac03da29c1e0818.webp",
-      "alt": "20+ Elegant Logo Fonts for Luxury Brands [Free & Premium]",
-      "thumbnail": "/images/blog/elegant-logo-fonts/elegant-logo-fonts-bg-86319f58ae985246aac03da29c1e0818-768w.webp"
-    }
-  },
-  {
     "slug": "hotel-logos",
     "url": "/blog/hotel-logos",
     "title": "35+ Best Hotel Logo Designs & What Makes Them Work [2026]",
@@ -621,21 +403,6 @@
     }
   },
   {
-    "slug": "ai-brand-strategy-tool",
-    "url": "/blog/ai-brand-strategy-tool",
-    "title": "AI Brand Strategy Tool: Develop Your Strategy in 2026",
-    "description": "Use AI to develop your brand strategy in minutes in 2026. The fastest way to build a strategic brand foundation.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/ai-brand-strategy-tool/social.webp",
-      "alt": "AI Brand Strategy Tool: Develop Your Strategy in 2026",
-      "thumbnail": "/images/blog/ai-brand-strategy-tool/social-768w.webp"
-    }
-  },
-  {
     "slug": "ai-company-branding",
     "url": "/blog/ai-company-branding",
     "title": "9 Best AI Company Branding Examples in 2026",
@@ -651,20 +418,6 @@
     }
   },
   {
-    "slug": "ai-site-builder",
-    "url": "/blog/ai-site-builder",
-    "title": "Relume AI Website Builder Tutorial in 2026 (Quick Guide)",
-    "description": "Learn how to use Relume's AI website builder in 2026. Quick tutorial to create stunning sites with AI.",
-    "category": "Web Design",
-    "categorySlug": "web-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/ai-site-builder/ai-site-builder.webp",
-      "alt": "Relume AI Website Builder Tutorial in 2026 (Quick Guide)"
-    }
-  },
-  {
     "slug": "ai-startup-landing-page-examples",
     "url": "/blog/ai-startup-landing-page-examples",
     "title": "7 Best AI Startup Landing Page Examples in 2026",
@@ -676,21 +429,6 @@
     "image": {
       "src": "/images/blog/ai-startup-landing-page-examples/best-ai-startup-landing-pages.webp",
       "alt": "7 Best AI Startup Landing Page Examples in 2026"
-    }
-  },
-  {
-    "slug": "airline-logos",
-    "url": "/blog/airline-logos",
-    "title": "Top 10 Best Airline Logos Explained in 2026",
-    "description": "Explore the best airline logos in 2026. Discover the meaning behind iconic aviation brand designs.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/airline-logos/airline-logo-explained-bg.webp",
-      "alt": "Top 10 Best Airline Logos Explained in 2026",
-      "thumbnail": "/images/blog/airline-logos/airline-logo-explained-bg-768w.webp"
     }
   },
   {
@@ -723,20 +461,6 @@
     }
   },
   {
-    "slug": "art-generators-compared",
-    "url": "/blog/art-generators-compared",
-    "title": "Best AI Art Generators in 2026 Compared",
-    "description": "Compare the best AI art generators in 2026. See how Midjourney, DALL-E, and Stable Diffusion stack up.",
-    "category": "Marketing",
-    "categorySlug": "marketing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/art-generators-compared/best-ai-art.jpg",
-      "alt": "Best AI Art Generators in 2026 Compared"
-    }
-  },
-  {
     "slug": "b2b-logos",
     "url": "/blog/b2b-logos",
     "title": "25 Best B2B Company Logos for Branding Inspiration in 2026",
@@ -749,21 +473,6 @@
       "src": "/images/blog/b2b-logos/1.webp",
       "alt": "25 Best B2B Company Logos for Branding Inspiration in 2026",
       "thumbnail": "/images/blog/b2b-logos/1-768w.webp"
-    }
-  },
-  {
-    "slug": "become-brand-strategist",
-    "url": "/blog/become-brand-strategist",
-    "title": "How To Become A Brand Strategist in 2026",
-    "description": "Learn how to become a brand strategist in 2026. Skills, career path, and steps to build expertise in brand strategy.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/become-brand-strategist/become-brand-strategist-bg-1-b75331b4d6081e557bdcb8bc6fc85038.webp",
-      "alt": "How To Become A Brand Strategist in 2026",
-      "thumbnail": "/images/blog/become-brand-strategist/become-brand-strategist-bg-1-b75331b4d6081e557bdcb8bc6fc85038-768w.webp"
     }
   },
   {
@@ -826,20 +535,6 @@
     }
   },
   {
-    "slug": "bing-image-creator",
-    "url": "/blog/bing-image-creator",
-    "title": "How To Use Bing Image Creator To Make AI Art in 2026",
-    "description": "Learn how to use Bing Image Creator in 2026. Generate AI art for free with Microsoft's DALL-E powered tool.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/bing-image-creator/bing-image-creator-th-3153ba79c92c29d73cfd044ddf3e00fc.jpg",
-      "alt": "How To Use Bing Image Creator To Make AI Art in 2026"
-    }
-  },
-  {
     "slug": "biotech-startup-branding",
     "url": "/blog/biotech-startup-branding",
     "title": "Best Biotech Startup Branding Examples in 2026",
@@ -896,34 +591,6 @@
       "src": "/images/blog/brand-audit/brand-audit-th.webp",
       "alt": "How To Do a Brand Audit in 2026 (Complete Guide)",
       "thumbnail": "/images/blog/brand-audit/brand-audit-th-768w.webp"
-    }
-  },
-  {
-    "slug": "marketing-frameworks",
-    "url": "/blog/marketing-frameworks",
-    "title": "7 Best Marketing Frameworks & Models in 2026",
-    "description": "Discover the best marketing frameworks for 2026. Learn proven models to improve your marketing strategy.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "6 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/marketing-frameworks/marketing-frameworks-th.jpg",
-      "alt": "7 best marketing frameworks and models"
-    }
-  },
-  {
-    "slug": "brand-collabs",
-    "url": "/blog/brand-collabs",
-    "title": "Best Brand Collaborations in 2026 (Inspiring Examples)",
-    "description": "Explore the best brand collaborations in 2026. See inspiring partnership examples and co-branding strategies.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/brand-collabs/best-brand-collabs-th.webp",
-      "alt": "Best Brand Collaborations in 2026 (Inspiring Examples)"
     }
   },
   {
@@ -1101,21 +768,6 @@
     }
   },
   {
-    "slug": "brand-strategy-books",
-    "url": "/blog/brand-strategy-books",
-    "title": "10 Best Books On Brand Strategy Development in 2026",
-    "description": "Discover the best brand strategy books in 2026. Essential reading for building powerful brand identities.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/brand-strategy-books/brand-strategy-books-bg-3cd0a7.jpg",
-      "alt": "10 Best Books On Brand Strategy Development in 2026",
-      "thumbnail": "/images/blog/brand-strategy-books/brand-strategy-books-bg-3cd0a7-768w.webp"
-    }
-  },
-  {
     "slug": "brand-strategy-courses",
     "url": "/blog/brand-strategy-courses",
     "title": "Best Brand Strategy Courses in 2026",
@@ -1157,21 +809,6 @@
       "src": "/images/blog/brand-strategy-examples/brand-strategy-examples-bg-5a672fdc8c382378f7405bf3bf2e0236-5c1f9b.jpg",
       "alt": "7 Examples of Great Brand Strategy in 2026",
       "thumbnail": "/images/blog/brand-strategy-examples/brand-strategy-examples-bg-5a672fdc8c382378f7405bf3bf2e0236-5c1f9b-768w.webp"
-    }
-  },
-  {
-    "slug": "brand-strategy-template",
-    "url": "/blog/brand-strategy-template",
-    "title": "Free Brand Strategy Template 2026: Top 10 Sites",
-    "description": "Find free brand strategy templates in 2026. Curated list of the best resources for building your brand.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/brand-strategy-template/strategy-guide-worksheets-both.webp",
-      "alt": "Free Brand Strategy Template 2026: Top 10 Sites",
-      "thumbnail": "/images/blog/brand-strategy-template/strategy-guide-worksheets-both-768w.webp"
     }
   },
   {
@@ -1262,20 +899,6 @@
     }
   },
   {
-    "slug": "branding-gpt",
-    "url": "/blog/branding-gpt",
-    "title": "Branding GPT in 2026: A Custom GPT For All Things Branding",
-    "description": "Discover Branding GPT in 2026. Learn how this custom GPT helps with brand strategy, naming, and identity design.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/shared/branding-gpt-macbook.webp",
-      "alt": "Branding GPT in 2026: A Custom GPT For All Things Branding"
-    }
-  },
-  {
     "slug": "branding-mistakes",
     "url": "/blog/branding-mistakes",
     "title": "10 Worst Branding Mistakes To Avoid in 2026",
@@ -1305,21 +928,6 @@
     }
   },
   {
-    "slug": "branding-podcasts",
-    "url": "/blog/branding-podcasts",
-    "title": "Top 10 Branding Podcasts To Listen To in 2026",
-    "description": "Discover the best branding podcasts in 2026. Learn strategy and design from industry experts.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/branding-podcasts/branding-podcasts-bg.webp",
-      "alt": "Top 10 Branding Podcasts To Listen To in 2026",
-      "thumbnail": "/images/blog/branding-podcasts/branding-podcasts-bg-768w.webp"
-    }
-  },
-  {
     "slug": "branding-process",
     "url": "/blog/branding-process",
     "title": "My Branding Process: From Client Call To Delivery in 2026",
@@ -1332,21 +940,6 @@
       "src": "/images/blog/branding-process/my-branding-process.webp",
       "alt": "My Branding Process: From Client Call To Delivery in 2026",
       "thumbnail": "/images/blog/branding-process/my-branding-process-768w.webp"
-    }
-  },
-  {
-    "slug": "branding-questionnaire",
-    "url": "/blog/branding-questionnaire",
-    "title": "Branding Questionnaire: Key Questions To Ask Clients in 2026",
-    "description": "Get the essential branding questionnaire for 2026. Key questions to ask clients before starting any project.",
-    "category": "Freelancing",
-    "categorySlug": "freelancing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/branding-questionnaire/branding-questionnaire.webp",
-      "alt": "Branding Questionnaire: Key Questions To Ask Clients in 2026",
-      "thumbnail": "/images/blog/branding-questionnaire/branding-questionnaire-768w.webp"
     }
   },
   {
@@ -1437,20 +1030,6 @@
     }
   },
   {
-    "slug": "chatgpt-brand-strategy",
-    "url": "/blog/chatgpt-brand-strategy",
-    "title": "Using ChatGPT For Brand Strategy & Marketing in 2026",
-    "description": "Learn how to use ChatGPT for brand strategy in 2026. Discover AI prompts for marketing and branding tasks.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/chatgpt-brand-strategy/chatgpt-brand-strategy-th-2d523b0f67b8ca3e34ae865d6597c6fe.webp",
-      "alt": "Using ChatGPT For Brand Strategy & Marketing in 2026"
-    }
-  },
-  {
     "slug": "circle-logos",
     "url": "/blog/circle-logos",
     "title": "Circle Logos: Why Brands Use Them in 2026",
@@ -1476,21 +1055,6 @@
     "image": {
       "src": "/images/blog/city-logos/city-logos-explained-900.webp",
       "alt": "9 City Logos with Beautiful Design in 2026"
-    }
-  },
-  {
-    "slug": "client-website",
-    "url": "/blog/client-website",
-    "title": "How To Build A $10k+ Client Website in 2026",
-    "description": "Learn how to build premium client websites in 2026. Tips for charging $10k+ for web design projects.",
-    "category": "Web Design",
-    "categorySlug": "web-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/client-website/client-website-bg-f1f3a2bbf4a25ed67e97ed6dd3e0961c.webp",
-      "alt": "How To Build A $10k+ Client Website in 2026",
-      "thumbnail": "/images/blog/client-website/client-website-bg-f1f3a2bbf4a25ed67e97ed6dd3e0961c-768w.webp"
     }
   },
   {
@@ -1639,51 +1203,6 @@
     }
   },
   {
-    "slug": "design-client-call",
-    "url": "/blog/design-client-call",
-    "title": "How To Talk to Clients: Guide for Designers in 2026",
-    "description": "Learn how to communicate effectively with design clients in 2026. Build trust and close more projects.",
-    "category": "Freelancing",
-    "categorySlug": "freelancing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/design-client-call/client-call-arek.webp",
-      "alt": "How To Talk to Clients: Guide for Designers in 2026",
-      "thumbnail": "/images/blog/design-client-call/client-call-arek-768w.webp"
-    }
-  },
-  {
-    "slug": "design-proposal",
-    "url": "/blog/design-proposal",
-    "title": "How To Write A Design Proposal in 2026",
-    "description": "Learn to write winning design proposals in 2026. Templates and tips for freelancers and design agencies.",
-    "category": "Freelancing",
-    "categorySlug": "freelancing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/design-proposal/design-proposal-bg.webp",
-      "alt": "How To Write A Design Proposal in 2026",
-      "thumbnail": "/images/blog/design-proposal/design-proposal-bg-768w.webp"
-    }
-  },
-  {
-    "slug": "design-subscription",
-    "url": "/blog/design-subscription",
-    "title": "Unlimited Creativity: The Rise of Design Subscriptions in 2026",
-    "description": "Discover how design subscriptions are transforming creative services in 2026. Unlimited designs for one monthly fee.",
-    "category": "Freelancing",
-    "categorySlug": "freelancing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/design-subscription/design-subscription.webp",
-      "alt": "Unlimited Creativity: The Rise of Design Subscriptions in 2026",
-      "thumbnail": "/images/blog/design-subscription/design-subscription-768w.webp"
-    }
-  },
-  {
     "slug": "digital-style-guide",
     "url": "/blog/digital-style-guide",
     "title": "12 Best Tools To Create A Digital Style Guide in 2026",
@@ -1709,20 +1228,6 @@
     "image": {
       "src": "/images/blog/drone-logos/1.webp",
       "alt": "Top 9 Drone Company Logos in 2026: Analysis"
-    }
-  },
-  {
-    "slug": "eagle-logos",
-    "url": "/blog/eagle-logos",
-    "title": "9 Best Eagle Logo Examples in 2026",
-    "description": "Explore the 9 best eagle logo designs in 2026. See how top brands use eagle symbolism in their visual identity.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/eagle-logos/eagle-logos.webp",
-      "alt": "9 Best Eagle Logo Examples in 2026"
     }
   },
   {
@@ -1816,35 +1321,6 @@
     }
   },
   {
-    "slug": "font-combinations",
-    "url": "/blog/font-combinations",
-    "title": "10 Most Professional Font Combinations in 2026",
-    "description": "Discover the best font combinations for 2026. Pair typefaces like a pro for branding and web design.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/font-combinations/font-combinations-bg.webp",
-      "alt": "10 Most Professional Font Combinations in 2026",
-      "thumbnail": "/images/blog/font-combinations/font-combinations-bg-768w.webp"
-    }
-  },
-  {
-    "slug": "free-logo-makers",
-    "url": "/blog/free-logo-makers",
-    "title": "10 Best Free Logo Makers in 2026 & Why They All Suck",
-    "description": "Review of 10 best free logo makers in 2026. Learn why they fall short and when to hire a professional.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/free-logo-makers/best-free-logo-makers-online-th.webp",
-      "alt": "10 Best Free Logo Makers in 2026 & Why They All Suck"
-    }
-  },
-  {
     "slug": "geometric-logos",
     "url": "/blog/geometric-logos",
     "title": "50 Best Geometric Logos for Design Inspiration in 2026",
@@ -1871,21 +1347,6 @@
     "image": {
       "src": "/images/blog/golden-ratio-logo/golden-ratio-logos-b0134e37061710b2a4e5864578dee3f8.webp",
       "alt": "How To Use Golden Ratio in Logo Design in 2026"
-    }
-  },
-  {
-    "slug": "graphic-design-books",
-    "url": "/blog/graphic-design-books",
-    "title": "10 Best Graphic Design Books of All Times in 2026",
-    "description": "Discover the best graphic design books through 2026. Essential reading for designers at all levels.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/graphic-design-books/best-graphic-design-books-bg.webp",
-      "alt": "10 Best Graphic Design Books of All Times in 2026",
-      "thumbnail": "/images/blog/graphic-design-books/best-graphic-design-books-bg-768w.webp"
     }
   },
   {
@@ -1932,21 +1393,6 @@
     }
   },
   {
-    "slug": "html-email-signature",
-    "url": "/blog/html-email-signature",
-    "title": "How To Design A Custom HTML Email Signature in 2026",
-    "description": "Learn how to design an HTML email signature in 2026. Create professional email signatures with code.",
-    "category": "Marketing",
-    "categorySlug": "marketing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/html-email-signature/design-custom-email-signature-bg.webp",
-      "alt": "How To Design A Custom HTML Email Signature in 2026",
-      "thumbnail": "/images/blog/html-email-signature/design-custom-email-signature-bg-768w.webp"
-    }
-  },
-  {
     "slug": "iconic-logos",
     "url": "/blog/iconic-logos",
     "title": "50 Most Iconic Logos in 2026: A Designer's Review",
@@ -1957,50 +1403,6 @@
     "image": {
       "src": "/images/blog/iconic-logos/cover-replacement.webp",
       "alt": "Recognizable brand symbols including Nike, Deutsche Bank, Mastercard, Target and Audi on a white background"
-    }
-  },
-  {
-    "slug": "ideogram-logo-design",
-    "url": "/blog/ideogram-logo-design",
-    "title": "How to Use Ideogram for Logo Design in 2026",
-    "description": "Learn how to use Ideogram for logo design in 2026. Best prompts and techniques for AI-generated logos.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/ideogram-logo-design/ideogram-logo-design-th.webp",
-      "alt": "How to Use Ideogram for Logo Design in 2026",
-      "thumbnail": "/images/blog/ideogram-logo-design/ideogram-logo-design-th-768w.webp"
-    }
-  },
-  {
-    "slug": "illustrator-2024",
-    "url": "/blog/illustrator-2024",
-    "title": "Top New Features in Adobe Illustrator 2026",
-    "description": "Discover the top new features in Adobe Illustrator 2026. Explore AI tools, improvements, and design updates.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/illustrator-2024/illustrator-2024-update.webp",
-      "alt": "Top New Features in Adobe Illustrator 2026"
-    }
-  },
-  {
-    "slug": "illustrator-alternatives",
-    "url": "/blog/illustrator-alternatives",
-    "title": "10 Best Adobe Illustrator Alternatives in 2026",
-    "description": "Compare the 10 best Adobe Illustrator alternatives in 2026. Find free and paid options for vector design.",
-    "category": "Freelancing",
-    "categorySlug": "freelancing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/illustrator-alternatives/illustrator-alternatives-bg.webp",
-      "alt": "10 Best Adobe Illustrator Alternatives in 2026",
-      "thumbnail": "/images/blog/illustrator-alternatives/illustrator-alternatives-bg-768w.webp"
     }
   },
   {
@@ -2061,20 +1463,6 @@
       "src": "/images/blog/law-firm-logos/cover-collage.webp",
       "alt": "99 Best Law Firm Logos: Examples and Design Ideas",
       "thumbnail": "/images/blog/law-firm-logos/cover-collage-768w.webp"
-    }
-  },
-  {
-    "slug": "learn-brand-strategy",
-    "url": "/blog/learn-brand-strategy",
-    "title": "Learn Brand Strategy in 10 Minutes (2026 Crash Course)",
-    "description": "Learn brand strategy basics in 2026. Quick crash course covering positioning, messaging, and brand identity.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/learn-brand-strategy/copyofbrandpositioning10bestexamplesyoutube900600px-d33e-2bd1ec.webp",
-      "alt": "Learn Brand Strategy in 10 Minutes (2026 Crash Course)"
     }
   },
   {
@@ -2153,21 +1541,6 @@
     }
   },
   {
-    "slug": "logo-design-clients",
-    "url": "/blog/logo-design-clients",
-    "title": "How To Get Logo Design Clients in 2026 (Proven Strategies)",
-    "description": "Learn how to get logo design clients in 2026. Discover proven strategies to attract and win more design projects.",
-    "category": "Freelancing",
-    "categorySlug": "freelancing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/logo-design-clients/get-logo-design-clients-og.webp",
-      "alt": "How To Get Logo Design Clients in 2026 (Proven Strategies)",
-      "thumbnail": "/images/blog/logo-design-clients/get-logo-design-clients-og-768w.webp"
-    }
-  },
-  {
     "slug": "logo-design-cost",
     "url": "/blog/logo-design-cost",
     "title": "Logo Design Cost: Prices, Scope & What You Get",
@@ -2180,21 +1553,6 @@
       "src": "/images/blog/logo-design-cost/cover-collage.webp",
       "alt": "Logo design cost collage with logo sketches, a pricing chart and designer at work",
       "thumbnail": "/images/blog/logo-design-cost/cover-collage-768w.webp"
-    }
-  },
-  {
-    "slug": "logo-design-portfolio",
-    "url": "/blog/logo-design-portfolio",
-    "title": "How to Create a Logo Design Portfolio in 2026",
-    "description": "Build a standout logo design portfolio in 2026. Expert tips on showcasing your work and attracting ideal clients.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/logo-design-portfolio/1.webp",
-      "alt": "How to Create a Logo Design Portfolio in 2026",
-      "thumbnail": "/images/blog/logo-design-portfolio/1-768w.webp"
     }
   },
   {
@@ -2224,20 +1582,6 @@
       "src": "/images/blog/logo-design-process/logo-design-process-bg-172b99.webp",
       "alt": "Logo Design Process From Start To Finish in 2026",
       "thumbnail": "/images/blog/logo-design-process/logo-design-process-bg-172b99-768w.webp"
-    }
-  },
-  {
-    "slug": "logo-design-software",
-    "url": "/blog/logo-design-software",
-    "title": "Top 10 Best Logo Design Software in 2026",
-    "description": "Discover the best logo design software in 2026. Compare top tools for creating professional brand logos.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/logo-design-software/coverimagefonts2-d700284bd22e6bf53da93c7039cd78ad.webp",
-      "alt": "Top 10 Best Logo Design Software in 2026"
     }
   },
   {
@@ -2313,20 +1657,6 @@
     }
   },
   {
-    "slug": "logo-mockups-chatgpt",
-    "url": "/blog/logo-mockups-chatgpt",
-    "title": "How To Create Logo Mockups in ChatGPT in 2026",
-    "description": "Learn how to create stunning logo mockups using ChatGPT in 2026. Step-by-step AI mockup generation guide.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/logo-mockups-chatgpt/logo-mockups-chatgpt.webp",
-      "alt": "How To Create Logo Mockups in ChatGPT in 2026"
-    }
-  },
-  {
     "slug": "logo-presentation",
     "url": "/blog/logo-presentation",
     "title": "How To Present Logo Design Projects in 2026",
@@ -2339,51 +1669,6 @@
       "src": "/images/blog/logo-presentation/logo-presentation-arek.webp",
       "alt": "How To Present Logo Design Projects in 2026",
       "thumbnail": "/images/blog/logo-presentation/logo-presentation-arek-768w.webp"
-    }
-  },
-  {
-    "slug": "logo-presentation-template",
-    "url": "/blog/logo-presentation-template",
-    "title": "Logo Presentation Template: Tips & Examples in 2026",
-    "description": "Create professional logo presentations with our 2026 guide. Get templates, tips, and real examples to impress clients.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/logo-presentation-template/logo-proposa-template-th.webp",
-      "alt": "Logo Presentation Template: Tips & Examples in 2026",
-      "thumbnail": "/images/blog/logo-presentation-template/logo-proposa-template-th-768w.webp"
-    }
-  },
-  {
-    "slug": "logo-pricing",
-    "url": "/blog/logo-pricing",
-    "title": "Pricing Logo Design in 2026: Guide for Freelancers",
-    "description": "Learn how to price logo design in 2026. Freelancer guide to setting rates and charging for brand work.",
-    "category": "Freelancing",
-    "categorySlug": "freelancing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/logo-pricing/logo-pricing-bg.webp",
-      "alt": "Pricing Logo Design in 2026: Guide for Freelancers",
-      "thumbnail": "/images/blog/logo-pricing/logo-pricing-bg-768w.webp"
-    }
-  },
-  {
-    "slug": "logo-proposal",
-    "url": "/blog/logo-proposal",
-    "title": "How to Write a Logo Design Proposal in 2026 (+ Template)",
-    "description": "Master logo design proposals in 2026. Get our free template and tips to win more clients with professional proposals.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/logo-proposal/one-page-proposal-template.webp",
-      "alt": "How to Write a Logo Design Proposal in 2026 (+ Template)",
-      "thumbnail": "/images/blog/logo-proposal/one-page-proposal-template-768w.webp"
     }
   },
   {
@@ -2475,48 +1760,6 @@
     }
   },
   {
-    "slug": "midjourney-logo-design",
-    "url": "/blog/midjourney-logo-design",
-    "title": "How To Use Midjourney For Logo Design in 2026",
-    "description": "Learn how to use Midjourney for logo design in 2026. Step-by-step guide with prompts and examples.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/midjourney-logo-design/midjourney-logo-design-th-a802b574c1fe5ad876e62ce4b31a62bc.webp",
-      "alt": "How To Use Midjourney For Logo Design in 2026"
-    }
-  },
-  {
-    "slug": "midjourney-stock-photos",
-    "url": "/blog/midjourney-stock-photos",
-    "title": "How To Recreate Stock Photos with Midjourney in 2026",
-    "description": "Learn how to recreate stock photos with Midjourney in 2026. Generate custom images with AI for your projects.",
-    "category": "Web Design",
-    "categorySlug": "web-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/midjourney-stock-photos/stock-photos-midjourney-th.webp",
-      "alt": "How To Recreate Stock Photos with Midjourney in 2026"
-    }
-  },
-  {
-    "slug": "midjourney-web-design",
-    "url": "/blog/midjourney-web-design",
-    "title": "How To Use Midjourney for Web Design in 2026",
-    "description": "Learn how to use Midjourney for web design in 2026. Create stunning website concepts with AI image generation.",
-    "category": "Web Design",
-    "categorySlug": "web-design",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/midjourney-web-design/midjourney-webdesign-th.webp",
-      "alt": "How To Use Midjourney for Web Design in 2026"
-    }
-  },
-  {
     "slug": "minimalist-logos",
     "url": "/blog/minimalist-logos",
     "title": "40 Best Minimalist Logos for Design Inspiration in 2026",
@@ -2602,20 +1845,6 @@
     }
   },
   {
-    "slug": "new-brand-strategy-examples",
-    "url": "/blog/new-brand-strategy-examples",
-    "title": "7 Best Brand Strategy Examples in 2026",
-    "description": "Explore the best brand strategy examples for 2026. See how top brands build positioning and differentiation.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/new-brand-strategy-examples/new-brand-strategy-examples-efc0c1ce7535b24a920d7cee19b1fef2.webp",
-      "alt": "7 Best Brand Strategy Examples in 2026"
-    }
-  },
-  {
     "slug": "nonprofit-logos",
     "url": "/blog/nonprofit-logos",
     "title": "Best NonProfit Logos Explained in 2026",
@@ -2670,36 +1899,6 @@
     "image": {
       "src": "/images/blog/principles-of-design/principles-of-design-1-41df2e.webp",
       "alt": "Understanding the 11 Principles of Design in 2026"
-    }
-  },
-  {
-    "slug": "professional-fonts",
-    "url": "/blog/professional-fonts",
-    "title": "Top 10 Professional Fonts for Designers in 2026",
-    "description": "Discover the top professional fonts for designers in 2026. Premium typefaces for branding, web design, and print projects.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/professional-fonts/professional-fonts-bg.webp",
-      "alt": "Top 10 Professional Fonts for Designers in 2026",
-      "thumbnail": "/images/blog/professional-fonts/professional-fonts-bg-768w.webp"
-    }
-  },
-  {
-    "slug": "proposal-templates",
-    "url": "/blog/proposal-templates",
-    "title": "Best Design Proposal Templates for Freelancers in 2026",
-    "description": "Get the best design proposal templates for freelancers in 2026. Professional templates to win more clients and close deals faster.",
-    "category": "Freelancing",
-    "categorySlug": "freelancing",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/proposal-templates/proposal-templates-bg.webp",
-      "alt": "Best Design Proposal Templates for Freelancers in 2026",
-      "thumbnail": "/images/blog/proposal-templates/proposal-templates-bg-768w.webp"
     }
   },
   {
@@ -2791,36 +1990,6 @@
     }
   },
   {
-    "slug": "script-logo-fonts",
-    "url": "/blog/script-logo-fonts",
-    "title": "10 Best Script Fonts for Logo Design in 2026",
-    "description": "Find the best script fonts for logo design in 2026. Elegant calligraphy and handwritten typefaces for memorable brand identities.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/script-logo-fonts/script-font-logos-bg.webp",
-      "alt": "10 Best Script Fonts for Logo Design in 2026",
-      "thumbnail": "/images/blog/script-logo-fonts/script-font-logos-bg-768w.webp"
-    }
-  },
-  {
-    "slug": "sell-brand-strategy",
-    "url": "/blog/sell-brand-strategy",
-    "title": "How To Sell Brand Strategy Like A Pro in 2026",
-    "description": "Master selling brand strategy in 2026. Proven techniques to pitch, price, and close brand strategy projects with clients.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/sell-brand-strategy/selling-brand-strategy-bg-e1327fd15f051387f06b6234b8f28afd.webp",
-      "alt": "How To Sell Brand Strategy Like A Pro in 2026",
-      "thumbnail": "/images/blog/sell-brand-strategy/selling-brand-strategy-bg-e1327fd15f051387f06b6234b8f28afd-768w.webp"
-    }
-  },
-  {
     "slug": "solar-logos",
     "url": "/blog/solar-logos",
     "title": "30 Best Solar Company Logos for Inspiration in 2026",
@@ -2833,20 +2002,6 @@
       "src": "/images/blog/solar-logos/1.webp",
       "alt": "30 Best Solar Company Logos for Inspiration in 2026",
       "thumbnail": "/images/blog/solar-logos/1-768w.webp"
-    }
-  },
-  {
-    "slug": "strategy-presentation",
-    "url": "/blog/strategy-presentation",
-    "title": "Brand Strategy Presentation Template in 2026 w/ Example",
-    "description": "Get a brand strategy presentation template for 2026. Download slides with examples for client pitches.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/strategy-presentation/brand-strategy-presentation-th-b346c49d2ff5f1ddb1cfa8f3a8569345.webp",
-      "alt": "Brand Strategy Presentation Template in 2026 w/ Example"
     }
   },
   {
@@ -3001,21 +2156,6 @@
     }
   },
   {
-    "slug": "typography-books",
-    "url": "/blog/typography-books",
-    "title": "12 Best Typography Books For Designers in 2026",
-    "description": "Discover the best typography books for designers in 2026. Essential reading for mastering type design.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/typography-books/typography-books-bg-7e75b6a12a57d171cafb19bd4c235c96.webp",
-      "alt": "12 Best Typography Books For Designers in 2026",
-      "thumbnail": "/images/blog/typography-books/typography-books-bg-7e75b6a12a57d171cafb19bd4c235c96-768w.webp"
-    }
-  },
-  {
     "slug": "university-logos",
     "url": "/blog/university-logos",
     "title": "30 Best University Logos in 2026 (Inspiring Examples)",
@@ -3057,21 +2197,6 @@
     "image": {
       "src": "/images/blog/vision-statements/binoculars-new-york.webp",
       "alt": "Vision Statements of Best Brands in 2026"
-    }
-  },
-  {
-    "slug": "webflow-templates-ecommerce",
-    "url": "/blog/webflow-templates-ecommerce",
-    "title": "10 Best Webflow Templates for eCommerce in 2026",
-    "description": "Discover the best Webflow templates for ecommerce in 2026. Build beautiful online stores with no code.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "5 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/webflow-templates-ecommerce/weblfow-templates-ecommerce-bg.webp",
-      "alt": "10 Best Webflow Templates for eCommerce in 2026",
-      "thumbnail": "/images/blog/webflow-templates-ecommerce/weblfow-templates-ecommerce-bg-768w.webp"
     }
   },
   {
@@ -3145,6 +2270,34 @@
       "src": "/images/blog/startup-branding-agencies/cover-collage.webp",
       "alt": "Top 10 Branding Agencies for Startups in 2026",
       "thumbnail": "/images/blog/startup-branding-agencies/cover-collage-768w.webp"
+    }
+  },
+  {
+    "slug": "brooklyn-branding",
+    "url": "/blog/brooklyn-branding",
+    "title": "Top 9 Brooklyn Branding and Design Firms",
+    "description": "Searching for top-notch branding firm in Brooklyn? Here's my list of top 9 agencies.",
+    "category": "Brand Strategy",
+    "categorySlug": "brand-strategy",
+    "readTime": "9 min read",
+    "date": "May 13, 2025",
+    "image": {
+      "src": "/images/blog/brooklyn-branding/original-19.jpg",
+      "alt": "Top 9 Brooklyn Branding and Design Firms"
+    }
+  },
+  {
+    "slug": "healthcare-logos",
+    "url": "/blog/healthcare-logos",
+    "title": "The Top 9 Healthcare Logos and What Makes Them So Effective",
+    "description": "Nine healthcare logos and the visual choices described in the original archived article.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "3 min read",
+    "date": "May 13, 2025",
+    "image": {
+      "src": "/images/blog/healthcare-logos/original-01.webp",
+      "alt": "The Top 9 Healthcare Logos and What Makes Them So Effective"
     }
   }
 ]
