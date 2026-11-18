@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+<title>Brand Design — style guide, horizontal and stacked ABC logos, and palette</title>
+<desc>A tall white Style Guide with content lines and an image placeholder. The exact triangle–ABC logo appears horizontally on blue and stacked in white on black, above the same white, black, and yellow swatches used in Logo Design.</desc>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+ <g id="style-guide-book">
+  <rect x="210" y="170" width="400" height="780" rx="8" fill="#fff"/>
+  <text x="260" y="280" font-family="Roboto Condensed, Arial, sans-serif" font-size="48" font-weight="400" fill="#000" stroke="none"><tspan x="260" y="280">Style </tspan><tspan x="260" y="345">Guide</tspan></text>
+  <path d="M260 400h190M260 435h150"/>
+  <rect x="260" y="485" width="140" height="100" fill="#fff"/>
+  <path d="m260 485 140 100m0-100L260 585"/>
+  <path d="M260 640h130M260 680h110M260 720h130M260 810h210"/>
+ </g>
+ <g id="horizontal-logo-card">
+  <rect x="425" y="555" width="480" height="230" rx="8" fill="#00AFEC"/>
+  <g id="exact-horizontal-logo" transform="translate(-147.36 240)"><g xmlns="http://www.w3.org/2000/svg" transform="translate(-81.5 -43) scale(1.1)" stroke-width="5.454545455"><g transform="translate(10 -70)"><path d="M675 530.310889 L710 469.689111 L745 530.310889Z" fill="#fff" />
+
+ <g transform="translate(128.3 12.810889) scale(.9)" stroke-width="6.060606061"><path d="m717 575 23-60 23 60m-37-20h28" />
+ <path d="M785 575v-60h20c30 0 30 30 0 30h-20m20 0c30 0 30 30 0 30h-20" />
+ <path d="M891 523c-8-11-36-14-36 22s28 33 36 22" /></g></g></g></g>
+ </g>
+ <g id="stacked-logo-card">
+  <rect x="510" y="100" width="300" height="360" rx="8" fill="#000"/>
+  <g id="stacked-triangle" transform="translate(-50.5 -195)" stroke="#fff"><g xmlns="http://www.w3.org/2000/svg" transform="translate(-81.5 -43) scale(1.1)" stroke-width="5.454545455"><g transform="translate(10 -70)"><path d="M675 530.310889 L710 469.689111 L745 530.310889Z" fill="#fff" />
+
+ </g></g></g>
+  <g id="stacked-abc" transform="translate(-206.59 -98.341978)" stroke="#fff"><g xmlns="http://www.w3.org/2000/svg" transform="translate(-81.5 -43) scale(1.1)" stroke-width="5.454545455"><g transform="translate(10 -70)"><g transform="translate(128.3 12.810889) scale(.9)" stroke-width="6.060606061"><path d="m717 575 23-60 23 60m-37-20h28" />
+ <path d="M785 575v-60h20c30 0 30 30 0 30h-20m20 0c30 0 30 30 0 30h-20" />
+ <path d="M891 523c-8-11-36-14-36 22s28 33 36 22" /></g></g></g></g>
+ </g>
+ <g xmlns="http://www.w3.org/2000/svg" transform="translate(-105 448) scale(.6)" stroke-width="10" id="copied-logo-palette"><rect x="350" y="670" width="510" height="140" rx="8" fill="#fff" /><path d="M520 670h170v140H520Z" fill="#000" /><path d="M690 670h162a8 8 0 0 1 8 8v124a8 8 0 0 1-8 8H690Z" fill="#FED440" /></g>
+
+</g></svg>

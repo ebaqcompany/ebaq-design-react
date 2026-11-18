@@ -1,0 +1,12 @@
+{
+  "blocks-photo-white": { "layout": "collage", "style": "blocks", "ground": "white", "images": ["/public/images/blog/branding-agencies-one-week/cover-cyclist.webp"] },
+  "blocks-no-assets": { "layout": "collage", "style": "blocks", "ground": "white", "seed": "brand-strategy" },
+  "blocks-logos": { "layout": "collage", "style": "blocks", "ground": "white", "logos": ["wordpress", "webflow", "framer"], "seed": "wp-wf-fr" },
+  "blocks-blue": { "layout": "collage", "style": "blocks", "ground": "blue", "images": ["/public/images/blog/logo-designers/paul-rand-ibm-ebaqdesign.webp#0,0,0.4,1", "/public/case-study/airport-executive/04-banner.webp"] },
+  "blocks-black": { "layout": "collage", "style": "blocks", "ground": "black", "images": ["/public/case-study/airport-executive/02-business-cards.webp"], "seed": "rebrand" },
+  "blocks-sand": { "layout": "collage", "style": "blocks", "ground": "white", "accent2": "sand", "plain": true, "images": ["/public/arek-pic-pro.jpg"], "seed": "sand" },
+  "overlap-two-photos": { "layout": "collage", "style": "overlap", "ground": "white", "images": ["/public/images/blog/branding-agencies-one-week/cover-cyclist.webp", "/public/case-study/airport-executive/03-book.webp"] },
+  "overlap-no-assets": { "layout": "collage", "style": "overlap", "ground": "white", "seed": "pricing" },
+  "overlap-sand": { "layout": "collage", "style": "overlap", "ground": "white", "accent2": "sand", "plain": true, "images": ["/public/arek-pic-pro.jpg"], "logos": ["figma", "framer"], "seed": "tools" },
+  "overlap-black": { "layout": "collage", "style": "overlap", "ground": "black", "images": ["/public/case-study/airport-executive/04-banner.webp", "/public/images/blog/logo-designers/paula-scher-citi-ebaqdesign.webp#0,0,0.4,1"] }
+}

@@ -1,0 +1,63 @@
+{
+  "layout": "collage",
+  "title": "Investment Firm Logos",
+  "category": "",
+  "seed": "investment-firm-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "hero": {
+      "dx": 0.0523,
+      "dy": 0.1696,
+      "hidden": true
+    },
+    "photo-0": {
+      "dx": -0.2617,
+      "dy": -0.2834
+    },
+    "sheet-paper": {
+      "dx": 0.1033,
+      "dy": 0.0124
+    },
+    "photo-1": {
+      "dx": 0.4754,
+      "dy": 0.1731,
+      "treatment": "color"
+    },
+    "photo-2": {
+      "treatment": "color",
+      "scale": 2.082,
+      "dx": -1.0702,
+      "dy": 0.0707
+    },
+    "dots": {
+      "dx": 1.1301,
+      "dy": -0.6805
+    },
+    "sheet-strip": {
+      "dx": -0.314,
+      "dy": 0.418
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "logos": [
+    "andreessen"
+  ],
+  "images": [
+    "/tools/cover-generator/assets/investment-firm-logos/upload-andreessen-horowitz-logo.png",
+    "/tools/cover-generator/assets/investment-firm-logos/findvectorlogo-sequoia-capital-vector-logo.png",
+    "/tools/cover-generator/assets/investment-firm-logos/localhost-54-best-investment-firm-logos-hero-1920x1080.webp"
+  ]
+}

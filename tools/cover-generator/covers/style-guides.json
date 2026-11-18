@@ -1,0 +1,65 @@
+{
+  "layout": "collage",
+  "title": "Best Style Guides",
+  "category": "",
+  "seed": "style-guides",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "title": {},
+    "hero": {
+      "dx": -0.1275,
+      "dy": 0.1293,
+      "hidden": true
+    },
+    "photo-0": {
+      "dx": -0.8143,
+      "dy": 0.1141,
+      "treatment": "color"
+    },
+    "sheet-strip": {
+      "dx": 0.9901,
+      "dy": 0.1558
+    },
+    "dots": {
+      "dx": -0.0253,
+      "dy": 0.0602,
+      "hidden": true
+    },
+    "photo-1": {
+      "dx": 0.7635,
+      "dy": -0.3245
+    },
+    "sheet-paper": {
+      "dx": -0.3277,
+      "dy": 0.013
+    },
+    "extra-mwm7lr4s-fnuar": {
+      "dx": 0.4384,
+      "dy": 0.2533,
+      "scale": 1.17
+    }
+  },
+  "extras": [
+    {
+      "id": "extra-mwm7lr4s-fnuar",
+      "kind": "loops"
+    }
+  ],
+  "kicker": false,
+  "decor": false,
+  "mat": true,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/style-guides/encrypted-tbn0-images.jpg",
+    "/tools/cover-generator/assets/style-guides/standardsmanual-photo-sep-28-5-24-26-pm.jpg"
+  ]
+}

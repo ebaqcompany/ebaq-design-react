@@ -50,6 +50,12 @@
   --brand-grid-line: rgb(var(--color-brand-primary-rgb) / 0.5);
 }
 
+/* Dark stage: black surface with the brand-blue grid, same geometry. */
+.bg-brand-grid[data-tone="dark"] {
+  background-color: #000;
+  --brand-grid-line: rgb(var(--color-brand-primary-rgb) / 0.35);
+}
+
 /* Light illustration grids retain the approved 18px cell independently of photos. */
 .bg-brand-grid[data-tone="light"],
 #what-you-get[data-service="brand-design"] {

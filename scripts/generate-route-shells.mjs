@@ -57,7 +57,7 @@ for (const [path, component] of Object.entries({
   '/real-estate-branding': 'RealEstateBrandingLanding',
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/personal-branding': 'PersonalBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
   '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding',
-  '/pricing': 'PricingPage', '/brand-sprint': 'BrandSprintPage',
+  '/pricing': 'PricingPage', '/brand-sprint': 'BrandSprintPage', '/design-monthly': 'DesignMonthlyPage',
   '/compare': 'CompareIndexPage', '/glossary': 'GlossaryPage', '/industries': 'IndustriesPage', '/compare/freelancer-vs-agency': 'FreelancerVsAgencyPage', '/locations': 'LocationsPage',
   '/services': 'ServicesPage',
   '/services/brand-strategy': 'BrandStrategyPage',

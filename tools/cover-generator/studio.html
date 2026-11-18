@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Blog Cover Generator</title><style>
+  @font-face { font-family: "Roboto Condensed"; font-weight: 600; src: url("/node_modules/@fontsource/roboto-condensed/files/roboto-condensed-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Roboto Mono"; font-weight: 500; src: url("/node_modules/@fontsource/roboto-mono/files/roboto-mono-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Roboto"; font-weight: 400; src: url("/node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2") format("woff2"); }
+  :root { --blue: #00afec; --ink: #000; --line: rgba(0,0,0,.2); --bg: #f4f4f4; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.4 "Roboto", system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+  .app { display: grid; grid-template-columns: 340px 1fr; min-height: 100vh; }
+  aside { background: #fff; border-right: 1px solid var(--line); padding: 20px; overflow-y: auto; max-height: 100vh; position: sticky; top: 0; }
+  h1 { font: 600 28px/1 "Roboto Condensed", sans-serif; margin: 0 0 4px; }
+  .sub { color: #555; margin: 0 0 18px; font-size: 13px; }
+  label { display: block; font: 500 11px "Roboto Mono", monospace; letter-spacing: .08em; text-transform: uppercase; margin: 14px 0 6px; color: #333; }
+  input[type=text], textarea, select { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; }
+  textarea { resize: vertical; min-height: 64px; }
+  .row { display: flex; gap: 8px; align-items: center; }
+  .row > * { flex: 1; }
+  .seg { display: flex; flex-wrap: wrap; gap: 4px; }
+  .seg button { flex: 1; padding: 7px 6px; border: 1px solid var(--line); background: #fff; border-radius: 6px; cursor: pointer; font: 500 11px "Roboto Mono", monospace; text-transform: uppercase; }
+  .seg button[aria-pressed=true] { background: #000; color: #fff; border-color: #000; }
+  .btn { display: inline-flex; justify-content: center; align-items: center; padding: 10px 14px; border-radius: 8px; border: 1px solid #000; background: #000; color: #fff; cursor: pointer; font: 600 15px "Roboto Condensed", sans-serif; }
+  .btn:hover { background: var(--blue); border-color: var(--blue); color: #000; }
+  .btn.ghost { background: #fff; color: #000; }
+  .checks { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; font-size: 13px; }
+  .checks input { margin-right: 4px; }
+  main { padding: 24px; display: grid; gap: 24px; align-content: start; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .card h2 { font: 500 11px "Roboto Mono", monospace; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; color: #444; }
+  canvas { width: 100%; height: auto; display: block; border-radius: 4px; }
+  .pair { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start; }
+  .blogcard { border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
+  .blogcard .meta { display: flex; justify-content: space-between; font: 500 10px "Roboto Mono", monospace; color: #666; margin: 10px 4px 6px; text-transform: uppercase; }
+  .blogcard h3 { font: 600 20px/1.1 "Roboto Condensed", sans-serif; margin: 0 4px 8px; }
+  .resolved { font: 12px "Roboto Mono", monospace; color: #444; margin-top: 10px; word-break: break-word; }
+  pre { background: #111; color: #cceffc; padding: 12px; border-radius: 8px; font-size: 12px; overflow: auto; margin: 10px 0 0; }
+  .sheet { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sheet figure { margin: 0; cursor: pointer; }
+  .sheet figcaption { font: 11px "Roboto Mono", monospace; color: #555; margin-top: 4px; }
+  @media (max-width: 900px) { .app { grid-template-columns: 1fr; } aside { position: static; max-height: none; } .pair { grid-template-columns: 1fr; } }
+</style><style>@font-face {font-family:"Roboto Condensed";font-weight:600;src:url("/node_modules/@fontsource/roboto-condensed/files/roboto-condensed-latin-600-normal.woff2")} @font-face {font-family:"Roboto Mono";font-weight:400;src:url("/node_modules/@fontsource/roboto-mono/files/roboto-mono-latin-400-normal.woff2")}.status{font-size:13px;line-height:1.45}.status.error{color:#a22}.coverWrap{max-width:900px}.note{color:#555;font-size:13px}.row{margin-top:12px}button:disabled{opacity:.45;cursor:not-allowed}</style></head><body><div class="app"><aside><h1>Blog Cover Generator</h1><p class="sub">Website grid · Figma cover layout · local preview</p><label for="post">Start from an article</label><select id="post"><option value="">— choose an article —</option></select><label for="title">Cover title</label><textarea id="title" rows="4">SaaS Website Design Cost (2026 Breakdown)</textarea><label for="width">Title frame width · <span id="widthValue">578</span> px</label><input id="width" type="range" min="360" max="800" step="2" value="578" style="width:100%"><label for="category">Category</label><input id="category" type="text" value="Pricing"><p class="note">Use a line break to choose where the title wraps. Titles stay at the same size. The category moves down as the title wraps.</p><div id="status" role="status" aria-live="polite" class="status"></div><div class="row"><button id="download" class="btn" type="button">Download WebP</button></div><p class="note">Exports a 900 × 600 WebP. Downloading does not assign it to an article or publish anything.</p></aside><main><section class="card"><h2>Cover · 900 × 600</h2><div class="coverWrap"><canvas id="cover" width="900" height="600" aria-label="Cover preview"></canvas></div></section><section class="pair"><div class="card"><h2>Blog card · 16:9 centered crop</h2><canvas id="thumb" width="900" height="506" aria-label="Blog thumbnail preview"></canvas><p class="note">The site crops approximately 47 px from the top and bottom of the cover.</p></div><div class="card"><h2>Article preview</h2><div class="blogcard"><canvas id="card" width="900" height="506"></canvas><div class="meta"><span id="cardCat"></span><span>Local preview</span></div><h3 id="cardTitle"></h3></div></div></section></main></div><script type="module" src="./studio.js"></script></body></html>

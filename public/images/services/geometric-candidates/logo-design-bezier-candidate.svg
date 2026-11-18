@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+<title>Logo Design — crafting a distinctive vector mark and testing its small-size silhouette</title>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="vector-artboard">
+    <rect x="140" y="235" width="570" height="490" rx="8" fill="#fff"/>
+    <path d="M140 295h570M180 265h80M645 265h25"/>
+    <path id="custom-mark" d="M250 610V420C250 350 320 330 365 385L480 525V360H580V560C580 630 510 650 465 595L350 455V610Z" fill="#00AFEC"/>
+    <path id="selection-bounds" d="M220 330h390v320H220Z" stroke-dasharray="10 12" stroke-width="3"/>
+    <g id="bezier-handles" stroke-width="4">
+      <path d="M250 420v-70M365 385l-45-55M580 560v70M465 595l45 55"/>
+      <circle cx="250" cy="350" r="7" fill="#fff"/>
+      <circle cx="320" cy="330" r="7" fill="#fff"/>
+      <circle cx="580" cy="630" r="7" fill="#fff"/>
+      <circle cx="510" cy="650" r="7" fill="#fff"/>
+    </g>
+    <g id="anchor-points">
+      <rect x="242" y="412" width="16" height="16" fill="#FED440"/>
+      <rect x="357" y="377" width="16" height="16" fill="#fff"/>
+      <rect x="572" y="552" width="16" height="16" fill="#fff"/>
+      <rect x="457" y="587" width="16" height="16" fill="#fff"/>
+    </g>
+  </g>
+  <g id="small-size-proof">
+    <rect x="700" y="600" width="230" height="230" rx="8" fill="#00AFEC"/>
+    <g transform="translate(649 519) scale(.4)" stroke-width="15">
+      <path d="M250 610V420C250 350 320 330 365 385L480 525V360H580V560C580 630 510 650 465 595L350 455V610Z" fill="#fff"/>
+    </g>
+  </g>
+  <g id="scale-test-connection"><path d="M710 465h105v100m-15-20 15 20 15-20"/></g>
+  <g id="direct-selection-cursor"><path d="m260 437 22 80 18-28 32-6Z" fill="#fff"/></g>
+</g>
+</svg>

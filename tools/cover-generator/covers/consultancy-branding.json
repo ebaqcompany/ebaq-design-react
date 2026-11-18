@@ -1,0 +1,59 @@
+{
+  "layout": "collage",
+  "title": "Consultancy Branding",
+  "category": "",
+  "seed": "consultancy-branding-8vqrk",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-noise": {
+      "dx": 0.3877,
+      "dy": -0.0905
+    },
+    "hero": {
+      "dx": -0.0017,
+      "dy": 0.0011,
+      "hidden": true
+    },
+    "sheet-paper": {
+      "dx": 0.2469,
+      "dy": 0.1606,
+      "scale": 0.916,
+      "z": 3
+    },
+    "photo-0": {
+      "dx": 0.4239,
+      "dy": -0.0664,
+      "treatment": "color"
+    },
+    "photo-1": {
+      "dx": -0.4041,
+      "dy": 0.3458,
+      "scale": 1.08
+    },
+    "sheet-strip": {
+      "dx": -0.1985,
+      "dy": -0.1514
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "logos": [
+    "/tools/cover-generator/assets/consultancy-branding/upload-deloittenewlogo.png"
+  ],
+  "images": [
+    "/tools/cover-generator/assets/consultancy-branding/media-making-decision-on-the-move.jpg",
+    "/tools/cover-generator/assets/consultancy-branding/upload-deloittenewlogo.png"
+  ]
+}

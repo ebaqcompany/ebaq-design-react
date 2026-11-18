@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+<title>Logo Design — choose a symbol and set its name</title>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="symbol-choices">
+    <circle cx="270" cy="365" r="70" fill="#fff"/>
+    <path d="m470 435 75-140 75 140Z" fill="#00AFEC"/>
+    <rect x="750" y="295" width="140" height="140" fill="#fff"/>
+    <path d="M375 365h45m-16-12 16 12-16 12M650 365h45m-16-12 16 12-16 12"/>
+    <path d="M445 265h200v200H445Z" stroke-dasharray="10 12" stroke-width="3"/>
+    <rect x="437" y="257" width="16" height="16" fill="#FED440"/>
+  </g>
+  <g id="symbol-and-name">
+    <path d="m190 725 55-110 55 110Z" fill="#00AFEC"/>
+    <g id="name-lettering" stroke-width="10">
+      <path d="M360 725V605l75 120V605"/>
+      <path d="M520 605c-27 0-40 20-40 60s13 60 40 60 40-20 40-60-13-60-40-60Z"/>
+      <path d="m600 605 40 120 40-120M715 725l45-120 45 120m-73-40h56"/>
+    </g>
+    <path id="typing-caret" d="M850 595v145"/>
+    <path d="M345 765h485" stroke-width="3"/>
+  </g>
+</g>
+</svg>

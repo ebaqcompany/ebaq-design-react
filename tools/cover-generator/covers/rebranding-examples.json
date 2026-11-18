@@ -1,0 +1,41 @@
+{
+  "layout": "collage",
+  "title": "Rebranding Examples",
+  "category": "",
+  "seed": "rebranding-examples",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "dx": -0.3267,
+      "dy": -0.2146,
+      "hidden": true
+    },
+    "sheet-colour": {
+      "dx": -0.7963,
+      "dy": -0.1061,
+      "hidden": true
+    },
+    "sheet-noise": {
+      "dx": -0.3459,
+      "dy": -0.3625
+    },
+    "sheet-strip": {
+      "dx": 0.275,
+      "dy": -0.2915
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true
+}

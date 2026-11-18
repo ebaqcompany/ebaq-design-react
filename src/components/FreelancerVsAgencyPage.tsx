@@ -17,7 +17,7 @@ import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredDat
 // ones in siteFacts and the site's agency comparison. Layout: the tool pages' split hero, the black
 // comparison table, three white cards, then the shared about, testimonial, FAQ, and CTA sections.
 const pageUrl = `${siteUrl}/compare/freelancer-vs-agency`;
-const pageDescription = "Freelance designer or branding agency? Compare price, timeline, and who does the work: a senior designer for $3,000 in one week, or an agency for $25k–$100k+ over months.";
+const pageDescription = "Compare a freelance designer and a branding agency by scope, price, timeline, continuity, and who does the work.";
 
 const fits = [
   {
@@ -49,11 +49,13 @@ const fits = [
 ];
 
 const faqs: FactFaq[] = [
-  { question: "Is a freelance designer cheaper than an agency?", answer: `Usually by a wide margin. With me, a brand identity is ${pricing.weekly} in one week and other work is the same flat weekly rate. Traditional agencies typically charge $25k–$100k+ over 3–9 months for comparable identity work.` },
-  { question: "Why do agencies cost so much more?", answer: "An agency fee pays for account managers, project managers, sales, an office, and the agency's margin, on top of the design. The design itself is often done by one senior designer, and many agencies bring in senior freelancers for it. Hiring that designer directly, you pay for the design work only." },
+  { question: "Is a freelance designer cheaper than an agency?", answer: `It depends on the people and the scope. My Brand Sprint is ${pricing.weekly} for one week; agencies quote different amounts for different teams, research, deliverables, and rollout needs. Compare written proposals before drawing a conclusion.` },
+  { question: "What does an agency fee cover?", answer: "Depending on the engagement, an agency may include a broader team, research, project management, and coordination across deliverables. Ask who will do the work and what each proposal includes." },
   { question: "Is the quality lower with a freelancer?", answer: `It depends on the freelancer, which is why seniority matters more than the label. I have designed brand identities for ${founder.experience} for startups, law firms, and real estate teams, and the case studies on this site show the work.` },
-  { question: "What if I need more than one person?", answer: "Most brand and website projects need one senior designer who can also build. I cover strategy, identity, motion, web design, and development in Framer, Webflow, and Next.js. For large multi-team rollouts, an agency is the better fit, and I will say so on the call." },
+  { question: "What if I need more than one person?", answer: "Some projects need a larger team or specialist skills. I cover strategy, identity, motion, web design, and development in Framer, Webflow, and Next.js. For a large multi-team rollout, an agency may be the better fit, and I will say so on the call." },
   { question: "What is the risk of hiring one person?", answer: "Availability. We agree the start date and scope before you pay, and the one-week brand identity timeline is guaranteed." },
+  { question: "How do I check whether a designer is reliable?", answer: "Ask who will do the work, review a relevant case study, speak with a client reference, and get the schedule, feedback rounds, deliverables, and payment terms in writing. Ask what happens if the designer is unavailable or the scope changes." },
+  { question: "What should the agreement cover?", answer: "Confirm the scope, milestones, payment, revisions, final files, ownership or licenses, and how changes are handled. Ask who is responsible for any third-party fonts, images, or software licenses." },
   { question: "How do I start?", answer: `Book a 15-minute call. We agree the scope, the number of weeks, and a fixed total before any work starts. ${pricing.payment}` },
 ];
 
@@ -79,7 +81,7 @@ export const FreelancerVsAgencyPage = () => (
   <div className="relative bg-white text-black">
     <Helmet>
       <title>Freelance Designer vs Agency: Cost & Who Does the Work | Ebaq Design</title>
-      <meta name="description" content="Freelance designer or branding agency? Compare price, timeline, and who does the work: a senior designer for $3,000 in one week, or an agency for $25k–$100k+ over months." />
+      <meta name="description" content="Compare a freelance designer and a branding agency by scope, price, timeline, continuity, and who does the work." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
@@ -96,8 +98,8 @@ export const FreelancerVsAgencyPage = () => (
         <div className="container grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:items-center lg:gap-x-20">
           <header>
             <p className={eyebrow}>Freelancer vs agency</p>
-            <h1 className="heading-h2 mb-5 md:mb-6">The same senior designer, without the agency margin</h1>
-            <p className="max-w-md md:text-md">At many agencies, one senior designer does the design and the rest of the fee pays for everything around them. Hire that designer directly and you pay for the work.</p>
+            <h1 className="heading-h2 mb-5 md:mb-6">Work directly with a senior designer</h1>
+            <p className="max-w-md md:text-md">A freelance designer and an agency can offer different levels of access, capacity, and support. Compare the scope and the people doing the work before you choose.</p>
             <div className="mt-6 md:mt-8"><AvailableButton pricing /></div>
           </header>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -109,9 +111,9 @@ export const FreelancerVsAgencyPage = () => (
             </div>
             <div data-surface="white" className={card}>
               <p className="mb-2 font-mono text-sm uppercase tracking-wide text-black/60">Traditional agency</p>
-              <p className="my-2 pricing-amount"><span className="pricing-number">$25k+</span></p>
-              <p className="mb-2 font-semibold">Brand identity in 3–9 months</p>
-              <p className="text-black/60">Typically $25k–$100k+. You talk to an account manager.</p>
+              <p className="my-2 pricing-amount"><span className="pricing-number">Varies</span></p>
+              <p className="mb-2 font-semibold">Price and timing depend on scope</p>
+              <p className="text-black/60">Ask who leads the work and what the proposal includes.</p>
             </div>
           </div>
         </div>
@@ -121,12 +123,12 @@ export const FreelancerVsAgencyPage = () => (
         heading={"What you pay for,\nside by side"}
         leftTitle="Senior freelancer"
         rows={[
-          { left: `${pricing.weekly} per week, flat`, right: "$25k–$100k+ per project" },
-          { left: "Brand identity in 1 week", right: "3–9 months or more" },
-          { left: "You talk to the designer", right: "You talk to an account manager" },
-          { left: "One senior designer, start to finish", right: "A senior lead, then juniors" },
-          { left: "Pay for the design work", right: "Pay for overhead and margin too" },
-          { left: "Total agreed before work starts", right: "Estimates that grow" },
+          { left: `${pricing.weekly} per week, flat`, right: "Project fee varies by team and scope" },
+          { left: "Scoped brand identity in 1 week", right: "Timeline depends on the engagement" },
+          { left: "You talk to the designer", right: "Ask who your day-to-day contact is" },
+          { left: "One senior designer, start to finish", right: "May include several specialists" },
+          { left: "Direct working relationship", right: "May offer a broader team and capacity" },
+          { left: "Total agreed before work starts", right: "Check milestones and change terms" },
         ]}
       />
 

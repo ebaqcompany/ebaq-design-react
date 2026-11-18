@@ -37,6 +37,7 @@ const PricingPlan = ({ plan, lightBlue, bookingHref }: { plan: PricingPlan; ligh
     </div>
     <div className="flex flex-wrap items-center justify-between gap-4">
       {plan.period === "/week" && <TextLink href="/brand-sprint">Brand Sprints</TextLink>}
+      {plan.period === "/month" && <TextLink href="/design-monthly">Design Monthly</TextLink>}
       <AvailableButton pricing className="ml-auto" href={bookingHref} />
     </div>
   </div>

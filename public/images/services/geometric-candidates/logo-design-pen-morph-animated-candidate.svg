@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" data-illustration="pen-morph"><title>Logo Design — one shape, pen clicks edge, opposite side, then center</title><style>
+[data-illustration="pen-morph"] .morph-symbol{animation:pm-shape 8s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="pen-morph"] .pen-position{animation:pm-pen 8s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="pen-morph"] .pen-press{animation:pm-press 8s linear infinite}
+[data-illustration="pen-morph"] .first-contact{animation:pm-first-contact 8s linear infinite}
+[data-illustration="pen-morph"] .second-contact{animation:pm-second-contact 8s linear infinite}
+@keyframes pm-shape {0%,13.75%,100%{d:path("M 500 250 C 593.888 250 670 326.112 670 420 C 670 513.888 593.888 590 500 590 C 406.112 590 330 513.888 330 420 C 330 326.112 406.112 250 500 250 Z")}22.5%,37.5%{d:path("M 500 230 C 566.666667 356.666667 633.333333 483.333333 700.000000 610.000000 C 633.333333 610.000000 566.666667 610.000000 500.000000 610.000000 C 433.333333 610.000000 366.666667 610.000000 300.000000 610.000000 C 366.666667 483.333333 433.333333 356.666667 500.000000 230.000000 Z")}46.25%,62.5%{d:path("M 330 250 C 443.333333 250.000000 556.666667 250.000000 670.000000 250.000000 C 670.000000 363.333333 670.000000 476.666667 670.000000 590.000000 C 556.666667 590.000000 443.333333 590.000000 330.000000 590.000000 C 330.000000 476.666667 330.000000 363.333333 330.000000 250.000000 Z")}71.25%{d:path("M 500 250 C 593.888 250 670 326.112 670 420 C 670 513.888 593.888 590 500 590 C 406.112 590 330 513.888 330 420 C 330 326.112 406.112 250 500 250 Z")}}
+
+/* Pen clicks edge -&gt; opposite edge -&gt; center. No icon swapping or point-drag story. */
+@keyframes pm-pen {
+ 0%,22.5%,100%{transform:translate(330px,420px)}
+ 33.75%,46.25%{transform:translate(700px,610px)}
+ 58.75%,76.25%{transform:translate(500px,420px)}
+ 87.5%{transform:translate(330px,420px)}
+}
+@keyframes pm-press{0%,11.875%,13.75%,35.625%,37.5%,60.625%,62.5%,100%{transform:scale(1)}12.875%,36.625%,61.625%{transform:scale(.86)}}
+@keyframes pm-first-contact{0%,13.75%,71.25%,100%{opacity:1}22.5%,62.5%{opacity:0}}
+@keyframes pm-second-contact{0%,13.75%,46.25%,100%{opacity:0}22.5%,37.5%{opacity:1}}
+@media(prefers-reduced-motion:reduce){[data-illustration="pen-morph"] *{animation:none}[data-illustration="pen-morph"] .second-contact{opacity:0}}
+</style><g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path id="single-morphing-symbol" class="morph-symbol" d="M 500 250 C 593.888 250 670 326.112 670 420 C 670 513.888 593.888 590 500 590 C 406.112 590 330 513.888 330 420 C 330 326.112 406.112 250 500 250 Z" fill="#00AFEC" /><g class="first-contact" id="circle-edge-contact"><path d="M330 326.112v187.776" stroke-width="3" /><circle cx="330" cy="326.112" r="5" fill="#fff" stroke-width="3" /><circle cx="330" cy="513.888" r="5" fill="#fff" stroke-width="3" /><rect x="322" y="412" width="16" height="16" fill="#FED440" stroke-width="4" /></g><g class="second-contact" id="triangle-opposite-contact" opacity="0"><rect x="692" y="602" width="16" height="16" fill="#FED440" stroke-width="4" /></g><g id="name-lettering" stroke-width="10" transform="translate(170 420) scale(.6)">
+      <path d="M360 725V605l75 120V605" />
+      <path d="M520 605c-27 0-40 20-40 60s13 60 40 60 40-20 40-60-13-60-40-60Z" />
+      <path d="m600 605 40 120 40-120M715 725l45-120 45 120m-73-40h56" />
+    </g>
+    <g id="editing-pen-tool" class="pen-position" transform="translate(330 420)"><g class="pen-press"><g transform="rotate(40)"><path id="pen-nib" d="M0 0 -38 67 -22 108 H22 L38 67Z" fill="#fff" /><path d="M0 0V54" /><circle cx="0" cy="62" r="8" fill="#fff" /><rect x="-28" y="108" width="56" height="18" rx="3" fill="#00AFEC" /></g></g></g></g></svg>

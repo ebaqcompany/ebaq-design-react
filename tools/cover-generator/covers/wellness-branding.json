@@ -1,0 +1,43 @@
+{
+  "layout": "collage",
+  "title": "Wellness Branding",
+  "category": "",
+  "seed": "wellness-branding-gxn44",
+  "style": "overlap",
+  "ground": "white",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "dx": 0.3932,
+      "dy": -0.285,
+      "treatment": "color"
+    },
+    "sheet-colour": {
+      "dx": 0.1691,
+      "dy": 0.6328
+    },
+    "dots": {
+      "dx": -1.1611,
+      "dy": -0.6466
+    },
+    "sheet-strip": {
+      "dx": -0.4525,
+      "dy": 0.0732
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/wellness-branding/encrypted-tbn0-images.jpg"
+  ]
+}

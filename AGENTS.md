@@ -42,3 +42,7 @@
 - Retain useful internal and authoritative external links, but remove empty, obsolete, or non-functional links. Do not use placeholder anchors in article navigation; plain list items are preferred unless the target section IDs actually exist.
 
 - When making a substantive article update, set its publication date to today (America/New_York) in both the article JSON and `public/content/blog/index.json`, so the refreshed article appears in the latest blog grid. Do not change the date for spelling, grammar, or similarly minor corrections.
+
+## Blog cover workflow
+
+- For blog cover image requests, use the local collage cover generator at `tools/cover-generator/collage.html` and its saved editable designs. Work with the user on the composition, using relevant article imagery and preserving their existing edits; save through the generator when requested.

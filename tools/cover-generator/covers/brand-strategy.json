@@ -1,0 +1,70 @@
+{
+  "layout": "collage",
+  "title": "Brand Strategy Framework",
+  "category": "",
+  "seed": "brand-strategy",
+  "style": "overlap",
+  "ground": "black",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "dx": 0.4704,
+      "dy": -0.1482,
+      "treatment": "mono"
+    },
+    "sheet-paper": {
+      "dx": 0.1273,
+      "dy": 0.0049,
+      "z": 6
+    },
+    "sheet-strip": {
+      "dx": 0.2333,
+      "dy": 0.6411,
+      "z": 6,
+      "scale": 1.04
+    },
+    "hero": {
+      "dx": 0.213,
+      "dy": -0.0785,
+      "hidden": true
+    },
+    "dots": {
+      "dx": -0.0573,
+      "dy": -0.6378,
+      "hidden": true
+    },
+    "title": {},
+    "photo-1": {
+      "treatment": "mono",
+      "dx": -0.185,
+      "dy": 0.0713,
+      "scale": 1.37
+    },
+    "extra-mwm6v324-vxj0a": {
+      "dx": -0.4125,
+      "dy": -0.3932,
+      "rot": 3.12
+    }
+  },
+  "extras": [
+    {
+      "id": "extra-mwm6v324-vxj0a",
+      "kind": "loops"
+    }
+  ],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/brand-strategy/localhost-branding-workshop-searching-online.webp",
+    "/tools/cover-generator/assets/brand-strategy/localhost-brand-strategy-workshop-ebaqdesign.webp"
+  ]
+}

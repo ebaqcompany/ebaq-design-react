@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+<title>Brand Design — one identity across stationery, typography, and color</title>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="letterhead">
+    <rect x="170" y="210" width="380" height="530" rx="8" fill="#fff"/>
+    <path d="m215 335 35-70 35 70Z" fill="#00AFEC"/>
+    <path d="M315 295h160M315 330h110M215 415h270M215 455h270M215 495h200M215 650h110"/>
+  </g>
+  <g id="typography-card">
+    <rect x="500" y="245" width="390" height="200" rx="8" fill="#fff"/>
+    <path d="m540 395 40-100 40 100m-67-30h54M700 395V295h42a25 25 0 0 1 0 50h-42m42 0a25 25 0 0 1 0 50h-42"/>
+  </g>
+  <g id="business-card">
+    <rect x="400" y="490" width="510" height="240" rx="8" fill="#00AFEC"/>
+    <path d="m445 630 40-80 40 80Z" fill="#fff"/>
+    <g id="matching-name" stroke-width="6">
+      <path d="M575 625v-65l40 65v-65M663 560c-15 0-22 11-22 32.5s7 32.5 22 32.5 22-11 22-32.5-7-32.5-22-32.5Zm48 0 22 65 22-65M780 625l24-65 24 65m-39-21h30"/>
+    </g>
+    <path d="M445 680h160M720 680h135"/>
+  </g>
+  <g id="palette-strip" transform="translate(-70 65)">
+    <rect x="350" y="670" width="510" height="140" rx="8" fill="#fff"/>
+    <path d="M520 670h170v140H520Z" fill="#00AFEC"/>
+    <path d="M690 670h162a8 8 0 0 1 8 8v124a8 8 0 0 1-8 8H690Z" fill="#000"/>
+  </g>
+</g>
+</svg>

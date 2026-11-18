@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cover Generator</title>
+<style>
+  @font-face { font-family: "Roboto Condensed"; font-weight: 600; src: url("/node_modules/@fontsource/roboto-condensed/files/roboto-condensed-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Roboto Mono"; font-weight: 500; src: url("/node_modules/@fontsource/roboto-mono/files/roboto-mono-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Roboto"; font-weight: 400; src: url("/node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2") format("woff2"); }
+  :root { --blue: #00afec; --ink: #000; --line: rgba(0,0,0,.2); --bg: #f4f4f4; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.4 "Roboto", system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+  .app { display: grid; grid-template-columns: 340px 1fr; min-height: 100vh; }
+  aside { background: #fff; border-right: 1px solid var(--line); padding: 20px; overflow-y: auto; max-height: 100vh; position: sticky; top: 0; }
+  h1 { font: 600 28px/1 "Roboto Condensed", sans-serif; margin: 0 0 4px; }
+  .sub { color: #555; margin: 0 0 18px; font-size: 13px; }
+  label { display: block; font: 500 11px "Roboto Mono", monospace; letter-spacing: .08em; text-transform: uppercase; margin: 14px 0 6px; color: #333; }
+  input[type=text], textarea, select { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; }
+  textarea { resize: vertical; min-height: 64px; }
+  .row { display: flex; gap: 8px; align-items: center; }
+  .row > * { flex: 1; }
+  .seg { display: flex; flex-wrap: wrap; gap: 4px; }
+  .seg button { flex: 1; padding: 7px 6px; border: 1px solid var(--line); background: #fff; border-radius: 6px; cursor: pointer; font: 500 11px "Roboto Mono", monospace; text-transform: uppercase; }
+  .seg button[aria-pressed=true] { background: #000; color: #fff; border-color: #000; }
+  .btn { display: inline-flex; justify-content: center; align-items: center; padding: 10px 14px; border-radius: 8px; border: 1px solid #000; background: #000; color: #fff; cursor: pointer; font: 600 15px "Roboto Condensed", sans-serif; }
+  .btn:hover { background: var(--blue); border-color: var(--blue); color: #000; }
+  .btn.ghost { background: #fff; color: #000; }
+  .checks { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; font-size: 13px; }
+  .checks input { margin-right: 4px; }
+  main { padding: 24px; display: grid; gap: 24px; align-content: start; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .card h2 { font: 500 11px "Roboto Mono", monospace; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; color: #444; }
+  canvas { width: 100%; height: auto; display: block; border-radius: 4px; }
+  .pair { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start; }
+  .blogcard { border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
+  .blogcard .meta { display: flex; justify-content: space-between; font: 500 10px "Roboto Mono", monospace; color: #666; margin: 10px 4px 6px; text-transform: uppercase; }
+  .blogcard h3 { font: 600 20px/1.1 "Roboto Condensed", sans-serif; margin: 0 4px 8px; }
+  .resolved { font: 12px "Roboto Mono", monospace; color: #444; margin-top: 10px; word-break: break-word; }
+  pre { background: #111; color: #cceffc; padding: 12px; border-radius: 8px; font-size: 12px; overflow: auto; margin: 10px 0 0; }
+  .sheet { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sheet figure { margin: 0; cursor: pointer; }
+  .sheet figcaption { font: 11px "Roboto Mono", monospace; color: #555; margin-top: 4px; }
+  @media (max-width: 900px) { .app { grid-template-columns: 1fr; } aside { position: static; max-height: none; } .pair { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <h1>Cover Generator</h1>
+    <p class="sub">Cutting-mat system. Same seed, same cover. 1920×1080 cover + 1200×630 OG.</p>
+
+    <label for="post">Load a blog post</label>
+    <select id="post"><option value="">— pick a post —</option></select>
+
+    <label for="title">Title</label>
+    <textarea id="title">Best Webflow Agencies for SaaS (2026)</textarea>
+
+    <div class="row">
+      <div><label for="category">Category</label><input id="category" type="text" value="Comparisons" /></div>
+      <div><label for="seed">Seed</label><input id="seed" type="text" value="best-webflow-agencies-saas" /></div>
+    </div>
+    <div class="row" style="margin-top:8px"><button class="btn ghost" id="shuffle" type="button">Shuffle seed</button></div>
+
+    <label>Layout</label>
+    <div class="seg" data-key="layout"><button data-v="auto">Auto</button><button data-v="plain">Plain</button><button data-v="torn">Torn</button><button data-v="split">Split</button><button data-v="silhouette">Cut-out</button></div>
+
+    <label>Mat</label>
+    <div class="seg" data-key="ground"><button data-v="auto">Auto</button><button data-v="blue">Blue</button><button data-v="white">White</button><button data-v="black">Black</button></div>
+
+    <label>Motif</label>
+    <div class="seg" data-key="motif"><button data-v="auto">Auto</button><button data-v="scribble">Scribble</button><button data-v="dots">Dots</button><button data-v="circles">Circles</button><button data-v="rings">Rings</button></div>
+
+    <label>Paper (torn layout)</label>
+    <div class="seg" data-key="panel"><button data-v="auto">Auto</button><button data-v="white">White</button><button data-v="lavender">Light blue</button></div>
+
+    <label>Photo treatment</label>
+    <div class="seg" data-key="imageMode"><button data-v="auto">Auto</button><button data-v="mono">B/W</button><button data-v="duotone">Duotone</button><button data-v="halftone">Halftone</button></div>
+
+    <label for="logos">Logos (Simple Icons slugs or paths)</label>
+    <input id="logos" type="text" placeholder="webflow, framer, wordpress" />
+    <input id="logoFiles" type="file" accept="image/*" multiple style="margin-top:6px" />
+
+    <label for="imageFiles">Photos (1–4, any colour — turned B/W)</label>
+    <input id="imageFiles" type="file" accept="image/*" multiple />
+    <input id="imagePaths" type="text" placeholder="/public/images/about/arek.webp" style="margin-top:6px" />
+
+    <label for="shapeFile">Cut-out silhouette (PNG with transparency)</label>
+    <input id="shapeFile" type="file" accept="image/png,image/svg+xml,image/webp" />
+
+    <label for="scale">Title size</label>
+    <input id="scale" type="range" min="0.6" max="1.3" step="0.05" value="1" style="width:100%" />
+
+    <div class="checks">
+      <label style="all:unset"><input type="checkbox" id="kicker" checked />Category</label>
+      <label style="all:unset"><input type="checkbox" id="footer" checked />Footer</label>
+      <label style="all:unset"><input type="checkbox" id="grain" checked />Grain</label>
+    </div>
+
+    <div class="row" style="margin-top:18px">
+      <button class="btn" id="dlCover" type="button">Cover PNG</button>
+      <button class="btn" id="dlOg" type="button">OG PNG</button>
+    </div>
+    <div class="row" style="margin-top:8px"><button class="btn ghost" id="copySpec" type="button">Copy covers.json entry</button></div>
+    <pre id="specOut"></pre>
+  </aside>
+
+  <main>
+    <section class="card">
+      <h2>Cover · 1920 × 1080 (blog grid + article header)</h2>
+      <canvas id="cover"></canvas>
+      <div class="resolved" id="resolved"></div>
+    </section>
+    <section class="pair">
+      <div class="card"><h2>OG · 1200 × 630 (social share)</h2><canvas id="og"></canvas></div>
+      <div class="card"><h2>Blog card preview</h2>
+        <div class="blogcard"><canvas id="thumb"></canvas>
+          <div class="meta"><span id="cardCat">Comparisons</span><span>Nov 13, 2026 · 12 min read</span></div>
+          <h3 id="cardTitle"></h3></div>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Variety check · next 12 posts with this setup</h2>
+      <div class="sheet" id="sheet"></div>
+    </section>
+  </main>
+</div>
+
+<script type="module">
+import { renderCover, loadAssets, loadImage, logoUrl } from './cover.js'
+
+const $ = (id) => document.getElementById(id)
+const state = { layout: 'auto', ground: 'auto', motif: 'auto', panel: 'auto', imageMode: 'auto' }
+let posts = []
+let uploads = { images: [], logos: [], shape: null }
+let assets = { mark: null, images: [], logos: [], shape: null }
+
+document.querySelectorAll('.seg').forEach((seg) => {
+  const key = seg.dataset.key
+  const sync = () => seg.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === state[key])))
+  seg.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; state[key] = b.dataset.v; sync(); draw() })
+  sync()
+})
+
+function spec() {
+  return {
+    title: $('title').value.trim(), category: $('category').value.trim(), seed: $('seed').value.trim() || 'ebaq',
+    ...state, titleScale: Number($('scale').value), kicker: $('kicker').checked, footer: $('footer').checked, grain: $('grain').checked,
+  }
+}
+
+const fileToImg = (f) => loadImage(URL.createObjectURL(f))
+async function refreshAssets() {
+  const logoRefs = $('logos').value.split(',').map((s) => s.trim()).filter(Boolean)
+  const imagePaths = $('imagePaths').value.split(',').map((s) => s.trim()).filter(Boolean)
+  const base = await loadAssets({ logos: logoRefs, images: imagePaths })
+  assets = { mark: base.mark, images: [...base.images, ...uploads.images], logos: [...base.logos, ...uploads.logos], shape: uploads.shape }
+  draw()
+}
+
+let raf = 0
+function draw() {
+  cancelAnimationFrame(raf)
+  raf = requestAnimationFrame(() => {
+    const s = spec()
+    const { spec: resolved } = renderCover($('cover'), s, assets, { w: 1920, h: 1080 })
+    renderCover($('og'), s, assets, { w: 1200, h: 630 })
+    renderCover($('thumb'), s, assets, { w: 768, h: 432 })
+    $('resolved').textContent = `Resolved → layout: ${resolved.layout} · mat: ${resolved.ground} · motif: ${resolved.motif} · paper: ${resolved.panel} · photo: ${resolved.imageMode}`
+    $('cardTitle').textContent = s.title; $('cardCat').textContent = s.category
+    const entry = { [s.seed]: Object.fromEntries(Object.entries({ ...state, titleScale: s.titleScale !== 1 ? s.titleScale : undefined,
+      logos: $('logos').value ? $('logos').value.split(',').map((x) => x.trim()) : undefined,
+      images: $('imagePaths').value ? $('imagePaths').value.split(',').map((x) => x.trim()) : undefined,
+    }).filter(([, v]) => v !== undefined && v !== 'auto')) }
+    $('specOut').textContent = JSON.stringify(entry, null, 2)
+    drawSheet(s)
+  })
+}
+
+function drawSheet(s) {
+  const sheet = $('sheet')
+  const list = posts.length ? posts.slice(0, 12) : Array.from({ length: 12 }, (_, i) => ({ slug: s.seed + '-' + i, title: s.title, category: s.category }))
+  sheet.innerHTML = ''
+  list.forEach((p) => {
+    const fig = document.createElement('figure')
+    const c = document.createElement('canvas')
+    renderCover(c, { ...s, title: p.title, category: p.category, seed: p.slug, layout: state.layout, ground: state.ground, motif: 'auto', panel: 'auto' }, { mark: assets.mark }, { w: 480, h: 270 })
+    const cap = document.createElement('figcaption'); cap.textContent = p.slug
+    fig.append(c, cap)
+    fig.onclick = () => selectPost(p)
+    sheet.append(fig)
+  })
+}
+
+function selectPost(p) {
+  $('title').value = p.title; $('category').value = p.category || ''; $('seed').value = p.slug
+  $('post').value = p.slug
+  draw()
+}
+
+$('post').addEventListener('change', () => { const p = posts.find((x) => x.slug === $('post').value); if (p) selectPost(p) })
+;['title', 'category', 'seed', 'scale', 'kicker', 'footer', 'grain'].forEach((id) => $(id).addEventListener('input', draw))
+$('logos').addEventListener('change', refreshAssets)
+$('imagePaths').addEventListener('change', refreshAssets)
+$('shuffle').onclick = () => { $('seed').value = Math.random().toString(36).slice(2, 8); draw() }
+$('logoFiles').onchange = async (e) => { uploads.logos = await Promise.all([...e.target.files].map(fileToImg)); refreshAssets() }
+$('imageFiles').onchange = async (e) => { uploads.images = await Promise.all([...e.target.files].slice(0, 4).map(fileToImg)); refreshAssets() }
+$('shapeFile').onchange = async (e) => { uploads.shape = e.target.files[0] ? await fileToImg(e.target.files[0]) : null; refreshAssets() }
+
+function download(size, suffix) {
+  const c = document.createElement('canvas')
+  renderCover(c, spec(), assets, size)
+  c.toBlob((b) => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = `${$('seed').value || 'cover'}-${suffix}.png`; a.click() }, 'image/png')
+}
+$('dlCover').onclick = () => download({ w: 1920, h: 1080 }, 'cover')
+$('dlOg').onclick = () => download({ w: 1200, h: 630 }, 'og')
+$('copySpec').onclick = () => navigator.clipboard.writeText($('specOut').textContent)
+
+await document.fonts.load('600 40px "Roboto Condensed"'); await document.fonts.load('500 20px "Roboto Mono"')
+try {
+  posts = await (await fetch('/public/content/blog/index.json')).json()
+  posts.forEach((p) => { const o = document.createElement('option'); o.value = p.slug; o.textContent = p.title; $('post').append(o) })
+} catch { /* index optional */ }
+await refreshAssets()
+</script>
+</body>
+</html>

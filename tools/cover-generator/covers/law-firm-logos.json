@@ -1,0 +1,62 @@
+{
+  "layout": "collage",
+  "title": "Law Firm Logos",
+  "category": "",
+  "seed": "law-firm-logos",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "treatment": "color",
+      "dx": 0.2917,
+      "dy": -0.3773,
+      "scale": 1.17
+    },
+    "hero": {
+      "dx": -0.2937,
+      "dy": -0.2507,
+      "hidden": true
+    },
+    "sheet-strip": {
+      "dx": -0.4445,
+      "dy": 0.1862,
+      "z": 6
+    },
+    "sheet-paper": {
+      "dx": 0.0756,
+      "dy": 0.4639
+    },
+    "photo-1": {
+      "dx": -0.2453,
+      "dy": -0.2974,
+      "scale": 0.778
+    },
+    "photo-2": {
+      "dx": 0.189,
+      "dy": 0.5259,
+      "z": -1
+    },
+    "dots": {
+      "dx": 0.0712,
+      "dy": 0.0329
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/law-firm-logos/localhost-law-firm-logos-cover-lawyer-flat-sheet-scales-1920x1080.webp",
+    "/tools/cover-generator/assets/law-firm-logos/iclg-white-case-llp.png",
+    "/tools/cover-generator/assets/law-firm-logos/intapp-paul-weiss-logo.png"
+  ]
+}

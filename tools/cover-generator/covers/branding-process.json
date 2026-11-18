@@ -1,0 +1,53 @@
+{
+  "layout": "collage",
+  "title": "Branding Process",
+  "category": "",
+  "seed": "branding-process",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "dx": 0.8728,
+      "dy": 0.0241,
+      "scale": 1.125,
+      "treatment": "color"
+    },
+    "sheet-strip": {
+      "dx": -1.0807,
+      "dy": -0.0428
+    },
+    "hero": {
+      "dx": -0.0208,
+      "dy": 0.2104,
+      "hidden": true
+    },
+    "sheet-paper": {
+      "dx": 0.0789,
+      "dy": 0.0063
+    },
+    "photo-1": {
+      "dx": -0.8091,
+      "dy": -0.3428,
+      "rot": -0.02,
+      "scale": 1.076,
+      "treatment": "color"
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/branding-process/localhost-my-branding-process.webp",
+    "/tools/cover-generator/assets/branding-process/localhost-branding-process-step3-visual-research.webp"
+  ]
+}

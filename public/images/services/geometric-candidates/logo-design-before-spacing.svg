@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" data-illustration="logo-digitize">
+<title>Logo Design — from pencil sketch to digital ABC logo</title>
+<desc>A pencil draws one large centered triangle on landscape paper. A yellow dot transfers the sketch along an arrow to a blue digital panel, where the same triangle sits to the left of ABC. The sketch contains only the triangle; the digital version adds the ABC wordmark. After ABC types, a cursor clicks three palette swatches, changing the digital logo to white, black, and yellow surfaces.</desc>
+<defs><mask id="sketch-triangle-reveal" maskUnits="userSpaceOnUse" x="205" y="372" width="200" height="176"><path class="triangle-reveal" d="M215 537.942286 L305 382.057714 L395 537.942286 L215 537.942286" pathLength="1" stroke="white" stroke-width="12" stroke-dasharray="1" /></mask></defs>
+<style>
+[data-illustration="logo-digitize"] .triangle-reveal{animation:ld-reveal 8s linear infinite}
+[data-illustration="logo-digitize"] .sketch-dotted{animation:ld-dotted 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .sketch-solid{animation:ld-solid 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .pencil-position{animation:ld-pencil 8s linear infinite}
+[data-illustration="logo-digitize"] .pencil-visibility{animation:ld-pencil-show 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .transfer-dot{animation:ld-transfer 8s linear infinite}
+[data-illustration="logo-digitize"] .digital-result{animation:ld-result 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .digital-bump{animation:ld-bump 8s linear infinite}
+[data-illustration="logo-digitize"] .letter-a{animation:ld-a 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .letter-b{animation:ld-b 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .letter-c{animation:ld-c 8s steps(1,end) infinite}
+@keyframes ld-reveal{0%,5%,96%,100%{stroke-dashoffset:1}30%,95.999%{stroke-dashoffset:0}}
+@keyframes ld-dotted{0%,96%,100%{opacity:1}30%{opacity:0}}
+@keyframes ld-solid{0%,96%,100%{opacity:0}30%{opacity:1}}
+@keyframes ld-pencil{0%,5%{transform:translate(215px,537.942286px)}13.333333%{transform:translate(305px,382.057714px)}21.666667%{transform:translate(395px,537.942286px)}30%,100%{transform:translate(215px,537.942286px)}}
+@keyframes ld-pencil-show{0%,96%,100%{opacity:1}32.5%{opacity:0}}
+@keyframes ld-transfer{0%,49.999%{opacity:0;transform:translate(510px,510px)}50%{opacity:1;transform:translate(510px,510px)}57.5%{opacity:1;transform:translate(620px,510px)}57.501%,100%{opacity:0;transform:translate(620px,510px)}}
+@keyframes ld-result{0%,96%,100%{opacity:0}57.5%{opacity:1}}
+@keyframes ld-bump{0%,57.5%{transform:translate(0,0);animation-timing-function:cubic-bezier(.22,1,.36,1)}60%{transform:translate(-15.069767px,-15.069767px);animation-timing-function:cubic-bezier(.65,0,.35,1)}65.833333%,100%{transform:translate(0,0)}}
+@keyframes ld-a{0%,96%,100%{opacity:0}66.25%{opacity:1}}
+@keyframes ld-b{0%,96%,100%{opacity:0}70%{opacity:1}}
+@keyframes ld-c{0%,96%,100%{opacity:0}73.75%{opacity:1}}
+@media(prefers-reduced-motion:reduce){[data-illustration="logo-digitize"] *{animation:none}[data-illustration="logo-digitize"] .sketch-dotted,[data-illustration="logo-digitize"] .pencil-visibility,[data-illustration="logo-digitize"] .transfer-dot{opacity:0}}
+
+[data-illustration="logo-digitize"] .palette-surface{animation:ld-surface 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .palette-symbol{animation:ld-symbol-color 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .palette-ink{animation:ld-ink 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .palette-cursor{animation:ld-palette-cursor 8s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="logo-digitize"] .palette-click{animation:ld-palette-click 8s linear infinite}
+@keyframes ld-surface{0%,96%,100%{fill:#00AFEC}78.5%{fill:#fff}84.75%{fill:#000}91%{fill:#FED440}}
+@keyframes ld-symbol-color{0%,96%,100%{fill:#fff;stroke:#000}78.5%{fill:#000;stroke:#000}84.75%{fill:#fff;stroke:#fff}91%{fill:#000;stroke:#000}}
+@keyframes ld-ink{0%,96%,100%{stroke:#000}84.75%{stroke:#fff}91%{stroke:#000}}
+@keyframes ld-palette-cursor{0%,74.999%{opacity:0;transform:translate(930px,520px)}75%{opacity:1;transform:translate(930px,520px)}77.5%,80%{opacity:1;transform:translate(730px,655px)}83.75%,86.25%{opacity:1;transform:translate(815px,655px)}90%,94%{opacity:1;transform:translate(900px,655px)}96%,100%{opacity:0;transform:translate(930px,520px)}}
+@keyframes ld-palette-click{0%,77.5%,79.5%,83.75%,85.75%,90%,92%,100%{transform:translateY(0)}78.5%,84.75%,91%{transform:translateY(3px)}}
+@media(prefers-reduced-motion:reduce){[data-illustration="logo-digitize"] .palette-surface,[data-illustration="logo-digitize"] .palette-symbol,[data-illustration="logo-digitize"] .palette-ink,[data-illustration="logo-digitize"] .palette-cursor,[data-illustration="logo-digitize"] .palette-click{animation:none}[data-illustration="logo-digitize"] .palette-cursor{opacity:0}}
+@media(prefers-reduced-motion:reduce){[data-illustration="logo-digitize"] [class]{animation:none}}
+</style>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+ <g id="landscape-sketch-paper"><rect x="110" y="310" width="390" height="300" rx="8" fill="#fff"/>
+ <path class="sketch-dotted" d="M215 537.942286 L305 382.057714 L395 537.942286 L215 537.942286" stroke-dasharray="5 10" mask="url(#sketch-triangle-reveal)"/>
+ <path class="sketch-solid" d="M215 537.942286 L305 382.057714 L395 537.942286 L215 537.942286"/></g>
+ <g id="digitization-arrow"><g id="strategy-style-connector" stroke-width="6" stroke-linecap="butt" stroke-linejoin="miter"><path d="M500 510H590.729"/><path d="M576.744 493.687 605 510 576.744 526.313Z" fill="#000" stroke="none"/></g><circle class="transfer-dot" r="10" fill="#FED440" stroke="none"/></g>
+ <g id="digital-panel"><rect id="digital-panel-background" class="palette-surface" x="620" y="280" width="390" height="300" rx="8" fill="#00AFEC" stroke="none"/>
+ <g class="digital-bump"><rect x="620" y="280" width="390" height="300" rx="8" fill="none"/>
+ <g class="digital-result"><g transform="translate(10 -70)"><path id="digital-symbol" class="palette-symbol" d="M675 530.310889 L710 469.689111 L745 530.310889Z" fill="#fff"/>
+ <g class="palette-ink" id="abc-wordmark" transform="translate(200 64) scale(.8)" stroke-width="7.5"><path class="letter-a" d="m717 575 23-60 23 60m-37-20h28"/>
+ <path class="letter-b" d="M785 575v-60h20c30 0 30 30 0 30h-20m20 0c30 0 30 30 0 30h-20"/>
+ <path class="letter-c" d="M891 523c-8-11-36-14-36 22s28 33 36 22"/></g></g></g></g></g>
+ <g id="digital-palette" transform="translate(512.5 285) scale(.5)" stroke-width="12"><rect x="350" y="670" width="510" height="140" rx="8" fill="#fff"/><path d="M520 670h170v140H520Z" fill="#000"/><path d="M690 670h162a8 8 0 0 1 8 8v124a8 8 0 0 1-8 8H690Z" fill="#FED440"/></g>
+ <g class="palette-cursor"><g class="palette-click"><path d="M0 0 25 91 45 59 81 52Z" fill="#fff"/></g></g>
+ <g class="pencil-visibility"><g class="pencil-position"><g id="drawing-pencil"><path d="M0 0 12-42 103-133 133-103 42-12Z" fill="#00AFEC"/><path d="m12-42 30 30M88-118l30 30"/><path d="M0 0 5-17 17-5Z" fill="#000"/></g></g></g>
+</g></svg>

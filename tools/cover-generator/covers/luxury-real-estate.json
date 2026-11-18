@@ -1,0 +1,45 @@
+{
+  "layout": "collage",
+  "title": "Luxury Real Estate",
+  "category": "",
+  "seed": "luxury-real-estate-x3pr8",
+  "style": "overlap",
+  "ground": "white",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-noise": {
+      "dx": -0.3957,
+      "dy": 0.2955
+    },
+    "hero": {
+      "dx": 0.2045,
+      "dy": -0.0738,
+      "hidden": true
+    },
+    "photo-0": {
+      "dx": -0.2409,
+      "dy": 0.1894,
+      "treatment": "color",
+      "scale": 1.398
+    },
+    "dots": {
+      "dx": -0.076,
+      "dy": 0.0348
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/luxury-real-estate/beginyourjourney-amenities-10.jpg"
+  ]
+}

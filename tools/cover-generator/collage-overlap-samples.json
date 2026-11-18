@@ -1,0 +1,119 @@
+{
+ "overlap-blue-only": {
+  "layout": "collage",
+  "style": "overlap",
+  "ground": "white",
+  "images": [
+   "/public/images/blog/branding-agencies-one-week/cover-cyclist.webp",
+   "/public/case-study/airport-executive/03-book.webp"
+  ],
+  "titleStyle": "none"
+ },
+ "overlap-full": {
+  "layout": "collage",
+  "style": "overlap",
+  "ground": "white",
+  "plain": true,
+  "secondary": [
+   "red",
+   "sand"
+  ],
+  "images": [
+   "/public/arek-pic-pro.jpg"
+  ],
+  "seed": "full",
+  "titleStyle": "none"
+ },
+ "overlap-pale": {
+  "layout": "collage",
+  "style": "overlap",
+  "ground": "white",
+  "secondary": [
+   "rose",
+   "almond",
+   "mint"
+  ],
+  "images": [
+   "/public/case-study/airport-executive/04-banner.webp"
+  ],
+  "seed": "pale",
+  "titleStyle": "none"
+ },
+ "overlap-mixed": {
+  "layout": "collage",
+  "style": "overlap",
+  "ground": "white",
+  "plain": true,
+  "secondary": [
+   "green",
+   "sand",
+   "almond"
+  ],
+  "seed": "mixed-2",
+  "titleStyle": "none"
+ },
+ "overlap-title-strips": {
+  "layout": "collage",
+  "style": "overlap",
+  "ground": "white",
+  "title": "13 Branding Agencies That Deliver in One Week",
+  "category": "Branding",
+  "titleStyle": "strips",
+  "secondary": [
+   "sand",
+   "almond"
+  ],
+  "images": [
+   "/public/images/blog/branding-agencies-one-week/cover-cyclist.webp"
+  ]
+ },
+ "overlap-title-bare": {
+  "layout": "collage",
+  "style": "overlap",
+  "ground": "white",
+  "plain": true,
+  "title": "The Best Logo Designers of All Time",
+  "category": "Logo Design",
+  "titleStyle": "bare",
+  "secondary": [
+   "red",
+   "rose"
+  ],
+  "images": [
+   "/public/images/blog/logo-designers/paul-rand-ibm-ebaqdesign.webp#0,0,0.4,1",
+   "/public/images/blog/logo-designers/paula-scher-citi-ebaqdesign.webp#0,0,0.4,1"
+  ]
+ },
+ "overlap-title-over": {
+  "layout": "collage",
+  "style": "overlap",
+  "ground": "black",
+  "title": "Rebranding After an Acquisition",
+  "category": "Branding",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "secondary": [
+   "green",
+   "mint"
+  ],
+  "images": [
+   "/public/case-study/airport-executive/02-business-cards.webp"
+  ]
+ },
+ "overlap-default-strips": {
+  "layout": "collage",
+  "style": "overlap",
+  "ground": "blue",
+  "title": "WordPress vs Webflow vs Framer",
+  "category": "Web Design",
+  "titleStyle": "strips",
+  "secondary": [
+   "sand"
+  ],
+  "logos": [
+   "wordpress",
+   "webflow",
+   "framer"
+  ]
+ }
+}

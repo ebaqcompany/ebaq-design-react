@@ -1,0 +1,120 @@
+{
+ "collage-agency-logos": {
+  "layout": "collage",
+  "title": "Best AI Design Tools for Brand Designers",
+  "category": "Brand Strategy",
+  "ground": "white",
+  "hero": "bust",
+  "logos": [
+   "figma",
+   "openai",
+   "anthropic",
+   "framer",
+   "canva",
+   "notion",
+   "webflow",
+   "vercel"
+  ],
+  "style": "cutout"
+ },
+ "collage-logo-designers": {
+  "layout": "collage",
+  "title": "The Best Logo Designers of All Time",
+  "category": "Logo Design",
+  "ground": "white",
+  "hero": "slab",
+  "titleStyle": "strips",
+  "notes": [
+   "Hall of fame"
+  ],
+  "images": [
+   "/public/images/blog/logo-designers/paul-rand-ibm-ebaqdesign.webp#0,0,0.4,1",
+   "/public/images/blog/logo-designers/paula-scher-citi-ebaqdesign.webp#0,0,0.4,1",
+   "/public/images/blog/logo-designers/milton-glaser-love-ny-ebaqdesign.webp#0,0,0.4,1",
+   "/public/images/blog/logo-designers/rob-janoff-apple-ebaqdesign.webp#0,0,0.4,1"
+  ],
+  "style": "cutout"
+ },
+ "collage-vs": {
+  "layout": "collage",
+  "title": "WordPress vs Webflow vs Framer",
+  "category": "Web Design",
+  "ground": "blue",
+  "hero": "circle",
+  "titleStyle": "sheet",
+  "logoStyle": "chip",
+  "logos": [
+   "wordpress",
+   "webflow",
+   "framer"
+  ],
+  "notes": [
+   "Which one wins?"
+  ],
+  "style": "cutout"
+ },
+ "collage-builders-black": {
+  "layout": "collage",
+  "title": "I Tested 10 AI Website Builders",
+  "category": "Web Design",
+  "ground": "black",
+  "hero": "burst",
+  "titleStyle": "strips",
+  "logos": [
+   "framer",
+   "webflow",
+   "wix",
+   "squarespace",
+   "wordpress",
+   "shopify"
+  ],
+  "style": "cutout"
+ },
+ "collage-experts": {
+  "layout": "collage",
+  "title": "What Is Branding? Defined By 10 Experts",
+  "category": "Branding",
+  "ground": "blue",
+  "hero": "arrow",
+  "titleStyle": "strips",
+  "imageMode": "copy",
+  "images": [
+   "/public/images/blog/what-is-branding/2.webp#0.057,0.26,0.323,0.64",
+   "/public/images/blog/what-is-branding/3.webp#0.057,0.26,0.323,0.64",
+   "/public/images/blog/what-is-branding/4.webp#0.057,0.26,0.323,0.64"
+  ],
+  "style": "cutout"
+ },
+ "collage-no-assets": {
+  "layout": "collage",
+  "title": "Rebranding After an Acquisition: A Practical Guide",
+  "category": "Branding",
+  "ground": "white",
+  "hero": "slab",
+  "titleStyle": "sheet",
+  "notes": [
+   "Keep the equity",
+   "Day one plan"
+  ],
+  "style": "cutout"
+ },
+ "collage-mixed": {
+  "layout": "collage",
+  "title": "13 Branding Agencies That Deliver in One Week",
+  "category": "Branding",
+  "ground": "white",
+  "hero": "bust",
+  "images": [
+   "/public/images/blog/branding-agencies-one-week/cover-cyclist.webp",
+   "/public/arek-profile-hero.png"
+  ],
+  "logos": [
+   "/public/client-logos/savory-wordmark.svg",
+   "/public/client-logos/spark-wordmark-black.svg",
+   "/public/client-logos/periti-logo-black.svg",
+   "/public/client-logos/octane.svg",
+   "/public/client-logos/brevidee-logo.svg"
+  ],
+  "style": "cutout"
+ }
+}

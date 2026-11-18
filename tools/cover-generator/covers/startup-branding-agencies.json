@@ -1,0 +1,177 @@
+{
+  "layout": "collage",
+  "title": "Top 10 Branding Agencies for Startups",
+  "category": "Brand Strategy",
+  "seed": "startup-branding-agencies",
+  "style": "overlap",
+  "ground": "white",
+  "hero": "auto",
+  "titleStyle": "none",
+  "titlePos": "auto",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-paper": {
+      "hidden": true
+    },
+    "sheet-strip": {
+      "hidden": true
+    },
+    "sheet-noise": {
+      "hidden": true
+    },
+    "sheet-colour": {
+      "hidden": true
+    },
+    "dots": {
+      "hidden": true
+    },
+    "scribble-0": {
+      "hidden": true
+    },
+    "circle": {
+      "hidden": true
+    },
+    "hero": {
+      "dx": 0.0144,
+      "dy": 0.0231,
+      "scale": 1.061
+    },
+    "photo-1": {
+      "dx": -0.1693,
+      "dy": -0.0152
+    },
+    "logo-6": {
+      "dx": -0.0365,
+      "dy": 0.0049,
+      "v": 1
+    },
+    "logo-8": {
+      "dx": 0.0052,
+      "dy": 0.0054
+    }
+  },
+  "place": {
+    "logo-0": {
+      "x": 0.6457,
+      "y": 0.2594,
+      "w": 0.1948,
+      "rot": 0
+    },
+    "logo-1": {
+      "x": 0.4401,
+      "y": 0.088,
+      "w": 0.2365,
+      "rot": 0
+    },
+    "logo-2": {
+      "x": 0.6292,
+      "y": 0.4241,
+      "w": 0.1562,
+      "rot": 0
+    },
+    "logo-3": {
+      "x": 0.2945,
+      "y": 0.2826,
+      "w": 0.1306,
+      "rot": 0
+    },
+    "logo-4": {
+      "x": 0.2316,
+      "y": 0.5,
+      "w": 0.1902,
+      "rot": 0
+    },
+    "logo-5": {
+      "x": 0.8965,
+      "y": 0.5,
+      "w": 0.224,
+      "rot": 0,
+      "z": 2.4
+    },
+    "logo-6": {
+      "x": 0.1619,
+      "y": 0.6968,
+      "w": 0.2177,
+      "rot": 0,
+      "z": 2.6
+    },
+    "logo-7": {
+      "x": 0.6724,
+      "y": 0.9457,
+      "w": 0.15,
+      "rot": 0,
+      "z": 2.6
+    },
+    "logo-8": {
+      "x": 0.6744,
+      "y": 0.6166,
+      "w": 0.1519,
+      "rot": 0
+    },
+    "logo-9": {
+      "x": 0.7246,
+      "y": 0.0872,
+      "w": 0.1947,
+      "rot": 0
+    },
+    "hero": {
+      "x": 0.3943,
+      "y": 0.5444,
+      "w": 0.4698,
+      "rot": 0
+    },
+    "photo-0": {
+      "x": 0.8164,
+      "y": 0.3679,
+      "w": 0.3672,
+      "rot": 0,
+      "z": 1.6
+    },
+    "photo-1": {
+      "x": 0.2118,
+      "y": 0.3504,
+      "w": 0.2365,
+      "rot": 0,
+      "z": 1.7
+    },
+    "photo-2": {
+      "x": 0.5,
+      "y": 0.8245,
+      "w": 1,
+      "z": 1.5
+    },
+    "photo-3": {
+      "x": 0.8093,
+      "y": 0.7824,
+      "w": 0.2852,
+      "rot": 0,
+      "z": 4
+    }
+  },
+  "decor": true,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "logos": [
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-thebranx.png",
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-pentagram.png",
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-mucho.png",
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-clay.png",
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-ebaqdesign.png",
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-ramotion.png",
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-wolffolins.png",
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-motto.png",
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-bolder.png",
+    "/tools/cover-generator/assets/startup-branding-agencies/logo-further.png"
+  ],
+  "images": [
+    "/tools/cover-generator/assets/startup-branding-agencies/eye.png@raw",
+    "/tools/cover-generator/assets/startup-branding-agencies/rocket.png@raw",
+    "/tools/cover-generator/assets/startup-branding-agencies/skyline.png@raw@bottom",
+    "/tools/cover-generator/assets/startup-branding-agencies/laptop.png@blue"
+  ],
+  "shape": "/tools/cover-generator/assets/startup-branding-agencies/silhouette.png"
+}

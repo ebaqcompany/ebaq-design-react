@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" data-illustration="responsive-window">
+<title>Web Development — a live window resizes between desktop and mobile widths</title>
+<style>
+[data-illustration="responsive-window"] .window-shell,[data-illustration="responsive-window"] .window-header {animation:rw-width 6s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="responsive-window"] .responsive-hero {animation:rw-hero 6s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="responsive-window"] .responsive-copy-long {animation:rw-copy-long 6s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="responsive-window"] .responsive-copy-short {animation:rw-copy-short 6s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="responsive-window"] .window-rule {transform-origin:250px 310px;animation:rw-rule 6s cubic-bezier(.65,0,.35,1) infinite;vector-effect:non-scaling-stroke}
+[data-illustration="responsive-window"] .drag-handle {animation:rw-drag 6s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="responsive-window"] .header-nav {animation:rw-nav 6s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes rw-width {0%,18%,100%{width:580px}42%,60%{width:300px}84%{width:580px}}
+@keyframes rw-hero {0%,18%,100%{width:500px}42%,60%{width:220px}84%{width:500px}}
+@keyframes rw-copy-long {0%,18%,100%{width:400px}42%,60%{width:200px}84%{width:400px}}
+@keyframes rw-copy-short {0%,18%,100%{width:300px}42%,60%{width:150px}84%{width:300px}}
+@keyframes rw-rule {0%,18%,100%{transform:scaleX(1)}42%,60%{transform:scaleX(.5172413793)}84%{transform:scaleX(1)}}
+@keyframes rw-drag {0%,18%,100%{transform:translateX(0)}42%,60%{transform:translateX(-280px)}84%{transform:translateX(0)}}
+@keyframes rw-nav {0%,18%,100%{transform:translateX(0)}42%,60%{transform:translateX(-280px)}84%{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){[data-illustration="responsive-window"] *{animation:none}}
+</style>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="resizing-browser">
+    <rect id="resizing-window-shell" class="window-shell" x="250" y="245" width="580" height="490" rx="8" fill="#fff" />
+    <rect class="window-header" x="250" y="245" width="580" height="65" rx="8" fill="#00AFEC" />
+    <path class="window-rule" d="M250 310h580" />
+    <path d="M285 278h60" />
+    <path class="header-nav" d="M745 278h45" />
+    <rect class="responsive-hero" x="290" y="350" width="500" height="180" rx="4" fill="#00AFEC" />
+    <path d="m335 495 65-105 65 105Z" fill="#fff" />
+    <rect class="responsive-copy-long" x="290" y="570" width="400" height="8" fill="#000" stroke="none" />
+    <rect class="responsive-copy-short" x="290" y="610" width="300" height="8" fill="#000" stroke="none" />
+    <rect x="290" y="660" width="120" height="36" rx="4" fill="#FED440" />
+  </g>
+  <g id="window-resize-handle" class="drag-handle">
+    <path d="M830 465v70" stroke="#FED440" stroke-width="12" />
+    <path d="M790 500h80m-65-12-15 12 15 12m50-24 15 12-15 12" />
+    <path d="m835 525 20 73 17-25 29-6Z" fill="#fff" />
+  </g>
+  <g id="code-badge" transform="translate(0 60)">
+    <rect x="155" y="680" width="215" height="135" rx="8" fill="#00AFEC" />
+    <path d="m222 718-30 30 30 30m80-60 30 30-30 30m-28-69-22 78" />
+  </g>
+</g>
+</svg>

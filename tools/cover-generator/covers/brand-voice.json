@@ -1,0 +1,51 @@
+{
+  "layout": "collage",
+  "title": "Brand Voice",
+  "category": "",
+  "seed": "brand-voice-vdacs",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "hero": {
+      "dx": -0.3128,
+      "dy": -0.3356,
+      "hidden": true
+    },
+    "sheet-strip": {
+      "dx": 0.8036,
+      "dy": 0.2136,
+      "rot": 1.56,
+      "scale": 1.04
+    },
+    "photo-0": {
+      "dx": -0.8588,
+      "dy": -0.171,
+      "rot": 0,
+      "scale": 1.163
+    },
+    "dots": {
+      "dx": -0.9626,
+      "dy": 0.6103
+    },
+    "sheet-paper": {
+      "dx": 0.2934,
+      "dy": -0.4129
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/brand-voice/localhost-brand-voice-famous-brands.webp"
+  ]
+}

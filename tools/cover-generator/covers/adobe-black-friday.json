@@ -1,0 +1,72 @@
+{
+  "layout": "collage",
+  "title": "Adobe Black Friday",
+  "category": "",
+  "seed": "adobe-black-friday-coyz2",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "rose",
+  "tweaks": {
+    "extra-mwm5tnrr-izlsk": {
+      "dx": -0.7276,
+      "dy": -0.084,
+      "hidden": true
+    },
+    "extra-mwm5tnbb-ypjzg": {
+      "dx": -0.6843,
+      "dy": 0.3091,
+      "hidden": true
+    },
+    "extra-mwm5tmdb-lgzo4": {
+      "dx": 0.6644,
+      "dy": 0.3734,
+      "hidden": true
+    },
+    "sheet-colour": {
+      "hidden": true
+    },
+    "photo-0": {
+      "dx": 0.6884,
+      "dy": -0.0215,
+      "treatment": "color",
+      "scale": 1.93,
+      "z": -1
+    },
+    "sheet-strip": {
+      "dx": 0.3041,
+      "dy": -0.5213
+    },
+    "sheet-paper": {
+      "dx": -0.9215,
+      "dy": 0.5664
+    }
+  },
+  "extras": [
+    {
+      "id": "extra-mwm5tmdb-lgzo4",
+      "kind": "loops"
+    },
+    {
+      "id": "extra-mwm5tnbb-ypjzg",
+      "kind": "loops"
+    },
+    {
+      "id": "extra-mwm5tnrr-izlsk",
+      "kind": "curve"
+    }
+  ],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/adobe-black-friday/adobe-media-1fdc690f183b7c240850f77cb94b8196aad831b9c.webp"
+  ]
+}

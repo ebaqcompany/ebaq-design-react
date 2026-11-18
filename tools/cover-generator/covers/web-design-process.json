@@ -1,0 +1,59 @@
+{
+  "layout": "collage",
+  "title": "Web Design Process",
+  "category": "",
+  "seed": "web-design-process",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "dx": -0.2793,
+      "dy": -0.1653,
+      "scale": 1.125,
+      "treatment": "color"
+    },
+    "sheet-paper": {
+      "dx": -0.3019,
+      "dy": 0.0741
+    },
+    "hero": {
+      "dx": 0.0021,
+      "dy": -0.0825,
+      "hidden": true
+    },
+    "sheet-strip": {
+      "dx": -0.0793,
+      "dy": -0.1703
+    },
+    "dots": {
+      "dx": -0.0045,
+      "dy": -0.0243
+    },
+    "extra-mwm9b4wt-l6s7n": {
+      "dx": -0.038,
+      "dy": -0.3665,
+      "rot": -2.74
+    }
+  },
+  "extras": [
+    {
+      "id": "extra-mwm9b4wt-l6s7n",
+      "kind": "arrow"
+    }
+  ],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/web-design-process/localhost-01-cover.webp"
+  ]
+}

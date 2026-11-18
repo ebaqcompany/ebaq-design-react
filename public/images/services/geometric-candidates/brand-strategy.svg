@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+<title>Brand Strategy — audience, positioning, direction</title>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="audience-card">
+    <rect x="150" y="230" width="280" height="320" rx="8" fill="#00AFEC"/>
+    <circle cx="290" cy="342" r="43" fill="#fff"/>
+    <path d="M212 480v-16a78 78 0 0 1 156 0v16Z" fill="#fff"/>
+  </g>
+  <g id="positioning">
+    <path d="M590 220 750 380 590 540 430 380Z" fill="#fff"/>
+    <path d="M550 380h80M590 340v80"/>
+  </g>
+  <g id="direction-card">
+    <rect x="580" y="650" width="350" height="190" rx="8" fill="#00AFEC"/>
+    <path d="M625 695h72v100h-72Z" fill="#fff"/>
+    <path d="m641 746 14 14 26-34M731 705h151M731 744h151M731 783h104"/>
+  </g>
+  <g id="connections">
+    <path d="M750 380h95v200"/>
+    <path d="m830 559 15 21 15-21"/>
+    <path d="M290 550v195h210"/>
+    <path d="m479 730 21 15-21 15"/>
+  </g>
+</g>
+</svg>

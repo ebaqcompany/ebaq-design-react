@@ -21,7 +21,7 @@ export const portfolio22Services = [
   },
 ];
 
-export type PreviewItem = { label: string; image: { src: string; alt?: string; poster?: string } };
+export type PreviewItem = { label: string; description?: string; image: { src: string; alt?: string; poster?: string } };
 
 type Layout350PreviewProps = {
   id?: string;
@@ -99,6 +99,7 @@ export const Layout350Preview = ({ id, idPrefix = "portfolio22-service", eyebrow
                   <button
                     id={`${idPrefix}-trigger-${index}`}
                     type="button"
+                    aria-describedby={item.description ? `${idPrefix}-description-${index}` : undefined}
                     aria-expanded={isMobile ? isExpanded : undefined}
                     aria-controls={isMobile ? `${idPrefix}-panel-${index}` : undefined}
                     aria-label={isMobile ? `${isExpanded ? "Hide" : "Show"} ${item.label} preview` : `Preview ${item.label}`}
@@ -128,6 +129,7 @@ export const Layout350Preview = ({ id, idPrefix = "portfolio22-service", eyebrow
                   >
                     <span className="heading-h4 block">{item.label}</span>
                   </button>
+                  {item.description && <p id={`${idPrefix}-description-${index}`} className="mt-2 text-white/80">{item.description}</p>}
                   {isExpanded && (
                     <div
                       id={`${idPrefix}-panel-${index}`}

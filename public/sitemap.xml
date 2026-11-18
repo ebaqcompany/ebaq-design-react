@@ -55,6 +55,9 @@
     <loc>https://www.ebaqdesign.com/brand-sprint</loc>
   </url>
   <url>
+    <loc>https://www.ebaqdesign.com/design-monthly</loc>
+  </url>
+  <url>
     <loc>https://www.ebaqdesign.com/services</loc>
   </url>
   <url>
@@ -134,6 +137,54 @@
   </url>
   <url>
     <loc>https://www.ebaqdesign.com/locations</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/framer-vs-webflow</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/framer-vs-wordpress</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/framer-vs-wix</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/framer-vs-nextjs</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/webflow-vs-wordpress</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/webflow-vs-wix</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/webflow-vs-nextjs</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/astro-vs-framer</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/astro-vs-webflow</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/astro-vs-wordpress</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/framer-vs-hubspot</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/framer-vs-shopify</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/framer-vs-squarespace</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/webflow-vs-hubspot</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/webflow-vs-shopify</loc>
+  </url>
+  <url>
+    <loc>https://www.ebaqdesign.com/compare/webflow-vs-squarespace</loc>
   </url>
   <url>
     <loc>https://www.ebaqdesign.com/glossary/brand</loc>
@@ -275,54 +326,6 @@
   </url>
   <url>
     <loc>https://www.ebaqdesign.com/glossary/nextjs</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/framer-vs-webflow</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/framer-vs-wordpress</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/framer-vs-wix</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/framer-vs-nextjs</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/webflow-vs-wordpress</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/webflow-vs-wix</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/webflow-vs-nextjs</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/astro-vs-framer</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/astro-vs-webflow</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/astro-vs-wordpress</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/framer-vs-hubspot</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/framer-vs-shopify</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/framer-vs-squarespace</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/webflow-vs-hubspot</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/webflow-vs-shopify</loc>
-  </url>
-  <url>
-    <loc>https://www.ebaqdesign.com/compare/webflow-vs-squarespace</loc>
   </url>
   <url>
     <loc>https://www.ebaqdesign.com/work/nathalie-sadler</loc>
@@ -578,7 +581,7 @@
   </url>
   <url>
     <loc>https://www.ebaqdesign.com/blog/brand-refresh</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://www.ebaqdesign.com/blog/brand-story</loc>
@@ -650,7 +653,7 @@
   </url>
   <url>
     <loc>https://www.ebaqdesign.com/blog/cannabis-branding</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://www.ebaqdesign.com/blog/cannabis-branding-agencies</loc>

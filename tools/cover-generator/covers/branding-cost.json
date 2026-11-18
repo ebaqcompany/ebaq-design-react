@@ -1,0 +1,61 @@
+{
+  "layout": "collage",
+  "title": "Branding Cost",
+  "category": "",
+  "seed": "branding-cost",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-noise": {
+      "dx": -0.3555,
+      "dy": -0.1645
+    },
+    "sheet-colour": {
+      "dx": -0.2062,
+      "dy": -0.1273,
+      "hidden": true
+    },
+    "photo-0": {
+      "dx": 0.6595,
+      "dy": 0.3452,
+      "treatment": "color"
+    },
+    "sheet-strip": {
+      "dx": -1.2156,
+      "dy": -0.215
+    },
+    "sheet-paper": {
+      "dx": 0.3845,
+      "dy": -0.5705
+    },
+    "dots": {
+      "dx": -0.0443,
+      "dy": -0.009
+    },
+    "extra-mwm9dx6a-4z0z3": {
+      "dx": -0.1243,
+      "dy": -0.3121
+    }
+  },
+  "extras": [
+    {
+      "id": "extra-mwm9dx6a-4z0z3",
+      "kind": "zigzag"
+    }
+  ],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/branding-cost/encrypted-tbn0-images.jpg"
+  ]
+}

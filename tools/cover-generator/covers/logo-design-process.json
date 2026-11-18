@@ -1,0 +1,45 @@
+{
+  "layout": "collage",
+  "title": "Logo Design Process",
+  "category": "",
+  "seed": "logo-design-process",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "dx": -0.4492,
+      "dy": -0.176,
+      "treatment": "color"
+    },
+    "sheet-colour": {
+      "dx": -0.3187,
+      "dy": 0.2679
+    },
+    "photo-1": {
+      "dx": 0.9789,
+      "dy": 0.1933,
+      "treatment": "color"
+    },
+    "sheet-paper": {
+      "dx": -0.7004,
+      "dy": 0.1278
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/logo-design-process/localhost-logo-design-process-bg-172b99.webp",
+    "/tools/cover-generator/assets/logo-design-process/localhost-arek-brainstorming.webp"
+  ]
+}

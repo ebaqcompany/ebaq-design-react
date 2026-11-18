@@ -29,6 +29,13 @@ export const BlogPage = () => {
     };
   }, []);
 
+  const showCoverPreview = import.meta.env.DEV && typeof window !== "undefined" && new URLSearchParams(window.location.search).get("cover-preview") === "figma";
+  const previewPosts: BlogPostSummary[] = showCoverPreview ? [{
+    slug: "local-figma-cover-preview", url: "#blog-results", title: "SaaS Website Design Cost (2026 Breakdown)",
+    description: "Local cover preview", category: "Pricing", categorySlug: "pricing", readTime: "", date: "Nov 13, 2026",
+    image: { src: "/local-preview/figma-saas-cover.png", alt: "SaaS website design cost cover preview" },
+  }, ...posts] : posts;
+
   return (
     <div className="relative bg-white">
       <Helmet>
@@ -38,7 +45,7 @@ export const BlogPage = () => {
         <script type="application/ld+json">{serializeJsonLd(buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }], siteUrl))}</script>
       </Helmet>
       <Navbar16 />
-      <main><Blog2 blogPosts={posts} /></main>
+      <main><Blog2 blogPosts={previewPosts} /></main>
       <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
     </div>
   );

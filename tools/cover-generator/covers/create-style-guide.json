@@ -1,0 +1,49 @@
+{
+  "layout": "collage",
+  "title": "Create Style Guide",
+  "category": "",
+  "seed": "create-style-guide",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "dx": -0.7677,
+      "dy": -0.3573,
+      "treatment": "color",
+      "scale": 1.181
+    },
+    "hero": {
+      "dx": 0.6733,
+      "dy": 0.005
+    },
+    "sheet-strip": {
+      "dx": 0.0114,
+      "dy": 0.0725,
+      "hidden": true
+    },
+    "sheet-paper": {
+      "dx": -0.3851,
+      "dy": 0.661
+    },
+    "dots": {
+      "dx": 0.0547,
+      "dy": -0.1006
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/create-style-guide/localhost-create-style-guide-bg.webp"
+  ]
+}

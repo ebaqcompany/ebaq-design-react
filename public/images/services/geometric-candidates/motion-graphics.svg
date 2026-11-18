@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+<title>Motion Graphics — geometric service illustration</title>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><g id="animation-frame"><rect x="180" y="230" width="660" height="440" rx="8" fill="#00AFEC"/><path d="M180 290h660M220 260h90"/><rect x="220" y="330" width="580" height="300" rx="4" fill="#fff"/><path d="M260 565Q370 345 480 565Q580 390 680 565" stroke-dasharray="12 12"/><circle cx="385" cy="455" r="42" fill="#00AFEC"/></g><g id="timeline"><rect x="290" y="710" width="610" height="130" rx="8" fill="#fff"/><path d="m330 745 45 30-45 30Z" fill="#00AFEC"/><path d="M420 775h430M460 755v40M550 755v40M640 755v40M730 755v40M820 755v40"/><path d="m606 730 18 22-18 22-18-22Z" fill="#00AFEC"/><path d="M606 774v44"/></g></g>
+</svg>

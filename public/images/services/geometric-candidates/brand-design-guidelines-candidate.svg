@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+<title>Brand Design — a coordinated brand book, typography specimen, business card, and palette</title>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="brand-book">
+    <rect x="175" y="225" width="365" height="505" rx="8" fill="#00AFEC"/>
+    <path d="M205 225v505M175 695h365"/>
+    <path d="m275 450 60-120 60 120Z" fill="#fff"/>
+    <path d="M260 510h200M260 550h140"/>
+  </g>
+  <g id="typography-specimen">
+    <rect x="475" y="260" width="415" height="215" rx="8" fill="#fff"/>
+    <path d="m520 420 45-115 45 115m-74-35h58M695 420V305h43a28.75 28.75 0 0 1 0 57.5h-43m43 0a28.75 28.75 0 0 1 0 57.5h-43"/>
+  </g>
+  <g id="matching-business-card">
+    <rect x="425" y="515" width="490" height="220" rx="8" fill="#fff"/>
+    <path d="m465 650 40-80 40 80Z" fill="#00AFEC"/>
+    <path d="M585 640v-65l40 65v-65M673 575c-15 0-22 11-22 32.5s7 32.5 22 32.5 22-11 22-32.5-7-32.5-22-32.5Zm48 0 22 65 22-65M790 640l24-65 24 65m-39-21h30"/>
+    <path d="M465 690h155M750 690h120"/>
+  </g>
+  <g id="palette-strip" transform="translate(-35 95)">
+    <rect x="350" y="670" width="510" height="140" rx="8" fill="#fff"/>
+    <path d="M520 670h170v140H520Z" fill="#00AFEC"/>
+    <path d="M690 670h162a8 8 0 0 1 8 8v124a8 8 0 0 1-8 8H690Z" fill="#000"/>
+  </g>
+</g>
+</svg>

@@ -97,6 +97,7 @@ const config: IndustryLandingConfig = {
       { question: "Do Framer sites rank on Google?", answer: "They can. Every page gets its own title and description, and old URLs are redirected at launch so existing links keep working. For a content-heavy site with a large blog, Webflow is usually the better fit.", link: { label: "Framer vs Webflow", href: "/compare/framer-vs-webflow" } },
       { question: "Can you build a Framer site for my existing brand?", answer: "Yes. If the brand is in good shape, the website builds on it. If it needs work first, the one-week Brand Sprint comes before the website, for $3,000." },
       { question: "Can my team edit the site after launch?", answer: "Yes. The site is handed over with the CMS set up and a walkthrough, so your team can update pages, posts, and case studies without a developer. Ongoing design and updates are $10,000 per month." },
+      { question: "What should I check before hiring a Framer designer?", answer: "Review a project with a similar scope and ask who designed and built it. Confirm the pages, CMS, integrations, testing, account ownership, and handoff in the proposal; hosting and third-party fees may be separate.", link: { label: "Fox Berman case study", href: "/work/fox-berman" } },
       { question: "Who will I work with?", answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with ${founder.experience} of experience. You work with me directly from the first call to launch, with no account managers and no junior designers.` },
     ],
   },

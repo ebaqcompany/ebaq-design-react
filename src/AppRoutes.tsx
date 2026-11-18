@@ -22,6 +22,7 @@ const page = (module: string, exportName = 'default'): Page => {
   return Object.assign(Page, { preload })
 }
 
+const AdminPage = page('./components/AdminPage.tsx', 'AdminPage')
 const Home = page('./App.tsx')
 const StartPage = page('./StartPage.tsx')
 const RealEstateBrandingLanding = page('./components/RealEstateBrandingLanding.tsx', 'RealEstateBrandingLanding')
@@ -71,6 +72,7 @@ const WebDesignPage = page('./components/WebDesignPage.tsx', 'WebDesignPage')
 const WebDevelopmentPage = page('./components/WebDevelopmentPage.tsx', 'WebDevelopmentPage')
 const MotionGraphicsPage = page('./components/MotionGraphicsPage.tsx', 'MotionGraphicsPage')
 const BrandSprintPage = page('./components/BrandSprintPage.tsx', 'BrandSprintPage')
+const DesignMonthlyPage = page('./components/DesignMonthlyPage.tsx', 'DesignMonthlyPage')
 const PricingPage = page('./components/PricingPage.tsx', 'PricingPage')
 const CompareIndexPage = page('./components/CompareIndexPage.tsx', 'CompareIndexPage')
 const ComparePage = page('./components/ComparePage.tsx', 'ComparePage')
@@ -84,6 +86,7 @@ const LegacyGearRedirect = () => {
 type RouteEntry = { path: string; page?: Page; element?: ReactNode }
 
 const routes: RouteEntry[] = [
+  ...(import.meta.env.DEV ? [{ path: '/admin', page: AdminPage }] : []),
   { path: '/', page: Home },
   { path: '/start', page: StartPage },
   { path: '/law-firm-branding', page: LawFirmLanding },
@@ -120,6 +123,7 @@ const routes: RouteEntry[] = [
   { path: '/tools/brand-templates', page: BrandTemplatesPage },
   { path: '/pricing', page: PricingPage },
   { path: '/brand-sprint', page: BrandSprintPage },
+  { path: '/design-monthly', page: DesignMonthlyPage },
   { path: '/services', page: ServicesPage },
   { path: '/services/brand-strategy', page: BrandStrategyPage },
   { path: '/services/logo-design', page: LogoDesignPage },

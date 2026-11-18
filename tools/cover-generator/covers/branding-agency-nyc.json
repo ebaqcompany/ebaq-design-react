@@ -1,0 +1,83 @@
+{
+  "layout": "collage",
+  "title": "Branding Agency Nyc",
+  "category": "",
+  "seed": "branding-agency-nyc",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "treatment": "color",
+      "dx": -1.0097,
+      "dy": -0.0603,
+      "hidden": true
+    },
+    "dots": {
+      "dx": -0.0081,
+      "dy": 0.0081,
+      "scale": 0.946
+    },
+    "hero": {
+      "dx": 0.3034,
+      "dy": 0.1339,
+      "hidden": true
+    },
+    "photo-1": {
+      "dx": 0.9747,
+      "dy": 0.0591,
+      "treatment": "color",
+      "scale": 1.317
+    },
+    "sheet-strip": {
+      "dx": -0.1998,
+      "dy": 0.1651,
+      "z": 6
+    },
+    "sheet-paper": {
+      "dx": 0.2329,
+      "dy": 0.4656
+    },
+    "photo-2": {
+      "dx": -0.0236,
+      "dy": -0.4448,
+      "treatment": "color",
+      "scale": 1.859
+    },
+    "extra-mwm6lsm4-nfcrd": {
+      "dx": 0.1199,
+      "dy": -0.3802,
+      "hidden": true
+    },
+    "extra-mwm6lymb-6bp80": {
+      "dx": -0.0033,
+      "dy": -0.3442
+    }
+  },
+  "extras": [
+    {
+      "id": "extra-mwm6lsm4-nfcrd",
+      "kind": "zigzag"
+    },
+    {
+      "id": "extra-mwm6lymb-6bp80",
+      "kind": "star"
+    }
+  ],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/branding-agency-nyc/media-asian-graphic-designer-working-in-office-artist-creative-designer-illustrator-graphic-skill.jpg",
+    "/tools/cover-generator/assets/branding-agency-nyc/media-asian-graphic-designer-working-in-office-artist-creative-designer-illustrator-graphic-skill.jpg",
+    "/tools/cover-generator/assets/branding-agency-nyc/media-diverse-team-of-professional-businesspeople-meeting-in-the-office-conference-room-creative.jpg"
+  ]
+}

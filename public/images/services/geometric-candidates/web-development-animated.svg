@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" data-illustration="web-development">
+<title>Web Development — geometric service illustration</title>
+<style>
+/* Five-second cycle. Reference Agents: 60fps, clicks at frames 62 and 140,
+   86% cursor press; outline offsets over 12 frames, return over 26 frames.
+   Geometry/fills remain independent and stationary. */
+[data-illustration="web-development"] .cursor-move { animation: web-development-cursor-move 5s cubic-bezier(.65,0,.35,1) infinite; }
+[data-illustration="web-development"] .cursor-press-geometry { animation: web-development-cursor-press 5s linear infinite; }
+[data-illustration="web-development"] .outline-1 { animation: web-development-outline-1 5s linear infinite; }
+[data-illustration="web-development"] .outline-2 { animation: web-development-outline-2 5s linear infinite; }
+@keyframes web-development-cursor-move {
+  0%,2% { transform:translate(890px,795px); }
+  20.6667%,32% { transform:translate(430px,460px); }
+  46.6667%,69.3333% { transform:translate(800px,560px); }
+  100% { transform:translate(890px,795px); }
+}
+@keyframes web-development-cursor-press {
+  0%,20.6667%,26.6667%,46.6667%,52.6667%,100% { d:path("M0 0 25.000000000 91.000000000 45.000000000 59.000000000 81.000000000 52.000000000Z"); }
+  22.3333%,48.3333% { d:path("M0 0 21.500000000 78.260000000 38.700000000 50.740000000 69.660000000 44.720000000Z"); }
+}
+@keyframes web-development-outline-1 {
+  0%,21.3333% {transform:translate(0,0);animation-timing-function:cubic-bezier(.22,1,.36,1)}
+  25.3333%,34.6667% {transform:translate(-10px,-10px);animation-timing-function:cubic-bezier(.65,0,.35,1)}
+  43.3333%,100% {transform:translate(0,0)}
+}
+@keyframes web-development-outline-2 {
+  0%,47.3333% {transform:translate(0,0);animation-timing-function:cubic-bezier(.22,1,.36,1)}
+  51.3333%,60.6667% {transform:translate(-10px,-10px);animation-timing-function:cubic-bezier(.65,0,.35,1)}
+  69.3333%,100% {transform:translate(0,0)}
+}
+@media(prefers-reduced-motion:reduce) {
+ [data-illustration="web-development"] .cursor-move {transform:translate(800px,560px)}
+}
+@media(prefers-reduced-motion:reduce){[data-illustration="web-development"] .cursor-move,[data-illustration="web-development"] .cursor-press-geometry,[data-illustration="web-development"] .outline-1,[data-illustration="web-development"] .outline-2{animation:none}}</style><g stroke="#000" stroke-width="5.651162790698" stroke-linecap="round" stroke-linejoin="round"><g id="code-editor"><rect x="140" y="260" width="510" height="420" rx="8" fill="#00AFEC" stroke="none" id="code-editor-stationary-fill-0" /><rect x="180" y="360" width="430" height="210" rx="4" fill="#fff" stroke="none" id="code-editor-stationary-fill-2" /><g id="code-editor-all-linework" class="outline-1"><rect x="140" y="260" width="510" height="420" rx="8" fill="none" /><path d="M140 320h510M180 290h80M560 290h50" /><rect x="180" y="360" width="430" height="210" rx="4" fill="none" /><path d="m285 420-45 45 45 45m220-90 45 45-45 45m-90-105-40 120M180 615h140M350 615h90" /></g></g><g id="responsive-output"><rect x="710" y="400" width="210" height="390" rx="18" fill="#fff" stroke="none" id="responsive-output-stationary-fill-0" /><rect x="740" y="480" width="150" height="160" fill="#00AFEC" stroke="none" id="responsive-output-stationary-fill-2" /><g id="responsive-output-all-linework" class="outline-2"><rect x="710" y="400" width="210" height="390" rx="18" fill="none" /><path d="M780 430h70" /><rect x="740" y="480" width="150" height="160" fill="none" /><path d="M740 680h150M740 720h100" /></g></g><g id="connection"><path d="M650 570h40m-20-15 20 15-20 15" /></g><g id="interaction-cursor" class="cursor-move"><g class="cursor-press"><path class="cursor-press-geometry" d="M0 0 25 91 45 59 81 52Z" fill="#fff" /></g></g></g>
+</svg>

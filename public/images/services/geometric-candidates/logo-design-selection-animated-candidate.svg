@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" data-illustration="logo-toolbar">
+<title>Logo Design — shape toolbar and NOVA artboard</title>
+<desc>A portrait toolbar with circle, text, and grid tools. A horizontal shape flyout extends right. A separate white artboard below holds a blue circle and the typed NOVA wordmark.</desc>
+<defs><clipPath id="toolbar-flyout-clip"><rect class="flyout-reveal" x="277" y="267" width="366" height="166" /></clipPath></defs>
+<style>
+[data-illustration="logo-toolbar"] .flyout-reveal{animation:toolbar-open 6s cubic-bezier(.2,0,0,1) infinite}
+@keyframes toolbar-open{0%,5%,80%,100%{width:0}10%,75%{width:366px}}
+[data-illustration="logo-toolbar"] .typed-n{animation:toolbar-n 6s steps(1,end) infinite}
+[data-illustration="logo-toolbar"] .typed-o{animation:toolbar-o 6s steps(1,end) infinite}
+[data-illustration="logo-toolbar"] .typed-v{animation:toolbar-v 6s steps(1,end) infinite}
+[data-illustration="logo-toolbar"] .typed-a{animation:toolbar-a 6s steps(1,end) infinite}
+[data-illustration="logo-toolbar"] .typing-caret{animation:toolbar-caret 6s steps(1,end) infinite}
+@keyframes toolbar-n{0%,96.6667%,100%{opacity:0}20%{opacity:1}}
+@keyframes toolbar-o{0%,96.6667%,100%{opacity:0}23.3333%{opacity:1}}
+@keyframes toolbar-v{0%,96.6667%,100%{opacity:0}26.6667%{opacity:1}}
+@keyframes toolbar-a{0%,96.6667%,100%{opacity:0}30%{opacity:1}}
+@keyframes toolbar-caret{0%,96.6667%,100%{transform:translateX(0)}20%{transform:translateX(100px)}23.3333%{transform:translateX(225px)}26.6667%{transform:translateX(345px)}30%{transform:translateX(500px)}}
+@media(prefers-reduced-motion:reduce){[data-illustration="logo-toolbar"] *{animation:none}[data-illustration="logo-toolbar"] .typing-caret{transform:translateX(500px)}}
+</style>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="shape-flyout" clip-path="url(#toolbar-flyout-clip)">
+    <rect x="280" y="270" width="360" height="160" fill="#fff" />
+    <path d="m350 390 45-80 45 80Z" fill="#fff" />
+    <rect x="510" y="310" width="80" height="80" fill="#fff" />
+  </g>
+  <g id="portrait-toolbar">
+    <rect x="130" y="270" width="150" height="550" fill="#fff" />
+    <circle cx="205" cy="350" r="42" fill="#00AFEC" />
+    <path id="text-tool" d="M170 505h70m-35 0v90" />
+    <path id="grid-tool" d="M184 672v82m42-82v82m-62-61h82m-82 40h82" />
+  </g>
+  <g id="logo-artboard">
+    <rect x="350" y="530" width="630" height="250" fill="#fff" />
+    <g transform="translate(265 155) scale(.75)" stroke-width="8">
+      <circle cx="245" cy="670" r="55" fill="#00AFEC" />
+      <g id="name-lettering" stroke-width="8">
+      <path d="M360 725V605l75 120V605" class="typed-n" />
+      <path d="M520 605c-27 0-40 20-40 60s13 60 40 60 40-20 40-60-13-60-40-60Z" class="typed-o" />
+      <path d="m600 605 40 120 40-120" class="typed-v" />
+    <path class="typed-a" d="M715 725l45-120 45 120m-73-40h56" /></g>
+      <path class="typing-caret" d="M350 595v145" />
+    </g>
+  </g>
+</g>
+</svg>

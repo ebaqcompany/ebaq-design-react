@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" data-illustration="logo-digitize">
+<title>Logo Design — from pencil sketch to digital ABC logo</title>
+<desc>A pencil draws a clockwise circle from the bottom and two text lines on landscape paper. A yellow dot transfers the sketch along an arrow to a blue digital panel, where a finished circle and ABC appear.</desc>
+<defs><mask id="sketch-circle-reveal" maskUnits="userSpaceOnUse" x="210" y="340" width="140" height="140"><path class="circle-reveal" d="M280 470 C246.863 470 220 443.137 220 410 C220 376.863 246.863 350 280 350 C313.137 350 340 376.863 340 410 C340 443.137 313.137 470 280 470" pathLength="1" stroke="white" stroke-width="12" stroke-dasharray="1" /></mask></defs>
+<style>
+[data-illustration="logo-digitize"] .circle-reveal{animation:ld-reveal 8s linear infinite}
+[data-illustration="logo-digitize"] .sketch-dotted{animation:ld-dotted 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .sketch-solid{animation:ld-solid 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .pencil-position{animation:ld-pencil 8s linear infinite}
+[data-illustration="logo-digitize"] .pencil-visibility{animation:ld-pencil-show 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .text-line-one{animation:ld-line-one 8s linear infinite}
+[data-illustration="logo-digitize"] .text-line-two{animation:ld-line-two 8s linear infinite}
+[data-illustration="logo-digitize"] .transfer-dot{animation:ld-transfer 8s linear infinite}
+[data-illustration="logo-digitize"] .digital-result{transform-origin:805px 480px;animation:ld-result 8s cubic-bezier(.22,1,.36,1) infinite}
+[data-illustration="logo-digitize"] .letter-a{animation:ld-a 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .letter-b{animation:ld-b 8s steps(1,end) infinite}
+[data-illustration="logo-digitize"] .letter-c{animation:ld-c 8s steps(1,end) infinite}
+@keyframes ld-reveal{0%,5%,96%,100%{stroke-dashoffset:1}30%,95.999%{stroke-dashoffset:0}}
+@keyframes ld-dotted{0%,96%,100%{opacity:1}30%{opacity:0}}
+@keyframes ld-solid{0%,96%,100%{opacity:0}30%{opacity:1}}
+@keyframes ld-pencil{0%,5%{transform:translate(280px,470px)}5.390625%{transform:translate(273.8654px,469.6902px)}5.781250%{transform:translate(267.9079px,468.7810px)}6.171875%{transform:translate(262.1579px,467.3025px)}6.562500%{transform:translate(256.6453px,465.2849px)}6.953125%{transform:translate(251.4005px,462.7583px)}7.343750%{transform:translate(246.4535px,459.7529px)}7.734375%{transform:translate(241.8345px,456.2989px)}8.125000%{transform:translate(237.5736px,452.4264px)}8.515625%{transform:translate(233.7011px,448.1655px)}8.906250%{transform:translate(230.2471px,443.5465px)}9.296875%{transform:translate(227.2417px,438.5995px)}9.687500%{transform:translate(224.7151px,433.3547px)}10.078125%{transform:translate(222.6975px,427.8421px)}10.468750%{transform:translate(221.2190px,422.0921px)}10.859375%{transform:translate(220.3098px,416.1346px)}11.250000%{transform:translate(220.0000px,410.0000px)}11.640625%{transform:translate(220.3098px,403.8654px)}12.031250%{transform:translate(221.2190px,397.9079px)}12.421875%{transform:translate(222.6975px,392.1579px)}12.812500%{transform:translate(224.7151px,386.6453px)}13.203125%{transform:translate(227.2417px,381.4005px)}13.593750%{transform:translate(230.2471px,376.4535px)}13.984375%{transform:translate(233.7011px,371.8345px)}14.375000%{transform:translate(237.5736px,367.5736px)}14.765625%{transform:translate(241.8345px,363.7011px)}15.156250%{transform:translate(246.4535px,360.2471px)}15.546875%{transform:translate(251.4005px,357.2417px)}15.937500%{transform:translate(256.6453px,354.7151px)}16.328125%{transform:translate(262.1579px,352.6975px)}16.718750%{transform:translate(267.9079px,351.2190px)}17.109375%{transform:translate(273.8654px,350.3098px)}17.500000%{transform:translate(280.0000px,350.0000px)}17.890625%{transform:translate(286.1346px,350.3098px)}18.281250%{transform:translate(292.0921px,351.2190px)}18.671875%{transform:translate(297.8421px,352.6975px)}19.062500%{transform:translate(303.3547px,354.7151px)}19.453125%{transform:translate(308.5995px,357.2417px)}19.843750%{transform:translate(313.5465px,360.2471px)}20.234375%{transform:translate(318.1655px,363.7011px)}20.625000%{transform:translate(322.4264px,367.5736px)}21.015625%{transform:translate(326.2989px,371.8345px)}21.406250%{transform:translate(329.7529px,376.4535px)}21.796875%{transform:translate(332.7583px,381.4005px)}22.187500%{transform:translate(335.2849px,386.6453px)}22.578125%{transform:translate(337.3025px,392.1579px)}22.968750%{transform:translate(338.7810px,397.9079px)}23.359375%{transform:translate(339.6902px,403.8654px)}23.750000%{transform:translate(340.0000px,410.0000px)}24.140625%{transform:translate(339.6902px,416.1346px)}24.531250%{transform:translate(338.7810px,422.0921px)}24.921875%{transform:translate(337.3025px,427.8421px)}25.312500%{transform:translate(335.2849px,433.3547px)}25.703125%{transform:translate(332.7583px,438.5995px)}26.093750%{transform:translate(329.7529px,443.5465px)}26.484375%{transform:translate(326.2989px,448.1655px)}26.875000%{transform:translate(322.4264px,452.4264px)}27.265625%{transform:translate(318.1655px,456.2989px)}27.656250%{transform:translate(313.5465px,459.7529px)}28.046875%{transform:translate(308.5995px,462.7583px)}28.437500%{transform:translate(303.3547px,465.2849px)}28.828125%{transform:translate(297.8421px,467.3025px)}29.218750%{transform:translate(292.0921px,468.7810px)}29.609375%{transform:translate(286.1346px,469.6902px)}30.000000%{transform:translate(280.0000px,470.0000px)}35%{transform:translate(200px,510px)}40%{transform:translate(360px,510px)}43.75%{transform:translate(200px,540px)}47.5%,96%{transform:translate(320px,540px)}100%{transform:translate(280px,470px)}}
+@keyframes ld-pencil-show{0%,96%,100%{opacity:1}50%{opacity:0}}
+@keyframes ld-line-one{0%,35%,96%,100%{stroke-dashoffset:1}40%,95.999%{stroke-dashoffset:0}}
+@keyframes ld-line-two{0%,43.75%,96%,100%{stroke-dashoffset:1}47.5%,95.999%{stroke-dashoffset:0}}
+@keyframes ld-transfer{0%,49.999%{opacity:0;transform:translate(510px,510px)}50%{opacity:1;transform:translate(510px,510px)}57.5%{opacity:1;transform:translate(625px,510px)}57.501%,100%{opacity:0;transform:translate(625px,510px)}}
+@keyframes ld-result{0%,57.499%,96%,100%{opacity:0;transform:rotate(0deg) scale(1)}57.5%{opacity:1;transform:rotate(0deg) scale(1)}60%{opacity:1;transform:rotate(-6deg) scale(1.09);animation-timing-function:cubic-bezier(.65,0,.35,1)}65.4167%,95.999%{opacity:1;transform:rotate(0deg) scale(1)}}
+@keyframes ld-a{0%,96%,100%{opacity:0}66.25%{opacity:1}}
+@keyframes ld-b{0%,96%,100%{opacity:0}70%{opacity:1}}
+@keyframes ld-c{0%,96%,100%{opacity:0}73.75%{opacity:1}}
+@media(prefers-reduced-motion:reduce){[data-illustration="logo-digitize"] *{animation:none}[data-illustration="logo-digitize"] .sketch-dotted,[data-illustration="logo-digitize"] .pencil-visibility,[data-illustration="logo-digitize"] .transfer-dot{opacity:0}}
+</style>
+<g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+ <g id="landscape-sketch-paper"><rect x="110" y="310" width="390" height="300" rx="8" fill="#fff"/>
+ <path class="sketch-dotted" d="M280 470 C246.863 470 220 443.137 220 410 C220 376.863 246.863 350 280 350 C313.137 350 340 376.863 340 410 C340 443.137 313.137 470 280 470" stroke-dasharray="5 10" mask="url(#sketch-circle-reveal)"/>
+ <path class="sketch-solid" d="M280 470 C246.863 470 220 443.137 220 410 C220 376.863 246.863 350 280 350 C313.137 350 340 376.863 340 410 C340 443.137 313.137 470 280 470"/>
+ <path class="text-line-one" d="M200 510h160" pathLength="1" stroke-dasharray="1"/>
+ <path class="text-line-two" d="M200 540h120" pathLength="1" stroke-dasharray="1"/></g>
+ <g id="digitization-arrow"><path d="M500 510h125m-18-14 18 14-18 14"/><circle class="transfer-dot" r="10" fill="#FED440" stroke="none"/></g>
+ <g id="digital-panel"><rect x="640" y="350" width="330" height="300" rx="8" fill="#00AFEC"/>
+ <g class="digital-result"><circle cx="805" cy="440" r="48" fill="#fff"/>
+ <g id="abc-wordmark"><path class="letter-a" d="m717 575 23-60 23 60m-37-20h28"/>
+ <path class="letter-b" d="M785 575v-60h20c30 0 30 30 0 30h-20m20 0c30 0 30 30 0 30h-20"/>
+ <path class="letter-c" d="M891 523c-8-11-36-14-36 22s28 33 36 22"/></g></g></g>
+ <g class="pencil-visibility"><g class="pencil-position"><g id="drawing-pencil"><path d="M0 0 12-42 103-133 133-103 42-12Z" fill="#00AFEC"/><path d="m12-42 30 30M88-118l30 30"/><path d="M0 0 5-17 17-5Z" fill="#000"/></g></g></g>
+</g></svg>

@@ -1,0 +1,6 @@
+{
+  "wordpress-vs-webflow-vs-framer": { "layout": "plain", "ground": "blue", "logos": ["wordpress", "webflow", "framer"], "title": "WordPress vs Webflow vs Framer" },
+  "branding-agencies-one-week": { "layout": "split", "images": ["/public/images/blog/branding-agencies-one-week/cover-cyclist.webp"] },
+  "kimi-k3-vs-web-designer": { "layout": "silhouette", "images": ["/public/images/blog/branding-agencies-one-week/cover-cyclist.webp"], "logos": ["figma", "webflow", "framer", "adobe", "openai", "anthropic", "vercel"] },
+  "website-builders": { "layout": "torn", "logos": ["framer", "webflow", "wix", "squarespace"] }
+}

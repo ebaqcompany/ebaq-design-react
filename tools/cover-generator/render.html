@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Cover renderer (headless)</title>
+<style>
+  @font-face { font-family: "Roboto Condensed"; font-weight: 600; src: url("/node_modules/@fontsource/roboto-condensed/files/roboto-condensed-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Roboto Mono"; font-weight: 500; src: url("/node_modules/@fontsource/roboto-mono/files/roboto-mono-latin-500-normal.woff2") format("woff2"); }
+  body { margin: 0; background: #fff; }
+</style>
+</head>
+<body>
+<script type="module">
+import { renderCover, loadAssets } from './cover.js'
+await document.fonts.load('600 40px "Roboto Condensed"')
+await document.fonts.load('500 20px "Roboto Mono"')
+window.renderBoth = async (spec) => {
+  const assets = await loadAssets({ logos: spec.logos ?? [], images: spec.images ?? [], shape: spec.shape ?? null })
+  const out = {}
+  for (const [name, size] of [['cover', { w: 1920, h: 1080 }], ['og', { w: 1200, h: 630 }]]) {
+    const c = document.createElement('canvas')
+    renderCover(c, spec, assets, size)
+    out[name] = c.toDataURL('image/png')
+  }
+  return out
+}
+window.coverReady = true
+</script>
+</body>
+</html>

@@ -144,6 +144,7 @@ function treat(img, mode, w, h, u, seed, { ink = '#000000', paperTone = '#FFFFFF
     c.getContext('2d', { willReadFrequently: true }).drawImage(img, (cw - iw * s) / 2, (ch - ih * s) / 2, iw * s, ih * s)
   }
   const out = makeCanvas(w, h); const o = out.getContext('2d')
+  if (mode === 'color') { draw(out, w, h); m.set(key, out); return out }
   const [ir, ig, ib] = hex(ink), [pr, pg, pb] = hex(paperTone)
   const read = (c) => {
     const x = c.getContext('2d', { willReadFrequently: true })
@@ -289,7 +290,7 @@ export function composeCollage(ctx, raw, assets, W, H) {
   const n = photos.length + logos.length
   const spec = {
     layout: 'collage', title, category: raw.category ?? '', seed,
-    ground: auto(raw.ground) ? roll.ground : raw.ground,
+    ground: raw.ground === 'deals' ? 'black' : auto(raw.ground) ? roll.ground : raw.ground,
     hero: auto(raw.hero) ? (style === 'overlap' ? 'auto' : roll.hero) : raw.hero,
     titleStyle,
     titlePos: titleStyle === 'none' ? 'none' : auto(raw.titlePos) ? (style === 'cutout' && (n === 0 || n > 6) ? 'center' : roll.side) : raw.titlePos,
@@ -335,7 +336,7 @@ export function composeCollage(ctx, raw, assets, W, H) {
   if (style === 'cutout') photos.forEach((img, i) => {
     if (!role(img, 'bottom')) return
     const { w: iw, h: ih } = srcSize(img), h = (W * ih) / iw, id = `photo-${i}`
-    add({ id, type: 'photo', z: 2.5, cx: W / 2, cy: H - h / 2, w: W, h, draw: (c) => c.drawImage(role(img, 'raw') ? img : treat(img, spec.treat, W, h, u, seed + id, { fit: 'contain' }), -W / 2, -h / 2, W, h) })
+    add({ id, type: 'photo', z: 2.5, cx: W / 2, cy: H - h / 2, w: W, h, draw: (c) => c.drawImage(role(img, 'raw') && !spec.tweaks[id]?.treatment ? img : treat(img, spec.tweaks[id]?.treatment ?? spec.treat, W, h, u, seed + id, { fit: 'contain' }), -W / 2, -h / 2, W, h) })
   })
   if (n && style === 'cutout') {
     const ring = spec.titlePos === 'center'
@@ -510,6 +511,21 @@ export function composeCollage(ctx, raw, assets, W, H) {
   return finish()
 
   function finish() {
+    // User-added marks remain independent editable elements in every layout.
+    for (const mark of raw.extras ?? []) {
+      if (!mark.id || !['arrow', 'curve', 'loops', 'zigzag', 'star', 'cross'].includes(mark.kind)) continue
+      const w = H * 0.22, h = H * 0.18
+      add({ id: mark.id, type: 'scribble', z: 10, cx: W * 0.5, cy: H * 0.5, w, h,
+        draw: (c) => {
+          const color = spec.ground === 'black' ? '#FFFFFF' : '#000000'
+          if (['loops', 'zigzag', 'star'].includes(mark.kind)) return scribble(c, rng(seed, mark.id), mark.kind, w, h, color, H * 0.012)
+          c.save(); c.strokeStyle = color; c.lineWidth = H * 0.012; c.lineCap = 'round'; c.lineJoin = 'round'; c.beginPath()
+          if (mark.kind === 'cross') { c.moveTo(-w*.3,-h*.4); c.lineTo(w*.3,h*.4); c.moveTo(w*.3,-h*.4); c.lineTo(-w*.3,h*.4) }
+          else if (mark.kind === 'arrow') { c.moveTo(-w*.42,h*.3); c.lineTo(w*.38,-h*.3); c.moveTo(w*.1,-h*.35); c.lineTo(w*.38,-h*.3); c.lineTo(w*.32,-h*.02) }
+          else { c.moveTo(w*.34,h*.1); c.bezierCurveTo(w*.05,h*.52,-w*.46,h*.3,-w*.36,-h*.08); c.bezierCurveTo(-w*.28,-h*.42,w*.16,-h*.48,w*.36,-h*.23); c.moveTo(w*.08,-h*.24); c.lineTo(w*.36,-h*.23); c.lineTo(w*.27,-h*.47) }
+          c.stroke(); c.restore()
+        } })
+    }
     // --- apply the per-element tweaks, then order by depth ---
     for (const e of els) {
       const p = spec.place[e.id]; if (!p) continue
@@ -735,7 +751,7 @@ function composeOverlap({ spec, add, seed, u, W, H, photos, logos, g, shape, ox,
   }
   const photo = (id, img, z, [fx, fy, fw, fh], mode, chance) => {
     const w = fw * W * s, h = fh * H * s
-    add({ id, type: 'photo', z, cx: X(fx), cy: Y(fy), w, h, draw: photoBlock(seed, id, img, mode, w, h, u, rips(rng(seed, id + 'e'), spec.decor ? (variantOf(id) ? 0.6 : chance) : 0)) })
+    add({ id, type: 'photo', z, cx: X(fx), cy: Y(fy), w, h, draw: photoBlock(seed, id, img, spec.tweaks[id]?.treatment ?? mode, w, h, u, rips(rng(seed, id + 'e'), spec.decor ? (variantOf(id) ? 0.6 : chance) : 0)) })
   }
   const pa = slot(stack.a), pb = slot(stack.b), swap = r() < 0.4
   const paperTone = pales[0] ?? 'lavender'
@@ -767,12 +783,12 @@ function composeOverlap({ spec, add, seed, u, W, H, photos, logos, g, shape, ox,
     const id = `photo-${i}`, { w: iw, h: ih } = srcSize(img)
     if (role(img, 'bottom')) {
       const h = (W * ih) / iw
-      return add({ id, type: 'photo', z: 2.5, cx: W / 2, cy: H - h / 2, w: W, h, draw: (c) => c.drawImage(role(img, 'raw') ? img : treat(img, spec.treat, W, h, u, seed + id, { fit: 'contain' }), -W / 2, -h / 2, W, h) })
+      return add({ id, type: 'photo', z: 2.5, cx: W / 2, cy: H - h / 2, w: W, h, draw: (c) => c.drawImage(role(img, 'raw') && !spec.tweaks[id]?.treatment ? img : treat(img, spec.tweaks[id]?.treatment ?? spec.treat, W, h, u, seed + id, { fit: 'contain' }), -W / 2, -h / 2, W, h) })
     }
     const k = Math.min((W * 0.26 * s) / iw, (H * 0.5 * s) / ih), w = iw * k, h = ih * k
     const [fx, fy] = corners[i % corners.length]
     add({ id, type: 'photo', z: role(img, 'blue') ? 5 : 2.2, cx: X(fx), cy: Y(fy), rot: 0, w, h,
-      draw: (c) => (role(img, 'blue') ? drawHero(c, rng(seed, id), u, { s: h, tone: g.hero, shape: img }) : role(img, 'raw') ? c.drawImage(img, -w / 2, -h / 2, w, h) : c.drawImage(treat(img, spec.treat, w, h, u, seed + id, { fit: 'contain' }), -w / 2, -h / 2)) })
+      draw: (c) => (role(img, 'blue') ? drawHero(c, rng(seed, id), u, { s: h, tone: g.hero, shape: img }) : role(img, 'raw') && !spec.tweaks[id]?.treatment ? c.drawImage(img, -w / 2, -h / 2, w, h) : c.drawImage(treat(img, spec.tweaks[id]?.treatment ?? spec.treat, w, h, u, seed + id, { fit: 'contain' }), -w / 2, -h / 2)) })
   })
 
   // one flat circle in a secondary colour, tucked against the stack
@@ -813,7 +829,22 @@ export function renderCollage(canvas, raw, assets = {}, size = { w: 1920, h: 108
   const ctx = canvas.getContext('2d', { willReadFrequently: true })
   const W = size.w, H = size.h
   const { spec, els, u, g, tr } = composeCollage(ctx, raw, assets, W, H)
-  if (spec.mat) drawMat(ctx, { x: 0, y: 0, w: W, h: H }, spec.ground, u, rng(spec.seed, 'mat'))
+  if (raw.ground === 'deals') {
+    ctx.fillStyle = g.bg
+    ctx.fillRect(0, 0, W, H)
+    const row = H / 5
+    ctx.save()
+    ctx.font = `600 ${row * 1.05}px "Roboto Condensed", sans-serif`
+    ctx.textBaseline = 'middle'
+    ctx.fillStyle = GROUND.blue.bg
+    const pitch = ctx.measureText('DEALS').width + row * 0.2
+    for (let i = 0; i < 6; i++) {
+      for (let x = -pitch * (i % 2 ? 0.55 : 0.12); x < W; x += pitch) {
+        ctx.fillText('DEALS', x, row * (i + 0.2))
+      }
+    }
+    ctx.restore()
+  } else if (spec.mat) drawMat(ctx, { x: 0, y: 0, w: W, h: H }, spec.ground, u, rng(spec.seed, 'mat'))
   else {
     ctx.fillStyle = g.bg; ctx.fillRect(0, 0, W, H)
     const step = u * g.step

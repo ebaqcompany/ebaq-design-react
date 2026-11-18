@@ -63,11 +63,11 @@ export const PricingPage = () => (
       <Comparison
         heading={"Agency-level work,\nwithout the agency invoice"}
         rows={[
-          { left: "$3,000 per week, flat", right: "$25k–$100k+ per project" },
-          { left: "Brand identity in 1 week, guaranteed", right: "3–9 months or more" },
-          { left: "Total agreed before work starts", right: "Estimates that grow" },
-          { left: "Revisions within agreed scope", right: "Change orders" },
-          { left: "One senior designer, start to finish", right: "Account managers and juniors" },
+          { left: "$3,000 per week, flat", right: "Project fees vary by team and scope" },
+          { left: "Brand identity in 1 week, guaranteed", right: "Timeline depends on the engagement" },
+          { left: "Total agreed before work starts", right: "Check the proposal and change terms" },
+          { left: "Revisions within agreed scope", right: "Ask what revisions are included" },
+          { left: "One senior designer, start to finish", right: "May include several specialists" },
         ]}
       />
       <Faq4 tagline="FAQs" heading="Pricing questions" questions={faqs.map(({ question, answer }) => ({ title: question, answer }))} />

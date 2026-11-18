@@ -1,0 +1,34 @@
+{
+  "brand-strategy": {
+    "url": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/6adb6b129b46430669012268_jasper-platform-experts.json",
+    "sourceVersion": "5.7.4",
+    "fps": 60,
+    "frames": 300,
+    "blueReplacements": 5,
+    "hiddenDecorativeLayers": [
+      "Dot dot_3",
+      "Dot dot_5",
+      "Dot dot_2",
+      "Dot dot_4"
+    ],
+    "navyToBlackReplacements": 25,
+    "displayAspectRatio": "3:2 outer slot; 430:201 intrinsic canvas",
+    "orangeToYellowReplacements": 5
+  },
+  "web-design": {
+    "url": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/6adb6b129b46430669012252_jasper-platform-agents.json",
+    "sourceVersion": "5.7.4",
+    "fps": 60,
+    "frames": 300,
+    "blueReplacements": 3,
+    "hiddenDecorativeLayers": [
+      "Dot dot",
+      "Dot dot_3",
+      "Dot dot_2",
+      "Dot dot_4"
+    ],
+    "navyToBlackReplacements": 21,
+    "displayAspectRatio": "3:2 outer slot; 430:201 intrinsic canvas",
+    "orangeToYellowReplacements": 2
+  }
+}

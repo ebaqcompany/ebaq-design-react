@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" data-illustration="logo-selection">
+<title>Logo Design — select a symbol and type the company name</title>
+<style>
+[data-illustration="logo-selection"] .shape-selection{animation:ls-selection 6s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="logo-selection"] .symbol-circle{animation:ls-circle 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .symbol-triangle{animation:ls-triangle 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .symbol-square{animation:ls-square 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .choice-circle{animation:ls-choice-circle 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .choice-triangle{animation:ls-choice-triangle 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .choice-square{animation:ls-choice-square 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .logo-cursor{animation:ls-cursor 6s cubic-bezier(.65,0,.35,1) infinite}
+[data-illustration="logo-selection"] .logo-press{animation:ls-press 6s linear infinite}
+[data-illustration="logo-selection"] .typed-n{animation:ls-n 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .typed-o{animation:ls-o 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .typed-v{animation:ls-v 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .typed-a{animation:ls-a 6s steps(1,end) infinite}
+[data-illustration="logo-selection"] .typing-caret{animation:ls-caret 6s steps(1,end) infinite}
+@keyframes ls-selection{0%,18.3333%{transform:translate(-275px,0)}20%,46.6667%{transform:translate(0,0)}48.3333%,75%{transform:translate(275px,0)}76.6667%,100%{transform:translate(-275px,0)}}
+@keyframes ls-circle{0%,76.6667%,100%{opacity:1}20%{opacity:0}}
+@keyframes ls-triangle{0%,48.3333%,100%{opacity:0}20%{opacity:1}}
+@keyframes ls-square{0%,76.6667%,100%{opacity:0}48.3333%{opacity:1}}
+@keyframes ls-choice-circle{0%,76.6667%,100%{fill:#00AFEC}20%{fill:#fff}}
+@keyframes ls-choice-triangle{0%,48.3333%,100%{fill:#fff}20%{fill:#00AFEC}}
+@keyframes ls-choice-square{0%,76.6667%,100%{fill:#fff}48.3333%{fill:#00AFEC}}
+@keyframes ls-cursor{0%,5%,100%{transform:translate(315px,430px)}18.3333%,27%{transform:translate(545px,365px)}46.6667%,55%{transform:translate(820px,365px)}75%,83%{transform:translate(270px,365px)}93.3333%{transform:translate(315px,430px)}}
+@keyframes ls-press{0%,18.3333%,22.5%,46.6667%,50.8333%,75%,79.1667%,100%{transform:scale(1)}19.7222%,48.0556%,76.3889%{transform:scale(.86)}}
+@keyframes ls-n{0%,96.6667%,100%{opacity:0}4.1667%{opacity:1}}
+@keyframes ls-o{0%,96.6667%,100%{opacity:0}7.5%{opacity:1}}
+@keyframes ls-v{0%,96.6667%,100%{opacity:0}10.8333%{opacity:1}}
+@keyframes ls-a{0%,96.6667%,100%{opacity:0}14.1667%{opacity:1}}
+@keyframes ls-caret{0%,96.6667%,100%{transform:translateX(0)}4.1667%{transform:translateX(100px)}7.5%{transform:translateX(225px)}10.8333%{transform:translateX(345px)}14.1667%{transform:translateX(500px)}}
+@media(prefers-reduced-motion:reduce){[data-illustration="logo-selection"] *{animation:none}[data-illustration="logo-selection"] .symbol-triangle,[data-illustration="logo-selection"] .symbol-square{opacity:0}[data-illustration="logo-selection"] .choice-circle{fill:#00AFEC}[data-illustration="logo-selection"] .choice-triangle,[data-illustration="logo-selection"] .choice-square{fill:#fff}[data-illustration="logo-selection"] .logo-cursor{transform:translate(270px,365px)}[data-illustration="logo-selection"] .typing-caret{transform:translateX(500px)}}
+</style><g stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="symbol-choices">
+    <circle cx="270" cy="365" r="70" fill="#fff" class="choice-circle" />
+    <path d="m470 435 75-140 75 140Z" fill="#00AFEC" class="choice-triangle" />
+    <rect x="750" y="295" width="140" height="140" fill="#fff" class="choice-square" />
+    <path d="M375 365h45m-16-12 16 12-16 12M650 365h45m-16-12 16 12-16 12" />
+    <g class="shape-selection" id="traveling-shape-selection" transform="translate(-275 0)"><path d="M445 265h200v200H445Z" stroke-dasharray="10 12" stroke-width="3" />
+  </g></g>
+  <g id="symbol-and-name">
+    <rect id="wordmark-artboard" x="140" y="550" width="760" height="240" fill="#fff" />
+    <rect class="symbol-square" x="190" y="615" width="110" height="110" fill="#00AFEC" /><path class="symbol-triangle" d="m190 725 55-110 55 110Z" fill="#00AFEC" /><circle class="symbol-circle" cx="245" cy="670" r="55" fill="#00AFEC" /><g id="name-lettering" stroke-width="10">
+      <path d="M360 725V605l75 120V605" class="typed-n" />
+      <path d="M520 605c-27 0-40 20-40 60s13 60 40 60 40-20 40-60-13-60-40-60Z" class="typed-o" />
+      <path d="m600 605 40 120 40-120" class="typed-v" />
+    <path class="typed-a" d="M715 725l45-120 45 120m-73-40h56" /></g>
+    <path id="typing-caret" d="M350 595v145" class="typing-caret" />
+  </g>
+<g class="logo-cursor" id="shape-picker-cursor"><g class="logo-press"><path d="M0 0 25 91 45 59 81 52Z" fill="#fff" /></g></g></g>
+</svg>

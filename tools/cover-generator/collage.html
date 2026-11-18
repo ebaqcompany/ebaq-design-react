@@ -55,9 +55,9 @@
     <label for="title">Cover title</label>
     <input id="title" type="text" value="" />
 
-    <label>Blue shape</label><div class="seg" data-key="hero" data-options="auto,rect,bust,slab,circle,arrow,burst,none"></div>
-    <label>Ground</label><div class="seg" data-key="ground" data-options="auto,white,blue,black"></div>
-    <label>Photo treatment</label><div class="seg" data-key="imageMode" data-options="auto,grain,halftone,copy,mono,duotone,tint"></div>
+    <details><summary>Extras</summary><p class="hint">Click to add a mark, then drag, resize, rotate or delete it.</p><div class="seg" id="extras"><button type="button" data-extra="arrow">Arrow</button><button type="button" data-extra="curve">Curved arrow</button><button type="button" data-extra="loops">Loops</button><button type="button" data-extra="zigzag">Zigzag</button><button type="button" data-extra="star">Asterisk</button><button type="button" data-extra="cross">X</button></div></details>
+    <label>Ground</label><div class="seg" data-key="ground" data-options="auto,white,blue,black,deals"></div>
+    <label>Photo treatment</label><div class="seg" id="photo-treatment"><button type="button" data-treatment="color" aria-pressed="false">Color</button><button type="button" data-treatment="mono" aria-pressed="false">Mono</button></div><p class="hint" id="treatment-hint">Select a photo to change it, or deselect to change all photos.</p>
     <label>Secondary colours (full, then pale)</label><div class="seg" id="secondary"></div>
     <label>Post-it colour</label><div class="seg" data-key="noteTone" data-options="almond,sand,lavender,rose,mint,white"></div>
 
@@ -76,10 +76,8 @@
     <label for="seed">Seed</label>
     <input id="seed" type="text" value="startup-branding-agencies" />
     <div class="checks">
-      <label><input type="checkbox" id="decor" checked> Extras</label>
-      <label><input type="checkbox" id="mat"> Ruler mat</label>
+        <label><input type="checkbox" id="mat"> Ruler mat</label>
       <label><input type="checkbox" id="plain"> No grid</label>
-      <label><input type="checkbox" id="footer"> Footer</label>
       <label><input type="checkbox" id="grain" checked> Grain</label>
     </div>
     <div class="row"><button class="btn" id="shuffle">Shuffle</button><button class="btn ghost" id="reset">Reset moves</button></div>
@@ -100,7 +98,7 @@
 import { renderCover, loadAssets } from './cover.js'
 const $ = (id) => document.getElementById(id)
 const state = { style: 'overlap', secondary: [], ground: 'auto', hero: 'auto', titleStyle: 'strips', titlePos: 'center', imageMode: 'auto', logoStyle: 'bare', noteTone: 'almond', tweaks: {} }
-let assets = {}, layout = [], selected = null, assetKey = '', savedCategory = ''
+let assets = {}, layout = [], selected = null, assetKey = '', savedCategory = '', savedDecor = false
 
 for (const [name, hexv] of [['green', '#6CB181'], ['red', '#C8344B'], ['sand', '#E9B44A'], ['lavender', '#CCEFFC'], ['mint', '#D7E9E3'], ['rose', '#F9E0E9'], ['almond', '#F9EECE']]) {
   const b = document.createElement('button'); b.type = 'button'; b.textContent = name; b.style.borderBottom = `6px solid ${hexv}`; b.setAttribute('aria-pressed', 'false')
@@ -115,9 +113,24 @@ document.querySelectorAll('.seg[data-key]').forEach((seg) => {
   }
 })
 const list = (id, sep) => $(id).value.split(sep).map((s) => s.trim()).filter(Boolean)
+for (const button of document.querySelectorAll('#photo-treatment button')) {
+  button.onclick = () => {
+    const photo = layout.find((element) => element.id === selected && element.type === 'photo')
+    const ids = photo ? [photo.id] : selected ? [] : list('images', '\n').map((_, i) => `photo-${i}`)
+    for (const id of ids) (state.tweaks[id] ??= {}).treatment = button.dataset.treatment
+    draw()
+  }
+}
+for (const button of document.querySelectorAll('#extras button')) {
+  button.onclick = () => {
+    const id = `extra-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`
+    ;(state.extras ??= []).push({ id, kind: button.dataset.extra })
+    selected = id; draw()
+  }
+}
 function spec() {
   const s = { layout: 'collage', title: $('title').value.trim(), category: savedCategory, seed: $('seed').value.trim() || 'ebaq', ...state,
-    decor: $('decor').checked, mat: $('mat').checked, plain: $('plain').checked, footer: $('footer').checked, grain: $('grain').checked }
+    kicker: false, decor: savedDecor, mat: $('mat').checked, plain: $('plain').checked, footer: false, grain: $('grain').checked }
   const logos = list('logos', ','), images = list('images', '\n'), notes = list('notes', '\n')
   if (logos.length) s.logos = logos
   if (images.length) s.images = images
@@ -140,6 +153,9 @@ function draw() {
   layout = renderCover($('cover'), s, assets, { w: 1920, h: 1080 }).elements
   renderCover($('og'), s, assets, { w: 1200, h: 630 })
   const sel = layout.find((e) => e.id === selected)
+  const mode = sel?.type === 'photo' ? s.tweaks?.[sel.id]?.treatment : null
+  document.querySelectorAll('#photo-treatment button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.treatment === mode)))
+  $('treatment-hint').textContent = sel?.type === 'photo' ? 'Changing the selected photo.' : selected ? 'Select a photo, or click empty space to change all photos.' : 'Changing all photos.'
   if (sel) {
     const c = $('cover').getContext('2d')
     c.save(); c.translate(sel.cx, sel.cy); c.rotate(sel.rot); c.strokeStyle = '#00afec'; c.setLineDash([12, 8]); c.lineWidth = 3
@@ -206,7 +222,7 @@ function applySpec(s, name) {
   for (const k of ['ground', 'hero', 'imageMode', 'logoStyle', 'noteTone']) state[k] = s[k] ?? defaults[k]
   state.titleStyle = 'strips'; state.titlePos = 'center'
   state.secondary = [...(s.secondary ?? [])]; state.tweaks = structuredClone(s.tweaks ?? {}); state.place = structuredClone(s.place ?? {})
-  $('decor').checked = s.decor ?? true; $('mat').checked = s.mat ?? false; $('plain').checked = s.plain ?? false; $('footer').checked = s.footer ?? false; $('grain').checked = s.grain ?? true
+  savedDecor = s.decor ?? false; state.extras = structuredClone(s.extras ?? []); $('mat').checked = s.mat ?? false; $('plain').checked = s.plain ?? false; $('grain').checked = s.grain ?? true
   document.querySelectorAll('.seg[data-key] button').forEach((b) => b.setAttribute('aria-pressed', String(state[b.parentElement.dataset.key] === b.textContent)))
   document.querySelectorAll('#secondary button').forEach((b) => b.setAttribute('aria-pressed', String(state.secondary.includes(b.textContent))))
   selected = null; update()
@@ -214,7 +230,7 @@ function applySpec(s, name) {
 // ----- controls -----
 let timer
 for (const id of ['title', 'logos', 'images', 'notes', 'seed', 'shape']) $(id).addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(update, 250) })
-for (const id of ['decor', 'mat', 'plain', 'footer', 'grain']) $(id).addEventListener('change', update)
+for (const id of ['mat', 'plain', 'grain']) $(id).addEventListener('change', update)
 $('shuffle').onclick = () => { state.place = {}; $('seed').value = ($('post').value || $('seed').value.replace(/-[a-z0-9]{5}$/, '') || 'ebaq') + '-' + Math.random().toString(36).slice(2, 7); state.tweaks = {}; selected = null; update() }
 $('reset').onclick = () => { state.tweaks = {}; state.place = {}; selected = null; update() }
 $('copy').onclick = async () => { const { seed, ...rest } = spec(); await navigator.clipboard.writeText(JSON.stringify({ seed, ...rest })); $('copy').textContent = 'Copied'; setTimeout(() => ($('copy').textContent = 'Copy spec'), 1200) }
@@ -282,6 +298,8 @@ $('files').onchange = async () => {
 }
 await document.fonts.load('600 40px "Roboto Condensed"'); await document.fonts.load('500 20px "Roboto Mono"')
 let last = ''; try { last = localStorage.getItem('cover-post') ?? '' } catch {}
+const requestedPost = new URLSearchParams(location.search).get('post')
+if (requestedPost) last = requestedPost
 if (posts.some((p) => p.slug === last)) { $('post').value = last; await loadPost(last) } else update()
 </script>
 </body>

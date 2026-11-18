@@ -1,0 +1,122 @@
+{
+  "hob-01": {
+    "replace": "brand-vs-branding.webp",
+    "section": "What is branding?",
+    "alt": "Diagram comparing brand versus branding"
+  },
+  "hob-02": {
+    "replace": "photo-marks-through-time.webp",
+    "section": "History of branding timeline",
+    "alt": "Timeline of the six jobs of a brand across eras"
+  },
+  "hob-03": {
+    "replace": "photo-branding-irons-fire.webp",
+    "section": "Where does the word \u201cbrand\u201d come from?",
+    "alt": "Cattle branding irons heating in a fire"
+  },
+  "hob-04": {
+    "replace": "photo-cattle-brand-today.webp",
+    "section": "Livestock branding in ancient Egypt",
+    "alt": "Cattle branding as an ownership practice"
+  },
+  "hob-05": {
+    "replace": null,
+    "section": "Seals in the Indus Valley and Mesopotamia",
+    "alt": "Carved trade seal pressed into clay"
+  },
+  "hob-06": {
+    "replace": "photo-makers-mark-clay.webp",
+    "section": "Makers\u2019 marks in Greece and Rome",
+    "alt": "Ancient ceramic with a stamped maker\u2019s mark"
+  },
+  "hob-07": {
+    "replace": null,
+    "section": "The White Rabbit of Song-dynasty China",
+    "alt": "White Rabbit needle-shop mark still life"
+  },
+  "hob-08": {
+    "replace": "photo-silver-hallmarks.webp",
+    "section": "Medieval branding: guilds and hallmarks (500\u20131700)",
+    "alt": "Silver hallmarks stamped on a silversmith bench"
+  },
+  "hob-09": {
+    "replace": "photo-shop-signs.webp",
+    "section": "Medieval branding: guilds and hallmarks (500\u20131700)",
+    "alt": "Hanging pictorial trade shop signs on a street"
+  },
+  "hob-10": {
+    "replace": null,
+    "section": "Josiah Wedgwood, the first modern brand builder",
+    "alt": "Wedgwood-style pottery as branded goods"
+  },
+  "hob-11": {
+    "replace": "photo-shopkeeper-scooping.webp",
+    "section": "Soap, oats and soda",
+    "alt": "Shopkeeper scooping goods from bulk barrels"
+  },
+  "hob-12": {
+    "replace": null,
+    "section": "Soap, oats and soda",
+    "alt": "Early Quaker Oats package on a grocer shelf"
+  },
+  "hob-13": {
+    "replace": null,
+    "section": "Soap, oats and soda",
+    "alt": "Ivory soap package and bar"
+  },
+  "hob-14": {
+    "replace": null,
+    "section": "Soap, oats and soda",
+    "alt": "Classic contour Coca-Cola bottle on a shelf"
+  },
+  "hob-15": {
+    "replace": "photo-trademark-register.webp",
+    "section": "How trademark law made brands property (1857\u20131946)",
+    "alt": "Trademark register with Bass red triangle cue"
+  },
+  "hob-16": {
+    "replace": "photo-family-radio.webp",
+    "section": "The advertising age: agencies, radio and TV (1840s\u20131950)",
+    "alt": "Family gathered around a radio in the advertising age"
+  },
+  "hob-17": {
+    "replace": "photo-brand-man-memo.webp",
+    "section": "1931: the invention of brand management",
+    "alt": "Graphic of the McElroy brand man memo idea"
+  },
+  "hob-18": {
+    "replace": "photo-standards-manual.webp",
+    "section": "The corporate identity era (1907\u20131980)",
+    "alt": "Corporate identity standards manual open on a desk"
+  },
+  "hob-19": {
+    "replace": null,
+    "section": "Brand image, the USP and positioning",
+    "alt": "Diagram of brand positioning as a slot in the mind"
+  },
+  "hob-20": {
+    "replace": "intangible-asset-value.webp",
+    "section": "Brand equity: brands on the balance sheet (1988\u20131993)",
+    "alt": "Chart of intangible brand asset value rising over time"
+  },
+  "hob-21": {
+    "replace": null,
+    "section": "Lifestyle and emotional branding",
+    "alt": "Lifestyle brand goods on a retail shelf"
+  },
+  "hob-22": {
+    "replace": "photo-blanding-shelf.webp",
+    "section": "The digital era: brands lose control (1994\u20132019)",
+    "alt": "Blanding shelf of near-identical minimalist packages"
+  },
+  "hob-23": {
+    "replace": "photo-ai-logo-grid.webp",
+    "section": "AI makes assets cheap and distinctiveness expensive",
+    "alt": "Grid of near-identical AI-generated logos"
+  },
+  "hob-24": {
+    "replace": "six-jobs-of-a-brand.webp",
+    "section": "What 4,000 years of branding teach us",
+    "alt": "Six jobs of a brand checklist and lessons board"
+  }
+}

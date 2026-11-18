@@ -1,0 +1,54 @@
+{
+  "layout": "collage",
+  "title": "Logo Color",
+  "category": "",
+  "seed": "logo-color",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-colour": {
+      "dx": -0.2968,
+      "dy": -0.1169,
+      "hidden": true
+    },
+    "sheet-strip": {
+      "dx": -0.0431,
+      "dy": 0.2471
+    },
+    "photo-0": {
+      "dx": -0.7445,
+      "dy": -0.129,
+      "treatment": "color"
+    },
+    "sheet-paper": {
+      "dx": 0.5163,
+      "dy": -0.6329
+    },
+    "photo-1": {
+      "dx": 0.8237,
+      "dy": 0.3387,
+      "treatment": "color"
+    },
+    "dots": {
+      "dx": -0.1839,
+      "dy": 0.0607
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/logo-color/screenprintsupplies-matsui-alpha-series-ready-for-use-starter-kit-with-pantone-book-1-600x600.png",
+    "/tools/cover-generator/assets/logo-color/localhost-famous-logos-colors.webp"
+  ]
+}
