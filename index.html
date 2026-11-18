@@ -36,6 +36,9 @@
     <meta data-rh="true" name="twitter:image" content="https://www.ebaqdesign.com/social-x-cover-brand-grid.png" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <!-- Structured data is generated at build time from src/content/siteFacts.ts (scripts/generate-route-shells.mjs). -->
+  </head>
+  <body>
+    <div id="root"></div>
     <!-- Google Analytics (GA4). Commands queue in dataLayer right away; gtag.js itself loads once the
          page has finished loading, so it never competes with the page's own code. -->
     <script>
@@ -52,9 +55,6 @@
         }, 2000);
       });
     </script>
-  </head>
-  <body>
-    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

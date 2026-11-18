@@ -17,7 +17,11 @@ const absolute = (value) => new URL(value, siteUrl).href
 // Every route ships its full content in the HTML (links work without JavaScript), so the app's JavaScript
 // waits for the first paint instead of competing with it for bandwidth; the timeout covers tabs that
 // open in the background, where animation frames don't run.
-const deferEntryScript = (html) => html.replace(/<script type="module" crossorigin src="(\/assets\/[^"]+\.js)"><\/script>/, (_, src) => `<script>
+const deferEntryScript = (html) => {
+  const entry = html.match(/<script type="module" crossorigin src="(\/assets\/[^"]+\.js)"><\/script>/)
+  if (!entry) throw new Error('Could not find the entry script in dist/index.html')
+  const [tag, src] = entry
+  return html.replace(tag, '').replace('</body>', () => `<script>
       (function () {
         var started = false;
         var start = function () {
@@ -32,9 +36,10 @@ const deferEntryScript = (html) => html.replace(/<script type="module" crossorig
         requestAnimationFrame(function () { setTimeout(start); });
         setTimeout(start, 1500);
       })();
-    </script>`)
+    </script>
+  </body>`)
+}
 const indexHtml = deferEntryScript(await read('../dist/index.html'))
-if (!indexHtml.includes("script.type = 'module'")) throw new Error('Could not find the entry script in dist/index.html')
 const sitemap = await read('../public/sitemap.xml')
 const paths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => new URL(url).pathname).filter((path) => path !== '/')
 const metadata = new Map()
