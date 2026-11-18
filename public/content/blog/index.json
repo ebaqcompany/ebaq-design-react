@@ -9,8 +9,9 @@
     "readTime": "4 min read",
     "date": "Nov 17, 2026",
     "image": {
-      "src": "/images/blog/black-friday/original-2025-cover.jpg",
-      "alt": "Black Friday deals for graphic designers"
+      "src": "/images/blog/black-friday/cover-collage.webp",
+      "alt": "Black Friday deals for graphic designers",
+      "thumbnail": "/images/blog/black-friday/cover-collage-768w.webp"
     }
   },
   {

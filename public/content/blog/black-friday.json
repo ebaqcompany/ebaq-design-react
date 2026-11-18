@@ -9,13 +9,14 @@
   "date": "Nov 17, 2026",
   "readTime": "4 min read",
   "image": {
-    "src": "/images/blog/black-friday/original-2025-cover.jpg",
-    "alt": "Black Friday deals for graphic designers"
+    "src": "/images/blog/black-friday/cover-collage.webp",
+    "alt": "Black Friday deals for graphic designers",
+    "thumbnail": "/images/blog/black-friday/cover-collage-768w.webp"
   },
   "seo": {
     "title": "Black Friday Deals for Designers 2026",
     "description": "Compare verified Black Friday deals for creative software, design resources and AI tools, with dates and key terms.",
-    "image": "/images/blog/black-friday/original-2025-cover.jpg"
+    "image": "/images/blog/black-friday/cover-collage-og.webp"
   },
   "tags": [
     "Black Friday",
