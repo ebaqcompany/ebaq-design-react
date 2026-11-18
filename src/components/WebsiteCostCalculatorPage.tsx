@@ -223,7 +223,7 @@ export const WebsiteCostCalculatorPage = () => {
           </div>
         </section>
 
-        <ToolReading links={[{ label: "SaaS website design", href: "/saas-web-design" }, { label: "WordPress vs Webflow vs Framer", href: "/blog/wordpress-vs-webflow-vs-framer" }, { label: "Platform comparisons", href: "/compare" }]} />
+        <ToolReading links={[{ label: "SaaS website design", href: "/saas-web-design" }, { label: "Platform comparisons", href: "/compare" }]} />
         <Faq4 tagline="FAQs" heading="Website cost questions" questions={faqs.map(({ question, answer }) => ({ title: question, answer }))} />
         <Cta17 heading="Want an exact number?" description="Book a 15-minute call. You'll leave with a scope, a week count, and a fixed total." />
       </main>

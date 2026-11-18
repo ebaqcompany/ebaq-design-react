@@ -5,6 +5,7 @@
     { "source": "/blog/brand-architectures", "destination": "/blog/brand-architecture", "statusCode": 301 },
     { "source": "/blog/negative-space-logos", "destination": "/blog/negative-space-logo-design", "statusCode": 301 },
     { "source": "/blog/top-12-cryptocurrency-logos", "destination": "/blog/crypto-logos", "statusCode": 301 },
+    { "source": "/blog/branding-cost", "destination": "/blog/logo-design-cost", "statusCode": 301 },
     { "source": "/blog/logo-cost", "destination": "/blog/logo-design-cost", "statusCode": 301 },
     {
       "source": "/blog/branding-books",
@@ -1927,11 +1928,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/framer-templates",
-      "destination": "/blog/wordpress-vs-webflow-vs-framer",
-      "statusCode": 301
-    },
-    {
       "source": "/blog/graphic-design-chairs",
       "destination": "/blog",
       "statusCode": 301
@@ -2067,21 +2063,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/webflow-templates",
-      "destination": "/blog/wordpress-vs-webflow-vs-framer",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/webflow-templates-blog",
-      "destination": "/blog/wordpress-vs-webflow-vs-framer",
-      "statusCode": 301
-    },
-    {
-      "source": "/blog/webflow-templates-startups",
-      "destination": "/blog/wordpress-vs-webflow-vs-framer",
-      "statusCode": 301
-    },
-    {
       "source": "/gear/adobe-animate-free",
       "destination": "/blog/best-adobe-discounts",
       "statusCode": 301
@@ -2149,11 +2130,6 @@
     {
       "source": "/gear/drawing-tablets-beginners",
       "destination": "/blog",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/framer-templates",
-      "destination": "/blog/wordpress-vs-webflow-vs-framer",
       "statusCode": 301
     },
     {
@@ -2289,21 +2265,6 @@
     {
       "source": "/gear/ultimate-guide-to-logo-design",
       "destination": "/blog/logo-design-process",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/webflow-templates",
-      "destination": "/blog/wordpress-vs-webflow-vs-framer",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/webflow-templates-blog",
-      "destination": "/blog/wordpress-vs-webflow-vs-framer",
-      "statusCode": 301
-    },
-    {
-      "source": "/gear/webflow-templates-startups",
-      "destination": "/blog/wordpress-vs-webflow-vs-framer",
       "statusCode": 301
     },
     {

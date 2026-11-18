@@ -1,5 +1,20 @@
 [
   {
+    "slug": "logo-design-cost",
+    "url": "/blog/logo-design-cost",
+    "title": "Logo Design and Branding Cost: Prices, Scope & What You Get",
+    "description": "Compare logo design and branding costs by scope, from a focused logo to strategy and a full identity, with published pricing examples.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "14 min read",
+    "date": "Nov 18, 2026",
+    "image": {
+      "src": "/images/blog/logo-design-cost/cover-collage.webp",
+      "alt": "Logo design cost collage with logo sketches, a pricing chart and designer at work",
+      "thumbnail": "/images/blog/logo-design-cost/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "black-friday",
     "url": "/blog/black-friday",
     "title": "Black Friday Deals for Designers 2026",
@@ -44,21 +59,6 @@
       "src": "/images/blog/best-adobe-discounts/adobe-cover.webp",
       "alt": "Adobe Creative Cloud Discounts: Save Up to 60% [2026]",
       "thumbnail": "/images/blog/best-adobe-discounts/adobe-cover-768w.webp"
-    }
-  },
-  {
-    "slug": "branding-cost",
-    "url": "/blog/branding-cost",
-    "title": "How Much Does Branding Cost? What You Get at Different Prices",
-    "description": "Compare branding costs by scope, published studio prices and deliverables, including Ebaq Design’s $3,000 one-week Brand Sprint.",
-    "category": "Branding",
-    "categorySlug": "branding",
-    "readTime": "7 min read",
-    "date": "Nov 17, 2026",
-    "image": {
-      "src": "/images/blog/branding-cost/cover-collage.webp",
-      "alt": "Hands sketching a geometric logo beside a stack of dollar bills",
-      "thumbnail": "/images/blog/branding-cost/cover-collage-768w.webp"
     }
   },
   {
@@ -144,7 +144,7 @@
     "category": "Web Design",
     "categorySlug": "web-design",
     "readTime": "18 min read",
-    "date": "Aug 21, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/web-design-process/cover-collage.webp",
       "alt": "Web Design Process step by step",
@@ -165,21 +165,6 @@
       "alt": "14 Best SaaS Website Examples in 2026 | A Designer's Review",
       "sourceSrc": "/images/blog/saas-websites/slide-01.webp",
       "thumbnail": "/images/blog/best-saas-websites-768w.webp"
-    }
-  },
-  {
-    "slug": "wordpress-vs-webflow-vs-framer",
-    "url": "/blog/wordpress-vs-webflow-vs-framer",
-    "title": "WordPress vs Webflow vs Framer: Which Is Better? [2026 Guide]",
-    "description": "Compare WordPress, Webflow, and Framer for business websites, startup sites, landing pages, blogs, and service firms based on real design experience.",
-    "category": "Web Design",
-    "categorySlug": "web-design",
-    "readTime": "5 min read",
-    "date": "Jul 21, 2026",
-    "image": {
-      "src": "/images/blog/wordpress-vs-webflow-vs-framer/wordpress-webflow-framer-main-image.webp",
-      "alt": "WordPress vs Webflow vs Framer: Which Is Better?",
-      "thumbnail": "/images/blog/wordpress-vs-webflow-vs-framer/wordpress-webflow-framer-main-image-768w.webp"
     }
   },
   {
@@ -848,7 +833,7 @@
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
     "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/brand-voice/brand-voice-famous-brands.webp",
       "alt": "7 Best Examples of Brand Voice & Tone in 2026"
@@ -920,7 +905,7 @@
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "10 min read",
-    "date": "Sep 10, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/branding-package/branding-package-three.webp",
       "alt": "Branding Package For Small Businesses & Startups in 2026",
@@ -935,7 +920,7 @@
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/branding-process/my-branding-process.webp",
       "alt": "My Branding Process: From Client Call To Delivery in 2026",
@@ -950,7 +935,7 @@
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
     "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/branding-workshop/branding-workshop1.webp",
       "alt": "How To Run A Branding Workshop in 2026"
@@ -1137,7 +1122,7 @@
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/create-style-guide/create-style-guide-bg.webp",
       "alt": "How To Create A Brand Style Guide in 2026",
@@ -1503,7 +1488,7 @@
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/logo-animation-examples/logo-animation-examples-bg.webp",
       "alt": "10+ Best Logo Animation Examples in 2026",
@@ -1533,26 +1518,11 @@
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/logo-color/logo-color-bg.webp",
       "alt": "How To Choose Colors For Logo Design in 2026",
       "thumbnail": "/images/blog/logo-color/logo-color-bg-768w.webp"
-    }
-  },
-  {
-    "slug": "logo-design-cost",
-    "url": "/blog/logo-design-cost",
-    "title": "Logo Design Cost: Prices, Scope & What You Get",
-    "description": "Compare logo design costs by scope, files and process, from DIY tools to agencies, with a concrete $3,000 one-week identity option from Ebaq Design.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "10 min read",
-    "date": "Nov 15, 2026",
-    "image": {
-      "src": "/images/blog/logo-design-cost/cover-collage.webp",
-      "alt": "Logo design cost collage with logo sketches, a pricing chart and designer at work",
-      "thumbnail": "/images/blog/logo-design-cost/cover-collage-768w.webp"
     }
   },
   {
@@ -1577,7 +1547,7 @@
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/logo-design-process/logo-design-process-bg-172b99.webp",
       "alt": "Logo Design Process From Start To Finish in 2026",
@@ -1679,7 +1649,7 @@
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "20 min read",
-    "date": "Oct 28, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/logo-redesign/cover-collage.webp",
       "alt": "Medihuanna logo before and after redesign in a logo design collage",
@@ -1922,7 +1892,7 @@
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "5 min read",
-    "date": "Jan 27, 2026",
+    "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/rebranding-examples/rebranding.webp",
       "alt": "Rebranding Examples: 7 Case Studies for 2026 (Rebrand vs Redesign)",
