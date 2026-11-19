@@ -6,6 +6,7 @@ import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 import { PortfolioHeader10 } from "./PortfolioHeader10";
 import { Testimonial1 } from "./Testimonial1";
+import { CaseStudyOverview } from "./CaseStudyOverview";
 import { Gallery1 } from "./Gallery1";
 import { Header49 } from "./Header49";
 import { Portfolio15 } from "./Portfolio15";
@@ -146,7 +147,14 @@ export const CaseStudyPage = () => {
             ),
           )}
 
-        {study.testimonial && <Testimonial1 {...study.testimonial} />}
+        {study.overview && study.testimonial ? (
+          <CaseStudyOverview
+            heading={study.overview.heading}
+            description={study.overview.description}
+            stats={study.overview.stats}
+            testimonial={study.testimonial}
+          />
+        ) : study.testimonial && <Testimonial1 {...study.testimonial} />}
         {nextProjects.length > 0 && <Portfolio15 projects={nextProjects} />}
       </main>
       <Cta17 />

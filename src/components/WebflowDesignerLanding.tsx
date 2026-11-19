@@ -77,7 +77,7 @@ const config: IndustryLandingConfig = {
       { label: "Brand in Use", image: { src: `${CO}/laptop.webp`, alt: "Periti Digital website on a laptop" } },
     ],
   },
-  testimonial: {
+  testimonial: brevideeQuote.avatar && {
     // Quoted from the Brevidee case study, word for word.
     quote: brevideeQuote.quote.replace(/^"|"$/g, ""),
     name: brevideeQuote.name,

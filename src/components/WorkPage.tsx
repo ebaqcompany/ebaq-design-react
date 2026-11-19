@@ -13,11 +13,12 @@ const siteUrl = "https://www.ebaqdesign.com";
 const pageTitle = "Portfolio: Branding, Logo & Web Design Case Studies | Ebaq Design";
 const pageDescription =
   "Branding, logo design, and website case studies by Arek Dvornechuck, a senior freelance graphic designer in NYC, for AI, health tech, law, and consumer brands.";
-const workPageProjects = workProjects.map((project) =>
-  project.url === "/work/nathalie-sadler"
-    ? { ...project, lottie: undefined }
-    : project,
-);
+const workPageProjects = workProjects.map((project) => {
+  if (project.url !== "/work/nathalie-sadler") return project;
+
+  const firstImage = project.images[0];
+  return { ...project, image: firstImage ?? project.image, lottie: undefined };
+});
 
 export const WorkPage = () => {
   useEffect(() => {

@@ -22,13 +22,15 @@ export const Testimonial1 = (props: Testimonial1Props) => {
           )}
           <blockquote className="text-xl font-bold md:text-2xl">{quote}</blockquote>
           <div className="mt-6 flex flex-col items-center justify-center md:mt-8">
-            <div className="mb-3 md:mb-4">
-              <img loading="lazy" decoding="async"
-                src={avatar.src}
-                alt={avatar.alt}
-                className="size-16 min-h-16 min-w-16 rounded-full object-cover"
-              />
-            </div>
+            {avatar && (
+              <div className="mb-3 md:mb-4">
+                <img loading="lazy" decoding="async"
+                  src={avatar.src}
+                  alt={avatar.alt}
+                  className="size-16 min-h-16 min-w-16 rounded-full object-cover"
+                />
+              </div>
+            )}
             <div className="flex flex-col items-center justify-center">
               <p className="font-semibold">{name}</p>
               {(position || companyName) && (

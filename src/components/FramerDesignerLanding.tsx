@@ -78,7 +78,7 @@ const config: IndustryLandingConfig = {
       { label: "Social Graphics", image: { src: "/foxberman/foxberman-social.mp4", alt: "Fox Berman social media graphics in motion" } },
     ],
   },
-  testimonial: {
+  testimonial: foxQuote.avatar && {
     // Quoted from the Fox Berman case study, word for word.
     quote: foxQuote.quote.replace(/^"|"$/g, ""),
     name: foxQuote.name,

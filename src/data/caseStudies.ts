@@ -53,8 +53,10 @@ export type CaseStudyContentBlock =
 
 export type CaseStudyTestimonial = {
   quote: string;
+  excerpt?: string;
+  sourceUrl?: string;
   logo: CaseStudyImage;
-  avatar: CaseStudyImage;
+  avatar?: CaseStudyImage;
   name: string;
   position: string;
   companyName: string;
@@ -66,6 +68,12 @@ export type CaseStudyNextProject = {
   image: CaseStudyImage;
   url: string;
   tags: string[];
+};
+
+export type CaseStudyOverviewContent = {
+  heading: string;
+  description: string;
+  stats: { value: string; label: string }[];
 };
 
 export type CaseStudy = {
@@ -88,6 +96,7 @@ export type CaseStudy = {
   leadGallery: CaseStudyGalleryImage[];
   brandSprintGallery?: CaseStudyBrandSprintGallery;
   content: CaseStudyContentBlock[];
+  overview?: CaseStudyOverviewContent;
   testimonial?: CaseStudyTestimonial;
   nextProject?: CaseStudyNextProject;
   // Search and AI-overview copy; falls back to "client — title" and the summary.
@@ -617,9 +626,20 @@ const allCaseStudies: CaseStudy[] = [
       color: { src: "/case-study/next-dimension/colors.webp", alt: "NextDimension color palette" },
       website: { src: "/case-study/next-dimension/old-site/04-website.webp", alt: "NextDimension website design" },
     },
+    overview: {
+      heading: "A new identity for healthcare AI",
+      description: "NextDimension co-founder Lakshita Chhikara reached out to me to redesign the company’s identity and website. The goal was to give its AI platform a distinct visual identity and explain how it helps medical practices automate everyday work.",
+      stats: [
+        { value: "2 weeks", label: "From rebrand to Webflow design" },
+        { value: "+30%", label: "Increase in demo bookings" },
+        { value: "$2.5M", label: "Seed funding secured" },
+      ],
+    },
     testimonial: {
       quote:
         '"Arek worked with us on the complete redesign of the NextDimension AI visual identity and website. He was thoughtful, responsive, and patient throughout the process, from exploring the logo direction to refining the website’s content, design, and functionality. What stood out most was his ability to clearly explain and defend his creative vision while still listening to our feedback. We are both convinced by the final direction and very happy with the result."',
+      excerpt: '"Arek worked with us on the complete redesign of the NextDimension AI visual identity and website. He was thoughtful, responsive, and patient throughout the process, from exploring the logo direction to refining the website’s content, design, and functionality…"',
+      sourceUrl: "https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0",
       logo: { src: "/client-logos/nextdim-wordmark.svg", alt: "NextDimension AI", scale: 90 },
       avatar: { src: "/testimonials/lakshita-chhikara.webp", alt: "Lakshita Chhikara" },
       name: "Lakshita Chhikara",
@@ -746,8 +766,17 @@ const allCaseStudies: CaseStudy[] = [
         ],
       },
     ],
+    overview: {
+      heading: "A new identity for a merged law firm",
+      description: "When Lucas Berman and Stefan Fox merged their practices in Sint Maarten, Lucas reached out to me to create a brand for the new firm. I designed the identity and stationery, then designed and built a Framer landing page.",
+      stats: [
+        { value: "3 weeks", label: "From brand identity to Framer site" },
+        { value: "99/100", label: "Google PageSpeed score" },
+      ],
+    },
     testimonial: {
       quote: '"Excellent work! Fast, reliable and look and feel matched beyond our expectations."',
+      sourceUrl: "https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0",
       logo: { src: "/client-logos/foxberman-wordmark.svg", alt: "Fox Berman", scale: 50 },
       avatar: { src: "/testimonials/lucas.webp", alt: "Lucas Berman" },
       name: "Lucas Berman",
@@ -830,9 +859,20 @@ const allCaseStudies: CaseStudy[] = [
         ],
       },
     ],
+    overview: {
+      heading: "Rebranding a Shopify testing app",
+      description: "Elevate co-founder Karim Zitouni reached out to me for a full rebrand of his Shopify A/B testing platform. We designed a new visual identity and website to help Elevate stand out in the Shopify ecosystem.",
+      stats: [
+        { value: "2 weeks", label: "From branding to web design" },
+        { value: "140+", label: "5-star reviews on Shopify" },
+        { value: "+64%", label: "Conversion rate uplift" },
+      ],
+    },
     testimonial: {
       quote:
         '"Arek did an outstanding job on our full brand redesign. From understanding our vision, to crafting the direction, to executing with speed, he nailed it from the beginning. We absolutely love all of it. What stood out most was how quickly he understood exactly what we were looking for. He was creative, came back with ideas that felt modern and genuinely good, and landed on something that fit our brand perfectly. He made himself available throughout the process and kept things moving fast without cutting corners on quality. Working with him was easy from start to finish. I’d recommend him to anyone looking for a designer who gets it and delivers. Thanks, Arek."',
+      excerpt: '"Arek did an outstanding job on our full brand redesign. From understanding our vision, to crafting the direction, to executing with speed, he nailed it from the beginning…"',
+      sourceUrl: "https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0",
       logo: { src: "/client-logos/elevate-wordmark.svg", alt: "Elevate", scale: 80 },
       avatar: { src: "/testimonials/karim-zitouni.webp", alt: "Karim Zitouni" },
       name: "Karim Zitouni",
@@ -1009,9 +1049,19 @@ const allCaseStudies: CaseStudy[] = [
         ],
       },
     ],
+    overview: {
+      heading: "An identity for a school video platform",
+      description: "Alan Rudt wanted a brand that made video creation feel approachable for schools. I redesigned the brand and designed the teacher app, marketing website, and educational ebook.",
+      stats: [
+        { value: "8 weeks", label: "Rebrand, website, ebook & more" },
+        { value: "+38%", label: "Conversion rate" },
+        { value: "-27%", label: "Bounce rate" },
+      ],
+    },
     testimonial: {
       quote:
         '"After struggling to build our website on Squarespace and wasting valuable time with underwhelming designers on Upwork, we finally discovered Arek at Ebaqdesign—and what a game-changer that was. From the very start, he understood our vision, took control of the process, and delivered a brand transformation that exceeded all our expectations. The results were beyond anything we could have imagined!"',
+      sourceUrl: "https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0",
       logo: { src: "/client-logos/brevidee-logo.svg", alt: "Brevidee", scale: 80 },
       avatar: { src: "/case-study/brevidee/alan-rudt.webp", alt: "Alan Rudt" },
       name: "Alan Rudt",
@@ -1093,9 +1143,18 @@ const allCaseStudies: CaseStudy[] = [
         ],
       },
     ],
+    overview: {
+      heading: "A rebrand for an interiors marketing agency",
+      description: "Darla Powell reached out to refresh Wingnut Social’s brand and sales materials. I simplified the mark and carried the refreshed identity into the agency’s deck, website design, and podcast assets.",
+      stats: [
+        { value: "2 weeks", label: "From rebrand to pitch deck" },
+        { value: "+30%", label: "More discovery calls booked" },
+      ],
+    },
     testimonial: {
       quote:
         '"We had a terrific experience working with Arek on our logos and pitch deck. Highly recommended!"',
+      sourceUrl: "https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0",
       logo: { src: "/client-logos/wingnut-logo-black.svg", alt: "Wingnut Social", scale: 105 },
       avatar: { src: "/case-study/wingnut/darla-powell.webp", alt: "Darla Powell" },
       name: "Darla Powell",
@@ -1252,9 +1311,19 @@ const allCaseStudies: CaseStudy[] = [
         ],
       },
     ],
+    overview: {
+      heading: "Rebranding after acquisition",
+      description: "After acquiring Airport Executive, Chris Nixon reached out to me for a full rebrand and a new booking website. His goal was to go global with a modern, premium brand and a delightful booking experience.",
+      stats: [
+        { value: "8 weeks", label: "From rebrand to booking site" },
+        { value: "200+", label: "Pages powered by Webflow CMS" },
+        { value: "+540%", label: "Increase in online bookings" },
+      ],
+    },
     testimonial: {
       quote:
         '"Arek is a branding expert with extensive experience in graphic design, logos, and web design. We have collaborated with him on several rebranding projects. I highly recommend him."',
+      sourceUrl: "https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0",
       logo: { src: "/client-logos/airport-executive-logo.svg", alt: "Airport Executive" },
       avatar: { src: "/case-study/airport-executive/chris-nixon.webp", alt: "Chris Nixon" },
       name: "Chris Nixon",
@@ -1337,8 +1406,17 @@ const allCaseStudies: CaseStudy[] = [
         ],
       },
     ],
+    overview: {
+      heading: "A brand for a premium Southern dispensary",
+      description: "I designed an Art Deco-inspired identity for SweetGrass, then applied it to packaging, print, outdoor advertising, and the website.",
+      stats: [
+        { value: "8 weeks", label: "Rebrand, packaging & website" },
+        { value: "$7M", label: "Raised while in stealth" },
+      ],
+    },
     testimonial: {
       quote: '"Arek is a magic visionary with sharp attention to detail."',
+      sourceUrl: "https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0",
       logo: { src: "/client-logos/sweetgrass-logo-black.svg", alt: "SweetGrass", scale: 60 },
       avatar: { src: "/case-study/sweetgrass/jane-de-abreu.webp", alt: "Jane de Abreu" },
       name: "Jane de Abreu",
@@ -1414,6 +1492,23 @@ const allCaseStudies: CaseStudy[] = [
         ],
       },
     ],
+    overview: {
+      heading: "Rebranding a HubSpot consultancy",
+      description: "Periti Digital brought its team together to define what the consultancy stood for and how it should sound. I translated that work into a new identity, website design, and brand guidelines.",
+      stats: [
+        { value: "8 weeks", label: "Rebrand, templates & Webflow site" },
+        { value: "$2M", label: "Seed funding raised" },
+        { value: "+38%", label: "Engagement increase" },
+      ],
+    },
+    testimonial: {
+      quote: '"Our new branding is the result of a brand strategy workshop we did with Arek from Ebaqdesign Brand Consultancy…"',
+      sourceUrl: "https://www.linkedin.com/posts/ankistrigl_yes-our-new-branding-is-the-result-activity-6919547810769973248-CNPC",
+      logo: { src: "/client-logos/periti-logo-black.svg", alt: "Periti Digital" },
+      name: "Anki Strigl",
+      position: "",
+      companyName: "Periti Digital",
+    },
     nextProject: {
       title: "Medihuanna",
       subheading: "A trusted identity for medicinal cannabis education built around clarity",
@@ -1494,9 +1589,19 @@ const allCaseStudies: CaseStudy[] = [
         ],
       },
     ],
+    overview: {
+      heading: "A rebrand for medicinal cannabis education",
+      description: "Pavel Bulkiewicz came to me for a clearer identity for Medihuanna’s education business. I redesigned the logo and extended the brand across learning materials, signage, and motion.",
+      stats: [
+        { value: "6 weeks", label: "Rebrand, templates & web design" },
+        { value: "-38%", label: "Bounce rate decrease" },
+        { value: "+47%", label: "Engagement increase" },
+      ],
+    },
     testimonial: {
       quote:
         '"After several failures of using Fiverr and 99designs to handle our rebranding project, we finally found Arek and Ebaq Design who nailed it at first. There was no time wasted, Arek was very organized and methodical about his approach from the start."',
+      sourceUrl: "https://www.linkedin.com/in/ebaqdesign/details/recommendations/?detailScreenTabIndex=0",
       logo: { src: "/client-logos/medihuanna-wordmark-black.svg", alt: "Medihuanna", scale: 90 },
       avatar: { src: "/case-study/medihuanna/pavel-bulkiewicz.webp", alt: "Pavel Bulkiewicz" },
       name: "Pavel Bulkiewicz",

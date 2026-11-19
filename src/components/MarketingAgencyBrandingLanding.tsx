@@ -76,7 +76,7 @@ const config: IndustryLandingConfig = {
       { label: "Office Branding", image: { src: `${WN}/13-office.mp4`, alt: "Wingnut Social office branding in motion" } },
     ],
   },
-  testimonial: {
+  testimonial: wingnutQuote.avatar && {
     // Quoted from the Wingnut case study, word for word.
     quote: wingnutQuote.quote.replace(/^"|"$/g, ""),
     name: wingnutQuote.name,
