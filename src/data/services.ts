@@ -1,5 +1,4 @@
 import { Layout423Defaults } from "../components/Layout423";
-import { pricing } from "../content/siteFacts";
 
 // The six offerings and their deliverables live in Layout423Defaults, which was
 // written for the services page. Slugs are attached here in the same order so
@@ -114,7 +113,8 @@ export const engagementProcessSteps = processSteps.map((step, index) => index ==
 export const serviceFaqs = [
   {
     title: "What do branding services cost?",
-    answer: `${pricing.summary} ${pricing.guarantee} ${pricing.fixedTotal}`,
+    answer:
+      "It depends on what you need. A focused logo or identity project runs at a flat weekly rate, so you know the cost before we start. Bigger work, like a full rebrand with a new website or ongoing brand, web and motion support, is scoped to your goals and quoted after a short call. Either way you get a fixed price up front, with no hourly billing and no surprise invoices. Book a call and you'll leave with a clear plan and a clear number.",
   },
   {
     title: "How long does a branding project take?",
