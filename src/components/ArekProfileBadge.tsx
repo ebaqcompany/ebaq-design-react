@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import {
   BiLogoFacebookCircle,
   BiLogoInstagram,
@@ -14,6 +15,7 @@ type Props = {
   portraitHref?: string;
   showSocial?: boolean;
   title?: string;
+  authorQuote?: ReactNode;
 };
 
 export const arekToolIcons = [
@@ -39,14 +41,16 @@ const socialLinks = [
   { label: "Contra", url: "https://contra.com/ebaqdesign", icon: <ContraIcon className="size-4" /> },
 ] as const;
 
-export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHref, showSocial = true, title = "Branding Expert" }: Props) => {
+export const ArekProfileBadge = ({ className = "", variant = "tools", portraitHref, showSocial = true, title = "Branding Expert", authorQuote }: Props) => {
   return <div className={`flex w-fit items-center gap-4 ${className}`.trim()}>
-    {portraitHref ? <Link to={portraitHref} aria-label="About Arek Dvornechuck" className="shrink-0"><img loading="eager" src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 rounded-full object-cover" /></Link> : <img loading="eager" src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 shrink-0 rounded-full object-cover" />}
+    {portraitHref ? <Link to={portraitHref} aria-label="About Arek Dvornechuck" className="shrink-0"><img loading={authorQuote ? "lazy" : "eager"} src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 rounded-full object-cover" /></Link> : <img loading={authorQuote ? "lazy" : "eager"} src="/arek-profile-hero-240.webp" alt="Arek Dvornechuck" width={80} height={80} className="size-20 shrink-0 rounded-full object-cover" />}
     <div className="flex min-w-0 flex-col">
-      <div className="flex flex-col gap-0">
-        <p className={variant === "author" ? "heading-h7" : undefined}>Arek Dvornechuck</p>
-        {variant === "author" && <p className="heading-h7 text-brand-primary">{title}</p>}
-      </div>
+      {variant === "author" && authorQuote ? authorQuote : (
+        <div className="flex flex-col gap-0">
+          <p className={variant === "author" ? "heading-h7" : undefined}>Arek Dvornechuck</p>
+          {variant === "author" && <p className="heading-h7 text-brand-primary">{title}</p>}
+        </div>
+      )}
       {variant === "author" ? showSocial && <>
         <div className="mt-1 flex items-center gap-2 text-black" aria-label="Arek Dvornechuck on social media">
           {socialLinks.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noreferrer" aria-label={link.label} className="heading-link -m-1 inline-flex p-1 text-black">{link.icon}</a>)}

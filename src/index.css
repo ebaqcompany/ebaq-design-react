@@ -686,7 +686,7 @@ html, body {
 }
 
 /* Global animated underline for text links. Graphic and button links keep their own interactions. */
-a:not([class*="button"]):not(.text-link):not(.heading-link):not(:has(img)):not(:has(svg)):not(:is(h1, h2, h3, h4, h5, h6) > a) {
+a:not([class*="button"]):not(.text-link):not(.heading-link):not(:has(img, svg, [role="img"])):not(:is(h1, h2, h3, h4, h5, h6) > a) {
   background-image: linear-gradient(var(--color-brand-primary), var(--color-brand-primary));
   background-position: left bottom;
   background-repeat: no-repeat;
@@ -695,7 +695,7 @@ a:not([class*="button"]):not(.text-link):not(.heading-link):not(:has(img)):not(:
   transition: background-size 300ms ease;
 }
 
-a:not([class*="button"]):not(.text-link):not(.heading-link):not(:has(img)):not(:has(svg)):not(:is(h1, h2, h3, h4, h5, h6) > a):is(:hover, :focus-visible) {
+a:not([class*="button"]):not(.text-link):not(.heading-link):not(:has(img, svg, [role="img"])):not(:is(h1, h2, h3, h4, h5, h6) > a):is(:hover, :focus-visible) {
   background-size: 100% 1px;
 }
 

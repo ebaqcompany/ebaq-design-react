@@ -107,7 +107,7 @@ export const ServiceDetailLayout = ({ slug, customSection }: Props) => {
       {customSection ?? (slug === "logo-design" ? <LogoComparison /> : slug === "web-design" ? <WebsiteComparison /> : null)}
       <ServicePricing slug={slug} />
       <ServiceTestimonialOptions autoPlay />
-      <ServiceFaq serviceName={service.heading} questions={faqsFor(service).map(({ title, answer, links }) => ({
+      <ServiceFaq questions={faqsFor(service).map(({ title, answer, links }) => ({
         title,
         answer: <p>{answer}{links && <> See {links.map((link, index) => <Fragment key={link.href}>{index > 0 && (index === links.length - 1 ? " and " : ", ")}<a href={link.href}>{link.label}</a></Fragment>)}.</>}</p>,
       }))} />

@@ -139,7 +139,7 @@ export const Footer15 = (props: Footer15Props) => {
         <div className="pb-10 md:pb-14 lg:pb-16">
           <div className="mb-8 md:mb-12">
             <a href={logo.url} aria-label={logo.alt} className="block w-fit">
-              <span className="footer-brandmark block size-12" />
+              <span role="img" aria-hidden="true" className="footer-brandmark block size-12" />
             </a>
           </div>
           <div className="grid grid-cols-1 gap-x-[8vw] gap-y-12 md:gap-y-16 lg:grid-cols-[0.75fr_1fr] lg:gap-y-4">

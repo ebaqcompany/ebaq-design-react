@@ -168,7 +168,7 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
           ]} />
         </>}
         {config.brandDesignLayout ? (
-          <ServiceFaq serviceName={config.breadcrumb} heading={faq.heading} showButton={false} questions={faq.items.map(({ question, answer, link }) => ({
+          <ServiceFaq heading={faq.heading} questions={faq.items.map(({ question, answer, link }) => ({
             title: question,
             answer: <p>{answer}{link && <> See <a href={link.href}>{link.label}</a>.</>}</p>,
           }))} />

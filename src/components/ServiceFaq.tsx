@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { ArekProfileBadge } from "./ArekProfileBadge";
+import { TextLink } from "./TextLink";
 import { FaqAccordion } from "./FaqAccordion";
 
 export const brandDesignQuestions = [
@@ -11,17 +13,41 @@ export const brandDesignQuestions = [
   { title: "When do I pay?", answer: "Once we agree on scope and timing, I send the agreement and invoice. Payment for the booked engagement is due upfront, before work begins." },
 ];
 
-const Heading = ({ label, centered = false, heading = "Common questions" }: { label: string; centered?: boolean; heading?: string }) => <header className={centered ? "mb-12 text-center md:mb-18 lg:mb-20" : "mb-5 max-w-lg md:mb-6"}>
-  <p className="mb-3 font-mono text-sm uppercase tracking-wide text-brand-primary md:mb-4">{label}</p>
-  <h2>{heading}</h2>
-</header>;
+type ServiceFaqProps = {
+  questions?: { title: string; answer: ReactNode }[];
+  heading?: string;
+  blueSurface?: boolean;
+};
 
-// Selected Relume FAQ 6: heading left, one column of boxed answers right.
-export const ServiceFaq = ({ serviceName = "Brand Design", questions = brandDesignQuestions, heading, showButton = true }: { serviceName?: string; questions?: { title: string; answer: ReactNode }[]; heading?: string; showButton?: boolean }) => (
-  <section id="faq" className="bg-surface-muted px-[5%] py-16 md:py-24 lg:py-28">
-    <div className="container grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 lg:grid-cols-[.75fr_1fr] lg:gap-x-20">
-      <div><Heading label="FAQs" heading={heading} /><p className="md:text-md">Learn how {serviceName.toLowerCase()} works, what’s included, and what to expect before we get started.</p>{showButton && <a href="/start" className="button-inverted mt-6 md:mt-8">Book a call</a>}</div>
-      <FaqAccordion questions={questions} />
+// Adapted from offline Relume FAQ 6.
+export const ServiceFaq = ({
+  questions = brandDesignQuestions,
+  heading = "Questions founders ask",
+  blueSurface = false,
+}: ServiceFaqProps) => (
+  <section id="faq" className={`${blueSurface ? "bg-brand-light" : "bg-surface-muted"} px-[5%] py-16 md:py-24 lg:py-28`}>
+    <div className="container grid grid-cols-1 items-start gap-y-12 md:grid-cols-2 md:gap-x-12 lg:grid-cols-[.75fr_1fr] lg:gap-x-20">
+      <div>
+        <p className="mb-3 font-mono text-sm uppercase tracking-wide text-brand-primary md:mb-4">FAQs</p>
+        <h2>{heading}</h2>
+        <div className="mt-6 md:mt-8">
+          <ArekProfileBadge
+            variant="author"
+            showSocial={false}
+            authorQuote={
+              <p className="font-handwriting text-handwriting font-medium leading-none tracking-handwriting">
+                Still deciding?
+                <span className="block text-brand-primary">Ask me directly.</span>
+              </p>
+            }
+          />
+          <div className="mt-6 flex flex-col items-start gap-4">
+            <a href="/start" className="button-inverted">Book an intro call</a>
+            <TextLink href="/contact">Or send me a message</TextLink>
+          </div>
+        </div>
+      </div>
+      <FaqAccordion questions={questions} blueSurface={blueSurface} />
     </div>
   </section>
 );

@@ -135,7 +135,7 @@ export const Footer15Interactive = (props: Footer15InteractiveProps) => {
         <div className="pb-10 md:pb-14 lg:pb-16">
           <div className="mb-8 md:mb-12">
             <a href={logo.url} aria-label={logo.alt}>
-              <span className="footer-brandmark block size-12" />
+              <span role="img" aria-hidden="true" className="footer-brandmark block size-12" />
             </a>
           </div>
           <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12 lg:grid-cols-[1fr_0.5fr] lg:gap-y-4">

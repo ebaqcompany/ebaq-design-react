@@ -8,10 +8,9 @@ import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredDat
 import { caseStudies } from "../data/caseStudies";
 import { comparisonName, comparisons, comparisonsUpdated, comparisonTitle, costRows, criteria, eitherResult, platformFacts, quizQuestions, type Comparison, type CostId, type CriterionId, type PlatformId } from "../data/comparisons";
 import { AiLandingAbout } from "./AiLandingAbout";
-import { ArekProfileBadge } from "./ArekProfileBadge";
 import { PlatformName, PlatformPair, platformIcons } from "./ComparePlatform";
 import { Cta17 } from "./Cta17";
-import { FaqAccordion } from "./FaqAccordion";
+import { ServiceFaq } from "./ServiceFaq";
 import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 import { NotFoundPage } from "./NotFoundPage";
@@ -294,22 +293,10 @@ const Comparison = ({ comparison }: { comparison: Comparison }) => {
           </div>
         </section>
 
-        <section id="faq" className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
-          <div className="container grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 lg:grid-cols-[.75fr_1fr] lg:gap-x-20">
-            <div>
-              <p className={eyebrow}>FAQs</p>
-              <h2 className="mb-5 md:mb-6">Questions about {name}</h2>
-              <p className="heading-h7 mb-2">Need help choosing?</p>
-              <p className="md:text-md">Send me your current site, your goals, and what your team needs to manage after launch. I’ll recommend the right setup.</p>
-              <ArekProfileBadge variant="author" title="Web Design Expert" portraitHref="/about" className="mt-6 md:mt-8" />
-              <a href="/start" className="button-inverted mt-6 md:mt-8">Book a call</a>
-            </div>
-            <FaqAccordion blueSurface questions={comparison.faqs.map(({ question, answer, link }) => ({
-              title: question,
-              answer: link ? <p>{answer} See <a href={link.href}>{link.label}</a>.</p> : answer,
-            }))} />
-          </div>
-        </section>
+        <ServiceFaq blueSurface heading={`Questions about ${name}`} questions={comparison.faqs.map(({ question, answer, link }) => ({
+          title: question,
+          answer: link ? <p>{answer} See <a href={link.href}>{link.label}</a>.</p> : answer,
+        }))} />
         <Cta17 heading="Not sure which one fits?" description="Book a 15-minute call. Tell me about your site and I’ll recommend a platform." />
       </main>
       <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />

@@ -1,3 +1,4 @@
+import { ServiceFaq } from "./ServiceFaq";
 import { Helmet } from "react-helmet-async";
 import { pricing, siteUrl, studio } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
@@ -166,23 +167,6 @@ const SaasTestimonial = () => (
   </section>
 );
 
-const FaqSection = () => (
-  <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
-    <div className="container max-w-4xl">
-      <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">FAQ</p>
-      <h2 className="mb-12 tracking-[-0.04em]" style={heading}>SaaS website questions</h2>
-      <div className="grid gap-8">
-        {faqs.map((faq) => (
-          <div key={faq.question} className="border-t border-black/10 pt-6">
-            <h3 className="mb-3 tracking-[-0.02em] heading-h6" style={{ fontFamily: heading.fontFamily }}>{faq.question}</h3>
-            <p className="text-black/60 text-base md:text-lg leading-relaxed">{faq.answer}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
 export const SaasWebDesignLanding = () => (
   <div className="relative">
     <Helmet>
@@ -254,7 +238,7 @@ export const SaasWebDesignLanding = () => (
         <Layout527 hoverLinks={workLinks} />
       </div>
       <SaasTestimonial />
-      <FaqSection />
+      <ServiceFaq heading="SaaS website questions" questions={faqs.map(({ question, answer }) => ({ title: question, answer }))} />
       <AboutSection heading="I help startups launch websites that sell." />
     </div>
 
