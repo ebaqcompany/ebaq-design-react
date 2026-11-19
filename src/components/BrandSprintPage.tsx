@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Navbar16 } from "./Navbar16";
-import { Layout425 } from "./Layout425";
-import { Portfolio20 } from "./Portfolio20";
+import { Portfolio23 } from "./Portfolio23";
 import { workProjects } from "../data/workProjects";
 import { BrandSprintIncluded } from "./BrandSprintIncluded";
 import { ServiceProcess } from "./ServiceProcess";
@@ -18,9 +17,6 @@ import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredDat
 const pageUrl = `${siteUrl}/brand-sprint`;
 const title = "Brand Sprint: Brand Identity in One Week, $3,000 | Ebaq Design";
 const description = "The Brand Sprint is a complete brand identity or rebrand delivered in one week, guaranteed, for a flat $3,000. See what you get and how the week runs.";
-
-// Every project on the /work roster, by client name and industry.
-const portfolioLinks = workProjects.map(({ url, title, industry, image, images }) => ({ url, heading: title, tag: industry, image, images }));
 
 const weekSteps = [
   { heading: "01", title: "Book a call", description: "We discuss your business, what you need, and your timing. We confirm the deliverables, start date, feedback schedule, and total before you book." },
@@ -79,8 +75,12 @@ export const BrandSprintPage = () => (
     </Helmet>
     <Navbar16 />
     <main>
-      <Layout425 id="brand-sprint-hero" reverse tagline="Brand Sprint" headingLevel="h1" button={{ title: "Book a call", href: "/start" }} />
-      <Portfolio20 tagline="Selected work" hoverLinks={portfolioLinks} />
+      <Portfolio23
+        tagline={brandSprint.name}
+        heading="Branding done in one week"
+        description={brandSprint.description}
+        projects={workProjects}
+      />
       <BrandSprintIncluded />
       <ServiceProcess customSteps={weekSteps} />
       <Comparison

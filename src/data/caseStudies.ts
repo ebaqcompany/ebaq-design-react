@@ -616,9 +616,9 @@ const allCaseStudies: CaseStudy[] = [
       backgroundColor: "#181735",
     },
     leadGallery: [
-      { src: "/case-study/next-dimension/old-site/01-logos.webp", alt: "NextDimension logo system" },
-      { src: "/case-study/next-dimension/old-site/02-type.webp", alt: "NextDimension typography system" },
-      { src: "/case-study/next-dimension/old-site/03-colors.webp", alt: "NextDimension color palette" },
+      { src: "/case-study/next-dimension/logos.webp", alt: "NextDimension logo system" },
+      { src: "/case-study/next-dimension/type.webp", alt: "NextDimension typography system" },
+      { src: "/case-study/next-dimension/colors.webp", alt: "NextDimension color palette" },
     ],
     brandSprintGallery: {
       logo: { src: "/case-study/next-dimension/logos.webp", alt: "NextDimension logo design" },
@@ -941,7 +941,7 @@ const allCaseStudies: CaseStudy[] = [
             alt: "Aero typography and color in motion",
             kind: "video",
           },
-          { src: "/case-study/aero/05-website.webp", alt: "Aero website design" },
+          { src: "/case-study/aero-web-pro.webp", alt: "Aero website design" },
           { src: "/case-study/aero/06-misc.webp", alt: "Aero branded applications" },
           { src: "/case-study/aero/07-sign.webp", alt: "Aero environmental signage" },
           {
