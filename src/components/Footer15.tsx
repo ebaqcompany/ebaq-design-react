@@ -204,7 +204,11 @@ export const Footer15 = (props: Footer15Props) => {
         </div>
         <DraggableFooterGuide footerRef={footerRef} />
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-4 py-6 text-sm md:py-8">
-          <p>{footerText} – {rightsText}</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p>{footerText} – {rightsText}</p>
+            <TextLink href="/privacy-policy" className="text-white">Privacy Policy</TextLink>
+            <TextLink href="/fulfillment-policy" className="text-white">Terms</TextLink>
+          </div>
           <div className="grid grid-flow-col grid-cols-[max-content] items-start justify-start gap-x-3">
             {socialMediaLinks.map((link, index) => (
               <a
