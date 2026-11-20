@@ -1,5 +1,6 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { pricing } from "../content/siteFacts";
+import { requestBookingToken } from "../conversionAttribution";
 import { useNearViewport } from "./Media";
 import { useMediaQuery } from "./ui";
 
@@ -20,9 +21,16 @@ export const BookerSection = ({ pinLogoToViewport = false, sticky = true, showDe
   const { ref, near } = useNearViewport<HTMLDivElement>("800px");
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const showEmbed = near && isDesktop;
+  const tokenRequest = useRef<ReturnType<typeof requestBookingToken> | null>(null);
+  const [bookingToken, setBookingToken] = useState<string | null>();
 
   useEffect(() => {
     if (!showEmbed) return;
+    let active = true;
+    tokenRequest.current ??= requestBookingToken("embed");
+    void tokenRequest.current.then(token => {
+      if (active) setBookingToken(token ?? null);
+    });
     (async function () {
       const { getCalApi } = await import("@calcom/embed-react");
       const cal = await getCalApi({ namespace: "15min" });
@@ -35,6 +43,7 @@ export const BookerSection = ({ pinLogoToViewport = false, sticky = true, showDe
         layout: "month_view",
       });
     })();
+    return () => { active = false; };
   }, [showEmbed]);
 
   return (
@@ -63,13 +72,13 @@ export const BookerSection = ({ pinLogoToViewport = false, sticky = true, showDe
         {showDescription && <p className="mx-auto mb-8 max-w-lg text-center text-white md:mb-10">{pricing.bookingIntro}</p>}
         {/* Desktop - inline embed */}
         <div className="relative hidden h-[760px] md:block">
-          {showEmbed && (
+          {showEmbed && bookingToken !== undefined && (
             <Suspense fallback={null}>
               <Cal
                 namespace="15min"
                 calLink="ebaqdesign/15min"
                 style={{ width: "100%", height: "760px", minHeight: "760px", overflow: "scroll" }}
-                config={{ layout: "month_view" }}
+                config={{ layout: "month_view", ...(bookingToken ? { "metadata[ebaq_click]": bookingToken } : {}) }}
               />
             </Suspense>
           )}

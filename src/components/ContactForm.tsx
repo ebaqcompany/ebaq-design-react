@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { Button, Input } from "./ui";
 import { ArekProfileBadge } from "./ArekProfileBadge";
 import { bookingUrl } from "../content/siteFacts";
+import { requestBookingToken } from "../conversionAttribution";
 import { services } from "../data/services";
 import { HiOutlineEnvelope, HiOutlineMapPin, HiOutlinePhone } from "react-icons/hi2";
 
@@ -38,6 +39,8 @@ export const ContactForm = () => {
       if (payload.phone) calendar.searchParams.set("Phone", payload.phone);
       if (payload.message) calendar.searchParams.set("notes", payload.message);
       calendar.searchParams.set("Ready", "true");
+      const token = await requestBookingToken("contact");
+      if (token) calendar.searchParams.set("metadata[ebaq_click]", token);
       window.location.assign(calendar.toString());
     } catch {
       setError("Your message couldn’t be sent. Please email arek@ebaqdesign.com or try again.");

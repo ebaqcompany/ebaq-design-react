@@ -9,6 +9,7 @@ import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
 import { Faq4 } from "./Faq4";
 import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
+import { TextLink } from "./TextLink";
 import { brandSprint, pricing, pricingFaqs, siteUrl, studio, type FactFaq } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 
@@ -84,17 +85,29 @@ export const BrandSprintPage = () => (
       <BrandSprintIncluded />
       <ServiceProcess customSteps={weekSteps} />
       <Comparison
-        heading={"One week with a senior designer,\nnot months with an agency"}
+        heading="Compare scope, timeline, and who does the work"
         rows={[
-          { left: "$3,000 flat", right: "$25k–$100k+ per project" },
-          { left: "Brand identity in 1 week, guaranteed", right: "3–9 months or more" },
-          { left: "Total agreed before work starts", right: "Estimates that grow" },
-          { left: "Revisions within agreed scope", right: "Change orders" },
-          { left: "One senior designer, start to finish", right: "Account managers and juniors" },
+          { left: `${pricing.weekly} flat`, right: "Project fees vary by team and scope" },
+          { left: "Brand identity in 1 week, guaranteed", right: "Timeline depends on the engagement" },
+          { left: "Total agreed before work starts", right: "Check the proposal and change terms" },
+          { left: "Revisions within agreed scope", right: "Ask what revisions are included" },
+          { left: "One senior designer, start to finish", right: "May include several specialists" },
         ]}
       />
       <ServiceTestimonialOptions autoPlay />
-      <Faq4 tagline="FAQs" heading="Brand Sprint questions" questions={faqs.map(({ question, answer }) => ({ title: question, answer }))} />
+      <Faq4
+        tagline="FAQs"
+        heading="Brand Sprint questions"
+        questions={faqs.map(({ question, answer }) => ({
+          title: question,
+          answer: question === "What if I need more than branding?" ? (
+            <p>
+              {answer} Use the <TextLink href="/tools/branding-cost-calculator">branding cost calculator</TextLink>{" "}
+              to estimate your combined project.
+            </p>
+          ) : answer,
+        }))}
+      />
       <Cta17 heading="Ready to plan your week?" description="Book a 15-minute call. You'll leave with a scope, a start date, and a fixed total." />
     </main>
     <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />

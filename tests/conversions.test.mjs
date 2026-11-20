@@ -69,6 +69,10 @@ test('reschedules replace the original booking and out-of-order delivery does no
 test('metadata sanitization, rate limits and report authentication', async () => {
   assert.equal(attribution(new URLSearchParams({ source: '/proposal/client', referrer: 'javascript:alert(1)', utm_campaign: 'private@example.test' })).source, '/unknown');
   assert.deepEqual(attribution(new URLSearchParams({ utm_campaign: 'private@example.test' })).campaign, {});
+  assert.deepEqual(attribution(new URLSearchParams({
+    source: '/tools/branding-cost-calculator', landing: '/compare/freelancer-vs-agency',
+    utm_source: 'chatgpt.com', utm_medium: 'private@example.test', utm_campaign: 'example.com',
+  })), { source: '/tools/branding-cost-calculator', landing: '/compare/freelancer-vs-agency', referrer: '', campaign: { utm_source: 'chatgpt.com' } });
   assert.equal(reportAuthorized('Bearer ' + reportToken, reportToken), true);
   assert.equal(reportAuthorized('Basic ' + Buffer.from('arek:' + reportToken).toString('base64'), reportToken), true);
   assert.equal(reportAuthorized('Bearer wrong', reportToken), false);
@@ -119,5 +123,44 @@ test('HTTP redirect, opt-out, forged webhook rejection and protected report', as
     assert.equal((await response.json()).sources[0].confirmedBookings, 1);
     response = await fetch(base + '/api/conversion-report', { headers: { Authorization: 'Bearer ' + reportToken } });
     assert.match(await response.text(), /Booking sources/);
+    const notes = 'Cost calculator estimate. Brand identity: 1 week, $3,000.';
+    const toolParams = new URLSearchParams({ source: '/tools/branding-cost-calculator', landing: '/tools/branding-cost-calculator', utm_source: 'chatgpt.com', notes });
+    for (const headers of [{}, { DNT: '1' }]) {
+      response = await fetch(`${base}/api/booking-start?${toolParams}`, { headers, redirect: 'manual' });
+      const calendar = new URL(response.headers.get('location'));
+      assert.equal(calendar.searchParams.get('notes'), notes);
+      assert.equal(calendar.searchParams.has('metadata[ebaq_click]'), !headers.DNT);
+    }
+    response = await fetch(`${base}/api/booking-start?${toolParams}`, { redirect: 'manual', headers: { 'User-Agent': 'OAI-SearchBot' } });
+    assert.equal(new URL(response.headers.get('location')).searchParams.has('metadata[ebaq_click]'), false);
+    response = await fetch(`${base}/api/booking-start?source=/contact&notes=private`, { redirect: 'manual' });
+    assert.equal(new URL(response.headers.get('location')).searchParams.has('notes'), false);
+    const tokenParams = new URLSearchParams({ source: '/contact', landing: '/compare/freelancer-vs-agency', utm_source: 'chatgpt.com' });
+    tokenParams.set('entry', 'contact');
+    response = await fetch(`${base}/api/booking-start?${tokenParams}`, { method: 'POST', headers: { DNT: '1' } });
+    assert.equal(response.status, 204);
+    response = await fetch(`${base}/api/booking-start?${tokenParams}`, { method: 'POST' });
+    const contact = await response.json();
+    assert.deepEqual(Object.keys(contact), ['token']);
+    assert.ok(readClickToken(contact.token, secret));
+    tokenParams.set('entry', 'embed');
+    tokenParams.set('source', '/compare/freelancer-vs-agency');
+    response = await fetch(`${base}/api/booking-start?${tokenParams}`, { method: 'POST' });
+    const embed = await response.json();
+    const booking = fixture(embed.token, { uid: 'fixture-embed-booking-not-real' });
+    response = await fetch(base + '/api/cal-webhook', {
+      method: 'POST', body: booking, headers: { 'x-cal-signature-256': sign(booking) },
+    });
+    assert.equal(response.status, 200);
+    response = await fetch(base + '/api/conversion-report?format=json', { headers: { Authorization: 'Bearer ' + reportToken } });
+    const report = await response.json();
+    const embedRow = report.sources.find(row => row.source === '/compare/freelancer-vs-agency');
+    assert.equal(embedRow.campaign.utm_source, 'chatgpt.com');
+    assert.equal(embedRow.clicks, 0);
+    assert.equal(embedRow.embedStarts, 1);
+    assert.equal(embedRow.confirmedBookings, 1);
+    assert.equal(embedRow.embedConfirmedBookings, 1);
+    assert.equal(report.unattributedBookings, 0);
+    assert.ok(!JSON.stringify(await store.list(0)).includes(notes));
   } finally { await new Promise(resolve => server.close(resolve)); store.close(); rmSync(dir, { recursive: true, force: true }); }
 });

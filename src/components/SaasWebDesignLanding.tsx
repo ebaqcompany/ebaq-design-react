@@ -36,9 +36,9 @@ const row3 = [
 ];
 
 const workLinks = [
-  { url: "/work/elevate", heading: "Elevate — SaaS", image: { src: "/case-study/elevate/03-website.webp", alt: "Elevate website" } },
+  { url: "/work/elevate", heading: "Elevate case study", image: { src: "/case-study/elevate/03-website.webp", alt: "Elevate website" } },
   { url: "https://elevateab.com/", heading: "Elevate live site", image: { src: "/portfolio/websites/elevate-web.webp", alt: "Elevate live website" } },
-  { url: "/work/ventur", heading: "Ventur — AI app", image: { src: "/case-study/ventur/06-website.webp", alt: "Ventur website" } },
+  { url: "/work/ventur", heading: "Ventur case study", image: { src: "/case-study/ventur/06-website.webp", alt: "Ventur website" } },
   { url: "https://www.venturtravel.com/", heading: "Ventur live site", image: { src: "/portfolio/websites/ventur-web.webp", alt: "Ventur live website" } },
   { url: "/work", heading: "+ All work", image: { src: "/portfolio/identities/elevate-bento.webp", alt: "Selected work" } },
 ];
@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     question: "Can you also design our logo and brand?",
-    answer: "Yes. Elevate and Ventur both got a full identity and website together, so the brand and the site launch as one system.",
+    answer: "Yes. For Elevate, I designed the identity and responsive website in Figma, then handed the designs to their team for development. If you also need me to build the site, we scope development separately.",
   },
   {
     question: "How do we get started?",
@@ -235,7 +235,7 @@ export const SaasWebDesignLanding = () => (
       <PainPointsSection />
       <DeliverablesSection />
       <div id="saas-work">
-        <Layout527 hoverLinks={workLinks} />
+        <Layout527 heading="SaaS and AI website projects" hoverLinks={workLinks} />
       </div>
       <SaasTestimonial />
       <ServiceFaq heading="SaaS website questions" questions={faqs.map(({ question, answer }) => ({ title: question, answer }))} />

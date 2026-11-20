@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import clsx from "clsx";
 import { VideoSources } from "./Media";
+import { TextLink } from "./TextLink";
 
 type ImageProps = {
   src: string;
@@ -17,12 +18,13 @@ type HoverLinkProps = {
 
 type Props = {
   hoverLinks: HoverLinkProps[];
+  heading: string;
 };
 
 export type Layout527Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Layout527 = (props: Layout527Props) => {
-  const { hoverLinks } = {
+  const { hoverLinks, heading } = {
     ...Layout527Defaults,
     ...props,
   };
@@ -43,7 +45,7 @@ export const Layout527 = (props: Layout527Props) => {
     <section id="deliverables" className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
       <div className="container">
         <h2 className="mb-12 md:mb-16">
-          $3k goes a long way. All this plus much more
+          {heading}
         </h2>
         <div className="relative block lg:grid lg:grid-cols-4 lg:items-start lg:gap-8">
           {/* Image container - shows on left side (3/4 width) */}
@@ -86,25 +88,23 @@ export const Layout527 = (props: Layout527Props) => {
           <div className="lg:col-start-4 lg:col-span-1">
             {hoverLinks.map((link, index) => (
               <div
-                key={index}
+                key={link.heading}
                 className={clsx(
-                  "relative z-10 flex flex-col flex-wrap items-start justify-start gap-4 border-b border-black/20 py-[11px] transition-all duration-300 sm:flex-row sm:items-center md:gap-8 md:py-[13px] cursor-default",
+                  "relative z-10 flex flex-col flex-wrap items-start justify-start gap-4 border-b border-black/20 py-[11px] transition-all duration-300 sm:flex-row sm:items-center md:gap-8 md:py-[13px]",
                   index === hoverLinks.length - 1 && "border-b-0"
                 )}
                 onMouseEnter={() => setHoveredIndex(index)}
               >
-                <h4
+                <h3
                   className={clsx(
-                    "heading-h6 transition-colors duration-300 tracking-[0.01em]",
-                    {
-                      "lg:text-black/20": hoveredIndex !== index && hoveredIndex !== null,
-                      "lg:text-black": hoveredIndex === index || hoveredIndex === null,
-                    },
+                    "heading-h6 transition-colors duration-300",
+                    hoveredIndex !== index && "lg:text-black/70",
                   )}
-                  style={{ fontFamily: "'Roboto Condensed', sans-serif", fontWeight: 600 }}
                 >
-                  {link.heading}
-                </h4>
+                  {link.url && link.url !== "#"
+                    ? <TextLink href={link.url} onFocus={() => setHoveredIndex(index)}>{link.heading}</TextLink>
+                    : link.heading}
+                </h3>
               </div>
             ))}
           </div>
@@ -115,6 +115,7 @@ export const Layout527 = (props: Layout527Props) => {
 };
 
 export const Layout527Defaults: Props = {
+  heading: "$3k goes a long way. All this plus much more",
   hoverLinks: [
     {
       url: "#",

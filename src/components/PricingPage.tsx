@@ -5,6 +5,7 @@ import { Comparison } from "./Comparison";
 import { Faq4 } from "./Faq4";
 import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
+import { TextLink } from "./TextLink";
 import { pricing, pricingFaqs, siteUrl, studio, studioFaqs, weekPlan } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 
@@ -59,7 +60,19 @@ export const PricingPage = () => (
     </Helmet>
     <Navbar16 />
     <main>
-      <Pricing8 surface="white" headingLevel="h1" tagline="Pricing" heading="Priced weekly or monthly" description="Hire me for a flat weekly rate with guaranteed deliverables. Or choose a monthly plan for a bigger project and save $2,000." />
+      <Pricing8
+        surface="white"
+        headingLevel="h1"
+        tagline="Pricing"
+        heading="Priced weekly or monthly"
+        description={(
+          <>
+            A one-week Brand Sprint covers your agreed brand identity for {pricing.weekly} total. Use the{" "}
+            <TextLink href="/tools/branding-cost-calculator">branding cost calculator</TextLink>{" "}
+            to estimate a project that also needs website design, development, or launch assets.
+          </>
+        )}
+      />
       <Comparison
         heading={"Agency-level work,\nwithout the agency invoice"}
         rows={[

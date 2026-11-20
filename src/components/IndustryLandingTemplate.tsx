@@ -32,7 +32,7 @@ export type IndustryLandingConfig = {
   painPoints: { heading: string; points: PainPoint[] };
   deliverables: { heading: string; items: string[]; description?: string };
   // Keep preview media 16:9: the preview frame is aspect-video.
-  preview: { eyebrow: string; anchor: string; items: PreviewItem[]; heading?: string };
+  preview: { eyebrow: string; anchor: string; items: PreviewItem[]; heading?: string; caseStudyLinkLabel?: string };
   testimonial?: IndustryTestimonialProps;
   faq: { heading: string; items: IndustryFaq[] };
   aboutHeading: string;
@@ -152,7 +152,12 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
           { heading: "03", title: "Put your brand to work", description: "Receive the agreed files and guidelines for your identity. If a deck or website is part of your scope, we plan the additional work and timing together." },
         ]} />}
         <div id={preview.anchor}>
-          <Layout350Preview eyebrow={preview.eyebrow} heading={preview.heading ?? "$3k goes a long way. All this plus much more"} items={preview.items} />
+          <Layout350Preview
+            eyebrow={preview.eyebrow}
+            heading={preview.heading ?? "$3k goes a long way. All this plus much more"}
+            items={preview.items}
+            link={preview.caseStudyLinkLabel ? { href: `/work/${config.caseStudy.slug}`, label: preview.caseStudyLinkLabel } : undefined}
+          />
         </div>
         {testimonial && <IndustryTestimonial {...testimonial} />}
         {config.brandDesignLayout && <>

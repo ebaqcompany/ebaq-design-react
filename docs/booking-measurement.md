@@ -4,12 +4,12 @@ The existing website and Cal.com intro-call event remain the booking journey. No
 
 ## What is measured
 
-- A booking link goes through `/api/booking-start`, which stores the public source page, session landing page, referring hostname and bounded `utm_source`, `utm_medium`, `utm_campaign` labels.
-- The redirect adds an opaque signed `metadata[ebaq_click]` token to the existing `https://cal.com/ebaqdesign/15min` link. It does not pass attendee details.
+- Booking links go through `/api/booking-start`, which stores the public source page, session landing page, referring hostname and bounded `utm_source`, `utm_medium`, `utm_campaign` labels. Hostname-shaped campaign sources such as `chatgpt.com` are supported.
+- The redirect attaches an opaque signed `metadata[ebaq_click]` token to the Cal.com link and forwards generated calculator or quiz notes without saving them. The contact form and desktop calendar request this token separately so that attendee prefills stay in the existing handoff to Cal.com.
 - Cal.com sends its original signed webhook to `/api/cal-webhook`. The receiver verifies the raw-byte HMAC, filters event type `815281`, and only treats `ACCEPTED` bookings as confirmed.
 - Requests, payment initiation, browser callbacks and booking clicks are not confirmed bookings. Cancellations are excluded; reschedules replace the earlier booking. Retried deliveries do not double-count.
 - `/api/conversion-report` is private: HTTP Basic authentication (any username, report token as password) or a Bearer report token. `?format=json&days=28` returns machine-readable counts. The default is a simple browser report.
-- Reports use a click-date cohort and last-booking-click attribution, show unmatched direct bookings separately, and describe unconverted clicks as “no confirmed booking yet,” not proven abandonment.
+- Reports group bookings by the date the calendar link, contact form handoff or desktop embed started. Embed starts and confirmations have their own counts. The link and form conversion rate uses only link and form starts. Unmatched bookings appear separately.
 
 ## Privacy and limits
 

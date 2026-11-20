@@ -1,10 +1,11 @@
+import type { ReactNode } from "react";
 import type { ButtonProps } from "./ui";
 import { BiCheck } from "react-icons/bi";
 import { AvailableButton } from "./AvailableButton";
 import { TextLink } from "./TextLink";
 
 type PricingPlan = { planName: string; planDescription: string; originalPrice?: string; monthlyPrice: string; yearlyPrice: string; period: string; alternateLabel: string; features: string[]; button: ButtonProps };
-type Props = { tagline: string; heading: string; description: string; pricingPlans: PricingPlan[] };
+type Props = { tagline: string; heading: string; description: ReactNode; pricingPlans: PricingPlan[] };
 export type Pricing8Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props> & { surface?: "light" | "dark" | "white"; headingLevel?: "h1" | "h2"; bookingHref?: string };
 
 export const Pricing8 = (props: Pricing8Props) => {

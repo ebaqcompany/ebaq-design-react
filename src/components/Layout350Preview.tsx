@@ -3,6 +3,7 @@ import { useReducedMotion } from "framer-motion";
 import { useMediaQuery } from "./ui";
 import { isVideoSrc, LazyVideo } from "./Media";
 import { Layout527Defaults } from "./Layout527";
+import { TextLink } from "./TextLink";
 
 const portfolio22Labels = ["Logo Design", "Colors & Fonts", "Stationery", "Social", "UI Design", "Websites", "Ads"];
 export const portfolio22Services = [
@@ -28,6 +29,7 @@ type Layout350PreviewProps = {
   idPrefix?: string;
   eyebrow?: string;
   heading?: string;
+  link?: { href: string; label: string };
   // Landing pages pass their own case-study media. Keep it 16:9: the preview frame is aspect-video.
   items?: PreviewItem[];
 };
@@ -56,7 +58,7 @@ const ServiceMedia = ({ src, alt, poster, initial = false }: { src: string; alt?
   );
 };
 
-export const Layout350Preview = ({ id, idPrefix = "portfolio22-service", eyebrow = "What I offer", heading = "Everything your brand needs", items = portfolio22Services }: Layout350PreviewProps) => {
+export const Layout350Preview = ({ id, idPrefix = "portfolio22-service", eyebrow = "What I offer", heading = "Everything your brand needs", items = portfolio22Services, link }: Layout350PreviewProps) => {
   const headingId = idPrefix === "portfolio22-service" ? "layout350-preview-heading" : `${idPrefix}-heading`;
   const [activeIndex, setActiveIndex] = useState(0);
   const [isInteracting, setIsInteracting] = useState(false);
@@ -75,6 +77,7 @@ export const Layout350Preview = ({ id, idPrefix = "portfolio22-service", eyebrow
         <div className="mb-12 max-w-4xl md:mb-16 lg:mb-20">
           <p className="mb-3 font-mono font-normal uppercase tracking-wide text-sm text-brand-primary md:mb-4">{eyebrow}</p>
           <h2 id={headingId}>{heading}</h2>
+          {link && <TextLink href={link.href} className="mt-6 text-white">{link.label}</TextLink>}
         </div>
 
         <div className="grid items-start gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:gap-12">

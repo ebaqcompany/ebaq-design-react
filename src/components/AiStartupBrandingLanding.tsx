@@ -64,6 +64,7 @@ const config: IndustryLandingConfig = {
   preview: {
     eyebrow: "Orbio case study",
     heading: "An identity built around Orbio’s marble orb",
+    caseStudyLinkLabel: "Read the Orbio case study",
     anchor: "orbio",
     items: [
       { label: "Logo", image: { src: `${OR}/01-logos.webp`, alt: "Orbio logo lockups" } },

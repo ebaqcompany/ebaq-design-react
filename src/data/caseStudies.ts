@@ -469,6 +469,7 @@ const allCaseStudies: CaseStudy[] = [
       ],
     },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/orbio" },
+    industryPage: { label: "AI startup branding", href: "/ai-startup-branding" },
     preview: { src: "/case-study/orbio/thumbnail.webp", alt: "Horizontal Orbio logo lockup: the 3D marble orb beside the ORBIO wordmark" },
     hero: {
       src: "/case-study/orbio/hero-orb.webm",
@@ -608,6 +609,7 @@ const allCaseStudies: CaseStudy[] = [
     },
     website: { label: "Visit live website", href: "https://nextdim.io" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/next-dim" },
+    industryPage: { label: "Healthcare AI branding", href: "/ai-healthcare-branding" },
     preview: { src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim AI brand identity" },
     hero: {
       src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json",
@@ -809,6 +811,7 @@ const allCaseStudies: CaseStudy[] = [
     },
     website: { label: "Visit live website", href: "https://elevateab.com/" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/elevate-ab" },
+    industryPage: { label: "SaaS website design", href: "/saas-web-design" },
     preview: { src: "/portfolio/identities/elevate-bento.webp", alt: "Elevate brand identity" },
     hero: {
       src: "/case-study/elevate/hero-logo.json",
@@ -861,7 +864,7 @@ const allCaseStudies: CaseStudy[] = [
     ],
     overview: {
       heading: "Rebranding a Shopify testing app",
-      description: "Elevate co-founder Karim Zitouni reached out to me for a full rebrand of his Shopify A/B testing platform. We designed a new visual identity and website to help Elevate stand out in the Shopify ecosystem.",
+      description: "Elevate co-founder Karim Zitouni needed a new brand for his Shopify A/B testing platform. I designed the visual identity and responsive website in Figma, then handed the website designs to Elevate’s team for development.",
       stats: [
         { value: "2 weeks", label: "From branding to web design" },
         { value: "140+", label: "5-star reviews on Shopify" },
