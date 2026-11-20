@@ -49,6 +49,7 @@ const staticPaths = [
   '/fulfillment-policy',
   '/law-firm-branding',
   '/real-estate-branding',
+  '/new-york-branding',
   '/ai-healthcare-branding',
   '/saas-branding',
   '/luxury-branding',

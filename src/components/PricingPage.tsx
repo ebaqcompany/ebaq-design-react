@@ -50,6 +50,7 @@ export const PricingPage = () => (
       <title>Pricing: Brand Identity in One Week for $3,000 | Ebaq Design</title>
       <meta name="description" content="A flat $3,000 per week for branding, motion, pitch decks, and websites. A new brand identity or rebrand is delivered in one week, guaranteed." />
       <link rel="canonical" href={pageUrl} />
+      <link rel="alternate" type="text/markdown" href={`${siteUrl}/pricing.md`} title="Pricing (markdown)" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="Pricing: Brand Identity in One Week for $3,000 | Ebaq Design" />

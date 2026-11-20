@@ -57,6 +57,7 @@ for (const [path, component] of Object.entries({
   '/real-estate-branding': 'RealEstateBrandingLanding',
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/personal-branding': 'PersonalBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
   '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding',
+  '/new-york-branding': 'NewYorkBrandingLanding',
   '/pricing': 'PricingPage', '/brand-sprint': 'BrandSprintPage', '/design-monthly': 'DesignMonthlyPage',
   '/compare': 'CompareIndexPage', '/glossary': 'GlossaryPage', '/industries': 'IndustriesPage', '/compare/freelancer-vs-agency': 'FreelancerVsAgencyPage', '/locations': 'LocationsPage',
   '/services': 'ServicesPage',
@@ -70,7 +71,7 @@ for (const [path, component] of Object.entries({
   const source = await read(`../src/components/${component}.tsx`)
   const title = source.match(/<title>([^<{]+)<\/title>/)?.[1]?.replaceAll('&amp;', '&')
   const description = source.match(/<meta\s+name="description"\s+content="([^"]+)"/)?.[1]
-  metadata.set(path, { title, description, ...(path === '/real-estate-branding' ? { image: '/portfolio/identities/savory-bento.webp' } : {}) })
+  metadata.set(path, { title, description, ...(path === '/real-estate-branding' || path === '/new-york-branding' ? { image: '/portfolio/identities/savory-bento.webp' } : {}) })
 }
 const work = await read('../src/components/WorkPage.tsx')
 metadata.set('/work', { title: work.match(/const pageTitle = "([^"]+)"/)?.[1], description: work.match(/const pageDescription =\s*"([^"]+)"/)?.[1] })
@@ -209,6 +210,7 @@ Tools: ${tools.join(', ')}.
 - ${pricing.guarantee}
 - ${pricing.fixedTotal}
 - Monthly engagement: ${pricing.monthly}, booked upfront.
+- Plain-text pricing for agents: ${siteUrl}/pricing.md
 - ${pricing.payment}
 - ${pricing.bookingIntro}
 
@@ -227,6 +229,7 @@ Tools: ${tools.join(', ')}.
 - [Brand Sprint: a brand identity or rebrand in one week for $3,000](${siteUrl}/brand-sprint)
 - [Work: case studies](${siteUrl}/work)
 - [About Arek Dvornechuck, Branding Expert](${siteUrl}/about)
+- [Branding and web design in New York (Brooklyn studio)](${siteUrl}/new-york-branding)
 - [Real estate branding for agents, teams and brokers](${siteUrl}/real-estate-branding)
 - [Law firm branding](${siteUrl}/law-firm-branding)
 - [AI startup branding](${siteUrl}/ai-startup-branding)
@@ -340,8 +343,46 @@ ${faqText}
 
 Last updated: ${new Date().toISOString().slice(0, 10)}
 `
+// pricing.md: the same canonical prices as plain markdown, for AI agents comparing providers.
+const pricingMd = `# Pricing — ${studio.name}
+
+> ${pricing.summary} ${pricing.guarantee}
+
+Prices in ${pricing.currency}. Last updated: ${new Date().toISOString().slice(0, 10)}.
+
+## Weekly (Brand Sprint and any design week)
+
+- Price: ${pricing.weekly} per week, flat
+- Brand Sprint: ${brandSprint.description}
+- Delivery: ${brandSprint.duration}
+- Included in the Brand Sprint:
+${brandSprint.deliverables.map((item) => `  - ${item}`).join('\n')}
+
+## Monthly
+
+- Price: ${pricing.monthly} per month, booked upfront
+- Use: larger scopes such as brand strategy, messaging, pitch decks, website design and development, and motion graphics
+
+## How a project grows
+
+${weekTable}
+
+## Terms
+
+- ${pricing.fixedTotal}
+- ${pricing.payment}
+- Platform subscriptions, hosting, and paid third-party tools are billed separately by those providers.
+- You work directly with ${founder.name}, the designer doing the work. No account managers or junior designers.
+
+## Links
+
+- Pricing page: ${siteUrl}/pricing
+- Brand Sprint: ${siteUrl}/brand-sprint
+- Book a call: ${bookingUrl}
+`
 await writeFile(new URL('llms.txt', outputDir), llmsSummary)
+await writeFile(new URL('pricing.md', outputDir), pricingMd)
 await writeFile(new URL('llms-full.txt', outputDir), llmsFull)
 
-console.log(`Generated metadata for ${paths.length} public routes, the homepage, 404.html, llms.txt and llms-full.txt.`)
+console.log(`Generated metadata for ${paths.length} public routes, the homepage, 404.html, llms.txt, llms-full.txt and pricing.md.`)
 console.log(`Prerendered ${prerenderStats.rendered} routes${prerenderStats.failed.length ? `; ${prerenderStats.failed.length} kept an empty root:\n  ${prerenderStats.failed.join('\n  ')}` : '.'}`)

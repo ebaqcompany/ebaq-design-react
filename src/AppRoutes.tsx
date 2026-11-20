@@ -38,6 +38,7 @@ const AiStartupBrandingLanding = page('./components/AiStartupBrandingLanding.tsx
 const FramerDesignerLanding = page('./components/FramerDesignerLanding.tsx', 'FramerDesignerLanding')
 const WebflowDesignerLanding = page('./components/WebflowDesignerLanding.tsx', 'WebflowDesignerLanding')
 const MarketingAgencyBrandingLanding = page('./components/MarketingAgencyBrandingLanding.tsx', 'MarketingAgencyBrandingLanding')
+const NewYorkBrandingLanding = page('./components/NewYorkBrandingLanding.tsx', 'NewYorkBrandingLanding')
 const CaseStudyPage = page('./components/CaseStudyPage.tsx', 'CaseStudyPage')
 const WorkPage = page('./components/WorkPage.tsx', 'WorkPage')
 const BlogPage = page('./components/BlogPage.tsx', 'BlogPage')
@@ -91,6 +92,7 @@ const routes: RouteEntry[] = [
   { path: '/start', page: StartPage },
   { path: '/law-firm-branding', page: LawFirmLanding },
   { path: '/real-estate-branding', page: RealEstateBrandingLanding },
+  { path: '/new-york-branding', page: NewYorkBrandingLanding },
   { path: '/ai-healthcare-branding', page: AiHealthcareLanding },
   { path: '/saas-branding', page: SaasBrandingLanding },
   { path: '/luxury-branding', page: LuxuryBrandingLanding },
