@@ -49,7 +49,7 @@ const config: IndustryLandingConfig = {
   caseStudy: { slug: "fox-berman", title: "Fox Berman: Law Firm Branding Case Study" },
   hero: {
     heading: "Branding & Web\nfor Law Firms",
-    description: "A considered identity and clear website for your law firm, from the logo and stationery to the digital experience clients encounter.",
+    description: "Ebaq Design creates law firm brand identities in one week for $3,000, from the logo and stationery to the website clients see first. You work directly with a senior designer, as Fox Berman, an international law firm in Sint Maarten, did.",
     rows: [foxRow1, foxRow2, foxRow3],
   },
   painPoints: {

@@ -18,7 +18,7 @@ const config: IndustryLandingConfig = {
   caseStudy: { slug: "orbio", title: "Orbio: AI Startup Branding Case Study" },
   hero: {
     heading: "Branding & Web\nfor AI Startups",
-    description: "A distinctive identity and clear website for your AI startup,\nfrom the logo and brand system to the pitch deck and launch.",
+    description: "Ebaq Design gives AI startups a distinctive brand identity in one week for $3,000,\nfrom the logo and brand system to the pitch deck and website. You work directly with a senior designer, as Orbio, an AI inference startup, did.",
     rows: [
       [
         { type: "video", src: `${OR}/hero-orb.mp4`, alt: "Animated Orbio logo", bgColor: "#0B0B0C" },

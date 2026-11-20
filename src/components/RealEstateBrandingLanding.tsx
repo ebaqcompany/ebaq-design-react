@@ -24,7 +24,7 @@ const config: IndustryLandingConfig = {
   caseStudy: { slug: "savory", title: "Savory: Real Estate Branding Case Study" },
   hero: {
     heading: "Branding & Web\nfor Real Estate",
-    description: "A recognizable identity for your real estate team, brokerage or personal brand. Work directly with a senior designer on the logo, visual system and website your clients meet before they meet you.",
+    description: "Ebaq Design gives real estate agents, teams and brokerages a recognizable brand identity in one week for $3,000. You work directly with a senior designer on the logo, visual system and website your clients meet before they meet you.",
     rows: [
       [
         { type: "lottie", src: `${media}/hero-logo.json`, alt: "Savory wordmark with its split O rolling into place", bgColor: "#B3C3D6" },
@@ -103,7 +103,7 @@ export const RealEstateBrandingLanding = () => (
   <>
     <Helmet>
       <title>Real Estate Branding for Agents &amp; Teams | Ebaq Design</title>
-      <meta name="description" content="Real estate branding for agents, teams and brokers: logos, identity, guidelines and website design. See Savory, a Brooklyn team at Compass. Book a call." />
+      <meta name="description" content="Real estate branding for agents, teams and brokers: logo, identity and guidelines in one week for $3,000, plus website design. See Savory, a Brooklyn team at Compass." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
