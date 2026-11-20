@@ -26,7 +26,7 @@ const config: IndustryLandingConfig = {
   caseStudy: { slug: "brevidee", title: "Brevidee: EdTech Branding Case Study" },
   hero: {
     heading: "Webflow Designer\n& Developer, NYC",
-    description: "A custom Webflow site designed in Figma and built by a senior designer,\nwith the CMS set up so your team can publish without a developer.",
+    description: "Ebaq Design designs and builds Webflow websites in two to three weeks for $3,000 per week,\nwith the CMS set up so your team can publish without a developer. You work directly with a senior designer whose own site ran on Webflow for over six years.",
     rows: [
       [
         { type: "video", src: `${WF}/brevidee-website.mp4`, alt: "Brevidee website built in Webflow", bgColor: "#000000" },

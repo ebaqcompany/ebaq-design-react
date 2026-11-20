@@ -315,7 +315,7 @@ export const comparisons: Comparison[] = [
       { question: "When is a custom Next.js build worth it?", answer: "When the site needs something a builder cannot do: logins, payments, data from your product, or unusual features. For a marketing site, Framer or Webflow is usually faster to launch and easier for your team to edit." },
       moveFaq("one to the other"),
       costFaq,
-      { question: "Do you build in both?", answer: "Yes. Framer lists me in its Experts directory, and my own site ran on Webflow for over six years. You work with me directly from the first call to launch.", link: { label: "my Framer profile", href: "https://www.framer.com/community/creator/@ebaqdesign/" } },
+      { question: "Do you build in both?", answer: "Yes. I have a Framer Expert profile, and my own site ran on Webflow for over six years. You work with me directly from the first call to launch.", link: { label: "my Framer profile", href: "https://www.framer.com/community/creator/@ebaqdesign/" } },
     ],
   },
   {
@@ -363,7 +363,7 @@ export const comparisons: Comparison[] = [
       { question: "Can I start in Framer and move to Next.js later?", answer: "Yes, and it is a common path. Launch the marketing site in Framer, then rebuild in Next.js once the site needs features a builder cannot offer. The design carries over; the pages are rebuilt in code and old URLs are redirected." },
       { question: "Which is better for SEO?", answer: "Both can rank. Framer has page titles, descriptions, redirects, and a sitemap built in. Next.js gives full control over markup and metadata, and all of it is set up by hand." },
       costFaq,
-      { question: "Do you build in both?", answer: "Yes. Framer lists me in its Experts directory, and I also build custom sites in Next.js. You work with me directly from the first call to launch.", link: { label: "my Framer profile", href: "https://www.framer.com/community/creator/@ebaqdesign/" } },
+      { question: "Do you build in both?", answer: "Yes. I have a Framer Expert profile, and I also build custom sites in Next.js. You work with me directly from the first call to launch.", link: { label: "my Framer profile", href: "https://www.framer.com/community/creator/@ebaqdesign/" } },
     ],
   },
   {

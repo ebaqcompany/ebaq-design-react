@@ -27,7 +27,7 @@ const config: IndustryLandingConfig = {
   caseStudy: { slug: "fox-berman", title: "Fox Berman: Law Firm Branding Case Study" },
   hero: {
     heading: "Framer Website\nDesigner in NYC",
-    description: "Your site designed in Figma and built in Framer by a senior designer,\nwith motion, a CMS, and SEO basics set up before launch.",
+    description: "Ebaq Design designs and builds Framer websites in two to three weeks for $3,000 per week,\nwith motion, a CMS, and SEO basics set up before launch. You work directly with a senior designer and Framer Expert, as the Fox Berman law firm did.",
     rows: [
       [
         { type: "video", src: `${FR}/fox-berman-website.mp4`, alt: "Fox Berman website, live on Framer", bgColor: "#282e34" },
@@ -92,7 +92,7 @@ const config: IndustryLandingConfig = {
     heading: "Questions about\nFramer websites",
     items: [
       { question: "How much does a Framer website cost?", answer: "$3,000 per week, flat. Design in Figma takes about one week and the Framer build one or two more, depending on the page count, so a site usually takes two to three weeks: $6,000 to $9,000 in total. The number of weeks is agreed on the kickoff call, so the price is fixed before work starts." },
-      { question: "Are you a Framer expert?", answer: "Yes. Framer lists me in its Experts directory, and I design and build in Framer for clients and for my own products: the Fox Berman law firm website, Guidelines.online, and the AI Brand Strategist.", link: { label: "my Framer profile", href: framerProfile } },
+      { question: "Are you a Framer expert?", answer: "Yes. I have a Framer Expert profile, and I design and build in Framer for clients and for my own products: the Fox Berman law firm website, Guidelines.online, and the AI Brand Strategist.", link: { label: "my Framer profile", href: framerProfile } },
       { question: "Framer or Webflow: which is right for my site?", answer: "Framer suits marketing sites and landing pages with lots of motion that a small team updates often. Webflow suits larger sites built around a CMS, and Next.js suits sites that need custom functionality. I recommend one on the kickoff call, based on how your team will use the site.", link: { label: "Webflow design and development", href: "/webflow-designer" } },
       { question: "Do Framer sites rank on Google?", answer: "They can. Every page gets its own title and description, and old URLs are redirected at launch so existing links keep working. For a content-heavy site with a large blog, Webflow is usually the better fit.", link: { label: "Framer vs Webflow", href: "/compare/framer-vs-webflow" } },
       { question: "Can you build a Framer site for my existing brand?", answer: "Yes. If the brand is in good shape, the website builds on it. If it needs work first, the one-week Brand Sprint comes before the website, for $3,000." },
