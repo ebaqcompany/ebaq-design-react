@@ -653,5 +653,31 @@
       "Does the tone match who the robot works with: engineers, patients, or customers?"
     ],
     "conclusionHtml": "<h2 id=\"conclusion\">Need a brand for your robotics company?</h2><p>I design brand identities and websites for AI and robotics startups, from naming and logo to the full identity system.</p><p>See my <a href=\"/work\"><strong>past work</strong></a> and <a href=\"/start\"><strong>get in touch</strong></a> to discuss your project.</p>"
-  }
+  },
+  "faq": [
+    {
+      "question": "What makes a good robotics company logo?",
+      "answer": "A good robotics logo makes complex hardware feel trustworthy, capable, and safe while holding up physically on the machine itself. The strongest examples use short names, compact geometric marks or custom letterforms, and a single color that extends directly onto the robot hardware."
+    },
+    {
+      "question": "Why do humanoid robotics startups favor compact symbols?",
+      "answer": "Humanoid companies like Figure, 1X, Unitree, and Agility design logos that have to sit cleanly on a robot’s chest, chassis, app icon, and social avatar. A short name paired with a tight geometric mark stays legible from across a room and reproduces reliably on metal, plastic, and screens."
+    },
+    {
+      "question": "What colors work best for robotics company logos?",
+      "answer": "In robotics, color is part of the physical product as much as the logo. Brands like iRobot (green), Carbon Robotics (copper), and Field AI (orange) pick one high-visibility signature color that carries recognition across the hardware, packaging, and digital UI."
+    },
+    {
+      "question": "Should a robotics logo look futuristic or friendly?",
+      "answer": "Match the tone to who interacts with the machine. Industrial and defense robotics can lean technical and engineered, while medical, delivery, and home robotics brands use rounded typography and warm accents so the machines feel safe around people."
+    },
+    {
+      "question": "How can a robotics wordmark stand out without a complex icon?",
+      "answer": "Modify a single letterform so the wordmark carries its own signature detail—like the smile in UBTech, the stylized A in Apptronik, or the modular H in Hyphen. One intentional typographic twist is more ownable than generic gears, circuits, or robot-head clichés."
+    },
+    {
+      "question": "How long does it take to design a robotics startup brand identity?",
+      "answer": "A traditional agency identity project often takes 3 to 6 months, which can slow down fundraising or hardware demos. At Ebaq Design, a one-week Brand Sprint delivers a complete core identity—logo, motion, colors, typography, and brand guidelines—for $3,000 flat."
+    }
+  ]
 }

@@ -16,6 +16,8 @@ export type BlogPostSummary = {
   categorySlug: string;
   readTime: string;
   date: string;
+  datePublished?: string;
+  dateModified?: string;
   image: BlogImage;
 };
 

@@ -73,9 +73,9 @@ const isoDate = (value) => {
   const parsed = value ? new Date(`${value}${/\d{1,2}:\d{2}/.test(value) ? '' : ' 00:00:00'} UTC`) : null
   return parsed && !Number.isNaN(parsed.getTime()) ? parsed.toISOString().slice(0, 10) : null
 }
-const postDate = async (collection, { slug, date }) => {
+const postDate = async (collection, { slug, date, dateModified }) => {
   const post = JSON.parse(await readFile(new URL(`../public/content/${collection}/${slug}.json`, import.meta.url), 'utf8'))
-  return isoDate(post.date) || isoDate(date)
+  return isoDate(post.dateModified) || isoDate(post.date) || isoDate(dateModified) || isoDate(date)
 }
 const lastmod = new Map()
 for (const [collection, index] of [['blog', blog], ['podcast', podcast]]) {

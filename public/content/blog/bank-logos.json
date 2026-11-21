@@ -798,5 +798,31 @@
       "Will it still feel right in 10 years, not just this year?"
     ],
     "conclusionHtml": "<h2 id=\"conclusion\">Building a new bank or fintech brand?</h2><p>I design brand identities and websites for fintech and financial startups, from naming and logo to the full identity system and app-ready icon set.</p><p>See my <a href=\"/work\"><strong>past work</strong></a> and <a href=\"/start\"><strong>get in touch</strong></a> to discuss your project.</p>"
-  }
+  },
+  "faq": [
+    {
+      "question": "What makes a good bank logo?",
+      "answer": "A good bank logo signals safety, stability, and recognition across cards, mobile apps, branches, and statements for decades. The strongest examples pair a clean wordmark with one simple geometric symbol—like the Chase octagon, Deutsche Bank slash, or HSBC hexagon—or own a distinctive brand color."
+    },
+    {
+      "question": "What colors are best for a bank logo?",
+      "answer": "Blue is the default in banking because it signals trust, which also makes it crowded. The most memorable banks claim a distinct color outside that sea of blue—such as TD green, Santander red, Monzo coral, Nubank purple, or ING orange—and use it consistently across cards and apps."
+    },
+    {
+      "question": "How do digital bank logos differ from traditional bank logos?",
+      "answer": "Traditional and investment banks lean on serif capitals, crests, and heritage symbols like Barclays’ eagle or UBS’s keys to project institutional authority. Digital banks like Chime, Monzo, Nubank, and Ally trade formal authority for rounded lowercase type and bright colors to feel approachable on a phone screen."
+    },
+    {
+      "question": "Should a bank logo use a symbol or a wordmark?",
+      "answer": "Most modern banks need both a legible wordmark and a compact standalone symbol or monogram. Even wordmark-led banks need a clean icon that holds up at tiny sizes as a mobile banking app icon, favicon, and payment card corner mark."
+    },
+    {
+      "question": "How do heritage banks modernize their logos without losing trust?",
+      "answer": "They simplify geometry and redraw fine details for digital screens while keeping the core emblem recognizable. Barclays, ING, and UBS all kept their historic symbols while tightening line weights and typography so the marks scale cleanly on mobile."
+    },
+    {
+      "question": "How much does a bank or fintech logo and brand identity cost?",
+      "answer": "Traditional branding agencies typically charge $25,000 to $100,000+ and take 3 to 9 months for a financial services identity. Working directly with a senior designer in a focused Brand Sprint at Ebaq Design costs $3,000 flat for a complete core identity delivered in one week."
+    }
+  ]
 }

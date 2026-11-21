@@ -959,5 +959,31 @@
     "venture capital logos",
     "logo design",
     "brand identity"
+  ],
+  "faq": [
+    {
+      "question": "What makes a good investment firm logo?",
+      "answer": "A good investment firm logo communicates trust, focus, and staying power to founders, limited partners, and management teams. Most standout private equity and venture capital marks lead with disciplined typography and add one ownable detail—a distinctive letterform, monogram, or restrained accent color."
+    },
+    {
+      "question": "Should a private equity or VC firm use a wordmark or a symbol?",
+      "answer": "Typography carries most of the credibility in investing, so many top firms lead with a wordmark of the firm’s name. Adding a compact monogram or simple geometric mark helps when the brand needs a clean LinkedIn avatar, favicon, or slide footer badge."
+    },
+    {
+      "question": "What logo clichés should investment firms avoid?",
+      "answer": "Avoid generic upward arrows, bar charts, pillars, globes, and bulls unless the execution is genuinely original. Those symbols blend into every competitor deck and signal a template rather than an independent investment thesis."
+    },
+    {
+      "question": "What colors work best for investment firm branding?",
+      "answer": "Restrained bases like navy, charcoal, black, and warm neutrals project stability across pitch decks, LP reports, and legal documents. Pairing that base with one disciplined accent color keeps the identity memorable without looking flashy."
+    },
+    {
+      "question": "Where does an investment firm logo need to perform best?",
+      "answer": "Beyond the website header, an investment identity lives in LP decks, quarterly reports, portfolio announcements, event signage, and small navigation or slide footers. Testing the logo in one color on both light and dark backgrounds ensures the whole system holds together."
+    },
+    {
+      "question": "How much does an investment firm logo and identity cost?",
+      "answer": "Large branding agencies typically quote $25,000 to $100,000+ over 3 to 9 months for a fund identity. At Ebaq Design, funds and boutique investment firms can get a complete senior-designed identity in one week for $3,000 flat through the Brand Sprint, with websites and pitch decks scoped at the same weekly rate."
+    }
   ]
 }

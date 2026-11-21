@@ -9,6 +9,8 @@ export type SchemaPost = {
   title: string;
   description?: string;
   date?: string;
+  datePublished?: string;
+  dateModified?: string;
   author?: string;
   body?: string;
   youtubeEmbed?: string;
@@ -98,7 +100,8 @@ const firstBodyImage = (html?: string) => {
 export const buildBlogPostingSchema = (post: SchemaPost, siteUrl: string) => {
   const canonical = `${siteUrl}${post.url}`;
   const image = post.seo?.image || post.image?.src || firstBodyImage(post.body);
-  const published = toSchemaDate(post.date);
+  const published = toSchemaDate(post.datePublished ?? post.date);
+  const modified = toSchemaDate(post.dateModified ?? post.date) ?? published;
   const description = post.seo?.description || post.description;
   const tags = (post.tags || []).filter(Boolean).join(", ");
   const keywords = tags.toLowerCase() === (post.category || "").toLowerCase() ? "" : tags;
@@ -113,7 +116,8 @@ export const buildBlogPostingSchema = (post: SchemaPost, siteUrl: string) => {
     headline: post.title.length > 110 ? `${post.title.slice(0, 109).trimEnd()}…` : post.title,
     ...(description ? { description } : {}),
     ...(image ? { image: [toAbsoluteUrl(image, siteUrl)] } : {}),
-    ...(published ? { datePublished: published, dateModified: published } : {}),
+    ...(published ? { datePublished: published } : {}),
+    ...(modified ? { dateModified: modified } : {}),
     author: byFounder ? { "@type": "Person", "@id": `${siteUrl}/#founder`, name: "Arek Dvornechuck", url: `${siteUrl}/about`, jobTitle: founderJobTitle } : organization,
     publisher: { ...organization, logo: { "@type": "ImageObject", url: `${siteUrl}/ebaqdesign-logo.svg` } },
     ...(post.category ? { articleSection: post.category } : {}),
