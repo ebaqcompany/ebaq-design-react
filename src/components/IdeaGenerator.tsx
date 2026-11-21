@@ -213,6 +213,7 @@ export const IdeaGenerator = ({ kind, noun, styleLabel, types, fields, unit, len
             <p className="mb-4">{nextStep.body}</p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
               <a href="/start" className="button-inverted">Book a call</a>
+              <TextLink href="/tools/creative-brief-generator">Build a creative brief</TextLink>
               <TextLink href={nextStep.link.href}>{nextStep.link.label}</TextLink>
             </div>
           </div>

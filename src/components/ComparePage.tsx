@@ -156,7 +156,7 @@ const Comparison = ({ comparison }: { comparison: Comparison }) => {
     ...platforms.map((platform) => ({ ...platformFacts[platform].choice.link, platform: platform as PlatformId | undefined })),
     ...comparisons.filter(({ slug }) => slug !== comparison.slug).map((other) => ({ label: comparisonName(other), href: `/compare/${other.slug}`, platform: undefined })),
     { label: "All comparisons", href: "/compare", platform: undefined },
-    { label: "Website cost calculator", href: "/tools/website-cost-calculator", platform: undefined },
+    { label: "Design cost calculator", href: "/tools/design-cost-calculator?scope=website", platform: undefined },
     { label: "Pricing", href: "/pricing", platform: undefined },
   ].filter((link, index, links) => links.findIndex(({ href }) => href === link.href) === index);
 

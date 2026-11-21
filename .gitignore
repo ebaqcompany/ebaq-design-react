@@ -30,3 +30,17 @@ dist-ssr
 
 # Local scratch files
 /tmp/
+
+# Local scratch and pipeline intermediates (not part of the site)
+/scratchpad/
+/Claude outputs/
+/public/local-preview/
+/grid-capture.html
+/docs/leads/
+/tools/article-graphics/*/out/
+/tools/article-graphics/*/logos/
+/tools/article-graphics/*/shots/
+/tools/article-graphics/*/shots-sheet.png
+/tools/cover-generator/out/
+/public/case-study/airport-executive/*@3x.*
+/public/case-study/airport-executive/figma-tiles/

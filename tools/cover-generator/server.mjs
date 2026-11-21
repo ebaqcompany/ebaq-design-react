@@ -9,6 +9,7 @@
 // It only listens on 127.0.0.1 and only accepts writes from its own page.
 //   node tools/cover-generator/server.mjs
 import { createServer } from 'node:http'
+import { createHash } from 'node:crypto'
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, readdirSync, rmSync } from 'node:fs'
 import { join, extname, basename } from 'node:path'
 import { execFileSync } from 'node:child_process'
@@ -19,8 +20,8 @@ const port = Number(process.env.PORT ?? 5190)
 const coversDir = join(root, 'tools/cover-generator/covers')
 const assetsDir = join(root, 'tools/cover-generator/assets')
 const indexPath = join(root, 'public/content/blog/index.json')
-const types = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.css': 'text/css' }
-const imageExt = { 'image/svg+xml': '.svg', 'image/png': '.png', 'image/webp': '.webp', 'image/jpeg': '.jpg', 'image/gif': '.gif' }
+const types = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.avif': 'image/avif', '.css': 'text/css' }
+const imageExt = { 'image/svg+xml': '.svg', 'image/png': '.png', 'image/webp': '.webp', 'image/jpeg': '.jpg', 'image/jpg': '.jpg', 'image/gif': '.gif', 'image/avif': '.avif' }
 
 const readJson = (p) => JSON.parse(readFileSync(p, 'utf8'))
 // Rewrites a JSON file keeping its indentation and trailing newline, so diffs stay small.
@@ -100,9 +101,14 @@ async function saveAsset({ slug, url, name, data }) {
     name = basename(String(name ?? 'image'), extname(String(name ?? '')))
   }
   if (bytes.length > 15e6) throw new Error('File is over 15 MB')
-  const file = `${name.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '') || 'image'}${ext}`
+  const base = name.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '') || 'image'
   const dir = join(assetsDir, slug)
   mkdirSync(dir, { recursive: true })
+  let file = `${base}${ext}`
+  const target = join(dir, file)
+  if (existsSync(target) && !readFileSync(target).equals(bytes)) {
+    file = `${base}-${createHash('sha1').update(bytes).digest('hex').slice(0, 6)}${ext}`
+  }
   writeFileSync(join(dir, file), bytes)
   return { ok: true, path: `/tools/cover-generator/assets/${slug}/${file}` }
 }

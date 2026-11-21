@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import type { IconType } from "react-icons";
-import { LuBookA, LuBookOpen, LuBot, LuCalculator, LuDrama, LuFileText, LuGauge, LuMonitor, LuQuote, LuScale, LuType } from "react-icons/lu";
+import { LuBookA, LuBookOpen, LuBot, LuCalculator, LuDrama, LuFileText, LuGauge, LuQuote, LuScale, LuType } from "react-icons/lu";
 import { SiAdobeillustrator, SiFigma } from "react-icons/si";
 import { siteUrl } from "../content/siteFacts";
 import { buildBreadcrumbSchema, buildCollectionSchema, serializeJsonLd } from "../content/structuredData";
@@ -19,6 +19,14 @@ const description = "Free branding tools: a brand grader, an archetype quiz, nam
 type Tool = { name: string; kind: string; description: string; link: string; href: string; Icon: IconType; image?: { src: string; alt: string }; tall?: boolean };
 
 const tools: Tool[] = [
+  {
+    name: "Creative brief generator",
+    kind: "Brief builder",
+    description: "Build a crisp, agency-ready branding, logo, or website brief in 60 seconds—copy as Markdown, save as PDF, or send for a fixed quote.",
+    link: "Build your brief",
+    href: "/tools/creative-brief-generator",
+    Icon: LuFileText,
+  },
   {
     name: "Brand grader",
     kind: "Self-check",
@@ -71,28 +79,12 @@ const tools: Tool[] = [
     image: { src: "/tools/covers/brandstrategist.webp", alt: "BrandStrategist.ai home page: Get your brand strategy done in just minutes" },
   },
   {
-    name: "Branding cost calculator",
+    name: "Design cost calculator",
     kind: "Calculator",
-    description: "Pick what you need and see a fixed price and timeline, next to typical agency ranges.",
-    link: "Estimate your project",
-    href: "/tools/branding-cost-calculator",
+    description: "Price a logo, brand identity, strategy, motion, or Framer, Webflow, or Next.js website in one place—with timelines, platform costs, and agency ranges.",
+    link: "Calculate your project",
+    href: "/tools/design-cost-calculator",
     Icon: LuCalculator,
-  },
-  {
-    name: "Logo design cost calculator",
-    kind: "Calculator",
-    description: "Answer two questions and see what a logo should cost, from AI tools to agencies.",
-    link: "Price your logo",
-    href: "/tools/logo-design-cost-calculator",
-    Icon: LuCalculator,
-  },
-  {
-    name: "Website cost calculator",
-    kind: "Calculator",
-    description: "Pick your site size and platform and see the price, the timeline, and the first year on Framer, Webflow, or Next.js.",
-    link: "Price your website",
-    href: "/tools/website-cost-calculator",
-    Icon: LuMonitor,
   },
   {
     name: "Platform comparisons",

@@ -1,0 +1,60 @@
+{
+  "layout": "collage",
+  "title": "Ai Startups Logos",
+  "category": "",
+  "seed": "ai-startups-logos",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-colour": {
+      "dx": 0.5793,
+      "dy": 0.0747,
+      "hidden": true
+    },
+    "sheet-noise": {
+      "dx": 0.0255,
+      "dy": 0.1874
+    },
+    "photo-0": {
+      "dx": 1.1468,
+      "dy": -0.0679,
+      "treatment": "color",
+      "scale": 1.202
+    },
+    "dots": {
+      "dx": 1.0427,
+      "dy": 0.6183
+    },
+    "photo-1": {
+      "treatment": "color",
+      "scale": 1.052,
+      "dx": -1.1678,
+      "dy": 0.0508
+    },
+    "sheet-paper": {
+      "dx": 0.0726,
+      "dy": -0.049
+    },
+    "sheet-strip": {
+      "dx": -0.3844,
+      "dy": -0.1417
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/ai-startups-logos/paste-mwqy02t9-iub0.png",
+    "/tools/cover-generator/assets/ai-startups-logos/paste-mwqy13g2-421m.png"
+  ]
+}

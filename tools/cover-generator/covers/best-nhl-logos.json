@@ -1,0 +1,51 @@
+{
+  "layout": "collage",
+  "title": "Best Nhl Logos",
+  "category": "",
+  "seed": "best-nhl-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-colour": {
+      "dx": -0.3241,
+      "dy": -0.3613,
+      "hidden": true
+    },
+    "photo-0": {
+      "dx": -0.4234,
+      "dy": 0.3778
+    },
+    "logo-0": {
+      "dx": 0.7162,
+      "dy": -0.2211,
+      "scale": 1.785
+    },
+    "sheet-strip": {
+      "dx": -0.2531,
+      "dy": -0.1454
+    },
+    "sheet-paper": {
+      "dx": 0.2493,
+      "dy": -0.3863
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "logos": [
+    "nhl"
+  ],
+  "images": [
+    "/tools/cover-generator/assets/best-nhl-logos/localhost-arek-dvornechuck-nfl-game.webp"
+  ]
+}

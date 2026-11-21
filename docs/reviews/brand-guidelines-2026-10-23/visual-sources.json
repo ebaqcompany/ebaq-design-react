@@ -1,0 +1,110 @@
+[
+  {
+    "asset": "/images/blog/brand-guidelines/github-guidelines-preview.webp",
+    "destination": "https://brand.github.com/",
+    "provenance": "Visible official page image",
+    "width": 1200,
+    "height": 709,
+    "bytes": 22682,
+    "source_url": "https://brand.github.com/_next/static/media/index-01.b1690d59.png"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/nasa-guidelines-preview.webp",
+    "destination": "https://www.nasa.gov/nasa-brand-center/brand-guidelines/",
+    "provenance": "Destination og:image",
+    "width": 1200,
+    "height": 800,
+    "bytes": 71700,
+    "source_url": "https://images-assets.nasa.gov/image/KSC-20200623-PH-JBS02_0001/KSC-20200623-PH-JBS02_0001~large.jpg"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/slack-guidelines-preview.webp",
+    "destination": "https://slack.com/media-kit",
+    "provenance": "Destination og:image",
+    "width": 256,
+    "height": 256,
+    "bytes": 2860,
+    "source_url": "https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/mailchimp-guidelines-preview.webp",
+    "destination": "https://mailchimp.com/about/brand-assets/",
+    "provenance": "Destination og:image",
+    "width": 1200,
+    "height": 684,
+    "bytes": 16822,
+    "source_url": "https://mailchimp.com/ctf/images/yzco4xsimv0y/Nzu5yxeWIzcRcomDWtOU9/7b8df29e72b1e1a3a999e0d4c96cb6d9/mailchimp-default-og-image.png"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/mozilla-guidelines-preview.webp",
+    "destination": "https://brand.mozilla.com/",
+    "provenance": "Public portal screenshot",
+    "width": 1200,
+    "height": 675,
+    "bytes": 48526,
+    "source_url": "https://brand.mozilla.com/"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/microsoft-guidelines-preview.webp",
+    "destination": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "provenance": "Visible official page image",
+    "width": 406,
+    "height": 230,
+    "bytes": 1904,
+    "source_url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/RWCZER-Legal-IP-Trademarks-CP-MS-logo-740x417-1?fit=crop&hei=230&resSharp=1&wid=406"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/reddit-guidelines-preview.webp",
+    "destination": "https://redditinc.com/brand",
+    "provenance": "Visible official page image",
+    "width": 600,
+    "height": 350,
+    "bytes": 3716,
+    "source_url": "https://redditinc.com/hs-fs/hubfs/Reddit%20Inc/Brand/Redditinc_Thumbnail_Brand_Guidelines.png?width=600&height=350&name=Redditinc_Thumbnail_Brand_Guidelines.png"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/orbio-client-guidelines.webp",
+    "destination": "https://guidelines.online/orbio",
+    "provenance": "Destination og:image",
+    "width": 1200,
+    "height": 630,
+    "bytes": 21498,
+    "source_url": "https://guidelines.online/api/og/orbio.png?v=1d2989697a9b"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/next-dim-client-guidelines.webp",
+    "destination": "https://guidelines.online/next-dim",
+    "provenance": "Destination og:image",
+    "width": 1200,
+    "height": 630,
+    "bytes": 28080,
+    "source_url": "https://guidelines.online/api/og/next-dim.png?v=72fd417e474c"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/savory-client-guidelines.webp",
+    "destination": "https://guidelines.online/savory",
+    "provenance": "Destination og:image",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27948,
+    "source_url": "https://guidelines.online/api/og/savory.png?v=09c5a742e54e"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/foxberman-client-guidelines.webp",
+    "destination": "https://guidelines.online/foxberman",
+    "provenance": "Destination og:image",
+    "width": 1200,
+    "height": 630,
+    "bytes": 21846,
+    "source_url": "https://guidelines.online/api/og/foxberman.png?v=09d738da2438"
+  },
+  {
+    "asset": "/images/blog/brand-guidelines/elevate-ab-client-guidelines.webp",
+    "destination": "https://guidelines.online/elevate-ab",
+    "provenance": "Destination og:image",
+    "width": 1200,
+    "height": 630,
+    "bytes": 20582,
+    "source_url": "https://guidelines.online/api/og/elevate-ab.png?v=9123eba3a5c2"
+  }
+]

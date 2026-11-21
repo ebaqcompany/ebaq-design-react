@@ -1,0 +1,97 @@
+{
+  "layout": "collage",
+  "title": "Saas Logos",
+  "category": "",
+  "seed": "saas-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "hero": {
+      "dx": -0.4118,
+      "dy": 0.2396,
+      "hidden": true
+    },
+    "sheet-strip": {
+      "dx": -0.3683,
+      "dy": -0.1806
+    },
+    "sheet-noise": {
+      "dx": -0.1957,
+      "dy": 0.0914
+    },
+    "dots": {
+      "dx": 0.013,
+      "dy": -0.0184,
+      "hidden": true
+    },
+    "logo-2": {
+      "dx": -1.1859,
+      "dy": -0.3826,
+      "scale": 1.08
+    },
+    "logo-1": {
+      "dx": 0.9216,
+      "dy": -0.5832,
+      "scale": 1.217
+    },
+    "logo-5": {
+      "dx": 0.7052,
+      "dy": 0.2518,
+      "scale": 1.17
+    },
+    "logo-3": {
+      "dx": 0.2075,
+      "dy": -0.1622,
+      "scale": 1.266
+    },
+    "logo-4": {
+      "dx": -0.2418,
+      "dy": 0.0651,
+      "scale": 1.266
+    },
+    "logo-8": {
+      "dx": -0.3067,
+      "dy": 0.1763,
+      "scale": 1.217
+    },
+    "logo-6": {
+      "dx": -0.474,
+      "dy": 0.4048,
+      "scale": 1.266
+    },
+    "logo-0": {
+      "dx": -0.9152,
+      "dy": -0.5875,
+      "scale": 1.162
+    },
+    "logo-7": {
+      "dx": 0.3833,
+      "dy": 0.4123,
+      "scale": 1.217
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "logos": [
+    "asana",
+    "airtable",
+    "miro",
+    "zapier",
+    "github",
+    "retool",
+    "supabase",
+    "netlify",
+    "twilio"
+  ]
+}

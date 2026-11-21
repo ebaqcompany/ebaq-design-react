@@ -137,6 +137,7 @@ const Grader = () => {
           )}
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-8">
             <a href={bookingHref} className="button-inverted">Book a call</a>
+            <TextLink href="/tools/creative-brief-generator">Build a creative brief</TextLink>
             <button type="button" className="underline-offset-4 hover:underline" onClick={() => { setAnswers([]); setStep(0); }}>Start again</button>
           </div>
         </div>

@@ -15,7 +15,6 @@ const podcast = JSON.parse(await readFile(new URL('../public/content/podcast/ind
 const { caseStudies } = await loadTypeScriptModule('../src/data/caseStudies.ts')
 const { shopProducts } = await loadTypeScriptModule('../src/data/shopProducts.ts')
 const { comparisons } = await loadTypeScriptModule('../src/data/comparisons.ts')
-const { glossary } = await loadTypeScriptModule('../src/data/glossary.ts')
 
 // /start is a 301 to the booking page (vercel.json), so it stays out of the sitemap.
 const staticPaths = [
@@ -27,9 +26,8 @@ const staticPaths = [
   '/podcast',
   '/shop',
   '/tools',
-  '/tools/branding-cost-calculator',
-  '/tools/logo-design-cost-calculator',
-  '/tools/website-cost-calculator',
+  '/tools/creative-brief-generator',
+  '/tools/design-cost-calculator',
   '/tools/brand-grader',
   '/tools/brand-archetype-quiz',
   '/tools/tagline-generator',
@@ -85,7 +83,6 @@ for (const [collection, index] of [['blog', blog], ['podcast', podcast]]) {
 const paths = [
   ...staticPaths,
   ...comparisons.map(({ slug }) => `/compare/${slug}`),
-  ...glossary.map(({ slug }) => `/glossary/${slug}`),
   ...caseStudies.map(({ slug }) => `/work/${slug}`),
   ...shopProducts.filter(({ published }) => published !== false).map(({ slug }) => `/shop/${slug}`),
   ...blog.map(({ slug }) => `/blog/${slug}`),

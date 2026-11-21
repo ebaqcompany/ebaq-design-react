@@ -1,0 +1,39 @@
+{
+  "layout": "collage",
+  "title": "Architecture Logos",
+  "category": "",
+  "seed": "architecture-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "sheet-noise": {
+      "dx": -0.3692,
+      "dy": 0.2192
+    },
+    "photo-0": {
+      "scale": 1.769,
+      "dx": 0.07,
+      "dy": -0.2838
+    },
+    "sheet-paper": {
+      "dx": 0.0058,
+      "dy": 0.0287
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/architecture-logos/paste-mwr11msl-h9j9.png"
+  ]
+}

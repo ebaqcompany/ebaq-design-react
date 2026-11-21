@@ -18,9 +18,10 @@ import {
 
 export const TONES = {
   white: { bg: '#FFFFFF', ink: '#000000' },
+  gray: { bg: '#E5E5E5', ink: '#000000' },
   almond: { bg: '#F9EECE', ink: '#000000' },
   lavender: { bg: '#CCEFFC', ink: '#000000' },
-  sand: { bg: '#E9B44A', ink: '#000000' },
+  sand: { bg: '#FED440', ink: '#000000' },
   rose: { bg: '#F9E0E9', ink: '#000000' },
   mint: { bg: '#D7E9E3', ink: '#000000' },
   green: { bg: '#6CB181', ink: '#000000' },
@@ -290,17 +291,18 @@ export function composeCollage(ctx, raw, assets, W, H) {
   const n = photos.length + logos.length
   const spec = {
     layout: 'collage', title, category: raw.category ?? '', seed,
-    ground: raw.ground === 'deals' ? 'black' : auto(raw.ground) ? roll.ground : raw.ground,
+    ground: raw.ground === 'deals' ? 'black' : auto(raw.ground) ? 'blue' : raw.ground,
+    deals: raw.ground === 'deals',
     hero: auto(raw.hero) ? (style === 'overlap' ? 'auto' : roll.hero) : raw.hero,
     titleStyle,
     titlePos: titleStyle === 'none' ? 'none' : auto(raw.titlePos) ? (style === 'cutout' && (n === 0 || n > 6) ? 'center' : roll.side) : raw.titlePos,
     style, plain: raw.plain ?? false, secondary: (raw.secondary ?? (raw.accent2 && raw.accent2 !== 'none' ? [raw.accent2] : [])).filter((t) => TONES[t]), colors: raw.colors ?? null, cols: raw.cols ?? null,
-    treat: auto(raw.imageMode) ? (style === 'cutout' ? 'halftone' : 'grain') : raw.imageMode,
+    treat: auto(raw.imageMode) ? (style === 'cutout' ? 'halftone' : 'color') : raw.imageMode,
     logoStyle: auto(raw.logoStyle) ? 'bare' : raw.logoStyle,
-    noteTone: auto(raw.noteTone) ? 'almond' : raw.noteTone,
+    noteTone: auto(raw.noteTone) ? 'lavender' : raw.noteTone,
     mat: raw.mat ?? false, decor: raw.decor ?? true, kicker: raw.kicker ?? titleStyle !== 'none',
     footer: raw.footer ?? titleStyle !== 'none', grain: raw.grain ?? true, titleScale: Number(raw.titleScale ?? 1),
-    notes, tweaks: raw.tweaks ?? {}, place: raw.place ?? {},
+    notes, noteCount: Math.max(0, Math.min(3, Number(raw.noteCount ?? 0))), tweaks: raw.tweaks ?? {}, place: raw.place ?? {},
   }
   const g = GROUND[spec.ground]
   const els = []
@@ -457,13 +459,20 @@ export function composeCollage(ctx, raw, assets, W, H) {
   }
 
   // --- post-it notes ---
-  notes.slice(0, 3).forEach((text, i) => {
+  const activeNotes = notes.slice(0, 3)
+  while (activeNotes.length < spec.noteCount) activeNotes.push('')
+  const noteOrder = [[W * 0.84, H * 0.22], [W * 0.16, H * 0.78], [W * 0.84, H * 0.78], [W * 0.16, H * 0.22]]
+  const nr = rng(seed, 'note-spots')
+  for (let i = noteOrder.length - 1; i > 0; i--) { const k = Math.floor(nr() * (i + 1)); [noteOrder[i], noteOrder[k]] = [noteOrder[k], noteOrder[i]] }
+  activeNotes.forEach((text, i) => {
     const er = rng(seed, 'note' + i)
     const s = u * 3.7
     const spots = tr && spec.titlePos !== 'center'
       ? [[tr.x + tr.w * (spec.titlePos === 'left' ? 0.88 : 0.12), H * 0.15], [tr.x + tr.w * (spec.titlePos === 'left' ? 0.84 : 0.16), H * 0.76], [ir.x + ir.w / 2, H * 0.5]]
-      : [[W * 0.86, H * 0.2], [W * 0.13, H * 0.8], [W * 0.84, H * 0.8]]
-    const [cx, cy] = spots[i]
+      : noteOrder
+    const [bx, by] = spots[i]
+    const cx = tr && spec.titlePos !== 'center' ? bx : clamp(bx + range(er, -0.04, 0.04) * W, s / 2 + W * 0.04, W - s / 2 - W * 0.04)
+    const cy = tr && spec.titlePos !== 'center' ? by : clamp(by + range(er, -0.04, 0.04) * H, s / 2 + H * 0.05, H - s / 2 - H * 0.05)
     add({
       id: `note-${i}`, type: 'note', z: 6, cx, cy, rot: range(er, -1, 1) * 0.12, w: s, h: s,
       draw: (c) => {
@@ -471,7 +480,9 @@ export function composeCollage(ctx, raw, assets, W, H) {
         paper(c, pr, u, scrapPath(rng(seed, 'note-s' + i), s, s, u, [false, false, false, false]), spec.noteTone, s, s, {
           rim: false, paint: (tt) => {
             c.fillStyle = 'rgba(0,0,0,0.05)'; c.fillRect(-s / 2, -s / 2, s, s * 0.16)
-            const words = String(text).split(/\s+/)
+            const trimmed = String(text).trim()
+            if (!trimmed) return
+            const words = trimmed.split(/\s+/)
             let size = u * 0.72, lines = []
             for (; size > u * 0.3; size -= 1) {
               mono(c, size, 0)
@@ -734,6 +745,10 @@ const STACKS = [
   { paper: [0.5, 0.74, 0.56, 0.28], strip: [0.78, 0.4, 0.1, 0.62], a: [0.36, 0.38, 0.3, 0.52], b: [0.62, 0.44, 0.34, 0.44] },
 ]
 const CORNERS = [[0.2, 0.82], [0.8, 0.82], [0.19, 0.2], [0.81, 0.2]]
+const PHOTO_SPOTS = [
+  [0.2, 0.28], [0.8, 0.72], [0.22, 0.74], [0.78, 0.26],
+  [0.5, 0.22], [0.5, 0.78], [0.16, 0.5], [0.84, 0.5],
+]
 function composeOverlap({ spec, add, seed, u, W, H, photos, logos, g, shape, ox, s }) {
   const r = rng(seed, 'overlap')
   const ink = g.ink
@@ -749,63 +764,76 @@ function composeOverlap({ spec, add, seed, u, W, H, photos, logos, g, shape, ox,
     add({ id, type, z, cx: X(fx), cy: Y(fy), rot: 0, w, h,
       draw: (c) => flat(c, rng(seed, id + 'p'), u, rectPath(rng(seed, id + 's'), w, h, u, e), tone, w, h, paint ? (t) => paint(c, w, h, t) : undefined) })
   }
-  const photo = (id, img, z, [fx, fy, fw, fh], mode, chance) => {
-    const w = fw * W * s, h = fh * H * s
-    add({ id, type: 'photo', z, cx: X(fx), cy: Y(fy), w, h, draw: photoBlock(seed, id, img, spec.tweaks[id]?.treatment ?? mode, w, h, u, rips(rng(seed, id + 'e'), spec.decor ? (variantOf(id) ? 0.6 : chance) : 0)) })
-  }
   const pa = slot(stack.a), pb = slot(stack.b), swap = r() < 0.4
   const paperTone = pales[0] ?? 'lavender'
-  sheet('sheet-paper', 'shape', 1, slot(stack.paper), paperTone, (c, w, h) => texture(c, rng(seed, 'ledger'), 'ledger', w, h, paperTone === 'lavender' ? 'rgba(0,175,236,0.7)' : 'rgba(0,0,0,0.22)'), 0.45)
-  sheet('sheet-strip', 'shape', 1, slot(stack.strip), fulls[0] ?? pales[1] ?? g.hero, null, 0.45)
+  if (!spec.deals) {
+    sheet('sheet-paper', 'shape', 1, slot(stack.paper), paperTone, (c, w, h) => texture(c, rng(seed, 'ledger'), 'ledger', w, h, paperTone === 'lavender' ? 'rgba(0,175,236,0.7)' : 'rgba(0,0,0,0.22)'), 0.45)
+    sheet('sheet-strip', 'shape', 1, slot(stack.strip), fulls[0] ?? pales[1] ?? g.hero, null, 0.45)
+    sheet('sheet-noise', 'shape', swap ? 4 : 3, pa, spec.ground === 'black' ? 'black-grid' : 'white', (c, w, h) => texture(c, rng(seed, 'noise'), 'noise', w, h, ink))
 
-  // images with a role are loose cut-outs; the rest fill the stack
-  const role = (img, name) => !!img.roles?.includes(name)
-  const plain = photos.map((img, i) => ({ img, i })).filter((p) => !p.img.roles?.length)
-  if (plain[0]) photo(`photo-${plain[0].i}`, plain[0].img, swap ? 4 : 3, pa, spec.treat, 0.2)
-  else sheet('sheet-noise', 'shape', swap ? 4 : 3, pa, spec.ground === 'black' ? 'black-grid' : 'white', (c, w, h) => texture(c, rng(seed, 'noise'), 'noise', w, h, ink))
-  if (plain[1]) photo(`photo-${plain[1].i}`, plain[1].img, swap ? 3 : 4, pb, spec.ground === 'blue' ? spec.treat : 'tint', 0.3)
-  plain.slice(2, 4).forEach((p, n) => photo(`photo-${p.i}`, p.img, 5, [[0.2, 0.72], [0.8, 0.26]][n].concat([0.2, 0.3]), spec.treat, 0.25))
-
-  // the blue piece: a plain block, one of the cut shapes, or a supplied silhouette
-  const kind = shape ? 'shape' : spec.hero === 'auto' ? weighted(r, [['rect', 5], ['slab', 2], ['circle', 2], ['burst', 1.5], ['arrow', 1], ['bust', 1.5]]) : spec.hero
-  if (kind === 'rect') { if (!plain[1]) sheet('sheet-colour', 'shape', swap ? 3 : 4, pb, spec.ground === 'blue' ? 'black' : 'blue', null, 0.35) }
-  else if (kind !== 'none') {
-    const tall = kind === 'shape' || kind === 'bust' || kind === 'slab'
-    const hs = H * s * (kind === 'shape' ? 0.92 : tall ? 0.78 : 0.62)
-    const bottom = kind === 'shape' || kind === 'bust'
-    add({ id: 'hero', type: 'hero', z: 4.5, cx: X(pb[0]), cy: bottom ? H / 2 + (H * s) / 2 - hs / 2 + (kind === 'bust' ? hs * 0.06 : 0) : Y(pb[1]), rot: bottom ? 0 : range(r, -0.14, 0.14),
-      w: shape ? (hs * srcSize(shape).w) / srcSize(shape).h : hs * (tall ? 0.66 : 0.9), h: hs * (tall ? 1 : 0.9),
-      draw: (c) => drawHero(c, rng(seed, 'hero'), u, { s: hs, kind, tone: g.hero, shape, hole: false }) })
+    // Only render the blue-grid hero silhouette when a Silhouette PNG is supplied.
+    if (shape) {
+      const hs = H * s * 0.92
+      add({ id: 'hero', type: 'hero', z: 4.5, cx: X(pb[0]), cy: H / 2 + (H * s) / 2 - hs / 2, rot: 0,
+        w: (hs * srcSize(shape).w) / srcSize(shape).h, h: hs,
+        draw: (c) => drawHero(c, rng(seed, 'hero'), u, { s: hs, kind: 'shape', tone: g.hero, shape, hole: false }) })
+    }
   }
+
+  // Every added image keeps its natural aspect ratio without masking or replacing existing collage elements.
+  const role = (img, name) => !!img.roles?.includes(name)
   const corners = mix(CORNERS)
+  const spotRng = mulberry32(hashSeed(seed + '|photo-spots'))
+  const photoSpots = [...PHOTO_SPOTS]
+  for (let i = photoSpots.length - 1; i > 0; i--) { const k = Math.floor(spotRng() * (i + 1)); [photoSpots[i], photoSpots[k]] = [photoSpots[k], photoSpots[i]] }
+  const drawPhoto = (img, id, w, h, defaultMode) => (c) => {
+    const mode = spec.tweaks[id]?.treatment ?? defaultMode
+    if (mode === 'color') c.drawImage(img, -w / 2, -h / 2, w, h)
+    else c.drawImage(treat(img, mode, w, h, u, seed + id, { fit: 'contain' }), -w / 2, -h / 2, w, h)
+  }
   photos.forEach((img, i) => {
-    if (!img.roles?.length) return
     const id = `photo-${i}`, { w: iw, h: ih } = srcSize(img)
     if (role(img, 'bottom')) {
       const h = (W * ih) / iw
-      return add({ id, type: 'photo', z: 2.5, cx: W / 2, cy: H - h / 2, w: W, h, draw: (c) => c.drawImage(role(img, 'raw') && !spec.tweaks[id]?.treatment ? img : treat(img, spec.tweaks[id]?.treatment ?? spec.treat, W, h, u, seed + id, { fit: 'contain' }), -W / 2, -h / 2, W, h) })
+      return add({ id, type: 'photo', z: 2.5, cx: W / 2, cy: H - h / 2, w: W, h, draw: drawPhoto(img, id, W, h, role(img, 'raw') ? 'color' : spec.treat) })
     }
-    const k = Math.min((W * 0.26 * s) / iw, (H * 0.5 * s) / ih), w = iw * k, h = ih * k
-    const [fx, fy] = corners[i % corners.length]
-    add({ id, type: 'photo', z: role(img, 'blue') ? 5 : 2.2, cx: X(fx), cy: Y(fy), rot: 0, w, h,
-      draw: (c) => (role(img, 'blue') ? drawHero(c, rng(seed, id), u, { s: h, tone: g.hero, shape: img }) : role(img, 'raw') && !spec.tweaks[id]?.treatment ? c.drawImage(img, -w / 2, -h / 2, w, h) : c.drawImage(treat(img, spec.tweaks[id]?.treatment ?? spec.treat, w, h, u, seed + id, { fit: 'contain' }), -w / 2, -h / 2)) })
+    if (role(img, 'blue')) {
+      const k = Math.min((W * 0.26 * s) / iw, (H * 0.5 * s) / ih), w = iw * k, h = ih * k
+      const [fx, fy] = corners[i % corners.length]
+      return add({ id, type: 'photo', z: 5, cx: X(fx), cy: Y(fy), rot: 0, w, h, draw: (c) => drawHero(c, rng(seed, id), u, { s: h, tone: g.hero, shape: img }) })
+    }
+    if (role(img, 'raw')) {
+      const k = Math.min((W * 0.26 * s) / iw, (H * 0.5 * s) / ih), w = iw * k, h = ih * k
+      const [fx, fy] = corners[i % corners.length]
+      return add({ id, type: 'photo', z: 2.2, cx: X(fx), cy: Y(fy), rot: 0, w, h, draw: drawPhoto(img, id, w, h, 'color') })
+    }
+    const k = Math.min((W * 0.3 * s) / iw, (H * 0.48 * s) / ih), w = iw * k, h = ih * k
+    const pr = mulberry32(hashSeed(seed + '|photo-pos|' + i))
+    const [bx, by] = i < photoSpots.length ? photoSpots[i] : [range(pr, 0.16, 0.84), range(pr, 0.2, 0.8)]
+    const fx = i < photoSpots.length ? bx + range(pr, -0.06, 0.06) : bx
+    const fy = i < photoSpots.length ? by + range(pr, -0.06, 0.06) : by
+    const padX = w / 2 + W * 0.03, padY = h / 2 + H * 0.04
+    const cx = clamp(X(fx), padX, W - padX), cy = clamp(Y(fy), padY, H - padY)
+    add({ id, type: 'photo', z: 5 + i * 0.01, cx, cy, rot: 0, w, h, draw: drawPhoto(img, id, w, h, spec.treat) })
   })
 
-  // one flat circle in a secondary colour, tucked against the stack
-  const dotTones = [...new Set([fulls[1], fulls[0], ...pales.slice().reverse(), ...fulls])].filter(Boolean)
-  const dot = dotTones[variantOf('circle') % Math.max(1, dotTones.length)]
-  const [dotsAt, circleAt] = mix(CORNERS)
-  if (dot) {
-    const d = H * range(r, 0.15, 0.24) * s
-    add({ id: 'circle', type: 'shape', z: 5, cx: X(circleAt[0]), cy: Y(circleAt[1]), w: d, h: d,
-      draw: (c) => { const p = new Path2D(); p.arc(0, 0, d / 2, 0, 6.2832); flat(c, rng(seed, 'circle'), u, p, dot, d, d) } })
+  if (!spec.deals) {
+    // one flat circle in a secondary colour, tucked against the stack
+    const dotTones = [...new Set([fulls[1], fulls[0], ...pales.slice().reverse(), ...fulls])].filter(Boolean)
+    const dot = dotTones[variantOf('circle') % Math.max(1, dotTones.length)]
+    const [dotsAt, circleAt] = mix(CORNERS)
+    if (dot) {
+      const d = H * range(r, 0.15, 0.24) * s
+      add({ id: 'circle', type: 'shape', z: 5, cx: X(circleAt[0]), cy: Y(circleAt[1]), w: d, h: d,
+        draw: (c) => { const p = new Path2D(); p.arc(0, 0, d / 2, 0, 6.2832); flat(c, rng(seed, 'circle'), u, p, dot, d, d) } })
+    }
+    // a cluster of dots on a loose grid
+    const d = H * 0.062 * s, dr = rng(seed, 'dots')
+    const spots = []
+    for (let a = 0; a < 5; a++) for (let b = 0; b < 3; b++) if (dr() < 0.42) spots.push([a, b])
+    add({ id: 'dots', type: 'shape', z: 6, cx: X(dotsAt[0]), cy: Y(dotsAt[1]), w: d * 5.2, h: d * 3.2,
+      draw: (c) => { c.fillStyle = ink; for (const [a, b] of spots) { c.beginPath(); c.arc((a - 2) * d * 1.04, (b - 1) * d * 1.04, d / 2, 0, 6.2832); c.fill() } } })
   }
-  // a cluster of dots on a loose grid
-  const d = H * 0.062 * s, dr = rng(seed, 'dots')
-  const spots = []
-  for (let a = 0; a < 5; a++) for (let b = 0; b < 3; b++) if (dr() < 0.42) spots.push([a, b])
-  add({ id: 'dots', type: 'shape', z: 6, cx: X(dotsAt[0]), cy: Y(dotsAt[1]), w: d * 5.2, h: d * 3.2,
-    draw: (c) => { c.fillStyle = ink; for (const [a, b] of spots) { c.beginPath(); c.arc((a - 2) * d * 1.04, (b - 1) * d * 1.04, d / 2, 0, 6.2832); c.fill() } } })
 
   const count = Math.min(logos.length, 12), rows = Math.ceil(count / 2)
   logos.slice(0, count).forEach((img, n) => {
@@ -816,7 +844,7 @@ function composeOverlap({ spec, add, seed, u, W, H, photos, logos, g, shape, ox,
     const [lx, ly] = s < 1 ? [ox + (n - (count - 1) / 2) * Math.min(W * 0.1, (W * 0.4) / count), H * 0.9] : [X(n % 2 ? 0.92 : 0.08), Y(rows > 1 ? 0.14 + (row * 0.72) / (rows - 1) : 0.5)]
     add({ id: `logo-${n}`, type: 'logo', z: 7, cx: lx, cy: ly, w: iw * k, h: ih * k, draw: (c) => c.drawImage(tint(img, ink, iw * k, ih * k), (-iw * k) / 2, (-ih * k) / 2, iw * k, ih * k) })
   })
-  if (spec.decor) {
+  if (spec.decor && !spec.deals) {
     const sk = pick(variantOf('scribble-0') ? rng(seed, 'scribble-0k') : r, SCRIBBLES), w = W * range(r, 0.2, 0.28) * s, h = H * 0.3 * s
     const on = r() < 0.6 ? pb : pa
     add({ id: 'scribble-0', type: 'scribble', z: 9, cx: X(on[0] + range(r, -0.06, 0.06)), cy: Y(on[1] + range(r, -0.16, 0.16)), rot: sk === 'zigzag' ? range(r, -0.35, -0.05) : range(r, -0.18, 0.18), w, h,

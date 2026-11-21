@@ -1,0 +1,51 @@
+{
+  "layout": "collage",
+  "title": "Brand Slogans",
+  "category": "",
+  "seed": "brand-slogans",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-noise": {
+      "dx": -0.1928,
+      "dy": -0.1575
+    },
+    "hero": {
+      "dx": 0.0236,
+      "dy": 0.0145,
+      "hidden": true
+    },
+    "sheet-strip": {
+      "dx": -0.3515,
+      "dy": 0.0411
+    },
+    "sheet-paper": {
+      "dx": -0.0066,
+      "dy": 0.0676
+    },
+    "photo-0": {
+      "dx": -0.2723,
+      "dy": -0.2185
+    },
+    "dots": {
+      "dx": 1.0371,
+      "dy": -0.6321
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/brand-slogans/cdn-nike-2-logo-black-and-white.png"
+  ]
+}

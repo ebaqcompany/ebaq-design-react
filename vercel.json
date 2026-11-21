@@ -1,6 +1,23 @@
 {
   "trailingSlash": false,
   "redirects": [
+    { "source": "/glossary/brand-refresh", "destination": "/blog/brand-refresh", "statusCode": 301 },
+    { "source": "/glossary/brand-audit", "destination": "/blog/brand-audit", "statusCode": 301 },
+    { "source": "/glossary/brand-architecture", "destination": "/blog/brand-architecture", "statusCode": 301 },
+    { "source": "/glossary/brand-guidelines", "destination": "/blog/brand-guidelines", "statusCode": 301 },
+    { "source": "/glossary/brand-strategy", "destination": "/blog/brand-strategy", "statusCode": 301 },
+    { "source": "/glossary/brand-positioning", "destination": "/blog/brand-positioning", "statusCode": 301 },
+    { "source": "/glossary/positioning-statement", "destination": "/blog/positioning-statement", "statusCode": 301 },
+    { "source": "/glossary/brand-purpose", "destination": "/blog/brand-purpose", "statusCode": 301 },
+    { "source": "/glossary/brand-personality", "destination": "/blog/brand-personality", "statusCode": 301 },
+    { "source": "/glossary/brand-voice", "destination": "/blog/brand-voice", "statusCode": 301 },
+    { "source": "/glossary/brand-story", "destination": "/blog/brand-story", "statusCode": 301 },
+    { "source": "/glossary/brand-name", "destination": "/blog/brand-name", "statusCode": 301 },
+    { "source": "/glossary/logo-animation", "destination": "/blog/logo-animation", "statusCode": 301 },
+    { "source": "/glossary/:slug", "destination": "/glossary", "statusCode": 301 },
+    { "source": "/tools/branding-cost-calculator", "destination": "/tools/design-cost-calculator?scope=branding", "statusCode": 301 },
+    { "source": "/tools/logo-design-cost-calculator", "destination": "/tools/design-cost-calculator?scope=logo", "statusCode": 301 },
+    { "source": "/tools/website-cost-calculator", "destination": "/tools/design-cost-calculator?scope=website", "statusCode": 301 },
     { "source": "/blog/logo-design-trends", "destination": "/blog/logo-design-tips", "statusCode": 301 },
     { "source": "/blog/geometric-logos", "destination": "/blog/logo-shapes", "statusCode": 301 },
     { "source": "/blog/iconic-logos", "destination": "/blog/best-logos", "statusCode": 301 },
@@ -25,7 +42,7 @@
     },
     {
       "source": "/blog/saas-website-design-cost",
-      "destination": "/tools/website-cost-calculator",
+      "destination": "/tools/design-cost-calculator?scope=website",
       "statusCode": 302
     },
     {

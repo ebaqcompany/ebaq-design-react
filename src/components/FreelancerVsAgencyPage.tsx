@@ -159,7 +159,7 @@ export const FreelancerVsAgencyPage = () => (
 
       <AiLandingAbout heading="You work with me, start to finish" description="I’m Arek Dvornechuck, a senior brand designer in New York. I run the strategy, design the identity, animate the logo, and build the website myself. There is no account manager and no handoff to a junior." bookingHref="/start" />
       <TestimonialSlider className="bg-surface-muted" />
-      <ToolReading links={[{ label: "All comparisons", href: "/compare" }, { label: "Branding cost calculator", href: "/tools/branding-cost-calculator" }, { label: "Logo design cost calculator", href: "/tools/logo-design-cost-calculator" }]} />
+      <ToolReading links={[{ label: "All comparisons", href: "/compare" }, { label: "Design cost calculator", href: "/tools/design-cost-calculator" }, { label: "Creative brief generator", href: "/tools/creative-brief-generator" }]} />
       <Faq4 tagline="FAQs" heading="Freelancer or agency?" questions={faqs.map(({ question, answer }) => ({ title: question, answer }))} />
       <Cta17 heading="Find out in 15 minutes" description="Book a call. Tell me what you need and I’ll tell you honestly whether I’m the right hire or an agency is." />
     </main>

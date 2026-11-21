@@ -49,9 +49,8 @@ const ShopPage = page('./components/ShopPage.tsx', 'ShopPage')
 const AboutPage = page('./components/AboutPage.tsx', 'AboutPage')
 const ContactPage = page('./components/ContactPage.tsx', 'ContactPage')
 const ToolsPage = page('./components/ToolsPage.tsx', 'ToolsPage')
-const LogoDesignCostCalculatorPage = page('./components/LogoDesignCostCalculatorPage.tsx', 'LogoDesignCostCalculatorPage')
-const BrandingCostCalculatorPage = page('./components/BrandingCostCalculatorPage.tsx', 'BrandingCostCalculatorPage')
-const WebsiteCostCalculatorPage = page('./components/WebsiteCostCalculatorPage.tsx', 'WebsiteCostCalculatorPage')
+const CreativeBriefGeneratorPage = page('./components/CreativeBriefGeneratorPage.tsx', 'CreativeBriefGeneratorPage')
+const DesignCostCalculatorPage = page('./components/DesignCostCalculatorPage.tsx', 'DesignCostCalculatorPage')
 const BrandGraderPage = page('./components/BrandGraderPage.tsx', 'BrandGraderPage')
 const BrandArchetypeQuizPage = page('./components/BrandArchetypeQuizPage.tsx', 'BrandArchetypeQuizPage')
 const TaglineGeneratorPage = page('./components/TaglineGeneratorPage.tsx', 'TaglineGeneratorPage')
@@ -115,9 +114,11 @@ const routes: RouteEntry[] = [
   { path: '/about', page: AboutPage },
   { path: '/contact', page: ContactPage },
   { path: '/tools', page: ToolsPage },
-  { path: '/tools/branding-cost-calculator', page: BrandingCostCalculatorPage },
-  { path: '/tools/logo-design-cost-calculator', page: LogoDesignCostCalculatorPage },
-  { path: '/tools/website-cost-calculator', page: WebsiteCostCalculatorPage },
+  { path: '/tools/creative-brief-generator', page: CreativeBriefGeneratorPage },
+  { path: '/tools/design-cost-calculator', page: DesignCostCalculatorPage },
+  { path: '/tools/branding-cost-calculator', element: <Navigate to="/tools/design-cost-calculator?scope=branding" replace /> },
+  { path: '/tools/logo-design-cost-calculator', element: <Navigate to="/tools/design-cost-calculator?scope=logo" replace /> },
+  { path: '/tools/website-cost-calculator', element: <Navigate to="/tools/design-cost-calculator?scope=website" replace /> },
   { path: '/tools/brand-grader', page: BrandGraderPage },
   { path: '/tools/brand-archetype-quiz', page: BrandArchetypeQuizPage },
   { path: '/tools/tagline-generator', page: TaglineGeneratorPage },

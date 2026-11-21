@@ -1,0 +1,44 @@
+{
+  "layout": "collage",
+  "title": "Healthcare Logos",
+  "category": "",
+  "seed": "healthcare-logos",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "hero": {
+      "hidden": true
+    },
+    "photo-0": {
+      "dx": 0.085,
+      "dy": -0.1219,
+      "scale": 1.306,
+      "treatment": "color"
+    },
+    "sheet-paper": {
+      "dx": -0.006,
+      "dy": -0.0725
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "logos": [
+    "pfizer",
+    "moderna",
+    "aetna"
+  ],
+  "images": [
+    "/tools/cover-generator/assets/healthcare-logos/i-6ac3cf79f66e1154bdfa3292.jpg"
+  ]
+}

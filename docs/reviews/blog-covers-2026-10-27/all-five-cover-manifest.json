@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "iconic-logos",
+    "source": "/images/blog/best-logos/4.webp",
+    "replacement": "/images/blog/iconic-logos/cover-replacement.webp",
+    "alt": "Recognizable brand symbols including Nike, Deutsche Bank, Mastercard, Target and Audi on a white background",
+    "type": "existing site asset reused unchanged; not recovered original cover",
+    "sha256": "8cb29bc147d6facb8c092370fb6113abccd7eb3e52594f89ca58c653334e5541"
+  },
+  {
+    "slug": "brand-refresh",
+    "source": "/images/blog/brand-refresh/focal-brand-refresh.webp",
+    "replacement": "/images/blog/brand-refresh/cover-replacement.webp",
+    "alt": "Focal Project Managers logo before and after refinement, preserving the blue structural wordmark",
+    "type": "existing site asset reused unchanged; not recovered original cover",
+    "sha256": "846b3a07f98d4832db9a836ecbc30db2e5ee1d2005ee9f706f835b9a38cec91f"
+  },
+  {
+    "slug": "minimalist-logos",
+    "source": "/images/blog/brand-purpose/nike-purpose-21bc409359a6e3a7fdc6c5b713dbe725-800.webp",
+    "replacement": "/images/blog/minimalist-logos/cover-replacement.webp",
+    "alt": "White Nike swoosh visibly applied to a red and black running shoe",
+    "type": "existing site asset reused unchanged; not recovered original cover",
+    "sha256": "e46bba7604027855bb07c17afffbfeeff7216c350df9e0866b71c029fe31b630"
+  },
+  {
+    "slug": "negative-space-logo-design",
+    "source": "/images/blog/negative-space-logo-design/negative-space-logos.webp",
+    "replacement": "/images/blog/negative-space-logo-design/cover-replacement.webp",
+    "alt": "FedEx, Toblerone and New Bedford Whaling Museum logos with hidden shapes and real branded applications",
+    "type": "existing site asset reused unchanged; not recovered original cover",
+    "sha256": "9852c8834d3c6760b2b14d50d96087019a4b7dbd53bbdf2e58f3538438a55efc"
+  }
+]

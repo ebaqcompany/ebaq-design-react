@@ -1,0 +1,173 @@
+--- a/src/components/LogoDesignPage.tsx
++++ b/src/components/LogoDesignPage.tsx
+@@ -1,23 +1,71 @@
+ import { Helmet } from "react-helmet-async";
+ import { ServiceDetailLayout } from "./ServiceDetailLayout";
++import { brandSprint } from "../content/siteFacts";
+ 
+ const pageUrl = "https://www.ebaqdesign.com/services/logo-design";
++
++const refinementExamples = [
++  { name: "Focal Project Managers", image: "/images/blog/brand-refresh/focal-brand-refresh.webp", alt: "Focal Project Managers logo before and after refinement", detail: "Retained the blue structural letter concept; refined proportions and made the descriptor clearer." },
++  { name: "AMI", image: "/content/blog/logo-redesign/ami-before-after.webp", alt: "AMI logo before and after refinement", detail: "Kept the striped symbol and burgundy color; improved the wordmark, spacing and hierarchy." },
++  { name: "Lyntics", image: "/content/blog/logo-redesign/lyntics-before-after.webp", alt: "Lyntics logo before and after refinement", detail: "Preserved the four-part symbol; refined symmetry, letter spacing and the color relationship." },
++];
++
++const LogoRefinement = () => (
++  <section id="logo-refinement" aria-labelledby="logo-refinement-heading" className="scroll-mt-24 bg-brand-light px-[5%] py-16 md:py-24">
++    <div className="container">
++      <div className="mb-10 max-w-lg md:mb-16">
++        <p className="mb-3 font-semibold">Already have a logo?</p>
++        <h2 id="logo-refinement-heading" className="mb-6">Keep what people recognize. Refine what gets in the way.</h2>
++        <p className="md:text-md">A strong idea can survive a refresh. These real examples show how I improve an existing identity through specific changes to the mark, typography and visual balance.</p>
++      </div>
++      <div className="grid gap-8 md:grid-cols-3">
++        {refinementExamples.map((example) => (
++          <figure key={example.name}>
++            <img src={example.image} alt={example.alt} width="960" height="540" loading="lazy" decoding="async" className="mb-5 aspect-video w-full bg-white object-contain" />
++            <figcaption><h3 className="heading-h5 mb-3">{example.name}</h3><p>{example.detail}</p></figcaption>
++          </figure>
++        ))}
++      </div>
++      <p className="mt-6 text-sm">These examples demonstrate design decisions; they do not imply that each historic project had the same fee or timeline.</p>
++      <div className="mt-12 grid gap-10 border-t border-black/20 pt-10 md:grid-cols-2 md:gap-16">
++        <div>
++          <h3 className="heading-h4 mb-5">The identity sprint: $3,000 total.</h3>
++          <p className="mb-5 md:text-md">One week, guaranteed, with the scope agreed at kickoff. Work directly with one senior designer on the logo and the system around it.</p>
++          <ul className="list-disc space-y-2 pl-5">
++            {brandSprint.deliverables.map((item) => <li key={item}>{item}</li>)}
++          </ul>
++          <p className="mt-5">For an existing identity, we agree which elements need refinement and which should stay.</p>
++        </div>
++        <div>
++          <h3 className="heading-h4 mb-5">Start with your current identity.</h3>
++          <p className="mb-4">Bring your logo files, website, must-keep elements and the applications you need ready first.</p>
++          <p className="mb-4">We confirm fit, availability, who approves the work and the feedback schedule before starting.</p>
++          <p className="mb-4">Website design, development and larger rollout work add separately agreed weeks. Third-party font and asset licensing requirements are identified before selection.</p>
++          <p className="mb-6"><a className="underline underline-offset-4" href="/pricing">See the full pricing and scope</a></p>
++          <a href="/start" className="inline-flex rounded-full bg-black px-6 py-3 font-semibold text-white">Discuss your logo or refresh</a>
++          <p className="mt-6"><a className="underline underline-offset-4" href="/blog/logo-redesign">Explore more before-and-after logo work</a> · <a className="underline underline-offset-4" href="/blog/brand-refresh">Read the brand refresh guide</a></p>
++        </div>
++      </div>
++    </div>
++  </section>
++);
+ 
+ export const LogoDesignPage = () => (
+   <>
+     <Helmet>
+-      <title>Logo Designer NYC: Custom Logo Design | Ebaq Design</title>
+-      <meta name="description" content="Custom logo design by a senior freelance graphic designer in New York: sketches, concepts, revisions, final files, and a logo animation. $3,000, one week." />
++      <title>Logo Design &amp; Refinement NYC | Ebaq Design</title>
++      <meta name="description" content="Refine an existing logo, colors and typography, or create a new identity. Work directly with a senior Brooklyn designer. $3,000 total, one week guaranteed." />
+       <link rel="canonical" href={pageUrl} />
+       <meta property="og:type" content="website" />
+       <meta property="og:url" content={pageUrl} />
+-      <meta property="og:title" content="Logo Designer NYC: Custom Logo Design | Ebaq Design" />
+-      <meta property="og:description" content="Custom logo design by a senior freelance graphic designer in New York: sketches, concepts, revisions, final files, and a logo animation. $3,000, one week." />
++      <meta property="og:title" content="Logo Design & Refinement NYC | Ebaq Design" />
++      <meta property="og:description" content="Refine an existing logo, colors and typography, or create a new identity. Work directly with a senior Brooklyn designer. $3,000 total, one week guaranteed." />
+     </Helmet>
+     <ServiceDetailLayout
+       slug="logo-design"
+-      heading="Logo design that carries the brand idea"
+-      description="A distinctive, practical mark that captures the brand idea and stays legible everywhere it is used, from an app icon to signage. Concepts, refinement, and a full responsive set."
++      heading="Logo design & refinement"
++      description="Improve your existing logo, colors and typography, or build a new identity. Work directly with Arek Dvornechuck, a senior designer in Brooklyn, NYC. Your scoped identity is delivered in one week, guaranteed, for $3,000 total."
++      afterOverview={<LogoRefinement />}
+     />
+   </>
+ );
+--- a/src/components/ServiceDetailLayout.tsx
++++ b/src/components/ServiceDetailLayout.tsx
+@@ -1,4 +1,4 @@
+-import { Fragment } from "react";
++import { Fragment, type ReactNode } from "react";
+ import { Helmet } from "react-helmet-async";
+ import { Navbar16 } from "./Navbar16";
+ import { Header107 } from "./Header107";
+@@ -117,11 +117,12 @@
+   // Hero copy is passed in so each detail page keeps its own literal strings.
+   heading: string;
+   description: string;
++  afterOverview?: ReactNode;
+ };
+ 
+ // Shared body for the six /services/* pages. Each page file owns its own
+ // <Helmet> so the route-shell generator can scrape a literal title there.
+-export const ServiceDetailLayout = ({ slug, heading, description }: Props) => {
++export const ServiceDetailLayout = ({ slug, heading, description, afterOverview }: Props) => {
+   const service = serviceBySlug(slug);
+ 
+   return (
+@@ -142,6 +143,7 @@
+         className="pb-8 md:pb-12 lg:pb-16"
+       />
+       <ServiceOverview service={service} />
++      {afterOverview}
+       <Layout351
+         id="what-i-offer"
+         tagline="What I offer"
+--- a/src/data/services.ts
++++ b/src/data/services.ts
+@@ -173,31 +173,40 @@
+     ],
+   },
+   "logo-design": {
+-    title: "Custom logo design by a Branding Expert",
+-    overview: [
+-      "A good logo is simple enough to remember, distinct in its category, and legible from an app icon to a billboard. I design every mark myself, starting with pencil sketches before anything moves into Adobe Illustrator.",
+-      "You see several logo concepts, each with the thinking behind it, then we refine the strongest into a complete, responsive set: a primary logo, a compact mark, and versions for light and dark backgrounds, plus a logo animation.",
+-      "The work below includes a monogram for an AI travel startup, an aviation-inspired mark for a London chauffeur service, and a growth symbol for a Shopify testing app.",
++    title: "A new logo or a careful refinement of the one you have",
++    overview: [
++      "If the idea behind your existing logo still fits, I can refine its drawing, spacing and proportions, then bring the colors and typography into one consistent identity.",
++      "If the mark no longer represents the business, I develop several new concepts and explain the thinking behind each before refining the selected direction.",
++      "You work directly with me, Arek Dvornechuck, a senior designer and Branding Expert based in Brooklyn, New York City, from the first conversation through the final files.",
+     ],
+     tools: ["Pencil and paper", "Adobe Illustrator", "Figma", "Adobe After Effects"],
+-    timeline: "Logo design is part of the one-week Brand Sprint: concepts, revisions, final files, and the logo animation, delivered within one week for a flat $3,000.",
+-    work: ["ventur", "airport-executive", "elevate"],
+-    faqs: [
+-      {
+-        title: "How much does a custom logo cost?",
+-        answer: "$3,000 as part of the one-week Brand Sprint, which also includes a color palette, typography, brand guidelines, a logo animation, and launch assets. There is no hourly billing and revisions are included.",
+-      },
+-      {
+-        title: "How many logo concepts will I see?",
+-        answer: "Several distinct concepts, each explained against your positioning. The strongest direction is then refined with your feedback until it is final.",
++    timeline: "A scoped identity refresh or rebrand is delivered in one week, guaranteed, for $3,000 total. The Brand Sprint includes the logo, logo animation, color palette, typography, guidelines and launch assets, with revisions included. We agree the scope at kickoff; additional website or rollout work is planned separately.",
++    work: ["airport-executive", "elevate", "periti"],
++    faqs: [
++      {
++        title: "Can you improve my existing logo without starting over?",
++        answer: "Yes. We identify what is worth preserving, then agree which parts need attention: letterforms, spacing, proportions, colors, typography or the way the identity is applied. A refresh can retain the core idea; replacing the whole mark is not automatic.",
++      },
++      {
++        title: "Does the $3,000 include colors and typography?",
++        answer: "$3,000 is the total for the scoped one-week Brand Sprint, not just a logo file. It includes logo concepts or refinements, final logo files, logo animation, a color palette, typography, brand guidelines, business card design, social profile images and launch posts, and an email signature. Revisions and editable source files are included.",
++        links: [{ label: "See the complete pricing and scope", href: "/pricing" }],
++      },
++      {
++        title: "When does the one-week timeline start?",
++        answer: "We confirm availability and agree the scope, start date and feedback schedule before starting. The scoped identity is delivered within one week, guaranteed. Website design, development and larger rollout work require separately agreed weeks at $3,000 per week, with the total fixed before work starts.",
++      },
++      {
++        title: "What should I send before a logo refresh?",
++        answer: "Send your current logo files, website, existing guidelines and examples of where the identity needs to work. Explain what must stay recognizable, what is not working, who approves the design and your launch priorities. If you only have a PNG or cannot find the original files, flag that when we discuss the scope.",
+       },
+       {
+         title: "What logo files do I get?",
+-        answer: "Final logo files in SVG, PNG, and PDF for print and screen, in full color and one-color versions for light and dark backgrounds, plus the logo animation.",
+-      },
+-      {
+-        title: "Can you redesign an existing logo?",
+-        answer: "Yes. A rebrand runs the same way as a new identity: audit what is worth keeping, then design forward from it, delivered in one week.",
++        answer: "Final logo files in SVG, PNG and PDF for print and screen, with agreed responsive and color variations, plus the logo animation and editable source files. The guidelines document the palette, typography and usage rules so your team and suppliers can use the identity consistently.",
++      },
++      {
++        title: "Are premium font licenses and website work included?",
++        answer: "We identify any third-party font or asset licensing costs and responsibilities before choosing them. Website design and development, print production and larger rollout projects are separate from the identity sprint. Additional design weeks cost $3,000 each, with the scope and total agreed before work starts.",
+       },
+     ],
+   },

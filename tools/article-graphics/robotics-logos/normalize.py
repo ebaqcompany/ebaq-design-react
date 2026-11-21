@@ -12,7 +12,8 @@ def fix_svg(s):
     s=re.sub(r'color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)[^)]*\)',lambda m:'#0e0e0e' if min(float(x) for x in m.groups())>0.78 else '#%02x%02x%02x'%tuple(int(float(x)*255) for x in m.groups()),s)
     s=re.sub(r'#([0-9a-fA-F]{6})\b',lambda m:'#0e0e0e' if min(int(m.group(1)[i:i+2],16) for i in (0,2,4))>=200 else m.group(0),s)
     s=re.sub(r'(fill|stroke)="(rgb\([^)]*\))"',lambda m:f'{m.group(1)}="#0e0e0e"' if light(m.group(2)) else m.group(0),s)
-    s=re.sub(r'(fill|stroke)(=|:\s*)"?(#fff(?:fff)?|white)\b"?',lambda m:f'{m.group(1)}{m.group(2)}{"\"" if m.group(2)=="=" else ""}#0e0e0e{"\"" if m.group(2)=="=" else ""}',s,flags=re.I)
+    s=re.sub(r'(fill|stroke)="(#fff(?:fff)?|white)"',r'\1="#0e0e0e"',s,flags=re.I)
+    s=re.sub(r'(fill|stroke):\s*(#fff(?:fff)?|white)\b',r'\1:#0e0e0e',s,flags=re.I)
     return s
 for f in sorted(x for x in os.listdir(SRC) if '.' in x and not x.startswith('_')):
     slug,ext=f.rsplit('.',1)

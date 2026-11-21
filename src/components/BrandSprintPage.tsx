@@ -102,7 +102,7 @@ export const BrandSprintPage = () => (
           title: question,
           answer: question === "What if I need more than branding?" ? (
             <p>
-              {answer} Use the <TextLink href="/tools/branding-cost-calculator">branding cost calculator</TextLink>{" "}
+              {answer} Use the <TextLink href="/tools/design-cost-calculator">design cost calculator</TextLink>{" "}
               to estimate your combined project.
             </p>
           ) : answer,

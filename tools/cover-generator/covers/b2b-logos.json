@@ -1,0 +1,48 @@
+{
+  "layout": "collage",
+  "title": "B2B Logos",
+  "category": "",
+  "seed": "b2b-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.667,
+      "dx": 0.5133,
+      "dy": -0.019
+    },
+    "sheet-paper": {
+      "dx": -0.236,
+      "dy": 0.2299
+    },
+    "sheet-noise": {
+      "dx": -0.7875,
+      "dy": -0.2897
+    },
+    "sheet-strip": {
+      "dx": 0.0856,
+      "dy": -0.0258,
+      "z": 6
+    },
+    "dots": {
+      "dx": 0.0534,
+      "dy": 0.0598
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/b2b-logos/paste-mwr12gz4-v3qs.png"
+  ]
+}

@@ -1271,7 +1271,6 @@ const allCaseStudies: CaseStudy[] = [
       description: "Travel app branding case study: a flowing V monogram, logo animation, vibrant palette, social media motion, mobile app, website, and billboard design for Ventur, an AI travel planner.",
       keywords: ["travel app branding", "AI app logo design", "monogram logo", "mobile app branding", "logo animation"],
     },
-    website: { label: "Visit live website", href: "https://www.venturtravel.com/" },
     guidelines: { label: "Brand guidelines", href: "https://guidelines.online/ventur" },
     preview: { src: "/portfolio/identities/ventur-bento.webp", alt: "Ventur brand identity" },
     hero: {

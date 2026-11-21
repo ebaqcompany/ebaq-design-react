@@ -36,6 +36,7 @@
   main { padding: 24px; display: grid; gap: 16px; align-content: start; }
   .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
   canvas { width: 100%; height: auto; display: block; border-radius: 4px; cursor: grab; touch-action: none; }
+  canvas:focus { outline: 2px solid var(--blue); outline-offset: 2px; }
   .hint { font: 12px "Roboto Mono", monospace; color: #555; margin: 10px 0 0; }
   .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   pre { background: #111; color: #cceffc; padding: 12px; border-radius: 8px; font-size: 12px; overflow: auto; margin: 0; white-space: pre-wrap; word-break: break-word; }
@@ -55,11 +56,16 @@
     <label for="title">Cover title</label>
     <input id="title" type="text" value="" />
 
+    <label>Elements</label>
+    <div class="seg" id="elements"></div>
+    <p class="hint" id="restore-hint" hidden>Deleted elements — click + to bring them back:</p>
+    <div class="seg" id="restore" hidden></div>
+
     <details><summary>Extras</summary><p class="hint">Click to add a mark, then drag, resize, rotate or delete it.</p><div class="seg" id="extras"><button type="button" data-extra="arrow">Arrow</button><button type="button" data-extra="curve">Curved arrow</button><button type="button" data-extra="loops">Loops</button><button type="button" data-extra="zigzag">Zigzag</button><button type="button" data-extra="star">Asterisk</button><button type="button" data-extra="cross">X</button></div></details>
     <label>Ground</label><div class="seg" data-key="ground" data-options="auto,white,blue,black,deals"></div>
-    <label>Photo treatment</label><div class="seg" id="photo-treatment"><button type="button" data-treatment="color" aria-pressed="false">Color</button><button type="button" data-treatment="mono" aria-pressed="false">Mono</button></div><p class="hint" id="treatment-hint">Select a photo to change it, or deselect to change all photos.</p>
+    <label>Photo treatment</label><div class="seg" id="photo-treatment"><button type="button" data-treatment="color" aria-pressed="true">Color</button><button type="button" data-treatment="mono" aria-pressed="false">Mono</button></div><p class="hint" id="treatment-hint">Select a photo to change it, or deselect to change all photos.</p>
     <label>Secondary colours (full, then pale)</label><div class="seg" id="secondary"></div>
-    <label>Post-it colour</label><div class="seg" data-key="noteTone" data-options="almond,sand,lavender,rose,mint,white"></div>
+    <label>Post-it colour</label><div class="seg" id="noteTone"></div>
 
     <label for="logos">Logos (comma separated: Simple Icons names, file paths, or pasted image links)</label>
     <textarea id="logos">figma, framer, webflow, /public/client-logos/savory-wordmark.svg</textarea>
@@ -85,8 +91,8 @@
   </aside>
   <main>
     <div class="card">
-      <canvas id="cover" width="1920" height="1080"></canvas>
-      <p class="hint" id="hint">Drag to move · scroll to resize · shift + scroll to rotate · [ and ] change depth · Delete hides the selected piece</p>
+      <canvas id="cover" width="1920" height="1080" tabindex="0"></canvas>
+      <p class="hint" id="hint">Drag to move · scroll to resize · shift + scroll to rotate · [ and ] change depth · Delete hides the selected piece · Cmd/Ctrl+V pastes clipboard image</p>
     </div>
     <div class="pair">
       <div class="card"><canvas id="og" width="1200" height="630"></canvas></div>
@@ -97,13 +103,18 @@
 <script type="module">
 import { renderCover, loadAssets } from './cover.js'
 const $ = (id) => document.getElementById(id)
-const state = { style: 'overlap', secondary: [], ground: 'auto', hero: 'auto', titleStyle: 'strips', titlePos: 'center', imageMode: 'auto', logoStyle: 'bare', noteTone: 'almond', tweaks: {} }
+const state = { style: 'overlap', secondary: [], ground: 'auto', hero: 'auto', titleStyle: 'strips', titlePos: 'center', imageMode: 'auto', logoStyle: 'bare', noteTone: 'lavender', noteCount: 0, tweaks: {} }
 let assets = {}, layout = [], selected = null, assetKey = '', savedCategory = '', savedDecor = false
 
-for (const [name, hexv] of [['green', '#6CB181'], ['red', '#C8344B'], ['sand', '#E9B44A'], ['lavender', '#CCEFFC'], ['mint', '#D7E9E3'], ['rose', '#F9E0E9'], ['almond', '#F9EECE']]) {
+for (const [name, hexv] of [['green', '#6CB181'], ['red', '#C8344B'], ['sand', '#FED440'], ['lavender', '#CCEFFC'], ['mint', '#D7E9E3'], ['rose', '#F9E0E9'], ['almond', '#F9EECE']]) {
   const b = document.createElement('button'); b.type = 'button'; b.textContent = name; b.style.borderBottom = `6px solid ${hexv}`; b.setAttribute('aria-pressed', 'false')
   b.onclick = () => { const on = !state.secondary.includes(name); state.secondary = on ? [...state.secondary, name] : state.secondary.filter((x) => x !== name); b.setAttribute('aria-pressed', String(on)); update() }
   $('secondary').append(b)
+}
+for (const [name, hexv] of [['lavender', '#CCEFFC'], ['gray', '#E5E5E5'], ['white', '#F0F0F0'], ['almond', '#F9EECE'], ['sand', '#FED440'], ['mint', '#D7E9E3'], ['rose', '#F9E0E9'], ['green', '#6CB181'], ['red', '#C8344B']]) {
+  const b = document.createElement('button'); b.type = 'button'; b.textContent = name; b.style.borderBottom = `6px solid ${hexv}`; b.setAttribute('aria-pressed', String(state.noteTone === name))
+  b.onclick = () => { state.noteTone = name; $('noteTone').querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); update() }
+  $('noteTone').append(b)
 }
 document.querySelectorAll('.seg[data-key]').forEach((seg) => {
   for (const v of seg.dataset.options.split(',')) {
@@ -136,7 +147,12 @@ function spec() {
   if (images.length) s.images = images
   if (notes.length) s.notes = notes
   if ($('shape').value.trim()) s.shape = $('shape').value.trim()
+  if (!s.shape && s.tweaks?.hero) {
+    const { hero, ...rest } = s.tweaks
+    s.tweaks = rest
+  }
   if (!Object.keys(s.tweaks).length) delete s.tweaks
+  if (!s.noteCount) delete s.noteCount
   if (!s.secondary.length) delete s.secondary
   if (!Object.keys(s.place ?? {}).length) delete s.place
   return s
@@ -153,17 +169,95 @@ function draw() {
   layout = renderCover($('cover'), s, assets, { w: 1920, h: 1080 }).elements
   renderCover($('og'), s, assets, { w: 1200, h: 630 })
   const sel = layout.find((e) => e.id === selected)
-  const mode = sel?.type === 'photo' ? s.tweaks?.[sel.id]?.treatment : null
+  const photoTreatments = list('images', '\n').map((_, i) => s.tweaks?.[`photo-${i}`]?.treatment ?? 'color')
+  const allMode = !photoTreatments.length ? 'color' : photoTreatments.every((t) => t === photoTreatments[0]) ? photoTreatments[0] : null
+  const mode = sel?.type === 'photo' ? (s.tweaks?.[sel.id]?.treatment ?? 'color') : selected ? null : allMode
   document.querySelectorAll('#photo-treatment button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.treatment === mode)))
   $('treatment-hint').textContent = sel?.type === 'photo' ? 'Changing the selected photo.' : selected ? 'Select a photo, or click empty space to change all photos.' : 'Changing all photos.'
+  renderElementControls()
   if (sel) {
     const c = $('cover').getContext('2d')
     c.save(); c.translate(sel.cx, sel.cy); c.rotate(sel.rot); c.strokeStyle = '#00afec'; c.setLineDash([12, 8]); c.lineWidth = 3
     c.strokeRect((-sel.w * sel.scale) / 2 - 8, (-sel.h * sel.scale) / 2 - 8, sel.w * sel.scale + 16, sel.h * sel.scale + 16); c.restore()
   }
   $('json').textContent = JSON.stringify(s, null, 1)
-  $('hint').textContent = selected ? `Selected: ${selected} · drag to move · double-click to vary · scroll to resize · shift + scroll to rotate · [ ] depth · Delete hides it` : 'Drag to move · double-click to vary · scroll to resize · shift + scroll to rotate · [ and ] change depth · Delete hides the selected piece'
+  $('hint').textContent = selected ? `Selected: ${selected} · drag to move · double-click to vary · scroll to resize · shift + scroll to rotate · [ ] depth · Delete hides it · Cmd/Ctrl+V pastes image` : 'Drag to move · double-click to vary · scroll to resize · shift + scroll to rotate · [ and ] change depth · Delete hides the selected piece · Cmd/Ctrl+V pastes image'
   try { localStorage.setItem('collage-cover', JSON.stringify({ s, shape: $('shape').value })) } catch {}
+}
+const ELEMENT_LABELS = { 'sheet-paper': 'Paper', 'sheet-strip': 'Strip', 'sheet-noise': 'Noise', dots: 'Dots', circle: 'Circle', title: 'Title', hero: 'Hero' }
+const elementLabel = (id) => {
+  if (ELEMENT_LABELS[id]) return ELEMENT_LABELS[id]
+  if (id.startsWith('note-')) return `Post-it ${Number(id.slice(5)) + 1}`
+  if (id.startsWith('photo-')) return `Image ${Number(id.slice(6)) + 1}`
+  if (id.startsWith('logo-')) return `Logo ${Number(id.slice(5)) + 1}`
+  if (id.startsWith('extra-')) {
+    const kind = (state.extras ?? []).find((x) => x.id === id)?.kind
+    return kind ? kind[0].toUpperCase() + kind.slice(1) : 'Extra'
+  }
+  return id
+}
+function restoreElement(id) {
+  if (state.tweaks[id]) {
+    delete state.tweaks[id].hidden
+    if (!Object.keys(state.tweaks[id]).length) delete state.tweaks[id]
+  }
+  selected = id
+  draw()
+}
+function renderElementControls() {
+  const elBox = $('elements'), resBox = $('restore'), resHint = $('restore-hint')
+  elBox.replaceChildren(); resBox.replaceChildren()
+  const coreIds = ['sheet-paper', 'sheet-strip', 'sheet-noise', 'dots', 'title']
+  const presentCore = new Set()
+  for (const id of coreIds) {
+    const item = layout.find((e) => e.id === id)
+    if (!item) continue
+    presentCore.add(id)
+    const b = document.createElement('button'); b.type = 'button'
+    b.textContent = item.hidden ? `+ ${elementLabel(id)}` : elementLabel(id)
+    b.setAttribute('aria-pressed', String(!item.hidden))
+    b.onclick = () => {
+      if (item.hidden) restoreElement(id)
+      else { tweak(id).hidden = true; if (selected === id) selected = null; draw() }
+    }
+    elBox.append(b)
+  }
+  const hiddenNote = layout.find((e) => e.id.startsWith('note-') && e.hidden)
+  const visibleNotes = layout.filter((e) => e.id.startsWith('note-') && !e.hidden)
+  const noteBtn = document.createElement('button'); noteBtn.type = 'button'
+  noteBtn.textContent = '+ Post-it'
+  noteBtn.setAttribute('aria-pressed', String(visibleNotes.length > 0))
+  noteBtn.onclick = () => {
+    if (hiddenNote) return restoreElement(hiddenNote.id)
+    const totalNotes = Math.max(list('notes', '\n').length, state.noteCount ?? 0)
+    if (totalNotes >= 3) return status('Up to 3 Post-it notes per cover.', true)
+    state.noteCount = totalNotes + 1
+    selected = `note-${state.noteCount - 1}`
+    draw()
+  }
+  elBox.append(noteBtn)
+  const otherHidden = layout.filter((e) => e.hidden && !presentCore.has(e.id))
+  resHint.hidden = otherHidden.length === 0
+  resBox.hidden = otherHidden.length === 0
+  for (const item of otherHidden) {
+    const b = document.createElement('button'); b.type = 'button'
+    b.textContent = `+ ${elementLabel(item.id)}`
+    b.onclick = () => restoreElement(item.id)
+    resBox.append(b)
+  }
+  if (otherHidden.length > 1) {
+    const all = document.createElement('button'); all.type = 'button'; all.textContent = '+ Restore all'
+    all.onclick = () => {
+      for (const item of otherHidden) {
+        if (state.tweaks[item.id]) {
+          delete state.tweaks[item.id].hidden
+          if (!Object.keys(state.tweaks[item.id]).length) delete state.tweaks[item.id]
+        }
+      }
+      draw()
+    }
+    resBox.append(all)
+  }
 }
 // ----- direct manipulation -----
 const cv = $('cover')
@@ -179,6 +273,7 @@ function hit(x, y) {
 const tweak = (id) => (state.tweaks[id] ??= {})
 let drag = null
 cv.addEventListener('pointerdown', (e) => {
+  cv.focus({ preventScroll: true })
   const [x, y] = pos(e); const el = hit(x, y)
   selected = el?.id ?? null
   if (el) { const t = tweak(el.id); drag = { id: el.id, x, y, dx: t.dx ?? 0, dy: t.dy ?? 0 }; cv.setPointerCapture(e.pointerId) }
@@ -221,10 +316,11 @@ function applySpec(s, name) {
   state.style = 'overlap'
   for (const k of ['ground', 'hero', 'imageMode', 'logoStyle', 'noteTone']) state[k] = s[k] ?? defaults[k]
   state.titleStyle = 'strips'; state.titlePos = 'center'
-  state.secondary = [...(s.secondary ?? [])]; state.tweaks = structuredClone(s.tweaks ?? {}); state.place = structuredClone(s.place ?? {})
+  state.secondary = [...(s.secondary ?? [])]; state.tweaks = structuredClone(s.tweaks ?? {}); state.place = structuredClone(s.place ?? {}); state.noteCount = Number(s.noteCount ?? 0)
   savedDecor = s.decor ?? false; state.extras = structuredClone(s.extras ?? []); $('mat').checked = s.mat ?? false; $('plain').checked = s.plain ?? false; $('grain').checked = s.grain ?? true
   document.querySelectorAll('.seg[data-key] button').forEach((b) => b.setAttribute('aria-pressed', String(state[b.parentElement.dataset.key] === b.textContent)))
   document.querySelectorAll('#secondary button').forEach((b) => b.setAttribute('aria-pressed', String(state.secondary.includes(b.textContent))))
+  document.querySelectorAll('#noteTone button').forEach((b) => b.setAttribute('aria-pressed', String(state.noteTone === b.textContent)))
   selected = null; update()
 }
 // ----- controls -----
@@ -273,29 +369,83 @@ $('save').onclick = async () => {
   $('save').disabled = false; $('save').textContent = 'Save cover'
 }
 // pasted image links are downloaded into the post's asset folder and replaced by the local path
+const localising = new Set()
 async function localise(id, sep) {
   const el = $(id), parts = el.value.split(sep)
-  let changed = false
-  for (let i = 0; i < parts.length; i++) {
-    const m = parts[i].trim().match(/^(https?:\/\/[^\s#@]+)(.*)$/); if (!m) continue
+  for (const rawPart of parts) {
+    const part = rawPart.trim()
+    const m = part.match(/^(https?:\/\/[^\s#]+?)((?:#[^\s@]+)?(?:@(?:raw|bottom|blue))*)$/); if (!m) continue
     if (!$('post').value) { status('Pick a blog post first, then paste the link again.', true); return }
-    try { parts[i] = (await api('/api/asset', { slug: $('post').value, url: m[1] })).path + m[2]; changed = true; status('Saved ' + m[1].split('/').pop() + ' into this post\'s assets.') }
-    catch (e) { status('Could not fetch ' + m[1] + ': ' + e.message, true); return }
+    const key = `${id}|${part}`
+    if (localising.has(key)) continue
+    localising.add(key)
+    try {
+      const localPath = (await api('/api/asset', { slug: $('post').value, url: m[1] })).path + m[2]
+      el.value = el.value.split(sep).map((item) => item.trim() === part ? localPath : (sep === ',' ? item.trim() : item)).join(sep === ',' ? ', ' : sep)
+      status('Saved ' + m[1].split('/').pop() + ' into this post\'s assets.')
+    } catch (e) { status('Could not fetch ' + m[1] + ': ' + e.message, true); return }
+    finally { localising.delete(key) }
   }
-  if (changed) el.value = parts.join(sep === ',' ? ', ' : sep)
+}
+const mimeExt = { 'image/svg+xml': '.svg', 'image/png': '.png', 'image/webp': '.webp', 'image/jpeg': '.jpg', 'image/jpg': '.jpg', 'image/gif': '.gif', 'image/avif': '.avif' }
+async function addAssetFile(file, targetId, explicitName) {
+  const data = await new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = rej; fr.readAsDataURL(file) })
+  const name = explicitName ?? file.name
+  const { path } = await api('/api/asset', { slug: $('post').value, name, data })
+  const el = $(targetId)
+  el.value = el.value.trim() ? el.value.trim() + (targetId === 'logos' ? ', ' : '\n') + path : path
+  return path
 }
 let addTo = 'logos'
 document.querySelectorAll('[data-add]').forEach((b) => (b.onclick = () => { addTo = b.dataset.add; if (!$('post').value) return status('Pick a blog post first.', true); $('files').click() }))
 $('files').onchange = async () => {
   for (const f of $('files').files) {
-    const data = await new Promise((res) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.readAsDataURL(f) })
-    try {
-      const { path } = await api('/api/asset', { slug: $('post').value, name: f.name, data })
-      const el = $(addTo); el.value = el.value.trim() ? el.value.trim() + (addTo === 'logos' ? ', ' : '\n') + path : path
-    } catch (e) { status('Could not add ' + f.name + ': ' + e.message, true) }
+    try { await addAssetFile(f, addTo) }
+    catch (e) { status('Could not add ' + f.name + ': ' + e.message, true) }
   }
   $('files').value = ''; update()
 }
+addEventListener('paste', async (e) => {
+  const cd = e.clipboardData; if (!cd) return
+  const active = document.activeElement
+  const inField = active && /INPUT|TEXTAREA|SELECT/.test(active.tagName)
+  const imageFiles = [...(cd.items ?? [])].filter((it) => it.kind === 'file' && it.type.startsWith('image/')).map((it) => it.getAsFile()).filter(Boolean)
+  if (!imageFiles.length && cd.files?.length) {
+    for (const f of cd.files) if (f.type.startsWith('image/')) imageFiles.push(f)
+  }
+  if (imageFiles.length) {
+    e.preventDefault()
+    if (!$('post').value) return status('Pick a blog post first, then paste the image again.', true)
+    const targetId = active?.id === 'logos' ? 'logos' : 'images'
+    let added = 0
+    for (const file of imageFiles) {
+      try {
+        const ext = mimeExt[file.type] ?? '.png'
+        const name = `paste-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}${ext}`
+        await addAssetFile(file, targetId, name)
+        added++
+      } catch (err) { status('Could not paste image: ' + err.message, true); return }
+    }
+    if (added) {
+      if (targetId === 'images') selected = `photo-${list('images', '\n').length - 1}`
+      status(added === 1 ? 'Pasted image saved into this post\'s assets.' : `Saved ${added} pasted images into this post's assets.`)
+      await update()
+    }
+    return
+  }
+  if (!inField) {
+    const text = cd.getData('text/plain')?.trim() ?? ''
+    const urls = text.split(/\s+/).filter((u) => /^https?:\/\//i.test(u))
+    if (urls.length) {
+      e.preventDefault()
+      if (!$('post').value) return status('Pick a blog post first, then paste the link again.', true)
+      const el = $('images')
+      el.value = el.value.trim() ? el.value.trim() + '\n' + urls.join('\n') : urls.join('\n')
+      selected = `photo-${list('images', '\n').length - 1}`
+      await update()
+    }
+  }
+})
 await document.fonts.load('600 40px "Roboto Condensed"'); await document.fonts.load('500 20px "Roboto Mono"')
 let last = ''; try { last = localStorage.getItem('cover-post') ?? '' } catch {}
 const requestedPost = new URLSearchParams(location.search).get('post')

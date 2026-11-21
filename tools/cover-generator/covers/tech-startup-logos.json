@@ -1,0 +1,79 @@
+{
+  "layout": "collage",
+  "title": "Tech Logos",
+  "category": "",
+  "seed": "tech-startup-logos",
+  "style": "overlap",
+  "ground": "blue",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "photo-0": {
+      "dx": -0.3809,
+      "dy": -0.3475,
+      "scale": 1.17
+    },
+    "logo-4": {
+      "dx": 0.7338,
+      "dy": 0.1721
+    },
+    "logo-2": {
+      "dx": 0.7043,
+      "dy": 0.2489
+    },
+    "sheet-paper": {
+      "dx": 0.2107,
+      "dy": -0.1554
+    },
+    "sheet-strip": {
+      "dx": 0.0642,
+      "dy": 0.1229
+    },
+    "hero": {
+      "hidden": true
+    },
+    "logo-3": {
+      "dx": -0.1779,
+      "dy": -0.174,
+      "scale": 1.17
+    },
+    "logo-5": {
+      "dx": -0.1249,
+      "dy": 0.507
+    },
+    "logo-1": {
+      "dx": -0.3784,
+      "dy": -0.1027
+    },
+    "logo-0": {
+      "dx": 1.0274,
+      "dy": -0.5495
+    },
+    "dots": {
+      "dx": -0.0034,
+      "dy": 0.0214
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "logos": [
+    "/tools/cover-generator/assets/tech-startup-logos/logo-apple.svg",
+    "/tools/cover-generator/assets/tech-startup-logos/logo-google.svg",
+    "/tools/cover-generator/assets/tech-startup-logos/logo-netflix.svg",
+    "/tools/cover-generator/assets/tech-startup-logos/logo-spotify.svg",
+    "/tools/cover-generator/assets/tech-startup-logos/logo-slack.svg",
+    "/tools/cover-generator/assets/tech-startup-logos/logo-airbnb.svg"
+  ],
+  "images": [
+    "/tools/cover-generator/assets/tech-startup-logos/tech-logos-hero.webp"
+  ]
+}

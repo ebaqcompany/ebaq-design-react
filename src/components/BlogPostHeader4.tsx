@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { BiLeftArrowAlt } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 type ImageProps = { src: string; alt?: string; fit?: "cover" | "contain"; background?: "black" };
 type PostDetails = { title: string; description: string };
@@ -22,8 +24,15 @@ export const BlogPostHeader4 = (props: BlogPostHeader4Props) => {
       <div className="container">
         <div className="grid gap-x-20 gap-y-16 md:gap-y-20 xl:relative xl:block xl:min-h-[588px]">
           <div className="relative z-10 mx-auto flex size-full max-w-lg flex-col items-start justify-start xl:mx-0 xl:h-[588px] xl:max-w-[720px]">
-            <div className="mb-5 flex w-full items-center justify-start md:mb-6">
-              <p className="rounded-full border border-black/20 px-3 py-1 text-sm font-normal">{category}</p>
+            <div className="mb-5 flex w-full flex-wrap items-center justify-start gap-2.5 md:mb-6">
+              <Link
+                to="/blog"
+                className="button-primary inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 text-sm no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
+              >
+                <BiLeftArrowAlt className="size-4 shrink-0" aria-hidden="true" />
+                <span>Blog</span>
+              </Link>
+              <p className="rounded-full border border-black/20 px-3 py-1 text-sm font-normal text-black/70">{category}</p>
             </div>
             <h1>{heading}</h1>
             <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-2 md:mt-8">

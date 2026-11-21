@@ -69,7 +69,7 @@ export const PricingPage = () => (
         description={(
           <>
             A one-week Brand Sprint covers your agreed brand identity for {pricing.weekly} total. Use the{" "}
-            <TextLink href="/tools/branding-cost-calculator">branding cost calculator</TextLink>{" "}
+            <TextLink href="/tools/design-cost-calculator">design cost calculator</TextLink>{" "}
             to estimate a project that also needs website design, development, or launch assets.
           </>
         )}

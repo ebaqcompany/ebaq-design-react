@@ -53,7 +53,7 @@ const preloads = new Map()
 // Read existing static-page copy so generated titles stay aligned with React.
 for (const [path, component] of Object.entries({
   '/about': 'AboutPage', '/contact': 'ContactPage', '/blog': 'BlogPage',
-  '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage', '/tools/branding-cost-calculator': 'BrandingCostCalculatorPage', '/tools/logo-design-cost-calculator': 'LogoDesignCostCalculatorPage', '/tools/website-cost-calculator': 'WebsiteCostCalculatorPage', '/tools/brand-grader': 'BrandGraderPage', '/tools/brand-archetype-quiz': 'BrandArchetypeQuizPage', '/tools/tagline-generator': 'TaglineGeneratorPage', '/tools/brand-name-generator': 'BrandNameGeneratorPage', '/tools/brand-templates': 'BrandTemplatesPage',
+  '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage', '/tools/creative-brief-generator': 'CreativeBriefGeneratorPage', '/tools/design-cost-calculator': 'DesignCostCalculatorPage', '/tools/brand-grader': 'BrandGraderPage', '/tools/brand-archetype-quiz': 'BrandArchetypeQuizPage', '/tools/tagline-generator': 'TaglineGeneratorPage', '/tools/brand-name-generator': 'BrandNameGeneratorPage', '/tools/brand-templates': 'BrandTemplatesPage',
   '/real-estate-branding': 'RealEstateBrandingLanding',
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/personal-branding': 'PersonalBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
   '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding',
@@ -95,8 +95,7 @@ for (const collection of ['blog', 'podcast']) {
 const { caseStudies } = await loadData('../src/data/caseStudies.ts')
 for (const study of caseStudies) metadata.set(`/work/${study.slug}`, { title: study.seo?.title || `${study.client} — ${study.title}`, description: study.seo?.description || study.summary, image: study.preview.src, schemas: [buildCaseStudySchema(study, siteUrl), buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Work', path: '/work' }, { name: study.client, path: `/work/${study.slug}` }], siteUrl)] })
 const { comparisons, comparisonTitle, comparisonName } = await loadData('../src/data/comparisons.ts')
-const { glossary, glossaryTitle } = await loadData('../src/data/glossary.ts')
-for (const entry of glossary) metadata.set(`/glossary/${entry.slug}`, { title: glossaryTitle(entry), description: entry.short })
+const { glossary } = await loadData('../src/data/glossary.ts')
 for (const comparison of comparisons) metadata.set(`/compare/${comparison.slug}`, { title: comparisonTitle(comparison), description: comparison.description })
 const { shopProducts } = await loadData('../src/data/shopProducts.ts')
 for (const product of shopProducts) metadata.set(`/shop/${product.slug}`, { title: product.seo?.title ?? `${product.title} | Ebaq Design`, description: product.seo?.description ?? product.description, image: product.seo?.image || product.image, socialTitle: product.seo?.ogTitle, socialDescription: product.seo?.ogDescription, schemas: [buildProductSchema(product, siteUrl), buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Shop', path: '/shop' }, { name: product.title, path: `/shop/${product.slug}` }], siteUrl)] })
@@ -186,9 +185,8 @@ const freeTools = [
   ['Brand archetype quiz: find which of the 12 brand archetypes fits a brand', '/tools/brand-archetype-quiz'],
   ['Brand name generator: name ideas in six naming styles', '/tools/brand-name-generator'],
   ['Tagline generator: tagline ideas in five tagline types', '/tools/tagline-generator'],
-  ['Branding cost calculator: fixed price and timeline for a brand project', '/tools/branding-cost-calculator'],
-  ['Logo design cost calculator: what a logo should cost, from AI tools to agencies', '/tools/logo-design-cost-calculator'],
-  ['Website cost calculator: design and build price plus first-year platform cost on Framer, Webflow, or Next.js', '/tools/website-cost-calculator'],
+  ['Creative brief generator: build a branding, logo, or website brief in 60 seconds and send for a fixed quote', '/tools/creative-brief-generator'],
+  ['Design cost calculator: fixed price, timeline, and platform costs for logo, brand identity, strategy, motion, and websites', '/tools/design-cost-calculator'],
   ['Brand voice template: free one-page PDF worksheet', '/tools/brand-templates'],
 ]
 const toolList = freeTools.map(([label, path]) => `- [${label}](${siteUrl}${path})`).join('\n')
@@ -319,7 +317,7 @@ ${toolList}
 
 ## Glossary
 
-${glossary.map((entry) => `- ${entry.term}: ${entry.short} ${siteUrl}/glossary/${entry.slug}`).join('\n')}
+${glossary.map((entry) => `- ${entry.term}: ${entry.short} ${siteUrl}/glossary#${entry.slug}`).join('\n')}
 
 ## Website platform comparisons
 

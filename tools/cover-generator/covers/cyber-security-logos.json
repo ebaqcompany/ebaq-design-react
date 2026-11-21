@@ -1,0 +1,54 @@
+{
+  "layout": "collage",
+  "title": "Cyber Security Logos",
+  "category": "",
+  "seed": "cyber-security-logos",
+  "style": "overlap",
+  "ground": "black",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "note-0": {
+      "hidden": true
+    },
+    "sheet-strip": {
+      "dx": -0.5197,
+      "dy": -0.0684
+    },
+    "sheet-paper": {
+      "dx": -0.0452,
+      "dy": -0.2465
+    },
+    "sheet-noise": {
+      "dx": -0.7684,
+      "dy": 0.1836,
+      "z": 6,
+      "scale": 0.782
+    },
+    "photo-0": {
+      "scale": 1.659,
+      "dx": 0.9954,
+      "dy": 0.5478,
+      "rot": 0
+    },
+    "title": {},
+    "dots": {
+      "dx": -1.1201,
+      "dy": -0.685
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/cyber-security-logos/paste-mwqycc2h-of9v.png"
+  ]
+}

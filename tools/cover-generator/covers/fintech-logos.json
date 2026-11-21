@@ -1,0 +1,53 @@
+{
+  "layout": "collage",
+  "title": "Fintech Logos",
+  "category": "",
+  "seed": "fintech-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "noteCount": 2,
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.425,
+      "dx": 0.042,
+      "dy": 0.1139
+    },
+    "sheet-noise": {
+      "dx": -0.8038,
+      "dy": 0.1431,
+      "scale": 0.85
+    },
+    "sheet-paper": {
+      "dx": -0.037,
+      "dy": -0.3947
+    },
+    "sheet-strip": {
+      "dx": 0.6332,
+      "dy": 0.0199
+    },
+    "note-1": {
+      "hidden": true
+    },
+    "note-0": {
+      "dx": -0.0011,
+      "dy": 0.0011,
+      "hidden": true
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/fintech-logos/paste-mwqyi6ra-1gm8.png"
+  ]
+}
