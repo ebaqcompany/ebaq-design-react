@@ -635,7 +635,7 @@ const allCaseStudies: CaseStudy[] = [
       logo: { src: "/case-study/next-dimension/logos.webp", alt: "NextDimension logo design" },
       typeface: { src: "/case-study/next-dimension/type.webp", alt: "NextDimension typeface" },
       color: { src: "/case-study/next-dimension/colors.webp", alt: "NextDimension color palette" },
-      website: { src: "/case-study/next-dimension/old-site/04-website.webp", alt: "NextDimension website design" },
+      website: { src: "/case-study/next-dimension/website-hero.webp", alt: "NextDimension website design" },
     },
     overview: {
       heading: "A new identity for healthcare AI",
@@ -673,13 +673,53 @@ const allCaseStudies: CaseStudy[] = [
       {
         type: "gallery",
         images: [
-          { src: "/case-study/next-dimension/old-site/04-website.webp", alt: "NextDimension website design" },
+          {
+            src: "/case-study/next-dimension/website-hero.webp",
+            srcSet: "/case-study/next-dimension/website-hero-1280.webp 1280w, /case-study/next-dimension/website-hero.webp 2560w",
+            sizes: "(min-width: 1280px) 1280px, 90vw",
+            width: 2560,
+            height: 1440,
+            alt: "NextDimension website hero design",
+          },
           {
             src: "/case-study/next-dimension/old-site/05-hero-shader.mp4",
             alt: "NextDimension interactive website shader",
             kind: "video",
           },
-          { src: "/case-study/next-dimension/old-site/06-full-website.webp", alt: "Full NextDimension website design" },
+          {
+            src: "/case-study/next-dimension/website-footer.webp",
+            srcSet: "/case-study/next-dimension/website-footer-1280.webp 1280w, /case-study/next-dimension/website-footer.webp 2560w",
+            sizes: "(min-width: 1280px) 1280px, 90vw",
+            width: 2560,
+            height: 1519,
+            alt: "NextDimension website demo call to action and footer",
+          },
+        ],
+      },
+      {
+        type: "header",
+        heading: "Before and after the rebrand",
+        description: "Side by side, the previous logo and website and the redesign show how the new identity changes the way NextDimension presents its AI platform to specialty practices.",
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: "/case-study/next-dimension/logo-before-after.webp",
+            srcSet: "/case-study/next-dimension/logo-before-after-1280.webp 1280w, /case-study/next-dimension/logo-before-after.webp 2560w",
+            sizes: "(min-width: 1280px) 1280px, 90vw",
+            width: 2560,
+            height: 1073,
+            alt: "NextDimension logo before and after the rebrand",
+          },
+          {
+            src: "/case-study/next-dimension/website-before-after.webp",
+            srcSet: "/case-study/next-dimension/website-before-after-1280.webp 1280w, /case-study/next-dimension/website-before-after.webp 2560w",
+            sizes: "(min-width: 1280px) 1280px, 90vw",
+            width: 2560,
+            height: 3821,
+            alt: "NextDimension website before and after the redesign",
+          },
         ],
       },
       {
@@ -694,7 +734,6 @@ const allCaseStudies: CaseStudy[] = [
           { src: "/case-study/next-dimension/old-site/08-bottle.webp", alt: "NextDimension branded bottle", span: "half" },
           { src: "/case-study/next-dimension/old-site/09-folders.webp", alt: "NextDimension presentation folders" },
           { src: "/case-study/next-dimension/old-site/10-cards.webp", alt: "NextDimension branded cards" },
-          { src: "/case-study/next-dimension/billboard-approved.webp", alt: "Next Dim billboard reading Take your clinic to the next dimension against a dark tiled wall" },
         ],
       },
     ],
@@ -872,13 +911,21 @@ const allCaseStudies: CaseStudy[] = [
       },
       {
         type: "header",
-        heading: "A website redesigned around the new brand",
+        heading: "Before and after the rebrand",
         description:
-          "Side by side, the previous landing page and the redesign show how the new identity reshapes Elevate’s website. The same system carries through the home, features, pricing, case studies, and case study detail pages.",
+          "Side by side, the previous logo and landing page and the redesign show how the new identity reshapes Elevate’s brand and website. The same system carries through the home, features, pricing, case studies, and case study detail pages.",
       },
       {
         type: "gallery",
         images: [
+          {
+            src: "/case-study/elevate/12-logo-before-after.webp",
+            srcSet: "/case-study/elevate/12-logo-before-after-1280.webp 1280w, /case-study/elevate/12-logo-before-after.webp 2560w",
+            sizes: "(min-width: 1280px) 1280px, 90vw",
+            width: 2560,
+            height: 1073,
+            alt: "Elevate logo before and after the rebrand",
+          },
           {
             src: "/case-study/elevate/10-landing-before-after.webp",
             srcSet: "/case-study/elevate/10-landing-before-after-1280.webp 1280w, /case-study/elevate/10-landing-before-after.webp 2560w",
