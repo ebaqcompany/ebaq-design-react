@@ -2454,7 +2454,7 @@
     },
     {
       "source": "/archetypes-quiz",
-      "destination": "/blog/brand-archetypes",
+      "destination": "/tools/brand-archetype-quiz",
       "statusCode": 301
     },
     {
