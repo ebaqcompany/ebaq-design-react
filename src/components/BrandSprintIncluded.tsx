@@ -5,7 +5,7 @@ import { LazyVideo } from "./Media";
 // Week 1 shown, not listed: each deliverable with a real piece of client work (16:9 media only),
 // in the same bordered cards as the Services page (Relume Layout 235).
 const sprintDeliverables = [
-  { title: "Logo design", body: "Several concepts, refined into one distinctive mark.", media: "/case-study/aero/01-logo-grid.mp4", alt: "Aero logo construction in motion" },
+  { title: "Logo design", body: "Several concepts, refined into one distinctive mark.", media: "/case-study/aero/01-logo-grid.mp4", alt: "Aero logo construction in motion", poster: "/case-study/aero-logo-preview-poster.jpg" },
   { title: "Logo animation", body: "Your logo in motion, ready for the web, social, and video.", media: "/portfolio/logos/airporteexecutive-logo.json", alt: "Airport Executive logo animation" },
   { title: "Final logo files", body: "Every version in SVG, PNG, and PDF, for print and screen.", media: "/case-study/fox-berman/01-logos.webp", alt: "Fox Berman logo variations" },
   { title: "Color palette", body: "A primary palette and accents, with values for every medium.", media: "/case-study/orbio/03-colors.mp4", alt: "Orbio color palette" },
@@ -34,7 +34,7 @@ export const BrandSprintIncluded = () => (
         <p className="md:text-md">A complete brand identity or rebrand in one week. We lock the scope on the kickoff call, so the week is guaranteed and you get every piece below.</p>
       </div>
       <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {sprintDeliverables.map(({ title, body, media, alt }) => (
+        {sprintDeliverables.map(({ title, body, media, alt, poster }) => (
           <article key={title} data-surface="white" className="service-card relative flex flex-col overflow-hidden rounded-xl after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-brand-primary/30 after:content-['']">
             <div className="aspect-video overflow-hidden bg-surface-muted">
               {media.endsWith(".json") ? (
@@ -42,7 +42,7 @@ export const BrandSprintIncluded = () => (
                   <LottieTile src={media} />
                 </div>
               ) : media.endsWith(".mp4") ? (
-                <LazyVideo src={media} aria-label={alt} className="size-full object-cover" preload="metadata" />
+                <LazyVideo src={media} poster={poster} aria-label={alt} className="size-full object-cover" preload="metadata" />
               ) : (
                 <img src={media} alt={alt} loading="lazy" className="size-full object-cover" />
               )}

@@ -49,9 +49,11 @@ type LazyVideoProps = Omit<ComponentPropsWithoutRef<"video">, "src" | "children"
 
 // A muted loop that is only created once it nears the screen, and paused while it is off screen.
 // Autoplay overrides preload="none", so a plain <video autoPlay> downloads the whole file on page load.
-export const LazyVideo = ({ src, frameClassName = "size-full", frameStyle, autoPlay = true, loop = true, muted = true, eager = false, ...props }: LazyVideoProps) => {
+export const LazyVideo = ({ src, frameClassName = "size-full", frameStyle, autoPlay = true, loop = true, muted = true, eager = false, onError, ...props }: LazyVideoProps) => {
   const { ref, near, inView } = useNearViewport<HTMLDivElement>();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [failedWebm, setFailedWebm] = useState<string>();
+  const fallbackSrc = failedWebm === src ? src.replace(/\.webm$/i, ".mp4") : undefined;
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !autoPlay) return;
@@ -85,8 +87,22 @@ export const LazyVideo = ({ src, frameClassName = "size-full", frameStyle, autoP
   return (
     <div ref={ref} className={frameClassName} style={frameStyle}>
       {(eager || near) && (
-        <video ref={videoRef} autoPlay={autoPlay} loop={loop} muted={muted} playsInline {...props}>
-          <VideoSources src={src} />
+        <video
+          key={src}
+          ref={videoRef}
+          src={fallbackSrc}
+          autoPlay={autoPlay}
+          loop={loop}
+          muted={muted}
+          playsInline
+          {...props}
+          onError={(event) => {
+            // Browsers can stop after a WebM decode error without trying the next <source>.
+            if (!fallbackSrc && /\.webm$/i.test(event.currentTarget.currentSrc)) setFailedWebm(src);
+            onError?.(event);
+          }}
+        >
+          {!fallbackSrc && <VideoSources src={src} />}
         </video>
       )}
     </div>
