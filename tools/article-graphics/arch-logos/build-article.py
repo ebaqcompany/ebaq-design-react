@@ -1,0 +1,45 @@
+# Writes public/content/blog/architecture-logos.json (logo roster format, full-width annotated slides).
+import json, sys
+sys.path.insert(0,'tools/article-graphics/arch-logos'); import arch
+P='public/content/blog/architecture-logos.json'; old=json.load(open(P))
+I='/images/blog/architecture-logos'
+B=arch.B
+boards=[("architecture-logos-01-global-architecture-firms","Global architecture firm logos, 01 to 09"),("architecture-logos-02-signature-studios","Signature architecture studio logos, 10 to 18"),("architecture-logos-03-international-firms","International architecture firm logos, 19 to 27"),("architecture-logos-04-design-led-practices","Design-led architecture practice logos, 28 to 36"),("architecture-logos-05-interiors-and-landscape","Interior design and landscape architecture logos, 37 to 45")]
+title="45 Best Architecture Firm Logos Explained by a Brand Designer [2026]"
+desc="45 architecture firm logos explained by a brand designer, from Gensler, SOM, and Zaha Hadid Architects to BIG, Snøhetta, Foster + Partners, and Studio Gang."
+hero_alt="Architects in a studio with models and drawings, looking at a screen showing 45 architecture firm logos"
+post=dict(old); post.pop('body',None)
+post.update({"title":title,"date":"Nov 21, 2026","readTime":"15 min read","description":desc,"categorySlug":"logo-design",
+ "image":{"src":f"{I}/architecture-logos-hero.webp","alt":hero_alt,"thumbnail":f"{I}/architecture-logos-hero-768w.webp"},
+ "seo":{"title":title,"description":desc,"image":f"{I}/architecture-logos-hero-og.webp"},
+ "intro":f'<p>Architecture firm logos have a hard job: they sign off on drawings, competition boards, and site hoardings, and they sit next to buildings that are far more spectacular than any logo. The best ones are <strong>quiet, precise, and built from type</strong>, with one idea that reflects how the studio thinks.</p><figure class="w-richtext-align-center w-richtext-figure-type-image"><div><img loading="lazy" alt="{hero_alt}" src="{I}/architecture-logos-hero.webp" width="1920" height="1080" decoding="async"/></div></figure><h2 id="what-makes-good-architecture-logo">What makes a good architecture firm logo?</h2><p><strong>Typography first:</strong> most architecture firms use wordmarks or initials rather than symbols, like SOM, KPF, OMA, and Arup. The type itself carries the character.</p><p><strong>One architectural idea:</strong> the best logos borrow a single idea from the work, like the cut strokes of ZHA, the shapes that spell BIG, or the line letters of Kengo Kuma &amp; Associates.</p><p><strong>Restraint:</strong> an architecture logo has to frame the buildings, not compete with them, so most firms stick to black, white, or one colour.</p><p>Below are 45 architecture firm logos in five groups, from the largest global firms and signature studios to international practices, design-led studios, and interior and landscape firms. Each one has a slide with my handwritten notes, followed by a short explanation. For related reading, see my guides to <a href="/blog/wordmark-logo-design">wordmark logos</a>, <a href="/blog/lettermark-logo-design">lettermark logos</a>, and <a href="/blog/construction-logos">construction logos</a>.</p>',
+ "logoRoster":[b[1] for b in B],
+ "logoPageImages":[[{"src":f"{I}/{b[0]}.webp","alt":b[1]}] for b in boards],
+ "logoTileImages":[{"src":f"{I}/architecture-logo-{i+1:02d}-{b[0]}.webp","alt":f"{b[1]} logo with design notes: "+", ".join(n[0] for n in b[6])} for i,b in enumerate(B)],
+ "logoResearch":[{"number":f"{i+1:02d}","name":b[1],"officialUrl":b[2],"verifiedFact":b[3],"observations":[b[4],b[5]]} for i,b in enumerate(B)],
+ "logoRosterConfig":{
+  "tileStyle":"slide",
+  "listHeading":"45 architecture firm logos",
+  "listIntro":["The boards below show all 45 architecture firm logos in one consistent format, grouped into global firms, signature studios, international firms, design-led practices, and interior and landscape studios.","Each logo is reviewed for its design decisions, not for the firm's size or buildings."],
+  "sectionNames":["Global architecture firms","Signature studios","International firms","Design-led practices","Interiors and landscape"],
+  "sectionIntroductions":["The largest architecture and engineering firms work on airports, hospitals, and towers worldwide, and their logos favour bold, reliable type that works on any project board.","Signature studios are known for their founders and their buildings, and their logos are short, confident, and often built from initials.","Firms from Japan, Hong Kong, Scandinavia, and Australia show how local design culture shapes a logo, from Japanese precision to Scandinavian simplicity.","These studios are smaller and more design-led, and their logos are more personal, from typewriter type to interlocking letters.","Interior designers and landscape architects work closer to fashion and nature, so their logos are softer, wider, and sometimes colourful."],
+  "sectionBridge":["This is a visual comparison of architecture firm logos, not a ranking of firms.","Look at how each logo uses type, spacing, and one idea to reflect how the studio designs buildings."],
+  "entryFallbacks":[["The identity relies on a few clear decisions to stay recognizable.","Notice how the logo would look on a drawing title block, a competition board, or a site hoarding."]],
+  "findings":[{"heading":"Architecture logos are mostly type","text":"Almost every firm in this list uses a wordmark or initials. SOM, KPF, OMA, Arup, and RPBW show that well-chosen type is enough when the buildings do the talking."},{"heading":"Initials replace long partner names","text":"Firms named after several founders, like SOM, KPF, HOK, and MVRDV, shorten them to initials that work on drawings and signage."},{"heading":"The best logos borrow from the buildings","text":"ZHA cuts its letters like its angular forms, BIG spells its name with building shapes, and Kengo Kuma & Associates draws letters with thin lines like timber slats."},{"heading":"Colour is rare and deliberate","text":"Gensler red, the HOK red square, and the Sasaki multicolour letters stand out precisely because almost every other firm uses black."}],
+  "checklistHeading":"A practical checklist for an architecture firm logo",
+  "checklistItems":["Does the logo work in the title block of a drawing and on a competition board?","Is it typographic and precise, rather than a generic house or roof icon?","Does it reflect one idea from how the studio designs?","Does it frame your project photography instead of competing with it?","Will it still read when printed small, in one colour, and on a site hoarding?"],
+  "conclusionHtml":"<h2 id=\"conclusion\">Branding an architecture or design firm?</h2><p>I design brand identities and websites for architecture, interior design, and real estate firms, from logo and visual identity to portfolio websites that show the work at its best.</p><p>See my <a href=\"/work\"><strong>past work</strong></a> and <a href=\"/start\"><strong>schedule a call</strong></a> to discuss your project.</p>"},
+ "faq":[
+  {"question":"What makes a good architecture firm logo?","answer":"A good architecture firm logo is typographic, precise, and restrained. It works on drawings, competition boards, websites, and site hoardings, and it adds one idea that reflects how the studio designs, like the cut letters of ZHA or the building shapes in the BIG logo."},
+  {"question":"Should an architecture firm logo use a house or building icon?","answer":"Usually not. Most leading firms, like SOM, Foster + Partners, and Snøhetta, avoid literal house or skyline icons because they look generic. A distinctive wordmark or monogram is more memorable and lets the firm's buildings speak for themselves."},
+  {"question":"Why do so many architecture firms use initials?","answer":"Many firms are named after several founding partners, so names like Skidmore, Owings & Merrill or Kohn Pedersen Fox become SOM and KPF. Initials are shorter, easier to read on drawings, and work like a monogram."},
+  {"question":"What colours do architecture firm logos use?","answer":"Most architecture firm logos are black, grey, or white so they frame the projects rather than compete with them. A few firms, like Gensler, HOK, and Sasaki, use one strong colour as their signature."}],
+ "tags":["architecture logos","architecture firm logos","architect logo","architecture branding","logo design"],
+})
+json.dump(post,open(P,'w'),indent=2,ensure_ascii=False); open(P,'a').write('\n')
+idx=json.load(open('public/content/blog/index.json'))
+e=next(x for x in idx if x['slug']=='architecture-logos')
+e.update({"title":title,"description":desc,"date":"Nov 21, 2026","readTime":"15 min read","categorySlug":"logo-design","image":{"src":post["image"]["src"],"alt":hero_alt,"thumbnail":post["image"]["thumbnail"]}})
+idx.remove(e); idx.insert(1,e)
+json.dump(idx,open('public/content/blog/index.json','w'),indent=2,ensure_ascii=False); open('public/content/blog/index.json','a').write('\n')
+print('ok', len(post['logoRoster']))

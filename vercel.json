@@ -1,6 +1,12 @@
 {
   "trailingSlash": false,
   "redirects": [
+    { "source": "/blog/logo-design-trends", "destination": "/blog/logo-design-tips", "statusCode": 301 },
+    { "source": "/blog/geometric-logos", "destination": "/blog/logo-shapes", "statusCode": 301 },
+    { "source": "/blog/iconic-logos", "destination": "/blog/best-logos", "statusCode": 301 },
+    { "source": "/blog/creative-brief", "destination": "/blog/logo-brief", "statusCode": 301 },
+    { "source": "/blog/minimalist-logos", "destination": "/blog/best-logos", "statusCode": 301 },
+    { "source": "/blog/logo-design-principles", "destination": "/blog/logo-design-tips", "statusCode": 301 },
     { "source": "/blog/100-style-guides", "destination": "/blog/style-guides", "statusCode": 301 },
     { "source": "/blog/brand-architectures", "destination": "/blog/brand-architecture", "statusCode": 301 },
     { "source": "/blog/negative-space-logos", "destination": "/blog/negative-space-logo-design", "statusCode": 301 },

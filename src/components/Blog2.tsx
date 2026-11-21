@@ -3,6 +3,10 @@ import { useMemo, useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import type { BlogPostSummary } from "../content/blog";
 
+// Posts without a categorySlug fall back to a slug of their category name, so one category never shows twice.
+const categoryKey = (post: { category: string; categorySlug?: string }) =>
+  post.categorySlug || post.category.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 type Props = {
   tagline: string;
   heading: string;
@@ -18,7 +22,7 @@ export const Blog2 = (props: Blog2Props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [visibleLimit, setVisibleLimit] = useState(24);
   const categories = useMemo(
-    () => Array.from(new Map(blogPosts.map((post) => [post.categorySlug, post.category])).entries())
+    () => Array.from(new Map(blogPosts.map((post) => [categoryKey(post), post.category])).entries())
       .sort(([firstSlug], [secondSlug]) => {
         const categoryOrder: Record<string, number> = {
           "logo-design": -1,
@@ -40,7 +44,7 @@ export const Blog2 = (props: Blog2Props) => {
         return secondDate - firstDate;
       })
       .filter((post) =>
-        (!activeCategory || post.categorySlug === activeCategory)
+        (!activeCategory || categoryKey(post) === activeCategory)
         && (!normalizedQuery || post.title.toLocaleLowerCase().includes(normalizedQuery)),
       ),
     [activeCategory, blogPosts, normalizedQuery],

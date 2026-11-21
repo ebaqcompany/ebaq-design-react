@@ -1,0 +1,5 @@
+import { chromium } from "playwright"; import { writeFileSync } from "node:fs";
+const b=await chromium.launch({channel:"chrome"}); const p=await (await b.newContext({userAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",viewport:{width:1440,height:900}})).newPage();
+await p.goto("https://www.manna.aero/",{waitUntil:"domcontentloaded"}); await p.waitForTimeout(5000);
+const svg=await p.evaluate(()=>{const v=document.querySelectorAll('svg')[0];const bb=v.getBoundingClientRect();const c=v.cloneNode(true);[v,...v.querySelectorAll('*')].forEach((n,j)=>{const d=[c,...c.querySelectorAll('*')][j];const cs=getComputedStyle(n);if(n.tagName!=='svg'){if(cs.fill&&cs.fill!=='none')d.setAttribute('fill',cs.fill);if(cs.stroke&&cs.stroke!=='none')d.setAttribute('stroke',cs.stroke);}});if(!c.getAttribute('viewBox'))c.setAttribute('viewBox',`0 0 ${bb.width} ${bb.height}`);c.setAttribute('xmlns','http://www.w3.org/2000/svg');return c.outerHTML});
+writeFileSync('logos/manna.svg',svg); console.log(svg.slice(0,150)); await b.close();

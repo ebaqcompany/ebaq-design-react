@@ -1,0 +1,8 @@
+import { chromium } from "playwright"; import { writeFileSync } from "node:fs";
+const b=await chromium.launch({channel:"chrome"}); const ctx=await b.newContext({userAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",viewport:{width:1440,height:900},deviceScaleFactor:8});
+let p=await ctx.newPage(); await p.goto("https://www.airwallex.com/",{waitUntil:"domcontentloaded",timeout:40000}); await p.waitForTimeout(5000);
+const svg=await p.evaluate(()=>{const v=[...document.querySelectorAll('a svg')].find(e=>{const r=e.getBoundingClientRect();return r.top<100&&r.left<100&&r.width>100});const bb=v.getBoundingClientRect();const c=v.cloneNode(true);[v,...v.querySelectorAll('*')].forEach((n,j)=>{const d=[c,...c.querySelectorAll('*')][j];const cs=getComputedStyle(n);if(n.tagName!=='svg'){if(cs.fill&&cs.fill!=='none')d.setAttribute('fill',cs.fill);if(cs.stroke&&cs.stroke!=='none')d.setAttribute('stroke',cs.stroke);}});if(!c.getAttribute('viewBox'))c.setAttribute('viewBox',`0 0 ${bb.width} ${bb.height}`);c.setAttribute('xmlns','http://www.w3.org/2000/svg');return c.outerHTML});
+writeFileSync('logos/airwallex.svg',svg); console.log('airwallex',svg.slice(0,120)); await p.close();
+p=await ctx.newPage(); await p.goto("https://www.kraken.com/",{waitUntil:"domcontentloaded",timeout:40000}); await p.waitForTimeout(5000);
+const a=p.locator('a[href="/"]').first(); console.log(await a.evaluate(e=>[e.innerText,getComputedStyle(e).color,e.getBoundingClientRect().width,getComputedStyle(document.body).backgroundColor]));
+await a.evaluate(e=>{e.style.background='#fff'}); await a.screenshot({path:'logos/_kraken.png'}); await b.close();

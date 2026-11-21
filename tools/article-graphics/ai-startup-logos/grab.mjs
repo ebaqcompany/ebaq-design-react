@@ -1,0 +1,17 @@
+import { chromium } from "playwright"; import { writeFileSync } from "node:fs";
+const jobs={"thinking-machines-lab":["https://thinkingmachines.ai/","thinking"],"deepseek":["https://www.deepseek.com/en","deepseek"],"cognition":["https://cognition.ai/","cognition"],"poolside":["https://poolside.ai/","poolside"],"openevidence":["https://www.openevidence.com/about","openevidence"],"legora":["https://legora.com/","legora"],"midjourney":["https://www.midjourney.com/home","midjourney"],"suno":["https://suno.com/about","suno"],"krea":["https://www.krea.ai/","krea"],"higgsfield":["https://higgsfield.ai/","higgsfield"]};
+const only=process.argv.slice(2);
+const b=await chromium.launch({channel:"chrome"}); const ctx=await b.newContext({userAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",viewport:{width:1440,height:900}});
+for(const [s,[u,kw]] of Object.entries(jobs)){ if(only.length&&!only.includes(s)) continue; const p=await ctx.newPage();
+ try{ await p.goto(u,{waitUntil:"domcontentloaded",timeout:35000}); await p.waitForTimeout(6000);
+  const list=await p.evaluate((kw)=>[...document.querySelectorAll('svg,img')].map((e,i)=>{const r=e.getBoundingClientRect();const a=e.closest('a');const lab=[e.getAttribute('alt'),e.getAttribute('aria-label'),e.querySelector?.('title')?.textContent,a?.getAttribute('aria-label'),a?.getAttribute('title'),a?.getAttribute('href'),e.getAttribute('class'),e.closest('[class*=logo i]')?'LOGOCLS':''].join(' ').toLowerCase();
+    return {i,t:e.tagName.toLowerCase(),w:Math.round(r.width),h:Math.round(r.height),y:Math.round(r.top+scrollY),lab:lab.slice(0,90),src:e.tagName==='IMG'?e.currentSrc||e.src:''}}).filter(o=>o.w>=24&&o.h>=8&&o.y<400&&(o.lab.includes(kw)||o.lab.includes('logo')||o.lab.includes(' / ')||/href="?\/"?/.test(o.lab)||o.src.toLowerCase().includes('logo')||o.lab.split(' ').includes('/'))),kw);
+  console.log(s, JSON.stringify(list.map(o=>({t:o.t,w:o.w,h:o.h,y:o.y,lab:o.lab.slice(0,60),src:o.src.slice(0,80)})).slice(0,5)));
+  const pick=list[0];
+  if(!pick) {console.log(s,'NONE'); await p.close(); continue;}
+  if(pick.t==='img'){
+    const r=await p.evaluate(async(i)=>{const e=document.querySelectorAll('svg,img')[i];const res=await fetch(e.currentSrc||e.src);const ct=res.headers.get('content-type')||'';const buf=new Uint8Array(await res.arrayBuffer());let s='';for(const x of buf)s+=String.fromCharCode(x);return {ct,b64:btoa(s)}},pick.i);
+    const ext=r.ct.includes('svg')?'svg':r.ct.includes('png')?'png':r.ct.includes('webp')?'webp':r.ct.includes('avif')?'avif':'bin'; writeFileSync(`logos/${s}.${ext}`,Buffer.from(r.b64,'base64')); console.log(s,'-> img',ext);
+  } else { const txt=await p.evaluate(i=>{const e=document.querySelectorAll('svg,img')[i];const bb=e.getBoundingClientRect();const c=e.cloneNode(true);[e,...e.querySelectorAll('*')].forEach((n,j)=>{const d=[c,...c.querySelectorAll('*')][j];const cs=getComputedStyle(n);if(n.tagName!=='svg'){if(cs.fill&&cs.fill!=='none')d.setAttribute('fill',cs.fill);if(cs.stroke&&cs.stroke!=='none')d.setAttribute('stroke',cs.stroke);}});if(!c.getAttribute('viewBox'))c.setAttribute('viewBox',`0 0 ${bb.width} ${bb.height}`);c.setAttribute('xmlns','http://www.w3.org/2000/svg');return c.outerHTML},pick.i); writeFileSync(`logos/${s}.svg`,txt); console.log(s,'-> svg'); }
+ }catch(e){console.log(s,'ERR',e.message.slice(0,80))} await p.close(); }
+await b.close();

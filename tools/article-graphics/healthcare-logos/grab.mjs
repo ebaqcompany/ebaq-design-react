@@ -1,0 +1,11 @@
+import { chromium } from "playwright"; import { writeFileSync } from "node:fs";
+const jobs={"johns-hopkins-medicine":["https://www.hopkinsmedicine.org/",'img[alt="Johns Hopkins Medicine"]'],"blue-cross-blue-shield":["https://www.bcbs.com/",'img[alt="BCBS Logo"]'],"nyu-langone-health":["https://nyulangone.org/",'img[alt*="NYU Langone"]'],"novo-nordisk":["https://www.novonordisk.com/",'img[alt="Company Logo"]'],"gsk":["https://www.gsk.com/en-us/",'[class*="logo" i] img, [class*="logo" i] svg, a[href="/en-us/"] svg, a[href="/en-us/"] img'],"zocdoc":["https://www.zocdoc.com/about/",'a[href="/"] svg, [aria-label*="Zocdoc" i] svg, svg[aria-label*="Zocdoc" i], img[alt*="Zocdoc" i]']};
+const b=await chromium.launch({channel:"chrome"}); const ctx=await b.newContext({userAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",viewport:{width:1440,height:900}});
+for(const [s,[u,sel]] of Object.entries(jobs)){ const p=await ctx.newPage();
+ try{ await p.goto(u,{waitUntil:"domcontentloaded",timeout:30000}); await p.waitForTimeout(4000);
+  const r=await p.evaluate(async(sel)=>{ for(const e of document.querySelectorAll(sel)){ const bb=e.getBoundingClientRect(); if(bb.width<30) continue;
+     if(e.tagName.toLowerCase()==='svg'){const c=e.cloneNode(true);[e,...e.querySelectorAll('*')].forEach((n,i)=>{const d=[c,...c.querySelectorAll('*')][i];const cs=getComputedStyle(n);if(n.tagName!=='svg'){if(cs.fill&&cs.fill!=='none')d.setAttribute('fill',cs.fill);}});if(!c.getAttribute('viewBox'))c.setAttribute('viewBox',`0 0 ${bb.width} ${bb.height}`);c.setAttribute('xmlns','http://www.w3.org/2000/svg');return {ext:'svg',txt:c.outerHTML};}
+     const res=await fetch(e.currentSrc); const ct=res.headers.get('content-type')||''; const buf=new Uint8Array(await res.arrayBuffer()); return {ext:ct.includes('svg')?'svg':ct.split('/')[1].split(';')[0],b64:btoa(String.fromCharCode(...buf)),ct}; } return null; },sel);
+  if(!r){console.log(s,'NONE');} else { writeFileSync(`logos/${s}.${r.ext}`, r.txt??Buffer.from(r.b64,'base64')); console.log(s,r.ext,r.ct||''); }
+ }catch(e){console.log(s,'ERR',e.message.slice(0,80))} await p.close(); }
+await b.close();
