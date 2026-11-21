@@ -71,6 +71,7 @@ export type CaseStudyNextProject = {
 };
 
 export type CaseStudyOverviewContent = {
+  draft?: boolean;
   heading: string;
   description: string;
   stats: { value: string; label: string }[];
@@ -583,6 +584,15 @@ const allCaseStudies: CaseStudy[] = [
         ],
       },
     ],
+    overview: {
+      draft: true,
+      heading: "Evolving Orbio’s brand",
+      description: "We kept Orbio’s marble orb and built a Greco-Roman visual identity and motion system around it.",
+      stats: [
+        { value: "2 weeks", label: "From rebrand to motion graphics" },
+        { value: "$1.2M", label: "Seed funding secured" },
+      ],
+    },
     nextProject: {
       title: "NextDim AI",
       subheading: "A futuristic brand identity for AI-powered healthcare, beyond the clinical",

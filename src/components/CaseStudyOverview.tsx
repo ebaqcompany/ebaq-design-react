@@ -5,7 +5,7 @@ import { TextLink } from "./TextLink";
 import type { CaseStudyOverviewContent, CaseStudyTestimonial } from "../data/caseStudies";
 
 type CaseStudyOverviewProps = Pick<CaseStudyOverviewContent, "heading" | "description" | "stats"> & {
-  testimonial: CaseStudyTestimonial;
+  testimonial?: CaseStudyTestimonial;
 };
 
 function StatValue({ value }: { value: string }) {
@@ -58,7 +58,7 @@ function StatValue({ value }: { value: string }) {
 
 export function CaseStudyOverview({ heading, description, stats, testimonial }: CaseStudyOverviewProps) {
   const metrics = (
-    <dl className="grid gap-6 md:grid-cols-3 lg:grid-cols-1">
+    <dl className={testimonial ? "grid gap-6 md:grid-cols-3 lg:grid-cols-1" : "mx-auto grid max-w-lg gap-6 sm:grid-cols-2"}>
       {stats.map(({ value, label }) => (
         <div key={label} className="flex flex-col-reverse justify-end gap-2 rounded-xl border border-brand-primary/30 bg-white p-8 text-center">
           <dt className="text-black/80">{label}</dt>
@@ -78,29 +78,31 @@ export function CaseStudyOverview({ heading, description, stats, testimonial }: 
           <p className="mt-5 text-medium text-black/80">{description}</p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-8">
-          {metrics}
-          <figure className="flex flex-col items-start justify-center rounded-xl border border-brand-primary/30 bg-white p-8 text-left md:p-12">
-            <div className="mb-6 flex w-full flex-wrap items-center justify-between gap-4">
-              <img src={testimonial.logo.src} alt={testimonial.logo.alt} className={clientLogoClass(testimonial.logo.scale)} loading="lazy" />
-              {testimonial.sourceUrl && (
-                <TextLink href={testimonial.sourceUrl} target="_blank" rel="noreferrer" className="ml-auto">
-                  Verify on LinkedIn
-                </TextLink>
-              )}
-            </div>
-            <blockquote className="heading-h5">{testimonial.excerpt ?? testimonial.quote}</blockquote>
-            <figcaption className="mt-6 md:mt-8">
-              <div className="flex items-center gap-4">
-                {testimonial.avatar && <img src={testimonial.avatar.src} alt="" className="size-14 shrink-0 rounded-full object-cover" loading="lazy" />}
-                <div>
-                  <p className="font-semibold leading-tight">{testimonial.name}</p>
-                  <p className="leading-tight text-brand-primary">{[testimonial.position, testimonial.companyName].filter(Boolean).join(", ")}</p>
-                </div>
+        {testimonial ? (
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-8">
+            {metrics}
+            <figure className="flex flex-col items-start justify-center rounded-xl border border-brand-primary/30 bg-white p-8 text-left md:p-12">
+              <div className="mb-6 flex w-full flex-wrap items-center justify-between gap-4">
+                <img src={testimonial.logo.src} alt={testimonial.logo.alt} className={clientLogoClass(testimonial.logo.scale)} loading="lazy" />
+                {testimonial.sourceUrl && (
+                  <TextLink href={testimonial.sourceUrl} target="_blank" rel="noreferrer" className="ml-auto">
+                    Verify on LinkedIn
+                  </TextLink>
+                )}
               </div>
-            </figcaption>
-          </figure>
-        </div>
+              <blockquote className="heading-h5">{testimonial.excerpt ?? testimonial.quote}</blockquote>
+              <figcaption className="mt-6 md:mt-8">
+                <div className="flex items-center gap-4">
+                  {testimonial.avatar && <img src={testimonial.avatar.src} alt="" className="size-14 shrink-0 rounded-full object-cover" loading="lazy" />}
+                  <div>
+                    <p className="font-semibold leading-tight">{testimonial.name}</p>
+                    <p className="leading-tight text-brand-primary">{[testimonial.position, testimonial.companyName].filter(Boolean).join(", ")}</p>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        ) : metrics}
       </div>
     </section>
   );

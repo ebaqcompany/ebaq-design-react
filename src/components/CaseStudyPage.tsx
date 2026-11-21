@@ -147,7 +147,7 @@ export const CaseStudyPage = () => {
             ),
           )}
 
-        {study.overview && study.testimonial ? (
+        {study.overview && (!study.overview.draft || import.meta.env.DEV) ? (
           <CaseStudyOverview
             heading={study.overview.heading}
             description={study.overview.description}
