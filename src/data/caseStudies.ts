@@ -585,7 +585,6 @@ const allCaseStudies: CaseStudy[] = [
       },
     ],
     overview: {
-      draft: true,
       heading: "Evolving Orbio’s brand",
       description: "We kept Orbio’s marble orb and built a Greco-Roman visual identity and motion system around it.",
       stats: [
