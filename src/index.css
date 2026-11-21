@@ -829,6 +829,12 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   max-width: 100%;
 }
 
+.blog-rich-text .logo-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .blog-rich-text .law-firm-logo-tile img {
   width: min(260px, 100%);
   height: auto;

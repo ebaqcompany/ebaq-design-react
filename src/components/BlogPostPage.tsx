@@ -135,7 +135,7 @@ const buildLogoRosterBody = (roster: string[], pageImages: Array<Array<{ src: st
     }
     const entryNumber = String(index + 1).padStart(2, "0");
     html += `<h3>${entryNumber} ${escapeHtml(name)}</h3>`;
-    if (tileImages[index]) html += `<figure class="law-firm-logo-tile"><img src="${escapeHtml(tileImages[index].src)}" alt="${escapeHtml(tileImages[index].alt)}" loading="lazy"></figure>`;
+    if (tileImages[index]) html += config?.tileStyle === "slide" ? `<figure class="logo-slide"><img src="${escapeHtml(tileImages[index].src)}" alt="${escapeHtml(tileImages[index].alt)}" width="1920" height="1080" loading="lazy" decoding="async"></figure>` : `<figure class="law-firm-logo-tile"><img src="${escapeHtml(tileImages[index].src)}" alt="${escapeHtml(tileImages[index].alt)}" loading="lazy"></figure>`;
     const researched = research[index];
     if (researched) {
       const cleanObservation = (observation: string) => observation.replace("but the duplicate offers no distinct visual variation from entry 50.", "while the restrained treatment keeps the identity visually consistent with the surrounding system.").replace("This tile duplicates entry 51's tightly stacked black Rajah & Tann lettering with Asia set below in orange.", "The tile uses tightly stacked black Rajah & Tann lettering with Asia set below in orange, creating a compact two-level lockup.");

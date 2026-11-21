@@ -1,0 +1,76 @@
+{
+  "layout": "collage",
+  "title": "Bank Logos",
+  "category": "",
+  "seed": "bank-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "almond",
+  "tweaks": {
+    "sheet-colour": {
+      "dx": -0.06,
+      "dy": 0.1676,
+      "hidden": true
+    },
+    "photo-0": {
+      "dx": 0.2798,
+      "dy": -0.1162,
+      "scale": 1.262
+    },
+    "logo-3": {
+      "dx": 0.1787,
+      "dy": 0.1189,
+      "scale": 3.391
+    },
+    "logo-5": {
+      "scale": 1.603,
+      "dx": 0.6017,
+      "dy": -0.0494
+    },
+    "logo-1": {
+      "dx": 0.3856,
+      "dy": 0.1382,
+      "scale": 2.886
+    },
+    "dots": {
+      "dx": -1.1379,
+      "dy": -0.7587
+    },
+    "logo-4": {
+      "dx": -0.3265,
+      "dy": -0.1479,
+      "scale": 1.425
+    },
+    "sheet-strip": {
+      "dx": 0.0292,
+      "dy": 0.0094
+    },
+    "sheet-paper": {
+      "dx": 0.0142,
+      "dy": -0.0284
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "logos": [
+    "/tools/cover-generator/assets/bank-logos/logo-chase.svg",
+    "/tools/cover-generator/assets/bank-logos/logo-bank-of-america.svg",
+    "/tools/cover-generator/assets/bank-logos/logo-hsbc.svg",
+    "/tools/cover-generator/assets/bank-logos/logo-citi.svg",
+    "/tools/cover-generator/assets/bank-logos/logo-revolut.svg",
+    "/tools/cover-generator/assets/bank-logos/logo-monzo.svg"
+  ],
+  "images": [
+    "/tools/cover-generator/assets/bank-logos/bank-logos-hero.webp"
+  ]
+}

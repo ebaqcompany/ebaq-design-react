@@ -1,5 +1,20 @@
 [
   {
+    "slug": "bank-logos",
+    "url": "/blog/bank-logos",
+    "title": "45 Best Bank Logos & Their Meanings (US, Global & Digital Banks) [2026]",
+    "description": "45 bank logos with names and meanings, from Chase, Bank of America, and HSBC to Revolut and Monzo, each annotated by a brand designer.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "15 min read",
+    "date": "Nov 21, 2026",
+    "image": {
+      "src": "/images/blog/bank-logos/cover-collage.webp",
+      "alt": "Collage of bank logos including Chase, Bank of America, HSBC, Citi, Revolut, and Monzo",
+      "thumbnail": "/images/blog/bank-logos/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "robotics-logos",
     "url": "/blog/robotics-logos",
     "title": "36 Best Robotics Company Logos for Design Inspiration [2026]",
@@ -224,20 +239,6 @@
       "alt": "14 Best SaaS Website Examples in 2026 | A Designer's Review",
       "sourceSrc": "/images/blog/saas-websites/slide-01.webp",
       "thumbnail": "/images/blog/best-saas-websites-768w.webp"
-    }
-  },
-  {
-    "slug": "bank-logos",
-    "url": "/blog/bank-logos",
-    "title": "25+ Famous Bank Logos & Their Hidden Meanings [2026]",
-    "description": "Decode the logos of Chase, Bank of America, Wells Fargo and 25+ major banks. See why these financial brands chose specific symbols, colors, and shapes.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "5 min read",
-    "date": "Feb 1, 2026",
-    "image": {
-      "src": "/images/blog/bank-logos/best-banks-logos-explained.webp",
-      "alt": "25+ Famous Bank Logos & Their Hidden Meanings [2026]"
     }
   },
   {

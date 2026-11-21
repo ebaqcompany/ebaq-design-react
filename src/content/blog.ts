@@ -40,6 +40,8 @@ export type BlogPost = BlogPostSummary & {
     checklistHeading: string;
     checklistItems: string[];
     conclusionHtml: string;
+    /** "slide": each logo is a full-width 1920x1080 annotated slide instead of a small tile. */
+    tileStyle?: "slide";
   };
   selectedWorkSlugs?: string[];
   logoRedesignExamples?: Array<{
