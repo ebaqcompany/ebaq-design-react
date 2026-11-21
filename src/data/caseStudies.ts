@@ -870,6 +870,33 @@ const allCaseStudies: CaseStudy[] = [
           },
         ],
       },
+      {
+        type: "header",
+        heading: "A website redesigned around the new brand",
+        description:
+          "Side by side, the previous landing page and the redesign show how the new identity reshapes Elevate’s website. The same system carries through the home, features, pricing, case studies, and case study detail pages.",
+      },
+      {
+        type: "gallery",
+        images: [
+          {
+            src: "/case-study/elevate/10-landing-before-after.webp",
+            srcSet: "/case-study/elevate/10-landing-before-after-1280.webp 1280w, /case-study/elevate/10-landing-before-after.webp 2560w",
+            sizes: "(min-width: 1280px) 1280px, 90vw",
+            width: 2560,
+            height: 3840,
+            alt: "Elevate landing page before and after the redesign",
+          },
+          {
+            src: "/case-study/elevate/11-website-pages.webp",
+            srcSet: "/case-study/elevate/11-website-pages-1280.webp 1280w, /case-study/elevate/11-website-pages.webp 2560w",
+            sizes: "(min-width: 1280px) 1280px, 90vw",
+            width: 2560,
+            height: 2107,
+            alt: "Elevate website home, features, pricing, case studies, and case study detail pages",
+          },
+        ],
+      },
     ],
     overview: {
       heading: "Rebranding a Shopify testing app",
