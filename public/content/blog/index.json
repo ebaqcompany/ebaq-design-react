@@ -15,6 +15,36 @@
     }
   },
   {
+    "slug": "hotel-logos",
+    "url": "/blog/hotel-logos",
+    "title": "45 Best Hotel Logos Explained by a Brand Designer [2026]",
+    "description": "45 hotel logos explained by a brand designer: global chains like Marriott and Hilton, luxury and 5-star brands like Four Seasons and Aman, boutique hotels, and iconic resorts.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "16 min read",
+    "date": "Nov 22, 2026",
+    "image": {
+      "src": "/images/blog/hotel-logos/cover-collage.webp",
+      "alt": "Hotel general manager in a luxury lobby looking at a screen showing 45 hotel brand logos",
+      "thumbnail": "/images/blog/hotel-logos/cover-collage-768w.webp"
+    }
+  },
+  {
+    "slug": "fashion-logos",
+    "url": "/blog/fashion-logos",
+    "title": "45 Best Fashion Brand Logos Explained by a Brand Designer [2026]",
+    "description": "45 fashion and clothing brand logos with names, explained by a brand designer: luxury houses like Gucci, Chanel, and Hermès, designer labels, accessories, and streetwear.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "16 min read",
+    "date": "Nov 22, 2026",
+    "image": {
+      "src": "/images/blog/fashion-logos/cover-collage.webp",
+      "alt": "Fashion designer in a Paris studio looking at a screen showing 45 fashion brand logos",
+      "thumbnail": "/images/blog/fashion-logos/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "architecture-logos",
     "url": "/blog/architecture-logos",
     "title": "45 Best Architecture Firm Logos Explained by a Brand Designer [2026]",
@@ -407,20 +437,6 @@
     }
   },
   {
-    "slug": "fashion-logos",
-    "url": "/blog/fashion-logos",
-    "title": "50+ Best Fashion Brand Logos in 2026 [Designer Gallery]",
-    "description": "50+ clothing and designer brand logos analyzed — Gucci, Versace, Louis Vuitton, Burberry and more. See what makes top fashion logos iconic.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "7 min read",
-    "date": "Feb 1, 2026",
-    "image": {
-      "src": "/images/blog/fashion-logos/gucci-shoppping-bag-logo-4d6afe.webp",
-      "alt": "50+ Best Fashion Brand Logos in 2026 [Designer Gallery]"
-    }
-  },
-  {
     "slug": "jewelry-logos",
     "url": "/blog/jewelry-logos",
     "title": "40+ Stunning Jewelry Logo Designs in 2026 [Luxury Brands Gallery]",
@@ -536,21 +552,6 @@
       "src": "/images/blog/brand-slogans/cover-collage.webp",
       "alt": "Famous brand slogans and taglines",
       "thumbnail": "/images/blog/brand-slogans/cover-collage-768w.webp"
-    }
-  },
-  {
-    "slug": "hotel-logos",
-    "url": "/blog/hotel-logos",
-    "title": "35+ Best Hotel Logo Designs & What Makes Them Work [2026]",
-    "description": "Explore 35+ stunning hotel logos from luxury resorts to boutique stays. See what makes hospitality branding memorable and trustworthy.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "9 min read",
-    "date": "Jan 28, 2026",
-    "image": {
-      "src": "/images/blog/hotel-logos/hotel-logos.webp",
-      "alt": "35+ Best Hotel Logo Designs & What Makes Them Work [2026]",
-      "thumbnail": "/images/blog/hotel-logos/hotel-logos-768w.webp"
     }
   },
   {
