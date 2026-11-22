@@ -1,0 +1,43 @@
+{
+  "layout": "collage",
+  "title": "Hotel Logos",
+  "category": "",
+  "seed": "hotel-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.541,
+      "dx": -0.012,
+      "dy": 0.497
+    },
+    "sheet-noise": {
+      "dx": -0.5752,
+      "dy": -0.5324
+    },
+    "sheet-strip": {
+      "dx": -0.6233,
+      "dy": -0.0083
+    },
+    "dots": {
+      "dx": -1.1675,
+      "dy": -0.1139
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/hotel-logos/paste-mwru0twj-sbf4.png"
+  ]
+}

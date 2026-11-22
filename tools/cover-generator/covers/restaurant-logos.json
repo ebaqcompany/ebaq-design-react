@@ -1,0 +1,48 @@
+{
+  "layout": "collage",
+  "title": "Restaurant Logos",
+  "category": "",
+  "seed": "restaurant-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "dx": -1.0569,
+      "dy": 0.224,
+      "scale": 1.732
+    },
+    "sheet-paper": {
+      "dx": 0.7712,
+      "dy": -0.0881
+    },
+    "sheet-strip": {
+      "dx": -0.4643,
+      "dy": -0.0936
+    },
+    "sheet-noise": {
+      "dx": 0.2676,
+      "dy": 0.2086,
+      "hidden": true
+    },
+    "dots": {
+      "dx": -0.3476,
+      "dy": -0.0626
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/restaurant-logos/paste-mws2ltyc-0l1v.png"
+  ]
+}

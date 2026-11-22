@@ -2302,12 +2302,12 @@
     },
     {
       "source": "/blog/best-coffee-logos",
-      "destination": "/blog/best-logos",
+      "destination": "/blog/restaurant-logos",
       "statusCode": 301
     },
     {
       "source": "/gear/best-coffee-logos",
-      "destination": "/blog/best-logos",
+      "destination": "/blog/restaurant-logos",
       "statusCode": 301
     },
     {

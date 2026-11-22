@@ -1,0 +1,43 @@
+{
+  "layout": "collage",
+  "title": "Jewelry Logos",
+  "category": "",
+  "seed": "jewelry-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.734,
+      "dx": -0.1183,
+      "dy": -0.2996
+    },
+    "sheet-strip": {
+      "dx": 0.1971,
+      "dy": 0.1133
+    },
+    "sheet-paper": {
+      "dx": -0.021,
+      "dy": 0.0777
+    },
+    "sheet-noise": {
+      "dx": -0.3277,
+      "dy": -0.1816
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/jewelry-logos/paste-mwrz72c6-g7dx.png"
+  ]
+}

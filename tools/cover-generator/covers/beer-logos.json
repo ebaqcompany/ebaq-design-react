@@ -1,0 +1,46 @@
+{
+  "layout": "collage",
+  "title": "Beer Logos",
+  "category": "",
+  "seed": "beer-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.264,
+      "dx": -0.0226,
+      "dy": 0.2417
+    },
+    "sheet-paper": {
+      "dx": 0.6601,
+      "dy": 0.0688
+    },
+    "sheet-noise": {
+      "dx": -0.7369,
+      "dy": -0.3397
+    },
+    "sheet-strip": {
+      "z": 6
+    },
+    "dots": {
+      "dx": 0.0364,
+      "dy": 0.0871
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/beer-logos/paste-mws4sd95-613b.png"
+  ]
+}

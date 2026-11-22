@@ -1,0 +1,43 @@
+{
+  "layout": "collage",
+  "title": "Gym Logos",
+  "category": "",
+  "seed": "gym-logos",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "sheet-noise": {
+      "dx": -0.8011,
+      "dy": -0.1118
+    },
+    "photo-0": {
+      "scale": 2.099,
+      "dx": -0.1278,
+      "dy": 0.0063
+    },
+    "sheet-paper": {
+      "dx": -0.8278,
+      "dy": -0.028
+    },
+    "dots": {
+      "dx": 1.1094,
+      "dy": -0.6372
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/gym-logos/paste-mwrz7s2f-odrp.png"
+  ]
+}
