@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { siteUrl, studio } from "../content/siteFacts";
+import { pricing, siteUrl, studio } from "../content/siteFacts";
 import { IndustryLandingTemplate, type IndustryLandingConfig } from "./IndustryLandingTemplate";
 
 const OR = "/case-study/orbio";
@@ -18,7 +18,7 @@ const config: IndustryLandingConfig = {
   caseStudy: { slug: "orbio", title: "Orbio: AI Startup Branding Case Study" },
   hero: {
     heading: "Branding & Web\nfor AI Startups",
-    description: "Ebaq Design gives AI startups a distinctive brand identity in one week for $3,000,\nfrom the logo and brand system to the pitch deck and website. You work directly with a senior designer, as Orbio, an AI inference startup, did.",
+    description: `Work directly with Arek at Ebaq Design to get an AI startup brand identity in one week for ${pricing.weekly}. Add a pitch deck or website as separately scoped work.`,
     rows: [
       [
         { type: "video", src: `${OR}/hero-orb.mp4`, alt: "Animated Orbio logo", bgColor: "#0B0B0C" },
@@ -81,7 +81,8 @@ const config: IndustryLandingConfig = {
     heading: "Questions AI founders ask",
     items: [
       { question: "How much does AI startup branding cost?", answer: "$3,000 per week, flat. A new brand identity or rebrand (logo, logo animation, colors, typography, and brand guidelines) is delivered in one week, guaranteed, for $3,000 total. Additional work is scoped separately at the same weekly rate, or you can book a month upfront for $10,000. We agree on scope, timing, and total before booking, and payment is upfront." },
-      { question: "Have you branded AI startups before?", answer: "Yes. For Orbio, an AI inference startup, I evolved its existing marble orb into a brand system with a serif wordmark, color and typography, motion, social templates, and website designs." },
+      { question: "Have you branded AI startups before?", answer: "Yes. For Orbio, an AI inference startup, I evolved its marble orb into a visual system and designed its website. For NextDimension AI, I designed a new identity, motion system, and website for its healthcare AI platform.", link: { label: "the client review from NextDimension AI on Contra", href: "https://contra.com/ebaqdesign/reviews" } },
+      { question: "Is a one-week Brand Sprint right for our AI startup?", answer: "It’s a good fit if you know who you sell to and need a visual identity before a launch or fundraise. If your offer is still changing, start with positioning. If you need a deck, a website, or a larger rollout, scope that work alongside the identity so you can compare timelines and budgets.", link: { label: "freelancer vs. agency", href: "/compare/freelancer-vs-agency" } },
       { question: "How do you keep an AI brand from looking generic?", answer: "I start with what your product does, who it serves, and how you want to be perceived. Those decisions guide the visual direction, rather than copying a category trend." },
       { question: "Can you design our pitch deck and website too?", answer: "Yes. The pitch deck is usually one extra week, and the website is designed in Figma in one week, then built in Framer, Webflow, or Next.js in one or two more weeks, depending on the page count and agreed scope." },
       { question: "How fast can we launch?", answer: "The agreed brand identity is delivered in one week, guaranteed. A brand, deck, and website can take four to five weeks depending on scope. We confirm the start date and feedback schedule before booking." },
@@ -96,16 +97,16 @@ export const AiStartupBrandingLanding = () => (
   <>
     <Helmet>
       <title>AI Startup Branding &amp; Logo Design | Ebaq Design</title>
-      <meta name="description" content="AI startup branding by a senior freelance designer in NYC: logo, identity, pitch deck, and a website that won't look like every other AI company. $3,000/week." />
+      <meta name="description" content="AI startup branding by a senior designer. Get a visual identity in one week for $3,000. Add a pitch deck or website as separately scoped work with Ebaq Design." />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="AI Startup Branding & Logo Design | Ebaq Design" />
-      <meta property="og:description" content="AI startup branding by a senior freelance designer in NYC: logo, identity, pitch deck, and a website that won't look like every other AI company. $3,000/week." />
+      <meta property="og:description" content="AI startup branding by a senior designer. Get a visual identity in one week for $3,000. Add a pitch deck or website as separately scoped work with Ebaq Design." />
       <meta property="og:image" content={`${siteUrl}${OR}/thumbnail.webp`} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="AI Startup Branding & Logo Design | Ebaq Design" />
-      <meta name="twitter:description" content="Logo, identity, pitch deck, and website for AI startups. Brand identity in one week, guaranteed, $3,000 flat." />
+      <meta name="twitter:description" content="Get an AI startup brand identity in one week for $3,000. Pitch decks and websites are scoped separately." />
     </Helmet>
     <IndustryLandingTemplate {...config} />
   </>

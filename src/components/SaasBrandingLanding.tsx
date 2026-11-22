@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { pricing, siteUrl, studio } from "../content/siteFacts";
+import { founder, pricing, siteUrl, studio } from "../content/siteFacts";
 import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredData";
 import {
   Navbar16,
@@ -10,10 +10,7 @@ import {
 } from "./index";
 import { Faq4 } from "./Faq4";
 import { DeliverablesSection, IndustryTestimonial, PainPointsSection } from "./IndustryLandingSections";
-
-// Draft (2026-10-14), pending Arek's design review: SaaS branding landing page built around
-// the Elevate case study, on the same template as /law-firm-branding. "saas brand" and
-// "saas branding" queries currently land on /blog/saas-logos, a list article.
+import type { IndustryFaq } from "./IndustryLandingTemplate";
 
 // Elevate media: widescreen (16:9) only, so the rows and the preview frame never crop or letterbox.
 const EL = "/case-study/elevate";
@@ -63,8 +60,8 @@ const painPoints = [
     body: "Your logo has to work as an app icon, a favicon, and a loading animation. I design the mark, the icon system, and the motion with the product in mind.",
   },
   {
-    title: "One week. Done",
-    body: "No 6-month agency engagements. No junior designers. You work directly with Arek—over 20 years of experience, delivered in a focused sprint.",
+    title: "Work directly with your designer",
+    body: "You work with Arek from the first concepts to handoff. We agree on scope and a feedback schedule up front so the identity is ready in one week.",
   },
 ];
 
@@ -74,29 +71,31 @@ const deliverables = [
   "Icon system",
   "Color palette and typography",
   "Brand guidelines, live on guidelines.online",
-  "Pitch deck design",
-  "Social media and launch graphics",
-  "Figma web design — desktop, tablet, mobile",
-  "Framer, Webflow, or Next.js build",
-  "Website copywriting (homepage + product)",
-  "Revisions included",
-  "All source files delivered",
+  "Agreed social launch graphics",
+  "Revisions within the agreed scope",
+  "Editable source files",
 ];
 
 // Answered in full so search engines and AI assistants can quote them.
 const pageUrl = `${siteUrl}/saas-branding`;
-const saasFaqs = [
+const saasFaqs: IndustryFaq[] = [
   {
     question: "How much does SaaS branding cost?",
-    answer: `${pricing.weekly} per week, flat. A new SaaS brand identity or rebrand (logo, app icon, logo animation, icon system, colors, typography, and brand guidelines) is delivered in one week, guaranteed, for ${pricing.weekly} total. Branding agencies often charge $25,000 to $100,000 or more for the same scope.`,
+    answer: `The one-week SaaS Brand Sprint costs ${pricing.weekly} total for the agreed visual identity. That includes the logo, app icon, motion, color, type, guidelines, and editable files. Website design, a pitch deck, and extended launch assets can be scoped separately at ${pricing.weekly} per week.`,
   },
   {
     question: "How long does a SaaS rebrand take?",
-    answer: "One week for the brand identity, guaranteed. The website follows in two to three more weeks: a week of design in Figma, then one or two weeks of development, depending on the number of pages. A pitch deck or launch graphics take another week. Everything is at the same weekly rate, agreed before work starts.",
+    answer: "The agreed brand identity takes one week, guaranteed. If you need a website, allow another week for design in Figma and one or two for development, depending on page count. A pitch deck or extended launch graphics usually take another week. We agree on scope, timing, and total before work starts.",
+  },
+  {
+    question: "Should I book a brand sprint or hire an agency?",
+    answer: "Start with a sprint if you know who you sell to and need a visual identity for launch. Allow more time if you need customer research, positioning, or approval from several teams. Compare proposals by who does the work, what files you receive, and how the site and rollout are scoped.",
+    link: { label: "freelancer vs. agency", href: "/compare/freelancer-vs-agency" },
   },
   {
     question: "Have you branded a SaaS company before?",
     answer: "Yes. Elevate is a Shopify-native A/B testing platform. I designed its growth mark and bespoke wordmark, logo animation, icon system, online brand guidelines, website, and business collateral. I've also branded Brevidee, a video-editing SaaS for schools, and Orbio, an AI infrastructure startup whose identity I evolved in a one-week sprint.",
+    link: { label: "the client review from Elevate’s co-founder on Contra", href: "https://contra.com/ebaqdesign/reviews" },
   },
   {
     question: "Will the logo work as an app icon and favicon?",
@@ -104,11 +103,12 @@ const saasFaqs = [
   },
   {
     question: "Do you design SaaS websites too?",
-    answer: "Yes. I design the website in Figma and build it in Framer, Webflow, or Next.js, with homepage and product copy written to turn visitors into demos and signups.",
+    answer: "Yes. I can design your brand and marketing site together, then build the site in Framer, Webflow, or Next.js. If your app flows already work, keep them and use the new logo, colors, and type where needed. If signup, onboarding, or core workflows need redesign, plan that as a separate product design project.",
+    link: { label: "SaaS website design", href: "/saas-web-design" },
   },
   {
     question: "Who will I work with?",
-    answer: `Arek Dvornechuck, a senior freelance graphic designer in ${studio.location} with over 20 years of experience. You work with me directly from the first call to the final files, with no account managers and no junior designers.`,
+    answer: `You work directly with ${founder.name}, a senior brand designer in ${studio.location} with ${founder.experience} of experience, from the first call to the final files.`,
   },
 ];
 
@@ -141,12 +141,9 @@ const saasSchemas = [
   buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "SaaS branding", path: "/saas-branding" }], siteUrl),
 ];
 
-// The website answer links to the SaaS web design page; the schema keeps the plain-text version.
-const visibleFaqs = saasFaqs.map(({ question, answer }) => ({
+const visibleFaqs = saasFaqs.map(({ question, answer, link }) => ({
   title: question,
-  answer: question === "Do you design SaaS websites too?"
-    ? <p>{answer} See <a href="/saas-web-design">SaaS website design</a>.</p>
-    : answer,
+  answer: link ? <p>{answer} See <a href={link.href}>{link.label}</a>.</p> : answer,
 }));
 
 export const SaasBrandingLanding = () => (
@@ -155,13 +152,13 @@ export const SaasBrandingLanding = () => (
       <title>SaaS Branding &amp; Logo Design for Startups | Ebaq Design</title>
       <meta
         name="description"
-        content="SaaS branding for startups: logo, app icon, logo animation, icon system, brand guidelines, and a website. Brand identity in one week, guaranteed, $3,000 flat."
+        content="Get a SaaS brand identity in one week for $3,000 with Ebaq Design. Work directly with Arek on your logo, app icon, motion, and guidelines. Website scoped separately."
       />
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content="SaaS Branding & Logo Design for Startups | Ebaq Design" />
-      <meta property="og:description" content="SaaS branding for startups: logo, app icon, logo animation, icon system, brand guidelines, and a website. Brand identity in one week, guaranteed, $3,000 flat." />
+      <meta property="og:description" content="Get a SaaS brand identity in one week for $3,000 with Ebaq Design. Work directly with Arek on your logo, app icon, motion, and guidelines. Website scoped separately." />
       <meta property="og:image" content={`${siteUrl}${EL}/01-logos.png`} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="SaaS Branding & Logo Design for Startups | Ebaq Design" />
@@ -175,7 +172,7 @@ export const SaasBrandingLanding = () => (
       <Navbar16 />
       <Header78
         heading={`Branding and Web\nfor SaaS Startups`}
-        description={`A brand that looks like the category leader before you are one,\nfrom logo and icon system to the website that sells the product.`}
+        description={`Work directly with Arek at Ebaq Design to get a SaaS brand identity in one week for ${pricing.weekly}. Add a marketing website or pitch deck as separately scoped work.`}
         row1={elRow1}
         row2={elRow2}
         row3={elRow3}
@@ -184,12 +181,12 @@ export const SaasBrandingLanding = () => (
       />
       <PainPointsSection heading="Your brand is part of the product" points={painPoints} />
       <DeliverablesSection
-        heading="Everything a SaaS startup needs to launch"
-        description="One designer, one flat weekly rate. Your brand identity is delivered in one week, guaranteed, for $3,000. The website follows: a week of design in Figma, then one or two weeks of development at the same rate, depending on the page count."
+        heading="What’s included in the SaaS Brand Sprint"
+        description={`Your agreed visual identity is delivered in one week, guaranteed, for ${pricing.weekly} total. We scope pitch deck, website copy, design, and development separately if you need them.`}
         items={deliverables}
       />
       <div id="elevate">
-        <Layout350Preview eyebrow="Elevate case study" heading="$3k goes a long way. All this plus much more" items={elPreview} />
+        <Layout350Preview eyebrow="Elevate case study" heading="A visual identity for a Shopify A/B testing platform" items={elPreview} />
       </div>
       <IndustryTestimonial
         compact

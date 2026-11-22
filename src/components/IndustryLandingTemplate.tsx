@@ -164,12 +164,12 @@ export const IndustryLandingTemplate = (config: IndustryLandingConfig) => {
           <Pricing8 surface="white" tagline="Pricing" heading="Priced weekly or monthly" description="Hire me for a flat weekly rate with guaranteed deliverables. Or choose a monthly plan for a bigger project and save $2,000." bookingHref="#book" />
           <AiLandingAbout heading={aboutHeading} />
           <AiLandingServices />
-          <Comparison heading={"Agency-level work,\nwithout the agency invoice"} rows={[
-            { left: "$3,000 per week, flat", right: "$25k–$100k+ per project" },
-            { left: "Brand identity in 1 week, guaranteed", right: "3–9 months or more" },
-            { left: "Total agreed before work starts", right: "Estimates that grow" },
-            { left: "Revisions within agreed scope", right: "Change orders" },
-            { left: "One senior designer, start to finish", right: "Account managers and juniors" },
+          <Comparison heading="Compare scope, timeline, and who does the work" rows={[
+            { left: `${pricing.weekly} per week, flat`, right: "Project fees vary by team and scope" },
+            { left: "Brand identity in 1 week, guaranteed", right: "Timeline depends on the engagement" },
+            { left: "Total agreed before work starts", right: "Check the proposal and change terms" },
+            { left: "Revisions within agreed scope", right: "Ask what revisions are included" },
+            { left: "One senior designer, start to finish", right: "May include several specialists" },
           ]} />
         </>}
         {config.brandDesignLayout ? (
