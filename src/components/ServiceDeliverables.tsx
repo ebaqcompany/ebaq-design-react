@@ -33,6 +33,11 @@ const groups: Record<ServiceSlug, DeliverableGroup[]> = {
     { title: "Animation", description: "Create the agreed motion assets.", items: ["Logo animation", "Animated social content", "Website graphics", "Animated icons", "Promos and explainers"] },
     { title: "Delivery", description: "Prepare the agreed files.", items: ["Video exports", "Agreed aspect ratios", "Channel-ready versions", "Lottie where suitable", "Agreed source files"] },
   ],
+  "pitch-deck": [
+    { title: "Narrative & structure", description: "Tighten the story so every slide earns attention.", items: ["Draft deck review", "Slide-by-slide outline", "Headline tightening", "Investor flow alignment", "Key proof hierarchy"] },
+    { title: "Custom slide design", description: "Replace generic templates with branded visual clarity.", items: ["Custom 16:9 layouts", "Data charts & financial visuals", "Product & traction graphics", "Brand-aligned typography", "Clean visual pacing"] },
+    { title: "Editable delivery", description: "Ready to present live and update for future meetings.", items: ["Figma, Pitch, Keynote, or PPT", "Reusable master slide kit", "Link-ready PDF export", "Room vs. email versions", "All editable source files"] },
+  ],
 };
 
 const benefitTitles: Record<ServiceSlug, string[]> = {
@@ -42,6 +47,7 @@ const benefitTitles: Record<ServiceSlug, string[]> = {
   "web-design": ["Create a clear path", "Make an impression", "Bring your website to life"],
   "web-development": ["Bring the design to life", "Connect what you need", "Get ready to launch"],
   "motion-graphics": ["Set things in motion", "Bring your brand to life", "Share it everywhere"],
+  "pitch-deck": ["Sharpen your narrative", "Make every slide count", "Present with confidence"],
 };
 
 // Relume Layout 235 adapted to the shared service deliverables and artwork slots.
@@ -51,8 +57,8 @@ export const ServiceDeliverables = ({ slug }: { slug: ServiceSlug }) => {
     <div className="container">
       <div className="mb-12 max-w-lg md:mb-16">
         <p className="mb-3 font-mono text-sm font-normal uppercase tracking-wide text-brand-primary md:mb-4">What you get</p>
-        <h2 className="mb-5 md:mb-6">{slug === "logo-design" ? "An iconic logo design" : slug === "brand-design" ? "A coherent visual identity" : slug === "brand-strategy" ? "A clear brand direction" : slug === "web-design" ? "A website built around you" : slug === "web-development" ? "From design to a working site" : "Your brand in motion"}</h2>
-        <p className="max-w-md md:text-md">{slug === "logo-design" ? "Create a new logo or refine the one you have, with the colors, fonts, and files you need to get started. One focused week, with scope agreed before we begin." : slug === "brand-design" ? "Get your logos, colors, fonts, and visuals in one scalable system, with online guidelines to keep your brand consistent." : slug === "brand-strategy" ? "Define your audience, positioning, and messaging before moving into design. We agree on the workshop and deliverables before we begin." : slug === "web-design" ? "From Figma design to a working website. Choose design only or design and development; we agree on the pages, features, and deliverables before booking." : slug === "web-development" ? "Build on your approved designs, with the platform, pages, features, and launch support agreed before booking." : "From logo animation to promotional videos, we choose the assets and formats your project needs. These are examples; your booking covers an agreed selection."}</p>
+        <h2 className="mb-5 md:mb-6">{slug === "logo-design" ? "An iconic logo design" : slug === "brand-design" ? "A coherent visual identity" : slug === "brand-strategy" ? "A clear brand direction" : slug === "web-design" ? "A website built around you" : slug === "web-development" ? "From design to a working site" : slug === "pitch-deck" ? "An investor-ready pitch deck" : "Your brand in motion"}</h2>
+        <p className="max-w-md md:text-md">{slug === "logo-design" ? "Create a new logo or refine the one you have, with the colors, fonts, and files you need to get started. One focused week, with scope agreed before we begin." : slug === "brand-design" ? "Get your logos, colors, fonts, and visuals in one scalable system, with online guidelines to keep your brand consistent." : slug === "brand-strategy" ? "Define your audience, positioning, and messaging before moving into design. We agree on the workshop and deliverables before we begin." : slug === "web-design" ? "From Figma design to a working website. Choose design only or design and development; we agree on the pages, features, and deliverables before booking." : slug === "web-development" ? "Build on your approved designs, with the platform, pages, features, and launch support agreed before booking." : slug === "pitch-deck" ? "Tight narrative, custom charts, and clean slides delivered in one focused week—plus an editable master template your team can update anytime." : "From logo animation to promotional videos, we choose the assets and formats your project needs. These are examples; your booking covers an agreed selection."}</p>
       </div>
       <div className="grid grid-cols-1 items-stretch gap-y-12 md:grid-cols-3 md:grid-rows-[auto_auto_1fr] md:gap-x-8 md:gap-y-0 lg:gap-x-12">
         {groups[slug].map((group, index) => (

@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" data-illustration="pitch-deck">
+<title>Pitch Deck Design — slide thumbnail rail, interactive slide switcher, and rising traction chart</title>
+<style>
+[data-illustration="pitch-deck"] .cursor-move { animation: pd-cursor 5.4s linear infinite; }
+[data-illustration="pitch-deck"] .cursor-press { transform-origin: 0 0; animation: pd-press 5.4s linear infinite; }
+[data-illustration="pitch-deck"] .slide-frame { animation: pd-frame-pop 5.4s linear infinite; }
+[data-illustration="pitch-deck"] .thumb-1-fill { animation: pd-t1 5.4s steps(1, end) infinite; }
+[data-illustration="pitch-deck"] .thumb-2-fill { animation: pd-t2 5.4s steps(1, end) infinite; }
+[data-illustration="pitch-deck"] .thumb-3-fill { animation: pd-t3 5.4s steps(1, end) infinite; }
+[data-illustration="pitch-deck"] .slide-1 { animation: pd-s1 5.4s linear infinite; }
+[data-illustration="pitch-deck"] .slide-2 { animation: pd-s2 5.4s linear infinite; }
+[data-illustration="pitch-deck"] .slide-3 { animation: pd-s3 5.4s linear infinite; }
+[data-illustration="pitch-deck"] .bar-1 { transform-origin: 455px 665px; animation: pd-b1 5.4s cubic-bezier(.22,1,.36,1) infinite; }
+[data-illustration="pitch-deck"] .bar-2 { transform-origin: 545px 665px; animation: pd-b2 5.4s cubic-bezier(.22,1,.36,1) infinite; }
+[data-illustration="pitch-deck"] .bar-3 { transform-origin: 635px 665px; animation: pd-b3 5.4s cubic-bezier(.22,1,.36,1) infinite; }
+[data-illustration="pitch-deck"] .bar-4 { transform-origin: 725px 665px; animation: pd-b4 5.4s cubic-bezier(.22,1,.36,1) infinite; }
+
+@keyframes pd-cursor {
+  0%, 16% { transform: translate(195px, 375px); animation-timing-function: cubic-bezier(.65,0,.35,1); }
+  28%, 50% { transform: translate(195px, 535px); animation-timing-function: cubic-bezier(.65,0,.35,1); }
+  62%, 84% { transform: translate(195px, 695px); animation-timing-function: cubic-bezier(.65,0,.35,1); }
+  94%, 100% { transform: translate(195px, 375px); }
+}
+@keyframes pd-press {
+  0%, 27%, 33%, 61%, 67%, 93%, 99%, 100% { transform: scale(1); }
+  30%, 64%, 96% { transform: scale(0.84); }
+}
+@keyframes pd-frame-pop {
+  0%, 29% { transform: translate(0, 0); }
+  33% { transform: translate(-10px, -10px); }
+  41%, 63% { transform: translate(0, 0); }
+  67% { transform: translate(-10px, -10px); }
+  75%, 95% { transform: translate(0, 0); }
+  98% { transform: translate(-10px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes pd-t1 {
+  0%, 29.9% { fill: #FED440; }
+  30%, 95.9% { fill: #fff; }
+  96%, 100% { fill: #FED440; }
+}
+@keyframes pd-t2 {
+  0%, 29.9% { fill: #fff; }
+  30%, 63.9% { fill: #FED440; }
+  64%, 100% { fill: #fff; }
+}
+@keyframes pd-t3 {
+  0%, 63.9% { fill: #fff; }
+  64%, 95.9% { fill: #FED440; }
+  96%, 100% { fill: #fff; }
+}
+@keyframes pd-s1 {
+  0%, 28% { opacity: 1; }
+  30%, 95% { opacity: 0; }
+  97%, 100% { opacity: 1; }
+}
+@keyframes pd-s2 {
+  0%, 29% { opacity: 0; }
+  31%, 62% { opacity: 1; }
+  64%, 100% { opacity: 0; }
+}
+@keyframes pd-s3 {
+  0%, 63% { opacity: 0; }
+  65%, 94% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+@keyframes pd-b1 {
+  0%, 31% { transform: scaleY(0.12); }
+  40%, 62% { transform: scaleY(1); }
+  64%, 100% { transform: scaleY(0.12); }
+}
+@keyframes pd-b2 {
+  0%, 33% { transform: scaleY(0.12); }
+  43%, 62% { transform: scaleY(1); }
+  64%, 100% { transform: scaleY(0.12); }
+}
+@keyframes pd-b3 {
+  0%, 35% { transform: scaleY(0.12); }
+  46%, 62% { transform: scaleY(1); }
+  64%, 100% { transform: scaleY(0.12); }
+}
+@keyframes pd-b4 {
+  0%, 37% { transform: scaleY(0.12); }
+  49%, 62% { transform: scaleY(1); }
+  64%, 100% { transform: scaleY(0.12); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-illustration="pitch-deck"] * { animation: none !important; }
+  [data-illustration="pitch-deck"] .cursor-move { transform: translate(195px, 535px); }
+  [data-illustration="pitch-deck"] .thumb-2-fill { fill: #FED440; }
+  [data-illustration="pitch-deck"] .slide-1,
+  [data-illustration="pitch-deck"] .slide-3 { opacity: 0; }
+  [data-illustration="pitch-deck"] .slide-2 { opacity: 1; }
+}
+</style>
+
+<g stroke="#000" stroke-width="5.65" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left thumbnail rail (slides 01, 02, 03) -->
+  <g id="thumbnail-rail">
+    <rect x="92" y="295" width="176" height="122" rx="8" fill="#fff" class="thumb-1-fill" />
+    <path d="M120 338h86M120 364h112M120 388h64" />
+    <rect x="92" y="455" width="176" height="122" rx="8" fill="#fff" class="thumb-2-fill" />
+    <path d="M122 548v-24M154 548v-42M186 548v-56M218 548v-70" />
+    <rect x="92" y="615" width="176" height="122" rx="8" fill="#fff" class="thumb-3-fill" />
+    <rect x="114" y="645" width="36" height="62" rx="4" fill="#fff" />
+    <rect x="162" y="645" width="36" height="62" rx="4" fill="#fff" />
+    <rect x="210" y="645" width="36" height="62" rx="4" fill="#fff" />
+  </g>
+
+  <!-- Main 16:9 presentation slide canvas -->
+  <rect x="330" y="295" width="660" height="442" rx="10" fill="#00AFEC" stroke="none" />
+  <g class="slide-frame">
+    <rect x="330" y="295" width="660" height="442" rx="10" fill="#fff" />
+    <!-- Top slide chrome bar -->
+    <path d="M330 355h660" />
+    <circle cx="366" cy="325" r="8" fill="#000" stroke="none" />
+    <circle cx="396" cy="325" r="8" fill="#fff" />
+    <circle cx="426" cy="325" r="8" fill="#fff" />
+    <path d="M882 325h72" />
+
+    <!-- Slide 01: Investor Cover -->
+    <g class="slide-1">
+      <rect x="376" y="405" width="210" height="260" rx="8" fill="#000" />
+      <polygon points="481,468 532,556 430,556" fill="#FED440" stroke="#fff" />
+      <path d="M430 600h102" stroke="#fff" />
+      <path d="M636 446h240M636 488h296M636 530h190" stroke-width="8" />
+      <path d="M636 584h220M636 616h160" />
+      <rect x="636" y="646" width="136" height="36" rx="18" fill="#00AFEC" />
+    </g>
+
+    <!-- Slide 02: Rising Traction Chart -->
+    <g class="slide-2">
+      <path d="M380 412h220M380 444h150" />
+      <path d="M380 665h556" />
+      <rect x="425" y="575" width="60" height="90" rx="4" fill="#fff" class="bar-1" />
+      <rect x="515" y="530" width="60" height="135" rx="4" fill="#fff" class="bar-2" />
+      <rect x="605" y="475" width="60" height="190" rx="4" fill="#00AFEC" class="bar-3" />
+      <rect x="695" y="410" width="60" height="255" rx="4" fill="#FED440" class="bar-4" />
+      <rect x="795" y="425" width="142" height="106" rx="8" fill="#000" />
+      <path d="M825 466h82M825 498h56" stroke="#fff" />
+      <rect x="795" y="556" width="142" height="109" rx="8" fill="#fff" />
+      <path d="M825 596h82M825 628h64" />
+    </g>
+
+    <!-- Slide 03: Three-Column Ask & Roadmap -->
+    <g class="slide-3">
+      <path d="M380 412h250M380 444h180" />
+      <rect x="380" y="485" width="168" height="200" rx="8" fill="#fff" />
+      <rect x="404" y="512" width="54" height="32" rx="4" fill="#00AFEC" />
+      <path d="M404 578h118M404 610h92M404 642h104" />
+
+      <rect x="576" y="485" width="168" height="200" rx="8" fill="#FED440" />
+      <rect x="600" y="512" width="54" height="32" rx="4" fill="#000" />
+      <path d="M600 578h118M600 610h92M600 642h104" />
+
+      <rect x="772" y="485" width="168" height="200" rx="8" fill="#000" />
+      <rect x="796" y="512" width="54" height="32" rx="4" fill="#fff" />
+      <path d="M796 578h118M796 610h92M796 642h104" stroke="#fff" />
+    </g>
+  </g>
+
+  <!-- Pointer cursor clicking thumbnails 01 -> 02 -> 03 -->
+  <g class="cursor-move">
+    <g class="cursor-press">
+      <path d="M0 0 25 91 45 59 81 52Z" fill="#fff" />
+    </g>
+  </g>
+</g>
+</svg>

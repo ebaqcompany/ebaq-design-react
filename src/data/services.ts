@@ -11,6 +11,7 @@ const slugs = [
   "web-design",
   "web-development",
   "motion-graphics",
+  "pitch-deck",
 ] as const;
 
 export type ServiceSlug = (typeof slugs)[number];
@@ -31,7 +32,7 @@ export const services: Service[] = Layout423Defaults.features.map((feature, inde
   index,
   number: feature.tagline,
   heading: feature.heading,
-  cardTitle: ["Define your positioning", "Design an iconic logo", "Create a design system", "Create a beautiful website", "Launch a website that works", "Bring your brand to life"][index],
+  cardTitle: ["Define your positioning", "Design an iconic logo", "Create a design system", "Create a beautiful website", "Launch a website that works", "Bring your brand to life", "Win investors with your story"][index],
   description: feature.description,
   deliverables: feature.deliverables,
   url: `/services/${slugs[index]}`,
@@ -51,6 +52,7 @@ const serviceMedia: Record<ServiceSlug, { src: string; alt: string }> = {
   "web-design": { src: "/case-study/aero/05-website.webp", alt: "Aero website design" },
   "web-development": { src: "/case-study/periti/02-macbook.webp", alt: "Periti website live on a laptop" },
   "motion-graphics": { src: "/case-study/fox-berman/02-colors.mp4", alt: "Fox Berman brand colors in motion" },
+  "pitch-deck": { src: "/case-study/wingnut/10-deck.webp", alt: "Wingnut Social custom pitch deck slide" },
 };
 
 // Layout351 cards. Each links to its own detail page; the detail page swaps
@@ -275,6 +277,24 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       { title: "How do I choose a motion designer?", answer: "Look for work used in the channels you need and ask who created it. Compare the intended use, duration, versions, source files, playback requirements, revisions, and testing in each proposal." },
       { title: "How do revisions work?", answer: "We review the direction and keyframes before refining the animation. Revisions within the agreed scope are included; extra assets or changes in direction are agreed before proceeding." },
       { title: "When do I pay?", answer: "Once scope and timing are confirmed, I send the agreement and invoice. Payment for the booked engagement is due upfront, before work begins." },
+    ],
+  },
+  "pitch-deck": {
+    title: "Investor pitch deck and presentation design",
+    overview: [
+      "Investors decide in minutes whether a company looks credible and worth a follow-up call. A cluttered template deck undermines even strong traction and product work.",
+      "I tighten the slide narrative, redesign every chart, diagram, and product visual from scratch, and build a cohesive deck aligned with your brand identity—ready to present live or send as a clean PDF.",
+      "You get both the finished deck and an editable master template in Figma, Pitch, Keynote, PowerPoint, or Google Slides so your team can update numbers and tailor future slides without breaking the design.",
+    ],
+    tools: ["Figma", "Pitch", "Keynote", "PowerPoint", "Google Slides"],
+    timeline: "A focused one-week sprint costs $3,000 and typically covers a 12–18 slide investor or sales deck from your draft content. Broader fundraising rollouts (brand refresh + pitch deck + landing page) can be booked by the month for $10,000.",
+    work: ["wingnut", "next-dimension", "periti"],
+    faqs: [
+      { title: "What fits in a one-week pitch deck sprint?", answer: "One week ($3,000 flat) typically covers structuring and designing a 12–18 slide investor or sales deck, including custom charts, diagrams, product mockups, and an editable master template. We confirm slide count and content readiness before starting." },
+      { title: "Do you help refine the narrative and slide order?", answer: "Yes. Before designing pixels, I review your draft story, tighten headlines so every slide makes one clear point, and align the flow around what seed and Series A investors look for." },
+      { title: "Which formats do I receive?", answer: "I design in Figma and deliver in the format your team actually presents in—Figma Slides, Pitch, Keynote, PowerPoint, or Google Slides—plus a compressed, link-ready PDF for cold outreach and data rooms." },
+      { title: "What if we also need a new brand or website before fundraising?", answer: "We can run a one-week Brand Sprint first ($3,000), follow with your pitch deck the next week, or bundle brand, deck, and website into a $10,000 monthly engagement." },
+      { title: "How do revisions and payment work?", answer: "We review key style frames first, then refine the full deck together within the agreed scope. Once scope and start date are confirmed, payment is due upfront before work begins." },
     ],
   },
 };

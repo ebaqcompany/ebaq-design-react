@@ -71,6 +71,7 @@ const IdentitySystemsPage = page('./components/IdentitySystemsPage.tsx', 'Identi
 const WebDesignPage = page('./components/WebDesignPage.tsx', 'WebDesignPage')
 const WebDevelopmentPage = page('./components/WebDevelopmentPage.tsx', 'WebDevelopmentPage')
 const MotionGraphicsPage = page('./components/MotionGraphicsPage.tsx', 'MotionGraphicsPage')
+const PitchDeckPage = page('./components/PitchDeckPage.tsx', 'PitchDeckPage')
 const BrandSprintPage = page('./components/BrandSprintPage.tsx', 'BrandSprintPage')
 const DesignMonthlyPage = page('./components/DesignMonthlyPage.tsx', 'DesignMonthlyPage')
 const PricingPage = page('./components/PricingPage.tsx', 'PricingPage')
@@ -135,6 +136,7 @@ const routes: RouteEntry[] = [
   { path: '/services/web-design', page: WebDesignPage },
   { path: '/services/web-development', page: WebDevelopmentPage },
   { path: '/services/motion-graphics', page: MotionGraphicsPage },
+  { path: '/services/pitch-deck', page: PitchDeckPage },
   { path: '/privacy-policy', page: PrivacyPolicyPage },
   { path: '/fulfillment-policy', page: FulfillmentPolicyPage },
   { path: '/work/:slug', page: CaseStudyPage },

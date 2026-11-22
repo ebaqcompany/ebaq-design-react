@@ -82,6 +82,7 @@ const ctaDescriptions: Record<ServiceSlug, string> = {
   "web-design": "Tell me about your pages, content, and features. Let’s plan the right scope for your website.",
   "web-development": "Show me your designs and tell me about your content, features, and launch plans. Let’s agree on the right platform and build scope.",
   "motion-graphics": "Tell me what you want to animate, where it will appear, and when you need it. Let’s plan the right scope.",
+  "pitch-deck": "Tell me about your round, timeline, and story and we’ll plan your deck.",
 };
 
 // Shared body for the six /services/* pages. Each page file owns its own
@@ -111,7 +112,7 @@ export const ServiceDetailLayout = ({ slug, customSection }: Props) => {
         title,
         answer: <p>{answer}{links && <> See {links.map((link, index) => <Fragment key={link.href}>{index > 0 && (index === links.length - 1 ? " and " : ", ")}<a href={link.href}>{link.label}</a></Fragment>)}.</>}</p>,
       }))} />
-      <Cta17 heading={slug === "brand-strategy" ? "Ready to develop your brand strategy?" : slug === "logo-design" ? "Ready to make your mark?" : slug === "web-design" ? "Ready to build your website?" : slug === "web-development" ? "Ready to launch your website?" : slug === "motion-graphics" ? "Ready to set your brand in motion?" : `Ready to ${service.cardTitle.charAt(0).toLowerCase()}${service.cardTitle.slice(1)}?`} description={ctaDescriptions[slug]} />
+      <Cta17 heading={slug === "brand-strategy" ? "Ready to develop your brand strategy?" : slug === "logo-design" ? "Ready to make your mark?" : slug === "web-design" ? "Ready to build your website?" : slug === "web-development" ? "Ready to launch your website?" : slug === "motion-graphics" ? "Ready to set your brand in motion?" : slug === "pitch-deck" ? "Ready to pitch with confidence?" : `Ready to ${service.cardTitle.charAt(0).toLowerCase()}${service.cardTitle.slice(1)}?`} description={ctaDescriptions[slug]} />
       </main>
       <Footer15 logo={{ url: "/", src: "/ebaq-mark-one-color.svg", alt: "Ebaq Design" }} />
     </div>

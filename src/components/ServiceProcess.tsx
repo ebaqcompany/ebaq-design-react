@@ -36,11 +36,16 @@ const processCopy: Record<ServiceSlug, typeof brandSteps> = {
     { heading: "02", title: "Create the animation", description: "I develop keyframes and animation, then we refine the movement and timing together." },
     { heading: "03", title: "Put motion to work", description: "You receive the agreed exports, prepared for the websites, presentations, or social channels you need." },
   ],
+  "pitch-deck": [
+    { heading: "01", title: "Share your draft & round", description: "Walk me through your current deck, target investors, and deadline. We confirm slide count, format, and start date before booking." },
+    { heading: "02", title: "Shape story & style frames", description: "I tighten the narrative flow, design 3–4 hero style slides first to lock in the look, then build out every chart, diagram, and product screen." },
+    { heading: "03", title: "Deliver your editable deck", description: "You receive the finished presentation in Figma, Pitch, Keynote, PowerPoint, or Google Slides plus a link-ready PDF and reusable master layouts." },
+  ],
 };
 
 // Relume Layout 485: sticky rolling number beside vertically scrolling steps.
 export const ServiceProcess = ({ slug = "brand-design", customSteps }: { slug?: ServiceSlug; customSteps?: typeof brandSteps }) => {
-  const steps = customSteps ?? processCopy[slug].map((step, index) => index === 0 && slug !== "logo-design" && slug !== "brand-strategy" && slug !== "web-development" && slug !== "motion-graphics" ? brandSteps[0] : step);
+  const steps = customSteps ?? processCopy[slug].map((step, index) => index === 0 && slug !== "logo-design" && slug !== "brand-strategy" && slug !== "web-development" && slug !== "motion-graphics" && slug !== "pitch-deck" ? brandSteps[0] : step);
   const cards = useRef<(HTMLDivElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const reduced = useReducedMotion();

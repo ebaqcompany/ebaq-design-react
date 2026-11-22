@@ -7,6 +7,7 @@ const roleBySlug: Record<Service["slug"], string> = {
   "web-design": "Web Designer",
   "web-development": "Web Developer",
   "motion-graphics": "Motion Designer",
+  "pitch-deck": "Pitch Deck Designer",
 };
 
 const quotes: Record<Service["slug"], string> = {
@@ -16,6 +17,7 @@ const quotes: Record<Service["slug"], string> = {
   "web-design": "A beautiful website alone isn’t enough if visitors don’t know where to go. I design clear experiences that express your brand and guide people toward action.",
   "web-development": "A website needs to work as well as it looks. I build fluid, engaging experiences that adapt across devices and lay a foundation for search and AI discovery.",
   "motion-graphics": "Static visuals can only tell part of your brand’s story. I use animation to add character and make your identity more memorable across digital channels.",
+  "pitch-deck": "Investors scan a pitch deck in minutes. When your narrative, numbers, and design pull in the same direction, you walk into the room with immediate credibility.",
 };
 
 export const BrandDesignSectionOptions = ({ service }: { service: Service }) => <section id="brand-design-section-options" className="bg-black px-[5%] py-20 text-white md:py-28 lg:py-32">

@@ -67,6 +67,7 @@ for (const [path, component] of Object.entries({
   '/services/web-design': 'WebDesignPage',
   '/services/web-development': 'WebDevelopmentPage',
   '/services/motion-graphics': 'MotionGraphicsPage',
+  '/services/pitch-deck': 'PitchDeckPage',
 })) {
   const source = await read(`../src/components/${component}.tsx`)
   const title = source.match(/<title>([^<{]+)<\/title>/)?.[1]?.replaceAll('&amp;', '&')

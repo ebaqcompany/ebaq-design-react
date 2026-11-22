@@ -30,6 +30,10 @@ const scopes: Record<ServiceSlug, Scope> = {
     weekly: ["Logo animation", "Animated social or Instagram content", "Website feature-card graphics", "Animated illustrations or icons", "Other agreed motion graphics"],
     monthly: ["Brand, service, or product promo videos", "Basic explainer videos", "Longer animations", "Extended motion graphics", "Brand-launch content"],
   },
+  "pitch-deck": {
+    weekly: ["12–18 slide investor or sales deck", "Narrative & slide-flow tightening", "Custom charts, tables, and diagrams", "Editable master template (Figma, Pitch, Keynote, PPT, or Slides)", "Compressed, link-ready PDF export"],
+    monthly: ["Full brand identity refresh + pitch deck", "Investor teaser & one-pager PDF", "Custom product mockups & motion slides", "Fundraising landing page design", "Data-room graphics & sales collateral"],
+  },
 };
 const pricingCopy: Record<ServiceSlug, { heading: string; description: string }> = {
   "brand-strategy": { heading: "How much does brand strategy cost?", description: "A focused strategy sprint costs $3,000 for one week. We agree on the workshop, deliverables, and feedback schedule before booking; payment is due upfront." },
@@ -38,6 +42,7 @@ const pricingCopy: Record<ServiceSlug, { heading: string; description: string }>
   "web-design": { heading: "How much does web design cost?", description: "One week can cover roughly 3–5 pages designed in Figma OR design and development of a simple landing page. A month allows a more complex website. These are examples, not guarantees: content readiness, features, and feedback determine the agreed scope; not every feature fits every booking. Payment is due upfront." },
   "web-development": { heading: "How much does web development cost?", description: "A focused week is $3,000; a month booked upfront is $10,000. A week can cover a simple landing-page build from approved designs and ready-to-use content. Larger builds may need a month or longer. The lists are scope examples: we agree on pages, features, content, and timing before booking. Payment is due upfront." },
   "motion-graphics": { heading: "How much do motion graphics cost?", description: "A focused week costs $3,000; a month booked upfront is $10,000. A week can cover a selection of short animations, while a month allows more extensive video or launch content. The lists are examples, not a package of everything: we agree on deliverables, length, complexity, formats, and feedback before booking. Payment is due upfront." },
+  "pitch-deck": { heading: "How much does pitch deck design cost?", description: "A focused one-week sprint is $3,000 and typically covers a 12–18 slide investor or sales deck with custom visuals and an editable template. Need a brand refresh and fundraising site too? Book a month upfront for $10,000. Payment is due upfront." },
 };
 
 const periods = ["weekly", "monthly"] as const;

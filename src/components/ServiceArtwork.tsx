@@ -8,6 +8,7 @@ const imageDescriptions: Record<ServiceSlug, string> = {
   "web-design": "Arek designing at his desktop workstation",
   "web-development": "Arek in his studio with website and development screens",
   "motion-graphics": "Arek working at his studio workstation",
+  "pitch-deck": "Arek designing investor presentation slides",
 };
 
 const illustrationDescriptions: Record<ServiceSlug, string> = {
@@ -17,6 +18,7 @@ const illustrationDescriptions: Record<ServiceSlug, string> = {
   "web-design": "Creative work displayed on a website monitor",
   "web-development": "Working with a laptop and a data dashboard",
   "motion-graphics": "Creative expression through music and movement",
+  "pitch-deck": "Presentation slides showing a brand story and rising traction chart",
 };
 
 const vectorDescriptions: Record<ServiceSlug, string> = {
@@ -26,6 +28,7 @@ const vectorDescriptions: Record<ServiceSlug, string> = {
   "web-design": "A browser window with a headline, an image, and a cursor on the main button",
   "web-development": "A code window showing a large pair of angle brackets and a slash",
   "motion-graphics": "A ball bouncing along a dashed motion path",
+  "pitch-deck": "A slide deck window with a thumbnail rail and a rising traction chart",
 };
 
 export const ServiceArtwork = ({ slug, eager = false, illustrated = false, vector = false, pixelEdge = true, className = "" }: { slug: ServiceSlug; eager?: boolean; illustrated?: boolean; vector?: boolean; pixelEdge?: boolean; className?: string }) => {

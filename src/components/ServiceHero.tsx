@@ -11,7 +11,9 @@ export const ServiceHero = ({ service, heading, description }: { service: Servic
           <h1 className="mb-5 text-balance md:mb-6">{heading}</h1>
           <p className="md:text-md">{description}</p>
         </div>
-        {service.slug === "brand-strategy" ? <div className="overflow-hidden rounded-xl"><JasperReferenceArtwork slug={service.slug} /></div> : <div data-tone="light" data-art="vector" className="service-artwork bg-brand-grid relative aspect-[3/2] w-full overflow-hidden rounded-xl">
+        {service.slug === "brand-strategy" ? <div className="overflow-hidden rounded-xl"><JasperReferenceArtwork slug={service.slug} /></div> : service.slug === "pitch-deck" ? <div data-tone="light" data-art="vector" className="service-artwork bg-brand-grid relative aspect-[3/2] w-full overflow-hidden rounded-xl">
+          <img src="/images/services/geometric-candidates/pitch-deck-animated.svg" alt={`${service.heading} illustration`} width="720" height="480" loading="eager" decoding="async" className="absolute inset-0 block size-full object-contain" />
+        </div> : <div data-tone="light" data-art="vector" className="service-artwork bg-brand-grid relative aspect-[3/2] w-full overflow-hidden rounded-xl">
           <picture>
             <source media="(prefers-reduced-motion: reduce)" srcSet={`/images/services/animations/${service.slug}-still.webp`} />
             <img src={`/images/services/animations/${service.slug}.webp`} alt={`${service.heading} illustration`} width="720" height="480" loading="eager" decoding="async" className="absolute inset-0 block size-full object-contain" />

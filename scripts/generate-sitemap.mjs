@@ -43,6 +43,7 @@ const staticPaths = [
   '/services/web-design',
   '/services/web-development',
   '/services/motion-graphics',
+  '/services/pitch-deck',
   '/privacy-policy',
   '/fulfillment-policy',
   '/law-firm-branding',

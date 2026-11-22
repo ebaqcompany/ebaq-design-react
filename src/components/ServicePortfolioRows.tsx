@@ -1,4 +1,5 @@
 import { DraggableRow, Header78Defaults, type MediaProps } from "./Header78";
+import { PitchDeckPortfolio } from "./PitchDeckPortfolio";
 import { brandStrategyPortfolioRows, brandStrategyPortfolioLabels } from "../data/brandStrategyPortfolio";
 import type { ServiceSlug } from "../data/services";
 import { serviceMotionMedia } from "../data/serviceMotionMedia";
@@ -6,6 +7,7 @@ import { serviceMotionMedia } from "../data/serviceMotionMedia";
 const placeholder: MediaProps = { type: "image", src: "/images/placeholders/relume-image.svg", alt: "Portfolio image placeholder to replace" };
 
 export const ServicePortfolioRows = ({ slug }: { slug: ServiceSlug }) => {
+  if (slug === "pitch-deck") return <PitchDeckPortfolio />;
   const items = slug === "logo-design" ? Header78Defaults.row1
     : slug === "brand-design" ? Header78Defaults.row2.filter((item) => !item.src.includes("lyntics"))
     : slug === "web-design" ? Header78Defaults.row3
@@ -46,4 +48,5 @@ export const serviceHighlightHeadings: Record<ServiceSlug, readonly [string, str
   "web-design": ["Make a first impression", "Guide the experience", "Inspire action"],
   "web-development": ["Bring the design to life", "Make it work everywhere", "Ready to go live"],
   "motion-graphics": ["Bring your brand to life", "Make every move count", "Leave an impression"],
+  "pitch-deck": ["Clarify the story", "Visualize the traction", "Close the room"],
 };

@@ -12,6 +12,9 @@ export type MediaProps = {
   type: "image" | "lottie" | "video";
   src: string;
   alt?: string;
+  href?: string;
+  dimensions?: { width: number; height: number };
+  overviewColumns?: 3 | 4;
   poster?: string;
   bgColor?: string;
   fit?: "contain" | "cover";
@@ -32,6 +35,7 @@ type Props = {
   row1: MediaProps[];
   row2: MediaProps[];
   row3: MediaProps[];
+  linkPortfolioItems?: boolean;
   showRows?: (1 | 2 | 3)[];
   tagline?: string;
   subLink?: SubLinkProps;
@@ -100,7 +104,7 @@ export const LottieItem = ({ src, bgColor, fit = "contain", scale = 1, offsetY =
   );
 };
 
-const MediaItem = ({ item }: { item: MediaProps }) => {
+const MediaItem = ({ item, natural }: { item: MediaProps; natural?: boolean }) => {
   const reduceMotion = useReducedMotion();
   if (item.type === "lottie") {
     return <LottieItem src={item.src} bgColor={item.bgColor} fit={item.fit} scale={item.scale} offsetY={item.offsetY} />;
@@ -124,7 +128,9 @@ const MediaItem = ({ item }: { item: MediaProps }) => {
 
   return (
     <img
-      className={`absolute inset-0 size-full ${item.fit === "contain" ? "object-contain" : "object-cover"} ${item.position === "top" ? "object-top" : "object-center"}`}
+      width={item.dimensions?.width}
+      height={item.dimensions?.height}
+      className={natural ? "block h-auto w-full" : `absolute inset-0 size-full ${item.fit === "contain" ? "object-contain" : "object-cover"} ${item.position === "top" ? "object-top" : "object-center"}`}
       src={item.src}
       alt={item.alt}
       loading="lazy"
@@ -138,23 +144,27 @@ type DraggableRowProps = {
   items: MediaProps[];
   direction?: "left" | "right";
   initialOffset?: number;
+  linkPortfolioItems?: boolean;
   showBorder?: boolean;
-  mediaAspect?: "4/3" | "16/9";
+  mediaAspect?: "4/3" | "16/9" | "natural";
 };
 
 const tileClasses = {
+  natural: "self-start [--overview-width:82vw] sm:[--overview-width:28rem] md:[--overview-width:36rem]",
   "4/3": "w-[60vw] sm:w-[18rem] md:w-[26rem] aspect-[4/3]",
   // Wider tiles keep 16:9 media at roughly the same height as the 4:3 rows.
   "16/9": "w-[80vw] sm:w-[24rem] md:w-[34rem] aspect-video",
 };
 
-export const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder = false, mediaAspect = "4/3" }: DraggableRowProps) => {
+export const DraggableRow = ({ items, direction = "left", initialOffset = 0, showBorder = false, linkPortfolioItems = false, mediaAspect = "4/3" }: DraggableRowProps) => {
   const reduceMotion = useReducedMotion();
   const directionMultiplier = direction === "left" ? 1 : -1;
   const rowRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef(-initialOffset);
   const velocityRef = useRef(0);
   const isDraggingRef = useRef(false);
+  const dragStartX = useRef(0);
+  const didDrag = useRef(false);
   const lastXRef = useRef(0);
   const lastTimeRef = useRef(0);
   const dragVelocityRef = useRef(0);
@@ -167,7 +177,7 @@ export const DraggableRow = ({ items, direction = "left", initialOffset = 0, sho
     const row = rowRef.current;
     if (!row) return;
 
-    const totalWidth = row.scrollWidth / 3;
+    const totalWidth = row.offsetWidth / 3;
 
     if (!isDraggingRef.current && Math.abs(velocityRef.current) > 0.01) {
       positionRef.current += velocityRef.current;
@@ -210,7 +220,8 @@ export const DraggableRow = ({ items, direction = "left", initialOffset = 0, sho
 
   const handleMouseDown = (e: React.MouseEvent) => {
     isDraggingRef.current = true;
-    lastXRef.current = e.clientX;
+    dragStartX.current = lastXRef.current = e.clientX;
+    didDrag.current = false;
     lastTimeRef.current = Date.now();
     dragVelocityRef.current = 0;
   };
@@ -220,6 +231,7 @@ export const DraggableRow = ({ items, direction = "left", initialOffset = 0, sho
     e.preventDefault();
 
     const currentX = e.clientX;
+    if (Math.abs(currentX - dragStartX.current) > 5) didDrag.current = true;
     const currentTime = Date.now();
     const deltaX = currentX - lastXRef.current;
     const deltaTime = currentTime - lastTimeRef.current;
@@ -249,7 +261,8 @@ export const DraggableRow = ({ items, direction = "left", initialOffset = 0, sho
 
   const handleTouchStart = (e: React.TouchEvent) => {
     isDraggingRef.current = true;
-    lastXRef.current = e.touches[0].clientX;
+    dragStartX.current = lastXRef.current = e.touches[0].clientX;
+    didDrag.current = false;
     lastTimeRef.current = Date.now();
     dragVelocityRef.current = 0;
   };
@@ -258,6 +271,7 @@ export const DraggableRow = ({ items, direction = "left", initialOffset = 0, sho
     if (!isDraggingRef.current) return;
 
     const currentX = e.touches[0].clientX;
+    if (Math.abs(currentX - dragStartX.current) > 5) didDrag.current = true;
     const currentTime = Date.now();
     const deltaX = currentX - lastXRef.current;
     const deltaTime = currentTime - lastTimeRef.current;
@@ -281,6 +295,9 @@ export const DraggableRow = ({ items, direction = "left", initialOffset = 0, sho
   return (
     <div
       className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+      onClickCapture={(event) => {
+        if (event.detail && didDrag.current) event.preventDefault();
+      }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -288,18 +305,28 @@ export const DraggableRow = ({ items, direction = "left", initialOffset = 0, sho
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
     >
       <div
         ref={rowRef}
-        className="flex gap-4 will-change-transform"
-        style={{ width: "fit-content" }}
+        className="flex w-max gap-4 pr-4 will-change-transform"
       >
         {duplicatedItems.map((item, index) => (
           <div
             key={index}
-            className={`relative flex-shrink-0 ${tileClasses[mediaAspect]} rounded-lg overflow-hidden ${showBorder ? "border border-gray-200" : ""}`}
+            className={`relative flex-shrink-0 ${tileClasses[mediaAspect]} ${mediaAspect === "natural" ? (item.overviewColumns === 3 ? "w-[calc(var(--overview-width)*2409/3200)]" : "w-[var(--overview-width)]") : ""} rounded-lg overflow-hidden ${showBorder ? "border border-gray-200" : ""}`}
           >
-            <MediaItem item={item} />
+            {linkPortfolioItems && item.href ? (
+              <a
+                href={item.href}
+                aria-label={item.alt}
+                draggable={false}
+                tabIndex={items.findIndex((entry) => entry.href === item.href) === index ? 0 : -1}
+                className="block h-full rounded-lg focus-visible:outline-offset-[-4px]"
+              >
+                <MediaItem item={item} natural={mediaAspect === "natural"} />
+              </a>
+            ) : <MediaItem item={item} natural={mediaAspect === "natural"} />}
           </div>
         ))}
       </div>
@@ -335,9 +362,9 @@ export const Header78 = (props: Header78Props) => {
       </div>
 
       <div id="work" className="relative left-1/2 flex w-screen -translate-x-1/2 scroll-mt-4 flex-col gap-4">
-        {visibleRows.includes(1) && <DraggableRow items={row1} direction="left" mediaAspect={mediaAspect} />}
-        {visibleRows.includes(2) && <DraggableRow items={row2} direction="right" showBorder mediaAspect={mediaAspect} />}
-        {visibleRows.includes(3) && <DraggableRow items={row3} direction="left" initialOffset={208} mediaAspect={mediaAspect} />}
+        {visibleRows.includes(1) && <DraggableRow linkPortfolioItems={props.linkPortfolioItems} items={row1} direction="left" mediaAspect={mediaAspect} />}
+        {visibleRows.includes(2) && <DraggableRow linkPortfolioItems={props.linkPortfolioItems} items={row2} direction="right" showBorder mediaAspect={mediaAspect} />}
+        {visibleRows.includes(3) && <DraggableRow linkPortfolioItems={props.linkPortfolioItems} items={row3} direction="left" initialOffset={208} mediaAspect={mediaAspect} />}
       </div>
     </section>
   );
@@ -365,61 +392,61 @@ export const Header78Defaults: Props = {
 
   // Row 1: Logo Animations
   row1: [
-    { type: "lottie", src: "/case-study/savory/hero-logo.json", alt: "Savory", bgColor: "#B3C3D6" },
-    { type: "video", src: "/portfolio/logos/orbio-logo.webm", alt: "Orbio", bgColor: "#0B0B0C" },
-    { type: "lottie", src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json", alt: "NextDim", bgColor: "#181735" },
-    { type: "video", src: "/case-study/spark/hero-wordmark.webm", alt: "Spark Studios logo animation", bgColor: "#F4F1EA" },
-    { type: "lottie", src: "/portfolio/logos/ElevateLogoBGTop.json", alt: "Elevate", bgColor: "#000000", fit: "cover" },
-    { type: "lottie", src: "/portfolio/logos/aero-logo.json", alt: "Aero", bgColor: "#63f3c0" },
-    { type: "lottie", src: "/portfolio/logos/airporteexecutive-logo.json", alt: "Airport Executive", bgColor: "#000000" },
-    { type: "lottie", src: "/portfolio/logos/brevidee-logo.json", alt: "Brevidee", bgColor: "#FCE5E9" },
+    { type: "lottie", src: "/case-study/savory/hero-logo.json", href: "/work/savory", alt: "Savory", bgColor: "#B3C3D6" },
+    { type: "video", src: "/portfolio/logos/orbio-logo.webm", href: "/work/orbio", alt: "Orbio", bgColor: "#0B0B0C" },
+    { type: "lottie", src: "/portfolio/logos/nextdim-combined-logo-scenes-wordmark-footer-reveal.lottie.json", href: "/work/next-dimension", alt: "NextDim", bgColor: "#181735" },
+    { type: "video", src: "/case-study/spark/hero-wordmark.webm", href: "/work/spark", alt: "Spark Studios logo animation", bgColor: "#F4F1EA" },
+    { type: "lottie", src: "/portfolio/logos/ElevateLogoBGTop.json", href: "/work/elevate", alt: "Elevate", bgColor: "#000000", fit: "cover" },
+    { type: "lottie", src: "/portfolio/logos/aero-logo.json", href: "/work/aero", alt: "Aero", bgColor: "#63f3c0" },
+    { type: "lottie", src: "/portfolio/logos/airporteexecutive-logo.json", href: "/work/airport-executive", alt: "Airport Executive", bgColor: "#000000" },
+    { type: "lottie", src: "/portfolio/logos/brevidee-logo.json", href: "/work/brevidee", alt: "Brevidee", bgColor: "#FCE5E9" },
     { type: "lottie", src: "/portfolio/logos/focal-logo.json", alt: "Focal", bgColor: "#0065cc" },
-    { type: "lottie", src: "/portfolio/logos/foxberman-logo.json", alt: "Foxberman", bgColor: "#f3603c" },
+    { type: "lottie", src: "/portfolio/logos/foxberman-logo.json", href: "/work/fox-berman", alt: "Foxberman", bgColor: "#f3603c" },
     { type: "lottie", src: "/portfolio/logos/lauraceara-logo.json", alt: "Laura Ceara", bgColor: "#123951" },
-    { type: "lottie", src: "/portfolio/logos/medihuanna-logo.json", alt: "Medihuanna", bgColor: "#11403f" },
-    { type: "lottie", src: "/portfolio/logos/periti-logo.json", alt: "Periti", bgColor: "#000000" },
-    { type: "lottie", src: "/portfolio/logos/sweetgrass-logo.json", alt: "Sweetgrass", bgColor: "#434343" },
-    { type: "lottie", src: "/portfolio/logos/ventur-logo.json", alt: "Ventur", bgColor: "#9047ff" },
-    { type: "lottie", src: "/portfolio/logos/wingnut-logo.json", alt: "Wingnut", bgColor: "#77aeb1" },
+    { type: "lottie", src: "/portfolio/logos/medihuanna-logo.json", href: "/work/medihuanna", alt: "Medihuanna", bgColor: "#11403f" },
+    { type: "lottie", src: "/portfolio/logos/periti-logo.json", href: "/work/periti", alt: "Periti", bgColor: "#000000" },
+    { type: "lottie", src: "/portfolio/logos/sweetgrass-logo.json", href: "/work/sweetgrass", alt: "Sweetgrass", bgColor: "#434343" },
+    { type: "lottie", src: "/portfolio/logos/ventur-logo.json", href: "/work/ventur", alt: "Ventur", bgColor: "#9047ff" },
+    { type: "lottie", src: "/portfolio/logos/wingnut-logo.json", href: "/work/wingnut", alt: "Wingnut", bgColor: "#77aeb1" },
     { type: "lottie", src: "/portfolio/logos/lyntics-logo.json", alt: "Lyntics", bgColor: "#374652" },
   ],
 
   // Row 2: Identity/Bento Shots
   row2: [
-    { type: "image", src: "/portfolio/identities/nathalie-sadler-bento.webp", alt: "Nathalie Sadler brand identity", fit: "contain" },
-    { type: "image", src: "/portfolio/identities/savory-bento.webp", alt: "Savory Identity" },
-    { type: "image", src: "/portfolio/identities/orbio-bento.webp", alt: "Orbio Identity" },
-    { type: "image", src: "/portfolio/identities/spark-bento-figma.jpg", alt: "Spark Studios identity and merchandise" },
-    { type: "image", src: "/portfolio/identities/elevate-bento.webp", alt: "Elevate Identity" },
-    { type: "image", src: "/portfolio/identities/nexdim-bento.webp", alt: "NextDim Identity" },
-    { type: "image", src: "/portfolio/identities/aero-bento.webp", alt: "Aero Identity" },
-    { type: "image", src: "/portfolio/identities/airport-executive-bento.webp", alt: "Airport Executive Identity" },
-    { type: "image", src: "/portfolio/identities/brevidee-bento.webp", alt: "Brevidee Identity" },
-    { type: "image", src: "/portfolio/identities/forberman-bento.webp", alt: "Foxberman Identity" },
+    { type: "image", src: "/portfolio/identities/nathalie-sadler-bento.webp", href: "/work/nathalie-sadler", alt: "Nathalie Sadler brand identity", fit: "contain" },
+    { type: "image", src: "/portfolio/identities/savory-bento.webp", href: "/work/savory", alt: "Savory Identity" },
+    { type: "image", src: "/portfolio/identities/orbio-bento.webp", href: "/work/orbio", alt: "Orbio Identity" },
+    { type: "image", src: "/portfolio/identities/spark-bento-figma.jpg", href: "/work/spark", alt: "Spark Studios identity and merchandise" },
+    { type: "image", src: "/portfolio/identities/elevate-bento.webp", href: "/work/elevate", alt: "Elevate Identity" },
+    { type: "image", src: "/portfolio/identities/nexdim-bento.webp", href: "/work/next-dimension", alt: "NextDim Identity" },
+    { type: "image", src: "/portfolio/identities/aero-bento.webp", href: "/work/aero", alt: "Aero Identity" },
+    { type: "image", src: "/portfolio/identities/airport-executive-bento.webp", href: "/work/airport-executive", alt: "Airport Executive Identity" },
+    { type: "image", src: "/portfolio/identities/brevidee-bento.webp", href: "/work/brevidee", alt: "Brevidee Identity" },
+    { type: "image", src: "/portfolio/identities/forberman-bento.webp", href: "/work/fox-berman", alt: "Foxberman Identity" },
     { type: "image", src: "/portfolio/identities/laura-ceara-bento.webp", alt: "Laura Ceara Identity" },
     { type: "image", src: "/portfolio/identities/lyntics-bento.webp", alt: "Lyntics Identity" },
-    { type: "image", src: "/portfolio/identities/medihuanna-bento.webp", alt: "Medihuanna Identity" },
-    { type: "image", src: "/portfolio/identities/periti-bento.webp", alt: "Periti Identity" },
-    { type: "image", src: "/portfolio/identities/sweetgrass-bento.webp", alt: "Sweetgrass Identity" },
-    { type: "image", src: "/portfolio/identities/ventur-bento.webp", alt: "Ventur Identity" },
-    { type: "image", src: "/portfolio/identities/wingnut-bento.webp", alt: "Wingnut Identity" },
+    { type: "image", src: "/portfolio/identities/medihuanna-bento.webp", href: "/work/medihuanna", alt: "Medihuanna Identity" },
+    { type: "image", src: "/portfolio/identities/periti-bento.webp", href: "/work/periti", alt: "Periti Identity" },
+    { type: "image", src: "/portfolio/identities/sweetgrass-bento.webp", href: "/work/sweetgrass", alt: "Sweetgrass Identity" },
+    { type: "image", src: "/portfolio/identities/ventur-bento.webp", href: "/work/ventur", alt: "Ventur Identity" },
+    { type: "image", src: "/portfolio/identities/wingnut-bento.webp", href: "/work/wingnut", alt: "Wingnut Identity" },
   ],
 
   // Row 3: Website Shots
   row3: [
-    { type: "image", src: "/portfolio/websites/savory-web.webp", alt: "Savory Website" },
-    { type: "image", src: "/portfolio/websites/orbio-web.webp", alt: "Orbio Website" },
-    { type: "image", src: "/portfolio/websites/elevate-web.webp", alt: "Elevate Website" },
-    { type: "image", src: "/portfolio/websites/nextdim-web-portfolio.webp", alt: "NextDim Website" },
-    { type: "image", src: "/portfolio/websites/aero-web.webp", alt: "Aero Website" },
-    { type: "image", src: "/portfolio/websites/spark-website-figma-updated.jpg", alt: "Spark Studios website design" },
-    { type: "video", src: "/portfolio/websites/airport-executive-web.mp4", alt: "Airport Executive Website" },
-    { type: "video", src: "/portfolio/websites/brevidee-web.mp4", alt: "Brevidee Website" },
-    { type: "video", src: "/portfolio/websites/fox-berman-web.mp4", alt: "Foxberman Website" },
+    { type: "image", src: "/portfolio/websites/savory-web.webp", href: "/work/savory", alt: "Savory Website" },
+    { type: "image", src: "/portfolio/websites/orbio-web.webp", href: "/work/orbio", alt: "Orbio Website" },
+    { type: "image", src: "/portfolio/websites/elevate-web.webp", href: "/work/elevate", alt: "Elevate Website" },
+    { type: "image", src: "/portfolio/websites/nextdim-web-portfolio.webp", href: "/work/next-dimension", alt: "NextDim Website" },
+    { type: "image", src: "/portfolio/websites/aero-web.webp", href: "/work/aero", alt: "Aero Website" },
+    { type: "image", src: "/portfolio/websites/spark-website-figma-updated.jpg", href: "/work/spark", alt: "Spark Studios website design" },
+    { type: "video", src: "/portfolio/websites/airport-executive-web.mp4", href: "/work/airport-executive", alt: "Airport Executive Website" },
+    { type: "video", src: "/portfolio/websites/brevidee-web.mp4", href: "/work/brevidee", alt: "Brevidee Website" },
+    { type: "video", src: "/portfolio/websites/fox-berman-web.mp4", href: "/work/fox-berman", alt: "Foxberman Website" },
     { type: "image", src: "/portfolio/websites/laura-ceara-web.webp", alt: "Laura Ceara Website" },
-    { type: "video", src: "/portfolio/websites/periti-web.mp4", alt: "Periti Website" },
-    { type: "image", src: "/portfolio/websites/sweetgras-web.webp", alt: "Sweetgrass Website" },
-    { type: "image", src: "/portfolio/websites/ventur-web.webp", alt: "Ventur Website" },
-    { type: "video", src: "/portfolio/websites/wingnut-web.mp4", alt: "Wingnut Website" },
+    { type: "video", src: "/portfolio/websites/periti-web.mp4", href: "/work/periti", alt: "Periti Website" },
+    { type: "image", src: "/portfolio/websites/sweetgras-web.webp", href: "/work/sweetgrass", alt: "Sweetgrass Website" },
+    { type: "image", src: "/portfolio/websites/ventur-web.webp", href: "/work/ventur", alt: "Ventur Website" },
+    { type: "video", src: "/portfolio/websites/wingnut-web.mp4", href: "/work/wingnut", alt: "Wingnut Website" },
   ],
 };
