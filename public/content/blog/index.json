@@ -17,6 +17,21 @@
   {
     "category": "Logo Design",
     "categorySlug": "logo-design",
+    "slug": "whiskey-logos",
+    "url": "/blog/whiskey-logos",
+    "title": "45 Best Whiskey Logos Explained by a Brand Designer [2026]",
+    "description": "45 whiskey logos explained by a brand designer: Scotch icons like Johnnie Walker and The Macallan, bourbons like Jack Daniel's and Maker's Mark, Irish, Japanese and world whisky, and craft distilleries.",
+    "date": "Nov 22, 2026",
+    "readTime": "16 min read",
+    "image": {
+      "src": "/images/blog/whiskey-logos/cover-collage.webp",
+      "alt": "Whiskey bar back-bar lined with Johnnie Walker, Jack Daniel's, Jameson, Glenfiddich, The Macallan, Maker's Mark and other whiskey bottles",
+      "thumbnail": "/images/blog/whiskey-logos/cover-collage-768w.webp"
+    }
+  },
+  {
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
     "slug": "beer-logos",
     "url": "/blog/beer-logos",
     "title": "45 Best Beer Logos Explained by a Brand Designer [2026]",
