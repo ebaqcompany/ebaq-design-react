@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88px" height="20px" viewBox="0 0 88 20" class="lt-header-logo d-none d-lg-inline-block" title="Life Time 'LT' Logo">
+					<g class="lt-logo-text" fill="#0e0e0e">
+						<path class="lt-logo-life" d="M10,15v5H0V0h5v15H10z M11,0v20h5V0H11z M27,5V0H17v20h5v-8h4V8h-4V5H27z M38,5V0H28v20h10v-5h-5v-3h4V8h-4V5H38z " fill="#0e0e0e"></path>
+						<path class="lt-logo-time" d="M88,5V0H78v20h10v-5h-5v-3h4V8h-4V5H88z M41,0v5h3v15h5V5h3V0H41z M53,0v20h5V0H53z M72,0h-2.5L68,10L66.5,0H64 h-5v20h5V9l2,11h4l2-11v11h5V0H72z" fill="#0e0e0e"></path>
+					</g>
+					
+				</svg>

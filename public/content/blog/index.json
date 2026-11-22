@@ -15,6 +15,36 @@
     }
   },
   {
+    "slug": "gym-logos",
+    "url": "/blog/gym-logos",
+    "title": "45 Best Gym Logos Explained by a Brand Designer [2026]",
+    "description": "45 gym and fitness logos with names, explained by a brand designer: big chains like Planet Fitness, LA Fitness, and Crunch, premium clubs like Life Time and Equinox, and boutique studios.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "16 min read",
+    "date": "Nov 22, 2026",
+    "image": {
+      "src": "/images/blog/gym-logos/gym-logos-hero.webp",
+      "alt": "Gym owner in a modern gym looking at a screen showing 45 gym and fitness brand logos",
+      "thumbnail": "/images/blog/gym-logos/gym-logos-hero-768w.webp"
+    }
+  },
+  {
+    "slug": "jewelry-logos",
+    "url": "/blog/jewelry-logos",
+    "title": "45 Best Jewelry Logos Explained by a Brand Designer [2026]",
+    "description": "45 jewelry brand logos with names, explained by a brand designer: luxury houses like Cartier, Tiffany & Co., and Bulgari, designer labels, accessible brands, and jewelry retailers.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "16 min read",
+    "date": "Nov 22, 2026",
+    "image": {
+      "src": "/images/blog/jewelry-logos/jewelry-logos-hero.webp",
+      "alt": "Jewelry designer at a workbench looking at a screen showing 45 jewelry brand logos",
+      "thumbnail": "/images/blog/jewelry-logos/jewelry-logos-hero-768w.webp"
+    }
+  },
+  {
     "slug": "hotel-logos",
     "url": "/blog/hotel-logos",
     "title": "45 Best Hotel Logos Explained by a Brand Designer [2026]",
@@ -434,20 +464,6 @@
       "alt": "14 Best SaaS Website Examples in 2026 | A Designer's Review",
       "sourceSrc": "/images/blog/saas-websites/slide-01.webp",
       "thumbnail": "/images/blog/best-saas-websites-768w.webp"
-    }
-  },
-  {
-    "slug": "jewelry-logos",
-    "url": "/blog/jewelry-logos",
-    "title": "40+ Stunning Jewelry Logo Designs in 2026 [Luxury Brands Gallery]",
-    "description": "12 iconic luxury jewelry brand logos analyzed — Cartier, Tiffany, Swarovski, Pandora and more. What makes these jewellery brands recognizable.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "9 min read",
-    "date": "Feb 1, 2026",
-    "image": {
-      "src": "/images/blog/jewelry-logos/og.webp",
-      "alt": "40+ Stunning Jewelry Logo Designs in 2026 [Luxury Brands Gallery]"
     }
   },
   {
@@ -1429,20 +1445,6 @@
     "image": {
       "src": "/images/blog/graphic-design-firms/top-new-york-design-firms.webp",
       "alt": "Top 10 New York Graphic Design Firms in 2026"
-    }
-  },
-  {
-    "slug": "gym-logos",
-    "url": "/blog/gym-logos",
-    "title": "40 Best Gym Logos in 2026 (Fitness Brand Inspiration)",
-    "description": "Explore the best gym logos in 2026. Get inspired by fitness brand designs from top gyms and health clubs.",
-    "category": "Logo Design",
-    "categorySlug": "logo-design",
-    "readTime": "4 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/gym-logos/best-gym-logos-image.webp",
-      "alt": "40 Best Gym Logos in 2026 (Fitness Brand Inspiration)"
     }
   },
   {
