@@ -1,5 +1,20 @@
 [
   {
+    "slug": "beauty-logos",
+    "url": "/blog/beauty-logos",
+    "title": "36 Beauty Logos Explained",
+    "description": "36 beauty brand logos explained by a brand designer: skincare, makeup and cosmetics, fragrance and hair care, from Chanel and Dior to Glossier, Fenty Beauty and The Ordinary.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "13 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/beauty-logos/cover-collage.webp",
+      "alt": "Beauty Logos cover collage with the Aēsop store sign at Chadstone Shopping Centre in Melbourne",
+      "thumbnail": "/images/blog/beauty-logos/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "veterinary-logos",
     "url": "/blog/veterinary-logos",
     "title": "36 Vet and Pet Logos Explained",
