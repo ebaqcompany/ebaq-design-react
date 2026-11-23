@@ -1,8 +1,23 @@
 [
   {
+    "slug": "brand-identity-cost",
+    "url": "/blog/brand-identity-cost",
+    "title": "How Much a Complete Brand Identity Costs",
+    "description": "A complete brand identity costs $300 to $10,000 with a freelancer, $10,000 to $25,000 with a studio and $60,000+ with an agency. 13 published packages with prices and timelines.",
+    "category": "Branding",
+    "categorySlug": "branding",
+    "readTime": "11 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/brand-identity-cost/cover-collage.webp",
+      "alt": "Brand identity cost and timeline cover collage",
+      "thumbnail": "/images/blog/brand-identity-cost/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "design-subscription-services",
     "url": "/blog/design-subscription-services",
-    "title": "12 Design Subscription Services Worth Hiring in 2026 (Prices Checked)",
+    "title": "12 Design Subscription Services",
     "description": "12 design subscription studios and solo designers with prices checked on their own sites, from Awesomic at $1,799 a month to Designjoy and Makeover Studio, plus how to choose.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -17,7 +32,7 @@
   {
     "slug": "consulting-logos",
     "url": "/blog/consulting-logos",
-    "title": "27 Best Consulting Logos Explained by a Brand Designer [2026]",
+    "title": "27 Consulting Logos Explained",
     "description": "27 consulting firm logos explained by a brand designer: McKinsey, BCG and Bain, the Big Four, Accenture and other large firms, plus specialist consultancies like ZS, Slalom and Korn Ferry.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -32,7 +47,7 @@
   {
     "slug": "best-senior-freelance-brand-designers",
     "url": "/blog/best-senior-freelance-brand-designers",
-    "title": "Best Senior Freelance Brand Designers to Hire (and How to Choose One) [2026]",
+    "title": "Best Senior Freelance Brand Designers",
     "description": "9 senior freelance brand designers in 8 countries, with the facts from each public profile, listed rates, and a checklist for choosing one.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -47,7 +62,7 @@
   {
     "slug": "branding-agencies-one-week",
     "url": "/blog/branding-agencies-one-week",
-    "title": "13 Branding Agencies That Deliver in One Week (or Two)",
+    "title": "13 Branding Agencies That Deliver in a Week",
     "description": "13 branding agencies and studios that deliver a brand identity in one or two weeks, with locations, prices, timelines, past work and contact details.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -55,14 +70,14 @@
     "date": "Nov 23, 2026",
     "image": {
       "src": "/images/blog/branding-agencies-one-week/cover-collage.webp",
-      "alt": "13 Branding Agencies That Deliver in One Week (or Two)",
+      "alt": "13 Branding Agencies That Deliver in a Week",
       "thumbnail": "/images/blog/branding-agencies-one-week/cover-collage-768w.webp"
     }
   },
   {
     "slug": "how-long-does-branding-take",
     "url": "/blog/how-long-does-branding-take",
-    "title": "How Long Does Branding Take? Real Timelines From 10 Projects",
+    "title": "How Long Does Branding Take?",
     "description": "A brand identity takes one week with a senior designer and 3–9 months at many agencies. Real timelines from 10 projects, day by day, and what slows branding.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -79,7 +94,7 @@
     "categorySlug": "logo-design",
     "slug": "venture-capital-logos",
     "url": "/blog/venture-capital-logos",
-    "title": "45 Best Venture Capital Logos Explained by a Brand Designer [2026]",
+    "title": "45 Venture Capital Logos Explained",
     "description": "45 venture capital firm logos explained by a brand designer: Silicon Valley legends like Sequoia, a16z and Accel, seed funds like Y Combinator, growth investors, European VCs, and specialist firms.",
     "date": "Nov 22, 2026",
     "readTime": "16 min read",
@@ -94,7 +109,7 @@
     "categorySlug": "logo-design",
     "slug": "private-equity-logos",
     "url": "/blog/private-equity-logos",
-    "title": "45 Best Private Equity Logos Explained by a Brand Designer [2026]",
+    "title": "45 Private Equity Logos Explained",
     "description": "45 private equity firm logos explained by a brand designer: giants like Blackstone, KKR and Carlyle, European buyout firms, tech investors like Thoma Bravo and Silver Lake, and classic and newer firms.",
     "date": "Nov 22, 2026",
     "readTime": "16 min read",
@@ -109,7 +124,7 @@
     "categorySlug": "logo-design",
     "slug": "vodka-logos",
     "url": "/blog/vodka-logos",
-    "title": "45 Best Vodka Logos Explained by a Brand Designer [2026]",
+    "title": "45 Vodka Logos Explained",
     "description": "45 vodka logos explained by a brand designer: global icons like Absolut, Grey Goose and Smirnoff, Polish and Ukrainian classics, American vodkas like Tito's, luxury brands, and Nordic and world vodka.",
     "date": "Nov 22, 2026",
     "readTime": "16 min read",
@@ -124,7 +139,7 @@
     "categorySlug": "logo-design",
     "slug": "whiskey-logos",
     "url": "/blog/whiskey-logos",
-    "title": "45 Best Whiskey Logos Explained by a Brand Designer [2026]",
+    "title": "45 Whiskey Logos Explained",
     "description": "45 whiskey logos explained by a brand designer: Scotch icons like Johnnie Walker and The Macallan, bourbons like Jack Daniel's and Maker's Mark, Irish, Japanese and world whisky, and craft distilleries.",
     "date": "Nov 22, 2026",
     "readTime": "16 min read",
@@ -139,7 +154,7 @@
     "categorySlug": "logo-design",
     "slug": "beer-logos",
     "url": "/blog/beer-logos",
-    "title": "45 Best Beer Logos Explained by a Brand Designer [2026]",
+    "title": "45 Beer Logos Explained",
     "description": "45 beer logos explained by a brand designer: global icons like Heineken, Guinness and Corona, European and Asian classics, American craft breweries, and design-led independents like Mikkeller and BrewDog.",
     "date": "Nov 22, 2026",
     "readTime": "16 min read",
@@ -154,7 +169,7 @@
     "categorySlug": "logo-design",
     "slug": "restaurant-logos",
     "url": "/blog/restaurant-logos",
-    "title": "45 Best Restaurant Logos Explained by a Brand Designer [2026]",
+    "title": "45 Restaurant Logos Explained",
     "description": "45 restaurant logos explained by a brand designer: fast food icons like McDonald's and KFC, fast casual and coffee brands, casual dining chains, and fine dining restaurants like Nobu and Noma.",
     "date": "Nov 22, 2026",
     "readTime": "16 min read",
@@ -167,7 +182,7 @@
   {
     "slug": "gym-logos",
     "url": "/blog/gym-logos",
-    "title": "45 Best Gym Logos Explained by a Brand Designer [2026]",
+    "title": "45 Gym Logos Explained",
     "description": "45 gym and fitness logos with names, explained by a brand designer: big chains like Planet Fitness, LA Fitness, and Crunch, premium clubs like Life Time and Equinox, and boutique studios.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -182,7 +197,7 @@
   {
     "slug": "jewelry-logos",
     "url": "/blog/jewelry-logos",
-    "title": "45 Best Jewelry Logos Explained by a Brand Designer [2026]",
+    "title": "45 Jewelry Logos Explained",
     "description": "45 jewelry brand logos with names, explained by a brand designer: luxury houses like Cartier, Tiffany & Co., and Bulgari, designer labels, accessible brands, and jewelry retailers.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -197,7 +212,7 @@
   {
     "slug": "hotel-logos",
     "url": "/blog/hotel-logos",
-    "title": "45 Best Hotel Logos Explained by a Brand Designer [2026]",
+    "title": "45 Hotel Logos Explained",
     "description": "45 hotel logos explained by a brand designer: global chains like Marriott and Hilton, luxury and 5-star brands like Four Seasons and Aman, boutique hotels, and iconic resorts.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -212,7 +227,7 @@
   {
     "slug": "fashion-logos",
     "url": "/blog/fashion-logos",
-    "title": "45 Best Fashion Brand Logos Explained by a Brand Designer [2026]",
+    "title": "45 Fashion Brand Logos Explained",
     "description": "45 fashion and clothing brand logos with names, explained by a brand designer: luxury houses like Gucci, Chanel, and Hermès, designer labels, accessories, and streetwear.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -227,7 +242,7 @@
   {
     "slug": "architecture-logos",
     "url": "/blog/architecture-logos",
-    "title": "45 Best Architecture Firm Logos Explained by a Brand Designer [2026]",
+    "title": "45 Architecture Firm Logos Explained",
     "description": "45 architecture firm logos explained by a brand designer, from Gensler, SOM, and Zaha Hadid Architects to BIG, Snøhetta, Foster + Partners, and Studio Gang.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -242,7 +257,7 @@
   {
     "slug": "b2b-logos",
     "url": "/blog/b2b-logos",
-    "title": "45 Best B2B Company Logos Explained by a Brand Designer [2026]",
+    "title": "45 B2B Company Logos Explained",
     "description": "45 B2B company logos explained by a brand designer, from McKinsey, Accenture, and Deloitte to FedEx, Caterpillar, ServiceNow, and Deel.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -257,7 +272,7 @@
   {
     "slug": "fintech-logos",
     "url": "/blog/fintech-logos",
-    "title": "45 Best Fintech Logos Explained by a Brand Designer [2026]",
+    "title": "45 Fintech Logos Explained",
     "description": "45 fintech logos explained by a brand designer, from Stripe, PayPal, and Wise to Robinhood, Coinbase, Klarna, and Chime.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -272,7 +287,7 @@
   {
     "slug": "cyber-security-logos",
     "url": "/blog/cyber-security-logos",
-    "title": "45 Best Cyber Security Logos Explained by a Brand Designer [2026]",
+    "title": "45 Cyber Security Logos Explained",
     "description": "45 cyber security logos explained by a brand designer, from CrowdStrike, Palo Alto Networks, and Cloudflare to Wiz, 1Password, NordVPN, and the newest security startups.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -287,7 +302,7 @@
   {
     "slug": "biotech-startup-branding",
     "url": "/blog/biotech-startup-branding",
-    "title": "Biotech Logos: 45 Best Biotech Company Logos Explained [2026]",
+    "title": "45 Biotech Logos Explained",
     "description": "45 biotech logos explained by a brand designer, from Amgen, Vertex, and BioNTech to CRISPR, Recursion, Ginkgo Bioworks, and the newest biotech startups.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -302,7 +317,7 @@
   {
     "slug": "drone-logos",
     "url": "/blog/drone-logos",
-    "title": "45 Best Drone Company Logos Explained by a Brand Designer [2026]",
+    "title": "45 Drone Company Logos Explained",
     "description": "45 drone company logos explained by a brand designer, from DJI, Skydio, and Parrot to Zipline, Wing, Anduril, and Joby Aviation.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -317,7 +332,7 @@
   {
     "slug": "ai-startups-logos",
     "url": "/blog/ai-startups-logos",
-    "title": "AI Startup Logos: 45 Hot AI Company Logos & Why They Look Alike [2026]",
+    "title": "45 AI Startup Logos Explained",
     "description": "Why so many AI logos use hexagons and swirls, plus 45 of the hottest AI startup logos of 2026 explained by a brand designer, from Mistral and Cognition to Harvey, Suno, and Midjourney.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -332,7 +347,7 @@
   {
     "slug": "healthcare-logos",
     "url": "/blog/healthcare-logos",
-    "title": "45 Best Healthcare Logos Explained by a Brand Designer [2026]",
+    "title": "45 Healthcare Logos Explained",
     "description": "45 healthcare logos explained by a brand designer, from Mayo Clinic and Cleveland Clinic to Pfizer, CVS Health, Oscar, and Hims & Hers.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -347,7 +362,7 @@
   {
     "slug": "saas-logos",
     "url": "/blog/saas-logos",
-    "title": "45 Best SaaS Logos Explained by a Brand Designer [2026]",
+    "title": "45 SaaS Logos Explained",
     "description": "45 SaaS company logos explained by a brand designer, from Asana, HubSpot, and GitHub to Ramp, Vanta, Cursor, and ElevenLabs.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -362,7 +377,7 @@
   {
     "slug": "tech-startup-logos",
     "url": "/blog/tech-startup-logos",
-    "title": "Best Tech Logos: 45 Famous Tech Company & Startup Logos Explained [2026]",
+    "title": "45 Tech Company Logos Explained",
     "description": "45 tech company logos explained by a brand designer, from Apple, Google, and Microsoft to Spotify, Nvidia, OpenAI, and Stripe.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -377,7 +392,7 @@
   {
     "slug": "bank-logos",
     "url": "/blog/bank-logos",
-    "title": "45 Best Bank Logos & Their Meanings (US, Global & Digital Banks) [2026]",
+    "title": "45 Bank Logos Explained",
     "description": "45 bank logos with names and meanings, from Chase, Bank of America, and HSBC to Revolut and Monzo, each annotated by a brand designer.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -392,7 +407,7 @@
   {
     "slug": "robotics-logos",
     "url": "/blog/robotics-logos",
-    "title": "36 Best Robotics Company Logos for Design Inspiration [2026]",
+    "title": "36 Robotics Logos Explained",
     "description": "36 robotics company logos, from humanoid startups like Figure, 1X, and Unitree to Boston Dynamics and iRobot, with a designer's notes on what makes each one work.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -407,7 +422,7 @@
   {
     "slug": "best-nhl-logos",
     "url": "/blog/best-nhl-logos",
-    "title": "All 32 NHL Logos Ranked & Explained [2026–27 Season]",
+    "title": "All 32 NHL Logos Ranked",
     "description": "Every NHL team logo ranked from best to worst, with a designer's breakdown of all 32 crests, from the Rangers and Red Wings to the new Utah Mammoth.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -422,7 +437,7 @@
   {
     "slug": "designjoy-alternatives",
     "url": "/blog/designjoy-alternatives",
-    "title": "Designjoy Alternatives (2026): 6 Options With Checked Prices",
+    "title": "6 Designjoy Alternatives",
     "description": "Designjoy costs $4,995/mo. Compare ManyPixels, Penji, Design Pickle, DesignMe, Superside and a fixed-scope Brand Sprint, with prices from each vendor's page.",
     "category": "Buying Guides",
     "categorySlug": "buying-guides",
@@ -437,7 +452,7 @@
   {
     "slug": "logo-design-cost",
     "url": "/blog/logo-design-cost",
-    "title": "Logo Design and Branding Cost: Prices, Scope & What You Get",
+    "title": "Logo Design Cost",
     "description": "Compare logo design and branding costs by scope, from a focused logo to strategy and a full identity, with published pricing examples.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -452,7 +467,7 @@
   {
     "slug": "black-friday",
     "url": "/blog/black-friday",
-    "title": "Black Friday Deals for Designers 2026",
+    "title": "Black Friday Deals for Designers",
     "description": "Compare 2026 Black Friday deals for designers on software, mockups and web tools, plus Amazon picks for studio hardware, Pantone guides and design books.",
     "category": "Buying Guides",
     "categorySlug": "buying-guides",
@@ -693,7 +708,7 @@
   {
     "slug": "brand-slogans",
     "url": "/blog/brand-slogans",
-    "title": "150 Famous Brand Slogans & Taglines by Industry (2026)",
+    "title": "150 Famous Brand Slogans",
     "description": "150 famous brand slogans and taglines from Nike, Apple, BMW, GEICO and more, grouped by industry, plus the 5-step process I use to write a slogan.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1133,7 +1148,7 @@
   {
     "slug": "brand-voice",
     "url": "/blog/brand-voice",
-    "title": "7 Best Examples of Brand Voice & Tone in 2026",
+    "title": "7 Brand Voice Examples",
     "description": "Explore the best brand voice examples in 2026. Learn how top brands develop unique voices and maintain consistent tone.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1141,7 +1156,7 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/brand-voice/cover-collage.webp",
-      "alt": "7 Best Examples of Brand Voice & Tone in 2026",
+      "alt": "7 Brand Voice Examples",
       "thumbnail": "/images/blog/brand-voice/cover-collage-768w.webp"
     }
   },
@@ -1206,7 +1221,7 @@
   {
     "slug": "branding-package",
     "url": "/blog/branding-package",
-    "title": "Branding Package For Small Businesses & Startups in 2026",
+    "title": "Branding Packages for Startups",
     "description": "What a small-business branding package includes, real client examples, current pricing, and my $3,000 identity package delivered in about one week.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1214,14 +1229,14 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/branding-package/branding-package-three.webp",
-      "alt": "Branding Package For Small Businesses & Startups in 2026",
+      "alt": "Branding Packages for Startups",
       "thumbnail": "/images/blog/branding-package/branding-package-three-768w.webp"
     }
   },
   {
     "slug": "branding-process",
     "url": "/blog/branding-process",
-    "title": "My Branding Process: From Client Call To Delivery in 2026",
+    "title": "My Branding Process",
     "description": "Learn the complete branding process for 2026. From initial client call to final project delivery.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1229,14 +1244,14 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/branding-process/cover-collage.webp",
-      "alt": "My Branding Process: From Client Call To Delivery in 2026",
+      "alt": "My Branding Process",
       "thumbnail": "/images/blog/branding-process/cover-collage-768w.webp"
     }
   },
   {
     "slug": "branding-workshop",
     "url": "/blog/branding-workshop",
-    "title": "How To Run A Branding Workshop in 2026",
+    "title": "How to Run a Branding Workshop",
     "description": "Learn how to run a branding workshop in 2026. Step-by-step guide with exercises, templates, and facilitation tips.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1244,7 +1259,7 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/branding-workshop/cover-collage.webp",
-      "alt": "How To Run A Branding Workshop in 2026",
+      "alt": "How to Run a Branding Workshop",
       "thumbnail": "/images/blog/branding-workshop/cover-collage-768w.webp"
     }
   },
@@ -1424,7 +1439,7 @@
   {
     "slug": "create-style-guide",
     "url": "/blog/create-style-guide",
-    "title": "How To Create A Brand Style Guide in 2026",
+    "title": "How to Create a Brand Style Guide",
     "description": "Learn how to create a brand style guide in 2026. Step-by-step process for building comprehensive brand guidelines.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1432,7 +1447,7 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/create-style-guide/cover-collage.webp",
-      "alt": "How To Create A Brand Style Guide in 2026",
+      "alt": "How to Create a Brand Style Guide",
       "thumbnail": "/images/blog/create-style-guide/cover-collage-768w.webp"
     }
   },
@@ -1645,7 +1660,7 @@
   {
     "slug": "law-firm-logos",
     "url": "/blog/law-firm-logos",
-    "title": "54 Best Law Firm Logos Explained by a Brand Designer [2026]",
+    "title": "54 Law Firm Logos Explained",
     "description": "54 law firm logos explained by a brand designer: New York's elite firms, global giants, the London Magic Circle, tech and IP firms, litigation boutiques like Fox Berman, and international firms.",
     "category": "Logo Design",
     "categorySlug": "logo-design",

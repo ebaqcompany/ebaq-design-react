@@ -5,7 +5,7 @@ P='public/content/blog/biotech-startup-branding.json'; old=json.load(open(P))
 I='/images/blog/biotech-startup-branding'
 B=biotech.B
 boards=[("biotech-logos-01-big-biotech","Big biotech company logos, 01 to 09"),("biotech-logos-02-gene-editing-and-cell-therapy","Gene editing and cell therapy company logos, 10 to 18"),("biotech-logos-03-ai-and-techbio","AI drug discovery and techbio logos, 19 to 27"),("biotech-logos-04-tools-and-synthetic-biology","Biotech tools and synthetic biology logos, 28 to 36"),("biotech-logos-05-biotech-startups-and-longevity","Biotech startup and longevity company logos, 37 to 45")]
-title="Biotech Logos: 45 Best Biotech Company Logos Explained [2026]"
+title="45 Biotech Logos Explained"
 desc="45 biotech logos explained by a brand designer, from Amgen, Vertex, and BioNTech to CRISPR, Recursion, Ginkgo Bioworks, and the newest biotech startups."
 hero_alt="Scientist in a biotech lab looking at a screen showing 45 biotech company logos"
 post=dict(old); post.pop('body',None)

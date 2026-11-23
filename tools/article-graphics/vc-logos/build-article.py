@@ -9,7 +9,7 @@ boards=[("venture-capital-logos-01-silicon-valley-legends","Silicon Valley ventu
  ("venture-capital-logos-03-growth-and-multistage-investors","Growth and multistage investor logos, 19 to 27: Tiger Global, Coatue, IVP, Bessemer Venture Partners, Battery Ventures, Thrive Capital, Lux Capital, NEA, Ribbit Capital"),
  ("venture-capital-logos-04-european-and-global-venture-firms","European and global venture firm logos, 28 to 36: Atomico, Balderton Capital, Northzone, Creandum, Seedcamp, Point Nine, HongShan, SoftBank Vision Fund, Peak XV Partners"),
  ("venture-capital-logos-05-specialist-and-design-led-vcs","Specialist venture capital logos, 37 to 45: Khosla Ventures, Spark Capital, CRV, Felicis, Redpoint, GV, 8VC, Mayfield, Emergence Capital")]
-title="45 Best Venture Capital Logos Explained by a Brand Designer [2026]"
+title="45 Venture Capital Logos Explained"
 desc="45 venture capital firm logos explained by a brand designer: Silicon Valley legends like Sequoia, a16z and Accel, seed funds like Y Combinator, growth investors, European VCs, and specialist firms."
 hero_alt="Startup demo day stage with a backdrop of Sequoia, Andreessen Horowitz, Accel, Y Combinator and other venture capital logos"
 post=dict(old); post.pop('body',None)

@@ -9,7 +9,7 @@ boards=[("fashion-logos-01-luxury-fashion-houses","Luxury fashion house logos, 0
  ("fashion-logos-03-designer-brands","Designer clothing brand logos, 19 to 27: Ralph Lauren, Calvin Klein, Tommy Hilfiger, Marc Jacobs, Alexander McQueen, Stella McCartney, Vivienne Westwood, Paul Smith, Hugo Boss"),
  ("fashion-logos-04-shoes-bags-and-accessories","Shoe, bag and accessory brand logos, 28 to 36: Jimmy Choo, Christian Louboutin, Coach, Michael Kors, Kate Spade, Tory Burch, Longchamp, Ferragamo, Miu Miu"),
  ("fashion-logos-05-streetwear-and-high-street","Streetwear and high-street clothing brand logos, 37 to 45: Off-White, Supreme, Stüssy, Moncler, Acne Studios, Zara, H&M, Uniqlo, Levi's")]
-title="45 Best Fashion Brand Logos Explained by a Brand Designer [2026]"
+title="45 Fashion Brand Logos Explained"
 desc="45 fashion and clothing brand logos with names, explained by a brand designer: luxury houses like Gucci, Chanel, and Hermès, designer labels, accessories, and streetwear."
 hero_alt="Fashion designer in a Paris studio looking at a screen showing 45 fashion brand logos"
 post=dict(old); post.pop('body',None)

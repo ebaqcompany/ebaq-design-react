@@ -5,7 +5,7 @@ P='public/content/blog/tech-startup-logos.json'; old=json.load(open(P))
 I='/images/blog/tech-startup-logos'
 B=techs.B
 boards=[("tech-logos-01-big-tech","Big Tech company logos, 01 to 09"),("tech-logos-02-software-and-cloud","Software and cloud company logos, 10 to 18"),("tech-logos-03-consumer-apps-and-social","Consumer app and social media logos, 19 to 27"),("tech-logos-04-hardware-and-chips","Hardware and chip company logos, 28 to 36"),("tech-logos-05-ai-and-tech-startups","AI and tech startup logos, 37 to 45")]
-title="Best Tech Logos: 45 Famous Tech Company & Startup Logos Explained [2026]"
+title="45 Tech Company Logos Explained"
 desc="45 tech company logos explained by a brand designer, from Apple, Google, and Microsoft to Spotify, Nvidia, OpenAI, and Stripe."
 hero_alt="Founder looking at a wall of 45 tech company logos in a modern tech office"
 post=dict(old); post.pop('body',None)

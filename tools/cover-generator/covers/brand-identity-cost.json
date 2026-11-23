@@ -1,0 +1,26 @@
+{
+  "layout": "collage",
+  "title": "Brand Identity Cost",
+  "category": "",
+  "seed": "brand-identity-cost-kfocp",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/brand-identity-cost/cost-vs-timeline-chart.png",
+    "/tools/cover-generator/assets/brand-identity-cost/ebaq-design-pricing.png",
+    "/tools/cover-generator/assets/brand-identity-cost/glyn-pricing.png"
+  ]
+}

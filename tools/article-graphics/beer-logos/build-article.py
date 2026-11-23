@@ -9,7 +9,7 @@ boards=[("beer-logos-01-global-beer-icons","Global beer logos, 01 to 09: Budweis
  ("beer-logos-03-asian-and-latin-american-beers","Asian and Latin American beer logos, 19 to 27: Asahi, Kirin, Sapporo, Tsingtao, Tiger, Singha, Modelo, Dos Equis, Tecate"),
  ("beer-logos-04-american-craft-breweries","American craft brewery logos, 28 to 36: Sierra Nevada, Samuel Adams, Lagunitas, Dogfish Head, Stone Brewing, New Belgium, Goose Island, Brooklyn Brewery, Founders"),
  ("beer-logos-05-design-led-independent-breweries","Independent brewery logos, 37 to 45: BrewDog, Mikkeller, Omnipollo, Athletic Brewing, Beavertown, Cloudwater, Other Half, Garage Project, To Øl")]
-title="45 Best Beer Logos Explained by a Brand Designer [2026]"
+title="45 Beer Logos Explained"
 desc="45 beer logos explained by a brand designer: global icons like Heineken, Guinness and Corona, European and Asian classics, American craft breweries, and design-led independents like Mikkeller and BrewDog."
 hero_alt="Open supermarket beer fridge stocked with Heineken, Corona, Stella Artois, Guinness, Carlsberg, Modelo, Dos Equis, Samuel Adams and BrewDog six-packs"
 post=dict(old); post.pop('body',None)

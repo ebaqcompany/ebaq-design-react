@@ -5,7 +5,7 @@ P='public/content/blog/fintech-logos.json'; old=json.load(open(P))
 I='/images/blog/fintech-logos'
 B=fintech.B
 boards=[("fintech-logos-01-payments","Payment company logos, 01 to 09"),("fintech-logos-02-money-transfer-and-global-payments","Money transfer and global payments logos, 10 to 18"),("fintech-logos-03-investing-and-trading","Investing and trading app logos, 19 to 27"),("fintech-logos-04-crypto-and-digital-assets","Crypto and digital asset company logos, 28 to 36"),("fintech-logos-05-neobanks-and-consumer-finance","Neobank and consumer finance logos, 37 to 45")]
-title="45 Best Fintech Logos Explained by a Brand Designer [2026]"
+title="45 Fintech Logos Explained"
 desc="45 fintech logos explained by a brand designer, from Stripe, PayPal, and Wise to Robinhood, Coinbase, Klarna, and Chime."
 hero_alt="Fintech founder looking at a screen showing 45 fintech company logos in a New York office"
 post=dict(old); post.pop('body',None)

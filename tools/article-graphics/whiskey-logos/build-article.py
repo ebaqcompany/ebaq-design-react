@@ -9,7 +9,7 @@ boards=[("whiskey-logos-01-scotch-whisky-icons","Scotch whisky logos, 01 to 09: 
  ("whiskey-logos-03-irish-whiskey","Irish whiskey logos, 19 to 27: Jameson, Bushmills, Tullamore D.E.W., Redbreast, Teeling, Powers, Green Spot, Slane, Roe & Co"),
  ("whiskey-logos-04-japanese-and-world-whisky","Japanese and world whisky logos, 28 to 36: Suntory, Nikka, Mackmyra, Amrut, Paul John, Crown Royal, Canadian Club, Starward, Penderyn"),
  ("whiskey-logos-05-craft-and-design-led-distilleries","Craft distillery logos, 37 to 45: Westland, Bruichladdich, Kings County, WhistlePig, Uncle Nearest, High West, Compass Box, Waterford, Cotswolds")]
-title="45 Best Whiskey Logos Explained by a Brand Designer [2026]"
+title="45 Whiskey Logos Explained"
 desc="45 whiskey logos explained by a brand designer: Scotch icons like Johnnie Walker and The Macallan, bourbons like Jack Daniel's and Maker's Mark, Irish, Japanese and world whisky, and craft distilleries."
 hero_alt="Whiskey bar back-bar lined with Johnnie Walker, Jack Daniel's, Jameson, Glenfiddich, The Macallan, Maker's Mark and other whiskey bottles"
 post=dict(old); post.pop('body',None)

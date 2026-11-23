@@ -5,7 +5,7 @@ P='public/content/blog/healthcare-logos.json'; old=json.load(open(P))
 I='/images/blog/healthcare-logos'
 B=healthcare.B
 boards=[("healthcare-logos-01-hospitals-and-health-systems","Hospital and health system logos, 01 to 09"),("healthcare-logos-02-health-insurance","Health insurance company logos, 10 to 18"),("healthcare-logos-03-pharma-and-biotech","Pharma and biotech logos, 19 to 27"),("healthcare-logos-04-pharmacy-and-medtech","Pharmacy and medical technology logos, 28 to 36"),("healthcare-logos-05-digital-health","Digital health logos, 37 to 45")]
-title="45 Best Healthcare Logos Explained by a Brand Designer [2026]"
+title="45 Healthcare Logos Explained"
 desc="45 healthcare logos explained by a brand designer, from Mayo Clinic and Cleveland Clinic to Pfizer, CVS Health, Oscar, and Hims & Hers."
 hero_alt="Doctor and health-tech founder looking at a screen showing 45 healthcare company logos"
 post=dict(old); post.pop('body',None)

@@ -5,7 +5,7 @@ P='public/content/blog/saas-logos.json'; old=json.load(open(P))
 I='/images/blog/saas-logos'
 B=saas.B
 boards=[("saas-logos-01-productivity-and-collaboration","Productivity and collaboration SaaS logos, 01 to 09"),("saas-logos-02-developer-and-data-tools","Developer and data tool logos, 10 to 18"),("saas-logos-03-sales-marketing-and-support","Sales, marketing, and support SaaS logos, 19 to 27"),("saas-logos-04-finance-hr-and-operations","Finance, HR, and operations SaaS logos, 28 to 36"),("saas-logos-05-ai-saas","AI SaaS logos, 37 to 45")]
-title="45 Best SaaS Logos Explained by a Brand Designer [2026]"
+title="45 SaaS Logos Explained"
 desc="45 SaaS company logos explained by a brand designer, from Asana, HubSpot, and GitHub to Ramp, Vanta, Cursor, and ElevenLabs."
 hero_alt="SaaS product team at a table looking at a screen showing 45 SaaS company logos"
 post=dict(old); post.pop('body',None)

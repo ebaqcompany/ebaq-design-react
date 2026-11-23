@@ -5,7 +5,7 @@ P='public/content/blog/architecture-logos.json'; old=json.load(open(P))
 I='/images/blog/architecture-logos'
 B=arch.B
 boards=[("architecture-logos-01-global-architecture-firms","Global architecture firm logos, 01 to 09"),("architecture-logos-02-signature-studios","Signature architecture studio logos, 10 to 18"),("architecture-logos-03-international-firms","International architecture firm logos, 19 to 27"),("architecture-logos-04-design-led-practices","Design-led architecture practice logos, 28 to 36"),("architecture-logos-05-interiors-and-landscape","Interior design and landscape architecture logos, 37 to 45")]
-title="45 Best Architecture Firm Logos Explained by a Brand Designer [2026]"
+title="45 Architecture Firm Logos Explained"
 desc="45 architecture firm logos explained by a brand designer, from Gensler, SOM, and Zaha Hadid Architects to BIG, Snøhetta, Foster + Partners, and Studio Gang."
 hero_alt="Architects in a studio with models and drawings, looking at a screen showing 45 architecture firm logos"
 post=dict(old); post.pop('body',None)

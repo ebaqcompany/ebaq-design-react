@@ -9,7 +9,7 @@ boards=[("hotel-logos-01-global-hotel-groups","Global hotel group logos, 01 to 0
  ("hotel-logos-03-upscale-hotel-brands","Upscale hotel brand logos, 19 to 27: Sheraton, Westin, InterContinental, Conrad, Fairmont, Kempinski, Shangri-La, Sofitel, Grand Hyatt"),
  ("hotel-logos-04-lifestyle-and-boutique-hotels","Lifestyle and boutique hotel logos, 28 to 36: W Hotels, Ace Hotel, Edition, 1 Hotels, Kimpton, Hotel Indigo, The Hoxton, citizenM, Moxy"),
  ("hotel-logos-05-resorts-and-iconic-hotels","Resort and iconic hotel logos, 37 to 45: Six Senses, One&Only, Banyan Tree, Club Med, Atlantis, Raffles, The Savoy, The Plaza, Jumeirah")]
-title="45 Best Hotel Logos Explained by a Brand Designer [2026]"
+title="45 Hotel Logos Explained"
 desc="45 hotel logos explained by a brand designer: global chains like Marriott and Hilton, luxury and 5-star brands like Four Seasons and Aman, boutique hotels, and iconic resorts."
 hero_alt="Hotel general manager in a luxury lobby looking at a screen showing 45 hotel brand logos"
 post=dict(old); post.pop('body',None)

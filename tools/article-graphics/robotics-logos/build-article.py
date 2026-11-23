@@ -8,11 +8,11 @@ boards=[("robotics-logos-01-humanoid-robot-companies","Humanoid robot company lo
 post=dict(old)
 for k in ['body']: post.pop(k,None)
 post.update({
- "title":"36 Best Robotics Company Logos for Design Inspiration [2026]",
+ "title":"36 Robotics Logos Explained",
  "date":"Nov 21, 2026","readTime":"12 min read",
  "description":"36 robotics company logos, from humanoid startups like Figure, 1X, and Unitree to Boston Dynamics and iRobot, with a designer's notes on what makes each one work.",
  "image":{"src":f"{I}/robotics-logos-hero.webp","alt":"Robotics company CEO looking at a large screen showing 36 robotics company logos in a robot factory","thumbnail":f"{I}/robotics-logos-hero-768w.webp"},
- "seo":{"title":"36 Best Robotics Company Logos for Design Inspiration [2026]","description":"36 robotics company logos, from humanoid startups like Figure, 1X, and Unitree to Boston Dynamics and iRobot, with a designer's notes on what makes each one work.","image":f"{I}/robotics-logos-hero.webp"},
+ "seo":{"title":"36 Robotics Logos Explained","description":"36 robotics company logos, from humanoid startups like Figure, 1X, and Unitree to Boston Dynamics and iRobot, with a designer's notes on what makes each one work.","image":f"{I}/robotics-logos-hero.webp"},
  "intro":f'<p>Robotics is one of the fastest-moving industries right now, and its brands have to do something unusual: make <strong>complex, sometimes intimidating machines feel trustworthy, capable, and safe</strong> to customers, investors, and the people who will work next to them.</p><figure class="w-richtext-align-center w-richtext-figure-type-image"><div><img loading="lazy" alt="Robotics company CEO looking at a large screen showing 36 robotics company logos in a robot factory" src="{I}/robotics-logos-hero.webp" width="1920" height="1080" decoding="async"/></div></figure><h2 id="what-makes-good-robotics-logo">What makes a good robotics logo?</h2><p>Humanoid startups compete for attention with bold, ownable symbols, while industrial and medical robotics brands lean on <strong>legibility, color, and consistency</strong> that hold up on machines, factory floors, and safety documentation.</p><p>I reviewed 36 robotics company identities across four groups, linking each company to its official website and focusing on practical design lessons rather than the technology itself.</p>',
  "logoRoster":[r[0] for r in R],
  "logoPageImages":[[{"src":f"{I}/{b[0]}.webp","alt":b[1]}] for b in boards],

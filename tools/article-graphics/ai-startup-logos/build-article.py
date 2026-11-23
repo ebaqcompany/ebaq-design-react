@@ -6,7 +6,7 @@ P='public/content/blog/ai-startups-logos.json'; old=json.load(open(P))
 I='/images/blog/ai-startups-logos'
 B=aistartups.B
 boards=[("ai-startup-logos-01-ai-labs-and-models","AI lab and model company logos, 01 to 09"),("ai-startup-logos-02-ai-agents-and-coding","AI agent and coding startup logos, 10 to 18"),("ai-startup-logos-03-ai-infrastructure","AI infrastructure startup logos, 19 to 27"),("ai-startup-logos-04-vertical-ai","Vertical AI startup logos for law, health, finance, and sales, 28 to 36"),("ai-startup-logos-05-creative-ai","Creative AI startup logos, 37 to 45")]
-title="AI Startup Logos: 45 Hot AI Company Logos & Why They Look Alike [2026]"
+title="45 AI Startup Logos Explained"
 desc="Why so many AI logos use hexagons and swirls, plus 45 of the hottest AI startup logos of 2026 explained by a brand designer, from Mistral and Cognition to Harvey, Suno, and Midjourney."
 hero_alt="Two AI startup founders looking at a screen showing 45 AI startup logos in a San Francisco office"
 fig=lambda src,alt,w,h: f'<figure class="w-richtext-align-center w-richtext-figure-type-image"><div><img loading="lazy" alt="{alt}" src="{src}" width="{w}" height="{h}" decoding="async"/></div></figure>'

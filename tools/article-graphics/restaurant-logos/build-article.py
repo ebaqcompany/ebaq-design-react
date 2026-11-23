@@ -9,7 +9,7 @@ boards=[("restaurant-logos-01-fast-food-icons","Fast food logos, 01 to 09: McDon
  ("restaurant-logos-03-coffee-shops-and-bakeries","Coffee shop and bakery logos, 19 to 27: Starbucks, Dunkin', Tim Hortons, Blue Bottle Coffee, Krispy Kreme, Costa Coffee, Peet's Coffee, Ladurée, Le Pain Quotidien"),
  ("restaurant-logos-04-casual-dining-chains","Casual dining restaurant logos, 28 to 36: Olive Garden, Applebee's, Chili's, The Cheesecake Factory, Texas Roadhouse, IHOP, Denny's, Hard Rock Cafe, Outback Steakhouse"),
  ("restaurant-logos-05-fine-dining-and-iconic-restaurants","Fine dining and iconic restaurant logos, 37 to 45: Nobu, Carbone, Eleven Madison Park, Noma, Le Bernardin, Balthazar, Hakkasan, Zuma, The Ivy")]
-title="45 Best Restaurant Logos Explained by a Brand Designer [2026]"
+title="45 Restaurant Logos Explained"
 desc="45 restaurant logos explained by a brand designer: fast food icons like McDonald's and KFC, fast casual and coffee brands, casual dining chains, and fine dining restaurants like Nobu and Noma."
 hero_alt="Chef in a modern restaurant looking at a screen showing 45 restaurant logos"
 post=dict(old); post.pop('body',None)

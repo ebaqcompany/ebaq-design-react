@@ -9,7 +9,7 @@ boards=[("private-equity-logos-01-global-private-equity-giants","Private equity 
  ("private-equity-logos-03-technology-and-growth-equity","Technology and growth equity firm logos, 19 to 27: Thoma Bravo, Vista Equity Partners, Silver Lake, General Atlantic, Insight Partners, Francisco Partners, Summit Partners, TA Associates, Accel-KKR"),
  ("private-equity-logos-04-classic-american-buyout-firms","Classic American buyout firm logos, 28 to 36: Hellman & Friedman, Clayton, Dubilier & Rice, Leonard Green & Partners, Genstar Capital, Thomas H. Lee Partners, Welsh, Carson, Anderson & Stowe, Stone Point Capital, Platinum Equity, American Securities"),
  ("private-equity-logos-05-credit-specialist-and-newer-firms","Credit and specialist private equity logos, 37 to 45: Blue Owl, Sixth Street, Oaktree, Cerberus, Clearlake Capital, L Catterton, Centerbridge, H.I.G. Capital, Veritas Capital")]
-title="45 Best Private Equity Logos Explained by a Brand Designer [2026]"
+title="45 Private Equity Logos Explained"
 desc="45 private equity firm logos explained by a brand designer: giants like Blackstone, KKR and Carlyle, European buyout firms, tech investors like Thoma Bravo and Silver Lake, and classic and newer firms."
 hero_alt="Boardroom credenza lined with acrylic deal tombstones showing Blackstone, KKR, Carlyle, Apollo, TPG and other private equity logos"
 post=dict(old); post.pop('body',None)

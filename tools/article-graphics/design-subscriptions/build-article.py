@@ -117,10 +117,10 @@ faq=[
  {"question":"What does unlimited requests mean?","answer":"You can add as many requests as you like, but most studios work on one at a time. The real limit is how fast each request is delivered, usually one to three days."},
  {"question":"Can I pause a design subscription?","answer":"Most studios in this list let you pause or cancel at any time. Some, like Designownow, keep your unused days so you can use them later."},
 ]
-post={"slug":SLUG,"url":f"/blog/{SLUG}","title":"12 Design Subscription Services Worth Hiring in 2026 (Prices Checked)","category":"Branding","categorySlug":"branding","author":"arek-dvornechuck-ebaqdesign","date":D,"readTime":"14 min read",
+post={"slug":SLUG,"url":f"/blog/{SLUG}","title":"12 Design Subscription Services","category":"Branding","categorySlug":"branding","author":"arek-dvornechuck-ebaqdesign","date":D,"readTime":"14 min read",
  "description":"12 design subscription studios and solo designers with prices checked on their own sites, from Awesomic at $1,799 a month to Designjoy and Makeover Studio, plus how to choose.",
  "image":{"src":f"{I}/designjoy-pricing.webp","alt":"Design subscription services compared","thumbnail":f"{I}/designjoy-pricing.webp"},
- "seo":{"title":"12 Design Subscription Services Worth Hiring in 2026 (Prices Checked)","description":"12 design subscription studios with prices checked on their own sites, from $1,799 a month, plus how a design subscription compares with a brand sprint or a freelancer.","image":f"{I}/designjoy-pricing.webp"},
+ "seo":{"title":"12 Design Subscription Services","description":"12 design subscription studios with prices checked on their own sites, from $1,799 a month, plus how a design subscription compares with a brand sprint or a freelancer.","image":f"{I}/designjoy-pricing.webp"},
  "body":''.join(body),"faq":faq,"tags":["design subscription","design subscription services","unlimited design subscription","productized design","Designjoy alternatives"]}
 if os.path.exists(f'public{I}/cover-collage.webp'):
     post['image']={"src":f"{I}/cover-collage.webp","alt":"Design subscription services cover collage with studio pricing pages","thumbnail":f"{I}/cover-collage-768w.webp"}; post['seo']['image']=f"{I}/cover-collage-og.webp"

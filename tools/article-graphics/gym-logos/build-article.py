@@ -9,7 +9,7 @@ boards=[("gym-logos-01-big-box-gym-chains","Big-box gym chain logos, 01 to 09: P
  ("gym-logos-03-budget-and-mid-size-gyms","Budget and mid-size gym logos, 19 to 27: Basic-Fit, PureGym, The Gym Group, Retro Fitness, VASA Fitness, Chuze Fitness, UFC Gym, Youfit, Workout Anytime"),
  ("gym-logos-04-boutique-fitness-studios","Boutique fitness studio logos, 28 to 36: Orangetheory Fitness, F45 Training, Barry's, SoulCycle, Solidcore, CorePower Yoga, Club Pilates, Rumble, Pure Barre"),
  ("gym-logos-05-training-and-specialty-franchises","Training and specialty fitness franchise logos, 37 to 45: CrossFit, Les Mills, 9Round, Burn Boot Camp, StretchLab, Row House, CycleBar, YogaSix, Hotworx")]
-title="45 Best Gym Logos Explained by a Brand Designer [2026]"
+title="45 Gym Logos Explained"
 desc="45 gym and fitness logos with names, explained by a brand designer: big chains like Planet Fitness, LA Fitness, and Crunch, premium clubs like Life Time and Equinox, and boutique studios."
 hero_alt="Gym owner in a modern gym looking at a screen showing 45 gym and fitness brand logos"
 post=dict(old); post.pop('body',None)

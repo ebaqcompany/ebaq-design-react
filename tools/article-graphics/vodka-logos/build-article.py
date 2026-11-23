@@ -9,7 +9,7 @@ boards=[("vodka-logos-01-global-vodka-icons","Global vodka logos, 01 to 09: Smir
  ("vodka-logos-03-american-vodka-brands","American vodka logos, 19 to 27: Tito's, Svedka, Deep Eddy, Pinnacle, Hangar 1, Wheatley, Western Son, UV, Three Olives"),
  ("vodka-logos-04-luxury-and-design-led-vodka","Luxury and design-led vodka logos, 28 to 36: Crystal Head, Absolut Elyx, Van Gogh, Effen, Elit, Kauffman, Black Cow, St. George, Hanson of Sonoma"),
  ("vodka-logos-05-nordic-dutch-and-world-vodka","Nordic, Dutch and world vodka logos, 37 to 45: Reyka, Danzka, Koskenkorva, Eristoff, Explorer, Ursus, Iceberg, 42 Below, Blue Ice")]
-title="45 Best Vodka Logos Explained by a Brand Designer [2026]"
+title="45 Vodka Logos Explained"
 desc="45 vodka logos explained by a brand designer: global icons like Absolut, Grey Goose and Smirnoff, Polish and Ukrainian classics, American vodkas like Tito's, luxury brands, and Nordic and world vodka."
 hero_alt="Ice bar lined with frosted Absolut, Grey Goose, Smirnoff, Belvedere, Ketel One, Tito's and other vodka bottles"
 post=dict(old); post.pop('body',None)

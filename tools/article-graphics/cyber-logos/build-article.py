@@ -5,7 +5,7 @@ P='public/content/blog/cyber-security-logos.json'; old=json.load(open(P))
 I='/images/blog/cyber-security-logos'
 B=cyber.B
 boards=[("cyber-security-logos-01-security-leaders","Cybersecurity industry leader logos, 01 to 09"),("cyber-security-logos-02-cloud-and-identity-security","Cloud and identity security logos, 10 to 18"),("cyber-security-logos-03-new-security-startups","New cybersecurity startup logos, 19 to 27"),("cyber-security-logos-04-consumer-and-privacy","Consumer security and privacy logos, 28 to 36"),("cyber-security-logos-05-security-startups-to-watch","Cybersecurity startup logos to watch, 37 to 45")]
-title="45 Best Cyber Security Logos Explained by a Brand Designer [2026]"
+title="45 Cyber Security Logos Explained"
 desc="45 cyber security logos explained by a brand designer, from CrowdStrike, Palo Alto Networks, and Cloudflare to Wiz, 1Password, NordVPN, and the newest security startups."
 hero_alt="Security analyst in a cybersecurity operations center looking at a screen showing 45 cyber security company logos"
 post=dict(old); post.pop('body',None)

@@ -11,7 +11,7 @@ boards=[("law-firm-logos-01-new-york-elite-firms","New York law firm logos, 01 t
  ("law-firm-logos-04-tech-startup-and-ip-law-firms","Tech, startup and IP law firm logos, 28 to 36: Cooley, Wilson Sonsini, Gunderson Dettmer, Fenwick, Orrick, Goodwin, Fish & Richardson, Quinn Emanuel, Morrison Foerster"),
  ("law-firm-logos-05-litigation-boutiques-and-design-led-firms","Litigation boutique and design-led law firm logos, 37 to 45: Susman Godfrey, Keker Van Nest & Peters, Boies Schiller Flexner, Selendy Gay, Wilkinson Stekloff, Bartlit Beck, MoloLamken, Axinn, Fox Berman"),
  ("law-firm-logos-06-international-law-firms","International law firm logos, 46 to 54: Mori Hamada & Matsumoto, Nishimura & Asahi, Garrigues, Uría Menéndez, Galicia Abogados, Brigard Urrutia, Rajah & Tann, Torys, Bell Gully")]
-title="54 Best Law Firm Logos Explained by a Brand Designer [2026]"
+title="54 Law Firm Logos Explained"
 desc="54 law firm logos explained by a brand designer: New York's elite firms, global giants, the London Magic Circle, tech and IP firms, litigation boutiques like Fox Berman, and international firms."
 hero_alt="Brass directory plates in a Manhattan office lobby showing Cravath, Skadden, Kirkland & Ellis, Latham & Watkins and other law firm logos"
 post=dict(old)

@@ -5,7 +5,7 @@ P='public/content/blog/b2b-logos.json'; old=json.load(open(P))
 I='/images/blog/b2b-logos'
 B=b2b.B
 boards=[("b2b-logos-01-enterprise-software","Enterprise software company logos, 01 to 09"),("b2b-logos-02-consulting-and-professional-services","Consulting and professional services logos, 10 to 18"),("b2b-logos-03-logistics-and-supply-chain","Logistics and supply chain company logos, 19 to 27"),("b2b-logos-04-industrial-and-manufacturing","Industrial and manufacturing company logos, 28 to 36"),("b2b-logos-05-b2b-platforms-and-marketplaces","B2B platform and marketplace logos, 37 to 45")]
-title="45 Best B2B Company Logos Explained by a Brand Designer [2026]"
+title="45 B2B Company Logos Explained"
 desc="45 B2B company logos explained by a brand designer, from McKinsey, Accenture, and Deloitte to FedEx, Caterpillar, ServiceNow, and Deel."
 hero_alt="Business executives in a boardroom looking at a screen showing 45 B2B company logos"
 post=dict(old); post.pop('body',None)

@@ -5,7 +5,7 @@ P='public/content/blog/drone-logos.json'; old=json.load(open(P))
 I='/images/blog/drone-logos'
 B=drones.B
 boards=[("drone-logos-01-consumer-and-camera-drones","Consumer and camera drone logos, 01 to 09"),("drone-logos-02-delivery-drones","Drone delivery company logos, 10 to 18"),("drone-logos-03-enterprise-and-public-safety","Enterprise and public safety drone logos, 19 to 27"),("drone-logos-04-defense-drones","Defense drone company logos, 28 to 36"),("drone-logos-05-drone-software-and-air-taxis","Drone software and air taxi logos, 37 to 45")]
-title="45 Best Drone Company Logos Explained by a Brand Designer [2026]"
+title="45 Drone Company Logos Explained"
 desc="45 drone company logos explained by a brand designer, from DJI, Skydio, and Parrot to Zipline, Wing, Anduril, and Joby Aviation."
 hero_alt="Drone engineer holding a controller and looking at a screen showing 45 drone company logos in a hangar"
 post=dict(old); post.pop('body',None)

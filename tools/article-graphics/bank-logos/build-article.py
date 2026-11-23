@@ -5,7 +5,7 @@ P='public/content/blog/bank-logos.json'; old=json.load(open(P))
 I='/images/blog/bank-logos'
 B=banks.B
 boards=[("bank-logos-01-big-us-banks","Big US bank logos, 01 to 09"),("bank-logos-02-european-banks","European bank logos, 10 to 18"),("bank-logos-03-banks-around-the-world","Bank logos from around the world, 19 to 27"),("bank-logos-04-investment-banks-and-wealth-managers","Investment bank and wealth manager logos, 28 to 36"),("bank-logos-05-digital-banks-and-neobanks","Digital bank and neobank logos, 37 to 45")]
-title="45 Best Bank Logos & Their Meanings (US, Global & Digital Banks) [2026]"
+title="45 Bank Logos Explained"
 desc="45 bank logos with names and meanings, from Chase, Bank of America, and HSBC to Revolut and Monzo, each annotated by a brand designer."
 hero_alt="Bank executives reviewing a wall of 45 bank logos in a boardroom"
 post=dict(old); post.pop('body',None)

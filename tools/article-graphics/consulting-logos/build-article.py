@@ -7,7 +7,7 @@ B=data.B
 boards=[("consulting-logos-01-strategy-consulting-firms","Strategy consulting firm logos, 01 to 09: McKinsey & Company, BCG, Bain & Company, Oliver Wyman, Kearney, Roland Berger, L.E.K. Consulting, Strategy&, Simon-Kucher"),
  ("consulting-logos-02-big-four-and-large-consulting-firms","Big Four and large consulting firm logos, 10 to 18: Deloitte, PwC, EY, KPMG, Accenture, Capgemini, Booz Allen Hamilton, Alvarez & Marsal, FTI Consulting"),
  ("consulting-logos-03-specialist-and-boutique-consulting-firms","Specialist and boutique consulting firm logos, 19 to 27: Arthur D. Little, ZS, Huron, Guidehouse, West Monroe, Slalom, Mercer, Capco, Korn Ferry")]
-title="27 Best Consulting Logos Explained by a Brand Designer [2026]"
+title="27 Consulting Logos Explained"
 desc="27 consulting firm logos explained by a brand designer: McKinsey, BCG and Bain, the Big Four, Accenture and other large firms, plus specialist consultancies like ZS, Slalom and Korn Ferry."
 hero_alt=open('tools/article-graphics/consulting-logos/hero_alt.txt').read().strip()
 post={"slug":"consulting-logos","url":"/blog/consulting-logos","category":"Logo Design","categorySlug":"logo-design","author":"arek-dvornechuck-ebaqdesign",

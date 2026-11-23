@@ -9,7 +9,7 @@ boards=[("jewelry-logos-01-iconic-jewelry-houses","Iconic jewelry house logos, 0
  ("jewelry-logos-03-designer-fine-jewelry","Designer fine jewelry logos, 19 to 27: David Yurman, Messika, Repossi, Jessica McCormack, Sophie Buhai, Anita Ko, Suzanne Kalan, Spinelli Kilcollin, Jennifer Meyer"),
  ("jewelry-logos-04-accessible-and-demi-fine-jewelry","Accessible and demi-fine jewelry brand logos, 28 to 36: Pandora, Swarovski, Mejuri, Alex and Ani, Monica Vinader, Missoma, Thomas Sabo, Astrid & Miyu, Catbird"),
  ("jewelry-logos-05-jewelry-retailers","Jewelry retailer logos, 37 to 45: Chow Tai Fook, Tanishq, Blue Nile, Brilliant Earth, Zales, Kay Jewelers, Helzberg Diamonds, Mappin & Webb, Tous")]
-title="45 Best Jewelry Logos Explained by a Brand Designer [2026]"
+title="45 Jewelry Logos Explained"
 desc="45 jewelry brand logos with names, explained by a brand designer: luxury houses like Cartier, Tiffany & Co., and Bulgari, designer labels, accessible brands, and jewelry retailers."
 hero_alt="Jewelry designer at a workbench looking at a screen showing 45 jewelry brand logos"
 post=dict(old); post.pop('body',None)
