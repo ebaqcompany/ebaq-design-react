@@ -1,5 +1,20 @@
 [
   {
+    "slug": "veterinary-logos",
+    "url": "/blog/veterinary-logos",
+    "title": "36 Vet and Pet Logos Explained",
+    "description": "36 veterinary and pet logos explained by a brand designer: vet clinics like Banfield and VCA, animal health brands like Zoetis and Royal Canin, plus the best dog and cat brand logos.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "13 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/veterinary-logos/cover-collage.webp",
+      "alt": "Vet and Pet Logos cover collage with the Banfield Pet Hospital sign on a clinic in Brentwood, Tennessee",
+      "thumbnail": "/images/blog/veterinary-logos/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "brand-identity-cost",
     "url": "/blog/brand-identity-cost",
     "title": "How Much a Complete Brand Identity Costs",
