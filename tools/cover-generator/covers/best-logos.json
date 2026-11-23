@@ -1,0 +1,24 @@
+{
+  "layout": "collage",
+  "title": "Best Logos of All Time",
+  "category": "",
+  "seed": "best-logos-bg230",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/best-logos/coca-cola-mural.jpg"
+  ]
+}
