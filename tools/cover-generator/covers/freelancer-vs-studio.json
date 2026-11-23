@@ -1,0 +1,25 @@
+{
+  "layout": "collage",
+  "title": "Freelancer or Studio?",
+  "category": "",
+  "seed": "freelancer-vs-studio-ejhax",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/freelancer-vs-studio/arek-at-desk.jpg",
+    "/tools/cover-generator/assets/freelancer-vs-studio/small-studio-team.jpg"
+  ]
+}

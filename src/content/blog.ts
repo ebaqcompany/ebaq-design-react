@@ -25,7 +25,7 @@ export type BlogPost = BlogPostSummary & {
   author: string;
   body: string;
   intro?: string;
-  faq?: Array<{ question: string; answer: string }>;
+  faq?: Array<{ question: string; answer: string; image?: { src: string; alt: string; width?: number; height?: number } }>;
   logoRoster?: string[];
   logoPageImages?: Array<Array<{ src: string; alt: string }>>;
   logoTileImages?: Array<{ src: string; alt: string }>;

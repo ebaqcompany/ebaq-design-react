@@ -1,5 +1,20 @@
 [
   {
+    "slug": "freelancer-vs-studio",
+    "url": "/blog/freelancer-vs-studio",
+    "title": "Senior Freelancer or Small Studio?",
+    "description": "Should you hire one senior freelance designer or a small design studio for your brand? A clear comparison of who does the work, price, timeline and risk, with real prices.",
+    "category": "Branding",
+    "categorySlug": "branding",
+    "readTime": "8 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/freelancer-vs-studio/cover-collage.webp",
+      "alt": "Senior Freelancer or Small Studio cover collage with a solo designer at his desk and a small studio team",
+      "thumbnail": "/images/blog/freelancer-vs-studio/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "beauty-logos",
     "url": "/blog/beauty-logos",
     "title": "36 Beauty Logos Explained",

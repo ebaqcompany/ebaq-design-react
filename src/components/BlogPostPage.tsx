@@ -259,7 +259,7 @@ export const BlogPostPage = () => {
         <Content32 articleTitle={post.title} articleUrl={canonicalUrl}>
           {!hasInlineImages && post.image.src && <figure className="mb-8 w-full"><img loading="lazy" decoding="async" src={post.image.src} alt={post.image.alt || post.title} className="h-auto w-full" /></figure>}
           {post.faq && post.faq.length > 0 && !post.logoRoster && <section aria-label="Common questions" className="mt-12 pt-8">
-            {post.faq.map((item) => <div key={item.question} className="mt-6"><h3>{item.question}</h3><p>{item.answer}</p></div>)}
+            {post.faq.map((item) => <div key={item.question} className="mt-6"><h3>{item.question}</h3><p>{item.answer}</p>{item.image && <figure className="my-8 w-full"><img loading="lazy" decoding="async" src={item.image.src} alt={item.image.alt} width={item.image.width} height={item.image.height} className="h-auto w-full" /></figure>}</div>)}
           </section>}
           {articleIntro && <div dangerouslySetInnerHTML={{ __html: articleIntro }} />}
           <div dangerouslySetInnerHTML={{ __html: articleBody }} />
