@@ -1,5 +1,37 @@
 [
   {
+    "slug": "black-friday",
+    "url": "/blog/black-friday",
+    "title": "Black Friday Deals for Designers",
+    "description": "63 Black Friday offers for designers, including Adobe, ElevenLabs, Illustrator extensions, mockups, web tools and drawing tablets. Compare prices, codes and deadlines.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "19 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/black-friday/cover-collage.webp",
+      "alt": "Black Friday deals for graphic designers",
+      "thumbnail": "/images/blog/black-friday/cover-collage-768w.webp"
+    }
+  },
+  {
+    "slug": "adobe-black-friday",
+    "url": "/blog/adobe-black-friday",
+    "title": "Adobe Black Friday Deals",
+    "description": "Compare U.S. Adobe Black Friday prices for Creative Cloud Pro, students, teams, and Firefly. Check the November 27 and December 6 deadlines and renewal rates.",
+    "category": "Buying Guides",
+    "categorySlug": "buying-guides",
+    "readTime": "4 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/adobe-black-friday/cover-collage.webp",
+      "alt": "Adobe Black Friday Deals",
+      "fit": "contain",
+      "background": "black",
+      "thumbnail": "/images/blog/adobe-black-friday/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "interior-design-logos",
     "url": "/blog/interior-design-logos",
     "title": "36 Interior Design Logos Explained",
@@ -522,38 +554,6 @@
       "src": "/images/blog/logo-design-cost/cover-collage.webp",
       "alt": "Logo design cost collage with logo sketches, a pricing chart and designer at work",
       "thumbnail": "/images/blog/logo-design-cost/cover-collage-768w.webp"
-    }
-  },
-  {
-    "slug": "black-friday",
-    "url": "/blog/black-friday",
-    "title": "Black Friday Deals for Designers",
-    "description": "Compare 2026 Black Friday deals for designers on software, mockups and web tools, plus Amazon picks for studio hardware, Pantone guides and design books.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "7 min read",
-    "date": "Nov 18, 2026",
-    "image": {
-      "src": "/images/blog/black-friday/cover-collage.webp",
-      "alt": "Black Friday deals for graphic designers",
-      "thumbnail": "/images/blog/black-friday/cover-collage-768w.webp"
-    }
-  },
-  {
-    "slug": "adobe-black-friday",
-    "url": "/blog/adobe-black-friday",
-    "title": "Adobe Black Friday Deals",
-    "description": "Compare Adobe Black Friday offers for individuals, students and teams, including prices, dates and renewal terms.",
-    "category": "Buying Guides",
-    "categorySlug": "buying-guides",
-    "readTime": "4 min read",
-    "date": "Nov 17, 2026",
-    "image": {
-      "src": "/images/blog/adobe-black-friday/cover-collage.webp",
-      "alt": "Adobe Black Friday Deals",
-      "fit": "contain",
-      "background": "black",
-      "thumbnail": "/images/blog/adobe-black-friday/cover-collage-768w.webp"
     }
   },
   {
