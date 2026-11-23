@@ -2,8 +2,6 @@
 // Run from this folder: node chart.mjs
 import { chromium } from "playwright";
 const P = [ // [label, weeks, price, dx, dy, highlight, anchor]
-  ["Caro Visser, basics", 2, 300, 22, 10],
-  ["Caro Visser, full", 3, 750, 22, 10],
   ["Ebaq Brand Sprint", 1, 3000, 26, -20, true],
   ["Gabriela Yanez", 6, 2560, 22, 30],
   ["Dalibor Pajic, startup", 4, 2900, -22, 38, false, "end"],
@@ -18,10 +16,10 @@ const P = [ // [label, weeks, price, dx, dy, highlight, anchor]
 ];
 const W = 1920, H = 1080, L = 210, R = 1780, T = 180, B = 920;
 const x = (w) => L + (w / 16) * (R - L);
-const y0 = Math.log10(200), y1 = Math.log10(100000);
+const y0 = Math.log10(800), y1 = Math.log10(100000);
 const y = (v) => B - ((Math.log10(v) - y0) / (y1 - y0)) * (B - T);
 let g = "";
-for (const v of [300, 1000, 3000, 10000, 30000, 100000]) {
+for (const v of [1000, 3000, 10000, 30000, 100000]) {
   g += `<line x1="${L}" x2="${R}" y1="${y(v)}" y2="${y(v)}" stroke="#e6e6e6" stroke-width="2"/>`;
   g += `<text x="${L - 24}" y="${y(v) + 10}" text-anchor="end" class="ax">$${v >= 1000 ? v / 1000 + "k" : v}</text>`;
 }
@@ -37,7 +35,7 @@ for (const [lab, w, v, dx, dy, hi, anchor] of P) {
 const html = `<html><head><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"><style>body{margin:0}text{font-family:'Roboto Condensed',sans-serif}.ax{font-size:30px;fill:#555}.lb{font-size:28px;fill:#0e0e0e}.lbh{font-size:30px;fill:#00afec;font-weight:700}.t{font-size:56px;font-weight:700;fill:#0e0e0e}.s{font-size:30px;fill:#555}</style></head><body>
 <svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#fff"/>
 <text x="${L}" y="92" class="t">Brand identity: price vs. delivery time</text>
-<text x="${L}" y="140" class="s">13 published packages, prices checked November 23, 2026 (price on a log scale)</text>
+<text x="${L}" y="140" class="s">11 published packages, prices checked November 23, 2026 (price on a log scale)</text>
 ${g}<line x1="${L}" x2="${R}" y1="${B}" y2="${B}" stroke="#0e0e0e" stroke-width="3"/>
 <text x="${(L + R) / 2}" y="${B + 105}" text-anchor="middle" class="s">Weeks to deliver</text></svg></body></html>`;
 const b = await chromium.launch({ channel: "chrome" });

@@ -1,0 +1,24 @@
+{
+  "layout": "collage",
+  "title": "Interior Design Logos",
+  "category": "",
+  "seed": "interior-design-logos-t1zhj",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/interior-design-logos/rh-store-sign.jpg"
+  ]
+}

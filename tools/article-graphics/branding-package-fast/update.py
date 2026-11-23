@@ -8,8 +8,6 @@ SEC = 'fast-turnaround-branding-packages'
 def ext(u, t): return f'<a href="{u}" target="_blank" rel="noopener noreferrer">{t}</a>'
 def fig(src, alt, w=1920, h=1080): return f'<figure><img src="{src}" alt="{alt}" width="{w}" height="{h}" loading="lazy" decoding="async" /></figure>'
 ROWS = [
- (ext('https://contra.com/s/UrZ3bl3B-branding-basics', 'Caro Visser, Branding Basics'), '$300', '2 weeks', 'Logo and variations, brand marks, colours, a brand sheet'),
- (ext('https://contra.com/s/LelE6LWF-bespoke-brand-architecture', 'Caro Visser, Bespoke Brand Architecture'), '$750', '3 weeks', 'Adds a strategy session and full guidelines'),
  ('<a href="/blog/branding-agencies-one-week">Aviso Studios</a>', '$1,700', '5 days', 'Brand in a Week'),
  ('<a href="/blog/branding-agencies-one-week">Ellie Brown Branding</a>', '$1,950', '1 week', 'Logos, colours and fonts in seven days'),
  ('<a href="/blog/branding-agencies-one-week">Lovendear Design</a>', '$2,900', '5 days', 'Brand Nurture Week, one part of the identity each day'),
@@ -29,10 +27,10 @@ section = ''.join([
  f'<h2 id="{SEC}">Fast-turnaround branding packages for startups</h2>',
  '<p>A fast-turnaround branding package delivers a <strong>complete identity in one to three weeks</strong>, instead of the usual one to three months.</p>',
  fig('/images/blog/branding-agencies-one-week/one-week-timeline.webp', 'One-week brand sprint timeline showing strategy, discovery, concepts, direction, refinement and handover day by day'),
- '<p>Here are 14 published packages that deliver in three weeks or less, sorted by price.</p>',
- '<p>Studio prices come from my roundup of <a href="/blog/branding-agencies-one-week">branding agencies that deliver in a week</a>, and I re-checked Primary and Caro Visser on November 23, 2026.</p>',
+ '<p>Here are 12 published packages that deliver in three weeks or less, sorted by price.</p>',
+ '<p>Studio prices come from my roundup of <a href="/blog/branding-agencies-one-week">branding agencies that deliver in a week</a>, and I re-checked Primary on November 23, 2026.</p>',
  table,
- '<p><strong>Under $2,000:</strong> freelancers and small studios like Caro Visser, Aviso Studios and Ellie Brown Branding deliver a logo, colours, fonts and a short guide, which suits solo founders and small businesses.</p>',
+ '<p><strong>Under $2,000:</strong> small studios like Aviso Studios and Ellie Brown Branding deliver a logo, colours, fonts and a short guide, which suits solo founders and small businesses.</p>',
  '<p><strong>$2,900 to $5,000:</strong> the one-week sprint sweet spot, with a complete identity and guidelines in five working days from Lovendear, Studio Madz, Brand Purist, A+M Studio, Studio Seaside and my own Brand Sprint.</p>',
  '<p><strong>$10,000 to $25,000:</strong> ten-day to three-week sprints for funded startups from Upspire Labs, Foundation and idgram, which add workshops, strategy and more concepts.</p>',
  '<p><strong>$60,000:</strong> Primary\'s two-week sprint, an agency team working on a sprint schedule.</p>',
@@ -48,7 +46,7 @@ if f'id="{SEC}"' not in b:
     toc = '<li><a href="#how-much-does-a-branding-package-cost">'
     b = b.replace(toc, f'<li><a href="#{SEC}">Fast-turnaround packages</a></li>' + toc, 1)
     intro_end = b.index('</p>', b.index('My current identity package is')) + 4
-    b = b[:intro_end] + f'<p>If you need it fast, the <a href="#{SEC}">comparison below</a> lists 14 branding packages that deliver in one to three weeks, with prices.</p>' + b[intro_end:]
+    b = b[:intro_end] + f'<p>If you need it fast, the <a href="#{SEC}">comparison below</a> lists 12 branding packages that deliver in one to three weeks, with prices.</p>' + b[intro_end:]
     faq_anchor = '<h2 id="frequently-asked-questions">Frequently asked questions</h2>'
     extra = ('<h3>How fast can a startup get a brand identity?</h3><p>A focused brand identity can be delivered in one week when the scope is fixed and one person makes decisions.</p><p>The packages above take five days to three weeks; naming, research and a website add more time.</p>'
              '<h3>Is a one-week branding package enough for a startup?</h3><p>For most early-stage startups, yes: a logo system, colours, typography and guidelines are what you need to launch.</p><p>Add strategy, messaging or a website later, when you know more about your customers.</p>')
@@ -56,7 +54,7 @@ if f'id="{SEC}"' not in b:
 d['body'] = b
 d['title'] = 'Fast Branding Packages for Startups'
 d['seo']['title'] = d['title']
-desc = 'Fast-turnaround branding packages for startups: 14 packages delivered in one to three weeks, from $300 to $60,000, plus what a startup branding package includes.'
+desc = 'Fast-turnaround branding packages for startups: 12 packages delivered in one to three weeks, from $1,700 to $60,000, plus what a startup branding package includes.'
 d['description'] = desc; d['seo']['description'] = desc
 d['date'] = 'Nov 23, 2026'; d['readTime'] = '13 min read'
 d['image']['alt'] = 'Three blue branding package boxes for logo, identity and website'

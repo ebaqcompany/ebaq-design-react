@@ -3,13 +3,11 @@ import json, os
 SLUG = 'brand-identity-cost'; I = f'/images/blog/{SLUG}'
 D = 'Nov 23, 2026'; CHK = 'November 23, 2026'
 TITLE = 'How Much a Complete Brand Identity Costs'
-DESC = 'A complete brand identity costs $300 to $10,000 with a freelancer, $10,000 to $25,000 with a studio and $60,000+ with an agency. 13 published packages with prices and timelines.'
+DESC = 'A complete brand identity costs about $2,500 to $10,000 with a senior freelancer, $10,000 to $25,000 with a studio and $60,000+ with an agency. 11 published packages with prices and timelines.'
 def ext(u, t): return f'<a href="{u}" target="_blank" rel="noopener noreferrer">{t}</a>'
 P = lambda s: f'<p>{s}</p>'
 # (provider, type, package, price, weeks label, url, includes)
 ROWS = [
- ("Caro Visser", "Freelancer", "Branding Basics", "$300", "2 weeks", "https://contra.com/s/UrZ3bl3B-branding-basics", "Logo with 2 variations, brand marks, colours, a brand sheet and mockups"),
- ("Caro Visser", "Freelancer", "Bespoke Brand Architecture", "$750", "3 weeks", "https://contra.com/s/LelE6LWF-bespoke-brand-architecture", "Adds a strategy session and full guidelines, including tone of voice"),
  ("Gabriela Yanez", "Freelancer", "Brand identity design", "$2,560", "6 weeks", "https://contra.com/s/BWFPoYrX-brand-identity-design", "Logo versions, palette, graphic elements, pictograms, photo style, guidelines"),
  ("Dalibor Pajic", "Freelancer", "Visual Identity for Startups", "$2,900", "4 weeks", "https://contra.com/s/gOoWOrmM-visual-identity-for-startups", "Logo and variations, core typography, lightweight guidelines"),
  ("Ebaq Design (me)", "Solo senior designer", "Brand Sprint", "$3,000", "1 week", "/brand-sprint", "Logo concepts, logo animation, colours, typography, guidelines, cards, launch assets"),
@@ -25,11 +23,11 @@ ROWS = [
 def link(u, t): return f'<a href="{u}">{t}</a>' if u.startswith('/') else ext(u, t)
 table = '<div style="overflow-x:auto"><table><thead><tr><th>Provider</th><th>Package</th><th>Price</th><th>Time</th><th>What you get</th></tr></thead><tbody>' + ''.join(
     f'<tr><td>{r[0]}<br><small>{r[1]}</small></td><td>{link(r[5], r[2])}</td><td><strong>{r[3]}</strong></td><td>{r[4]}</td><td>{r[6]}</td></tr>' for r in ROWS) + '</tbody></table></div>'
-chart = f'<figure><img src="{I}/brand-identity-cost-vs-delivery-time.webp" alt="Chart of brand identity price against delivery time for 13 published packages, from $300 in 2 weeks to $60,000 in 2 weeks, with the $3,000 one-week Ebaq Brand Sprint highlighted" width="1920" height="1080" loading="lazy" decoding="async" /><figcaption>13 published brand identity packages, prices and timelines checked {CHK}.</figcaption></figure>'
+chart = f'<figure><img src="{I}/brand-identity-cost-vs-delivery-time.webp" alt="Chart of brand identity price against delivery time for 11 published packages, from $2,560 in 6 weeks to $60,000 in 2 weeks, with the $3,000 one-week Ebaq Brand Sprint highlighted" width="1920" height="1080" loading="lazy" decoding="async" /><figcaption>13 published brand identity packages, prices and timelines checked {CHK}.</figcaption></figure>'
 b = []
-b.append(P('A complete brand identity costs <strong>$300 to $10,000 with a freelancer</strong>, <strong>$10,000 to $25,000 with an independent studio</strong> and <strong>$60,000 or more with an agency</strong>.'))
-b.append(P('It usually takes <strong>2 to 6 weeks</strong> with a freelancer, <strong>5 weeks to 4 months</strong> with a studio and anywhere from a two-week sprint to many months with an agency.'))
-b.append(P('Those ranges come from <strong>13 published packages</strong> that list both a price and a delivery time, which I checked on each provider\'s own page on ' + CHK + '.'))
+b.append(P('A complete brand identity costs <strong>about $2,500 to $10,000 with a senior freelancer</strong>, <strong>$10,000 to $25,000 with an independent studio</strong> and <strong>$60,000 or more with an agency</strong>.'))
+b.append(P('It usually takes <strong>4 to 6 weeks</strong> with a senior freelancer, <strong>5 weeks to 4 months</strong> with a studio and anywhere from a two-week sprint to many months with an agency.'))
+b.append(P('Those ranges come from <strong>11 published packages</strong> that list both a price and a delivery time, which I checked on each provider\'s own page on ' + CHK + '.'))
 b.append(P('Disclosure: one of them is my own one-week Brand Sprint, and I list it in the same table as the others.'))
 b.append(chart)
 b.append('<h2 id="what-counts-as-a-complete-brand-identity">What counts as a complete brand identity?</h2>')
@@ -42,8 +40,9 @@ b.append('<h2 id="cost-and-timeline-compared">Brand identity cost and timeline c
 b.append(P('Sorted from lowest to highest price. Every row links to the published package.'))
 b.append(table)
 b.append('<h2 id="freelancer-cost">How much does a freelancer charge for a brand identity?</h2>')
-for s in ['Freelance packages in this list range from <strong>$300 to $10,000</strong> and take <strong>2 to 6 weeks</strong>.',
-          'At the low end, Caro Visser in Cape Town lists Branding Basics at $300 in two weeks: a logo with two variations, brand marks, colours, a short brand sheet and mockups.',
+for s in ['Senior freelance packages in this list range from <strong>$2,560 to $10,000</strong> and take <strong>4 to 6 weeks</strong>.',
+          'Beginners on Upwork or Fiverr will quote you a few hundred dollars, but that is not a full identity from someone who knows what they are doing.',
+          'At the low end, Gabriela Yanez in Mexico City lists brand identity design at $2,560 in six weeks, with logo versions, a palette, graphic elements and guidelines.',
           'In the middle, Dalibor Pajic in Auckland lists a Visual Identity for Startups at $2,900 in four weeks and a fuller Brand Identity System at $4,150 in six weeks.',
           'At the top, Sophie O\'Connor in London lists a Visual Identity Package at $8,000 in four weeks and a Brand Identity Package at $10,000 in six weeks.',
           'The price rises with <strong>experience and scope</strong>, not with the number of weeks: Sophie has 20 years of experience, and her packages include more of the system.',
@@ -82,10 +81,10 @@ for s in ['<strong>Under $1,000:</strong> a basic logo and colour set from an en
           '<strong>$60,000 and up:</strong> an agency, when you need research, many stakeholders and a large rollout.',
           'If you need ongoing design after launch, compare <a href="/blog/design-subscription-services">design subscription services</a>, which start around $1,800 a month.']: b.append(P(s))
 faq = [
- {"question": "How much does a complete brand identity cost?", "answer": "In the 13 published packages I checked, a complete brand identity costs $300 to $10,000 with a freelancer, $10,000 to $25,000 with an independent studio and $60,000 or more with an agency. Most startups spend $2,500 to $10,000."},
- {"question": "How long does it take to create a brand identity?", "answer": "Freelance packages take 2 to 6 weeks, studio packages 5 weeks to 4 months and agencies anywhere from a two-week sprint to many months. A one-week brand sprint is possible when the scope is fixed and one person makes decisions."},
+ {"question": "How much does a complete brand identity cost?", "answer": "In the 11 published packages I checked, a complete brand identity costs about $2,500 to $10,000 with a senior freelancer, $10,000 to $25,000 with an independent studio and $60,000 or more with an agency. Most startups spend $2,500 to $10,000."},
+ {"question": "How long does it take to create a brand identity?", "answer": "Senior freelance packages take 4 to 6 weeks, studio packages 5 weeks to 4 months and agencies anywhere from a two-week sprint to many months. A one-week brand sprint is possible when the scope is fixed and one person makes decisions."},
  {"question": "What is included in a brand identity package?", "answer": "A logo with variations, a colour palette, typography and brand guidelines are the core. Many packages add graphic elements, icons, mockups and stationery. Strategy, naming, packaging and a website usually cost extra."},
- {"question": "Is a cheaper brand identity worth it?", "answer": "It can be for an early test, but a $300 package covers a logo and colours, not a full system. Check what the guidelines include and how many concepts and revisions you get before comparing prices."},
+ {"question": "Is a cheaper brand identity worth it?", "answer": "Rarely. A few-hundred-dollar package from a beginner covers a logo and colours, not a full system. Check what the guidelines include and how many concepts and revisions you get before comparing prices."},
  {"question": "How much does your Brand Sprint cost?", "answer": "My Brand Sprint costs $3,000 and delivers a complete brand identity or rebrand in one week, including logo concepts, a logo animation, colours, typography, guidelines and launch assets."},
 ]
 post = {"slug": SLUG, "url": f"/blog/{SLUG}", "title": TITLE, "category": "Branding", "categorySlug": "branding", "author": "arek-dvornechuck-ebaqdesign",

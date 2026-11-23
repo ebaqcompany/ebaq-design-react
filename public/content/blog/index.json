@@ -1,5 +1,20 @@
 [
   {
+    "slug": "interior-design-logos",
+    "url": "/blog/interior-design-logos",
+    "title": "36 Interior Design Logos Explained",
+    "description": "36 interior design logos explained by a brand designer: studios like Kelly Wearstler and Studio McGee, furniture brands like Vitra and Knoll, design marketplaces and lighting brands.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "13 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/interior-design-logos/cover-collage.webp",
+      "alt": "Interior Design Logos cover collage with the RH store sign at The Summit in Birmingham, Alabama",
+      "thumbnail": "/images/blog/interior-design-logos/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "freelancer-vs-studio",
     "url": "/blog/freelancer-vs-studio",
     "title": "Senior Freelancer or Small Studio?",
@@ -48,7 +63,7 @@
     "slug": "brand-identity-cost",
     "url": "/blog/brand-identity-cost",
     "title": "How Much a Complete Brand Identity Costs",
-    "description": "A complete brand identity costs $300 to $10,000 with a freelancer, $10,000 to $25,000 with a studio and $60,000+ with an agency. 13 published packages with prices and timelines.",
+    "description": "A complete brand identity costs about $2,500 to $10,000 with a senior freelancer, $10,000 to $25,000 with a studio and $60,000+ with an agency. 11 published packages with prices and timelines.",
     "category": "Branding",
     "categorySlug": "branding",
     "readTime": "11 min read",
@@ -527,7 +542,7 @@
   {
     "slug": "adobe-black-friday",
     "url": "/blog/adobe-black-friday",
-    "title": "Adobe Black Friday Deals 2026: Creative Cloud & Firefly",
+    "title": "Adobe Black Friday Deals",
     "description": "Compare Adobe Black Friday offers for individuals, students and teams, including prices, dates and renewal terms.",
     "category": "Buying Guides",
     "categorySlug": "buying-guides",
@@ -535,7 +550,7 @@
     "date": "Nov 17, 2026",
     "image": {
       "src": "/images/blog/adobe-black-friday/cover-collage.webp",
-      "alt": "Adobe Black Friday Deals 2026: Creative Cloud & Firefly",
+      "alt": "Adobe Black Friday Deals",
       "fit": "contain",
       "background": "black",
       "thumbnail": "/images/blog/adobe-black-friday/cover-collage-768w.webp"
@@ -544,7 +559,7 @@
   {
     "slug": "best-adobe-discounts",
     "url": "/blog/best-adobe-discounts",
-    "title": "Adobe Creative Cloud Discounts & Black Friday Deals [2026]",
+    "title": "Adobe Creative Cloud Discounts",
     "description": "Compare Adobe Creative Cloud Black Friday offers for individuals, students, and teams, plus ways to save on Adobe plans.",
     "category": "Buying Guides",
     "categorySlug": "buying-guides",
@@ -559,7 +574,7 @@
   {
     "slug": "wellness-branding",
     "url": "/blog/wellness-branding",
-    "title": "25 Best Wellness Branding Examples in 2026",
+    "title": "25 Best Wellness Branding Examples",
     "description": "A branding designer reviews 25 real wellness businesses, from Bathhouse and spas to Pilates and recovery clubs, with practical identity ideas for owners.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -567,14 +582,14 @@
     "date": "Oct 24, 2026",
     "image": {
       "src": "/images/blog/wellness-branding/cover-collage.webp",
-      "alt": "25 Best Wellness Branding Examples in 2026",
+      "alt": "25 Best Wellness Branding Examples",
       "thumbnail": "/images/blog/wellness-branding/cover-collage-768w.webp"
     }
   },
   {
     "slug": "superhero-logos",
     "url": "/blog/superhero-logos",
-    "title": "9 Best Superhero Logos Explained in 2026",
+    "title": "9 Superhero Logos Explained",
     "description": "Explore the best superhero logos in 2026. Discover the meaning behind iconic symbols from Batman to Superman.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -588,7 +603,7 @@
   {
     "slug": "minimalist-fonts",
     "url": "/blog/minimalist-fonts",
-    "title": "Top 10 Fonts For Minimalist Logo Design in 2026",
+    "title": "10 Best Fonts for Minimalist Logos",
     "description": "Discover the best fonts for minimalist logos in 2026. Clean typefaces for modern brand design.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -596,7 +611,7 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/minimalist-fonts/top-10-fonts-for-minimalist-logo-designbg.webp",
-      "alt": "Top 10 Fonts For Minimalist Logo Design in 2026",
+      "alt": "10 Best Fonts for Minimalist Logos",
       "thumbnail": "/images/blog/minimalist-fonts/top-10-fonts-for-minimalist-logo-designbg-768w.webp"
     }
   },
@@ -618,7 +633,7 @@
   {
     "slug": "rebranding-after-acquisition",
     "url": "/blog/rebranding-after-acquisition",
-    "title": "Rebranding After an Acquisition: A Practical Guide (2026)",
+    "title": "Rebranding After an Acquisition",
     "description": "When to rebrand after an acquisition: what to keep, what to change, how to announce it, what it costs and how to roll it out, with copy-ready templates and the Airport Executive rebrand under new ownership.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -633,7 +648,7 @@
   {
     "slug": "web-design-process",
     "url": "/blog/web-design-process",
-    "title": "Web Design Process: From Discovery to Launch",
+    "title": "The Web Design Process",
     "description": "A complete web design process, from discovery and messaging to design, development, testing, and launch, illustrated through the ELEVATE case study.",
     "category": "Web Design",
     "categorySlug": "web-design",
@@ -648,7 +663,7 @@
   {
     "slug": "saas-websites",
     "url": "/blog/saas-websites",
-    "title": "14 Best SaaS Website Examples in 2026",
+    "title": "14 Best SaaS Website Examples",
     "description": "I review 14 standout SaaS websites and explain the design systems that make brands like Clay, Stripe, Teak, Mistral, and Conductor memorable.",
     "category": "Web Design",
     "categorySlug": "web-design",
@@ -664,7 +679,7 @@
   {
     "slug": "luxury-car-logos",
     "url": "/blog/luxury-car-logos",
-    "title": "30+ Luxury Car Logos & Their Hidden Meanings [2026 Guide]",
+    "title": "Luxury Car Logos Explained",
     "description": "Explore 30+ luxury car emblems and symbols with hidden meanings. Ferrari, Lamborghini, Mercedes, Rolls-Royce and more — full history and design analysis.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -672,14 +687,14 @@
     "date": "Feb 1, 2026",
     "image": {
       "src": "/images/blog/luxury-car-logos/top-luxury-car-logo-bg.webp",
-      "alt": "30+ Luxury Car Logos & Their Hidden Meanings [2026 Guide]",
+      "alt": "Luxury Car Logos Explained",
       "thumbnail": "/images/blog/luxury-car-logos/top-luxury-car-logo-bg-768w.webp"
     }
   },
   {
     "slug": "mlb-logos",
     "url": "/blog/mlb-logos",
-    "title": "All 30 MLB Team Logos Ranked & Explained [2026 Edition]",
+    "title": "All 30 MLB Logos Explained",
     "description": "Every MLB team logo ranked from best to worst with full design analysis. See what makes the Yankees, Dodgers, and all 30 baseball logos iconic or forgettable.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -687,14 +702,14 @@
     "date": "Feb 1, 2026",
     "image": {
       "src": "/images/blog/mlb-logos/best-mlb-logos.webp",
-      "alt": "All 30 MLB Team Logos Ranked & Explained [2026 Edition]",
+      "alt": "All 30 MLB Logos Explained",
       "thumbnail": "/images/blog/mlb-logos/best-mlb-logos-768w.webp"
     }
   },
   {
     "slug": "nfl-logos",
     "url": "/blog/nfl-logos",
-    "title": "Top 9 Most Iconic NFL Team Logos in 2026",
+    "title": "9 Most Iconic NFL Logos",
     "description": "Ranked: the 9 most iconic NFL team logos and what makes them work. Design breakdowns of the Cowboys, Patriots, Eagles and more football brand identities.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -702,14 +717,14 @@
     "date": "Feb 1, 2026",
     "image": {
       "src": "/images/blog/nfl-logos/nfl-logos-arek.jpg",
-      "alt": "Top 9 Most Iconic NFL Team Logos in 2026",
+      "alt": "9 Most Iconic NFL Logos",
       "thumbnail": "/images/blog/nfl-logos/nfl-logos-arek-768w.webp"
     }
   },
   {
     "slug": "brand-strategy-framework-startups",
     "url": "/blog/brand-strategy-framework-startups",
-    "title": "Brand Strategy Framework for Startups: The 9-Step Process [2026 Guide]",
+    "title": "Brand Strategy Framework for Startups",
     "description": "Learn the proven 9-step brand strategy framework used by successful startups. From brand purpose to tagline, build a strategy that attracts customers.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -717,14 +732,14 @@
     "date": "Jan 31, 2026",
     "image": {
       "src": "/images/shared/brand-strategy-framework-done.webp",
-      "alt": "Brand Strategy Framework for Startups: The 9-Step Process [2026 Guide]",
+      "alt": "Brand Strategy Framework for Startups",
       "thumbnail": "/images/shared/brand-strategy-framework-done-768w.webp"
     }
   },
   {
     "slug": "brand-architecture",
     "url": "/blog/brand-architecture",
-    "title": "Brand Architecture Explained: 4 Types + Examples [2026]",
+    "title": "Brand Architecture Explained",
     "description": "Learn the 4 brand architecture types with real examples from P&G, Apple, and Virgin. Choose the right structure for your brand portfolio.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -732,14 +747,14 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/brand-architecture/brand-architecture-bg.webp",
-      "alt": "Brand Architecture Explained: 4 Types + Examples [2026]",
+      "alt": "Brand Architecture Explained",
       "thumbnail": "/images/blog/brand-architecture/brand-architecture-bg-768w.webp"
     }
   },
   {
     "slug": "brand-name",
     "url": "/blog/brand-name",
-    "title": "9 Types of Brand Names (With 50+ Examples) [2026 Guide]",
+    "title": "9 Types of Brand Names",
     "description": "Discover the 9 types of brand names with 50+ real examples. From descriptive to invented names - find the right naming strategy for your brand.",
     "category": "Naming",
     "categorySlug": "naming",
@@ -747,7 +762,7 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/brand-name/brand-name-types-th.webp",
-      "alt": "9 Types of Brand Names (With 50+ Examples) [2026 Guide]"
+      "alt": "9 Types of Brand Names"
     }
   },
   {
@@ -768,7 +783,7 @@
   {
     "slug": "logo-fonts",
     "url": "/blog/logo-fonts",
-    "title": "How to Choose the Perfect Logo Font [2026 Guide + Tips]",
+    "title": "How to Choose a Logo Font",
     "description": "Learn how to choose the right font for your logo. Typography psychology, pairing tips, and mistakes to avoid for memorable branding.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -776,14 +791,14 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/logo-fonts/logo-font-bg-4f512f.webp",
-      "alt": "How to Choose the Perfect Logo Font [2026 Guide + Tips]",
+      "alt": "How to Choose a Logo Font",
       "thumbnail": "/images/blog/logo-fonts/logo-font-bg-4f512f-768w.webp"
     }
   },
   {
     "slug": "monogram-logo-design",
     "url": "/blog/monogram-logo-design",
-    "title": "Monogram Logo Design: 25+ Examples & Tips [2026 Guide]",
+    "title": "Monogram Logo Design",
     "description": "Learn how to design stunning monogram logos with 25+ examples. Step-by-step process for creating elegant lettermark designs.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -791,14 +806,14 @@
     "date": "Jan 28, 2026",
     "image": {
       "src": "/images/blog/monogram-logo-design/ebaq-blog-post-1.webp",
-      "alt": "Monogram Logo Design: 25+ Examples & Tips [2026 Guide]",
+      "alt": "Monogram Logo Design",
       "thumbnail": "/images/blog/monogram-logo-design/ebaq-blog-post-1-768w.webp"
     }
   },
   {
     "slug": "abstract-logo-design",
     "url": "/blog/abstract-logo-design",
-    "title": "Best Examples of Abstract Logo Designs in 2026",
+    "title": "Best Abstract Logo Designs",
     "description": "Explore the best abstract logo designs for 2026. Get inspiration for creative, unique brand marks.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -806,14 +821,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/abstract-logo-design/4.webp",
-      "alt": "Best Examples of Abstract Logo Designs in 2026",
+      "alt": "Best Abstract Logo Designs",
       "thumbnail": "/images/blog/abstract-logo-design/4-768w.webp"
     }
   },
   {
     "slug": "ai-company-branding",
     "url": "/blog/ai-company-branding",
-    "title": "9 Best AI Company Branding Examples in 2026",
+    "title": "9 Best AI Company Branding Examples",
     "description": "Discover the best AI company branding examples in 2026. Learn how leading AI startups build memorable brand identities.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -821,14 +836,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/ai-company-branding/best-ai-company-logos.webp",
-      "alt": "9 Best AI Company Branding Examples in 2026",
+      "alt": "9 Best AI Company Branding Examples",
       "thumbnail": "/images/blog/ai-company-branding/best-ai-company-logos-768w.webp"
     }
   },
   {
     "slug": "ai-startup-landing-page-examples",
     "url": "/blog/ai-startup-landing-page-examples",
-    "title": "7 Best AI Startup Landing Page Examples in 2026",
+    "title": "7 Best AI Startup Landing Pages",
     "description": "Discover the best AI startup landing pages in 2026. Learn design patterns from Flow, Sahara AI, Composio & more.",
     "category": "Web Design",
     "categorySlug": "web-design",
@@ -836,13 +851,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/ai-startup-landing-page-examples/best-ai-startup-landing-pages.webp",
-      "alt": "7 Best AI Startup Landing Page Examples in 2026"
+      "alt": "7 Best AI Startup Landing Pages"
     }
   },
   {
     "slug": "animal-logos",
     "url": "/blog/animal-logos",
-    "title": "Animal Symbolism in Logo Design in 2026",
+    "title": "Animal Symbolism in Logo Design",
     "description": "Explore animal symbolism in logo design for 2026. Learn what different animals represent in branding.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -850,13 +865,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/animal-logos/animals-symbolism-9dd56456640d77eace94775445fc20c4.webp",
-      "alt": "Animal Symbolism in Logo Design in 2026"
+      "alt": "Animal Symbolism in Logo Design"
     }
   },
   {
     "slug": "best-branding-books",
     "url": "/blog/best-branding-books",
-    "title": "Top 15 Branding Books of All Time (Updated for 2026)",
+    "title": "15 Best Branding Books of All Time",
     "description": "Discover the top 15 branding books every marketer should read. Updated recommendations for 2026.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -864,14 +879,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/best-branding-books/15-best-branding-books-of-all-time-bg.webp",
-      "alt": "Top 15 Branding Books of All Time (Updated for 2026)",
+      "alt": "15 Best Branding Books of All Time",
       "thumbnail": "/images/blog/best-branding-books/15-best-branding-books-of-all-time-bg-768w.webp"
     }
   },
   {
     "slug": "best-logos",
     "url": "/blog/best-logos",
-    "title": "The Best Logos Are Simple in 2026: It's All in the Idea",
+    "title": "The Best Logos Are Simple",
     "description": "Learn why the best logos are simple in 2026. Discover how great ideas create memorable brand symbols.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -879,14 +894,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/best-logos/arek-logo-book-960.webp",
-      "alt": "The Best Logos Are Simple in 2026: It's All in the Idea",
+      "alt": "The Best Logos Are Simple",
       "thumbnail": "/images/blog/best-logos/arek-logo-book-960-768w.webp"
     }
   },
   {
     "slug": "best-rebrands",
     "url": "/blog/best-rebrands",
-    "title": "The Biggest Rebrands & Redesigns of 2026",
+    "title": "The Biggest Rebrands of the Year",
     "description": "Explore the biggest rebrands and redesigns of 2026. See major logo and identity changes from top brands.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -894,13 +909,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/best-rebrands/best-rebrands-th-e476d3672b2e064379713ec7da287914.webp",
-      "alt": "The Biggest Rebrands & Redesigns of 2026"
+      "alt": "The Biggest Rebrands of the Year"
     }
   },
   {
     "slug": "boxing-gym-branding",
     "url": "/blog/boxing-gym-branding",
-    "title": "Boxing Gym Branding in 2026: Complete Guide & Examples",
+    "title": "Boxing Gym Branding Guide",
     "description": "Learn boxing gym branding strategies for 2026. Discover design tips and inspiring examples from top fitness brands.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -908,14 +923,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/boxing-gym-branding/2.webp",
-      "alt": "Boxing Gym Branding in 2026: Complete Guide & Examples",
+      "alt": "Boxing Gym Branding Guide",
       "thumbnail": "/images/blog/boxing-gym-branding/2-768w.webp"
     }
   },
   {
     "slug": "brand-archetypes",
     "url": "/blog/brand-archetypes",
-    "title": "Brand Archetypes: The Definitive Guide for 2026 (48 Examples)",
+    "title": "Brand Archetypes Explained",
     "description": "Master brand archetypes in 2026 with 48 examples. Learn to define your brand personality using the 12 archetype framework.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -923,14 +938,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-archetypes/brand-archetypes-cover-1600px.jpg",
-      "alt": "Brand Archetypes: The Definitive Guide for 2026 (48 Examples)",
+      "alt": "Brand Archetypes Explained",
       "thumbnail": "/images/blog/brand-archetypes/brand-archetypes-cover-1600px-768w.webp"
     }
   },
   {
     "slug": "brand-audit",
     "url": "/blog/brand-audit",
-    "title": "How To Do a Brand Audit in 2026 (Complete Guide)",
+    "title": "How to Do a Brand Audit",
     "description": "Learn how to conduct a brand audit in 2026. Step-by-step guide to evaluate and strengthen your brand strategy.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -938,14 +953,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-audit/brand-audit-th.webp",
-      "alt": "How To Do a Brand Audit in 2026 (Complete Guide)",
+      "alt": "How to Do a Brand Audit",
       "thumbnail": "/images/blog/brand-audit/brand-audit-th-768w.webp"
     }
   },
   {
     "slug": "brand-discovery",
     "url": "/blog/brand-discovery",
-    "title": "How To Conduct A Brand Discovery in 2026 (Free Guide)",
+    "title": "How to Run a Brand Discovery",
     "description": "Master brand discovery in 2026. Free guide to understanding clients and building strategic brand foundations.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -953,14 +968,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-discovery/brand-discovery-workshop-online.webp",
-      "alt": "How To Conduct A Brand Discovery in 2026 (Free Guide)",
+      "alt": "How to Run a Brand Discovery",
       "thumbnail": "/images/blog/brand-discovery/brand-discovery-workshop-online-768w.webp"
     }
   },
   {
     "slug": "brand-guidelines",
     "url": "/blog/brand-guidelines",
-    "title": "31 Brand Guidelines Examples: Famous Brands & My Client Work",
+    "title": "31 Brand Guidelines Examples",
     "description": "Explore brand guidelines from famous brands and my own client projects, with visual examples, digital portals and practical lessons for your business.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -975,7 +990,7 @@
   {
     "slug": "brand-illustration",
     "url": "/blog/brand-illustration",
-    "title": "10 Examples of Using Illustration in Branding in 2026",
+    "title": "10 Examples of Illustration in Branding",
     "description": "Discover 10 examples of illustration in branding for 2026. See how custom artwork strengthens brand identity.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -983,13 +998,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-illustration/brand-illustrations-900-600-px-6-275165c5a7490c069f2d0ab-b46818.webp",
-      "alt": "10 Examples of Using Illustration in Branding in 2026"
+      "alt": "10 Examples of Illustration in Branding"
     }
   },
   {
     "slug": "brand-mascots",
     "url": "/blog/brand-mascots",
-    "title": "15 Best Mascot Logos & Brand Characters in 2026",
+    "title": "15 Best Mascot Logos",
     "description": "Discover the best mascot logos in 2026. Explore iconic brand characters that connect with audiences.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -997,13 +1012,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-mascots/15bestbrandmascotdesignsofalltime8-3da0464a3ace9af2017c2-b7519d.webp",
-      "alt": "15 Best Mascot Logos & Brand Characters in 2026"
+      "alt": "15 Best Mascot Logos"
     }
   },
   {
     "slug": "brand-mood-board",
     "url": "/blog/brand-mood-board",
-    "title": "How To Create a Brand Mood Board in 2026 (Complete Guide)",
+    "title": "How to Create a Brand Mood Board",
     "description": "Learn how to create a brand mood board in 2026. Step-by-step guide with tips, tools, and inspiring examples.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1011,14 +1026,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-mood-board/brand-mood-board-th.webp",
-      "alt": "How To Create a Brand Mood Board in 2026 (Complete Guide)",
+      "alt": "How to Create a Brand Mood Board",
       "thumbnail": "/images/blog/brand-mood-board/brand-mood-board-th-768w.webp"
     }
   },
   {
     "slug": "brand-naming",
     "url": "/blog/brand-naming",
-    "title": "How To Create A Brand Name in 2026",
+    "title": "How to Create a Brand Name",
     "description": "Learn how to create a brand name in 2026. Naming strategies, brainstorming techniques, and trademark considerations.",
     "category": "Naming",
     "categorySlug": "naming",
@@ -1026,14 +1041,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-naming/naming-workshop-recording-photo-1600px.webp",
-      "alt": "How To Create A Brand Name in 2026",
+      "alt": "How to Create a Brand Name",
       "thumbnail": "/images/blog/brand-naming/naming-workshop-recording-photo-1600px-768w.webp"
     }
   },
   {
     "slug": "brand-personality",
     "url": "/blog/brand-personality",
-    "title": "Brand Personality: Traits of Top Brands in 2026",
+    "title": "Brand Personality Examples",
     "description": "Explore brand personality traits from top brands in 2026. Learn how to define and express your brand character.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1041,13 +1056,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-personality/what-personality.webp",
-      "alt": "Brand Personality: Traits of Top Brands in 2026"
+      "alt": "Brand Personality Examples"
     }
   },
   {
     "slug": "brand-positioning",
     "url": "/blog/brand-positioning",
-    "title": "Brand Positioning in 2026: 22 Best Examples",
+    "title": "22 Brand Positioning Examples",
     "description": "Explore 22 brand positioning examples for 2026. Learn how top brands differentiate in competitive markets.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1055,13 +1070,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-positioning/coverimagefonts-ff575241fc3039cf173f212c6026efb6.webp",
-      "alt": "Brand Positioning in 2026: 22 Best Examples"
+      "alt": "22 Brand Positioning Examples"
     }
   },
   {
     "slug": "brand-purpose",
     "url": "/blog/brand-purpose",
-    "title": "Brand Purpose in 2026: 22 Best Examples",
+    "title": "22 Brand Purpose Examples",
     "description": "Discover 22 brand purpose examples for 2026. Learn how purpose-driven brands connect with customers.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1069,13 +1084,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-purpose/brand-purpose-example-4a47651ad38030ed183e9b74a8e3405e.webp",
-      "alt": "Brand Purpose in 2026: 22 Best Examples"
+      "alt": "22 Brand Purpose Examples"
     }
   },
   {
     "slug": "brand-refresh",
     "url": "/blog/brand-refresh",
-    "title": "Brand Refresh: Improve Your Logo, Colors & Typography",
+    "title": "How to Refresh Your Brand",
     "description": "See how a brand refresh improves an existing logo, colors and typography, with real before-and-after work, practical deliverables and a $3,000 one-week option.",
     "category": "Branding",
     "readTime": "9 min read",
@@ -1090,7 +1105,7 @@
   {
     "slug": "brand-story",
     "url": "/blog/brand-story",
-    "title": "How To Tell Your Brand Story in 2026",
+    "title": "How to Tell Your Brand Story",
     "description": "Learn how to tell your brand story in 2026. Create compelling narratives that connect with customers.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1098,14 +1113,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-story/brand-story-bg.webp",
-      "alt": "How To Tell Your Brand Story in 2026",
+      "alt": "How to Tell Your Brand Story",
       "thumbnail": "/images/blog/brand-story/brand-story-bg-768w.webp"
     }
   },
   {
     "slug": "brand-strategy",
     "url": "/blog/brand-strategy",
-    "title": "Brand Strategy: The 9-Step Framework, Workshop & Templates",
+    "title": "The 9-Step Brand Strategy Framework",
     "description": "What brand strategy is, how it differs from brand identity and marketing, and the 9-step framework I run in client workshops: nine exercises, copyable statement templates, a one-page worksheet, a workshop agenda and a filled example.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1120,7 +1135,7 @@
   {
     "slug": "brand-strategy-courses",
     "url": "/blog/brand-strategy-courses",
-    "title": "Best Brand Strategy Courses in 2026",
+    "title": "Best Brand Strategy Courses",
     "description": "This is the ultimate list of online brand strategy courses for creatives who want to become strategists or CEO’s who want to build a brand the strategic way.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1128,13 +1143,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-strategy-courses/brand-strategy-macbook-mockup.webp",
-      "alt": "Best Brand Strategy Courses in 2026"
+      "alt": "Best Brand Strategy Courses"
     }
   },
   {
     "slug": "brand-strategy-elements",
     "url": "/blog/brand-strategy-elements",
-    "title": "The 9 Key Elements of Brand Strategy in 2026",
+    "title": "9 Key Elements of Brand Strategy",
     "description": "Discover the 9 key elements of brand strategy in 2026. Essential components for building a strong, cohesive brand.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1142,14 +1157,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-strategy-elements/brand-strategy-elements-bg.webp",
-      "alt": "The 9 Key Elements of Brand Strategy in 2026",
+      "alt": "9 Key Elements of Brand Strategy",
       "thumbnail": "/images/blog/brand-strategy-elements/brand-strategy-elements-bg-768w.webp"
     }
   },
   {
     "slug": "brand-strategy-examples",
     "url": "/blog/brand-strategy-examples",
-    "title": "7 Examples of Great Brand Strategy in 2026",
+    "title": "7 Great Brand Strategy Examples",
     "description": "Explore 7 great brand strategy examples in 2026. Learn from successful brands and apply their strategies to your business.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1157,14 +1172,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-strategy-examples/brand-strategy-examples-bg-5a672fdc8c382378f7405bf3bf2e0236-5c1f9b.jpg",
-      "alt": "7 Examples of Great Brand Strategy in 2026",
+      "alt": "7 Great Brand Strategy Examples",
       "thumbnail": "/images/blog/brand-strategy-examples/brand-strategy-examples-bg-5a672fdc8c382378f7405bf3bf2e0236-5c1f9b-768w.webp"
     }
   },
   {
     "slug": "brand-strategy-types",
     "url": "/blog/brand-strategy-types",
-    "title": "10 Different Types of Brand Strategies in 2026",
+    "title": "10 Types of Brand Strategies",
     "description": "Explore different types of brand strategies for 2026. Learn which approach works best for your business.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1172,14 +1187,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-strategy-types/different-types-of-brand-strategy-bg.webp",
-      "alt": "10 Different Types of Brand Strategies in 2026",
+      "alt": "10 Types of Brand Strategies",
       "thumbnail": "/images/blog/brand-strategy-types/different-types-of-brand-strategy-bg-768w.webp"
     }
   },
   {
     "slug": "brand-vision",
     "url": "/blog/brand-vision",
-    "title": "Brand Vision in 2026: 22 Best Examples",
+    "title": "22 Brand Vision Examples",
     "description": "Discover 22 brand vision examples for 2026. Learn how to create compelling vision statements for your brand.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1187,7 +1202,7 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/brand-vision/brandvision22bestexamples-44617a3ea1f7d91cb35a6c2e08efe2e7.webp",
-      "alt": "Brand Vision in 2026: 22 Best Examples"
+      "alt": "22 Brand Vision Examples"
     }
   },
   {
@@ -1208,7 +1223,7 @@
   {
     "slug": "branding-agency-nyc",
     "url": "/blog/branding-agency-nyc",
-    "title": "Top 10 Branding Agencies in NYC in 2026",
+    "title": "10 Best Branding Agencies in NYC",
     "description": "Discover the top branding agencies in NYC for 2026. Find the best New York design firms for your brand.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1216,14 +1231,14 @@
     "date": "Oct 23, 2026",
     "image": {
       "src": "/images/blog/branding-agency-nyc/cover-collage.webp",
-      "alt": "Top 10 Branding Agencies in NYC in 2026",
+      "alt": "10 Best Branding Agencies in NYC",
       "thumbnail": "/images/blog/branding-agency-nyc/cover-collage-768w.webp"
     }
   },
   {
     "slug": "branding-brand-identity",
     "url": "/blog/branding-brand-identity",
-    "title": "The Basics: Brand vs Branding vs Identity in 2026",
+    "title": "Brand vs Branding vs Identity",
     "description": "Understand the difference between brand, branding, and identity in 2026. Clear definitions and how they work together.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1231,13 +1246,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/branding-brand-identity/brand-branding-brandidentity-1600.webp",
-      "alt": "The Basics: Brand vs Branding vs Identity in 2026"
+      "alt": "Brand vs Branding vs Identity"
     }
   },
   {
     "slug": "branding-checklist",
     "url": "/blog/branding-checklist",
-    "title": "My 9-Step Branding Checklist for Building Your Brand in 2026",
+    "title": "My 9-Step Branding Checklist",
     "description": "Use this 9-step branding checklist for 2026. Build a strong brand foundation from strategy to launch.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1245,14 +1260,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/branding-checklist/branding-checklist-photo.webp",
-      "alt": "My 9-Step Branding Checklist for Building Your Brand in 2026",
+      "alt": "My 9-Step Branding Checklist",
       "thumbnail": "/images/blog/branding-checklist/branding-checklist-photo-768w.webp"
     }
   },
   {
     "slug": "branding-mistakes",
     "url": "/blog/branding-mistakes",
-    "title": "10 Worst Branding Mistakes To Avoid in 2026",
+    "title": "10 Worst Branding Mistakes",
     "description": "Avoid the worst branding mistakes in 2026. Common pitfalls that damage brand reputation and how to prevent them.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1260,14 +1275,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/branding-mistakes/branding-mistakes-900.webp",
-      "alt": "10 Worst Branding Mistakes To Avoid in 2026"
+      "alt": "10 Worst Branding Mistakes"
     }
   },
   {
     "slug": "branding-package",
     "url": "/blog/branding-package",
     "title": "Fast Branding Packages for Startups",
-    "description": "Fast-turnaround branding packages for startups: 14 packages delivered in one to three weeks, from $300 to $60,000, plus what a startup branding package includes.",
+    "description": "Fast-turnaround branding packages for startups: 12 packages delivered in one to three weeks, from $1,700 to $60,000, plus what a startup branding package includes.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "13 min read",
@@ -1311,7 +1326,7 @@
   {
     "slug": "business-name",
     "url": "/blog/business-name",
-    "title": "How To Come Up With a Business Name in 2026",
+    "title": "How to Come Up With a Business Name",
     "description": "Learn how to come up with a business name in 2026. Brainstorming techniques, tools, and naming best practices.",
     "category": "Naming",
     "categorySlug": "naming",
@@ -1319,13 +1334,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/business-name/thinking-about-business-name.webp",
-      "alt": "How To Come Up With a Business Name in 2026"
+      "alt": "How to Come Up With a Business Name"
     }
   },
   {
     "slug": "business-name-generators",
     "url": "/blog/business-name-generators",
-    "title": "7 Best Business Name Generators in 2026",
+    "title": "7 Best Business Name Generators",
     "description": "Discover the 7 best business name generators in 2026. Find the perfect name for your startup or brand.",
     "category": "Buying Guides",
     "categorySlug": "buying-guides",
@@ -1333,13 +1348,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/business-name-generators/brand-namer-cover-pro-900.webp",
-      "alt": "7 Best Business Name Generators in 2026"
+      "alt": "7 Best Business Name Generators"
     }
   },
   {
     "slug": "cannabis-branding",
     "url": "/blog/cannabis-branding",
-    "title": "Cannabis Branding: How to Brand a Dispensary or Product",
+    "title": "How to Brand a Cannabis Business",
     "description": "How cannabis branding really works: advertising limits, packaging rules, dispensary vs product brands, age gates, the shelf test, and 12 examples.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -1354,7 +1369,7 @@
   {
     "slug": "cannabis-branding-agencies",
     "url": "/blog/cannabis-branding-agencies",
-    "title": "Top 9 Cannabis Branding Agencies in 2026",
+    "title": "9 Best Cannabis Branding Agencies",
     "description": "Find the top 9 cannabis branding agencies in 2026. Expert partners for dispensary and cannabis brand design.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1362,14 +1377,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/cannabis-branding-agencies/bg-cannabis-branding-agencies.webp",
-      "alt": "Top 9 Cannabis Branding Agencies in 2026",
+      "alt": "9 Best Cannabis Branding Agencies",
       "thumbnail": "/images/blog/cannabis-branding-agencies/bg-cannabis-branding-agencies-768w.webp"
     }
   },
   {
     "slug": "caregiver-archetype",
     "url": "/blog/caregiver-archetype",
-    "title": "The Caregiver Archetype in 2026: 10 Branding Examples",
+    "title": "The Caregiver Archetype",
     "description": "Explore the Caregiver archetype in branding for 2026. See 10 examples of nurturing, supportive brands.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1377,14 +1392,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/caregiver-archetype/caregiver-archetype-bg.webp",
-      "alt": "The Caregiver Archetype in 2026: 10 Branding Examples",
+      "alt": "The Caregiver Archetype",
       "thumbnail": "/images/blog/caregiver-archetype/caregiver-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "circle-logos",
     "url": "/blog/circle-logos",
-    "title": "Circle Logos: Why Brands Use Them in 2026",
+    "title": "Why Brands Use Circle Logos",
     "description": "Discover why circle logos remain popular in 2026. Learn the psychology behind circular brand marks and see examples.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1392,13 +1407,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/circle-logos/circle-logos.webp",
-      "alt": "Circle Logos: Why Brands Use Them in 2026"
+      "alt": "Why Brands Use Circle Logos"
     }
   },
   {
     "slug": "city-logos",
     "url": "/blog/city-logos",
-    "title": "9 City Logos with Beautiful Design in 2026",
+    "title": "9 Best City Logos",
     "description": "Discover beautiful city logos and branding in 2026. Inspiring municipal identity design from around the world.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1406,13 +1421,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/city-logos/city-logos-explained-900.webp",
-      "alt": "9 City Logos with Beautiful Design in 2026"
+      "alt": "9 Best City Logos"
     }
   },
   {
     "slug": "color-meanings",
     "url": "/blog/color-meanings",
-    "title": "Color Meanings in 2026: The Power of Color in Branding",
+    "title": "Color Meanings in Branding",
     "description": "Discover color meanings in branding for 2026. Learn how color psychology influences brand perception and design.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1420,13 +1435,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/color-meanings/color-meanings-1.webp",
-      "alt": "Color Meanings in 2026: The Power of Color in Branding"
+      "alt": "Color Meanings in Branding"
     }
   },
   {
     "slug": "company-name",
     "url": "/blog/company-name",
-    "title": "How To Choose A Company Name in 2026",
+    "title": "How to Choose a Company Name",
     "description": "Learn how to choose a company name in 2026. Step-by-step guide for finding the perfect business name.",
     "category": "Naming",
     "categorySlug": "naming",
@@ -1434,13 +1449,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/company-name/company-name-cover.webp",
-      "alt": "How To Choose A Company Name in 2026"
+      "alt": "How to Choose a Company Name"
     }
   },
   {
     "slug": "construction-logos",
     "url": "/blog/construction-logos",
-    "title": "30 Best Construction Logos in 2026 (Design Inspiration)",
+    "title": "30 Best Construction Logos",
     "description": "Explore the best construction logos in 2026. Get inspired by strong brand designs from leading construction companies.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1448,14 +1463,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/construction-logos/construction-logos-th.webp",
-      "alt": "30 Best Construction Logos in 2026 (Design Inspiration)",
+      "alt": "30 Best Construction Logos",
       "thumbnail": "/images/blog/construction-logos/construction-logos-th-768w.webp"
     }
   },
   {
     "slug": "consultancy-branding",
     "url": "/blog/consultancy-branding",
-    "title": "Consultancy Branding: How to Brand a Consulting Firm",
+    "title": "How to Brand a Consulting Firm",
     "description": "How to brand a consultancy: build credibility, differentiate undifferentiated expertise, choose founder-led or firm brand, fix proposals, plus 8 examples.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -1470,7 +1485,7 @@
   {
     "slug": "core-values",
     "url": "/blog/core-values",
-    "title": "Core Values of Famous Brands in 2026",
+    "title": "Core Values of Famous Brands",
     "description": "Discover the core values of famous brands in 2026. Learn how top companies define and communicate their brand values.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1478,7 +1493,7 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/core-values/core-values.webp",
-      "alt": "Core Values of Famous Brands in 2026"
+      "alt": "Core Values of Famous Brands"
     }
   },
   {
@@ -1499,7 +1514,7 @@
   {
     "slug": "creator-archetype",
     "url": "/blog/creator-archetype",
-    "title": "The Creator Archetype in 2026: 10 Branding Examples",
+    "title": "The Creator Archetype",
     "description": "Explore the Creator archetype in branding for 2026. See 10 examples of innovative, artistic brands.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1507,14 +1522,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/creator-archetype/creator-archetype-bg.webp",
-      "alt": "The Creator Archetype in 2026: 10 Branding Examples",
+      "alt": "The Creator Archetype",
       "thumbnail": "/images/blog/creator-archetype/creator-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "crypto-logos",
     "url": "/blog/crypto-logos",
-    "title": "30 Best Crypto Logos in 2026 (Design Inspiration)",
+    "title": "30 Best Crypto Logos",
     "description": "Explore the best crypto logos in 2026. Get inspired by blockchain and cryptocurrency brand designs.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1522,13 +1537,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/crypto-logos/2.jpg",
-      "alt": "30 Best Crypto Logos in 2026 (Design Inspiration)"
+      "alt": "30 Best Crypto Logos"
     }
   },
   {
     "slug": "digital-style-guide",
     "url": "/blog/digital-style-guide",
-    "title": "12 Best Tools To Create A Digital Style Guide in 2026",
+    "title": "12 Tools to Create a Digital Style Guide",
     "description": "Discover the best tools to create digital style guides online in 2026. Compare Standards, Frontify, BrandPad & more.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1536,13 +1551,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/digital-style-guide/50bb7de8-e460-47be-b213-b00b2772d111.webp",
-      "alt": "12 Best Tools To Create A Digital Style Guide in 2026"
+      "alt": "12 Tools to Create a Digital Style Guide"
     }
   },
   {
     "slug": "electric-car-logos",
     "url": "/blog/electric-car-logos",
-    "title": "Top 10 Electric Car Logos Explained in 2026",
+    "title": "10 Electric Car Logos Explained",
     "description": "Explore the top electric car logos in 2026. Discover the meaning behind Tesla, Rivian, and other EV brands.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1550,14 +1565,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/electric-car-logos/electric-car-logos-bg-962e9e79d71bec1c9b8848ab7a1767e0.webp",
-      "alt": "Top 10 Electric Car Logos Explained in 2026",
+      "alt": "10 Electric Car Logos Explained",
       "thumbnail": "/images/blog/electric-car-logos/electric-car-logos-bg-962e9e79d71bec1c9b8848ab7a1767e0-768w.webp"
     }
   },
   {
     "slug": "everyman-archetype",
     "url": "/blog/everyman-archetype",
-    "title": "The Everyman Archetype in 2026: 10 Branding Examples",
+    "title": "The Everyman Archetype",
     "description": "Explore the Everyman archetype in branding for 2026. See 10 examples of relatable, down-to-earth brands.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1565,14 +1580,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/everyman-archetype/everyman-archetypes-bg.webp",
-      "alt": "The Everyman Archetype in 2026: 10 Branding Examples",
+      "alt": "The Everyman Archetype",
       "thumbnail": "/images/blog/everyman-archetype/everyman-archetypes-bg-768w.webp"
     }
   },
   {
     "slug": "explorer-archetype",
     "url": "/blog/explorer-archetype",
-    "title": "The Explorer Archetype in 2026: 10 Branding Examples",
+    "title": "The Explorer Archetype",
     "description": "Explore the Explorer archetype in branding for 2026. See 10 examples of adventurous, freedom-seeking brands.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1580,14 +1595,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/explorer-archetype/the-explorer-archetype-bg.webp",
-      "alt": "The Explorer Archetype in 2026: 10 Branding Examples",
+      "alt": "The Explorer Archetype",
       "thumbnail": "/images/blog/explorer-archetype/the-explorer-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "famous-graphic-designers",
     "url": "/blog/famous-graphic-designers",
-    "title": "25 Famous Graphic Designers of All Time in 2026",
+    "title": "25 Famous Graphic Designers",
     "description": "Discover 25 famous graphic designers who shaped visual culture. Learn from the masters through 2026.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1595,14 +1610,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/famous-graphic-designers/famous-graphic-designers-bg-f2b352.jpg",
-      "alt": "25 Famous Graphic Designers of All Time in 2026",
+      "alt": "25 Famous Graphic Designers",
       "thumbnail": "/images/blog/famous-graphic-designers/famous-graphic-designers-bg-f2b352-768w.webp"
     }
   },
   {
     "slug": "fix-your-logo",
     "url": "/blog/fix-your-logo",
-    "title": "How to Fix Your Logo The Right Way in 2026",
+    "title": "How to Fix Your Logo",
     "description": "Learn how to fix your logo the right way in 2026. Expert tips for improving your brand identity.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1610,14 +1625,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/fix-your-logo/logo-fix-pro.webp",
-      "alt": "How to Fix Your Logo The Right Way in 2026",
+      "alt": "How to Fix Your Logo",
       "thumbnail": "/images/blog/fix-your-logo/logo-fix-pro-768w.webp"
     }
   },
   {
     "slug": "golden-ratio-logo",
     "url": "/blog/golden-ratio-logo",
-    "title": "How To Use Golden Ratio in Logo Design in 2026",
+    "title": "How to Use the Golden Ratio in Logos",
     "description": "Learn how to use the golden ratio in logo design in 2026. Create mathematically balanced brand symbols.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1625,13 +1640,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/golden-ratio-logo/golden-ratio-logos-b0134e37061710b2a4e5864578dee3f8.webp",
-      "alt": "How To Use Golden Ratio in Logo Design in 2026"
+      "alt": "How to Use the Golden Ratio in Logos"
     }
   },
   {
     "slug": "graphic-design-firms",
     "url": "/blog/graphic-design-firms",
-    "title": "Top 10 New York Graphic Design Firms in 2026",
+    "title": "10 Best Graphic Design Firms in NYC",
     "description": "Discover the top graphic design firms in New York for 2026. Leading NYC agencies for branding, web design, and creative services.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1639,13 +1654,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/graphic-design-firms/top-new-york-design-firms.webp",
-      "alt": "Top 10 New York Graphic Design Firms in 2026"
+      "alt": "10 Best Graphic Design Firms in NYC"
     }
   },
   {
     "slug": "hero-archetype",
     "url": "/blog/hero-archetype",
-    "title": "The Hero Archetype in 2026: 10 Branding Examples",
+    "title": "The Hero Archetype",
     "description": "Explore the Hero archetype in branding for 2026. See 10 examples of courageous, achievement-driven brands.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1653,14 +1668,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/hero-archetype/hero-archetype-bg.jpg",
-      "alt": "The Hero Archetype in 2026: 10 Branding Examples",
+      "alt": "The Hero Archetype",
       "thumbnail": "/images/blog/hero-archetype/hero-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "innocent-archetype",
     "url": "/blog/innocent-archetype",
-    "title": "The Innocent Archetype in 2026: 10 Branding Examples",
+    "title": "The Innocent Archetype",
     "description": "Explore the Innocent archetype in branding for 2026. See 10 examples of optimistic, pure brand identities.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1668,14 +1683,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/innocent-archetype/innocent-archetype-bg.webp",
-      "alt": "The Innocent Archetype in 2026: 10 Branding Examples",
+      "alt": "The Innocent Archetype",
       "thumbnail": "/images/blog/innocent-archetype/innocent-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "jester-archetype",
     "url": "/blog/jester-archetype",
-    "title": "The Jester Archetype in 2026: 10 Branding Examples",
+    "title": "The Jester Archetype",
     "description": "Explore the Jester archetype in branding for 2026. See 10 examples of playful, humorous brand personalities.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1683,7 +1698,7 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/jester-archetype/jester-arachetypes-bg.webp",
-      "alt": "The Jester Archetype in 2026: 10 Branding Examples",
+      "alt": "The Jester Archetype",
       "thumbnail": "/images/blog/jester-archetype/jester-arachetypes-bg-768w.webp"
     }
   },
@@ -1720,7 +1735,7 @@
   {
     "slug": "lettermark-logo-design",
     "url": "/blog/lettermark-logo-design",
-    "title": "Lettermark Logo Design: Best Examples & Tips for 2026",
+    "title": "Lettermark Logo Design",
     "description": "Learn what lettermark logos are, when to use them, and how to design one. See examples from McDonalds, Pinterest & Suzuki.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1728,14 +1743,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/lettermark-logo-design/3.webp",
-      "alt": "Lettermark Logo Design: Best Examples & Tips for 2026",
+      "alt": "Lettermark Logo Design",
       "thumbnail": "/images/blog/lettermark-logo-design/3-768w.webp"
     }
   },
   {
     "slug": "logo-animation",
     "url": "/blog/logo-animation",
-    "title": "How To Animate A Logo For Web in 2026",
+    "title": "How to Animate a Logo for the Web",
     "description": "Learn how to animate a logo for web in 2026. Create engaging motion graphics for your brand identity.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1743,14 +1758,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-animation/logo-animation-bg.webp",
-      "alt": "How To Animate A Logo For Web in 2026",
+      "alt": "How to Animate a Logo for the Web",
       "thumbnail": "/images/blog/logo-animation/logo-animation-bg-768w.webp"
     }
   },
   {
     "slug": "logo-animation-examples",
     "url": "/blog/logo-animation-examples",
-    "title": "10+ Best Logo Animation Examples in 2026",
+    "title": "10 Best Logo Animation Examples",
     "description": "Explore the best logo animation examples for 2026. See how top brands bring their logos to life with motion.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1758,14 +1773,14 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/logo-animation-examples/cover-collage.webp",
-      "alt": "10+ Best Logo Animation Examples in 2026",
+      "alt": "10 Best Logo Animation Examples",
       "thumbnail": "/images/blog/logo-animation-examples/cover-collage-768w.webp"
     }
   },
   {
     "slug": "logo-brief",
     "url": "/blog/logo-brief",
-    "title": "How to Write a Logo Design Brief in 2026 (+ Template)",
+    "title": "How to Write a Logo Design Brief",
     "description": "Learn how to write an effective logo design brief in 2026. Free template included to streamline your design process.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1773,14 +1788,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-brief/logo-brief-template.webp",
-      "alt": "How to Write a Logo Design Brief in 2026 (+ Template)",
+      "alt": "How to Write a Logo Design Brief",
       "thumbnail": "/images/blog/logo-brief/logo-brief-template-768w.webp"
     }
   },
   {
     "slug": "logo-color",
     "url": "/blog/logo-color",
-    "title": "How To Choose Colors For Logo Design in 2026",
+    "title": "How to Choose Logo Colors",
     "description": "Learn how to choose colors for logo design in 2026. Master color psychology and brand color selection.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1788,14 +1803,14 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/logo-color/cover-collage.webp",
-      "alt": "How To Choose Colors For Logo Design in 2026",
+      "alt": "How to Choose Logo Colors",
       "thumbnail": "/images/blog/logo-color/cover-collage-768w.webp"
     }
   },
   {
     "slug": "logo-design-process",
     "url": "/blog/logo-design-process",
-    "title": "Logo Design Process From Start To Finish in 2026",
+    "title": "The Logo Design Process",
     "description": "Master the logo design process in 2026. Complete guide from brief to final delivery with professional workflow tips.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1803,14 +1818,14 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/logo-design-process/cover-collage.webp",
-      "alt": "Logo Design Process From Start To Finish in 2026",
+      "alt": "The Logo Design Process",
       "thumbnail": "/images/blog/logo-design-process/cover-collage-768w.webp"
     }
   },
   {
     "slug": "logo-design-tips",
     "url": "/blog/logo-design-tips",
-    "title": "10 Best Logo Design Tips From An Expert in 2026",
+    "title": "10 Logo Design Tips From an Expert",
     "description": "Get the best logo design tips for 2026. Expert advice on creating memorable brand marks.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1818,14 +1833,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-design-tips/logo-design-tips-bg-5f1436.jpg",
-      "alt": "10 Best Logo Design Tips From An Expert in 2026",
+      "alt": "10 Logo Design Tips From an Expert",
       "thumbnail": "/images/blog/logo-design-tips/logo-design-tips-bg-5f1436-768w.webp"
     }
   },
   {
     "slug": "logo-designers",
     "url": "/blog/logo-designers",
-    "title": "The Best Logo Designers of All Time in 2026",
+    "title": "The Best Logo Designers of All Time",
     "description": "Discover the greatest logo designers of all time in 2026. Legendary creators who shaped modern brand identity design.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1833,13 +1848,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-designers/iconic-logo-designers-900-445856.webp",
-      "alt": "The Best Logo Designers of All Time in 2026"
+      "alt": "The Best Logo Designers of All Time"
     }
   },
   {
     "slug": "logo-evolution",
     "url": "/blog/logo-evolution",
-    "title": "Logo Evolution of 10 Famous Brands in 2026",
+    "title": "Logo Evolution of 10 Famous Brands",
     "description": "Explore the logo evolution of 10 famous brands through 2026. See how iconic logos have changed over time.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1847,13 +1862,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-evolution/logo-evolution-6a757d197a5a1d173f84fb9fe8251192.webp",
-      "alt": "Logo Evolution of 10 Famous Brands in 2026"
+      "alt": "Logo Evolution of 10 Famous Brands"
     }
   },
   {
     "slug": "logo-files",
     "url": "/blog/logo-files",
-    "title": "How To Create And Deliver Logo Files in 2026",
+    "title": "How to Create and Deliver Logo Files",
     "description": "Learn how to create and deliver logo files in 2026. File formats, organization, and best practices for client deliverables.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1861,14 +1876,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-files/logo-files-bg-679bfb.webp",
-      "alt": "How To Create And Deliver Logo Files in 2026",
+      "alt": "How to Create and Deliver Logo Files",
       "thumbnail": "/images/blog/logo-files/logo-files-bg-679bfb-768w.webp"
     }
   },
   {
     "slug": "logo-presentation",
     "url": "/blog/logo-presentation",
-    "title": "How To Present Logo Design Projects in 2026",
+    "title": "How to Present Logo Designs",
     "description": "Master logo design presentations in 2026. Tips for mockups, storytelling, and client communication that wins approval.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1876,14 +1891,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-presentation/logo-presentation-arek.webp",
-      "alt": "How To Present Logo Design Projects in 2026",
+      "alt": "How to Present Logo Designs",
       "thumbnail": "/images/blog/logo-presentation/logo-presentation-arek-768w.webp"
     }
   },
   {
     "slug": "logo-redesign",
     "url": "/blog/logo-redesign",
-    "title": "How to Redesign a Logo: 17 Before & After Examples",
+    "title": "How to Redesign a Logo",
     "description": "A comprehensive logo redesign guide with 17 real before-and-after examples, a practical process, and the decisions behind every transformation.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1898,7 +1913,7 @@
   {
     "slug": "logo-shapes",
     "url": "/blog/logo-shapes",
-    "title": "The Psychology of Shapes in Logo Design in 2026",
+    "title": "The Psychology of Shapes in Logos",
     "description": "Explore the psychology of shapes in logo design for 2026. Learn how circles, squares, and triangles impact brands.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1906,13 +1921,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-shapes/logo-shapes.webp",
-      "alt": "The Psychology of Shapes in Logo Design in 2026"
+      "alt": "The Psychology of Shapes in Logos"
     }
   },
   {
     "slug": "logo-sketches",
     "url": "/blog/logo-sketches",
-    "title": "Logo Sketches Of Famous Brands in 2026",
+    "title": "Logo Sketches of Famous Brands",
     "description": "Explore logo sketches from famous brands in 2026. Behind-the-scenes look at the design process of iconic logos.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1920,13 +1935,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/logo-sketches/logo-sketches-famous-logos-900.webp",
-      "alt": "Logo Sketches Of Famous Brands in 2026"
+      "alt": "Logo Sketches of Famous Brands"
     }
   },
   {
     "slug": "lover-archetype",
     "url": "/blog/lover-archetype",
-    "title": "The Lover Archetype in 2026: 10 Branding Examples",
+    "title": "The Lover Archetype",
     "description": "Explore the Lover archetype in branding for 2026. See 10 examples of passionate, sensual brand identities.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1934,14 +1949,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/lover-archetype/lover-archetype-bg.webp",
-      "alt": "The Lover Archetype in 2026: 10 Branding Examples",
+      "alt": "The Lover Archetype",
       "thumbnail": "/images/blog/lover-archetype/lover-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "luxury-real-estate",
     "url": "/blog/luxury-real-estate",
-    "title": "Luxury Real Estate Branding in 2026 (Strategy & Examples)",
+    "title": "Luxury Real Estate Branding",
     "description": "Discover luxury real estate branding strategies for 2026. See examples from top high-end property brands.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -1949,14 +1964,14 @@
     "date": "Oct 23, 2026",
     "image": {
       "src": "/images/blog/luxury-real-estate/cover-collage.webp",
-      "alt": "Luxury Real Estate Branding in 2026 (Strategy & Examples)",
+      "alt": "Luxury Real Estate Branding",
       "thumbnail": "/images/blog/luxury-real-estate/cover-collage-768w.webp"
     }
   },
   {
     "slug": "magician-archetype",
     "url": "/blog/magician-archetype",
-    "title": "The Magician Archetype in 2026: 10 Branding Examples",
+    "title": "The Magician Archetype",
     "description": "Explore the Magician archetype in branding for 2026. See 10 examples of transformational, visionary brands.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1964,14 +1979,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/magician-archetype/magician-archetype-bg.webp",
-      "alt": "The Magician Archetype in 2026: 10 Branding Examples",
+      "alt": "The Magician Archetype",
       "thumbnail": "/images/blog/magician-archetype/magician-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "mission-statements",
     "url": "/blog/mission-statements",
-    "title": "Mission Statements of Top Brands in 2026",
+    "title": "Mission Statements of Top Brands",
     "description": "Explore mission statements from top brands in 2026. Examples and inspiration for writing your company's mission.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -1979,13 +1994,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/mission-statements/best-mission-statements.webp",
-      "alt": "Mission Statements of Top Brands in 2026"
+      "alt": "Mission Statements of Top Brands"
     }
   },
   {
     "slug": "modern-logo-fonts",
     "url": "/blog/modern-logo-fonts",
-    "title": "10 Best Fonts For Modern Logo Design in 2026",
+    "title": "10 Best Fonts for Modern Logos",
     "description": "Find the best fonts for modern logo design in 2026. Contemporary typefaces for clean, minimalist brand identities.",
     "category": "Buying Guides",
     "categorySlug": "buying-guides",
@@ -1993,13 +2008,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/modern-logo-fonts/modern-logo-fonts.webp",
-      "alt": "10 Best Fonts For Modern Logo Design in 2026"
+      "alt": "10 Best Fonts for Modern Logos"
     }
   },
   {
     "slug": "motorcycle-logos",
     "url": "/blog/motorcycle-logos",
-    "title": "Top 13 Motorcycle Logos Explained in 2026",
+    "title": "13 Motorcycle Logos Explained",
     "description": "Explore the top motorcycle logos in 2026. Discover the stories behind Harley, Honda, and more brands.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2007,14 +2022,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/motorcycle-logos/motorcycle-explained-bg.webp",
-      "alt": "Top 13 Motorcycle Logos Explained in 2026",
+      "alt": "13 Motorcycle Logos Explained",
       "thumbnail": "/images/blog/motorcycle-logos/motorcycle-explained-bg-768w.webp"
     }
   },
   {
     "slug": "nba-logos",
     "url": "/blog/nba-logos",
-    "title": "14 Best NBA Logos of All Time in 2026",
+    "title": "14 Best NBA Logos of All Time",
     "description": "Explore the 14 best NBA logos of all time in 2026. A designer's breakdown of basketball's most iconic brands.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2022,14 +2037,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/nba-logos/1.webp",
-      "alt": "14 Best NBA Logos of All Time in 2026",
+      "alt": "14 Best NBA Logos of All Time",
       "thumbnail": "/images/blog/nba-logos/1-768w.webp"
     }
   },
   {
     "slug": "negative-space-logo-design",
     "url": "/blog/negative-space-logo-design",
-    "title": "The Art of Negative Space in Logo Design: A Guide for 2026",
+    "title": "Negative Space in Logo Design",
     "description": "Master negative space in logo design for 2026. Create clever, memorable logos using the art of hidden imagery.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2043,7 +2058,7 @@
   {
     "slug": "nonprofit-logos",
     "url": "/blog/nonprofit-logos",
-    "title": "Best NonProfit Logos Explained in 2026",
+    "title": "Best Nonprofit Logos Explained",
     "description": "Discover the best nonprofit logos and their meanings in 2026. Design lessons from charitable organizations worldwide.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2051,13 +2066,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/nonprofit-logos/non-profit-logos-900.webp",
-      "alt": "Best NonProfit Logos Explained in 2026"
+      "alt": "Best Nonprofit Logos Explained"
     }
   },
   {
     "slug": "outlaw-archetype",
     "url": "/blog/outlaw-archetype",
-    "title": "The Outlaw Archetype in 2026: 10 Branding Examples",
+    "title": "The Outlaw Archetype",
     "description": "Explore the Outlaw archetype in branding for 2026. See 10 examples of rebellious, rule-breaking brands.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2065,14 +2080,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/outlaw-archetype/outlaw-archetype-bg.webp",
-      "alt": "The Outlaw Archetype in 2026: 10 Branding Examples",
+      "alt": "The Outlaw Archetype",
       "thumbnail": "/images/blog/outlaw-archetype/outlaw-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "positioning-statement",
     "url": "/blog/positioning-statement",
-    "title": "How to Write a Positioning Statement (Template + Examples)",
+    "title": "How to Write a Positioning Statement",
     "description": "A positioning statement template built on the brand ladder, with examples from Apple, Nikon and Coca-Cola to help you write your own.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2086,7 +2101,7 @@
   {
     "slug": "principles-of-design",
     "url": "/blog/principles-of-design",
-    "title": "11 Principles of Design Explained (With Examples)",
+    "title": "11 Principles of Design Explained",
     "description": "The 11 principles of design explained with visual examples: emphasis, balance, contrast, repetition, proportion, movement, white space, unity, pattern, rhythm and variety.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2100,21 +2115,21 @@
   {
     "slug": "real-estate-branding",
     "url": "/blog/real-estate-branding",
-    "title": "Real Estate Branding in 2026: Complete Strategy Guide",
+    "title": "Real Estate Branding Guide",
     "description": "Master real estate branding in 2026. Learn strategies, design tips, and see examples from successful property brands.",
     "category": "Branding",
     "readTime": "7 min read",
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/real-estate-branding/th.jpg",
-      "alt": "Real Estate Branding in 2026: Complete Strategy Guide"
+      "alt": "Real Estate Branding Guide"
     },
     "categorySlug": "branding"
   },
   {
     "slug": "rebranding-examples",
     "url": "/blog/rebranding-examples",
-    "title": "Rebranding Examples: 7 Case Studies for 2026 (Rebrand vs Redesign)",
+    "title": "7 Rebranding Examples",
     "description": "Explore 7 rebranding case studies for 2026. Learn the difference between rebrand vs redesign with real examples.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2122,14 +2137,14 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/rebranding-examples/cover-collage.webp",
-      "alt": "Rebranding Examples: 7 Case Studies for 2026 (Rebrand vs Redesign)",
+      "alt": "7 Rebranding Examples",
       "thumbnail": "/images/blog/rebranding-examples/cover-collage-768w.webp"
     }
   },
   {
     "slug": "ruler-archetype",
     "url": "/blog/ruler-archetype",
-    "title": "The Ruler Archetype in 2026: 10 Branding Examples",
+    "title": "The Ruler Archetype",
     "description": "Explore the Ruler archetype in branding for 2026. See 10 examples of authoritative, premium brand leaders.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2137,14 +2152,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/ruler-archetype/rulerr-archetype-bg.webp",
-      "alt": "The Ruler Archetype in 2026: 10 Branding Examples",
+      "alt": "The Ruler Archetype",
       "thumbnail": "/images/blog/ruler-archetype/rulerr-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "sage-archetype",
     "url": "/blog/sage-archetype",
-    "title": "The Sage Archetype in 2026: 10 Branding Examples",
+    "title": "The Sage Archetype",
     "description": "Explore the Sage archetype in branding for 2026. See 10 examples of wise, knowledge-focused brand identities.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2152,14 +2167,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/sage-archetype/sage-archetype-bg.webp",
-      "alt": "The Sage Archetype in 2026: 10 Branding Examples",
+      "alt": "The Sage Archetype",
       "thumbnail": "/images/blog/sage-archetype/sage-archetype-bg-768w.webp"
     }
   },
   {
     "slug": "solar-logos",
     "url": "/blog/solar-logos",
-    "title": "30 Best Solar Company Logos for Inspiration in 2026",
+    "title": "30 Best Solar Company Logos",
     "description": "Discover 30 inspiring solar company logos in 2026. Get ideas for renewable energy branding that stands out.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2167,14 +2182,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/solar-logos/1.webp",
-      "alt": "30 Best Solar Company Logos for Inspiration in 2026",
+      "alt": "30 Best Solar Company Logos",
       "thumbnail": "/images/blog/solar-logos/1-768w.webp"
     }
   },
   {
     "slug": "style-guide-templates",
     "url": "/blog/style-guide-templates",
-    "title": "50+ Best Style Guide Templates in 2026",
+    "title": "Best Style Guide Templates",
     "description": "Download the best style guide templates in 2026. Professional brand guideline templates for designers and marketing teams.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2182,14 +2197,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/style-guide-templates/best-style-guide-templates-bg.webp",
-      "alt": "50+ Best Style Guide Templates in 2026",
+      "alt": "Best Style Guide Templates",
       "thumbnail": "/images/blog/style-guide-templates/best-style-guide-templates-bg-768w.webp"
     }
   },
   {
     "slug": "style-guides",
     "url": "/blog/style-guides",
-    "title": "100+ Best Brand Style Guides in 2026 (Famous Brands)",
+    "title": "Best Brand Style Guides",
     "description": "Discover 100+ best brand style guides from famous companies. Download PDF brand books and manuals for design inspiration.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2197,14 +2212,14 @@
     "date": "Oct 23, 2026",
     "image": {
       "src": "/images/blog/style-guides/cover-collage.webp",
-      "alt": "100+ Best Brand Style Guides in 2026 (Famous Brands)",
+      "alt": "Best Brand Style Guides",
       "thumbnail": "/images/blog/style-guides/cover-collage-768w.webp"
     }
   },
   {
     "slug": "symmetry-logo-design",
     "url": "/blog/symmetry-logo-design",
-    "title": "Best Examples of Symmetry in Logo Design for 2026",
+    "title": "Symmetry in Logo Design",
     "description": "Discover stunning examples of symmetry in logo design for 2026. Learn how balance creates memorable brands.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2212,14 +2227,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/symmetry-logo-design/symmetry-logo-design.webp",
-      "alt": "Best Examples of Symmetry in Logo Design for 2026",
+      "alt": "Symmetry in Logo Design",
       "thumbnail": "/images/blog/symmetry-logo-design/symmetry-logo-design-768w.webp"
     }
   },
   {
     "slug": "top-branding-agencies",
     "url": "/blog/top-branding-agencies",
-    "title": "Top 30 Branding Agencies in 2026 (Expert Rankings)",
+    "title": "30 Best Branding Agencies",
     "description": "Discover the top branding agencies in 2026. Compare leading firms for identity design, strategy, and rebranding.",
     "category": "Marketing",
     "categorySlug": "marketing",
@@ -2227,7 +2242,7 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/top-branding-agencies/top-branding-agencies-2023.webp",
-      "alt": "Top 30 Branding Agencies in 2026 (Expert Rankings)"
+      "alt": "30 Best Branding Agencies"
     }
   },
   {
@@ -2253,7 +2268,7 @@
   {
     "slug": "top-logos-explained",
     "url": "/blog/top-logos-explained",
-    "title": "7 Top Logos With Meaning Explained in 2026",
+    "title": "7 Top Logos Explained",
     "description": "Explore 7 iconic logos and their hidden meanings in 2026. Learn the stories behind famous brand symbols and design choices.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2261,13 +2276,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/top-logos-explained/famous-logos-explained.webp",
-      "alt": "7 Top Logos With Meaning Explained in 2026"
+      "alt": "7 Top Logos Explained"
     }
   },
   {
     "slug": "trademark-logo",
     "url": "/blog/trademark-logo",
-    "title": "How to Trademark a Logo (and When Copyright Is Enough)",
+    "title": "How to Trademark a Logo",
     "description": "How to trademark a logo step by step, how logo copyright differs from a trademark, what copyright costs, and real logo infringement cases.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2281,7 +2296,7 @@
   {
     "slug": "translate-strategy",
     "url": "/blog/translate-strategy",
-    "title": "How To Translate Brand Strategy Into Design in 2026",
+    "title": "How to Turn Brand Strategy Into Design",
     "description": "Learn to translate brand strategy into design in 2026. Bridge the gap between strategic thinking and visual execution.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2289,14 +2304,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/translate-strategy/translate-brand-strategy-into-visual-design-bg.webp",
-      "alt": "How To Translate Brand Strategy Into Design in 2026",
+      "alt": "How to Turn Brand Strategy Into Design",
       "thumbnail": "/images/blog/translate-strategy/translate-brand-strategy-into-visual-design-bg-768w.webp"
     }
   },
   {
     "slug": "types-of-logos",
     "url": "/blog/types-of-logos",
-    "title": "The 9 Different Types of Logos in 2026 & When To Use Them",
+    "title": "9 Types of Logos",
     "description": "Explore the 9 types of logos in 2026. Learn when to use wordmarks, emblems, mascots, and more for your brand.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2304,13 +2319,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/types-of-logos/types-logos-th-d903cb57f631b7b9f45db1b2199e4091.webp",
-      "alt": "The 9 Different Types of Logos in 2026 & When To Use Them"
+      "alt": "9 Types of Logos"
     }
   },
   {
     "slug": "university-logos",
     "url": "/blog/university-logos",
-    "title": "30 Best University Logos in 2026 (Inspiring Examples)",
+    "title": "30 Best University Logos",
     "description": "Explore the best university logos in 2026. See inspiring examples of academic branding from top institutions worldwide.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2318,14 +2333,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/university-logos/best-university-logos.webp",
-      "alt": "30 Best University Logos in 2026 (Inspiring Examples)",
+      "alt": "30 Best University Logos",
       "thumbnail": "/images/blog/university-logos/best-university-logos-768w.webp"
     }
   },
   {
     "slug": "vector-raster-logo",
     "url": "/blog/vector-raster-logo",
-    "title": "Vector vs. Raster in 2026: Which is Better for Logo?",
+    "title": "Vector vs Raster Logos",
     "description": "Understand vector vs raster for logos in 2026. Learn which format is best for your brand identity.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2333,14 +2348,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/vector-raster-logo/vector-vs-raster-bg.webp",
-      "alt": "Vector vs. Raster in 2026: Which is Better for Logo?",
+      "alt": "Vector vs Raster Logos",
       "thumbnail": "/images/blog/vector-raster-logo/vector-vs-raster-bg-768w.webp"
     }
   },
   {
     "slug": "vision-statements",
     "url": "/blog/vision-statements",
-    "title": "10 Vision Statement Examples From Top Brands (+ How to Write One)",
+    "title": "10 Vision Statement Examples",
     "description": "Vision statement examples from Starbucks, Nike, Tesla, Google, Disney and more, how a vision differs from a mission, and how to write your own.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2354,7 +2369,7 @@
   {
     "slug": "what-is-a-brand",
     "url": "/blog/what-is-a-brand",
-    "title": "What Is a Brand? The 12 Essential Elements for 2026",
+    "title": "What Is a Brand?",
     "description": "Learn what a brand really is in 2026. Discover the 12 essential elements that make up a strong brand identity.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2362,14 +2377,14 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/what-is-a-brand/what-is-brand-7a0d82.webp",
-      "alt": "What Is a Brand? The 12 Essential Elements for 2026",
+      "alt": "What Is a Brand?",
       "thumbnail": "/images/blog/what-is-a-brand/what-is-brand-7a0d82-768w.webp"
     }
   },
   {
     "slug": "what-is-branding",
     "url": "/blog/what-is-branding",
-    "title": "What Is Branding in 2026? Defined By 10 Experts",
+    "title": "What Is Branding?",
     "description": "Understand what branding means in 2026. Discover expert definitions and why branding matters for businesses.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2377,13 +2392,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/what-is-branding/what-is-branding.webp",
-      "alt": "What Is Branding in 2026? Defined By 10 Experts"
+      "alt": "What Is Branding?"
     }
   },
   {
     "slug": "wordmark-logo-design",
     "url": "/blog/wordmark-logo-design",
-    "title": "Wordmark Logo Design: What It Is, When to Use It & How to Make One",
+    "title": "Wordmark Logo Design",
     "description": "What a wordmark logo is, when a word-only logo is the right choice, and the typography techniques (ligatures, spacing, custom letterforms) to design one.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2398,7 +2413,7 @@
   {
     "slug": "worst-rebrands",
     "url": "/blog/worst-rebrands",
-    "title": "7 Worst Rebrands: Logos Gone Wrong in 2026",
+    "title": "7 Worst Rebrands",
     "description": "Learn from the worst rebrands and logo failures in 2026. Case studies of rebranding mistakes and what went wrong.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
@@ -2406,13 +2421,13 @@
     "date": "Jan 27, 2026",
     "image": {
       "src": "/images/blog/worst-rebrands/worst-brands.webp",
-      "alt": "7 Worst Rebrands: Logos Gone Wrong in 2026"
+      "alt": "7 Worst Rebrands"
     }
   },
   {
     "slug": "startup-branding-agencies",
     "url": "/blog/startup-branding-agencies",
-    "title": "Top 10 Branding Agencies for Startups in 2026",
+    "title": "10 Best Branding Agencies for Startups",
     "description": "10 branding agencies for startups, from Bolder and The Branx to Pentagram, with locations, prices, timelines, past work and contact details.",
     "category": "Brand Strategy",
     "categorySlug": "brand-strategy",
@@ -2420,7 +2435,7 @@
     "date": "Nov 18, 2026",
     "image": {
       "src": "/images/blog/startup-branding-agencies/cover-collage.webp",
-      "alt": "Top 10 Branding Agencies for Startups in 2026",
+      "alt": "10 Best Branding Agencies for Startups",
       "thumbnail": "/images/blog/startup-branding-agencies/cover-collage-768w.webp"
     }
   },
@@ -2441,7 +2456,7 @@
   {
     "slug": "brand-sprint-vs-agency",
     "url": "/blog/brand-sprint-vs-agency",
-    "title": "Brand Sprint vs Agency: Which Is Right for Your Startup?",
+    "title": "Brand Sprint vs Agency",
     "description": "Compare a one-week $3,000 senior Brand Sprint with traditional agencies ($25k–$100k+, 3–9 months) and sub-$3k marketplace clutter (~$750–$2.3k). A founder decision framework for when each wins.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -2455,7 +2470,7 @@
   {
     "slug": "history-of-branding",
     "url": "/blog/history-of-branding",
-    "title": "The History of Branding: From Cattle Marks to AI",
+    "title": "The History of Branding",
     "description": "The complete history of branding, from ownership marks on livestock and trade goods 4,000 years ago to trademarks, brand management, corporate identity, positioning, brand equity, social media and AI, and what it teaches anyone building a brand today.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -2469,7 +2484,7 @@
   {
     "slug": "branding-and-website-redesign-scope",
     "url": "/blog/branding-and-website-redesign-scope",
-    "title": "Branding and Website Redesign: What Should Be in the Scope?",
+    "title": "Branding and Website Redesign Scope",
     "description": "Define the scope of a brand and website redesign: identity, page types, content, implementation, migration, approvals, timeline, and handover.",
     "category": "Web Design",
     "categorySlug": "web-design",
@@ -2483,7 +2498,7 @@
   {
     "slug": "how-to-choose-a-logo",
     "url": "/blog/how-to-choose-a-logo",
-    "title": "How to Choose a Logo: A Decision Guide for Your Leadership Team",
+    "title": "How to Choose a Logo",
     "description": "Choose a logo with a clear approval process: agree on objectives, review real applications, consolidate feedback, and make a confident leadership decision.",
     "category": "Branding",
     "categorySlug": "branding",
@@ -2497,7 +2512,7 @@
   {
     "slug": "hire-webflow-expert",
     "url": "/blog/hire-webflow-expert",
-    "title": "How to Find & Hire a Good Webflow Expert",
+    "title": "How to Hire a Webflow Expert",
     "description": "Where to find and how to vet a Webflow expert for your business, with New York hiring advice, real portfolio examples, budgets, and a clear delivery process.",
     "category": "Web Design",
     "categorySlug": "web-design",
