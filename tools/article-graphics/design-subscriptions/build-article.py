@@ -132,3 +132,7 @@ if pos is None: idx.insert(0,entry)
 else: idx[pos]=entry
 json.dump(idx,open('public/content/blog/index.json','w'),ensure_ascii=False,indent=2)
 print('ok',len(S))
+
+# Extra images (photos and reused graphics) after the intro and key sections.
+import importlib.util as _u
+_s=_u.spec_from_file_location("blog_figures","tools/article-graphics/blog_figures.py"); _m=_u.module_from_spec(_s); _s.loader.exec_module(_m); print("figures", _m.apply(SLUG))
