@@ -1,0 +1,27 @@
+{
+  "layout": "collage",
+  "title": "Design Subscriptions",
+  "category": "",
+  "seed": "design-subscription-services-7dkb3",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/design-subscription-services/designjoy-pricing.png",
+    "/tools/cover-generator/assets/design-subscription-services/awesomic-pricing.png",
+    "/tools/cover-generator/assets/design-subscription-services/paisana-house-pricing.png",
+    "/tools/cover-generator/assets/design-subscription-services/makeover-studio-pricing.png"
+  ]
+}
