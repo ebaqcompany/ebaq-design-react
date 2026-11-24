@@ -1,0 +1,31 @@
+{
+  "layout": "collage",
+  "title": "Script Logos",
+  "category": "",
+  "seed": "script-logos-bg1",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.6,
+      "dx": 0.05,
+      "dy": 0.08
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/script-logos/coca-cola-ghost-sign-rosenberg.jpg"
+  ]
+}

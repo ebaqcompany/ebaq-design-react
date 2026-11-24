@@ -1,0 +1,31 @@
+{
+  "layout": "collage",
+  "title": "Mascot Logos",
+  "category": "",
+  "seed": "brand-mascots-bg1",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.45,
+      "dx": 1.2,
+      "dy": -0.01
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/brand-mascots/bobs-big-boy-statue-burbank.jpg"
+  ]
+}

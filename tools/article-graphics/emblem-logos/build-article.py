@@ -14,7 +14,7 @@ desc="27 famous emblem and badge logos explained by a brand designer: seals, shi
 hero_alt=open(f'{D}/hero_alt.txt').read().strip()
 L=lambda h,t:f'<a href="{h}">{t}</a>'
 fig=lambda src,alt:f'<figure class="w-richtext-align-center w-richtext-figure-type-image"><div><img loading="lazy" alt="{alt}" src="{I}/{src}" width="1920" height="1080" decoding="async"/></div></figure>'
-series=(f'<p><strong>Logo design quick course:</strong> this guide is part of my series on logo types. Read the others on {L("/blog/monogram-logo-design","monogram logos")}, '
+series=(f'<p><strong>Logo design quick course:</strong> this guide is part of my series on logo types. Read the others on {L("/blog/script-logos","script logos")}, {L("/blog/brand-mascots","mascot logos")}, {L("/blog/monogram-logo-design","monogram logos")}, '
  f'{L("/blog/wordmark-logo-design","wordmark logos")}, {L("/blog/lettermark-logo-design","lettermark logos")}, {L("/blog/abstract-logo-design","abstract logos")}, '
  f'{L("/blog/symmetry-logo-design","symmetry")} and {L("/blog/negative-space-logo-design","negative space")}, or start with the overview of all {L("/blog/types-of-logos","types of logos")}.</p>')
 intro=(

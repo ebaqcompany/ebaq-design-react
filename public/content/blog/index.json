@@ -1,5 +1,20 @@
 [
   {
+    "slug": "script-logos",
+    "url": "/blog/script-logos",
+    "title": "27 Script Logos Explained",
+    "description": "27 famous script and cursive logos explained by a brand designer: signatures, Spencerian scripts and casual lettering from Coca-Cola, Kellogg's and Disney to Cadbury and Barbie.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "12 min read",
+    "date": "Nov 24, 2026",
+    "image": {
+      "src": "/images/blog/script-logos/cover-collage.webp",
+      "alt": "27 Script Logos Explained cover collage with a faded painted Coca-Cola ghost sign on a brick wall in Rosenberg, Texas",
+      "thumbnail": "/images/blog/script-logos/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "emblem-logos",
     "url": "/blog/emblem-logos",
     "title": "27 Emblem Logos Explained",
@@ -1019,15 +1034,16 @@
   {
     "slug": "brand-mascots",
     "url": "/blog/brand-mascots",
-    "title": "15 Best Mascot Logos",
-    "description": "Discover the best mascot logos in 2026. Explore iconic brand characters that connect with audiences.",
+    "title": "27 Mascot Logos Explained",
+    "description": "27 famous mascot logos explained by a brand designer: people, animals and made-up characters from KFC, Quaker and Pringles to Mailchimp, Duolingo and the Michelin Man.",
     "category": "Logo Design",
     "categorySlug": "logo-design",
     "readTime": "13 min read",
-    "date": "Jan 27, 2026",
+    "date": "Nov 24, 2026",
     "image": {
-      "src": "/images/blog/brand-mascots/15bestbrandmascotdesignsofalltime8-3da0464a3ace9af2017c2-b7519d.webp",
-      "alt": "15 Best Mascot Logos"
+      "src": "/images/blog/brand-mascots/cover-collage.webp",
+      "alt": "Mascot Logos cover collage with a photo of the Bob's Big Boy statue in Burbank, California, holding a burger above his head",
+      "thumbnail": "/images/blog/brand-mascots/cover-collage-768w.webp"
     }
   },
   {
