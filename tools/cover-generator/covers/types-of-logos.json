@@ -1,0 +1,31 @@
+{
+  "layout": "collage",
+  "title": "Types of Logos",
+  "category": "",
+  "seed": "types-of-logos-bg1",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.6,
+      "dx": 0.62,
+      "dy": -0.06
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/types-of-logos/piccadilly-circus-1962.jpg"
+  ]
+}
