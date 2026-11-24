@@ -1,5 +1,20 @@
 [
   {
+    "slug": "emblem-logos",
+    "url": "/blog/emblem-logos",
+    "title": "27 Emblem Logos Explained",
+    "description": "27 famous emblem and badge logos explained by a brand designer: seals, shields, crests and labels from Harley-Davidson, NASA and Ford to Porsche, LEGO and IKEA.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "12 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/emblem-logos/cover-collage.webp",
+      "alt": "27 Emblem Logos Explained cover collage with the Hard Rock Cafe emblem and giant guitar sign in Sacramento",
+      "thumbnail": "/images/blog/emblem-logos/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "black-friday",
     "url": "/blog/black-friday",
     "title": "Black Friday Deals for Designers",

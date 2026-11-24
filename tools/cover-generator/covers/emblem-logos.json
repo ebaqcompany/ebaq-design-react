@@ -1,0 +1,31 @@
+{
+  "layout": "collage",
+  "title": "Emblem Logos",
+  "category": "",
+  "seed": "emblem-logos-bg1",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.55,
+      "dx": 0.12,
+      "dy": 0.03
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/emblem-logos/hard-rock-cafe-sacramento.jpg"
+  ]
+}
