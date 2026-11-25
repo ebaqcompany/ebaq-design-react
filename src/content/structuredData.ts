@@ -383,7 +383,6 @@ export const buildSiteGraph = (facts: Facts, faqs: FaqPair[], dateModified: stri
           { "@type": "Place", name: "Worldwide" },
         ],
         knowsAbout: founder.knowsAbout,
-        audience: industries.map((audienceType) => ({ "@type": "BusinessAudience", audienceType })),
         founder: { "@id": founderId },
         employee: { "@id": founderId },
         sameAs: studio.sameAs,
@@ -397,6 +396,8 @@ export const buildSiteGraph = (facts: Facts, faqs: FaqPair[], dateModified: stri
               description: pricing.guarantee,
               provider: { "@id": organizationId },
               areaServed: "Worldwide",
+              // audience is valid on Service, not on Organization (schema.org validator warning).
+              audience: industries.map((audienceType) => ({ "@type": "BusinessAudience", audienceType })),
             },
           },
           offer("weekly-offer", "Weekly design engagement", pricing.summary, pricing.weeklyRate, "WEEK"),
