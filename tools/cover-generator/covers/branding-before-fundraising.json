@@ -1,0 +1,31 @@
+{
+  "layout": "collage",
+  "title": "Branding Before You Raise",
+  "category": "",
+  "seed": "branding-before-fundraising-bg1",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.5,
+      "dx": 0.75,
+      "dy": 0.15
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/branding-before-fundraising/startup-battlefield-trophy.jpg"
+  ]
+}
