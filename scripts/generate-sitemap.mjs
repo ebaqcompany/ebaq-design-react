@@ -61,6 +61,7 @@ const staticPaths = [
   '/webflow-designer',
   '/marketing-agency-branding',
   '/white-label-branding',
+  '/senior-freelance-brand-designer',
   '/compare',
   '/glossary',
   '/industries',

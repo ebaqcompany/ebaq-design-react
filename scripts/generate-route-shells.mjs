@@ -56,7 +56,7 @@ for (const [path, component] of Object.entries({
   '/podcast': 'PodcastPage', '/shop': 'ShopPage', '/tools': 'ToolsPage', '/tools/creative-brief-generator': 'CreativeBriefGeneratorPage', '/tools/design-cost-calculator': 'DesignCostCalculatorPage', '/tools/brand-grader': 'BrandGraderPage', '/tools/brand-archetype-quiz': 'BrandArchetypeQuizPage', '/tools/tagline-generator': 'TaglineGeneratorPage', '/tools/brand-name-generator': 'BrandNameGeneratorPage', '/tools/brand-templates': 'BrandTemplatesPage',
   '/real-estate-branding': 'RealEstateBrandingLanding',
   '/law-firm-branding': 'LawFirmLanding', '/ai-healthcare-branding': 'AiHealthcareLanding', '/saas-branding': 'SaasBrandingLanding', '/luxury-branding': 'LuxuryBrandingLanding', '/personal-branding': 'PersonalBrandingLanding', '/cannabis-branding': 'CannabisBrandingLanding', '/consultancy-branding': 'ConsultancyBrandingLanding', '/saas-web-design': 'SaasWebDesignLanding', '/ai-startup-branding': 'AiStartupBrandingLanding',
-  '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding', '/white-label-branding': 'WhiteLabelBrandingLanding',
+  '/framer-designer': 'FramerDesignerLanding', '/webflow-designer': 'WebflowDesignerLanding', '/marketing-agency-branding': 'MarketingAgencyBrandingLanding', '/white-label-branding': 'WhiteLabelBrandingLanding', '/senior-freelance-brand-designer': 'SeniorFreelanceBrandDesignerLanding',
   '/new-york-branding': 'NewYorkBrandingLanding',
   '/pricing': 'PricingPage', '/brand-sprint': 'BrandSprintPage', '/design-monthly': 'DesignMonthlyPage',
   '/compare': 'CompareIndexPage', '/glossary': 'GlossaryPage', '/industries': 'IndustriesPage', '/compare/freelancer-vs-agency': 'FreelancerVsAgencyPage', '/locations': 'LocationsPage',
@@ -239,6 +239,7 @@ Tools: ${tools.join(', ')}.
 - [Consultancy branding](${siteUrl}/consultancy-branding)
 - [Marketing agency branding](${siteUrl}/marketing-agency-branding)
 - [White-label branding for agencies](${siteUrl}/white-label-branding)
+- [Senior freelance brand designer in NYC](${siteUrl}/senior-freelance-brand-designer)
 - [SaaS and startup website design](${siteUrl}/saas-web-design)
 - [Framer website design and development](${siteUrl}/framer-designer)
 - [Webflow website design and development](${siteUrl}/webflow-designer)
