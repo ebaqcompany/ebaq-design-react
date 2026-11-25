@@ -136,7 +136,6 @@ const routes: RouteEntry[] = [
   { path: '/services/brand-strategy', page: BrandStrategyPage },
   { path: '/services/logo-design', page: LogoDesignPage },
   { path: '/services/brand-design', page: IdentitySystemsPage },
-  { path: '/services/identity-systems', page: IdentitySystemsPage },
   { path: '/services/web-design', page: WebDesignPage },
   { path: '/services/web-development', page: WebDevelopmentPage },
   { path: '/services/motion-graphics', page: MotionGraphicsPage },
