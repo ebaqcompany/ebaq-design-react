@@ -375,6 +375,7 @@ export const buildSiteGraph = (facts: Facts, faqs: FaqPair[], dateModified: stri
           addressCountry: studio.address.country,
         },
         geo: { "@type": "GeoCoordinates", latitude: studio.geo.latitude, longitude: studio.geo.longitude },
+        hasMap: studio.googleBusinessProfile,
         areaServed: [
           { "@type": "City", name: "New York City" },
           { "@type": "AdministrativeArea", name: "Brooklyn" },

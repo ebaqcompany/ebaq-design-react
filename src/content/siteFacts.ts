@@ -13,11 +13,16 @@ export const studio = {
   email: "hello@ebaqdesign.com",
   telephone: "+1-929-245-9811",
   address: { street: "495 Flatbush Ave", locality: "Brooklyn", region: "NY", postalCode: "11225", country: "US" },
-  geo: { latitude: 40.6626, longitude: -73.9618 },
+  // Matches the Google Business Profile pin (Ebaqdesign LLC, BKLYN Commons).
+  geo: { latitude: 40.6625048, longitude: -73.9614225 },
+  googleBusinessProfile: "https://www.google.com/maps?cid=4118360137199417942",
+  googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.520242169427!2d-73.9614225!3d40.66250479999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba8f181a7d5%3A0x39275ab98ae67a56!2sEbaqdesign%20LLC!5e0!3m2!1sen!2sus!4v1795633940870!5m2!1sen!2sus",
+  googleMapsDirections: "https://www.google.com/maps/dir/?api=1&destination=Ebaqdesign+LLC+495+Flatbush+Ave+Brooklyn+NY+11225",
   location: "Brooklyn, New York City",
   logo: "/ebaqdesign-logo.svg",
   image: "/portfolio/identities/aero-bento.webp",
   sameAs: [
+    "https://www.google.com/maps?cid=4118360137199417942",
     "https://contra.com/ebaqdesign",
     "https://www.youtube.com/@ebaqdesign",
     "https://instagram.com/ebaqdesign",

@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Button, Input } from "./ui";
 import { ArekProfileBadge } from "./ArekProfileBadge";
-import { bookingUrl } from "../content/siteFacts";
+import { bookingUrl, studio } from "../content/siteFacts";
 import { requestBookingToken } from "../conversionAttribution";
 import { services } from "../data/services";
 import { HiOutlineEnvelope, HiOutlineMapPin, HiOutlinePhone } from "react-icons/hi2";
@@ -52,7 +52,7 @@ export const ContactForm = () => {
       <div className="mt-8 grid gap-4">
         <div className="flex items-center gap-4"><HiOutlineEnvelope aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="mailto:arek@ebaqdesign.com">arek@ebaqdesign.com</a></div>
         <div className="flex items-center gap-4"><HiOutlinePhone aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="tel:+19292459811">+1 (929) 245-9811</a></div>
-        <div className="flex items-center gap-4"><HiOutlineMapPin aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href="https://maps.google.com/?q=495+Flatbush+Ave+Brooklyn+NY+11225" target="_blank" rel="noreferrer">495 Flatbush Ave, Brooklyn, NY 11225</a></div>
+        <div className="flex items-center gap-4"><HiOutlineMapPin aria-hidden="true" className="size-6 shrink-0 text-brand-primary" /><a href={studio.googleBusinessProfile} target="_blank" rel="noreferrer">495 Flatbush Ave, Brooklyn, NY 11225</a></div>
       </div>
       <ArekProfileBadge variant="author" portraitHref="/about" className="mt-8 md:mt-12" />
     </div>

@@ -1,5 +1,20 @@
 [
   {
+    "slug": "questions-to-ask-brand-designer",
+    "url": "/blog/questions-to-ask-brand-designer",
+    "title": "Questions to Ask Before Hiring a Brand Designer",
+    "description": "20 questions to ask a brand designer before you hire them, covering fit, process, scope, timeline, price and ownership, with what a good answer sounds like and the red flags.",
+    "category": "Branding",
+    "categorySlug": "branding",
+    "readTime": "7 min read",
+    "date": "Nov 25, 2026",
+    "image": {
+      "src": "/images/blog/questions-to-ask-brand-designer/cover-collage.webp",
+      "alt": "Arek Dvornechuck in his Brooklyn studio and sketching logo concepts, cover for Questions to Ask Before Hiring a Brand Designer",
+      "thumbnail": "/images/blog/questions-to-ask-brand-designer/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "startup-brand-teardowns",
     "url": "/blog/startup-brand-teardowns",
     "title": "6 Startup Brand Teardowns",
@@ -230,11 +245,11 @@
     "slug": "best-senior-freelance-brand-designers",
     "url": "/blog/best-senior-freelance-brand-designers",
     "title": "Best Senior Freelance Brand Designers",
-    "description": "9 senior freelance brand designers in 8 countries, with the facts from each public profile, listed rates, and a checklist for choosing one.",
+    "description": "8 senior freelance brand designers in 8 countries, with the facts from each public profile, listed rates, and a checklist for choosing one.",
     "category": "Branding",
     "categorySlug": "branding",
     "readTime": "16 min read",
-    "date": "Nov 23, 2026",
+    "date": "Nov 25, 2026",
     "image": {
       "src": "/images/blog/best-senior-freelance-brand-designers/cover-collage.webp",
       "alt": "Collage of nine senior freelance brand designers and Arek Dvornechuck's studio photo, with the title Senior Freelance Brand Designers",
@@ -254,6 +269,21 @@
       "src": "/images/blog/branding-agencies-one-week/cover-collage.webp",
       "alt": "13 Branding Agencies That Deliver in a Week",
       "thumbnail": "/images/blog/branding-agencies-one-week/cover-collage-768w.webp"
+    }
+  },
+  {
+    "slug": "website-redesign-cost",
+    "url": "/blog/website-redesign-cost",
+    "title": "How Much Does a Website Redesign Cost?",
+    "description": "What a $3,000 website redesign week buys, when to budget $6,000 or $9,000, and how a $10,000 month works. See real Figma, Webflow, and Framer projects.",
+    "category": "Web Design",
+    "categorySlug": "web-design",
+    "readTime": "14 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/website-redesign-cost/cover-collage.webp",
+      "alt": "Website redesign cost collage featuring Elevate, Next Dimension, and Fox Berman",
+      "thumbnail": "/images/blog/website-redesign-cost/cover-collage-768w.webp"
     }
   },
   {

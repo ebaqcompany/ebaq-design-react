@@ -38,6 +38,7 @@ type ColumnLinks = {
 type Address = {
   label: string;
   value: string;
+  url?: string;
 };
 
 type Contact = {
@@ -147,7 +148,7 @@ export const Footer15 = (props: Footer15Props) => {
             <div className="rb-6 mb-6 md:mb-8">
               <div>
                 <p className="mb-1 font-mono text-sm uppercase tracking-wide text-white/60">{address.label}</p>
-                <p className="mb-5 whitespace-pre-line text-sm md:mb-6">{address.value}</p>
+                <p className="mb-5 whitespace-pre-line text-sm md:mb-6">{address.url ? <a className="underline-offset-4 hover:underline" href={address.url} target="_blank" rel="noreferrer">{address.value}</a> : address.value}</p>
               </div>
               <div className="flex flex-col gap-1">
                 <p className="font-mono text-sm uppercase tracking-wide text-white/60">{contact.label}</p>
@@ -241,6 +242,7 @@ export const Footer15Defaults: Props = {
   address: {
     label: "Address",
     value: "Ebaqdesign LLC\n495 Flatbush Ave\nBrooklyn, NY 11225",
+    url: "https://www.google.com/maps?cid=4118360137199417942",
   },
   contact: {
     label: "Contact",

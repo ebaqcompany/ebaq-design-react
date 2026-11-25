@@ -38,6 +38,7 @@ const AiStartupBrandingLanding = page('./components/AiStartupBrandingLanding.tsx
 const FramerDesignerLanding = page('./components/FramerDesignerLanding.tsx', 'FramerDesignerLanding')
 const WebflowDesignerLanding = page('./components/WebflowDesignerLanding.tsx', 'WebflowDesignerLanding')
 const MarketingAgencyBrandingLanding = page('./components/MarketingAgencyBrandingLanding.tsx', 'MarketingAgencyBrandingLanding')
+const WhiteLabelBrandingLanding = page('./components/WhiteLabelBrandingLanding.tsx', 'WhiteLabelBrandingLanding')
 const NewYorkBrandingLanding = page('./components/NewYorkBrandingLanding.tsx', 'NewYorkBrandingLanding')
 const CaseStudyPage = page('./components/CaseStudyPage.tsx', 'CaseStudyPage')
 const WorkPage = page('./components/WorkPage.tsx', 'WorkPage')
@@ -104,6 +105,7 @@ const routes: RouteEntry[] = [
   { path: '/framer-designer', page: FramerDesignerLanding },
   { path: '/webflow-designer', page: WebflowDesignerLanding },
   { path: '/marketing-agency-branding', page: MarketingAgencyBrandingLanding },
+  { path: '/white-label-branding', page: WhiteLabelBrandingLanding },
   { path: '/glossary', page: GlossaryPage },
   { path: '/glossary/:slug', page: GlossaryTermPage },
   { path: '/industries', page: IndustriesPage },

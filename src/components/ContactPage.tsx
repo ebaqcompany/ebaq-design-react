@@ -4,6 +4,7 @@ import { buildBreadcrumbSchema, serializeJsonLd } from "../content/structuredDat
 import { ContactForm } from "./ContactForm";
 import { ServiceTestimonialOptions } from "./ServiceTestimonialOptions";
 import { Logo3 } from "./Logo3";
+import { StudioMap } from "./StudioMap";
 import { Footer15 } from "./Footer15";
 import { Navbar16 } from "./Navbar16";
 
@@ -27,6 +28,7 @@ export const ContactPage = () => <div className="relative bg-white">
         priceRange: `${pricing.weekly} per week`,
         address: { "@type": "PostalAddress", streetAddress: studio.address.street, addressLocality: studio.address.locality, addressRegion: studio.address.region, postalCode: studio.address.postalCode, addressCountry: studio.address.country },
         geo: { "@type": "GeoCoordinates", latitude: studio.geo.latitude, longitude: studio.geo.longitude },
+        hasMap: studio.googleBusinessProfile,
         potentialAction: { "@type": "ReserveAction", name: "Book a 15-minute call", target: bookingUrl },
       },
     })}</script>
@@ -36,6 +38,7 @@ export const ContactPage = () => <div className="relative bg-white">
   <main className="min-h-[70vh]">
     <ContactForm />
     <Logo3 />
+    <StudioMap />
     <section className="bg-brand-light px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 max-w-lg md:mb-16">
