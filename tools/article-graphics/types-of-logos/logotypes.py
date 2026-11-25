@@ -36,7 +36,7 @@ T = [
  "A combination mark pairs a symbol with the brand name. The two can be used together or apart.",
  "Most new businesses. The name builds recognition while the symbol earns its place.",
  "Lockups that only work together. Design the symbol to stand alone from the start.",
- None),
+ "/blog/combination-mark-logos"),
 ("emblem","Emblem","emblem",
  "An emblem puts the name inside a shape: a badge, a shield, a seal or a crest. The name and the shape can't be separated.",
  "Schools, sports teams, cars, beer and heritage brands.",

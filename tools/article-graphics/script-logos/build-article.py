@@ -14,7 +14,7 @@ desc="27 famous script and cursive logos explained by a brand designer: signatur
 hero_alt=open(f'{D}/hero_alt.txt').read().strip()
 L=lambda h,t:f'<a href="{h}">{t}</a>'
 fig=lambda src,alt,w=1920,h=1080:f'<figure class="w-richtext-align-center w-richtext-figure-type-image"><div><img loading="lazy" alt="{alt}" src="{I}/{src}" width="{w}" height="{h}" decoding="async"/></div></figure>'
-series=(f'<p><strong>Logo design quick course:</strong> this guide is part of my series on logo types. Read the others on {L("/blog/emblem-logos","emblem logos")}, {L("/blog/brand-mascots","mascot logos")}, {L("/blog/wordmark-logo-design","wordmark logos")}, '
+series=(f'<p><strong>Logo design quick course:</strong> this guide is part of my series on logo types. Read the others on {L("/blog/combination-mark-logos","combination marks")}, {L("/blog/emblem-logos","emblem logos")}, {L("/blog/brand-mascots","mascot logos")}, {L("/blog/wordmark-logo-design","wordmark logos")}, '
  f'{L("/blog/monogram-logo-design","monogram logos")}, {L("/blog/lettermark-logo-design","lettermark logos")}, {L("/blog/abstract-logo-design","abstract logos")}, '
  f'{L("/blog/symmetry-logo-design","symmetry")} and {L("/blog/negative-space-logo-design","negative space")}, or start with the overview of all {L("/blog/types-of-logos","types of logos")}.</p>')
 intro=(

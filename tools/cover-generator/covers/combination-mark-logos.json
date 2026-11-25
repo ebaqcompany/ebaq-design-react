@@ -1,0 +1,31 @@
+{
+  "layout": "collage",
+  "title": "Combination Mark Logos",
+  "category": "",
+  "seed": "combination-mark-logos-bg1",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 2,
+      "dx": 0.75,
+      "dy": 0.1
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/combination-mark-logos/pizza-hut-blythe-2005.jpg"
+  ]
+}
