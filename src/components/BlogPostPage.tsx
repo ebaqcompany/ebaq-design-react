@@ -7,6 +7,7 @@ import { caseStudies } from "../data/caseStudies";
 import { normalizeVideoEmbeds, unlinkRetiredBlogPosts } from "../content/richText";
 import { buildBlogPostingSchema, buildBreadcrumbSchema, buildFaqSchema, buildVideoSchema, resolveFaqPairs, serializeJsonLd } from "../content/structuredData";
 import { BlogPostHeader4 } from "./BlogPostHeader4";
+import { AuthorNote } from "./AuthorNote";
 import { Content32 } from "./Content32";
 import { Cta17 } from "./Cta17";
 import { Footer15 } from "./Footer15";
@@ -275,6 +276,7 @@ export const BlogPostPage = () => {
             <h2 id="faq">Frequently asked questions</h2>
             {post.faq.map((item) => <div key={item.question} className="mt-6"><h3>{item.question}</h3><p>{item.answer}</p></div>)}
           </section>}
+          <AuthorNote />
         </Content32>
         <SelectedWork selectedWorkSlugs={post.selectedWorkSlugs ?? (industryPosts[post.slug] ? [industryPosts[post.slug].work] : undefined)} />
         {industryPosts[post.slug]
