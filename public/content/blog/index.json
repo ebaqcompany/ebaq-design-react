@@ -2506,11 +2506,12 @@
     "description": "The complete history of branding, from ownership marks on livestock and trade goods 4,000 years ago to trademarks, brand management, corporate identity, positioning, brand equity, social media and AI, and what it teaches anyone building a brand today.",
     "category": "Branding",
     "categorySlug": "branding",
-    "readTime": "26 min read",
-    "date": "Sep 17, 2026",
+    "readTime": "27 min read",
+    "date": "Nov 25, 2026",
     "image": {
-      "src": "/images/blog/history-of-branding/history-of-branding.webp",
-      "alt": "The history of branding cover graphic with sticky notes reading 4,000 years, cattle brands, trade marks, social and AI"
+      "src": "/images/blog/history-of-branding/cover-collage.webp",
+      "alt": "History of Branding cover: an ancient Egyptian tomb painting of herdsmen branding cattle with a hot iron, in a collage on a cutting mat",
+      "thumbnail": "/images/blog/history-of-branding/cover-collage-768w.webp"
     }
   },
   {
