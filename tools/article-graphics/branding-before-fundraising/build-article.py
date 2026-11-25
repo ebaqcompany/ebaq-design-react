@@ -51,7 +51,7 @@ body=(
  '<p><strong>Consistency is a signal of competence.</strong> It says the team pays attention to detail.</p>'
  '<h3>4. You stand out in a crowded market</h3>'
  f'<p>Most startup categories are full of look-alikes. Scroll through {L("/blog/ai-startups-logos","AI startup logos")} and you will see the same purple gradients, the same sparkles and the same rounded sans serif type.</p>'
- '<p>An investor who has seen 50 AI pitches this month needs a reason to remember yours. A distinctive brand is the easiest way to be the one they remember.</p>'
+ '<p>An investor who has seen 50 AI pitches this month needs a reason to remember yours. A distinctive brand is the easiest way to be the one they remember. For real examples, see my '+L('/blog/startup-brand-teardowns','startup brand teardowns')+', from Ramp vs Brex to Linear vs Jira.</p>'
  '<h3>5. The same brand also wins customers</h3>'
  '<p>Branding for investors is not a separate cost. The brand that convinces an investor also convinces your first customers, hires and partners.</p>'
  '<p>After we redesigned NextDimension\'s identity and website, the company reported a <strong>30% increase in demo bookings</strong>, and it has since secured $2.5 million in seed funding.</p>'

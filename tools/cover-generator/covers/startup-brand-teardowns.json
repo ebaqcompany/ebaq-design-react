@@ -1,0 +1,31 @@
+{
+  "layout": "collage",
+  "title": "Startup Brand Teardowns",
+  "category": "",
+  "seed": "startup-brand-teardowns-bg1",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "tweaks": {
+    "photo-0": {
+      "scale": 1.6,
+      "dx": 0.78,
+      "dy": -0.08
+    }
+  },
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/startup-brand-teardowns/stripe-hq-entrance.jpg"
+  ]
+}
