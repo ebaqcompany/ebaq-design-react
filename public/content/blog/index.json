@@ -1,5 +1,20 @@
 [
   {
+    "slug": "startup-branding-agencies",
+    "url": "/blog/startup-branding-agencies",
+    "title": "11 Best Branding Agencies for Startups",
+    "description": "11 branding agencies for startups, from Bolder, The Branx and Second Eight to Pentagram, with locations, prices, timelines, past work and contact details.",
+    "category": "Brand Strategy",
+    "categorySlug": "brand-strategy",
+    "readTime": "13 min read",
+    "date": "Nov 25, 2026",
+    "image": {
+      "src": "/images/blog/startup-branding-agencies/cover-collage.webp",
+      "alt": "11 Best Branding Agencies for Startups",
+      "thumbnail": "/images/blog/startup-branding-agencies/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "startup-rebrand-cost",
     "url": "/blog/startup-rebrand-cost",
     "title": "How Much Does a Startup Rebrand Cost?",
@@ -13,7 +28,8 @@
       "alt": "NextDimension logo before and after its startup rebrand, cover for How Much Does a Startup Rebrand Cost?",
       "thumbnail": "/images/blog/startup-rebrand-cost/cover-collage-768w.webp"
     }
-  },  {
+  },
+  {
     "slug": "questions-to-ask-brand-designer",
     "url": "/blog/questions-to-ask-brand-designer",
     "title": "Questions to Ask Before Hiring a Brand Designer",
@@ -86,6 +102,21 @@
       "src": "/images/blog/combination-mark-logos/cover-collage.webp",
       "alt": "Combination Mark Logos cover: a red-roof Pizza Hut restaurant with the Pizza Hut name on its roof, in a collage on a cutting mat",
       "thumbnail": "/images/blog/combination-mark-logos/cover-collage-768w.webp"
+    }
+  },
+  {
+    "slug": "branding-agency-nyc",
+    "url": "/blog/branding-agency-nyc",
+    "title": "10 Best Branding Agencies in NYC",
+    "description": "Discover the top branding agencies in NYC for 2026. Find the best New York design firms for your brand.",
+    "category": "Brand Strategy",
+    "categorySlug": "brand-strategy",
+    "readTime": "12 min read",
+    "date": "Nov 25, 2026",
+    "image": {
+      "src": "/images/blog/branding-agency-nyc/cover-collage.webp",
+      "alt": "10 Best Branding Agencies in NYC",
+      "thumbnail": "/images/blog/branding-agency-nyc/cover-collage-768w.webp"
     }
   },
   {
@@ -178,6 +209,21 @@
       "src": "/images/blog/freelancer-vs-studio/cover-collage.webp",
       "alt": "Senior Freelancer or Small Studio cover collage with a solo designer at his desk and a small studio team",
       "thumbnail": "/images/blog/freelancer-vs-studio/cover-collage-768w.webp"
+    }
+  },
+  {
+    "slug": "website-redesign-cost",
+    "url": "/blog/website-redesign-cost",
+    "title": "How Much Does a Website Redesign Cost?",
+    "description": "What a $3,000 website redesign week buys, when to budget $6,000 or $9,000, and how a $10,000 month works. See real Figma, Webflow, and Framer projects.",
+    "category": "Web Design",
+    "categorySlug": "web-design",
+    "readTime": "14 min read",
+    "date": "Nov 23, 2026",
+    "image": {
+      "src": "/images/blog/website-redesign-cost/cover-collage.webp",
+      "alt": "Website redesign cost collage featuring Elevate, Next Dimension, and Fox Berman",
+      "thumbnail": "/images/blog/website-redesign-cost/cover-collage-768w.webp"
     }
   },
   {
@@ -283,21 +329,6 @@
       "src": "/images/blog/branding-agencies-one-week/cover-collage.webp",
       "alt": "13 Branding Agencies That Deliver in a Week",
       "thumbnail": "/images/blog/branding-agencies-one-week/cover-collage-768w.webp"
-    }
-  },
-  {
-    "slug": "website-redesign-cost",
-    "url": "/blog/website-redesign-cost",
-    "title": "How Much Does a Website Redesign Cost?",
-    "description": "What a $3,000 website redesign week buys, when to budget $6,000 or $9,000, and how a $10,000 month works. See real Figma, Webflow, and Framer projects.",
-    "category": "Web Design",
-    "categorySlug": "web-design",
-    "readTime": "14 min read",
-    "date": "Nov 23, 2026",
-    "image": {
-      "src": "/images/blog/website-redesign-cost/cover-collage.webp",
-      "alt": "Website redesign cost collage featuring Elevate, Next Dimension, and Fox Berman",
-      "thumbnail": "/images/blog/website-redesign-cost/cover-collage-768w.webp"
     }
   },
   {
@@ -1353,21 +1384,6 @@
       "src": "/images/blog/brand-voice/cover-collage.webp",
       "alt": "7 Brand Voice Examples",
       "thumbnail": "/images/blog/brand-voice/cover-collage-768w.webp"
-    }
-  },
-  {
-    "slug": "branding-agency-nyc",
-    "url": "/blog/branding-agency-nyc",
-    "title": "10 Best Branding Agencies in NYC",
-    "description": "Discover the top branding agencies in NYC for 2026. Find the best New York design firms for your brand.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "12 min read",
-    "date": "Oct 23, 2026",
-    "image": {
-      "src": "/images/blog/branding-agency-nyc/cover-collage.webp",
-      "alt": "10 Best Branding Agencies in NYC",
-      "thumbnail": "/images/blog/branding-agency-nyc/cover-collage-768w.webp"
     }
   },
   {
@@ -2558,21 +2574,6 @@
     "image": {
       "src": "/images/blog/worst-rebrands/worst-brands.webp",
       "alt": "7 Worst Rebrands"
-    }
-  },
-  {
-    "slug": "startup-branding-agencies",
-    "url": "/blog/startup-branding-agencies",
-    "title": "10 Best Branding Agencies for Startups",
-    "description": "10 branding agencies for startups, from Bolder and The Branx to Pentagram, with locations, prices, timelines, past work and contact details.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "11 min read",
-    "date": "Nov 18, 2026",
-    "image": {
-      "src": "/images/blog/startup-branding-agencies/cover-collage.webp",
-      "alt": "10 Best Branding Agencies for Startups",
-      "thumbnail": "/images/blog/startup-branding-agencies/cover-collage-768w.webp"
     }
   },
   {
