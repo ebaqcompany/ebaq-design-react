@@ -1,5 +1,20 @@
 [
   {
+    "slug": "pictorial-mark-logos",
+    "url": "/blog/pictorial-mark-logos",
+    "title": "27 Pictorial Mark Logos Explained",
+    "description": "27 famous pictorial mark logos explained by a brand designer: animals, objects, nature and people, from the Twitter bird and the Penguin to Apple, Shell and the Jordan Jumpman.",
+    "category": "Logo Design",
+    "categorySlug": "logo-design",
+    "readTime": "12 min read",
+    "date": "Nov 25, 2026",
+    "image": {
+      "src": "/images/blog/pictorial-mark-logos/cover-collage.webp",
+      "alt": "Pictorial Mark Logos cover: the 1930 shell-shaped Shell service station in Winston-Salem, North Carolina, in a collage on a cutting mat",
+      "thumbnail": "/images/blog/pictorial-mark-logos/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "combination-mark-logos",
     "url": "/blog/combination-mark-logos",
     "title": "27 Combination Mark Logos Explained",

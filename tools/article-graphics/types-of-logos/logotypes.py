@@ -21,7 +21,7 @@ T = [
  "A pictorial mark is a picture of a real thing: an apple, a shell, a target. People name it the moment they see it.",
  "Brands with a simple name-to-picture link, or a name people already know.",
  "Pictures that lock you into one product as the business grows.",
- None),
+ "/blog/pictorial-mark-logos"),
 ("abstract","Abstract mark","abstract mark",
  "An abstract mark is a shape that doesn't show a real object. It means whatever the brand teaches people it means.",
  "Global brands that need a symbol that works in every language.",
