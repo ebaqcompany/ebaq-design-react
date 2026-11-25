@@ -4,8 +4,8 @@
   "title": "45 Biotech Logos Explained",
   "category": "Logo Design",
   "author": "arek-dvornechuck-ebaqdesign",
-  "date": "Nov 21, 2026",
-  "readTime": "15 min read",
+  "date": "Nov 25, 2026",
+  "readTime": "16 min read",
   "image": {
     "src": "/images/blog/biotech-startup-branding/cover-collage.webp",
     "alt": "Scientist in a biotech lab looking at a screen showing 45 biotech company logos",
@@ -796,7 +796,7 @@
       "Is your color different from the blues and greens of most competitors?",
       "Does it work small, in one color, on a lab label or a vial?"
     ],
-    "conclusionHtml": "<h2 id=\"conclusion\">Building a biotech brand?</h2><p>I design brand identities and websites for biotech, health tech, and AI startups, from logo and visual identity to investor-ready websites.</p><p>Explore my <a href=\"/ai-healthcare-branding\"><strong>AI and healthcare branding services</strong></a> or <a href=\"/start\"><strong>schedule a call</strong></a> to discuss your project.</p>"
+    "conclusionHtml": "<h2 id=\"biotech-branding\">Biotech branding beyond the logo</h2><p><strong>Biotech branding</strong> is more than a logo, because the brand has to work for investors, partners, regulators, recruits and, later, patients.</p><ul><li><strong>Name and story:</strong> explain the science in one sentence a generalist investor can repeat.</li><li><strong>Investor materials:</strong> the pitch deck and website are often where the brand is judged first.</li><li><strong>Scientific visuals:</strong> data charts, pathway diagrams and molecule renders need the same colour and type rules as the logo.</li><li><strong>Room to grow:</strong> a platform company may later need names for programs or products, so plan a simple <a href=\"/blog/brand-architecture\">brand architecture</a> early.</li></ul><p>The patient-facing brand usually comes last, once a product reaches the clinic or the market.</p><h2 id=\"conclusion\">Building a biotech brand?</h2><p>I design brand identities and websites for biotech, health tech, and AI startups, from logo and visual identity to investor-ready websites.</p><p>Explore my <a href=\"/ai-healthcare-branding\"><strong>AI and healthcare branding services</strong></a> or <a href=\"/start\"><strong>schedule a call</strong></a> to discuss your project.</p>"
   },
   "faq": [
     {
@@ -810,6 +810,10 @@
     {
       "question": "What colors do biotech logos use?",
       "answer": "Most biotech logos use blue, green, and navy to signal trust and science. Brands that stand out often break that pattern, like CSL's bright red, PacBio's magenta, or the black type used by many new longevity startups."
+    },
+    {
+      "question": "What does biotech branding include?",
+      "answer": "Biotech branding covers the name, scientific story, logo and visual identity, investor deck, website and the rules for scientific visuals like charts and diagrams, with a patient-facing brand added once a product nears the clinic or market."
     }
   ]
 }
