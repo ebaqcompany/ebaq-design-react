@@ -1,0 +1,27 @@
+{
+  "layout": "collage",
+  "title": "Branding Checklist for Startups",
+  "category": "",
+  "seed": "branding-checklist-qgred",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/branding-checklist/checklist-photo.webp",
+    "/tools/cover-generator/assets/branding-checklist/guidelines.webp",
+    "/tools/cover-generator/assets/branding-checklist/aero-stationery.webp",
+    "/tools/cover-generator/assets/branding-checklist/nextdim-colors.webp"
+  ]
+}

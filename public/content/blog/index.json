@@ -1,5 +1,20 @@
 [
   {
+    "slug": "branding-checklist",
+    "url": "/blog/branding-checklist",
+    "title": "Branding Checklist for Startups",
+    "description": "A 9-step branding checklist for startups, plus checklists for launch priorities, brand identity assets, brand guidelines and the brand rollout.",
+    "category": "Brand Strategy",
+    "categorySlug": "brand-strategy",
+    "readTime": "10 min read",
+    "date": "Nov 26, 2026",
+    "image": {
+      "src": "/images/blog/branding-checklist/cover-collage.webp",
+      "alt": "Collage of a hand ticking a branding checklist, brand guidelines, a colour palette and AERO stationery, cover for Branding Checklist for Startups",
+      "thumbnail": "/images/blog/branding-checklist/cover-collage-768w.webp"
+    }
+  },
+  {
     "slug": "questions-to-ask-brand-designer",
     "url": "/blog/questions-to-ask-brand-designer",
     "title": "Questions to Ask Before Hiring a Brand Designer",
@@ -1383,21 +1398,6 @@
     "image": {
       "src": "/images/blog/branding-brand-identity/brand-branding-brandidentity-1600.webp",
       "alt": "Brand vs Branding vs Identity"
-    }
-  },
-  {
-    "slug": "branding-checklist",
-    "url": "/blog/branding-checklist",
-    "title": "My 9-Step Branding Checklist",
-    "description": "Use this 9-step branding checklist for 2026. Build a strong brand foundation from strategy to launch.",
-    "category": "Brand Strategy",
-    "categorySlug": "brand-strategy",
-    "readTime": "4 min read",
-    "date": "Jan 27, 2026",
-    "image": {
-      "src": "/images/blog/branding-checklist/branding-checklist-photo.webp",
-      "alt": "My 9-Step Branding Checklist",
-      "thumbnail": "/images/blog/branding-checklist/branding-checklist-photo-768w.webp"
     }
   },
   {
