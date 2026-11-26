@@ -1,0 +1,27 @@
+{
+  "layout": "collage",
+  "title": "Questions to Ask a Brand Designer",
+  "category": "",
+  "seed": "questions-to-ask-brand-designer-q1",
+  "style": "overlap",
+  "ground": "auto",
+  "hero": "auto",
+  "titleStyle": "strips",
+  "titlePos": "center",
+  "imageMode": "auto",
+  "logoStyle": "bare",
+  "noteTone": "lavender",
+  "extras": [],
+  "kicker": false,
+  "decor": false,
+  "mat": false,
+  "plain": false,
+  "footer": false,
+  "grain": true,
+  "images": [
+    "/tools/cover-generator/assets/questions-to-ask-brand-designer/concept-wall.webp",
+    "/tools/cover-generator/assets/questions-to-ask-brand-designer/strategy-workshop.webp",
+    "/tools/cover-generator/assets/questions-to-ask-brand-designer/logo-sketches.webp",
+    "/tools/cover-generator/assets/questions-to-ask-brand-designer/client-session.webp"
+  ]
+}
