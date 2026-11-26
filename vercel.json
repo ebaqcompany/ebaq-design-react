@@ -46,6 +46,11 @@
       "statusCode": 302
     },
     {
+      "source": "/blog/startup-rebrand-cost",
+      "destination": "/blog/brand-identity-cost#startup-rebrand-cost",
+      "statusCode": 301
+    },
+    {
       "source": "/services/identity-systems",
       "destination": "/services/brand-design",
       "statusCode": 301
