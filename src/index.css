@@ -1077,6 +1077,8 @@ button.layout351-panel-trigger:is(:hover, :focus-visible) {
   font-weight: 700;
   text-decoration: underline solid var(--color-brand-primary) 1px !important;
   text-underline-offset: 0.18em;
+  /* Article links already carry a permanent underline; drop the global animated one so hover doesn't show two lines. */
+  background-image: none !important;
 }
 
 .blog-rich-text a:is(:hover, :focus-visible) {

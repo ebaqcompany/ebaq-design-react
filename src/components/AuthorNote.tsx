@@ -19,9 +19,9 @@ export const AuthorNote = () => (
       A complete brand identity takes <strong>one week for a flat $3,000</strong>, and you work with me directly.
     </p>
     <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 font-semibold">
-      <Link to="/about" className="underline-offset-4 hover:underline">About me</Link>
-      <Link to="/work" className="underline-offset-4 hover:underline">See my work</Link>
-      <a href={bookingUrl} target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">Book a free 15-minute call</a>
+      <Link to="/about">About me</Link>
+      <Link to="/work">See my work</Link>
+      <a href={bookingUrl} target="_blank" rel="noreferrer">Book a free 15-minute call</a>
     </div>
   </aside>
 );
