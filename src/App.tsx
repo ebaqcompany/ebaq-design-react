@@ -34,15 +34,16 @@ function App() {
       property="og:description"
       content="Branding Expert in Brooklyn, New York. Brand identity in one week, guaranteed, for $3,000 flat; websites (Framer, Webflow), motion, and decks at the same weekly rate."
     />
-        <meta property="og:image" content="https://www.ebaqdesign.com/social-x-cover-brand-grid.png" />
-        <meta property="og:image:alt" content="Ebaq Design: Branding Expert in New York" />
+        <meta property="og:image" content="https://www.ebaqdesign.com/social-home-og.png" />
+        <meta property="og:image:alt" content="Design a brand that fits your ambition. Ebaq Design." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Branding Expert NYC | Branding & Web | Ebaq Design" />
         <meta
       name="twitter:description"
       content="Branding Expert in NYC. Brand identity in one week, guaranteed, for $3,000 flat."
     />
-        <meta name="twitter:image" content="https://www.ebaqdesign.com/social-x-cover-brand-grid.png" />
+        <meta name="twitter:image" content="https://www.ebaqdesign.com/social-home-og.png" />
+        <meta name="twitter:image:alt" content="Design a brand that fits your ambition. Ebaq Design." />
       </Helmet>
         {/* Main content - scrolls over footer */}
         <div className="relative z-10 bg-white">

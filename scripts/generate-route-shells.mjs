@@ -139,7 +139,7 @@ function prerender(path) {
 function render(path, meta) {
   if (!meta?.title || !meta.description) throw new Error(`Missing route metadata: ${path}`)
   const url = `${siteUrl}${path}`
-  const image = absolute(meta.image || '/social-x-cover-brand-grid.png')
+  const image = absolute(meta.image || '/social-home-og.png')
   // Remove homepage-only metadata and structured data before adding route-specific tags.
   const shell = indexHtml.replace(/<title>[\s\S]*?<\/title>/g, '')
     .replace(/<meta\b[^>]*(?:name="(?:description|keywords|twitter:[^"]+)"|property="og:[^"]+")[^>]*>/g, '')
